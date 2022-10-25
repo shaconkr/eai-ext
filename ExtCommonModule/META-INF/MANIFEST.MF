@@ -1,0 +1,43 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ExtEAICommonModule Module
+Bundle-SymbolicName: ExtCommonModule
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: lib/xsom-2.3.2.jar,
+ lib/FastInfoset-1.2.16.jar,
+ lib/checker-qual-3.12.0.jar,
+ lib/codemodel-2.3.2.jar,
+ lib/dtd-parser-1.4.1.jar,
+ lib/error_prone_annotations-2.11.0.jar,
+ lib/failureaccess-1.0.1.jar,
+ lib/gson-2.9.1.jar,
+ lib/guava-31.1-jre.jar,
+ lib/hamcrest-core-1.3.jar,
+ lib/istack-commons-runtime-3.0.8.jar,
+ lib/istack-commons-tools-3.0.8.jar,
+ lib/j2objc-annotations-1.3.jar,
+ lib/jakarta.activation-api-1.2.1.jar,
+ lib/jakarta.xml.bind-api-2.3.2.jar,
+ lib/jaxb-jxc-2.3.2.jar,
+ lib/jaxb-runtime-2.3.2.jar,
+ lib/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar,
+ lib/relaxng-datatype-2.3.2.jar,
+ lib/rngom-2.3.2.jar,
+ lib/stax-ex-1.8.1.jar,
+ lib/txw2-2.3.2.jar,
+ .
+Bundle-Vendor: TIBCO Software Inc.
+Export-Package: kr.shacon.edi,
+ kr.shacon.edi.converters,
+ kr.shacon.edi.padders,
+ kr.shacon.edi.type,
+ kr.shacon.edi.util
+Require-Capability: com.tibco.bw.model; filter:="(name=bwext)"
+TIBCO-BW-Version: 6.8.1 HF1 V43 2022-08-11
+Provide-Capability: com.tibco.bw.module; name="ExtCommonModule"; version:Version="1.0.0"
+TIBCO-BW-Edition: bwe
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+TIBCO-BW-ConfigProfile: META-INF/default.substvar
+TIBCO-BW-ModuleSharedVariables: META-INF/module.msv
+TIBCO-BW-JobSharedVariables: META-INF/module.jsv
+TIBCO-BW-SharedModule: META-INF/module.bwm

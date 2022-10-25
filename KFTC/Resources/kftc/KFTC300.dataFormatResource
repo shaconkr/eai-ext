@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KFTC="http://shac.tibco.com/KFTC" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmi:id="_Vd7VgU3AEe2Am4ixy6wczA" name="kftc.KFTC300" type="dataformat:DataFormat">
+  <imports xmi:id="_CCGSIE3EEe2Am4ixy6wczA" importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/KFTC300.xsd" namespace="http://shac.tibco.com/KFTC"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" xmi:id="_Vd7Vgk3AEe2Am4ixy6wczA" formatType="Delimiter separated" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="KFTC:kftc300" fieldOffsetsStr="kftcHeader(0,0)&#xA;kftcData300(0,0)">
+    <fieldOffsets xmi:id="_CDNFYE3EEe2Am4ixy6wczA" name="kftcHeader"/>
+    <fieldOffsets xmi:id="_CDNFYU3EEe2Am4ixy6wczA" name="kftcData300"/>
+  </jndi:configuration>
+</jndi:namedResource>

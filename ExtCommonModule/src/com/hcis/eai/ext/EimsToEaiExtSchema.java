@@ -104,6 +104,7 @@ public class EimsToEaiExtSchema {
 
 		XmlSchemaElement elem = new XmlSchemaElement(xsd, true);
 		elem.setName("main");
+		elem.setSchemaTypeName(new QName(targetNameSpace, ct.getName()));
 
 		OutputStreamWriter or = new OutputStreamWriter(new FileOutputStream(xsdPath), StandardCharsets.UTF_8);
 		xsd.write(or);

@@ -52,8 +52,7 @@ public class EimsToEaiExtSchemaApache {
 	/**
 	 * 대외용 XSD 생성
 	 * 
-	 * @param reqIfId  요청IFID
-	 * @param resIfId  응답IFID
+java	 * @param resIfId  응답IFID
 	 */
 	public void createExtXSD(String reqIfId, String resIfId) throws IOException, XmlSchemaSerializer.XmlSchemaSerializerException {
 		String extSystemId = reqIfId.substring(3,6);
@@ -112,6 +111,7 @@ public class EimsToEaiExtSchemaApache {
 
 		XmlSchemaElement elem = new XmlSchemaElement(xsd, true);
 		elem.setName("main");
+		elem.setSchemaTypeName(new QName(targetNameSpace, ct.getName()));
 
 		OutputStreamWriter or = new OutputStreamWriter(new FileOutputStream(xsdPath), StandardCharsets.UTF_8);
 		xsd.write(or);

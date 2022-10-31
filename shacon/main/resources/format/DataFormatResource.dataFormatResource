@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmlns:msg_header_dacom="http://www.example.org/msg_header_dacom" xmi:id="_qQ7M0SKeEe2dnMmI1dxV4A" name="edu03.module.hcis.format.DataFormatResource" type="dataformat:DataFormat">
+  <imports xmi:id="_soWwsCK-Ee2dnMmI1dxV4A" importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.org/msg_header_dacom"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" xmi:id="_qQ7M0iKeEe2dnMmI1dxV4A" formatType="Fixed format" colSeparator="" colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="msg_header_dacom:MsgHeaderDacom" lineLength="1" fieldOffsetsStr="rcv_tr_code(0,0)&#xA;svc_code(0,0)&#xA;snd_id(0,0)&#xA;rcv_id(0,0)&#xA;msg_id(0,0)&#xA;comp_code(0,0)&#xA;bank_code(0,0)&#xA;msg_code(0,0)&#xA;tr_code(0,0)&#xA;msg_seq(0,0)&#xA;timestamp(0,0)&#xA;err_code(0,0)&#xA;filler(0,0)">
+    <fieldOffsets xmi:id="_sqQOICK-Ee2dnMmI1dxV4A" name="rcv_tr_code"/>
+    <fieldOffsets xmi:id="_sqQOISK-Ee2dnMmI1dxV4A" name="svc_code"/>
+    <fieldOffsets xmi:id="_sqQOIiK-Ee2dnMmI1dxV4A" name="snd_id"/>
+    <fieldOffsets xmi:id="_sqQOIyK-Ee2dnMmI1dxV4A" name="rcv_id"/>
+    <fieldOffsets xmi:id="_sqQOJCK-Ee2dnMmI1dxV4A" name="msg_id"/>
+    <fieldOffsets xmi:id="_sqQOJSK-Ee2dnMmI1dxV4A" name="comp_code"/>
+    <fieldOffsets xmi:id="_sqQOJiK-Ee2dnMmI1dxV4A" name="bank_code"/>
+    <fieldOffsets xmi:id="_sqQOJyK-Ee2dnMmI1dxV4A" name="msg_code"/>
+    <fieldOffsets xmi:id="_sqQOKCK-Ee2dnMmI1dxV4A" name="tr_code"/>
+    <fieldOffsets xmi:id="_sqQOKSK-Ee2dnMmI1dxV4A" name="msg_seq"/>
+    <fieldOffsets xmi:id="_sqQOKiK-Ee2dnMmI1dxV4A" name="timestamp"/>
+    <fieldOffsets xmi:id="_sqQOKyK-Ee2dnMmI1dxV4A" name="err_code"/>
+    <fieldOffsets xmi:id="_sqQOLCK-Ee2dnMmI1dxV4A" name="filler"/>
+  </jndi:configuration>
+</jndi:namedResource>

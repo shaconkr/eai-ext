@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:_3d9f74a8-af63-4902-8c82-7ed73e8c1bcf="http://ns.tibco.com/bw/palette/dataformat/3d9f74a8-af63-4902-8c82-7ed73e8c1bcf" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmi:id="_4W58oS2tEe2ul4NkaC2zLw" name="edu03.module.hcis.format.LG_HEADER" type="dataformat:DataFormat">
+  <imports xmi:id="_GzMnEC2uEe2ul4NkaC2zLw" importType="http://www.w3.org/2001/XMLSchema" namespace="http://ns.tibco.com/bw/palette/dataformat/3d9f74a8-af63-4902-8c82-7ed73e8c1bcf"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" xmi:id="_4W6jsC2tEe2ul4NkaC2zLw" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="_3d9f74a8-af63-4902-8c82-7ed73e8c1bcf:root" lineLength="1" fieldOffsetsStr="FTP_CMS(0,0)&#xA;PEER_CODE(0,0)&#xA;MSG_CODE(0,0)&#xA;TR_CODE(0,0)&#xA;SENDER_CODE(0,0)&#xA;RET_CODE(0,0)&#xA;SND_RCV(0,0)">
+    <fieldOffsets xmi:id="_PqHkcC2uEe2ul4NkaC2zLw" name="FTP_CMS"/>
+    <fieldOffsets xmi:id="_Rp8uMC2uEe2ul4NkaC2zLw" name="PEER_CODE"/>
+    <fieldOffsets xmi:id="_VHnu8C2uEe2ul4NkaC2zLw" name="MSG_CODE"/>
+    <fieldOffsets xmi:id="_XpzX0C2uEe2ul4NkaC2zLw" name="TR_CODE"/>
+    <fieldOffsets xmi:id="_ZDxbcC2uEe2ul4NkaC2zLw" name="SENDER_CODE"/>
+    <fieldOffsets xmi:id="_aasyIC2uEe2ul4NkaC2zLw" name="RET_CODE"/>
+    <fieldOffsets xmi:id="_b5KUMC2uEe2ul4NkaC2zLw" name="SND_RCV"/>
+  </jndi:configuration>
+</jndi:namedResource>

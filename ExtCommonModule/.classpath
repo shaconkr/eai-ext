@@ -29,5 +29,6 @@
 	<classpathentry exported="true" kind="lib" path="lib/stax-ex-1.8.1.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/txw2-2.3.2.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/xsom-2.3.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/xmlschema-core-2.3.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

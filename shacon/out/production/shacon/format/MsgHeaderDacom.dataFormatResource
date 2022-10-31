@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:HdrDacom="http://www.example.org/HdrDacom" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmi:id="_sfmjUSJ8Ee2vf-GbihIMJw" name="edu03.module.hcis.format.MsgHeaderDacom" type="dataformat:DataFormat">
+  <imports xmi:id="_pzHdACJ-Ee2vf-GbihIMJw" importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.org/HdrDacom"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" xmi:id="_sfwUUCJ8Ee2vf-GbihIMJw" formatType="Fixed format" colSeparator="" colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="HdrDacom:MsgHeaderDacom" lineLength="120" fieldOffsetsStr="rcv_tr_code(0,11)&#xA;svc_code(12,14)&#xA;snd_rcv_flag(15,15)&#xA;snd_id(0,25)&#xA;rcv_id(26,35)&#xA;msg_id(0,47)&#xA;comp_code(0,55)&#xA;bank_code(56,57)&#xA;msg_code(58,61)&#xA;tr_code(62,64)&#xA;msg_seq(65,70)&#xA;timestamp(71,84)&#xA;err_code(85,88)&#xA;filler(89,119)">
+    <fieldOffsets xmi:id="_p0Tv0CJ-Ee2vf-GbihIMJw" name="rcv_tr_code" end="11"/>
+    <fieldOffsets xmi:id="_p0Tv0SJ-Ee2vf-GbihIMJw" name="svc_code" start="12" end="14"/>
+    <fieldOffsets xmi:id="_p0Tv0iJ-Ee2vf-GbihIMJw" name="snd_rcv_flag" start="15" end="15"/>
+    <fieldOffsets xmi:id="_p0Tv0yJ-Ee2vf-GbihIMJw" name="snd_id" end="25"/>
+    <fieldOffsets xmi:id="_p0Tv1CJ-Ee2vf-GbihIMJw" name="rcv_id" start="26" end="35"/>
+    <fieldOffsets xmi:id="_p0Tv1SJ-Ee2vf-GbihIMJw" name="msg_id" end="47"/>
+    <fieldOffsets xmi:id="_p0Tv1iJ-Ee2vf-GbihIMJw" name="comp_code" end="55"/>
+    <fieldOffsets xmi:id="_p0Tv1yJ-Ee2vf-GbihIMJw" name="bank_code" start="56" end="57"/>
+    <fieldOffsets xmi:id="_p0Tv2CJ-Ee2vf-GbihIMJw" name="msg_code" start="58" end="61"/>
+    <fieldOffsets xmi:id="_p0Tv2SJ-Ee2vf-GbihIMJw" name="tr_code" start="62" end="64"/>
+    <fieldOffsets xmi:id="_p0Tv2iJ-Ee2vf-GbihIMJw" name="msg_seq" start="65" end="70"/>
+    <fieldOffsets xmi:id="_p0Tv2yJ-Ee2vf-GbihIMJw" name="timestamp" start="71" end="84"/>
+    <fieldOffsets xmi:id="_p0Tv3CJ-Ee2vf-GbihIMJw" name="err_code" start="85" end="88"/>
+    <fieldOffsets xmi:id="_p0Tv3SJ-Ee2vf-GbihIMJw" name="filler" start="89" end="119"/>
+  </jndi:configuration>
+</jndi:namedResource>

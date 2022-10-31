@@ -1,0 +1,76 @@
+<component name="libraryTable">
+  <library name="bwconfig-api1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/bwconfig-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.amf.binding.soap.model.extensions_1.7.0.002.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.amf.platform.common_1.3.0.001.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.amf.sca.model.composite_1.901.1000.002.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.amf.sca.model_1.901.1000.002.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.amf.sharedresource.model.common_1.901.1100.003.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.amf.wsdl.extensions_1.7.0.002.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.bw.migration_6.3.1600.001.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.bw.migrationsupport_6.0.900.002.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.bw.neo.common.util.eclipse_3.0.900.001.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.bw.neo.common.util_3.0.900.002.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.bw.sharedresource.dataformat.design_6.4.2200.004.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.bw.sharedresource.dataformat.model_6.3.2000.005.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.bw.tools.migrator.v6.palette.bpel_6.3.2700.003.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.bw.tools.migrator.v6.palette.file_6.3.2700.003.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.bw.tools.migrator.v6.palette.ftp_6.3.2700.003.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.bw.tools.migrator.v6.palette.general_6.3.2700.003.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.bw.tools.migrator.v6.palette.generalactivities_6.3.2700.003.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.bw.tools.migrator.v6.palette.http_6.3.2700.003.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.bw.tools.migrator.v6.palette.java_6.3.2700.003.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.bw.tools.migrator.v6.palette.jdbc_6.3.2700.003.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.bw.tools.migrator.v6.palette.jms_6.3.2700.003.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.bw.tools.migrator.v6.palette.mail.activities_6.3.2700.003.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.bw.tools.migrator.v6.palette.parse_6.3.2700.003.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.bw.tools.migrator.v6.palette.restjson_6.3.2700.003.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.bw.tools.migrator.v6.palette.rv_6.3.2700.003.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.bw.tools.migrator.v6.palette.service_6.3.2700.003.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.bw.tools.migrator.v6.palette.soap_6.3.2700.003.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.bw.tools.migrator.v6.palette.tcp_6.3.2700.003.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.bw.tools.migrator.v6.palette.wsdl_6.3.2700.003.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.bw.tools.migrator.v6.palette.xml.activities_6.3.2700.003.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.bw.tools.migrator.v6.palette.xmltools_6.3.2700.003.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.bw.tools.migrator.v6_6.3.2700.003.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.bw.tools.migrator_6.3.2700.003.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.neo.common.util.eclipse_2.8.200.001.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.neo.common.util_2.6.0.002.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.neo.common.util_2.6.2.001.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.neo.eclipse.support.osgi_1.2.0.001@3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.neo.eclipse.support_1.0.400.001.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.neo.gms2.as_1.0.100.001.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.neo.gms2.ftl_1.0.1100.001.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.neo.gms2.qin_1.1.0.001.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.neo.gms2_1.0.0.001.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.neo.gms_1.1.101.001.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.neo.launch_1.2.3.001.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.neo.machine.eclipse_1.900.700.002.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.neo.machine.model.eclipse_1.900.700.002.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.neo.machine.model_1.6.0.001.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.neo.machine.osgi_1.3.0.002.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.neo.machine_1.6.0.001.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.neo.model.base.edit_2.901.1300.004.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.neo.model.core.eclipse_1.903.200.003.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.neo.model.core.eclipse_1.903.300.001.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.neo.model.core_1.1.0.001.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.neo.model.core_1.903.300.001.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.neo.model.osgi_1.0.1.002.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.neo.osgi.launch_1.1.1.001.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.neo.svar.model.edit_2.901.1300.004.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.tibcoxml.xml.sdk_5.60.300.001.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.tibco.tpcl.org.eclipse.bpel.model.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/engine.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/org.eclipse.emf.common_2.22.0.v20210114-1734.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/org.eclipse.emf.ecore_2.17.0.v20190116-0940.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/org.eclipse.wst.xsd.core_1.2.100.v202008180353.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/org.eclipse.wst.xsd.ui_1.3.400.v202008091424.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/org.eclipse.xsd.edit_2.11.0.v20200723-0820.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/org.eclipse.xsd_2.18.0.v20201230-0836.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/org.eclipse.emf.ecore.xmi_2.16.0.v20190528-0725.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

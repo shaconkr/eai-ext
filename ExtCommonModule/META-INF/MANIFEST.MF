@@ -25,19 +25,26 @@ Bundle-ClassPath: lib/xsom-2.3.2.jar,
  lib/rngom-2.3.2.jar,
  lib/stax-ex-1.8.1.jar,
  lib/txw2-2.3.2.jar,
+ lib/xmlschema-core-2.3.0.jar,
  .
 Bundle-Vendor: TIBCO Software Inc.
-Export-Package: kr.shacon.edi,
+Export-Package: com.hcis.eai.ext,
+ kr.shacon.edi,
  kr.shacon.edi.converters,
  kr.shacon.edi.padders,
  kr.shacon.edi.type,
  kr.shacon.edi.util
-Require-Capability: com.tibco.bw.model; filter:="(name=bwext)"
-TIBCO-BW-Version: 6.8.1 HF1 V43 2022-08-11
 Provide-Capability: com.tibco.bw.module; name="ExtCommonModule"; version:Version="1.0.0"
-TIBCO-BW-Edition: bwe
+TIBCO-BW-Version: 6.8.1 HF1 V43 2022-08-11
+Import-Package: org.apache.ws.commons.schema;version="2.0.100",
+ org.apache.ws.commons.schema.constants;version="2.0.100",
+ org.apache.ws.commons.schema.extensions;version="2.0.100",
+ org.apache.ws.commons.schema.resolver;version="2.0.100",
+ org.apache.ws.commons.schema.utils;version="2.0.100"
+TIBCO-BW-SharedModule: META-INF/module.bwm
+TIBCO-BW-JobSharedVariables: META-INF/module.jsv
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 TIBCO-BW-ConfigProfile: META-INF/default.substvar
 TIBCO-BW-ModuleSharedVariables: META-INF/module.msv
-TIBCO-BW-JobSharedVariables: META-INF/module.jsv
-TIBCO-BW-SharedModule: META-INF/module.bwm
+TIBCO-BW-Edition: bwe
+Require-Capability: com.tibco.bw.model; filter:="(name=bwext)"

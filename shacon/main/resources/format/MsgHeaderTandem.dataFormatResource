@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:HdrTandom="http://www.example.org/HdrTandom" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmi:id="_od1S0SKDEe2vf-GbihIMJw" name="edu03.module.hcis.format.MsgHeaderTandem" type="dataformat:DataFormat">
+  <imports xmi:id="_lpWHECKFEe2vf-GbihIMJw" importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.org/HdrTandom"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" xmi:id="_od1S0iKDEe2vf-GbihIMJw" formatType="Fixed format" colSeparator="" colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="HdrTandom:MsgHeaderTandem" lineLength="66" fieldOffsetsStr="tr_code(0,3)&#xA;msg_code(4,10)&#xA;msg_id(11,18)&#xA;timestamp(19,34)&#xA;isTest(35,35)&#xA;type(36,36)&#xA;filler(37,55)&#xA;msg_size(56,61)&#xA;err_code(62,65)">
+    <fieldOffsets xmi:id="_lqYo4CKFEe2vf-GbihIMJw" name="tr_code" end="3"/>
+    <fieldOffsets xmi:id="_lqYo4SKFEe2vf-GbihIMJw" name="msg_code" start="4" end="10"/>
+    <fieldOffsets xmi:id="_lqYo4iKFEe2vf-GbihIMJw" name="msg_id" start="11" end="18"/>
+    <fieldOffsets xmi:id="_lqYo4yKFEe2vf-GbihIMJw" name="timestamp" start="19" end="34"/>
+    <fieldOffsets xmi:id="_lqYo5CKFEe2vf-GbihIMJw" name="isTest" start="35" end="35"/>
+    <fieldOffsets xmi:id="_lqYo5SKFEe2vf-GbihIMJw" name="type" start="36" end="36"/>
+    <fieldOffsets xmi:id="_lqYo5iKFEe2vf-GbihIMJw" name="filler" start="37" end="55"/>
+    <fieldOffsets xmi:id="_lqYo5yKFEe2vf-GbihIMJw" name="msg_size" start="56" end="61"/>
+    <fieldOffsets xmi:id="_lqYo6CKFEe2vf-GbihIMJw" name="err_code" start="62" end="65"/>
+  </jndi:configuration>
+</jndi:namedResource>

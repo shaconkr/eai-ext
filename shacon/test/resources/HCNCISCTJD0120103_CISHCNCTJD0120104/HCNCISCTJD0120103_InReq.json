@@ -1,0 +1,24 @@
+{
+	"bizHeader":{
+		"trdCd":"0130",
+		"tgrmCd":"08001",
+		"tgrmNo":"801234567",
+		"tgrmSendDtm":"2022.11.02 14:29",
+		"testYn": "Y",
+		"tgrmType":"S",
+		"prepVal":"",
+		"tgrmLen":130,
+		"respCd":"9999"
+	},
+	"bizBody":{
+		"acptDt":"20221102",
+		"custNm":"김유신",
+		"custTelno":"010-0000-0000",
+		"hcnCustNo":"H101M10001",
+		"hcnCorpGbcd":"333",
+		"hmAdr":"서울시 강남구 대치동",
+		"etcAdr":"101-101",
+		"rstMsg":"테스트요청",
+		"prepVal1":""
+	}
+}

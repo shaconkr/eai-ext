@@ -3,10 +3,17 @@
   <component name="ProjectKey">
     <option name="state" value="project://e2804f05-5315-4fc6-a121-c522a6c26470" />
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" project-jdk-name="18 (2)" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="corretto-11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
   <component name="ProjectType">
     <option name="id" value="jpab" />
+  </component>
+  <component name="jsonEditor">
+    <option name="stateMap">
+      <map>
+        <entry key="shacon" value="{&#10;&#9;&quot;bizHeader&quot;:{&#10;&#9;&#9;&quot;trdCd&quot;:&quot;0130&quot;,&#10;&#9;&#9;&quot;tgrmCd&quot;:&quot;08001&quot;,&#10;&#9;&#9;&quot;tgrmNo&quot;:&quot;801234567&quot;,&#10;&#9;&#9;&quot;tgrmSendDtm&quot;:&quot;2022.11.02 14:29&quot;,&#10;&#9;&#9;&quot;testYn&quot;:true,&#10;&#9;&#9;&quot;tgrmType&quot;:&quot;S&quot;,&#10;&#9;&#9;&quot;prepVal&quot;:&quot;&quot;,&#10;&#9;&#9;&quot;tgrmLen&quot;:130,&#10;&#9;&#9;&quot;respCd&quot;:&quot;0000&quot;&#10;&#9;},&#10;&#9;&quot;bizBody&quot;:{&#10;&#9;&#9;&quot;acptDt&quot;:&quot;20221102&quot;,&#10;&#9;&#9;&quot;custNm&quot;:&quot;홍길동&quot;,&#10;&#9;&#9;&quot;custTelno&quot;:&quot;010-0000-0000&quot;,&#10;&#9;&#9;&quot;hcnCustNo&quot;:&quot;H101M10001&quot;,&#10;&#9;&#9;&quot;hcnCorpGbcd&quot;:&quot;333&quot;,&#10;&#9;&#9;&quot;hmAdr&quot;:&quot;서울시 강남구 대치동&quot;,&#10;&#9;&#9;&quot;etcAdr&quot;:&quot;101-101&quot;,&#10;&#9;&#9;&quot;rstMsg&quot;:&quot;테스트요청&quot;,&#10;&#9;&#9;&quot;prepVal1&quot;:&quot;&quot;&#10;&#9;}&#10;}" />
+      </map>
+    </option>
   </component>
 </project>

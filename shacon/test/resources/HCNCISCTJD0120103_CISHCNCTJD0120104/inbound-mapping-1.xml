@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <interface bound="inbound" id="CISHCNCTJD0120104" version="3" />
+    <src_io id="SCISCTJD0120104" />
+    <target_io id="THCNCTJD0120104" />
+    <mapping>
+        <source path="header/entity1/TRD_CD" />
+        <target path="header/entity1/TRD_CD" />
+        <function ref="move" />
+    </mapping>
+    <mapping>
+        <source path="header/entity1/TGRM_CD" />
+        <target path="header/entity1/TGRM_CD" />
+        <function ref="move" />
+    </mapping>
+    <mapping>
+        <source path="header/entity1/TGRM_NO" />
+        <target path="header/entity1/TGRM_NO" />
+        <function ref="move" />
+    </mapping>
+    <mapping>
+        <source path="header/entity1/TGRM_SEND_DTM" />
+        <target path="header/entity1/TGRM_SEND_DTM" />
+        <function ref="move" />
+    </mapping>
+    <mapping>
+        <source path="header/entity1/TEST_YN" />
+        <target path="header/entity1/TEST_YN" />
+        <function ref="move" />
+    </mapping>
+    <mapping>
+        <source path="header/entity1/TGRM_TYPE" />
+        <target path="header/entity1/TGRM_TYPE" />
+        <function ref="move" />
+    </mapping>
+    <mapping>
+        <source path="header/entity1/PREP_VAL" />
+        <target path="header/entity1/PREP_VAL" />
+        <function ref="move" />
+    </mapping>
+    <mapping>
+        <source path="header/entity1/TGRM_LEN" />
+        <target path="header/entity1/TGRM_LEN" />
+        <function ref="move" />
+    </mapping>
+    <mapping>
+        <source path="header/entity1/RESP_CD" />
+        <target path="header/entity1/RESP_CD" />
+        <function ref="move" />
+    </mapping>
+    <mapping>
+        <source path="entity/ACPT_DT" />
+        <target path="entity/ACPT_DT" />
+        <function ref="move" />
+    </mapping>
+    <mapping>
+        <source path="entity/CUST_NM" />
+        <target path="entity/CUST_NM" />
+        <function ref="move" />
+    </mapping>
+    <mapping>
+        <source path="entity/CUST_TELNO" />
+        <target path="entity/CUST_TELNO" />
+        <function ref="move" />
+    </mapping>
+    <mapping>
+        <source path="entity/HCN_CUST_NO" />
+        <target path="entity/HCN_CUST_NO" />
+        <function ref="move" />
+    </mapping>
+    <mapping>
+        <source path="entity/HCN_CORP_GBCD" />
+        <target path="entity/HCN_CORP_GBCD" />
+        <function ref="move" />
+    </mapping>
+    <mapping>
+        <source path="entity/HM_ADR" />
+        <target path="entity/HM_ADR" />
+        <function ref="move" />
+    </mapping>
+    <mapping>
+        <source path="entity/ETC_ADR" />
+        <target path="entity/ETC_ADR" />
+        <function ref="move" />
+    </mapping>
+    <mapping>
+        <source path="entity/RST_MSG" />
+        <target path="entity/RST_MSG" />
+        <function ref="move" />
+    </mapping>
+    <mapping>
+        <source path="entity/PREP_VAL1" />
+        <target path="entity/PREP_VAL1" />
+        <function ref="move" />
+    </mapping>
+</map>

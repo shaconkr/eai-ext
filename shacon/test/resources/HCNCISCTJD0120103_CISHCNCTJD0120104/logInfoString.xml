@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deployment id="D00000001078">
+    <deployer id="CIS018">송규택</deployer>
+    <deployment_date>2022-11-01 10:41:16.528916</deployment_date>
+    <target_system id="FEP_D_01">EAI 대외</target_system>
+</deployment>
+<?xml version="1.0" encoding="UTF-8"?>
+<deployment id="D00000001078">
+    <deployer id="CIS018">송규택</deployer>
+    <deployment_date>2022-11-01 10:41:16.528916</deployment_date>
+    <target_system id="FEP_D_01">EAI 대외</target_system>
+</deployment>

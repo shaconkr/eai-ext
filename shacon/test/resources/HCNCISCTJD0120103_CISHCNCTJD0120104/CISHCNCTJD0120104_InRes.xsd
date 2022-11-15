@@ -1,0 +1,35 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schema.hcis.com/xsd/CISHCNCTJD0120104" xmlns:edi="http://shacon.kr/xsd" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.hcis.com/xsd/CISHCNCTJD0120104">
+    <xs:complexType name="CISHCNCTJD0120104_InRes_Header">
+        <xs:sequence>
+            <xs:element edi:kor="거래코드" edi:length="4" edi:padder="SpaceRight" name="trdCd" type="xs:string"/>
+            <xs:element edi:kor="전문코드" edi:length="5" edi:padder="SpaceRight" name="tgrmCd" type="xs:string"/>
+            <xs:element edi:kor="전문번호" edi:length="8" edi:padder="SpaceRight" name="tgrmNo" type="xs:string"/>
+            <xs:element edi:kor="전문전송일시" edi:length="16" edi:padder="SpaceRight" name="tgrmSendDtm" type="xs:string"/>
+            <xs:element edi:kor="테스트여부" edi:length="1" edi:padder="SpaceRight" name="testYn" type="xs:string"/>
+            <xs:element edi:kor="전문유형" edi:length="1" edi:padder="SpaceRight" name="tgrmType" type="xs:string"/>
+            <xs:element edi:kor="예비값" edi:length="19" edi:padder="SpaceRight" name="prepVal" type="xs:string"/>
+            <xs:element edi:kor="전문길이" edi:length="6" edi:padder="ZeroLeft" name="tgrmLen" type="xs:int"/>
+            <xs:element edi:kor="응답코드" edi:length="4" edi:padder="SpaceRight" name="respCd" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="CISHCNCTJD0120104_InRes_Body">
+        <xs:sequence>
+            <xs:element edi:kor="접수일자" edi:length="8" edi:padder="SpaceRight" name="acptDt" type="xs:string"/>
+            <xs:element edi:kor="고객명" edi:length="70" edi:padder="SpaceRight" name="custNm" type="xs:string"/>
+            <xs:element edi:kor="고객전화번호" edi:length="12" edi:padder="SpaceRight" name="custTelno" type="xs:string"/>
+            <xs:element edi:kor="HCN고객번호" edi:length="9" edi:padder="SpaceRight" name="hcnCustNo" type="xs:string"/>
+            <xs:element edi:kor="HCN법인구분코드" edi:length="3" edi:padder="SpaceRight" name="hcnCorpGbcd" type="xs:string"/>
+            <xs:element edi:kor="자택주소" edi:length="200" edi:padder="SpaceRight" name="hmAdr" type="xs:string"/>
+            <xs:element edi:kor="기타주소" edi:length="200" edi:padder="SpaceRight" name="etcAdr" type="xs:string"/>
+            <xs:element edi:kor="결과메시지" edi:length="80" edi:padder="SpaceRight" name="rstMsg" type="xs:string"/>
+            <xs:element edi:kor="예비값1" edi:length="1" edi:padder="SpaceRight" name="prepVal1" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="CISHCNCTJD0120104_InRes">
+        <xs:sequence>
+            <xs:element name="bizHeader" type="CISHCNCTJD0120104_InRes_Header"/>
+            <xs:element name="bizBody" type="CISHCNCTJD0120104_InRes_Body"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="main" type="CISHCNCTJD0120104_InRes"/>
+</xs:schema>

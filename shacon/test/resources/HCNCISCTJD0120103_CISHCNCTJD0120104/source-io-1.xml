@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<io xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="SCISCTJD0120104" idn="DEFT_HCN_HAH22R_HCNC" version="1">
+    <common>
+        <io_name><![CDATA[CISCTJD01201]]></io_name>
+        <!--I/O 명-->
+        <description />
+        <!--I/O 설명-->
+        <system code="CIS" name="H-CIS" />
+        <!--시스템코드, 시스템명-->
+        <work code="DEFT" name="어플리케이션 Default 코드" />
+        <!--업무구분코드-->
+        <datetime>2022-11-01 10:09:15</datetime>
+        <!--작성 시간-->
+        <writer>송규택</writer>
+        <!--작성자-->
+        <charset>UTF-8</charset>
+        <!--캐릭터셋-->
+        <package_name>hdc.cis.ct.ctj.ctjd.onl.sc.io</package_name>
+        <!--패키지경로-->
+        <class_name>ReceiveHcnAlliCrdMemInfOut</class_name>
+        <!--클래스명-->
+    </common>
+    <process_type type="O" name="온라인">
+        <online>
+            <service_in />
+            <!--Input 거래 ID-->
+            <service_out />
+            <!--Output 거래 ID-->
+            <syn-asyn />
+            <!--동기 / 비동기 여부-->
+            <trncd_in />
+            <!--Input 거래 코드-->
+            <trncd_out />
+            <!--Output 거래 코드-->
+            <external>
+                <system code="HCN" name="HCN" />
+                <!--대외 기관 구분 코드-->
+                <work code="DEFT" name="대외 업무 기본값" />
+                <!--대외 업무 코드-->
+                <msg code="AH22R" />
+                <!--대외 전문 종별 코드-->
+                <tx code="HCNC" />
+                <!--대외 거래 구분 코드-->
+                <etc />
+                <!--대외 기타 구분 코드-->
+            </external>
+        </online>
+    </process_type>
+    <!--IO처리유형 : O - 온라인, D - DB, F - FILE-->
+    <inbound>
+        <message>
+            <io id="C00000000630" idn="DEFT_HCN_HAH22R_HCNC" version="1" name="jmims.message.deft.hcn.HAH22R_HCNC" type="Message">
+                <common>
+                    <description />
+                    <system code="CIS" name="H-CIS" />
+                    <!--시스템코드, 시스템명-->
+                    <work code="DEFT" name="어플리케이션 Default 코드" />
+                    <!--업무 구분 코드-->
+                    <datetime>2022-11-01 10:09:15</datetime>
+                    <!--작성 시간-->
+                    <writer>송규택</writer>
+                    <!--작성자-->
+                    <package_name />
+                    <!--패키지경로-->
+                    <class_name />
+                    <!--클래스명-->
+                </common>
+                <process_type>
+                    <online>
+                        <external>
+                            <system code="HCN" name="HCN" />
+                            <!--대외 기관 코드, 대외 기관 명-->
+                            <work code="DEFT" name="대외 업무 기본값" />
+                            <!--대외 업무 코드-->
+                            <msg code="ah22r" />
+                            <!--대외 전문 종별 코드-->
+                            <tx code="hcnc" />
+                            <!--대외 거래 구분 코드-->
+                            <etc />
+                            <!--대외 기타 구분코드-->
+                            <rspn />
+                            <!--대외 응답 코드-->
+                            <utrace />
+                            <!--고유 TraceKey-->
+                            <extwork />
+                            <!--Work 코드-->
+                            <error />
+                            <!--Error 코드-->
+                            <encoding style="UTF-8" />
+                            <!--Encoding-->
+                        </external>
+                    </online>
+                </process_type>
+            </io>
+        </message>
+        <header>
+            <io id="H00000000580" idn="DEFT_HCN_HCommHeader" version="3" name="jmims.header.deft.hcn.HCommHeader" type="Header" squencename="header">
+                <common>
+                    <description><![CDATA[HCN 전문헤더]]></description>
+                    <system code="CIS" name="H-CIS" />
+                    <!--시스템코드, 시스템명-->
+                    <work code="DEFT" name="어플리케이션 Default 코드" />
+                    <!--업무 구분 코드-->
+                    <datetime>2022-10-28 11:35:21</datetime>
+                    <!--작성 시간-->
+                    <writer>송규택</writer>
+                    <!--작성자-->
+                    <package_name>hdc.cis.ct.ctj.ctjd.onl.sc.io</package_name>
+                    <!--패키지경로-->
+                    <class_name>ReceiveHcnAlliCrdMemInfHdr</class_name>
+                    <!--클래스명-->
+                </common>
+                <process_type>
+                    <online>
+                        <external>
+                            <system code="HCN" name="HCN" />
+                            <!--대외 기관 코드, 대외 기관 명-->
+                            <work code="DEFT" name="대외 업무 기본값" />
+                            <!--대외 업무 코드-->
+                            <msg code="tgrmCd" />
+                            <!--대외 전문 종별 코드-->
+                            <tx code="trdCd" />
+                            <!--대외 거래 구분 코드-->
+                            <etc />
+                            <!--대외 기타 구분코드-->
+                            <rspn code="respCd" />
+                            <!--대외 응답 코드-->
+                            <utrace />
+                            <!--고유 TraceKey-->
+                            <extwork />
+                            <!--Work 코드-->
+                            <error />
+                            <!--Error 코드-->
+                            <encoding />
+                            <!--Encoding-->
+                        </external>
+                    </online>
+                </process_type>
+            </io>
+            <io id="S00000000579" idn="DEFT_HCN_HCommHeader" name="jmims.entity.deft.hcn.HCommHeader" version="3" type="Entity" squencename="entity1">
+                <common>
+                    <description><![CDATA[HCN 전문헤더]]></description>
+                    <system code="CIS" name="H-CIS" />
+                    <!--시스템코드, 시스템명-->
+                    <work code="DEFT" name="어플리케이션 Default 코드" />
+                    <!--업무 구분 코드-->
+                    <datetime>2022-10-28 11:35:21</datetime>
+                    <!--작성 시간-->
+                    <writer>송규택</writer>
+                    <!--작성자-->
+                    <package_name>hdc.cis.ct.ctj.ctjd.onl.sc.io</package_name>
+                    <!--패키지경로-->
+                    <class_name>ReceiveHcnAlliCrdMemInfHdr</class_name>
+                    <!--클래스명-->
+                </common>
+                <process_type>
+                    <online>
+                        <external>
+                            <system code="HCN" name="HCN" />
+                            <!--대외 기관 코드, 대외 기관 명-->
+                            <work code="DEFT" name="대외 업무 기본값" />
+                            <!--대외 업무 코드-->
+                            <msg code="tgrmCd" />
+                            <!--대외 전문 종별 코드-->
+                            <tx code="trdCd" />
+                            <!--대외 거래 구분 코드-->
+                            <etc />
+                            <!--대외 기타 구분코드-->
+                            <rspn code="respCd" />
+                            <!--대외 응답 코드-->
+                            <utrace />
+                            <!--고유 TraceKey-->
+                            <extwork />
+                            <!--Work 코드-->
+                            <error />
+                            <!--Error 코드-->
+                            <encoding />
+                            <!--Encoding-->
+                        </external>
+                    </online>
+                </process_type>
+                <data><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:p="http://schemas.jmims.com/mms/io/" xmlns:tns="http://schemas.jmims.com/mms/io/" targetNamespace="http://schemas.jmims.com/mms/io/" version="S00000000579.3">
+    <element name="root" type="tns:DEFT_HCN_HCommHeader_ENT_inbound" />
+    <complexType name="DEFT_HCN_HCommHeader_ENT_inbound">
+        <sequence>
+            <element name="trdCd">
+                <annotation>
+                    <documentation>거래코드</documentation>
+                    <appinfo>
+                        <p:description />
+                        <p:mandatory value="N" />
+                        <p:level value="1" />
+                        <p:encryption value="N" />
+                        <p:mask_type />
+                        <p:msg_key value="Y" />
+                    </appinfo>
+                </annotation>
+                <simpleType>
+                    <restriction base="string">
+                        <maxLength value="4" />
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="tgrmCd">
+                <annotation>
+                    <documentation>전문코드</documentation>
+                    <appinfo>
+                        <p:description value="전문 코드" />
+                        <p:mandatory value="N" />
+                        <p:level value="1" />
+                        <p:encryption value="N" />
+                        <p:mask_type />
+                        <p:msg_key value="Y" />
+                    </appinfo>
+                </annotation>
+                <simpleType>
+                    <restriction base="string">
+                        <maxLength value="5" />
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="tgrmNo">
+                <annotation>
+                    <documentation>전문번호</documentation>
+                    <appinfo>
+                        <p:description />
+                        <p:mandatory value="N" />
+                        <p:level value="1" />
+                        <p:encryption value="N" />
+                        <p:mask_type />
+                        <p:msg_key value="Y" />
+                    </appinfo>
+                </annotation>
+                <simpleType>
+                    <restriction base="string">
+                        <maxLength value="8" />
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="tgrmSendDtm">
+                <annotation>
+                    <documentation>전문전송일시</documentation>
+                    <appinfo>
+                        <p:description value="전문+전송+일시" />
+                        <p:mandatory value="N" />
+                        <p:level value="1" />
+                        <p:encryption value="N" />
+                        <p:mask_type />
+                        <p:msg_key value="N" />
+                    </appinfo>
+                </annotation>
+                <simpleType>
+                    <restriction base="string">
+                        <maxLength value="16" />
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="testYn">
+                <annotation>
+                    <documentation>테스트여부</documentation>
+                    <appinfo>
+                        <p:description />
+                        <p:mandatory value="N" />
+                        <p:level value="1" />
+                        <p:encryption value="N" />
+                        <p:mask_type />
+                        <p:msg_key value="N" />
+                    </appinfo>
+                </annotation>
+                <simpleType>
+                    <restriction base="string">
+                        <maxLength value="1" />
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="tgrmType">
+                <annotation>
+                    <documentation>전문유형</documentation>
+                    <appinfo>
+                        <p:description value="전문+전송+일시" />
+                        <p:mandatory value="N" />
+                        <p:level value="1" />
+                        <p:encryption value="N" />
+                        <p:mask_type />
+                        <p:msg_key value="N" />
+                    </appinfo>
+                </annotation>
+                <simpleType>
+                    <restriction base="string">
+                        <maxLength value="1" />
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="prepVal">
+                <annotation>
+                    <documentation>예비값</documentation>
+                    <appinfo>
+                        <p:description />
+                        <p:mandatory value="N" />
+                        <p:level value="1" />
+                        <p:encryption value="N" />
+                        <p:mask_type />
+                        <p:msg_key value="N" />
+                    </appinfo>
+                </annotation>
+                <simpleType>
+                    <restriction base="string">
+                        <maxLength value="19" />
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="tgrmLen">
+                <annotation>
+                    <documentation>전문길이</documentation>
+                    <appinfo>
+                        <p:description />
+                        <p:mandatory value="N" />
+                        <p:level value="1" />
+                        <p:encryption value="N" />
+                        <p:mask_type />
+                        <p:msg_key value="N" />
+                    </appinfo>
+                </annotation>
+                <simpleType>
+                    <restriction base="string">
+                        <maxLength value="1" />
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="respCd">
+                <annotation>
+                    <documentation>응답코드</documentation>
+                    <appinfo>
+                        <p:description />
+                        <p:mandatory value="N" />
+                        <p:level value="1" />
+                        <p:encryption value="N" />
+                        <p:mask_type />
+                        <p:msg_key value="N" />
+                    </appinfo>
+                </annotation>
+                <simpleType>
+                    <restriction base="string">
+                        <maxLength value="4" />
+                    </restriction>
+                </simpleType>
+            </element>
+        </sequence>
+    </complexType>
+</schema>]]></data>
+            </io>
+        </header>
+        <unit>
+            <io id="S00000000615" idn="DEFT_HCN_HAH22R_HCNC" name="jmims.entity.deft.hcn.HAH22R_HCNC" version="3" type="Entity" squencename="entity">
+                <common>
+                    <description />
+                    <system code="CIS" name="H-CIS" />
+                    <!--시스템코드, 시스템명-->
+                    <work code="DEFT" name="어플리케이션 Default 코드" />
+                    <!--업무 구분 코드-->
+                    <datetime>2022-10-31 08:58:02</datetime>
+                    <!--작성 시간-->
+                    <writer>송규택</writer>
+                    <!--작성자-->
+                    <package_name>hdc.cis.ct.ctj.ctjd.onl.sc.io</package_name>
+                    <!--패키지경로-->
+                    <class_name>ReceiveHcnAlliCrdMemInf02</class_name>
+                    <!--클래스명-->
+                </common>
+                <process_type>
+                    <online>
+                        <external>
+                            <system code="HCN" name="HCN" />
+                            <!--대외 기관 코드, 대외 기관 명-->
+                            <work code="DEFT" name="대외 업무 기본값" />
+                            <!--대외 업무 코드-->
+                            <msg code="ah22r" />
+                            <!--대외 전문 종별 코드-->
+                            <tx code="hcnc" />
+                            <!--대외 거래 구분 코드-->
+                            <etc />
+                            <!--대외 기타 구분코드-->
+                            <rspn />
+                            <!--대외 응답 코드-->
+                            <utrace />
+                            <!--고유 TraceKey-->
+                            <extwork />
+                            <!--Work 코드-->
+                            <error />
+                            <!--Error 코드-->
+                            <encoding />
+                            <!--Encoding-->
+                        </external>
+                    </online>
+                </process_type>
+                <data><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:p="http://schemas.jmims.com/mms/io/" xmlns:tns="http://schemas.jmims.com/mms/io/" targetNamespace="http://schemas.jmims.com/mms/io/" version="S00000000615.3">
+    <element name="root" type="tns:DEFT_HCN_HAH22R_HCNC_ENT_inbound" />
+    <complexType name="DEFT_HCN_HAH22R_HCNC_ENT_inbound">
+        <sequence>
+            <element name="acptDt">
+                <annotation>
+                    <documentation>접수일자</documentation>
+                    <appinfo>
+                        <p:description />
+                        <p:mandatory value="N" />
+                        <p:level value="1" />
+                        <p:encryption value="N" />
+                        <p:mask_type />
+                        <p:msg_key value="N" />
+                    </appinfo>
+                </annotation>
+                <simpleType>
+                    <restriction base="string">
+                        <maxLength value="8" />
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="custNm">
+                <annotation>
+                    <documentation>고객명</documentation>
+                    <appinfo>
+                        <p:description />
+                        <p:mandatory value="N" />
+                        <p:level value="1" />
+                        <p:encryption value="N" />
+                        <p:mask_type />
+                        <p:msg_key value="N" />
+                    </appinfo>
+                </annotation>
+                <simpleType>
+                    <restriction base="string">
+                        <maxLength value="70" />
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="custTelno">
+                <annotation>
+                    <documentation>고객전화번호</documentation>
+                    <appinfo>
+                        <p:description value="신청고객연락처전화번호" />
+                        <p:mandatory value="N" />
+                        <p:level value="1" />
+                        <p:encryption value="N" />
+                        <p:mask_type />
+                        <p:msg_key value="N" />
+                    </appinfo>
+                </annotation>
+                <simpleType>
+                    <restriction base="string">
+                        <maxLength value="12" />
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="hcnCustNo">
+                <annotation>
+                    <documentation>HCN고객번호</documentation>
+                    <appinfo>
+                        <p:description value="HCN고객번호" />
+                        <p:mandatory value="N" />
+                        <p:level value="1" />
+                        <p:encryption value="N" />
+                        <p:mask_type />
+                        <p:msg_key value="N" />
+                    </appinfo>
+                </annotation>
+                <simpleType>
+                    <restriction base="string">
+                        <maxLength value="9" />
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="hcnCorpGbcd">
+                <annotation>
+                    <documentation>HCN법인구분코드</documentation>
+                    <appinfo>
+                        <p:description value="HCN법인구분코드" />
+                        <p:mandatory value="N" />
+                        <p:level value="1" />
+                        <p:encryption value="N" />
+                        <p:mask_type />
+                        <p:msg_key value="N" />
+                    </appinfo>
+                </annotation>
+                <simpleType>
+                    <restriction base="string">
+                        <maxLength value="3" />
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="hmAdr">
+                <annotation>
+                    <documentation>자택주소</documentation>
+                    <appinfo>
+                        <p:description />
+                        <p:mandatory value="N" />
+                        <p:level value="1" />
+                        <p:encryption value="N" />
+                        <p:mask_type />
+                        <p:msg_key value="N" />
+                    </appinfo>
+                </annotation>
+                <simpleType>
+                    <restriction base="string">
+                        <maxLength value="200" />
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="etcAdr">
+                <annotation>
+                    <documentation>기타주소</documentation>
+                    <appinfo>
+                        <p:description />
+                        <p:mandatory value="N" />
+                        <p:level value="1" />
+                        <p:encryption value="N" />
+                        <p:mask_type />
+                        <p:msg_key value="N" />
+                    </appinfo>
+                </annotation>
+                <simpleType>
+                    <restriction base="string">
+                        <maxLength value="200" />
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="rstMsg">
+                <annotation>
+                    <documentation>결과메시지</documentation>
+                    <appinfo>
+                        <p:description />
+                        <p:mandatory value="N" />
+                        <p:level value="1" />
+                        <p:encryption value="N" />
+                        <p:mask_type />
+                        <p:msg_key value="N" />
+                    </appinfo>
+                </annotation>
+                <simpleType>
+                    <restriction base="string">
+                        <maxLength value="80" />
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="prepVal1">
+                <annotation>
+                    <documentation>예비값1</documentation>
+                    <appinfo>
+                        <p:description value="예비값" />
+                        <p:mandatory value="N" />
+                        <p:level value="1" />
+                        <p:encryption value="N" />
+                        <p:mask_type />
+                        <p:msg_key value="N" />
+                    </appinfo>
+                </annotation>
+                <simpleType>
+                    <restriction base="string">
+                        <maxLength value="1" />
+                    </restriction>
+                </simpleType>
+            </element>
+        </sequence>
+    </complexType>
+</schema>]]></data>
+            </io>
+        </unit>
+    </inbound>
+    <outbound>
+        <message />
+        <header />
+        <unit />
+    </outbound>
+</io>

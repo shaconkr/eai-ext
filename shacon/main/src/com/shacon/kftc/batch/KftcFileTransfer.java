@@ -71,7 +71,7 @@ public class KftcFileTransfer {
      * @param sendDt    거래일
      * @return 송신자암호암호문
      */
-    private String senderEncrypt(String senderNm, String planPw, String companyCd, String sendDt) {
+    public String senderEncrypt(String senderNm, String planPw, String companyCd, String sendDt) {
         int M = 36;                          // Mudulus
         String senderPw = planPw + planPw + planPw.substring(0, 6);
         String inStr = companyCd.charAt(0) + companyCd.charAt(7) + sendDt + senderNm;
@@ -88,7 +88,7 @@ public class KftcFileTransfer {
     }
 
 
-    private String senderDecrypt(String senderNm, String encPass, String companyCd, String sendDt) {
+    public String senderDecrypt(String senderNm, String encPass, String companyCd, String sendDt) {
         int M = 36;                          // Mudulus
         String inStr = companyCd.charAt(0) + companyCd.charAt(7) + sendDt + senderNm;
 

@@ -1,8 +1,8 @@
 package com.shacon.toss.batch;
 
-import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
 import com.google.gson.Gson;
+import com.shacon.kftc.batch.KftcFileTransfer;
 import org.beanio.BeanReader;
 import org.beanio.Marshaller;
 import org.beanio.StreamFactory;
@@ -15,6 +15,21 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class TossBatchTest {
+
+
+    @Test
+    public void kftcTest01(){
+
+        KftcFileTransfer kftc = new KftcFileTransfer();
+
+        String enc = kftc.senderDecrypt("Kimchung","1234561234561234","00000002","950815");
+        String dec = kftc.senderDecrypt("Kimchung","SV30W5TYEDI99NHB","00000002","950815");
+
+        System.out.println(enc);
+        System.out.println(dec);
+    }
+
+
 
 
     @Test

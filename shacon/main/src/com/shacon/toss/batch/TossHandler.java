@@ -18,46 +18,61 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class TossHandler extends ChannelInboundHandlerAdapter {
-    private static final Logger LOGGER = LoggerFactory.getLogger(TossHandler.class);
+    private static final Logger log = LoggerFactory.getLogger(TossHandler.class);
     protected TossFileTransfer trans;
     String jobType;     // SD(자료송신), RD(자료수신), RS(송신List수신), RR(수신List수신)
-    String dirpath =    "C:/hcisnas/eai_data/external/TOSS/rcv";
+    String dirpath;
     String fileName;
     String fileSize;
     String startDay;
     String endDay;
     Boolean endFlag;
-    Boolean loginFlag = false;
+
+    protected enum State {
+        LOGIN_STANDBY,
+        LOGIN_SUCCESS,
+        LOGIN_FAIL,
+        FILE_SEND_ING,
+        FILE_SEND_END,
+        FILE_RECV_ING,
+        FILE_RECV_END,
+        LOGOUT
+    }
+
+    protected State currState = State.LOGIN_STANDBY;
 
     Map respTrgmCd = ImmutableMap.of("003", "030", "007", "070", "100", "110");
 
-    protected void login(ChannelHandlerContext ctx) {
-        String loginReq = trans.loginReq(jobType, startDay, endDay, fileName);
-        LOGGER.debug("@@@ 로그인요청 전문 송신 {} ", loginReq);
+    protected void sendT003(ChannelHandlerContext ctx) {
+        String loginReq = trans.getT003(jobType, startDay, endDay, fileName);
+        log.debug("#S# TOSS_003 로그인요청 전문 송신 {} ", loginReq);
         ByteBuf buf = Unpooled.buffer(loginReq.length());
         buf.writeBytes(loginReq.getBytes());
         ctx.writeAndFlush(buf);
     }
 
-    protected void sendFileNoti(ChannelHandlerContext ctx, String lastYn, String filepath, String jobType) {
-        LOGGER.info("@@@ 송신파일 통보전문 전송");
-        File file = new File(filepath);
+    protected void sendT100(ChannelHandlerContext ctx, String lastYn, String sendFileName, String jobType) {
+        log.info("#S# TOSS_100 송신파일 통보전문 전송");
+        File file = new File(getDirpath() + "/snd/" + sendFileName);
         String filename = (jobType.equals("SD")) ? trans.spaces(20) : file.getName();
-        String sendFileNoti = trans.sendFileNoti(filename, String.valueOf(file.length()), lastYn);
+        String sendFileNoti = trans.getT100(filename, String.valueOf(file.length()), lastYn);
         ByteBuf buf = Unpooled.buffer(sendFileNoti.length());
-        ctx.write(buf.writeBytes(sendFileNoti.getBytes(StandardCharsets.UTF_8)));
+        buf.writeBytes(sendFileNoti.getBytes());
+        ctx.writeAndFlush(buf);
     }
 
 
-    protected void logout(ChannelHandlerContext ctx) {
-        String logoutReq = trans.logoutReq(jobType, startDay, endDay, fileName);
-        LOGGER.debug("@@@ 로그아웃요청 전문 송신 {} ", logoutReq);
+    protected void sendT007(ChannelHandlerContext ctx) {
+        String logoutReq = trans.getT007(jobType, startDay, endDay, fileName);
+        log.debug("#S# TOSS_007 로그아웃요청 전문 송신 {} ", logoutReq);
         ByteBuf buf = Unpooled.buffer(logoutReq.length());
         buf.writeBytes(logoutReq.getBytes());
         ctx.writeAndFlush(buf);
@@ -67,7 +82,7 @@ public class TossHandler extends ChannelInboundHandlerAdapter {
         Map<String, Object> res = trans.unmarshall(reqType, edi);
         res.put("trgmCd", respTrgmCd.get(res.get("trgmCd")));
         res.put("respCd", "000");
-        LOGGER.debug("@@@ {}} 응답전문 송신", resType);
+        log.debug("#S# {}} 응답전문 송신", resType);
         String resEDI = trans.marshall(resType, res);
         ByteBuf buf = Unpooled.buffer(resEDI.length());
         buf.writeBytes(resEDI.getBytes(StandardCharsets.UTF_8));
@@ -80,29 +95,41 @@ public class TossHandler extends ChannelInboundHandlerAdapter {
             FileChannel theFileChannel = new RandomAccessFile(theFile, "r").getChannel();
             long fileLength = theFileChannel.size();
             long offSet = 0;
-            ctx.write(new ChunkedNioFile(theFileChannel, offSet, fileLength, 2048));
+            ctx.writeAndFlush(new ChunkedNioFile(theFileChannel, offSet, fileLength, 2048));
             ctx.flush();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    protected void recvFile(ChannelHandlerContext ctx, ByteBuf msg) {
+    protected RandomAccessFile recvStart(String fileName) {
+        RandomAccessFile raf = null;
         try {
-            File file = new File(getDirpath());
-            RandomAccessFile raf = new RandomAccessFile(file, "rw");
-            while (msg.isReadable()) {
-                ByteBuf buf = Unpooled.buffer(2048);
-                msg.readBytes(buf);
-                raf.write(buf.readableBytes());
-            }
+            String recvFile = getDirpath() + "/rcv/" + fileName + ".tmp";
+            raf = new RandomAccessFile(recvFile, "rw");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return raf;
+    }
+
+
+    protected void sendT130(ChannelHandlerContext ctx, String filename, String filesize) {
+        try {
+            String recvFile = getDirpath() + "/rcv/" + fileName;
+            Path source = Paths.get(recvFile + ".tmp");
+            Files.move(source, source.resolveSibling(recvFile), StandardCopyOption.ATOMIC_MOVE);
+
+            
+            // Send Confirm
+            log.debug("#S# TOSS_130 수신확인 전문송신");
             Map<String, Object> rcvCfm = Maps.newHashMap();
             rcvCfm.put("trgmCd", "130");
             rcvCfm.put("respCd", "000");
-            rcvCfm.put("fileName", file.getName());
-            rcvCfm.put("fileSize", file.length());
+            rcvCfm.put("fileName", filename);
+            rcvCfm.put("fileSize", filesize);
             rcvCfm.put("procYn", "Y");
-            String edi = trans.marshall("rcvConfirm", rcvCfm);
+            String edi = trans.marshall("TOSS_130", rcvCfm);
             ByteBuf buf = Unpooled.buffer(edi.length());
             buf.writeBytes(edi.getBytes(StandardCharsets.UTF_8));
             ctx.writeAndFlush(buf);
@@ -111,14 +138,36 @@ public class TossHandler extends ChannelInboundHandlerAdapter {
         }
     }
 
-    protected Set<String> listFilesDir(String dir) throws IOException {
+    /**
+     * Directory file list
+     *
+     * @param dir
+     * @return
+     * @throws IOException
+     */
+    protected Set<String> getSendFildList(String dir)  {
         try (Stream<Path> stream = Files.list(Paths.get(dir))) {
             return stream
                     .filter(file -> !Files.isDirectory(file))
+                    .filter(path -> !path.getFileName().endsWith(".tmp"))       // 수신중파일
+                    .filter(path -> !path.getFileName().endsWith(".done"))      // 송신완료파일
                     .map(Path::getFileName)
                     .map(Path::toString)
                     .collect(Collectors.toSet());
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
         }
+    }
+
+    protected String getSendFile(String dir) {
+        String ret = null;
+        Iterator itr = null;
+        itr = getSendFildList(dir).iterator();
+        if (itr.hasNext()) {
+            ret = String.valueOf(itr.next());
+        }
+        return ret;
     }
 
 

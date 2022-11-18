@@ -3,10 +3,13 @@ package com.shacon.toss.batch;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
+import io.netty.channel.oio.OioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
+import io.netty.channel.socket.oio.OioServerSocketChannel;
 import io.netty.handler.logging.LogLevel;
 import io.netty.handler.logging.LoggingHandler;
+import io.netty.handler.stream.ChunkedWriteHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -14,7 +17,7 @@ import org.slf4j.LoggerFactory;
 public class TossServer {
     static final int PORT = Integer.parseInt(System.getProperty("port", "8007"));
     private static final Logger LOGGER = LoggerFactory.getLogger(TossServer.class);
-    static final String dirpath = "C:/hcisnas/eai_data/external/TOSS/snd/";
+    static final String dirpath = "C:/app/sam/pm/toss";
 
     public static void main(String[] args) throws Exception {
 
@@ -24,21 +27,21 @@ public class TossServer {
         server.start(dirpath);
     }
 
-    public void start(String filePath) throws Exception {
-        EventLoopGroup bossGroup = new NioEventLoopGroup(1);
-        EventLoopGroup workerGroup = new NioEventLoopGroup();
-        final TossServerHandler serverHandler = new TossServerHandler(filePath);
+    public void start(String dirpath) throws Exception {
+        EventLoopGroup bossGroup = new OioEventLoopGroup(1);
+        EventLoopGroup workerGroup = new OioEventLoopGroup();
+        final TossServerHandler serverHandler = new TossServerHandler(dirpath);
         try {
             ServerBootstrap b = new ServerBootstrap();
             b.group(bossGroup, workerGroup)
-                    .channel(NioServerSocketChannel.class)
+                    .channel(OioServerSocketChannel.class)
                     .option(ChannelOption.SO_BACKLOG, 100)
-                    .handler(new LoggingHandler(LogLevel.INFO))
                     .childHandler(new ChannelInitializer<SocketChannel>() {
                         @Override
                         public void initChannel(SocketChannel ch) throws Exception {
                             ChannelPipeline p = ch.pipeline();
-                            p.addLast(new LoggingHandler(LogLevel.INFO));
+//                            p.addLast(new LoggingHandler(LogLevel.INFO));
+                            p.addLast(new ChunkedWriteHandler());
                             p.addLast(serverHandler);
                         }
                     });

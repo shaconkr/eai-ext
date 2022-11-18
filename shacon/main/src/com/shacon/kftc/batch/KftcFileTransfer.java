@@ -29,6 +29,29 @@ public class KftcFileTransfer {
     private static final String KFTC_RV = "2";
     private static final String KFTC_OK = "0";
 
+    enum ERRCD {
+        E000("정상"),
+        E090("시스템 장애"),
+        E310("송신자명 오류"),
+        E320("송신자암호 오류"),
+        E630("기전송 완료"),
+        E631("미등록 업무"),
+        E632("비정상 파일명"),
+        E633("비정상 전문 BYTE 수"),
+        E634("파일송신 가능시간/일자 완료"),
+        E635("E13파일 검증완료 전 EB13파일 수신"),
+        E800("FORMAT 오류");
+
+        private final String stringValue;
+
+        ERRCD(final String s) {
+            stringValue = s;
+        }
+
+        public String toString() {
+            return stringValue;
+        }
+    }
 
     public String kftc600(Map<String, Object> common, String blnSdRv, String jobMngInfo) {
         String trdGbCd = (blnSdRv.equals(KFTC_SD)) ? "R" : "S";
@@ -41,6 +64,79 @@ public class KftcFileTransfer {
         return marshall("KFTC_0600", msg);
     }
 
+    public String kftc610(Map<String, Object> common, String blnSdRv, String jobMngInfo) {
+        String trdGbCd = (blnSdRv.equals(KFTC_SD)) ? "R" : "S";
+        Map<String, Object> msg = putCommon(0, "0610", trdGbCd, "E", spaces(8), "000");
+        msg.put("trgmSendDtm", LocalDateTime.now().format(DateTimeFormatter.ofPattern("MMddHH24mmss")));
+        msg.put("jobMngInfo", jobMngInfo);
+        String sendDt = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyMMdd"));
+        msg.put("senderNm", KFTC_SENDER_NM);
+        msg.put("senderPw", senderEncrypt(KFTC_SENDER_NM, KFTC_SENDER_PW, KFTC_COMPANY_CD, sendDt));
+        return marshall("KFTC_0610", msg);
+    }
+
+    public String kftc630(Map<String, Object> common, String blnSdRv, String fileName, String fileSize) {
+        String trdGbCd = (blnSdRv.equals(KFTC_SD)) ? "R" : "S";
+        Map<String, Object> msg = putCommon(0, "0630", trdGbCd, "E", spaces(8), "000");
+        msg.put("trgmSendDtm", LocalDateTime.now().format(DateTimeFormatter.ofPattern("MMddHH24mmss")));
+        msg.put("fileName", fileName);
+        msg.put("fileSize", fileSize);
+        msg.put("fileSize", KFTC_EDI_BYTE);
+        return marshall("KFTC_0630", msg);
+    }
+
+    public String kftc640(Map<String, Object> common, String blnSdRv, String fileName, String fileSize) {
+        String trdGbCd = (blnSdRv.equals(KFTC_SD)) ? "R" : "S";
+        Map<String, Object> msg = putCommon(0, "0640", trdGbCd, "E", spaces(8), "000");
+        msg.put("trgmSendDtm", LocalDateTime.now().format(DateTimeFormatter.ofPattern("MMddHH24mmss")));
+        msg.put("fileName", fileName);
+        msg.put("fileSize", fileSize);
+        msg.put("fileSize", KFTC_EDI_BYTE);
+        return marshall("KFTC_0640", msg);
+    }
+
+    public String kftc620(Map<String, Object> common, String blnSdRv, String fileName, String blockNo, String lastSeqNo) {
+        String trdGbCd = (blnSdRv.equals(KFTC_SD)) ? "R" : "S";
+        Map<String, Object> msg = putCommon(0, "0620", trdGbCd, "E", spaces(8), "000");
+        msg.put("trgmSendDtm", LocalDateTime.now().format(DateTimeFormatter.ofPattern("MMddHH24mmss")));
+        msg.put("fileName", fileName);
+        msg.put("blockNo", blockNo);
+        msg.put("lastSeqNo", lastSeqNo);
+        return marshall("KFTC_0620", msg);
+    }
+
+    public String kftc300(Map<String, Object> common, String blnSdRv, String blockNo, String lastSeqNo, String lostCnt, String lostChk) {
+        String trdGbCd = (blnSdRv.equals(KFTC_SD)) ? "R" : "S";
+        Map<String, Object> msg = putCommon(0, "0300", trdGbCd, "E", spaces(8), "000");
+        msg.put("trgmSendDtm", LocalDateTime.now().format(DateTimeFormatter.ofPattern("MMddHH24mmss")));
+        msg.put("blockNo", blockNo);
+        msg.put("lastSeqNo", lastSeqNo);
+        msg.put("lostCnt", lostCnt);
+        msg.put("lostChk", lostChk);
+        return marshall("KFTC_0300", msg);
+    }
+
+    public String kftc310(Map<String, Object> common, String blnSdRv, String blockNo, String seqNo, String realDataByte, String fileSpec) {
+        String trdGbCd = (blnSdRv.equals(KFTC_SD)) ? "R" : "S";
+        Map<String, Object> msg = putCommon(0, "0310", trdGbCd, "E", spaces(8), "000");
+        msg.put("trgmSendDtm", LocalDateTime.now().format(DateTimeFormatter.ofPattern("MMddHH24mmss")));
+        msg.put("blockNo", blockNo);
+        msg.put("seqNo", seqNo);
+        msg.put("realDataByte", realDataByte);
+        msg.put("fileSpec", fileSpec);
+        return marshall("KFTC_0310", msg);
+    }
+
+    public String kftc320(Map<String, Object> common, String blnSdRv, String fileName, String blockNo, String seqNo, String realDataByte, String fileSpec) {
+        String trdGbCd = (blnSdRv.equals(KFTC_SD)) ? "R" : "S";
+        Map<String, Object> msg = putCommon(0, "0320", trdGbCd, "E", fileName, "000");
+        msg.put("trgmSendDtm", LocalDateTime.now().format(DateTimeFormatter.ofPattern("MMddHH24mmss")));
+        msg.put("blockNo", blockNo);
+        msg.put("seqNo", seqNo);
+        msg.put("realDataByte", realDataByte);
+        msg.put("fileSpec", fileSpec);
+        return marshall("KFTC_0320", msg);
+    }
 
     /**
      * @param sendByte   송수신Byte
@@ -73,58 +169,55 @@ public class KftcFileTransfer {
      */
     public String senderEncrypt(String senderNm, String planPw, String companyCd, String sendDt) {
         int M = 36;                          // Mudulus
-        String senderPw = planPw + planPw + planPw.substring(0, 6);
-        String inStr = companyCd.charAt(0) + companyCd.charAt(7) + sendDt + senderNm;
+        String senderPw = planPw + planPw + planPw.substring(0, 4);
+        String inStr = companyCd.substring(0, 1) + companyCd.substring(7, 8) + sendDt + senderNm;
 
-        String P = putConv(senderPw);         // 평문 대수치
-        String K = putConv(inStr);           // 암호키 대수치
+        char[] P = putConv(senderPw.toCharArray());         // 평문 대수치
+        char[] K = putConv(inStr.toCharArray());           // 암호키 대수치
 
-        StringBuilder sb = new StringBuilder();
+        char[] C = new char[inStr.length()];
         for (int i = 0; i < inStr.length(); i++) {
-            sb.append((P.charAt(i) + K.charAt(i)) % M);
+            int p = Character.getNumericValue(P[i]);
+            int k = Character.getNumericValue(K[i]);
+            int c = (p + k) % M;
+            C[i] = (char) ((P[i] + K[i]) % M);
         }
-        String C = sb.toString();           // 암호문 대수치
-        return getConv(C, C.length());
+        String enc = String.valueOf(getConv(C));
+        return enc;
     }
 
 
     public String senderDecrypt(String senderNm, String encPass, String companyCd, String sendDt) {
         int M = 36;                          // Mudulus
-        String inStr = companyCd.charAt(0) + companyCd.charAt(7) + sendDt + senderNm;
+        String inStr = companyCd.substring(0, 1) + companyCd.substring(7, 8) + sendDt + senderNm;
 
-        String C = putConv(encPass);       // 암호문 대수치
-        String K = putConv(inStr);          // 암호키 대수치
+        char[] C = putConv(encPass.toCharArray());       // 암호문 대수치
+        char[] K = putConv(inStr.toCharArray());          // 암호키 대수치
 
-
-        StringBuilder sb = new StringBuilder();
+        char[] P = new char[inStr.length()];
         for (int i = 0; i < inStr.length(); i++) {
-            sb.append((C.charAt(i) + M - K.charAt(i)) % M);
+            P[i] = (char) ((C[i] + M - K[i]) % M);
         }
-        String P = sb.toString();           // 평문 대수치
-        return getConv(P, P.length());
-
+        return String.valueOf(getConv(P));
     }
 
-
-    private String putConv(String s) {
-        StringBuilder sb = new StringBuilder();
-        for (Character ch : Lists.charactersOf(s)) {
-            if (ch >= '0' && ch <= '9') sb.append(57 - ch);
-            else if (ch >= 'a' && ch <= 'z') sb.append(132 - ch);
-            else if (ch >= 'A' && ch <= 'Z') sb.append(100 - ch);
+    private char[] putConv(char[] ch) {
+        char[] cv = new char[ch.length];
+        for (int i = 0; i < ch.length; i++) {
+            if (ch[i] >= '0' && ch[i] <= '9') cv[i] = (char) (57 - ch[i]);
+            else if (ch[i] >= 'a' && ch[i] <= 'z') cv[i] = (char) (132 - ch[i]);
+            else if (ch[i] >= 'A' && ch[i] <= 'Z') cv[i] = (char) (100 - ch[i]);
         }
-        return sb.toString();
+        return cv;
     }
 
-    private String getConv(String s, int size) {
-        StringBuilder sb = new StringBuilder();
-        char[] ch = s.toCharArray();
-        for (int i = 0; i < size; i++) {
-            int c = Character.getNumericValue(ch[i]);
-            if (c >= 10 && c <= 35) sb.append(100 - ch[i]);
-            else if (c >= 0 && c <= 9) sb.append(57 - ch[i]);
+    private char[] getConv(char[] ch) {
+        char[] cv = new char[ch.length];
+        for (int i = 0; i < ch.length; i++) {
+            if (ch[i] >= 10 && ch[i] <= 35) cv[i] = (char) (100 - ch[i]);
+            else if (ch[i] >= 0 && ch[i] <= 9) cv[i] = (char) (57 - ch[i]);
         }
-        return sb.toString();
+        return cv;
     }
 
     public String marshall(String msgType, Map<String, Object> map) {

@@ -3,8 +3,10 @@ package com.shacon.toss.batch;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
+import io.netty.channel.oio.OioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
+import io.netty.channel.socket.oio.OioSocketChannel;
 import io.netty.handler.logging.LogLevel;
 import io.netty.handler.logging.LoggingHandler;
 import io.netty.handler.stream.ChunkedWriteHandler;
@@ -16,7 +18,7 @@ public class TossClient {
     private static final Logger LOGGER = LoggerFactory.getLogger(TossClient.class);
     static final String HOST = System.getProperty("host", "127.0.0.1");
     static final int PORT = Integer.parseInt(System.getProperty("port", "8007"));
-    static final String dirpath  = "C:/hcisnas/eai_data/external/TOSS/rcv";
+    static final String dirpath  = "C:/app/sam/pm/dacom";
 
     public static void main(String[] args) throws Exception {
 
@@ -31,26 +33,26 @@ public class TossClient {
         client.start("RD", "20221114","20221114", dirpath);
     }
 
-    public void start(String jobType, String startDay, String endDay, String filePath) throws Exception {
+    public void start(String jobType, String startDay, String endDay, String dirpath) throws Exception {
 
 
-        EventLoopGroup group = new NioEventLoopGroup();
+        EventLoopGroup group = new OioEventLoopGroup();
         try {
             Bootstrap b = new Bootstrap();
             b.group(group)
-                    .channel(NioSocketChannel.class)
+                    .channel(OioSocketChannel.class)
                     .option(ChannelOption.TCP_NODELAY, true)
                     .handler(new ChannelInitializer<SocketChannel>() {
                         @Override
                         public void initChannel(SocketChannel ch) throws Exception {
                             ChannelPipeline p = ch.pipeline();
-                            p.addLast(new LoggingHandler(LogLevel.INFO));
+//                            p.addLast(new LoggingHandler(LogLevel.INFO));
                             p.addLast(new ChunkedWriteHandler());
-                            p.addLast(new TossClientHandler(jobType, startDay, endDay, filePath));
+                            p.addLast(new TossClientHandler(jobType, startDay, endDay, dirpath));
                         }
                     });
 
-            LOGGER.info("TossFileRecever started...");
+            LOGGER.info("TossClient started...");
 
             // Start the client.
             ChannelFuture f = b.connect(HOST, PORT).sync();

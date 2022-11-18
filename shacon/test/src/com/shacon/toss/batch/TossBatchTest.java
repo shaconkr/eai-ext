@@ -22,7 +22,7 @@ public class TossBatchTest {
 
         KftcFileTransfer kftc = new KftcFileTransfer();
 
-        String enc = kftc.senderDecrypt("Kimchung","1234561234561234","00000002","950815");
+        String enc = kftc.senderEncrypt("Kimchung","123456","00000002","950815");
         String dec = kftc.senderDecrypt("Kimchung","SV30W5TYEDI99NHB","00000002","950815");
 
         System.out.println(enc);
@@ -40,17 +40,17 @@ public class TossBatchTest {
         StreamFactory factory = newStreamFactory("tossbatch.xml");
 
         Reader reader = new InputStreamReader(getClass().getResourceAsStream("tossLogin.edi"));
-        BeanReader in = factory.createReader("loginReq", reader );
+        BeanReader in = factory.createReader("TOSS_003", reader );
         Map map = (Map) in.read();
         System.out.println(new Gson().toJson(map, Map.class));
         in.close();
 
         Reader reader1 = new InputStreamReader(getClass().getResourceAsStream("tossLogin.edi"));
-        Unmarshaller u = factory.createUnmarshaller("loginReq");
+        Unmarshaller u = factory.createUnmarshaller("TOSS_003");
         String record = new BufferedReader(reader1).lines().collect(Collectors.joining("\n"));
         Map umap = (Map) u.unmarshal(record);
 
-        Marshaller m = factory.createMarshaller("loginRes");
+        Marshaller m = factory.createMarshaller("TOSS_030");
         Map mm = Maps.newHashMap();
         mm.put("trgmCd","003");
         mm.put("userId","HCIS");

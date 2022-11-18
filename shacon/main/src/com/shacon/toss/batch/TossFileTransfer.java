@@ -41,7 +41,7 @@ public class TossFileTransfer {
     StreamFactory factory = newStreamFactory("tossbatch.xml");
 
 
-    public String loginReq(String jobType, String startDay, String endDay, String fileName) {
+    public String getT003(String jobType, String startDay, String endDay, String fileName) {
         Map<String, Object> msg = Maps.newLinkedHashMap(putCommon("003"));
         msg.put("userId", "HELP518");
         msg.put("passwd", "1111");
@@ -60,18 +60,18 @@ public class TossFileTransfer {
         msg.put("chgPwdYn", "N");
         msg.put("commSize", 2048);
         msg.put("destId", spaces(10));
-        return marshall("loginReq", msg);
+        return marshall("TOSS_003", msg);
     }
 
     public String getRespStatus(String edi) {
-        Map<String, Object> msg = unmarshall("loginRes", edi);
+        Map<String, Object> msg = unmarshall("TOSS_030", edi);
         String retCd = String.valueOf(msg.get("respCd"));
         String retMsg = ERRCD.valueOf("E" + retCd).toString();
         //TODO add LOG
         return retCd;
     }
 
-    public String logoutReq(String jobType, String startDay, String endDay, String fileName) {
+    public String getT007(String jobType, String startDay, String endDay, String fileName) {
         Map<String, Object> msg = Maps.newLinkedHashMap(putCommon("007"));
         msg.put("userId", "HELP518");
         msg.put("passwd", "1111");
@@ -87,18 +87,18 @@ public class TossFileTransfer {
             msg.put("startTime", startDay + "0000");
             msg.put("endTime", endDay + "2400");
         }
-        return marshall("logoutReq", msg);
+        return marshall("TOSS_007", msg);
     }
 
     public String logoutRes(String edi) {
-        Map<String, Object> msg = unmarshall("logoutRes", edi);
+        Map<String, Object> msg = unmarshall("TOSS_070", edi);
         String retCd = String.valueOf(msg.get("respCd"));
         String retMsg = ERRCD.valueOf("E" + retCd).toString();
         //TODO add LOG
         return retCd;
     }
 
-    public String sendFileNoti(String filename, String filesize, String lastYn) {
+    public String getT100(String filename, String filesize, String lastYn) {
         Map<String, Object> msg = Maps.newLinkedHashMap(putCommon("100"));
         msg.put("fileName", filename);
         msg.put("fileSize", filesize);
@@ -107,11 +107,11 @@ public class TossFileTransfer {
         msg.put("lastYn", lastYn);
         msg.put("commTy", "NEW");  // APP 이어받기 사용안함
         msg.put("endTime", spaces(12));
-        return marshall("sendFileNoti", msg);
+        return marshall("TOSS_100", msg);
     }
 
     public String sendFileRes(String edi) {
-        Map<String, Object> msg = unmarshall("sendFileRes", edi);
+        Map<String, Object> msg = unmarshall("TOSS_110", edi);
         String retCd = String.valueOf(msg.get("respCd"));
         String retMsg = ERRCD.valueOf("E" + retCd).toString();
         //TODO add LOG
@@ -123,7 +123,7 @@ public class TossFileTransfer {
         msg.put("fileName", fileName);
         msg.put("fileSize", fileSize);
         msg.put("procYn", procYn);
-        return marshall("rcvConfirm", msg);
+        return marshall("TOSS_130", msg);
     }
 
     public Map<String, Object> putCommon(String trgmCd) {

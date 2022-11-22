@@ -241,7 +241,7 @@ public class XsdSchemaBuilder {
      * @throws XmlSchemaSerializer.XmlSchemaSerializerException
      */
     public void buildExtXsdforHcis(String dirPath, String ifId, String direction) throws IOException {
-        String xsdPath = dirPath + ifId + direction + ".xsd";
+        String xsdPath = dirPath + ifId + direction + "_Ext.xsd";
         targetNameSpace = "http://schema.hcis.com/xsd/" + ifId;
 
         List<Map<String, Object>> header = eimsParser.parseEimsXsd(dirPath + ifId + direction + HDR_XSD);

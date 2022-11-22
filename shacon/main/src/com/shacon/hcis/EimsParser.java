@@ -66,12 +66,16 @@ public class EimsParser {
         items.forEach((item) -> {
             XmlSchemaElement elem = (XmlSchemaElement) item;
             String name = elem.getName();
+
             XmlSchemaAnnotation anno = elem.getAnnotation();
             XmlSchemaDocumentation adoc = (XmlSchemaDocumentation) anno.getItems().get(1);
             String kor = String.valueOf(adoc.getMarkup().item(0).getNodeValue());
             Map<String, Object> resultMap = new HashMap<>();
             resultMap.put("name", name);
             resultMap.put("kor", kor);
+            resultMap.put("minOcc", elem.getMinOccurs());
+            resultMap.put("maxOcc", elem.getMaxOccurs());
+
             if (elem.getSchemaType() instanceof XmlSchemaSimpleType) {
                 XmlSchemaSimpleType simpleType = (XmlSchemaSimpleType) elem.getSchemaType();
                 XmlSchemaSimpleTypeRestriction r = (XmlSchemaSimpleTypeRestriction) simpleType.getContent();

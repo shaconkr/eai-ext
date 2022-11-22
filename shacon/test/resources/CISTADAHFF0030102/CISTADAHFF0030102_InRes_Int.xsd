@@ -1,0 +1,30 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:edi="http://shacon.kr/xsd" xmlns:ns="http://schema.hcis.com/xsd/CISTADAHFF0030102" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.hcis.com/xsd/CISTADAHFF0030102">
+    <include schemaLocation="D:/HCIS/eai-ext/shacon/test/resources//HCIS_FW_Header.xsd"/>
+    <complexType name="CISTADAHFF0030102_InRes">
+        <sequence>
+            <element edi:kor="응답값" edi:length="1" edi:padder="SpaceRight" name="respVal" type="string"/>
+            <element edi:kor="메시지응답내용" edi:length="1" edi:padder="SpaceRight" name="msgRespCntn" type="string"/>
+            <element edi:kor="메시지응답값" edi:length="1" edi:padder="SpaceRight" name="msgRespVal" type="string"/>
+            <element edi:kor="결과건수" edi:length="5" edi:padder="ZeroLeft" name="rstRowcount" type="long"/>
+            <element edi:kor="결과리스트" edi:padder="ZeroLeft" maxOccurs="unbounded" name="rstList" type="ns:RST_LIST_TYPE"/>
+        </sequence>
+    </complexType>
+    <complexType name="RST_LIST_TYPE">
+        <sequence>
+            <element edi:kor="등록일시" edi:length="14" edi:padder="SpaceRight" name="regDtm" type="string"/>
+            <element edi:kor="승인주의구분코드" edi:length="4" edi:padder="SpaceRight" name="aprvlCareGbcd" type="string"/>
+            <element edi:kor="승인주의적용일자" edi:length="8" edi:padder="SpaceRight" name="aprvlCareAplyDt" type="string"/>
+            <element edi:kor="승인주의종료일자" edi:length="8" edi:padder="SpaceRight" name="aprvlCareEndDt" type="string"/>
+            <element edi:kor="승인주의내용" edi:length="100" edi:padder="SpaceRight" name="aprvlCareCntn" type="string"/>
+            <element edi:kor="상담점코드" edi:length="3" edi:padder="SpaceRight" name="cnslStoreCd" type="string"/>
+            <element edi:kor="상담자ID" edi:length="8" edi:padder="SpaceRight" name="conpsId" type="string"/>
+        </sequence>
+    </complexType>
+    <complexType name="rootType">
+        <sequence>
+            <element name="header" type="ns:hcisHeaderType"/>
+            <element name="data" type="ns:CISTADAHFF0030102_InRes"/>
+        </sequence>
+    </complexType>
+    <element name="root" type="ns:rootType"/>
+</schema>

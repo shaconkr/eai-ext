@@ -1,6 +1,6 @@
 package com.shacon.edi;
 
-import com.shacon.hcis.EDISchemaBuilder;
+import com.shacon.hcis.XsdSchemaBuilder;
 import com.shacon.hcis.EimsParser;
 import com.shacon.hcis.DataFormatResourceBuilder;
 import io.netty.util.internal.StringUtil;
@@ -21,7 +21,7 @@ public class EDITransformTest {
 
     @Test
     public void xsdBuild() {
-        EDISchemaBuilder bld = new EDISchemaBuilder();
+        XsdSchemaBuilder bld = new XsdSchemaBuilder();
         bld.createExtXSD("HCNCISCTJD0120103", "CISHCNCTJD0120104");
         bld.createIntXSD("CISTADAHFF0030102");
     }

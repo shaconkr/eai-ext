@@ -48,12 +48,12 @@ public class DataFormatResourceBuilder {
 
         if( reqInfo.get("infraId").equals("2") ) {  // 대내
             if(source.get("sysId").equals("TAD")){
-                build(dirPath, reqIfId, IN_REQ + "_Int");
-                build(dirPath, reqIfId, IN_RES + "_Int");
+                build(dirPath, reqIfId, IN_REQ + "_Int", null);
+                build(dirPath, reqIfId, IN_RES + "_Int", null);
             }
             if(target.get("sysId").equals("TAD")){
-                build(dirPath, reqIfId, OUT_REQ + "_Int");
-                build(dirPath, reqIfId, OUT_RES + "_Int");
+                build(dirPath, reqIfId, OUT_REQ + "_Int", null);
+                build(dirPath, reqIfId, OUT_RES + "_Int", null);
             }
         }
 
@@ -62,24 +62,45 @@ public class DataFormatResourceBuilder {
             String triggerSystem = reqInfo.get("extHtdspId");  // 1.당발 2. 타발
 
             if (triggerSystem.equals("1")) {
-                build(dirPath, reqIfId, OUT_REQ + "_Ext");
+                build(dirPath, reqIfId, OUT_REQ + "_Ext", null);
                 if (resIfId != null) {
-                    build(dirPath, resIfId, OUT_RES + "_Ext");
+                    build(dirPath, resIfId, OUT_RES + "_Ext", null);
                 }
             } else {
-                build(dirPath, reqIfId, IN_REQ + "_Ext");
+                build(dirPath, reqIfId, IN_REQ + "_Ext", null);
                 if (resIfId != null) {
-                    build(dirPath, resIfId, IN_RES + "_Ext");
+                    build(dirPath, resIfId, IN_RES + "_Ext", null);
                 }
             }
         }
     }
 
-    public void build(String dirPath, String ifId, String direction) throws IOException {
+    public void build(String dirPath, String ifId, String direction, List<Map<String, Object>> param) throws IOException {
         String resPath = dirPath + ifId + direction + ".dataFormatResource";
         String packageName = "edi";
 
+        List<Map<String, Object>> layout = (param==null) ? parseXSD(dirPath + ifId + direction + ".xsd") : param;
+
         Document doc = DocumentHelper.createDocument();
+        Element config = createDFR(doc, ifId, packageName, direction);
+
+        String fldOffsets = addFieldOffsets(config, layout, dirPath, ifId, direction);
+        config.addAttribute("fieldOffsetsStr", fldOffsets);
+
+        OutputFormat format = OutputFormat.createPrettyPrint();
+        format.setNewLineAfterDeclaration(true);
+        StringWriter sw = new StringWriter();
+        XMLWriter xmlWriter = new XMLWriter(sw, format);
+        xmlWriter.write(doc);
+        String res = sw.toString().replace("&amp;", "&");
+
+        Writer writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(resPath), StandardCharsets.UTF_8));
+        writer.write(res);
+        writer.flush();
+        writer.close();
+    }
+
+    private Element createDFR(Document doc, String ifId, String packageName, String direction){
         Namespace ns = new Namespace("jndi", "http://xsd.tns.tibco.com/amf/models/sharedresource/jndi");
         Element root = doc.addElement(new QName("namedResource", ns));
         root.setName("jndi:namedResource");
@@ -90,12 +111,10 @@ public class DataFormatResourceBuilder {
         root.addNamespace("jndi", "http://xsd.tns.tibco.com/amf/models/sharedresource/jndi");
         root.addAttribute("name", packageName + "." + ifId + direction);
         root.addAttribute("type", "dataformat:DataFormat");
-
         Element imports = root.addElement(new QName("imports", ns));
         imports.addAttribute("importType", "http://www.w3.org/2001/XMLSchema");
 //        imports.addAttribute("location", dirPath + ifId + direction + ".xsd");
         imports.addAttribute("namespace", "http://schema.hcis.com/xsd/" + ifId);
-
         Element config = root.addElement(new QName("configuration", ns));
         config.addAttribute("xsi:type", "dataformat:DataFormat");
         config.addAttribute("formatType", "Fixed format");
@@ -104,12 +123,13 @@ public class DataFormatResourceBuilder {
         config.addAttribute("lineSeparator", "New Line");
         config.addAttribute("fillCharacter", "Space");
         config.addAttribute("schemaElementQName", ifId + ":main");
+        return config;
+    }
 
-
-        List<Map<String, String>> layout = parseXSD(dirPath + ifId + direction + ".xsd");
+    private String addFieldOffsets(Element config, List<Map<String, Object>> layout, String dirPath, String ifId, String direction) throws IOException {
         List<String> ls = new LinkedList<>();
         int start = 0, end = 0, totalSize = 0;
-        for (Map<String, String> m : layout) {
+        for (Map<String, Object> m : layout) {
             int colLen = Integer.parseInt(String.valueOf(m.get("length")));
             totalSize += colLen;
             start = end;
@@ -121,47 +141,40 @@ public class DataFormatResourceBuilder {
             e.addAttribute("start", String.valueOf(start));
             e.addAttribute("end", String.valueOf(end));
             ls.add(m.get("name") + "(" + start + "," + end + ")");
+
+            Object o = m.get(String.valueOf(m.get("name")));
+            if(o instanceof List){
+                build(dirPath, ifId, direction+"_"+String.valueOf(m.get("name")), CastUtils.cast((List) o));
+            }
         }
         config.addAttribute("lineLength", String.valueOf(totalSize));
-        String fldOffsets = URLDecoder.decode(ls.stream().collect(Collectors.joining("&#xA;")), "UTF-8");
-        config.addAttribute("fieldOffsetsStr", fldOffsets);
-
-        OutputFormat format = OutputFormat.createPrettyPrint();
-        format.setNewLineAfterDeclaration(true);
-        StringWriter sw = new StringWriter();
-        XMLWriter xmlWriter = new XMLWriter(sw, format);
-        xmlWriter.write(doc);
-        String res = sw.toString().replace("&amp;", "&");
-
-        log.debug(res);
-
-        Writer writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(resPath), StandardCharsets.UTF_8));
-        writer.write(res);
-        writer.flush();
-        writer.close();
-
-
-//        Writer modWriter = new ModifyingWriterFactory().createRegexModifyingWriter(orgWriter, "\\[\\$AMPERSAND_CHRACTER\\$\\]", "&");
+        String fldOffsets = ls.stream().collect(Collectors.joining("&#xA;"));
+        return fldOffsets;
     }
 
-    private List<Map<String, String>> parseXSD(String path) throws FileNotFoundException {
+    private List<Map<String, Object>> parseXSD(String path) throws FileNotFoundException {
         XmlSchema xsd = new XmlSchemaCollection().read(new FileReader(path));
-        List<Map<String, String>> resultList = new LinkedList<>();
         XmlSchemaType rootType = xsd.getElementByName("root").getSchemaType();
+        List<Map<String, Object>> resultList = parseComplexType((XmlSchemaComplexType)rootType);
+        return resultList;
+    }
 
-        XmlSchemaParticle xmlSchemaParticle = ((XmlSchemaComplexType) rootType).getParticle();
-
+    private List<Map<String,Object>> parseComplexType(XmlSchemaComplexType ct){
+        List<Map<String, Object>> resultList = new LinkedList<>();
+        XmlSchemaParticle xmlSchemaParticle = ct.getParticle();
         XmlSchemaSequence xmlSchemaSequence = (XmlSchemaSequence) xmlSchemaParticle;
         List<XmlSchemaSequenceMember> items = xmlSchemaSequence.getItems();
         items.forEach((item) -> {
+            Map<String, Object> resultMap = new HashMap<>();
             XmlSchemaElement elem = (XmlSchemaElement) item;
-            Map<String, String> resultMap = new HashMap<>();
             resultMap.put("name", elem.getName());
             resultMap.put("kor", getAttrVal(elem.getMetaInfoMap(), "kor"));
             resultMap.put("length", getAttrVal(elem.getMetaInfoMap(), "length"));
             resultMap.put("type", elem.getSchemaTypeName().getLocalPart());
+            if( elem.getSchemaType() instanceof XmlSchemaComplexType ){
+                resultMap.put(elem.getName(), parseComplexType((XmlSchemaComplexType)elem.getSchemaType()));
+            }
             resultList.add(resultMap);
-
         });
         return resultList;
     }
@@ -169,7 +182,11 @@ public class DataFormatResourceBuilder {
     private String getAttrVal(Map<Object, Object> metaInfoMap, String localPart) {
         Map<Object, Object> map = (Map<Object, Object>) metaInfoMap.get(Constants.MetaDataConstants.EXTERNAL_ATTRIBUTES);
         javax.xml.namespace.QName key = new javax.xml.namespace.QName("http://shacon.kr/xsd", localPart, "edi");
-        Attr attr = (Attr) map.get(key);
-        return attr.getValue();
+        if(map.get(key) != null) {
+            Attr attr = (Attr) map.get(key);
+            return attr.getValue();
+        }else{
+            return "0";
+        }
     }
 }

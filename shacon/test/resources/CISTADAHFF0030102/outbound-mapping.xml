@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <interface bound="outbound" id="CISTADAHFF0030102" version="1" />
+    <src_io id="SCISAHFF0030102" />
+    <target_io id="TTADAHFF0030102" />
+    <mapping>
+        <source path="entity/RESP_VAL" />
+        <target path="entity/RESP_VAL" />
+        <function ref="move" />
+    </mapping>
+    <mapping>
+        <source path="entity/MSG_RESP_CNTN" />
+        <target path="entity/MSG_RESP_CNTN" />
+        <function ref="move" />
+    </mapping>
+    <mapping>
+        <source path="entity/MSG_RESP_VAL" />
+        <target path="entity/MSG_RESP_VAL" />
+        <function ref="move" />
+    </mapping>
+    <mapping>
+        <source path="entity/RST_ROWCOUNT" />
+        <target path="entity/RST_ROWCOUNT" />
+        <function ref="move" />
+    </mapping>
+    <mapping>
+        <source path="entity/RST_LIST/REG_DTM" />
+        <target path="entity/RST_LIST/REG_DTM" />
+        <function ref="move" />
+    </mapping>
+    <mapping>
+        <source path="entity/RST_LIST/APRVL_CARE_GBCD" />
+        <target path="entity/RST_LIST/APRVL_CARE_GBCD" />
+        <function ref="move" />
+    </mapping>
+    <mapping>
+        <source path="entity/RST_LIST/APRVL_CARE_APLY_DT" />
+        <target path="entity/RST_LIST/APRVL_CARE_APLY_DT" />
+        <function ref="move" />
+    </mapping>
+    <mapping>
+        <source path="entity/RST_LIST/APRVL_CARE_END_DT" />
+        <target path="entity/RST_LIST/APRVL_CARE_END_DT" />
+        <function ref="move" />
+    </mapping>
+    <mapping>
+        <source path="entity/RST_LIST/APRVL_CARE_CNTN" />
+        <target path="entity/RST_LIST/APRVL_CARE_CNTN" />
+        <function ref="move" />
+    </mapping>
+    <mapping>
+        <source path="entity/RST_LIST/CNSL_STORE_CD" />
+        <target path="entity/RST_LIST/CNSL_STORE_CD" />
+        <function ref="move" />
+    </mapping>
+    <mapping>
+        <source path="entity/RST_LIST/CONPS_ID" />
+        <target path="entity/RST_LIST/CONPS_ID" />
+        <function ref="move" />
+    </mapping>
+</map>

@@ -1,4 +1,4 @@
-package com.hcis.eai.ext;
+package com.shacon.hcis;
 
 import kr.shacon.edi.Transformer;
 

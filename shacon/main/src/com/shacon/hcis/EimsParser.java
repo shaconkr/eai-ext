@@ -1,42 +1,101 @@
-package com.hcis.eai.ext;
+package com.shacon.hcis;
 
 import com.google.common.collect.ImmutableMap;
+import org.apache.ws.commons.schema.*;
+import org.apache.ws.commons.schema.constants.Constants;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
 import org.dom4j.Node;
 import org.dom4j.io.SAXReader;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.w3c.dom.Attr;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 
-public class EimsXMLParser {
+public class EimsParser {
+    private static final Logger log = LoggerFactory.getLogger(EimsParser.class);
 
-    String eaiRepoPth = "C:/worksrc/shacon/test/resources/";
+    String eaiRepoPth = "D:/HCIS/eai-ext/shacon/test/resources/";
 
+    public Map<String, Object> parseXML(String reqIfId, String resIfId) throws DocumentException, IOException {
 
-    public Map<String, Object> parse(String reqIfId, String resIfId) throws DocumentException, IOException {
-
-        String dirPath = (resIfId != null) ? eaiRepoPth + reqIfId + "_" + resIfId: eaiRepoPth + reqIfId;
+        String dirPath = (resIfId != null) ? eaiRepoPth + reqIfId + "_" + resIfId : eaiRepoPth + reqIfId;
         String reqIfXml = dirPath + "/interface.xml";
         String resIfXml = dirPath + "/interface-1.xml";
         String sourceIO = dirPath + "/source-io.xml";
         String targetIO = dirPath + "/target-io.xml";
 
+        Map<String, Object> ifType = parseEimsIfType(getDocuemnt(reqIfXml));
+
         if (resIfId != null) {
             return ImmutableMap.<String, Object>builder()
+                    .putAll(ifType)
                     .put("request", parseEimsInterfaceXML(getDocuemnt(reqIfXml), getCharset(getDocuemnt(sourceIO))))
                     .put("response", parseEimsInterfaceXML(getDocuemnt(resIfXml), getCharset(getDocuemnt(targetIO))))
                     .build();
         } else {
             return ImmutableMap.<String, Object>builder()
+                    .putAll(ifType)
                     .put("request", parseEimsInterfaceXML(getDocuemnt(reqIfXml), getCharset(getDocuemnt(sourceIO))))
                     .build();
-
         }
+    }
 
+    public List<Map<String, Object>> parseEimsXsd(String path) throws FileNotFoundException {
+        XmlSchema xsd = new XmlSchemaCollection().read(new FileReader(path));
+        XmlSchemaType rootType = xsd.getElementByName("root").getSchemaType();
+        List<Map<String, Object>> resultList = new LinkedList<>();
+        parseEimsXsd(rootType, resultList);
+        return resultList;
+    }
+
+    private void parseEimsXsd(XmlSchemaType xmlSchemaType, List<Map<String, Object>> resultList) {
+        XmlSchemaParticle xmlSchemaParticle = ((XmlSchemaComplexType) xmlSchemaType).getParticle();
+        XmlSchemaSequence xmlSchemaSequence = (XmlSchemaSequence) xmlSchemaParticle;
+        List<XmlSchemaSequenceMember> items = xmlSchemaSequence.getItems();
+        items.forEach((item) -> {
+            XmlSchemaElement elem = (XmlSchemaElement) item;
+            String name = elem.getName();
+            XmlSchemaAnnotation anno = elem.getAnnotation();
+            XmlSchemaDocumentation adoc = (XmlSchemaDocumentation) anno.getItems().get(1);
+            String kor = String.valueOf(adoc.getMarkup().item(0).getNodeValue());
+            Map<String, Object> resultMap = new HashMap<>();
+            resultMap.put("name", name);
+            resultMap.put("kor", kor);
+            if (elem.getSchemaType() instanceof XmlSchemaSimpleType) {
+                XmlSchemaSimpleType simpleType = (XmlSchemaSimpleType) elem.getSchemaType();
+                XmlSchemaSimpleTypeRestriction r = (XmlSchemaSimpleTypeRestriction) simpleType.getContent();
+                String type = r.getBaseTypeName().getLocalPart();
+                String len = String.valueOf(r.getFacets().get(0).getValue());
+                resultMap.put("length", len);
+                resultMap.put("type", type);
+            } else if (elem.getSchemaType() instanceof XmlSchemaComplexType) {
+                List<Map<String, Object>> sublist = new LinkedList<>();
+                parseEimsXsd(elem.getSchemaType(), sublist);
+                resultMap.put("type", elem.getSchemaTypeName().getLocalPart());
+                resultMap.put(name, sublist);
+            } else {
+                log.error("is not supprot Type {}", elem.getName());
+            }
+            resultList.add(resultMap);
+        });
+    }
+
+    private String getAttrVal(Map<Object, Object> metaInfoMap, String localPart) {
+        Map<Object, Object> map = (Map<Object, Object>) metaInfoMap.get(Constants.MetaDataConstants.EXTERNAL_ATTRIBUTES);
+        javax.xml.namespace.QName key = new javax.xml.namespace.QName("http://shacon.kr/xsd", localPart, "edi");
+        Attr attr = (Attr) map.get(key);
+        return attr.getValue();
     }
 
     private Map<String, String> parseEimsInterfaceXML(Document doc, String charset) {
@@ -89,17 +148,35 @@ public class EimsXMLParser {
         return ret;
     }
 
+    private Map<String, Object> parseEimsIfType(Document doc) {
+        Node source = doc.selectSingleNode("/interface/interface_type/source");
+        Node target = doc.selectSingleNode("/interface/interface_type/target");
+        return ImmutableMap.<String, Object>builder()
+                .put("source", ImmutableMap.<String, String>builder()
+                        .put("sysId", source.selectSingleNode("system").valueOf("@code"))                     // 시스템코드
+                        .put("sysNm", source.selectSingleNode("system").valueOf("@name"))                     // 시스템명
+                        .put("workId", source.selectSingleNode("work").valueOf("@code"))                      // 어플리케이션코드
+                        .put("workNm", source.selectSingleNode("work").valueOf("@name"))                      // 어플리케이션명
+                        .put("ioid", source.selectSingleNode("ioid").getText())                                   // IOID
+                        .build())
+                .put("target", ImmutableMap.<String, String>builder()
+                        .put("sysId", target.selectSingleNode("system").valueOf("@code"))                     // 시스템코드
+                        .put("sysNm", target.selectSingleNode("system").valueOf("@name"))                     // 시스템명
+                        .put("workId", target.selectSingleNode("work").valueOf("@code"))                      // 어플리케이션코드
+                        .put("workNm", target.selectSingleNode("work").valueOf("@name"))                      // 어플리케이션명
+                        .put("ioid", target.selectSingleNode("ioid").getText())                                   // IOID
+                        .build())
+                .build();
+    }
 
     private String getCharset(Document doc) {
         Node comm = doc.selectSingleNode("/io/common");
         return comm.selectSingleNode("charset").getText();
     }
 
-
     private Document getDocuemnt(String path) throws IOException, DocumentException {
         SAXReader reader = new SAXReader();
         return reader.read(Files.newBufferedReader(Path.of(path)));
     }
-
 
 }

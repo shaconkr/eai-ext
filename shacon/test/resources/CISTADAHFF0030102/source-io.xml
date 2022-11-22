@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<io xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="SCISAHFF0030102" version="3">
+    <common>
+        <io_name><![CDATA[승인주의메시지(승인서버)]]></io_name>
+        <!--I/O 명-->
+        <description />
+        <!--I/O 설명-->
+        <system code="CIS" name="H-CIS" />
+        <!--시스템코드, 시스템명-->
+        <work code="AHFF" name="부가정보" />
+        <!--업무구분코드-->
+        <datetime>2022-11-17 11:32:47</datetime>
+        <!--작성 시간-->
+        <writer>CIS070</writer>
+        <!--작성자-->
+        <charset>UTF-8</charset>
+        <!--캐릭터셋-->
+        <package_name>hdc.cis.ah.ahf.ahff.onl.sc.io</package_name>
+        <!--패키지경로-->
+        <class_name>EaiAprvlCareMsg</class_name>
+        <!--클래스명-->
+    </common>
+    <process_type type="O" name="온라인">
+        <online>
+            <service_in />
+            <!--Input 거래 ID-->
+            <service_out />
+            <!--Output 거래 ID-->
+            <syn-asyn code="1" name="동기" />
+            <!--동기 / 비동기 여부-->
+            <bizhub />
+            <!--비즈허브 접촉정보거래종류-->
+            <trncd_in />
+            <!--Input 거래 코드-->
+            <trncd_out />
+            <!--Output 거래 코드-->
+            <external>
+                <system />
+                <!--대외 기관 구분 코드-->
+                <work />
+                <!--대외 업무 코드-->
+                <msg />
+                <!--대외 전문 종별 코드-->
+                <tx />
+                <!--대외 거래 구분 코드-->
+                <etc />
+                <!--대외 기타 구분 코드-->
+                <inao code="1" />
+                <!--대내외 구간 코드 : 1 대내, 2 대외-->
+                <ext_inop code="1" />
+                <!--대내외 (일반/공유 I/O) 구분 코드 : 1 대내 (일반), 2 대외 (공유)-->
+            </external>
+        </online>
+        <eai>
+            <service />
+            <!--DB 서비스명-->
+            <table />
+            <!--DB 테이블 명-->
+        </eai>
+    </process_type>
+    <!--IO처리유형 : O - 온라인, D - DB, F - FILE-->
+    <inbound>
+        <message>
+            <io id="C00000000995" idn="" version="1" name="SCISAHFF0030102_INBOUND" type="Message" />
+        </message>
+        <header />
+        <unit>
+            <io id="C00000000995" idn="" name="SCISAHFF0030102_INBOUND" version="1" type="Entity" squencename="entity">
+                <common>
+                    <description />
+                    <system />
+                    <!--시스템코드, 시스템명-->
+                    <work />
+                    <!--업무 구분 코드-->
+                    <datetime>2022-11-17 11:32:47</datetime>
+                    <!--작성 시간-->
+                    <writer>CIS070</writer>
+                    <!--작성자-->
+                    <package_name />
+                    <!--패키지경로-->
+                    <class_name />
+                    <!--클래스명-->
+                </common>
+                <process_type />
+                <data><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:p="http://schemas.jmims.com/mms/io/" xmlns:tns="http://schemas.jmims.com/mms/io/" targetNamespace="http://schemas.jmims.com/mms/io/">
+    <element name="root" type="tns:SCISAHFF0030102_inbound" />
+    <complexType name="SCISAHFF0030102_inbound">
+        <sequence>
+            <element name="wrkGbVal">
+                <annotation>
+                    <documentation>작업구분값</documentation>
+                    <appinfo>
+                        <p:description />
+                        <p:mandatory value="N" />
+                        <p:level value="1" />
+                        <p:encryption value="N" />
+                        <p:one_path_encp value="N" />
+                        <p:mask_type />
+                        <p:db_key value="N" />
+                        <p:krn_fld_yn value="N" />
+                    </appinfo>
+                </annotation>
+                <simpleType>
+                    <restriction base="string">
+                        <maxLength value="2" />
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="memNm">
+                <annotation>
+                    <documentation>회원명</documentation>
+                    <appinfo>
+                        <p:description />
+                        <p:mandatory value="N" />
+                        <p:level value="1" />
+                        <p:encryption value="N" />
+                        <p:one_path_encp value="N" />
+                        <p:mask_type />
+                        <p:db_key value="N" />
+                        <p:krn_fld_yn value="N" />
+                    </appinfo>
+                </annotation>
+                <simpleType>
+                    <restriction base="string">
+                        <maxLength value="100" />
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="crdMemNo">
+                <annotation>
+                    <documentation>카드회원번호</documentation>
+                    <appinfo>
+                        <p:description />
+                        <p:mandatory value="N" />
+                        <p:level value="1" />
+                        <p:encryption value="N" />
+                        <p:one_path_encp value="N" />
+                        <p:mask_type />
+                        <p:db_key value="N" />
+                        <p:krn_fld_yn value="N" />
+                    </appinfo>
+                </annotation>
+                <simpleType>
+                    <restriction base="string">
+                        <maxLength value="9" />
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="aprvlCareGbcd">
+                <annotation>
+                    <documentation>승인주의구분코드</documentation>
+                    <appinfo>
+                        <p:description />
+                        <p:mandatory value="N" />
+                        <p:level value="1" />
+                        <p:encryption value="N" />
+                        <p:one_path_encp value="N" />
+                        <p:mask_type />
+                        <p:db_key value="N" />
+                        <p:krn_fld_yn value="N" />
+                    </appinfo>
+                </annotation>
+                <simpleType>
+                    <restriction base="string">
+                        <maxLength value="4" />
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="aprvlCareAplyDt">
+                <annotation>
+                    <documentation>승인주의적용일자</documentation>
+                    <appinfo>
+                        <p:description />
+                        <p:mandatory value="N" />
+                        <p:level value="1" />
+                        <p:encryption value="N" />
+                        <p:one_path_encp value="N" />
+                        <p:mask_type />
+                        <p:db_key value="N" />
+                        <p:krn_fld_yn value="N" />
+                    </appinfo>
+                </annotation>
+                <simpleType>
+                    <restriction base="string">
+                        <maxLength value="8" />
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="aprvlCareEndDt">
+                <annotation>
+                    <documentation>승인주의종료일자</documentation>
+                    <appinfo>
+                        <p:description />
+                        <p:mandatory value="N" />
+                        <p:level value="1" />
+                        <p:encryption value="N" />
+                        <p:one_path_encp value="N" />
+                        <p:mask_type />
+                        <p:db_key value="N" />
+                        <p:krn_fld_yn value="N" />
+                    </appinfo>
+                </annotation>
+                <simpleType>
+                    <restriction base="string">
+                        <maxLength value="8" />
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="aprvlCareCntn">
+                <annotation>
+                    <documentation>승인주의내용</documentation>
+                    <appinfo>
+                        <p:description />
+                        <p:mandatory value="N" />
+                        <p:level value="1" />
+                        <p:encryption value="N" />
+                        <p:one_path_encp value="N" />
+                        <p:mask_type />
+                        <p:db_key value="N" />
+                        <p:krn_fld_yn value="N" />
+                    </appinfo>
+                </annotation>
+                <simpleType>
+                    <restriction base="string">
+                        <maxLength value="100" />
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="cnslStoreCd">
+                <annotation>
+                    <documentation>상담점코드</documentation>
+                    <appinfo>
+                        <p:description />
+                        <p:mandatory value="N" />
+                        <p:level value="1" />
+                        <p:encryption value="N" />
+                        <p:one_path_encp value="N" />
+                        <p:mask_type />
+                        <p:db_key value="N" />
+                        <p:krn_fld_yn value="N" />
+                    </appinfo>
+                </annotation>
+                <simpleType>
+                    <restriction base="string">
+                        <maxLength value="3" />
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="conpsId">
+                <annotation>
+                    <documentation>상담자ID</documentation>
+                    <appinfo>
+                        <p:description />
+                        <p:mandatory value="N" />
+                        <p:level value="1" />
+                        <p:encryption value="N" />
+                        <p:one_path_encp value="N" />
+                        <p:mask_type />
+                        <p:db_key value="N" />
+                        <p:krn_fld_yn value="N" />
+                    </appinfo>
+                </annotation>
+                <simpleType>
+                    <restriction base="string">
+                        <maxLength value="8" />
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="ocrnCnt">
+                <annotation>
+                    <documentation>발생건수</documentation>
+                    <appinfo>
+                        <p:description />
+                        <p:mandatory value="N" />
+                        <p:level value="1" />
+                        <p:encryption value="N" />
+                        <p:one_path_encp value="N" />
+                        <p:mask_type />
+                        <p:db_key value="N" />
+                        <p:krn_fld_yn value="N" />
+                    </appinfo>
+                </annotation>
+                <simpleType>
+                    <restriction base="long">
+                        <totalDigits value="4" />
+                    </restriction>
+                </simpleType>
+            </element>
+        </sequence>
+    </complexType>
+</schema>]]></data>
+            </io>
+        </unit>
+    </inbound>
+    <outbound>
+        <message>
+            <io id="C00000000997" idn="" version="1" name="SCISAHFF0030102_OUTBOUND" type="Message" />
+        </message>
+        <header />
+        <unit>
+            <io id="C00000000997" idn="" name="SCISAHFF0030102_OUTBOUND" version="1" type="Entity" squencename="entity">
+                <common>
+                    <description />
+                    <system />
+                    <!--시스템코드, 시스템명-->
+                    <work />
+                    <!--업무 구분 코드-->
+                    <datetime>2022-11-17 11:32:47</datetime>
+                    <!--작성 시간-->
+                    <writer>CIS070</writer>
+                    <!--작성자-->
+                    <package_name />
+                    <!--패키지경로-->
+                    <class_name />
+                    <!--클래스명-->
+                </common>
+                <process_type />
+                <data><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:p="http://schemas.jmims.com/mms/io/" xmlns:tns="http://schemas.jmims.com/mms/io/" targetNamespace="http://schemas.jmims.com/mms/io/">
+    <element name="root" type="tns:SCISAHFF0030102_outbound" />
+    <complexType name="SCISAHFF0030102_outbound">
+        <sequence>
+            <element name="respVal">
+                <annotation>
+                    <documentation>응답값</documentation>
+                    <appinfo>
+                        <p:description />
+                        <p:mandatory value="N" />
+                        <p:level value="1" />
+                        <p:encryption value="N" />
+                        <p:one_path_encp value="N" />
+                        <p:mask_type />
+                        <p:db_key value="N" />
+                        <p:krn_fld_yn value="N" />
+                    </appinfo>
+                </annotation>
+                <simpleType>
+                    <restriction base="string">
+                        <maxLength value="1" />
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="msgRespCntn">
+                <annotation>
+                    <documentation>메시지응답내용</documentation>
+                    <appinfo>
+                        <p:description />
+                        <p:mandatory value="N" />
+                        <p:level value="1" />
+                        <p:encryption value="N" />
+                        <p:one_path_encp value="N" />
+                        <p:mask_type />
+                        <p:db_key value="N" />
+                        <p:krn_fld_yn value="N" />
+                    </appinfo>
+                </annotation>
+                <simpleType>
+                    <restriction base="string">
+                        <maxLength value="1" />
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="msgRespVal">
+                <annotation>
+                    <documentation>메시지응답값</documentation>
+                    <appinfo>
+                        <p:description />
+                        <p:mandatory value="N" />
+                        <p:level value="1" />
+                        <p:encryption value="N" />
+                        <p:one_path_encp value="N" />
+                        <p:mask_type />
+                        <p:db_key value="N" />
+                        <p:krn_fld_yn value="N" />
+                    </appinfo>
+                </annotation>
+                <simpleType>
+                    <restriction base="string">
+                        <maxLength value="1" />
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="rstRowcount">
+                <annotation>
+                    <documentation>결과건수</documentation>
+                    <appinfo>
+                        <p:description />
+                        <p:mandatory value="N" />
+                        <p:level value="1" />
+                        <p:encryption value="N" />
+                        <p:one_path_encp value="N" />
+                        <p:mask_type />
+                        <p:db_key value="N" />
+                        <p:krn_fld_yn value="N" />
+                    </appinfo>
+                </annotation>
+                <simpleType>
+                    <restriction base="long">
+                        <totalDigits value="5" />
+                    </restriction>
+                </simpleType>
+            </element>
+            <element maxOccurs="unbounded" name="rstList" type="tns:RST_LIST_TYPE">
+                <annotation>
+                    <documentation>결과리스트</documentation>
+                    <appinfo>
+                        <p:adjustLength category="variableField" lengthFieldURL="RST_ROWCOUNT" />
+                        <p:mandatory value="N" />
+                        <p:level value="1" />
+                    </appinfo>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+    <complexType name="RST_LIST_TYPE">
+        <sequence>
+            <element name="regDtm">
+                <annotation>
+                    <documentation>등록일시</documentation>
+                    <appinfo>
+                        <p:description />
+                        <p:mandatory value="N" />
+                        <p:level value="2" />
+                        <p:encryption value="N" />
+                        <p:one_path_encp value="N" />
+                        <p:mask_type />
+                        <p:db_key value="N" />
+                        <p:krn_fld_yn value="N" />
+                    </appinfo>
+                </annotation>
+                <simpleType>
+                    <restriction base="string">
+                        <maxLength value="14" />
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="aprvlCareGbcd">
+                <annotation>
+                    <documentation>승인주의구분코드</documentation>
+                    <appinfo>
+                        <p:description />
+                        <p:mandatory value="N" />
+                        <p:level value="2" />
+                        <p:encryption value="N" />
+                        <p:one_path_encp value="N" />
+                        <p:mask_type />
+                        <p:db_key value="N" />
+                        <p:krn_fld_yn value="N" />
+                    </appinfo>
+                </annotation>
+                <simpleType>
+                    <restriction base="string">
+                        <maxLength value="4" />
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="aprvlCareAplyDt">
+                <annotation>
+                    <documentation>승인주의적용일자</documentation>
+                    <appinfo>
+                        <p:description />
+                        <p:mandatory value="N" />
+                        <p:level value="2" />
+                        <p:encryption value="N" />
+                        <p:one_path_encp value="N" />
+                        <p:mask_type />
+                        <p:db_key value="N" />
+                        <p:krn_fld_yn value="N" />
+                    </appinfo>
+                </annotation>
+                <simpleType>
+                    <restriction base="string">
+                        <maxLength value="8" />
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="aprvlCareEndDt">
+                <annotation>
+                    <documentation>승인주의종료일자</documentation>
+                    <appinfo>
+                        <p:description />
+                        <p:mandatory value="N" />
+                        <p:level value="2" />
+                        <p:encryption value="N" />
+                        <p:one_path_encp value="N" />
+                        <p:mask_type />
+                        <p:db_key value="N" />
+                        <p:krn_fld_yn value="N" />
+                    </appinfo>
+                </annotation>
+                <simpleType>
+                    <restriction base="string">
+                        <maxLength value="8" />
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="aprvlCareCntn">
+                <annotation>
+                    <documentation>승인주의내용</documentation>
+                    <appinfo>
+                        <p:description />
+                        <p:mandatory value="N" />
+                        <p:level value="2" />
+                        <p:encryption value="N" />
+                        <p:one_path_encp value="N" />
+                        <p:mask_type />
+                        <p:db_key value="N" />
+                        <p:krn_fld_yn value="N" />
+                    </appinfo>
+                </annotation>
+                <simpleType>
+                    <restriction base="string">
+                        <maxLength value="100" />
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="cnslStoreCd">
+                <annotation>
+                    <documentation>상담점코드</documentation>
+                    <appinfo>
+                        <p:description />
+                        <p:mandatory value="N" />
+                        <p:level value="2" />
+                        <p:encryption value="N" />
+                        <p:one_path_encp value="N" />
+                        <p:mask_type />
+                        <p:db_key value="N" />
+                        <p:krn_fld_yn value="N" />
+                    </appinfo>
+                </annotation>
+                <simpleType>
+                    <restriction base="string">
+                        <maxLength value="3" />
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="conpsId">
+                <annotation>
+                    <documentation>상담자ID</documentation>
+                    <appinfo>
+                        <p:description />
+                        <p:mandatory value="N" />
+                        <p:level value="2" />
+                        <p:encryption value="N" />
+                        <p:one_path_encp value="N" />
+                        <p:mask_type />
+                        <p:db_key value="N" />
+                        <p:krn_fld_yn value="N" />
+                    </appinfo>
+                </annotation>
+                <simpleType>
+                    <restriction base="string">
+                        <maxLength value="8" />
+                    </restriction>
+                </simpleType>
+            </element>
+        </sequence>
+    </complexType>
+</schema>]]></data>
+            </io>
+        </unit>
+    </outbound>
+</io>

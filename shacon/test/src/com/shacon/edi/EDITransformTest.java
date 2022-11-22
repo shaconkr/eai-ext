@@ -1,8 +1,8 @@
 package com.shacon.edi;
 
-import com.hcis.eai.ext.EDISchemaBuilder;
-import com.hcis.eai.ext.EimsXMLParser;
-import com.hcis.eai.ext.TibDataFormatResBuilder;
+import com.shacon.hcis.EDISchemaBuilder;
+import com.shacon.hcis.EimsParser;
+import com.shacon.hcis.DataFormatResourceBuilder;
 import io.netty.util.internal.StringUtil;
 import kr.shacon.edi.Transformer;
 import org.dom4j.DocumentException;
@@ -23,6 +23,7 @@ public class EDITransformTest {
     public void xsdBuild() {
         EDISchemaBuilder bld = new EDISchemaBuilder();
         bld.createExtXSD("HCNCISCTJD0120103", "CISHCNCTJD0120104");
+        bld.createIntXSD("CISTADAHFF0030102");
     }
 
     @Test
@@ -41,7 +42,7 @@ public class EDITransformTest {
         System.out.println(kor + " " + StringUtil.toHexStringPadded(win.getBytes()));
 
 
-        String eimsRootPath = "C:/worksrc/shacon/test/resources/HCNCISCTJD0120103_CISHCNCTJD0120104/";
+        String eimsRootPath = "D:/HCIS/eai-ext/shacon/test/resources/HCNCISCTJD0120103_CISHCNCTJD0120104/";
         Transformer trans = new Transformer();
 
         String reqJsonUtf8 = Files.readString(Path.of(eimsRootPath + "HCNCISCTJD0120103_InReq.json"), StandardCharsets.UTF_8);
@@ -58,16 +59,15 @@ public class EDITransformTest {
 
     @Test
     public void buildTibDFRes() throws IOException, DocumentException {
-        String dirPath = "C:/worksrc/shacon/test/resources/HCNCISCTJD0120103_CISHCNCTJD0120104/";
-
-        TibDataFormatResBuilder bld = new TibDataFormatResBuilder();
+        DataFormatResourceBuilder bld = new DataFormatResourceBuilder();
         bld.buildTibRes("HCNCISCTJD0120103", "CISHCNCTJD0120104");
+        bld.buildTibRes("CISTADAHFF0030102", null);
     }
 
     @Test
     public void parseXml() throws DocumentException, IOException {
-        EimsXMLParser parser = new EimsXMLParser();
-        Map<String, Object> ret = parser.parse("HCNCISCTJD0120103", "CISHCNCTJD0120104");
+        EimsParser parser = new EimsParser();
+        Map<String, Object> ret = parser.parseXML("HCNCISCTJD0120103", "CISHCNCTJD0120104");
         System.out.println(ret);
     }
 

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <interface bound="inbound" id="CISTADAHFF0030102" version="1" />
+    <src_io id="SCISAHFF0030102" />
+    <target_io id="TTADAHFF0030102" />
+    <mapping>
+        <source path="entity/WRK_GB_VAL" />
+        <target path="entity/WRK_GB_VAL" />
+        <function ref="move" />
+    </mapping>
+    <mapping>
+        <source path="entity/MEM_NM" />
+        <target path="entity/MEM_NM" />
+        <function ref="move" />
+    </mapping>
+    <mapping>
+        <source path="entity/CRD_MEM_NO" />
+        <target path="entity/CRD_MEM_NO" />
+        <function ref="move" />
+    </mapping>
+    <mapping>
+        <source path="entity/APRVL_CARE_GBCD" />
+        <target path="entity/APRVL_CARE_GBCD" />
+        <function ref="move" />
+    </mapping>
+    <mapping>
+        <source path="entity/APRVL_CARE_APLY_DT" />
+        <target path="entity/APRVL_CARE_APLY_DT" />
+        <function ref="move" />
+    </mapping>
+    <mapping>
+        <source path="entity/APRVL_CARE_END_DT" />
+        <target path="entity/APRVL_CARE_END_DT" />
+        <function ref="move" />
+    </mapping>
+    <mapping>
+        <source path="entity/APRVL_CARE_CNTN" />
+        <target path="entity/APRVL_CARE_CNTN" />
+        <function ref="move" />
+    </mapping>
+    <mapping>
+        <source path="entity/CNSL_STORE_CD" />
+        <target path="entity/CNSL_STORE_CD" />
+        <function ref="move" />
+    </mapping>
+    <mapping>
+        <source path="entity/CONPS_ID" />
+        <target path="entity/CONPS_ID" />
+        <function ref="move" />
+    </mapping>
+    <mapping>
+        <source path="entity/OCRN_CNT" />
+        <target path="entity/OCRN_CNT" />
+        <function ref="move" />
+    </mapping>
+</map>

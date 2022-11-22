@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="CISTADAHFF0030102" name="승인주의메시지(승인서버)" version="1">
+    <common>
+        <description />
+        <system code="CIS" name="H-CIS" />
+        <!--시스템구분코드-->
+        <work code="AHFF" name="부가정보" />
+        <!--어플리케이션코드-->
+        <datetime>2022-11-17 11:32:47</datetime>
+        <!--작성일-->
+        <writer>CIS070</writer>
+        <!--작성자-->
+        <user_field_1 />
+        <!--참조I/F ID-->
+        <user_field_2 />
+        <!--유저필드-->
+        <etc_con />
+        <!--거래 ID-->
+        <transaction_id />
+        <!--기타 정보-->
+        <attribute>
+            <infra code="2" name="대내 I/F" />
+            <!--연계구분 - 1:MCI / 2:대내 I/F / 3:대외 I/F / 6:통합 UI-->
+            <process code="1" name="온라인(대내)" />
+            <!--처리유형 - 1:온라인(대내) / 2:온라인(대외) / 3:(배치)DBtoDB / 4:FILEtoFILE(대내) / 5:(실행주기)DBtoDB / 8:FILEtoFILE(대외)-->
+            <mapping code="Y" name="매핑함" />
+            <!--매핑여부-->
+            <occur_cycle />
+            <!--발생주기 - 1:일별1회 / 2:일별 수시 / 3:주별1회 / 4:주별 수시 / 5:월별1회 / 6:월별수시-->
+            <frequency />
+            <!--예상건수-->
+            <online>
+                <timeout />
+                <!--Timer값-->
+                <internal>
+                    <method code="1" name="요청/응답" />
+                    <!--처리방법 - 1:요청/응답 / 2:요청 / 3:응답-->
+                </internal>
+                <external>
+                    <system />
+                    <!--대외 기관 구분코드 / 대외 기관 명-->
+                    <work />
+                    <!--대외 업무 코드 / 대외 업무 명-->
+                    <htdsp />
+                    <!--당타발 구분코드 - 1:당발 / 2:타발-->
+                    <service />
+                    <!--거래ID-->
+                    <syn-asyn_h />
+                    <!--대내구간 동기비동기 구분 - 1:동기 / 2:비동기-->
+                    <msg />
+                    <!--대외 전문 종별 코드-->
+                    <tx />
+                    <!--대외 거래 구분 코드-->
+                    <etc />
+                    <!--대외 기타 구분 코드-->
+                    <equn_msg />
+                    <!--등가 전문 종별 코드-->
+                    <response_interface />
+                    <!--응답 인터페이스 관리ID-->
+                    <method />
+                    <!--처리 방법 - 1:요청응답 / 2:요청-->
+                    <saf />
+                    <!--SAF여부 - Y:SAF사용 / N:SAF미사용-->
+                    <netcheck />
+                    <!--NETCHECK구분 - Y:체크함 / N:체크안함-->
+                    <send_receive />
+                    <!--대외 송수신 구분 코드 - H:송신 / E:수신-->
+                    <no_timeout_async />
+                    <!--단방향 처리 여부 - Y:예 / N:아니오-->
+                    <trn />
+                    <!--거래 코드 3자리-->
+                    <no_res_type />
+                    <!--무응답시 수신구분 - 1:요청전문 / 2:표준헤더-->
+                    <chn_tp_c />
+                    <!--채널 유형 코드-->
+                </external>
+            </online>
+            <batch>
+                <file2file>
+                    <ext_file_path />
+                    <!--대외기관 파일 경로-->
+                    <ext_file_nm />
+                    <!--대외기관 파일명-->
+                    <ext_line_char />
+                    <!--대외 개행문자-->
+                    <ext_record_size />
+                    <!--대외 레코드 크기-->
+                    <ext_date_change />
+                    <!--대외 일자 변동분-->
+                    <ext_file_code />
+                    <!--대외 파일코드-->
+                    <ext_dupl_yn />
+                    <!--대외 중복수신 여부-->
+                    <filler />
+                    <!--대외 추가 속성-->
+                    <schedule_yn />
+                    <!--전송 스케줄-->
+                    <day_code />
+                    <!--파일 스케줄-->
+                    <schedule_start />
+                    <!--스케줄 시작 시간-->
+                    <schedule_end />
+                    <!--스케줄 종료 시간-->
+                </file2file>
+            </batch>
+            <deferred>
+                <deferred_cycle />
+                <!--디퍼드 주기-->
+            </deferred>
+        </attribute>
+    </common>
+    <interface_type>
+        <source>
+            <ioid>SCISAHFF0030102</ioid>
+            <!--소스 I/O ID-->
+            <system code="CIS" name="H-CIS" />
+            <!--소스 I/O 시스템 구분 코드 / 시스템 명-->
+            <work code="AHFF" name="부가정보" />
+            <!--소스 I/O 업무 코드 / 업무 코드 명-->
+            <person>전부일</person>
+            <!--소스 I/O 작성자-->
+            <process_type>
+                <eai>
+                    <cctn_info_dsnc>00</cctn_info_dsnc>
+                    <batch>
+                        <db2db>
+                            <service />
+                            <!--DB 서비스명-->
+                            <sql />
+                            <!--DB2DB SQL문-->
+                            <trans_result />
+                            <!--전송결과반영 여부-->
+                        </db2db>
+                    </batch>
+                    <deferred>
+                        <db2db>
+                            <service />
+                            <!--DB 서비스명-->
+                            <sql />
+                            <!--DB2DB SQL문-->
+                            <trans_result />
+                            <!--전송결과반영 여부-->
+                        </db2db>
+                    </deferred>
+                </eai>
+                <mft>
+                    <cctn_info_dsnc>00</cctn_info_dsnc>
+                    <batch>
+                        <file2file>
+                            <sorc_dflt_yn />
+                            <!--소스 파일 경로 표준경로사용 여부-->
+                            <path />
+                            <!--FILE2FILE 경로-->
+                            <rule />
+                            <!--FILE명 규칙-->
+                            <process_method />
+                            <!--처리 방법-->
+                            <cron_set />
+                            <!--실행주기-->
+                            <sorc_back_yn />
+                            <!--소스 백업 여부 - N:작업 없음 / B:백업 / D:삭제-->
+                            <sorc_back_path_nm />
+                            <!--소스 백업 경로-->
+                        </file2file>
+                    </batch>
+                </mft>
+            </process_type>
+        </source>
+        <target>
+            <ioid>TTADAHFF0030102</ioid>
+            <!--타겟 I/O ID-->
+            <system code="TAD" name="승인서버(탠덤)" />
+            <!--타겟 I/O 시스템 구분 코드 / 시스템 명-->
+            <work code="DEFT" name="어플리케이션 Default 코드" />
+            <!--타겟 I/O 업무 코드 / 업무 코드 명-->
+            <person>전부일</person>
+            <!--타겟 I/O 작성자-->
+            <process_type>
+                <online>
+                    <internal>
+                        <request_receive />
+                        <!--수신 거래 ID-->
+                    </internal>
+                </online>
+                <eai>
+                    <cctn_info_dsnc>00</cctn_info_dsnc>
+                    <batch>
+                        <db2db>
+                            <service />
+                            <!--DB 서비스명-->
+                            <apply />
+                            <!--데이터 적용 방식-->
+                            <table />
+                            <!--DB 테이블 명-->
+                        </db2db>
+                    </batch>
+                    <deferred>
+                        <db2db>
+                            <service />
+                            <!--DB 서비스명-->
+                            <apply />
+                            <!--DB 데이터 적용 방식-->
+                            <table />
+                            <!--DB 테이블 명-->
+                        </db2db>
+                    </deferred>
+                </eai>
+                <mft>
+                    <cctn_info_dsnc>00</cctn_info_dsnc>
+                    <batch>
+                        <file2file>
+                            <trgt_dflt_yn />
+                            <!--타겟 파일 경로 표준경로사용 여부-->
+                            <path />
+                            <!--FILE2FILE 경로-->
+                            <trgt_file_renm_yn />
+                            <!--타겟 변환규칙여부-->
+                            <rule />
+                            <!--FILE명 규칙-->
+                            <after_execute />
+                            <!--후속처리 여부-->
+                            <after_shell_nm />
+                            <!--후속처리 파일명-->
+                            <after_shell_path />
+                            <!--후속처리 파일 경로-->
+                            <overwrite_yn />
+                            <!--중복 파일명 덮어쓰기 여부-->
+                        </file2file>
+                    </batch>
+                </mft>
+            </process_type>
+        </target>
+    </interface_type>
+</interface>

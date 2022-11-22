@@ -76,7 +76,7 @@ public class DefinitionLoader {
 
     XSSchemaSet schemas = loadSchemas(input);
     XSSchema mainSchema = findMainSchema(schemas);
-    XSElementDecl mainElement = mainSchema.getElementDecl("main");
+    XSElementDecl mainElement = mainSchema.getElementDecl("root");
 
     for (Evaluator<RecordDefinition, XSElementDecl> e : evaluators.mainElementEvaluators()) {
       e.eval(recordDefinition, mainElement);
@@ -124,7 +124,7 @@ public class DefinitionLoader {
   private XSSchema findMainSchema(XSSchemaSet schemas) {
     List<XSSchema> schemasWithMainElement = new ArrayList<>();
     for (XSSchema schema : schemas.getSchemas()) {
-      XSElementDecl main = schema.getElementDecl("main");
+      XSElementDecl main = schema.getElementDecl("root");
       if (main != null) {
         schemasWithMainElement.add(schema);
       }

@@ -31,5 +31,5 @@
             <xs:element name="bizBody" type="CISHCNCTJD0120104_OutRes_Body"/>
         </xs:sequence>
     </xs:complexType>
-    <xs:element name="main" type="CISHCNCTJD0120104_OutRes"/>
+    <xs:element name="root" type="CISHCNCTJD0120104_OutRes"/>
 </xs:schema>

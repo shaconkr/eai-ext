@@ -31,5 +31,5 @@
             <xs:element name="bizBody" type="HCNCISCTJD0120103_OutReq_Body"/>
         </xs:sequence>
     </xs:complexType>
-    <xs:element name="main" type="HCNCISCTJD0120103_OutReq"/>
+    <xs:element name="root" type="HCNCISCTJD0120103_OutReq"/>
 </xs:schema>

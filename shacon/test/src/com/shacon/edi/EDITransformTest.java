@@ -19,13 +19,47 @@ import java.util.Map;
 public class EDITransformTest {
 
 
+
+    // EIMS 배포 위치 NAS    /hcisnas/eai_data/eims/latest
+    String eimsPath = "D:/HCIS/eai-ext/shacon/test/resources/";
+
+    // TIBCO Project 별 Schema 위치
+    // Git-Repo / ~/eai-com , ~/eai-int, ~/eai-ext, ~/eai-mci
+    // APP명 :  대상시스템 SysId(3) + SEQ(2) + .application
+    // 모듈명 :  대상시스템 SysId(3) + SEQ(2) + .module
+    // Shared 모듈명 :  대상시스템 SysId(3) + .smodule
+    // 패키지명 :  대상시스템 SysId(3) / 업무(2) /  IfId(17)
+    // Schema :  모듈명 /  schema / 패키지명
+    // Resources : 모듈명 /  Resources / 패키지명
+
+    //  /hcisnas/eai_data/ 1.eai-mci 2.eai-int 3.eai-ext / 대상SysId(3) + seq(2) / Schema , Resources / package /
+    String projPath = "D:/HCIS/eai-ext/shacon/test/resources/";
+
     @Test
     public void xsdBuild() {
-        XsdSchemaBuilder bld = new XsdSchemaBuilder();
+        XsdSchemaBuilder bld = new XsdSchemaBuilder(eimsPath, projPath, "");
         bld.createExtXSD("HCNCISCTJD0120103", "CISHCNCTJD0120104");
         bld.createIntXSD("CISTADAHFF0030102");
     }
+    @Test
+    public void buildTibDFRes() throws IOException, DocumentException {
+        DataFormatResourceBuilder bld = new DataFormatResourceBuilder(eimsPath, projPath,"");
+        bld.buildTibRes("HCNCISCTJD0120103", "CISHCNCTJD0120104");
+        bld.buildTibRes("CISTADAHFF0030102", null);
+    }
 
+    private String utf8ToKsc5601(String s) throws UnsupportedEncodingException {
+        return encodeCharset(s, "ksc5601");
+
+    }
+
+    private String ksc5601ToUtf8(String s) throws UnsupportedEncodingException {
+        return encodeCharset(s, "utf-8");
+    }
+
+    private String encodeCharset(String s, String to) throws UnsupportedEncodingException {
+        return new String(s.getBytes(to), to);
+    }
     @Test
     public void transform() throws Exception {
 
@@ -55,36 +89,6 @@ public class EDITransformTest {
         String jsonStr = trans.toJSON(eimsRootPath + "CISHCNCTJD0120104_InRes.xsd", edi);
         Files.write(Paths.get(eimsRootPath + "CISHCNCTJD0120104_InRes.json"), ksc5601ToUtf8(jsonStr).getBytes(StandardCharsets.UTF_8));
 
-    }
-
-    @Test
-    public void buildTibDFRes() throws IOException, DocumentException {
-        DataFormatResourceBuilder bld = new DataFormatResourceBuilder();
-        bld.buildTibRes("HCNCISCTJD0120103", "CISHCNCTJD0120104");
-        bld.buildTibRes("CISTADAHFF0030102", null);
-    }
-
-    @Test
-    public void parseXml() throws DocumentException, IOException {
-        EimsParser parser = new EimsParser();
-        Map<String, Object> ret = parser.parseXML("HCNCISCTJD0120103", "CISHCNCTJD0120104");
-        System.out.println(ret);
-    }
-
-
-
-
-    private String utf8ToKsc5601(String s) throws UnsupportedEncodingException {
-        return encodeCharset(s, "ksc5601");
-
-    }
-
-    private String ksc5601ToUtf8(String s) throws UnsupportedEncodingException {
-        return encodeCharset(s, "utf-8");
-    }
-
-    private String encodeCharset(String s, String to) throws UnsupportedEncodingException {
-        return new String(s.getBytes(to), to);
     }
 
 

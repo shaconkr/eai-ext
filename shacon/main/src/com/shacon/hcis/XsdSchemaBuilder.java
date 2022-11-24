@@ -1,5 +1,8 @@
 package com.shacon.hcis;
 
+import com.google.common.base.CaseFormat;
+import com.google.common.base.Joiner;
+import com.google.common.collect.Lists;
 import kr.shacon.edi.util.CastUtils;
 import org.apache.ws.commons.schema.*;
 import org.apache.ws.commons.schema.constants.Constants;
@@ -9,10 +12,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Attr;
 
-
 import javax.xml.namespace.QName;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -26,19 +31,39 @@ import static org.apache.ws.commons.schema.constants.Constants.URI_2001_SCHEMA_X
  * EIMS Integration
  * <p>
  * EIMS 에서 등록된 전문정보로 고정길이전문 생성/파싱 용 XSD 생성
+ * <p>
+ * TIBCO Project 별 Schema 위치
+ * Git-Repo / ~/eai-com , ~/eai-int, ~/eai-ext, ~/eai-mci
+ * APP명 :  소스SysId(3) + 타겟sysId(3) + SEQ(2) + .application
+ * AP모듈명 :  소스SysId(3) + 타겟sysId(3) + SEQ(2) + .module
+ * Shared 모듈명 :  소스SysId(3) + 타겟sysId(3) + seq(1) + .smodule
+ * 패키지명 : InfrId(1) + 대상시스템 SysId(3) / 업무(2) /  IfId(17)
+ * Schema :  모듈명 /  schema / 패키지명
+ * Resources : 모듈명 /  Resources / 패키지명
  *
  * @author choi hyoung ki
  */
 public class XsdSchemaBuilder {
 
     private static final Logger log = LoggerFactory.getLogger(XsdSchemaBuilder.class);
+    private static final String infra[] = {"", "/eai-mci/", "/eai-int/", "/eai-ext/"};
+    private static final String STD_HDR_NS = "http://schema.hcis.com/json";
+
     String targetNameSpace;
+    String eimsPath;
+    String projPath;
+    String packageName;
+    EimsParser eimsParser;
+    String schemaPath;
+    String resourcePath;
 
-    //TODO  NAS path modifi.
-//	String eaiRepoPth = "/hcisnas/eai_data/eims/latest";
-    String eaiRepoPth = "D:/HCIS/eai-ext/shacon/test/resources/";
 
-    EimsParser eimsParser = new EimsParser();
+    public XsdSchemaBuilder(String eimsPath, String projPath, String packageName) {
+        this.eimsPath = eimsPath;
+        this.projPath = projPath;
+        this.packageName = packageName;
+        this.eimsParser = new EimsParser(eimsPath);
+    }
 
     /**
      * 대내용 XSD 생성 (DATA부 만 존재함) HCIS Header 추가?
@@ -47,31 +72,32 @@ public class XsdSchemaBuilder {
      */
     public void createIntXSD(String ifId) {
         try {
-            String dirPath = eaiRepoPth + ifId + "/";
             Map<String, Object> eaiInfo = eimsParser.parseXML(ifId, null);
-
             Map<String, String> reqInfo = CastUtils.cast((Map<?, ?>) eaiInfo.get("request"));
-
             Map<String, String> source = CastUtils.cast((Map<?, ?>) eaiInfo.get("source"));
             Map<String, String> target = CastUtils.cast((Map<?, ?>) eaiInfo.get("target"));
 
+            packageName = Joiner.on("_").join(Lists.newArrayList(source.get("sysId"), source.get("workId"), target.get("sysId"), target.get("workId")));
+            String moduleName = source.get("sysId") + target.get("sysId") + "01.module";
+            schemaPath = projPath + infra[Integer.parseInt(reqInfo.get("infraId"))] + moduleName + "/Schemas/" + packageName;
+            resourcePath = projPath + infra[Integer.parseInt(reqInfo.get("infraId"))] + moduleName + "/Resources/" + packageName;
+
             if (reqInfo.get("infraId").equals("2")) {  // 대내
                 if (source.get("sysId").equals("TAD")) {
-                    buildIntXsd(dirPath, ifId, IN_REQ);
-                    buildIntXsd(dirPath, ifId, IN_RES);
+                    buildIntXsd(ifId, IN_REQ);
+                    buildIntXsd(ifId, IN_RES);
                 } else {
-                    buildIntXsdforHcis(dirPath, ifId, IN_REQ);
-                    buildIntXsdforHcis(dirPath, ifId, IN_RES);
+                    buildIntXsdforHcis(ifId, IN_REQ);
+                    buildIntXsdforHcis(ifId, IN_RES);
                 }
                 if (target.get("sysId").equals("TAD")) {
-                    buildIntXsd(dirPath, ifId, OUT_REQ);
-                    buildIntXsd(dirPath, ifId, OUT_RES);
+                    buildIntXsd(ifId, OUT_REQ);
+                    buildIntXsd(ifId, OUT_RES);
                 } else {
-                    buildIntXsdforHcis(dirPath, ifId, OUT_REQ);
-                    buildIntXsdforHcis(dirPath, ifId, OUT_RES);
+                    buildIntXsdforHcis(ifId, OUT_REQ);
+                    buildIntXsdforHcis(ifId, OUT_RES);
                 }
             }
-
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (XmlSchemaSerializer.XmlSchemaSerializerException e) {
@@ -91,26 +117,34 @@ public class XsdSchemaBuilder {
      * @param resIfId 응답IFID
      */
     public void createExtXSD(String reqIfId, String resIfId) {
-        String dirPath = (resIfId != null) ? eaiRepoPth + reqIfId + "_" + resIfId + "/" : eaiRepoPth + reqIfId + "/";
+        String folder = (resIfId != null) ? "/" + reqIfId + "_" + resIfId : "/" + reqIfId;
         try {
-            EimsParser parser = new EimsParser();
-            Map<String, Object> eaiInfo = parser.parseXML(reqIfId, resIfId);
-            Map<String, String> reqEaiInfo = CastUtils.cast((Map<?, ?>) eaiInfo.get("request"));
-            String triggerSystem = reqEaiInfo.get("extHtdspId");  // 1.당발 2. 타발
+            Map<String, Object> eaiInfo = eimsParser.parseXML(reqIfId, resIfId);
+            Map<String, String> reqInfo = CastUtils.cast((Map<?, ?>) eaiInfo.get("request"));
+            Map<String, String> source = CastUtils.cast((Map<?, ?>) eaiInfo.get("source"));
+            Map<String, String> target = CastUtils.cast((Map<?, ?>) eaiInfo.get("target"));
+
+            String moduleName = source.get("sysId") + target.get("sysId") + "01.module";
+
+            packageName = Joiner.on("_").join(Lists.newArrayList(source.get("sysId"), source.get("workId"), target.get("sysId"), target.get("workId")));
+            schemaPath = projPath + infra[Integer.parseInt(reqInfo.get("infraId"))] + moduleName + "/Schemas/" + packageName;
+            resourcePath = projPath + infra[Integer.parseInt(reqInfo.get("infraId"))] + moduleName + "/Resources/" + packageName;
+            String triggerSystem = reqInfo.get("extHtdspId");  // 1.당발 2. 타발
 
             if (triggerSystem.equals("1")) {
-                buildExtXsd(dirPath, reqIfId, OUT_REQ);
-                buildExtXsdforHcis(dirPath, reqIfId, IN_REQ);
+                buildExtXsd(folder, reqIfId, OUT_REQ);
+                buildExtXsdforHcis(folder, reqIfId, IN_REQ);
                 if (resIfId != null) {
-                    buildExtXsd(dirPath, resIfId, OUT_RES);
-                    buildExtXsdforHcis(dirPath, resIfId, IN_RES);
+                    buildExtXsd(folder, resIfId, OUT_RES);
+                    buildExtXsdforHcis(folder, resIfId, IN_RES);
                 }
             } else {
-                buildExtXsd(dirPath, reqIfId, IN_REQ);
-                buildExtXsdforHcis(dirPath, reqIfId, OUT_REQ);
+                buildExtXsd(folder, reqIfId, IN_REQ);
+                buildExtXsdforHcis(folder, reqIfId, OUT_REQ);
                 if (resIfId != null) {
-                    buildExtXsd(dirPath, resIfId, IN_RES);
-                    buildExtXsdforHcis(dirPath, resIfId, OUT_RES);
+
+                    buildExtXsd(folder, resIfId, IN_RES);
+                    buildExtXsdforHcis(folder, resIfId, OUT_RES);
                 }
             }
         } catch (Exception e) {
@@ -118,14 +152,12 @@ public class XsdSchemaBuilder {
         }
     }
 
-    public void buildIntXsd(String dirPath, String ifId, String direction) throws FileNotFoundException, XmlSchemaSerializer.XmlSchemaSerializerException {
-        String xsdPath = dirPath + ifId + direction + "_Int.xsd";
+    public void buildIntXsd(String ifId, String direction) throws IOException, XmlSchemaSerializer.XmlSchemaSerializerException {
         targetNameSpace = "http://schema.hcis.com/xsd/" + ifId;
-
-        List<Map<String, Object>> body = eimsParser.parseEimsXsd(dirPath + ifId + direction + ".xsd");
+        String readPath = eimsPath + "/" + ifId + "/" + ifId + direction + ".xsd";
+        List<Map<String, Object>> body = eimsParser.parseEimsXsd(readPath);
 
         XmlSchema xsd = new XmlSchema(targetNameSpace, new XmlSchemaCollection());
-
         xsd.setElementFormDefault(XmlSchemaForm.QUALIFIED);
         xsd.setSchemaNamespacePrefix("xsd");
         NamespaceMap nsMap = new NamespaceMap();
@@ -144,16 +176,17 @@ public class XsdSchemaBuilder {
         XmlSchemaElement elem = new XmlSchemaElement(xsd, true);
         elem.setName("root");
         elem.setSchemaTypeName(new QName(targetNameSpace, ct.getName()));
-
-        OutputStreamWriter or = new OutputStreamWriter(new FileOutputStream(xsdPath), StandardCharsets.UTF_8);
+        Path path = Paths.get(schemaPath);
+        Files.createDirectories(path);
+        String writePath = schemaPath + "/" + ifId + direction + ".xsd";
+        OutputStreamWriter or = new OutputStreamWriter(new FileOutputStream(writePath), StandardCharsets.UTF_8);
         xsd.write(or);
     }
 
-    public void buildIntXsdforHcis(String dirPath, String ifId, String direction) throws FileNotFoundException, XmlSchemaSerializer.XmlSchemaSerializerException {
-        String xsdPath = dirPath + ifId + direction + "_Int.xsd";
+    public void buildIntXsdforHcis(String ifId, String direction) throws IOException, XmlSchemaSerializer.XmlSchemaSerializerException {
         targetNameSpace = "http://schema.hcis.com/xsd/" + ifId;
-
-        List<Map<String, Object>> body = eimsParser.parseEimsXsd(dirPath + ifId + direction + ".xsd");
+        String readPath = eimsPath + "/" + ifId + "/" + ifId + direction + ".xsd";
+        List<Map<String, Object>> body = eimsParser.parseEimsXsd(readPath);
 
         XmlSchema xsd = new XmlSchema(targetNameSpace, new XmlSchemaCollection());
 
@@ -161,13 +194,15 @@ public class XsdSchemaBuilder {
         xsd.setSchemaNamespacePrefix("xsd");
         NamespaceMap nsMap = new NamespaceMap();
         nsMap.add("", URI_2001_SCHEMA_XSD);
+        nsMap.add("hdr", STD_HDR_NS);
         nsMap.add("edi", "http://shacon.kr/xsd");
         nsMap.add("ns", targetNameSpace);
         xsd.setNamespaceContext(nsMap);
         xsd.setTargetNamespace(targetNameSpace);
 
-        XmlSchemaInclude inc = new XmlSchemaInclude(xsd);
-        inc.setSchemaLocation(eaiRepoPth +"/HCIS_FW_Header.xsd");
+        XmlSchemaImport imp = new XmlSchemaImport(xsd);
+        imp.setSchemaLocation("classpath://Schemas/HcisStdHeader.xsd");
+        imp.setNamespace(STD_HDR_NS);
 
         XmlSchemaComplexType ct = new XmlSchemaComplexType(xsd, true);
         ct.setName(ifId + direction);
@@ -178,55 +213,61 @@ public class XsdSchemaBuilder {
         XmlSchemaComplexType rct = new XmlSchemaComplexType(xsd, true);
         rct.setName("rootType");
         XmlSchemaSequence seq = new XmlSchemaSequence();
-        seq.getItems().add(addElement(xsd, "header", targetNameSpace, "hcisHeaderType"));
+        seq.getItems().add(addElement(xsd, "header", STD_HDR_NS, "hcisHeaderType"));
         seq.getItems().add(addElement(xsd, "data", targetNameSpace, ct.getName()));
         rct.setParticle(seq);
 
         XmlSchemaElement elem = new XmlSchemaElement(xsd, true);
         elem.setName("root");
         elem.setSchemaTypeName(new QName(targetNameSpace, rct.getName()));
-
-        OutputStreamWriter or = new OutputStreamWriter(new FileOutputStream(xsdPath), StandardCharsets.UTF_8);
+        Path path = Paths.get(schemaPath);
+        Files.createDirectories(path);
+        String writePath = schemaPath + "/" + ifId + direction + ".xsd";
+        OutputStreamWriter or = new OutputStreamWriter(new FileOutputStream(writePath), StandardCharsets.UTF_8);
         xsd.write(or);
     }
 
     /**
      * 1 depth xsd for Fixed Format Message
      *
-     * @param dirPath
+     * @param folder
      * @param ifId
      * @param direction
      * @throws FileNotFoundException
      * @throws XmlSchemaSerializer.XmlSchemaSerializerException
      */
-    public void buildExtXsd(String dirPath, String ifId, String direction) throws FileNotFoundException, XmlSchemaSerializer.XmlSchemaSerializerException {
-        String xsdPath = dirPath + ifId + direction + "_Ext.xsd";
-        String targetNameSpace = "http://schema.hcis.com/xsd/" + ifId;
+    public void buildExtXsd(String folder, String ifId, String direction) throws IOException, XmlSchemaSerializer.XmlSchemaSerializerException {
 
-        List<Map<String, Object>> header = eimsParser.parseEimsXsd(dirPath + ifId + direction + HDR_XSD);
-        List<Map<String, Object>> body = eimsParser.parseEimsXsd(dirPath + ifId + direction + BODY_XSD);
+        String targetNameSpace = "http://schema.hcis.com/xsd/" + ifId;
+        String readPath = eimsPath + "/" + folder + "/" + ifId + direction;
+        List<Map<String, Object>> header = eimsParser.parseEimsXsd(readPath + HDR_XSD);
+        List<Map<String, Object>> body = eimsParser.parseEimsXsd(readPath + BODY_XSD);
 
         XmlSchema xsd = new XmlSchema(targetNameSpace, new XmlSchemaCollection());
-        xsd.setTargetNamespace(targetNameSpace);
         xsd.setElementFormDefault(XmlSchemaForm.QUALIFIED);
         xsd.setSchemaNamespacePrefix("xsd");
         NamespaceMap nsMap = new NamespaceMap();
-        nsMap.add("xs", URI_2001_SCHEMA_XSD);
+        nsMap.add("", URI_2001_SCHEMA_XSD);
+        nsMap.add("ns", targetNameSpace);
         nsMap.add("edi", "http://shacon.kr/xsd");
         xsd.setNamespaceContext(nsMap);
+        xsd.setTargetNamespace(targetNameSpace);
 
         XmlSchemaComplexType ct = new XmlSchemaComplexType(xsd, true);
         ct.setName(ifId + direction);
         XmlSchemaSequence sequence = new XmlSchemaSequence();
         addElement(xsd, sequence, header);
         addElement(xsd, sequence, body);
+
         ct.setParticle(sequence);
 
         XmlSchemaElement elem = new XmlSchemaElement(xsd, true);
         elem.setName("root");
-        elem.setSchemaTypeName(new QName("", ct.getName()));
-
-        OutputStreamWriter or = new OutputStreamWriter(new FileOutputStream(xsdPath), StandardCharsets.UTF_8);
+        elem.setSchemaTypeName(new QName(targetNameSpace, ct.getName()));
+        Path path = Paths.get(schemaPath);
+        Files.createDirectories(path);
+        String writePath = schemaPath + "/" + ifId + direction + ".xsd";
+        OutputStreamWriter or = new OutputStreamWriter(new FileOutputStream(writePath), StandardCharsets.UTF_8);
         xsd.write(or);
     }
 
@@ -234,31 +275,32 @@ public class XsdSchemaBuilder {
     /**
      * 2 depth xsd for cis f/w
      *
-     * @param dirPath
+     * @param folder
      * @param ifId
      * @param direction
      * @throws IOException
      * @throws XmlSchemaSerializer.XmlSchemaSerializerException
      */
-    public void buildExtXsdforHcis(String dirPath, String ifId, String direction) throws IOException {
-        String xsdPath = dirPath + ifId + direction + "_Ext.xsd";
+    public void buildExtXsdforHcis(String folder, String ifId, String direction) throws IOException {
         targetNameSpace = "http://schema.hcis.com/xsd/" + ifId;
-
-        List<Map<String, Object>> header = eimsParser.parseEimsXsd(dirPath + ifId + direction + HDR_XSD);
-        List<Map<String, Object>> body = eimsParser.parseEimsXsd(dirPath + ifId + direction + BODY_XSD);
+        String readPath = eimsPath + "/" + folder + "/" + ifId + direction;
+        List<Map<String, Object>> header = eimsParser.parseEimsXsd(readPath + HDR_XSD);
+        List<Map<String, Object>> body = eimsParser.parseEimsXsd(readPath + BODY_XSD);
 
         XmlSchema xsd = new XmlSchema(targetNameSpace, new XmlSchemaCollection());
         xsd.setElementFormDefault(XmlSchemaForm.QUALIFIED);
         xsd.setSchemaNamespacePrefix("xsd");
         NamespaceMap nsMap = new NamespaceMap();
         nsMap.add("", URI_2001_SCHEMA_XSD);
+        nsMap.add("hdr", STD_HDR_NS);
         nsMap.add("edi", "http://shacon.kr/xsd");
         nsMap.add("ns", targetNameSpace);
         xsd.setNamespaceContext(nsMap);
         xsd.setTargetNamespace(targetNameSpace);
 
-        XmlSchemaInclude inc = new XmlSchemaInclude(xsd);
-        inc.setSchemaLocation(eaiRepoPth + "/HCIS_FW_Header.xsd");
+        XmlSchemaImport imp = new XmlSchemaImport(xsd);
+        imp.setSchemaLocation("classpath://Schemas/HcisStdHeader.xsd");
+        imp.setNamespace(STD_HDR_NS);
 
         XmlSchemaComplexType ctHeader = new XmlSchemaComplexType(xsd, true);
         ctHeader.setName(ifId + direction + "_Header");
@@ -282,15 +324,15 @@ public class XsdSchemaBuilder {
         XmlSchemaComplexType rct = new XmlSchemaComplexType(xsd, true);
         rct.setName("rootType");
         XmlSchemaSequence seq2 = new XmlSchemaSequence();
-        seq2.getItems().add(addElement(xsd, "header", targetNameSpace, "hcisHeaderType"));
+        seq2.getItems().add(addElement(xsd, "header", STD_HDR_NS, "hcisHeaderType"));
         seq2.getItems().add(addElement(xsd, "data", targetNameSpace, ct.getName()));
         rct.setParticle(seq2);
 
         XmlSchemaElement elem = new XmlSchemaElement(xsd, true);
         elem.setName("root");
         elem.setSchemaTypeName(new QName(targetNameSpace, rct.getName()));
-
-        OutputStreamWriter or = new OutputStreamWriter(new FileOutputStream(xsdPath), StandardCharsets.UTF_8);
+        String writePath = schemaPath + "/" + ifId + direction + ".xsd";
+        OutputStreamWriter or = new OutputStreamWriter(new FileOutputStream(writePath), StandardCharsets.UTF_8);
         xsd.write(or);
     }
 

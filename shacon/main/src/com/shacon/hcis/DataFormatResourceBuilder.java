@@ -1,5 +1,7 @@
 package com.shacon.hcis;
 
+import com.google.common.base.Joiner;
+import com.google.common.collect.Lists;
 import kr.shacon.edi.util.CastUtils;
 import org.apache.ws.commons.schema.*;
 import org.apache.ws.commons.schema.constants.Constants;
@@ -11,8 +13,10 @@ import org.slf4j.LoggerFactory;
 import org.w3c.dom.Attr;
 
 import java.io.*;
-import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -21,70 +25,95 @@ import java.util.stream.Collectors;
 
 import static kr.shacon.edi.ShaConstants.*;
 
+/**
+ * TIBCO Data Format Resource Builder
+ * <p>
+ * TIBCO Project 별 Schema 위치
+ * Git-Repo / ~/eai-com , ~/eai-int, ~/eai-ext, ~/eai-mci
+ * APP명 :  소스SysId(3) + 타겟sysId(3) + SEQ(2) + .application
+ * AP모듈명 :  소스SysId(3) + 타겟sysId(3) + SEQ(2) + .module
+ * Shared 모듈명 :  대상시스템 SysId(3) + .smodule
+ * 패키지명 : InfrId(1) + 대상시스템 SysId(3) / 업무(2)
+ * Schema :  모듈명 /  schema / 패키지명
+ * Resources : 모듈명 /  Resources / 패키지명
+ * /hcisnas/eai_data/ 1.eai-mci 2.eai-int 3.eai-ext / AP모듈명 / Schema , Resources / package /
+ */
 public class DataFormatResourceBuilder {
     private static final Logger log = LoggerFactory.getLogger(DataFormatResourceBuilder.class);
+    private static final String infra[] = {"", "/eai-mci/", "/eai-int/", "/eai-ext/"};
+    String eimsPath;
+    String projPath;
+    String packageName;
+    EimsParser eimsParser;
+    String schemaPath;
+    String resourcePath;
 
-    String eaiRepoPth = "D:/HCIS/eai-ext/shacon/test/resources/";
-
-    EimsParser eimsParser = new EimsParser();
+    public DataFormatResourceBuilder(String eimsPath, String projPath, String packageName) {
+        this.eimsPath = eimsPath;
+        this.projPath = projPath;
+        this.packageName = packageName;
+        this.eimsParser = new EimsParser(eimsPath);
+    }
 
     /**
      * 당발/타발 구분 대외거래 전문 Tibco Data Format Resource
+     *
      * @param reqIfId
      * @param resIfId
      * @throws DocumentException
      * @throws IOException
      */
     public void buildTibRes(String reqIfId, String resIfId) throws DocumentException, IOException {
-
-        String dirPath = (resIfId != null) ? eaiRepoPth + reqIfId + "_" + resIfId + "/" : eaiRepoPth + reqIfId + "/";
+        String dirPath = (resIfId != null) ? projPath + reqIfId + "_" + resIfId + "/" : eimsPath + reqIfId + "/";
 
         Map<String, Object> eaiInfo = eimsParser.parseXML(reqIfId, resIfId);
-
         Map<String, String> reqInfo = CastUtils.cast((Map<?, ?>) eaiInfo.get("request"));
-
         Map<String, String> source = CastUtils.cast((Map<?, ?>) eaiInfo.get("source"));
         Map<String, String> target = CastUtils.cast((Map<?, ?>) eaiInfo.get("target"));
 
-        if( reqInfo.get("infraId").equals("2") ) {  // 대내
-            if(source.get("sysId").equals("TAD")){
-                build(dirPath, reqIfId, IN_REQ + "_Int", null);
-                build(dirPath, reqIfId, IN_RES + "_Int", null);
+        String moduleName = source.get("sysId") + target.get("sysId") + "01.module";
+        packageName = Joiner.on("_").join(Lists.newArrayList(source.get("sysId"), source.get("workId"), target.get("sysId"), target.get("workId")));
+        schemaPath = projPath + infra[Integer.parseInt(reqInfo.get("infraId"))] + moduleName + "/Schemas/" + packageName;
+        resourcePath = projPath + infra[Integer.parseInt(reqInfo.get("infraId"))] + moduleName + "/Resources/" + packageName;
+
+        if (reqInfo.get("infraId").equals("2")) {  // 대내
+            if (source.get("sysId").equals("TAD")) {
+                build(reqIfId, IN_REQ, null);
+                build(reqIfId, IN_RES, null);
             }
-            if(target.get("sysId").equals("TAD")){
-                build(dirPath, reqIfId, OUT_REQ + "_Int", null);
-                build(dirPath, reqIfId, OUT_RES + "_Int", null);
+            if (target.get("sysId").equals("TAD")) {
+                build(reqIfId, OUT_REQ, null);
+                build(reqIfId, OUT_RES, null);
             }
         }
 
-        if( reqInfo.get("infraId").equals("3") ) {  // 대외
-
+        if (reqInfo.get("infraId").equals("3")) {  // 대외
             String triggerSystem = reqInfo.get("extHtdspId");  // 1.당발 2. 타발
-
             if (triggerSystem.equals("1")) {
-                build(dirPath, reqIfId, OUT_REQ + "_Ext", null);
+                build(reqIfId, OUT_REQ, null);
                 if (resIfId != null) {
-                    build(dirPath, resIfId, OUT_RES + "_Ext", null);
+                    build(resIfId, OUT_RES, null);
                 }
             } else {
-                build(dirPath, reqIfId, IN_REQ + "_Ext", null);
+                build(reqIfId, IN_REQ, null);
                 if (resIfId != null) {
-                    build(dirPath, resIfId, IN_RES + "_Ext", null);
+                    build(resIfId, IN_RES, null);
                 }
             }
         }
     }
 
-    public void build(String dirPath, String ifId, String direction, List<Map<String, Object>> param) throws IOException {
-        String resPath = dirPath + ifId + direction + ".dataFormatResource";
-        String packageName = "edi";
+    public void build(String ifId, String direction, List<Map<String, Object>> param) throws IOException {
+        String readPath = schemaPath + "/" + ifId + direction + ".xsd";
+        char tail = direction.charAt(direction.length() - 1);
+        if (tail == 'q' || tail == 's') splitComplexTypeXSD(readPath, ifId, direction);
 
-        List<Map<String, Object>> layout = (param==null) ? parseXSD(dirPath + ifId + direction + ".xsd") : param;
+        List<Map<String, Object>> layout = (param == null) ? parseXSD(readPath) : param;
 
         Document doc = DocumentHelper.createDocument();
         Element config = createDFR(doc, ifId, packageName, direction);
 
-        String fldOffsets = addFieldOffsets(config, layout, dirPath, ifId, direction);
+        String fldOffsets = addFieldOffsets(config, layout, ifId, direction);
         config.addAttribute("fieldOffsetsStr", fldOffsets);
 
         OutputFormat format = OutputFormat.createPrettyPrint();
@@ -94,13 +123,16 @@ public class DataFormatResourceBuilder {
         xmlWriter.write(doc);
         String res = sw.toString().replace("&amp;", "&");
 
-        Writer writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(resPath), StandardCharsets.UTF_8));
+        Path path = Paths.get(resourcePath);
+        Files.createDirectories(path);
+        String writePath = resourcePath + "/" + ifId + direction + ".dataFormatResource";
+        Writer writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(writePath), StandardCharsets.UTF_8));
         writer.write(res);
         writer.flush();
         writer.close();
     }
 
-    private Element createDFR(Document doc, String ifId, String packageName, String direction){
+    private Element createDFR(Document doc, String ifId, String packageName, String direction) {
         Namespace ns = new Namespace("jndi", "http://xsd.tns.tibco.com/amf/models/sharedresource/jndi");
         Element root = doc.addElement(new QName("namedResource", ns));
         root.setName("jndi:namedResource");
@@ -113,7 +145,7 @@ public class DataFormatResourceBuilder {
         root.addAttribute("type", "dataformat:DataFormat");
         Element imports = root.addElement(new QName("imports", ns));
         imports.addAttribute("importType", "http://www.w3.org/2001/XMLSchema");
-//        imports.addAttribute("location", dirPath + ifId + direction + ".xsd");
+        imports.addAttribute("location", "../../Schemas/" + ifId + direction + ".xsd");
         imports.addAttribute("namespace", "http://schema.hcis.com/xsd/" + ifId);
         Element config = root.addElement(new QName("configuration", ns));
         config.addAttribute("xsi:type", "dataformat:DataFormat");
@@ -126,7 +158,7 @@ public class DataFormatResourceBuilder {
         return config;
     }
 
-    private String addFieldOffsets(Element config, List<Map<String, Object>> layout, String dirPath, String ifId, String direction) throws IOException {
+    private String addFieldOffsets(Element config, List<Map<String, Object>> layout, String ifId, String direction) throws IOException {
         List<String> ls = new LinkedList<>();
         int start = 0, end = 0, totalSize = 0;
         for (Map<String, Object> m : layout) {
@@ -143,8 +175,8 @@ public class DataFormatResourceBuilder {
             ls.add(m.get("name") + "(" + start + "," + end + ")");
 
             Object o = m.get(String.valueOf(m.get("name")));
-            if(o instanceof List){
-                build(dirPath, ifId, direction+"_"+String.valueOf(m.get("name")), CastUtils.cast((List) o));
+            if (o instanceof List) {
+                build(ifId, direction + "_" + String.valueOf(m.get("name")), CastUtils.cast((List) o));
             }
         }
         config.addAttribute("lineLength", String.valueOf(totalSize));
@@ -155,11 +187,11 @@ public class DataFormatResourceBuilder {
     private List<Map<String, Object>> parseXSD(String path) throws FileNotFoundException {
         XmlSchema xsd = new XmlSchemaCollection().read(new FileReader(path));
         XmlSchemaType rootType = xsd.getElementByName("root").getSchemaType();
-        List<Map<String, Object>> resultList = parseComplexType((XmlSchemaComplexType)rootType);
+        List<Map<String, Object>> resultList = parseComplexType((XmlSchemaComplexType) rootType);
         return resultList;
     }
 
-    private List<Map<String,Object>> parseComplexType(XmlSchemaComplexType ct){
+    private List<Map<String, Object>> parseComplexType(XmlSchemaComplexType ct) {
         List<Map<String, Object>> resultList = new LinkedList<>();
         XmlSchemaParticle xmlSchemaParticle = ct.getParticle();
         XmlSchemaSequence xmlSchemaSequence = (XmlSchemaSequence) xmlSchemaParticle;
@@ -171,8 +203,8 @@ public class DataFormatResourceBuilder {
             resultMap.put("kor", getAttrVal(elem.getMetaInfoMap(), "kor"));
             resultMap.put("length", getAttrVal(elem.getMetaInfoMap(), "length"));
             resultMap.put("type", elem.getSchemaTypeName().getLocalPart());
-            if( elem.getSchemaType() instanceof XmlSchemaComplexType ){
-                resultMap.put(elem.getName(), parseComplexType((XmlSchemaComplexType)elem.getSchemaType()));
+            if (elem.getSchemaType() instanceof XmlSchemaComplexType) {
+                resultMap.put(elem.getName(), parseComplexType((XmlSchemaComplexType) elem.getSchemaType()));
             }
             resultList.add(resultMap);
         });
@@ -182,11 +214,39 @@ public class DataFormatResourceBuilder {
     private String getAttrVal(Map<Object, Object> metaInfoMap, String localPart) {
         Map<Object, Object> map = (Map<Object, Object>) metaInfoMap.get(Constants.MetaDataConstants.EXTERNAL_ATTRIBUTES);
         javax.xml.namespace.QName key = new javax.xml.namespace.QName("http://shacon.kr/xsd", localPart, "edi");
-        if(map.get(key) != null) {
+        if (map.get(key) != null) {
             Attr attr = (Attr) map.get(key);
             return attr.getValue();
-        }else{
+        } else {
             return "0";
         }
+    }
+
+    private void splitComplexTypeXSD(String path, String ifId, String direction) throws IOException {
+        XmlSchema src = new XmlSchemaCollection().read(new FileReader(path));
+        List<XmlSchemaObject> items = src.getItems();
+        items.stream().skip(1).forEach((item) -> {
+            if (item instanceof XmlSchemaComplexType) {
+                XmlSchema xsd = new XmlSchema(src.getTargetNamespace(), new XmlSchemaCollection());
+                xsd.setNamespaceContext(src.getNamespaceContext());
+                xsd.getItems().add(item);
+                XmlSchemaComplexType ct = (XmlSchemaComplexType) item;
+
+                XmlSchemaElement elem = new XmlSchemaElement(xsd, true);
+                elem.setName("root");
+                elem.setSchemaTypeName(new javax.xml.namespace.QName(xsd.getTargetNamespace(), ct.getName()));
+
+                String postfix = (ct.getName().equals(ifId + direction)) ? "" : "_" + ct.getName();
+                String writePath = schemaPath + "/" + ifId + direction + postfix + "_df.xsd";
+                OutputStreamWriter or = null;
+                try {
+                    or = new OutputStreamWriter(new FileOutputStream(writePath), StandardCharsets.UTF_8);
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+                xsd.write(or);
+            }
+
+        });
     }
 }

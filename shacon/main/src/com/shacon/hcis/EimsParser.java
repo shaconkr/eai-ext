@@ -2,7 +2,6 @@ package com.shacon.hcis;
 
 import com.google.common.collect.ImmutableMap;
 import org.apache.ws.commons.schema.*;
-import org.apache.ws.commons.schema.constants.Constants;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
@@ -10,7 +9,6 @@ import org.dom4j.Node;
 import org.dom4j.io.SAXReader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.w3c.dom.Attr;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -22,14 +20,30 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+/**
+ *  EIMS 배포 위치 NAS    /hcisnas/eai_data/eims/latest*
+ *  TIBCO Project 별 Schema 위치
+ *  Git-Repo / ~/eai-com , ~/eai-int, ~/eai-ext, ~/eai-mci
+ *  APP명 :  소스SysId(3) + 타겟sysId(3) + SEQ(2) + .application
+ *  AP모듈명 :  소스SysId(3) + 타겟sysId(3) + SEQ(2) + .module
+ *  Shared 모듈명 :  대상시스템 SysId(3) + .smodule
+ *  패키지명 : InfrId(1) + 대상시스템 SysId(3) / 업무(2)
+ *  Schema :  모듈명 /  schema / 패키지명
+ *  Resources : 모듈명 /  Resources / 패키지명
+ *   /hcisnas/eai_data/ 1.eai-mci 2.eai-int 3.eai-ext / AP모듈명 / Schema , Resources / package /
+ */
 public class EimsParser {
     private static final Logger log = LoggerFactory.getLogger(EimsParser.class);
 
-    String eaiRepoPth = "D:/HCIS/eai-ext/shacon/test/resources/";
+    String eimsPath;
+
+    public EimsParser(String eimsPath) {
+        this.eimsPath = eimsPath;
+    }
 
     public Map<String, Object> parseXML(String reqIfId, String resIfId) throws DocumentException, IOException {
 
-        String dirPath = (resIfId != null) ? eaiRepoPth + reqIfId + "_" + resIfId : eaiRepoPth + reqIfId;
+        String dirPath = (resIfId != null) ? eimsPath + reqIfId + "_" + resIfId : eimsPath +  reqIfId;
         String reqIfXml = dirPath + "/interface.xml";
         String resIfXml = dirPath + "/interface-1.xml";
         String sourceIO = dirPath + "/source-io.xml";
@@ -66,7 +80,6 @@ public class EimsParser {
         items.forEach((item) -> {
             XmlSchemaElement elem = (XmlSchemaElement) item;
             String name = elem.getName();
-
             XmlSchemaAnnotation anno = elem.getAnnotation();
             XmlSchemaDocumentation adoc = (XmlSchemaDocumentation) anno.getItems().get(1);
             String kor = String.valueOf(adoc.getMarkup().item(0).getNodeValue());
@@ -93,13 +106,6 @@ public class EimsParser {
             }
             resultList.add(resultMap);
         });
-    }
-
-    private String getAttrVal(Map<Object, Object> metaInfoMap, String localPart) {
-        Map<Object, Object> map = (Map<Object, Object>) metaInfoMap.get(Constants.MetaDataConstants.EXTERNAL_ATTRIBUTES);
-        javax.xml.namespace.QName key = new javax.xml.namespace.QName("http://shacon.kr/xsd", localPart, "edi");
-        Attr attr = (Attr) map.get(key);
-        return attr.getValue();
     }
 
     private Map<String, String> parseEimsInterfaceXML(Document doc, String charset) {

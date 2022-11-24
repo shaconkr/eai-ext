@@ -1,6 +1,5 @@
 package com.shacon.hcis;
 
-import com.google.common.base.CaseFormat;
 import com.google.common.base.Joiner;
 import com.google.common.collect.Lists;
 import kr.shacon.edi.util.CastUtils;
@@ -13,7 +12,10 @@ import org.slf4j.LoggerFactory;
 import org.w3c.dom.Attr;
 
 import javax.xml.namespace.QName;
-import java.io.*;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -37,7 +39,7 @@ import static org.apache.ws.commons.schema.constants.Constants.URI_2001_SCHEMA_X
  * APP명 :  소스SysId(3) + 타겟sysId(3) + SEQ(2) + .application
  * AP모듈명 :  소스SysId(3) + 타겟sysId(3) + SEQ(2) + .module
  * Shared 모듈명 :  소스SysId(3) + 타겟sysId(3) + seq(1) + .smodule
- * 패키지명 : InfrId(1) + 대상시스템 SysId(3) / 업무(2) /  IfId(17)
+ * 패키지명 : 소스 SysId(3) _ 소스업무(4) _ 타겟 SysId(3) _ 타겟업무(4)
  * Schema :  모듈명 /  schema / 패키지명
  * Resources : 모듈명 /  Resources / 패키지명
  *
@@ -58,10 +60,9 @@ public class XsdSchemaBuilder {
     String resourcePath;
 
 
-    public XsdSchemaBuilder(String eimsPath, String projPath, String packageName) {
+    public XsdSchemaBuilder(String eimsPath, String projPath) {
         this.eimsPath = eimsPath;
         this.projPath = projPath;
-        this.packageName = packageName;
         this.eimsParser = new EimsParser(eimsPath);
     }
 

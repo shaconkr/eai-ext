@@ -37,13 +37,14 @@ public class EDITransformTest {
 
     @Test
     public void xsdBuild() {
-        XsdSchemaBuilder bld = new XsdSchemaBuilder(eimsPath, projPath, "");
+        XsdSchemaBuilder bld = new XsdSchemaBuilder(eimsPath, projPath);
         bld.createExtXSD("HCNCISCTJD0120103", "CISHCNCTJD0120104");
         bld.createIntXSD("CISTADAHFF0030102");
     }
+
     @Test
     public void buildTibDFRes() throws IOException, DocumentException {
-        DataFormatResourceBuilder bld = new DataFormatResourceBuilder(eimsPath, projPath,"");
+        DataFormatResourceBuilder bld = new DataFormatResourceBuilder(eimsPath, projPath);
         bld.buildTibRes("HCNCISCTJD0120103", "CISHCNCTJD0120104");
         bld.buildTibRes("CISTADAHFF0030102", null);
     }
@@ -60,6 +61,7 @@ public class EDITransformTest {
     private String encodeCharset(String s, String to) throws UnsupportedEncodingException {
         return new String(s.getBytes(to), to);
     }
+
     @Test
     public void transform() throws Exception {
 

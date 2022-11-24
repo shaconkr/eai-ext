@@ -33,7 +33,7 @@ import static kr.shacon.edi.ShaConstants.*;
  * APP명 :  소스SysId(3) + 타겟sysId(3) + SEQ(2) + .application
  * AP모듈명 :  소스SysId(3) + 타겟sysId(3) + SEQ(2) + .module
  * Shared 모듈명 :  대상시스템 SysId(3) + .smodule
- * 패키지명 : InfrId(1) + 대상시스템 SysId(3) / 업무(2)
+ * 패키지명 : 소스 SysId(3) _ 소스업무(4) _ 타겟 SysId(3) _ 타겟업무(4)
  * Schema :  모듈명 /  schema / 패키지명
  * Resources : 모듈명 /  Resources / 패키지명
  * /hcisnas/eai_data/ 1.eai-mci 2.eai-int 3.eai-ext / AP모듈명 / Schema , Resources / package /
@@ -48,10 +48,9 @@ public class DataFormatResourceBuilder {
     String schemaPath;
     String resourcePath;
 
-    public DataFormatResourceBuilder(String eimsPath, String projPath, String packageName) {
+    public DataFormatResourceBuilder(String eimsPath, String projPath) {
         this.eimsPath = eimsPath;
         this.projPath = projPath;
-        this.packageName = packageName;
         this.eimsParser = new EimsParser(eimsPath);
     }
 

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:HCNCISCTJD0120103="http://schema.hcis.com/xsd/HCNCISCTJD0120103" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmi:id="_qQRafmu5Ee2-ma9eYhmmeg" name="HCN_DEFT_CIS_DEFT.HCNCISCTJD0120103_InReq" type="dataformat:DataFormat">
+  <imports xmi:id="_qQRaf2u5Ee2-ma9eYhmmeg" importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/HCN_DEFT_CIS_DEFT/HCNCISCTJD0120103_InReq.xsd" namespace="http://schema.hcis.com/xsd/HCNCISCTJD0120103"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" xmi:id="_qQRagGu5Ee2-ma9eYhmmeg" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="HCNCISCTJD0120103:root" lineLength="647" fieldOffsetsStr="trdCd(0,4)&#xA;tgrmCd(4,9)&#xA;tgrmNo(9,17)&#xA;tgrmSendDtm(17,33)&#xA;testYn(33,34)&#xA;tgrmType(34,35)&#xA;prepVal(35,54)&#xA;tgrmLen(54,60)&#xA;respCd(60,64)&#xA;acptDt(64,72)&#xA;custNm(72,142)&#xA;custTelno(142,154)&#xA;hcnCustNo(154,163)&#xA;hcnCorpGbcd(163,166)&#xA;hmAdr(166,366)&#xA;etcAdr(366,566)&#xA;rstMsg(566,646)&#xA;prepVal1(646,647)">
+    <fieldOffsets xmi:id="_qQRagWu5Ee2-ma9eYhmmeg" name="trdCd" end="4" kor="거래코드" type="string"/>
+    <fieldOffsets xmi:id="_qQbLcGu5Ee2-ma9eYhmmeg" name="tgrmCd" start="4" end="9" kor="전문코드" type="string"/>
+    <fieldOffsets xmi:id="_qQbLcWu5Ee2-ma9eYhmmeg" name="tgrmNo" start="9" end="17" kor="전문번호" type="string"/>
+    <fieldOffsets xmi:id="_qQbLcmu5Ee2-ma9eYhmmeg" name="tgrmSendDtm" start="17" end="33" kor="전문전송일시" type="string"/>
+    <fieldOffsets xmi:id="_qQbLc2u5Ee2-ma9eYhmmeg" name="testYn" start="33" end="34" kor="테스트여부" type="string"/>
+    <fieldOffsets xmi:id="_qQbLdGu5Ee2-ma9eYhmmeg" name="tgrmType" start="34" end="35" kor="전문유형" type="string"/>
+    <fieldOffsets xmi:id="_qQbLdWu5Ee2-ma9eYhmmeg" name="prepVal" start="35" end="54" kor="예비값" type="string"/>
+    <fieldOffsets xmi:id="_qQbLdmu5Ee2-ma9eYhmmeg" name="tgrmLen" start="54" end="60" kor="전문길이" type="int"/>
+    <fieldOffsets xmi:id="_qQbLd2u5Ee2-ma9eYhmmeg" name="respCd" start="60" end="64" kor="응답코드" type="string"/>
+    <fieldOffsets xmi:id="_qQbLeGu5Ee2-ma9eYhmmeg" name="acptDt" start="64" end="72" kor="접수일자" type="string"/>
+    <fieldOffsets xmi:id="_qQbLeWu5Ee2-ma9eYhmmeg" name="custNm" start="72" end="142" kor="고객명" type="string"/>
+    <fieldOffsets xmi:id="_qQbLemu5Ee2-ma9eYhmmeg" name="custTelno" start="142" end="154" kor="고객전화번호" type="string"/>
+    <fieldOffsets xmi:id="_qQbLe2u5Ee2-ma9eYhmmeg" name="hcnCustNo" start="154" end="163" kor="HCN고객번호" type="string"/>
+    <fieldOffsets xmi:id="_qQbLfGu5Ee2-ma9eYhmmeg" name="hcnCorpGbcd" start="163" end="166" kor="HCN법인구분코드" type="string"/>
+    <fieldOffsets xmi:id="_qQbLfWu5Ee2-ma9eYhmmeg" name="hmAdr" start="166" end="366" kor="자택주소" type="string"/>
+    <fieldOffsets xmi:id="_qQbLfmu5Ee2-ma9eYhmmeg" name="etcAdr" start="366" end="566" kor="기타주소" type="string"/>
+    <fieldOffsets xmi:id="_qQbLf2u5Ee2-ma9eYhmmeg" name="rstMsg" start="566" end="646" kor="결과메시지" type="string"/>
+    <fieldOffsets xmi:id="_qQbLgGu5Ee2-ma9eYhmmeg" name="prepVal1" start="646" end="647" kor="예비값1" type="string"/>
+  </jndi:configuration>
+</jndi:namedResource>

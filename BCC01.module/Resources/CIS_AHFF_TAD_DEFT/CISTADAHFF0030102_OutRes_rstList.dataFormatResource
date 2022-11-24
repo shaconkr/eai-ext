@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CISTADAHFF0030102="http://schema.hcis.com/xsd/CISTADAHFF0030102" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmi:id="_OxCBoGu6Ee2-ma9eYhmmeg" name="CIS_AHFF_TAD_DEFT.CISTADAHFF0030102_OutRes_rstList" type="dataformat:DataFormat">
+  <imports xmi:id="_OxCBoWu6Ee2-ma9eYhmmeg" importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/CIS_AHFF_TAD_DEFT/CISTADAHFF0030102_OutRes_RST_LIST_TYPE_df.xsd" namespace="http://schema.hcis.com/xsd/CISTADAHFF0030102"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" xmi:id="_OxCBomu6Ee2-ma9eYhmmeg" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="CISTADAHFF0030102:root" lineLength="145" fieldOffsetsStr="regDtm(0,14)&#xA;aprvlCareGbcd(14,18)&#xA;aprvlCareAplyDt(18,26)&#xA;aprvlCareEndDt(26,34)&#xA;aprvlCareCntn(34,134)&#xA;cnslStoreCd(134,137)&#xA;conpsId(137,145)">
+    <fieldOffsets xmi:id="_OxCBo2u6Ee2-ma9eYhmmeg" name="regDtm" end="14" kor="등록일시" type="string"/>
+    <fieldOffsets xmi:id="_OxDPwGu6Ee2-ma9eYhmmeg" name="aprvlCareGbcd" start="14" end="18" kor="승인주의구분코드" type="string"/>
+    <fieldOffsets xmi:id="_OxDPwWu6Ee2-ma9eYhmmeg" name="aprvlCareAplyDt" start="18" end="26" kor="승인주의적용일자" type="string"/>
+    <fieldOffsets xmi:id="_OxDPwmu6Ee2-ma9eYhmmeg" name="aprvlCareEndDt" start="26" end="34" kor="승인주의종료일자" type="string"/>
+    <fieldOffsets xmi:id="_OxDPw2u6Ee2-ma9eYhmmeg" name="aprvlCareCntn" start="34" end="134" kor="승인주의내용" type="string"/>
+    <fieldOffsets xmi:id="_OxDPxGu6Ee2-ma9eYhmmeg" name="cnslStoreCd" start="134" end="137" kor="상담점코드" type="string"/>
+    <fieldOffsets xmi:id="_OxDPxWu6Ee2-ma9eYhmmeg" name="conpsId" start="137" end="145" kor="상담자ID" type="string"/>
+  </jndi:configuration>
+</jndi:namedResource>

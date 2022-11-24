@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jndi:namedResource xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CISTADAHFF0030102="http://schema.hcis.com/xsd/CISTADAHFF0030102" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" name="CIS_AHFF_TAD_DEFT.CISTADAHFF0030102_OutRes_rstList" type="dataformat:DataFormat">
+  <jndi:imports importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/CISTADAHFF0030102_OutRes_rstList.xsd" namespace="http://schema.hcis.com/xsd/CISTADAHFF0030102"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="CISTADAHFF0030102:main" lineLength="145" fieldOffsetsStr="regDtm(0,14)&#xA;aprvlCareGbcd(14,18)&#xA;aprvlCareAplyDt(18,26)&#xA;aprvlCareEndDt(26,34)&#xA;aprvlCareCntn(34,134)&#xA;cnslStoreCd(134,137)&#xA;conpsId(137,145)">
+    <fieldOffsets kor="등록일시" type="string" name="regDtm" start="0" end="14"/>
+    <fieldOffsets kor="승인주의구분코드" type="string" name="aprvlCareGbcd" start="14" end="18"/>
+    <fieldOffsets kor="승인주의적용일자" type="string" name="aprvlCareAplyDt" start="18" end="26"/>
+    <fieldOffsets kor="승인주의종료일자" type="string" name="aprvlCareEndDt" start="26" end="34"/>
+    <fieldOffsets kor="승인주의내용" type="string" name="aprvlCareCntn" start="34" end="134"/>
+    <fieldOffsets kor="상담점코드" type="string" name="cnslStoreCd" start="134" end="137"/>
+    <fieldOffsets kor="상담자ID" type="string" name="conpsId" start="137" end="145"/>
+  </jndi:configuration>
+</jndi:namedResource>

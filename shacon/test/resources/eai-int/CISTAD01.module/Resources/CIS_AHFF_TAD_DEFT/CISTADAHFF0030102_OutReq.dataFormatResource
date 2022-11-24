@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jndi:namedResource xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CISTADAHFF0030102="http://schema.hcis.com/xsd/CISTADAHFF0030102" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" name="CIS_AHFF_TAD_DEFT.CISTADAHFF0030102_OutReq" type="dataformat:DataFormat">
+  <jndi:imports importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/CISTADAHFF0030102_OutReq.xsd" namespace="http://schema.hcis.com/xsd/CISTADAHFF0030102"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="CISTADAHFF0030102:main" lineLength="246" fieldOffsetsStr="wrkGbVal(0,2)&#xA;memNm(2,102)&#xA;crdMemNo(102,111)&#xA;aprvlCareGbcd(111,115)&#xA;aprvlCareAplyDt(115,123)&#xA;aprvlCareEndDt(123,131)&#xA;aprvlCareCntn(131,231)&#xA;cnslStoreCd(231,234)&#xA;conpsId(234,242)&#xA;ocrnCnt(242,246)">
+    <fieldOffsets kor="작업구분값" type="string" name="wrkGbVal" start="0" end="2"/>
+    <fieldOffsets kor="회원명" type="string" name="memNm" start="2" end="102"/>
+    <fieldOffsets kor="카드회원번호" type="string" name="crdMemNo" start="102" end="111"/>
+    <fieldOffsets kor="승인주의구분코드" type="string" name="aprvlCareGbcd" start="111" end="115"/>
+    <fieldOffsets kor="승인주의적용일자" type="string" name="aprvlCareAplyDt" start="115" end="123"/>
+    <fieldOffsets kor="승인주의종료일자" type="string" name="aprvlCareEndDt" start="123" end="131"/>
+    <fieldOffsets kor="승인주의내용" type="string" name="aprvlCareCntn" start="131" end="231"/>
+    <fieldOffsets kor="상담점코드" type="string" name="cnslStoreCd" start="231" end="234"/>
+    <fieldOffsets kor="상담자ID" type="string" name="conpsId" start="234" end="242"/>
+    <fieldOffsets kor="발생건수" type="long" name="ocrnCnt" start="242" end="246"/>
+  </jndi:configuration>
+</jndi:namedResource>

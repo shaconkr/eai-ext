@@ -105,7 +105,8 @@ public class DataFormatResourceBuilder {
     public void build(String ifId, String direction, List<Map<String, Object>> param) throws IOException {
         String readPath = schemaPath + "/" + ifId + direction + ".xsd";
         char tail = direction.charAt(direction.length() - 1);
-        if (tail == 'q' || tail == 's') splitComplexTypeXSD(readPath, ifId, direction);
+        if (tail == 'q' || tail == 's')
+            splitComplexTypeXSD(readPath, ifId, direction);
 
         List<Map<String, Object>> layout = (param == null) ? parseXSD(readPath) : param;
 
@@ -224,16 +225,22 @@ public class DataFormatResourceBuilder {
     private void splitComplexTypeXSD(String path, String ifId, String direction) throws IOException {
         XmlSchema src = new XmlSchemaCollection().read(new FileReader(path));
         List<XmlSchemaObject> items = src.getItems();
-        items.stream().skip(1).forEach((item) -> {
+        items.forEach((item) -> {
             if (item instanceof XmlSchemaComplexType) {
+
                 XmlSchema xsd = new XmlSchema(src.getTargetNamespace(), new XmlSchemaCollection());
                 xsd.setNamespaceContext(src.getNamespaceContext());
-                xsd.getItems().add(item);
+
                 XmlSchemaComplexType ct = (XmlSchemaComplexType) item;
 
-                XmlSchemaElement elem = new XmlSchemaElement(xsd, true);
+                XmlSchemaElement elem = new XmlSchemaElement(xsd, false);
+                xsd.getItems().add(elem);
                 elem.setName("root");
-                elem.setSchemaTypeName(new javax.xml.namespace.QName(xsd.getTargetNamespace(), ct.getName()));
+
+                XmlSchemaComplexType complexType = new XmlSchemaComplexType(xsd,false);
+                elem.setType(complexType);
+
+                complexType.setParticle(ct.getParticle());
 
                 String postfix = (ct.getName().equals(ifId + direction)) ? "" : "_" + ct.getName();
                 String writePath = schemaPath + "/" + ifId + direction + postfix + "_df.xsd";

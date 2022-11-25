@@ -1,5 +1,6 @@
 package com.shacon.hcis;
 
+import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableMap;
 import org.apache.ws.commons.schema.*;
 import org.dom4j.Document;
@@ -43,7 +44,7 @@ public class EimsParser {
 
     public Map<String, Object> parseXML(String reqIfId, String resIfId) throws DocumentException, IOException {
 
-        String dirPath = (resIfId != null) ? eimsPath + reqIfId + "_" + resIfId : eimsPath +  reqIfId;
+        String dirPath = (!Strings.isNullOrEmpty(resIfId)) ? eimsPath + reqIfId + "_" + resIfId : eimsPath +  reqIfId;
         String reqIfXml = dirPath + "/interface.xml";
         String resIfXml = dirPath + "/interface-1.xml";
         String sourceIO = dirPath + "/source-io.xml";

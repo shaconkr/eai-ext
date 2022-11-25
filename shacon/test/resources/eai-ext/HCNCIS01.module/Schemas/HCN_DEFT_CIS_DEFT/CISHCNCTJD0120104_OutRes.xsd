@@ -2,28 +2,28 @@
     <import namespace="http://schema.hcis.com/json" schemaLocation="classpath://Schemas/HcisStdHeader.xsd"/>
     <complexType name="CISHCNCTJD0120104_OutRes_Header">
         <sequence>
-            <element edi:kor="거래코드" edi:length="4" edi:padder="SpaceRight" name="trdCd" type="string"/>
-            <element edi:kor="전문코드" edi:length="5" edi:padder="SpaceRight" name="tgrmCd" type="string"/>
-            <element edi:kor="전문번호" edi:length="8" edi:padder="SpaceRight" name="tgrmNo" type="string"/>
-            <element edi:kor="전문전송일시" edi:length="16" edi:padder="SpaceRight" name="tgrmSendDtm" type="string"/>
-            <element edi:kor="테스트여부" edi:length="1" edi:padder="SpaceRight" name="testYn" type="string"/>
-            <element edi:kor="전문유형" edi:length="1" edi:padder="SpaceRight" name="tgrmType" type="string"/>
-            <element edi:kor="예비값" edi:length="19" edi:padder="SpaceRight" name="prepVal" type="string"/>
-            <element edi:kor="전문길이" edi:length="6" edi:padder="SpaceRight" name="tgrmLen" type="string"/>
-            <element edi:kor="응답코드" edi:length="4" edi:padder="SpaceRight" name="respCd" type="string"/>
+            <element edi:kor="거래코드" edi:length="4" edi:padder="SpaceRight" name="trdCd" nillable="true" type="string"/>
+            <element edi:kor="전문코드" edi:length="5" edi:padder="SpaceRight" name="tgrmCd" nillable="true" type="string"/>
+            <element edi:kor="전문번호" edi:length="8" edi:padder="SpaceRight" name="tgrmNo" nillable="true" type="string"/>
+            <element edi:kor="전문전송일시" edi:length="16" edi:padder="SpaceRight" name="tgrmSendDtm" nillable="true" type="string"/>
+            <element edi:kor="테스트여부" edi:length="1" edi:padder="SpaceRight" name="testYn" nillable="true" type="string"/>
+            <element edi:kor="전문유형" edi:length="1" edi:padder="SpaceRight" name="tgrmType" nillable="true" type="string"/>
+            <element edi:kor="예비값" edi:length="19" edi:padder="SpaceRight" name="prepVal" nillable="true" type="string"/>
+            <element edi:kor="전문길이" edi:length="6" edi:padder="SpaceRight" name="tgrmLen" nillable="true" type="string"/>
+            <element edi:kor="응답코드" edi:length="4" edi:padder="SpaceRight" name="respCd" nillable="true" type="string"/>
         </sequence>
     </complexType>
     <complexType name="CISHCNCTJD0120104_OutRes_Body">
         <sequence>
-            <element edi:kor="접수일자" edi:length="8" edi:padder="SpaceRight" name="acptDt" type="string"/>
-            <element edi:kor="고객명" edi:length="70" edi:padder="SpaceRight" name="custNm" type="string"/>
-            <element edi:kor="고객전화번호" edi:length="12" edi:padder="SpaceRight" name="custTelno" type="string"/>
-            <element edi:kor="HCN고객번호" edi:length="9" edi:padder="SpaceRight" name="hcnCustNo" type="string"/>
-            <element edi:kor="HCN법인구분코드" edi:length="3" edi:padder="SpaceRight" name="hcnCorpGbcd" type="string"/>
-            <element edi:kor="자택주소" edi:length="200" edi:padder="SpaceRight" name="hmAdr" type="string"/>
-            <element edi:kor="기타주소" edi:length="200" edi:padder="SpaceRight" name="etcAdr" type="string"/>
-            <element edi:kor="결과메시지" edi:length="80" edi:padder="SpaceRight" name="rstMsg" type="string"/>
-            <element edi:kor="예비값1" edi:length="1" edi:padder="SpaceRight" name="prepVal1" type="string"/>
+            <element edi:kor="접수일자" edi:length="8" edi:padder="SpaceRight" name="acptDt" nillable="true" type="string"/>
+            <element edi:kor="고객명" edi:length="70" edi:padder="SpaceRight" name="custNm" nillable="true" type="string"/>
+            <element edi:kor="고객전화번호" edi:length="12" edi:padder="SpaceRight" name="custTelno" nillable="true" type="string"/>
+            <element edi:kor="HCN고객번호" edi:length="9" edi:padder="SpaceRight" name="hcnCustNo" nillable="true" type="string"/>
+            <element edi:kor="HCN법인구분코드" edi:length="3" edi:padder="SpaceRight" name="hcnCorpGbcd" nillable="true" type="string"/>
+            <element edi:kor="자택주소" edi:length="200" edi:padder="SpaceRight" name="hmAdr" nillable="true" type="string"/>
+            <element edi:kor="기타주소" edi:length="200" edi:padder="SpaceRight" name="etcAdr" nillable="true" type="string"/>
+            <element edi:kor="결과메시지" edi:length="80" edi:padder="SpaceRight" name="rstMsg" nillable="true" type="string"/>
+            <element edi:kor="예비값1" edi:length="1" edi:padder="SpaceRight" name="prepVal1" nillable="true" type="string"/>
         </sequence>
     </complexType>
     <complexType name="CISHCNCTJD0120104_OutRes">

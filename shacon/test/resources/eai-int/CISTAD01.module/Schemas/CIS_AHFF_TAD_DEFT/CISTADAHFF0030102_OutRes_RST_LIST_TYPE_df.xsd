@@ -1,14 +1,15 @@
 <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:edi="http://shacon.kr/xsd" xmlns:ns="http://schema.hcis.com/xsd/CISTADAHFF0030102" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://schema.hcis.com/xsd/CISTADAHFF0030102">
-    <complexType name="RST_LIST_TYPE">
-        <sequence>
-            <element edi:kor="등록일시" edi:length="14" edi:padder="SpaceRight" name="regDtm" type="string"/>
-            <element edi:kor="승인주의구분코드" edi:length="4" edi:padder="SpaceRight" name="aprvlCareGbcd" type="string"/>
-            <element edi:kor="승인주의적용일자" edi:length="8" edi:padder="SpaceRight" name="aprvlCareAplyDt" type="string"/>
-            <element edi:kor="승인주의종료일자" edi:length="8" edi:padder="SpaceRight" name="aprvlCareEndDt" type="string"/>
-            <element edi:kor="승인주의내용" edi:length="100" edi:padder="SpaceRight" name="aprvlCareCntn" type="string"/>
-            <element edi:kor="상담점코드" edi:length="3" edi:padder="SpaceRight" name="cnslStoreCd" type="string"/>
-            <element edi:kor="상담자ID" edi:length="8" edi:padder="SpaceRight" name="conpsId" type="string"/>
-        </sequence>
-    </complexType>
-    <element name="root" type="ns:RST_LIST_TYPE"/>
+    <element name="root">
+        <complexType>
+            <sequence>
+                <element edi:kor="등록일시" edi:length="14" edi:padder="SpaceRight" name="regDtm" nillable="true" type="string"/>
+                <element edi:kor="승인주의구분코드" edi:length="4" edi:padder="SpaceRight" name="aprvlCareGbcd" nillable="true" type="string"/>
+                <element edi:kor="승인주의적용일자" edi:length="8" edi:padder="SpaceRight" name="aprvlCareAplyDt" nillable="true" type="string"/>
+                <element edi:kor="승인주의종료일자" edi:length="8" edi:padder="SpaceRight" name="aprvlCareEndDt" nillable="true" type="string"/>
+                <element edi:kor="승인주의내용" edi:length="100" edi:padder="SpaceRight" name="aprvlCareCntn" nillable="true" type="string"/>
+                <element edi:kor="상담점코드" edi:length="3" edi:padder="SpaceRight" name="cnslStoreCd" nillable="true" type="string"/>
+                <element edi:kor="상담자ID" edi:length="8" edi:padder="SpaceRight" name="conpsId" nillable="true" type="string"/>
+            </sequence>
+        </complexType>
+    </element>
 </schema>

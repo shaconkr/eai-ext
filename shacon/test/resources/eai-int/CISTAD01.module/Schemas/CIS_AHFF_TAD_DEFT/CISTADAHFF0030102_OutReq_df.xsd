@@ -1,0 +1,18 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:edi="http://shacon.kr/xsd" xmlns:ns="http://schema.hcis.com/xsd/CISTADAHFF0030102" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://schema.hcis.com/xsd/CISTADAHFF0030102">
+    <element name="root">
+        <complexType>
+            <sequence>
+                <element edi:kor="작업구분값" edi:length="2" edi:padder="SpaceRight" name="wrkGbVal" nillable="true" type="string"/>
+                <element edi:kor="회원명" edi:length="100" edi:padder="SpaceRight" name="memNm" nillable="true" type="string"/>
+                <element edi:kor="카드회원번호" edi:length="9" edi:padder="SpaceRight" name="crdMemNo" nillable="true" type="string"/>
+                <element edi:kor="승인주의구분코드" edi:length="4" edi:padder="SpaceRight" name="aprvlCareGbcd" nillable="true" type="string"/>
+                <element edi:kor="승인주의적용일자" edi:length="8" edi:padder="SpaceRight" name="aprvlCareAplyDt" nillable="true" type="string"/>
+                <element edi:kor="승인주의종료일자" edi:length="8" edi:padder="SpaceRight" name="aprvlCareEndDt" nillable="true" type="string"/>
+                <element edi:kor="승인주의내용" edi:length="100" edi:padder="SpaceRight" name="aprvlCareCntn" nillable="true" type="string"/>
+                <element edi:kor="상담점코드" edi:length="3" edi:padder="SpaceRight" name="cnslStoreCd" nillable="true" type="string"/>
+                <element edi:kor="상담자ID" edi:length="8" edi:padder="SpaceRight" name="conpsId" nillable="true" type="string"/>
+                <element edi:kor="발생건수" edi:length="4" edi:padder="ZeroLeft" name="ocrnCnt" nillable="true" type="long"/>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

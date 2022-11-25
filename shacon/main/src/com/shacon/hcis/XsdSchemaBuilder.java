@@ -354,6 +354,7 @@ public class XsdSchemaBuilder {
                 elem.setName(String.valueOf(m.get("name")));
                 elem.setMinOccurs(Long.valueOf(String.valueOf(m.get("minOcc"))));
                 elem.setMaxOccurs(Long.valueOf(String.valueOf(m.get("maxOcc"))));
+                elem.setNillable(true);
                 Map<Object, Object> metaInfoMap = new HashMap<>();
                 Map<Object, Object> metaInfo = new HashMap<>();
                 org.w3c.dom.Document doc = xsd.getSchemaDocument();

@@ -49,7 +49,12 @@ public class HCISHelper {
         bld.buildTibRes(reqIfId, resIfId);
     }
 
-    public Map<String, Object> parseEIMS(String reqIfId, String resIfId) throws Exception {
+    public String getInterfaceInfo(String reqIfId, String resIfId) throws Exception {
+        Transformer transformer = new Transformer();
+        return transformer.toJson(parseEIMS(reqIfId, resIfId));
+    }
+
+    private Map<String,Object> parseEIMS(String reqIfId, String resIfId) throws Exception {
         EimsParser parser = new EimsParser(eimsPath);
         return parser.parseXML(reqIfId, resIfId);
     }

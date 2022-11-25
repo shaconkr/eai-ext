@@ -62,4 +62,8 @@ public class Transformer {
         return gson.fromJson(json, new TypeToken<Map<String, Object>>() {
         }.getType());
     }
+
+    public String toJson(Map<String,Object> para) {
+        return gson.toJson(para, Map.class);
+    }
 }

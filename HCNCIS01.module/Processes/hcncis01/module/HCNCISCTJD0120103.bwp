@@ -23,6 +23,7 @@
     xmlns:ns22="http://tns.tibco.com/bw/palette/internal/activityerror+29772410-cfeb-41d9-bda4-9b8ed0fcc982"
     xmlns:ns23="activity.jsonParser.input+771b9a1d-e8b7-4092-a620-0eb5ee335060+ActivityInputType"
     xmlns:ns24="http://tns.tibco.com/bw/json/1669605737318"
+    xmlns:ns25="activity.jsonRender.output+0537d885-03cc-4580-821c-e74df8fb7bb6+ActivityOutputType"
     xmlns:ns3="http://tns.tibco.com/bw/palette/internal/activityerror+bw.tcp.read"
     xmlns:ns4="www.tibco.com/plugin/java/JavaInvokeActivityInput+daa40e19-6f4a-490c-952d-ebaf8bb4684a+JavaInvokeActivityInput"
     xmlns:ns5="www.tibco.com/plugin/java/JavaInvokeActivityOutput+daa40e19-6f4a-490c-952d-ebaf8bb4684a+JavaInvokeActivityOutput"
@@ -1256,17 +1257,6 @@
             <element name="HttpResponseException" type="tns:HttpResponseExceptionType"/>
             <element name="HttpServerException" type="tns:HttpServerExceptionType"/>
         </schema>
-        <schema
-            targetNamespace="activity.jsonRender.output+44d2b22c-c943-4f50-9746-26ba95414ecc+ActivityOutputType"
-            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="activity.jsonRender.output+44d2b22c-c943-4f50-9746-26ba95414ecc+ActivityOutputType">
-            <complexType name="ActivityOutputClassType">
-                <sequence>
-                    <element maxOccurs="1" minOccurs="1"
-                        name="jsonString" type="string"/>
-                </sequence>
-            </complexType>
-            <element name="ActivityOutputClass" type="tns:ActivityOutputClassType"/>
-        </schema>
         <schema elementFormDefault="unqualified"
             targetNamespace="http://tns.tibco.com/bw/palette/internal/activityerror+bw.jms.getmsg"
             xmlns="http://www.w3.org/2001/XMLSchema"
@@ -1368,6 +1358,17 @@
                     <element maxOccurs="1" minOccurs="0" ref="Q1:InvocationException"/>
                 </choice>
             </complexType>
+        </schema>
+        <schema
+            targetNamespace="activity.jsonRender.output+0537d885-03cc-4580-821c-e74df8fb7bb6+ActivityOutputType"
+            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="activity.jsonRender.output+0537d885-03cc-4580-821c-e74df8fb7bb6+ActivityOutputType">
+            <complexType name="ActivityOutputClassType">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="1"
+                        name="jsonString" type="string"/>
+                </sequence>
+            </complexType>
+            <element name="ActivityOutputClass" type="tns:ActivityOutputClassType"/>
         </schema>
     </tibex:Types>
     <tibex:ProcessInfo callable="false" createdBy="javal"
@@ -1665,66 +1666,29 @@
                                     x="873"
                                     xsi:type="notation:Bounds" y="159"/>
                                     </children>
-                                    <children type="4002 bw.restjson.JsonRender">
-                                    <children type="4017">
-                                    <styles fontName="맑은 고딕"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.7"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles fontName="맑은 고딕"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.7"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles fontName="맑은 고딕"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.7"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles fontName="맑은 고딕"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.7"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <styles fontName="맑은 고딕"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <styles
-                                    backgroundColor="16777215"
-                                    gradientEndColor="50431"
-                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.7"/>
-                                    <layoutConstraint
-                                    height="40" width="40"
-                                    x="756"
-                                    xsi:type="notation:Bounds" y="59"/>
-                                    </children>
                                     <children type="4002 bw.java.javamethod">
                                     <children type="4017">
                                     <styles fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.8"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.7"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <children type="4017">
                                     <styles fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.8"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.7"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <children type="4017">
                                     <styles fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.8"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.7"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <children type="4017">
                                     <styles fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.8"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.7"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <styles fontName="맑은 고딕"
@@ -1733,7 +1697,7 @@
                                     backgroundColor="16777215"
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.8"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.7"/>
                                     <layoutConstraint
                                     height="40" width="40"
                                     x="485"
@@ -1743,25 +1707,58 @@
                                     <children type="4017">
                                     <styles fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.9"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.8"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <children type="4017">
                                     <styles fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.9"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.8"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <children type="4017">
                                     <styles fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.9"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.8"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <children type="4017">
                                     <styles fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.9"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.8"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <styles fontName="맑은 고딕"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.8"/>
+                                    <layoutConstraint
+                                    height="40" width="40"
+                                    x="580"
+                                    xsi:type="notation:Bounds" y="52"/>
+                                    </children>
+                                    <children type="4002 bw.restjson.JsonRender">
+                                    <children type="4017">
+                                    <styles fontName="맑은 고딕"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles fontName="맑은 고딕"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles fontName="맑은 고딕"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles fontName="맑은 고딕"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <styles fontName="맑은 고딕"
@@ -1773,8 +1770,8 @@
                                     <element href="//0/@process/@activity/@activity/@activities.9"/>
                                     <layoutConstraint
                                     height="40" width="40"
-                                    x="580"
-                                    xsi:type="notation:Bounds" y="52"/>
+                                    x="767"
+                                    xsi:type="notation:Bounds" y="48"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
@@ -1856,58 +1853,36 @@
             <bendpoints points="[25, 0, -203, 0]$[204, 0, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.6" type="4006">
-            <children type="6002">
-                <layoutConstraint xsi:type="notation:Location" y="40"/>
-            </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="맑은 고딕" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@links/@children.3"/>
-            <bendpoints points="[25, 13, -130, -71]$[131, 71, -24, -13]" xsi:type="notation:RelativeBendpoints"/>
-        </edges>
-        <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3"
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.5"
             target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="맑은 고딕" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@links/@children.4"/>
-            <bendpoints points="[25, -13, -132, 71]$[133, -71, -24, 13]" xsi:type="notation:RelativeBendpoints"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.3"/>
+            <bendpoints points="[25, -7, -122, 36]$[123, -36, -24, 7]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.5"
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7"
             target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.8" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="맑은 고딕" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@links/@children.5"/>
-            <bendpoints points="[25, -7, -122, 36]$[123, -36, -24, 7]" xsi:type="notation:RelativeBendpoints"/>
-        </edges>
-        <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.8"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.9" type="4006">
-            <children type="6002">
-                <layoutConstraint xsi:type="notation:Location" y="40"/>
-            </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="맑은 고딕" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@links/@children.6"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.4"/>
             <bendpoints points="[23, 25, -65, -67]$[65, 68, -23, -24]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.9"
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.8"
             target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="맑은 고딕" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@links/@children.7"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.5"/>
             <bendpoints points="[8, 25, -32, -94]$[32, 95, -8, -24]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
@@ -1918,8 +1893,30 @@
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="맑은 고딕" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@links/@children.8"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.6"/>
             <bendpoints points="[25, -24, -79, 76]$[80, -76, -24, 24]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.9" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="맑은 고딕" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.7"/>
+            <bendpoints points="[24, -24, -83, 87]$[83, -86, -24, 25]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.9"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.6" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="맑은 고딕" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.8"/>
+            <bendpoints points="[23, 25, -83, -86]$[83, 87, -23, -24]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
     </notation:Diagram>
     <tibex:NamespaceRegistry enabled="true">
@@ -1971,10 +1968,10 @@
         <bpws:variable element="ns6:ActivityErrorData"
             name="_error_EDItoJSON" sca-bpel:internal="true"/>
         <bpws:variable element="ns7:ActivityInputClass"
-            name="ParseJSON-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns8:root" name="ParseJSON" sca-bpel:internal="true"/>
+            name="inReq-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns8:root" name="inReq" sca-bpel:internal="true"/>
         <bpws:variable element="ns9:ActivityErrorData"
-            name="_error_ParseJSON" sca-bpel:internal="true"/>
+            name="_error_inReq" sca-bpel:internal="true"/>
         <bpws:variable element="ns10:ActivityInput"
             name="JMSSendMessage-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns11:aEmptyOutputClass"
@@ -2012,11 +2009,6 @@
             sca-bpel:hotUpdate="false" sca-bpel:privateProperty="true"
             sca-bpel:property="yes"
             tibex:propertySource="SpecFileProperty" type="xsd:string"/>
-        <bpws:variable element="ns8:root" name="RenderJSON-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns18:ActivityOutputClass"
-            name="RenderJSON" sca-bpel:internal="true"/>
-        <bpws:variable element="ns19:ActivityErrorData"
-            name="_error_RenderJSON" sca-bpel:internal="true"/>
         <bpws:variable element="ns20:JavaInvokeActivityInput"
             name="Interface-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns21:JavaInvokeActivityOutput"
@@ -2037,10 +2029,13 @@
         </bpws:variable>
         <bpws:variable element="ns23:ActivityInputClass"
             name="InterfaceInfo-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns24:HcisInterfaceExtElement"
-            name="InterfaceInfo" sca-bpel:internal="true"/>
+        <bpws:variable element="ns24:HcisInterface" name="InterfaceInfo" sca-bpel:internal="true"/>
         <bpws:variable element="ns9:ActivityErrorData"
             name="_error_Interfac" sca-bpel:internal="true"/>
+        <bpws:variable element="ns8:root" name="outReq-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns25:ActivityOutputClass" name="outReq" sca-bpel:internal="true"/>
+        <bpws:variable element="ns19:ActivityErrorData"
+            name="_error_outReq" sca-bpel:internal="true"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -2056,12 +2051,12 @@
                 <bpws:link name="TCPReceiverToReadTCPData" tibex:linkType="SUCCESS"/>
                 <bpws:link name="ReadTCPDataToJavaInvoke" tibex:linkType="SUCCESS"/>
                 <bpws:link name="EDItoJSONToJMSSendMessage" tibex:linkType="SUCCESS"/>
-                <bpws:link name="RenderJSONToInvokeRESTAPI" tibex:linkType="SUCCESS"/>
-                <bpws:link name="ParseJSONToRenderJSON" tibex:linkType="SUCCESS"/>
                 <bpws:link name="GetJMSQueueMessageToJavaInvoke" tibex:linkType="SUCCESS"/>
                 <bpws:link name="JavaInvokeToParseJSON1" tibex:linkType="SUCCESS"/>
                 <bpws:link name="ParseJSON1ToParseJSON" tibex:linkType="SUCCESS"/>
                 <bpws:link name="JMSSendMessageToGetJMSQueueMessage" tibex:linkType="SUCCESS"/>
+                <bpws:link name="ParseJSONToRenderJSON" tibex:linkType="SUCCESS"/>
+                <bpws:link name="RenderJSONToInvokeRESTAPI" tibex:linkType="SUCCESS"/>
             </bpws:links>
             <bpws:extensionActivity>
                 <tibex:receiveEvent createInstance="yes"
@@ -2164,8 +2159,8 @@
                 </tibex:activityExtension>
             </bpws:extensionActivity>
             <bpws:extensionActivity>
-                <tibex:activityExtension inputVariable="ParseJSON-input"
-                    name="ParseJSON" outputVariable="ParseJSON"
+                <tibex:activityExtension inputVariable="inReq-input"
+                    name="inReq" outputVariable="inReq"
                     tibex:xpdlId="2d618404-9698-43b9-b76c-bf95426e3b0d" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
                         <bpws:target linkName="ParseJSON1ToParseJSON"/>
@@ -2275,7 +2270,7 @@
                     </bpws:targets>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns8=&quot;http://www.tibco.com/namespaces/tnt/plugins/restinvoke+d561bb66-78e4-4ee7-adcd-fbba70fa909a+RestInvokeInput&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;RenderJSON&quot;/>&#xa;    &lt;xsl:template name=&quot;InvokeRESTAPI-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns8:RestActivityInput>&#xa;            &lt;MessageBody>&#xa;                &lt;asciiContent>&#xa;                    &lt;xsl:value-of select=&quot;$RenderJSON/jsonString&quot;/>&#xa;                &lt;/asciiContent>&#xa;            &lt;/MessageBody>&#xa;        &lt;/tns8:RestActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns8=&quot;http://www.tibco.com/namespaces/tnt/plugins/restinvoke+d561bb66-78e4-4ee7-adcd-fbba70fa909a+RestInvokeInput&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;outReq&quot;/>&#xa;    &lt;xsl:template name=&quot;InvokeRESTAPI-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns8:RestActivityInput>&#xa;            &lt;MessageBody>&#xa;                &lt;asciiContent>&#xa;                    &lt;xsl:value-of select=&quot;$outReq/jsonString&quot;/>&#xa;                &lt;/asciiContent>&#xa;            &lt;/MessageBody>&#xa;        &lt;/tns8:RestActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -2292,40 +2287,6 @@
                                     requestContentType="JSON"
                                     resourcePath="/dest"
                                     responseAcceptType="JSON" xsi:type="restjson:RestInvokeActivity"/>
-                                </properties>
-                            </activityConfig>
-                        </bwext:BWActivity>
-                    </tibex:config>
-                </tibex:activityExtension>
-            </bpws:extensionActivity>
-            <bpws:extensionActivity>
-                <tibex:activityExtension
-                    inputVariable="RenderJSON-input" name="RenderJSON"
-                    outputVariable="RenderJSON"
-                    tibex:xpdlId="44d2b22c-c943-4f50-9746-26ba95414ecc" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
-                    <bpws:targets>
-                        <bpws:target linkName="ParseJSONToRenderJSON"/>
-                    </bpws:targets>
-                    <bpws:sources>
-                        <bpws:source linkName="RenderJSONToInvokeRESTAPI"/>
-                    </bpws:sources>
-                    <tibex:inputBindings>
-                        <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:ns=&quot;http://schema.hcis.com/xsd/HCNCISCTJD0120103&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:tns5=&quot;http://tns.tibco.com/bw/json/1669605737318&quot; xmlns:ns1=&quot;http://schema.hcis.com/json&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;ParseJSON&quot;/>&#xa;    &lt;xsl:param name=&quot;InterfaceInfo&quot;/>&#xa;    &lt;xsl:template name=&quot;RenderJSON-input&quot; match=&quot;/&quot;>&#xa;        &lt;ns:root>&#xa;            &lt;ns:header>&#xa;                &lt;xsl:if test=&quot;$InterfaceInfo/tns5:source/tns5:sysId&quot;>&#xa;                    &lt;ns1:sendSysCd>&#xa;                        &lt;xsl:value-of select=&quot;$InterfaceInfo/tns5:source/tns5:sysId&quot;/>&#xa;                    &lt;/ns1:sendSysCd>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$InterfaceInfo/tns5:target/tns5:sysId&quot;>&#xa;                    &lt;ns1:rcvSysCd>&#xa;                        &lt;xsl:value-of select=&quot;$InterfaceInfo/tns5:target/tns5:sysId&quot;/>&#xa;                    &lt;/ns1:rcvSysCd>&#xa;                &lt;/xsl:if>&#xa;            &lt;/ns:header>&#xa;            &lt;ns:data>&#xa;                &lt;ns:bizHeader>&#xa;                    &lt;ns:trdCd>&#xa;                        &lt;xsl:copy-of select=&quot;$ParseJSON/ns:trdCd/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ParseJSON/ns:trdCd&quot;/>&#xa;                    &lt;/ns:trdCd>&#xa;                    &lt;ns:tgrmCd>&#xa;                        &lt;xsl:copy-of select=&quot;$ParseJSON/ns:tgrmCd/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ParseJSON/ns:tgrmCd&quot;/>&#xa;                    &lt;/ns:tgrmCd>&#xa;                    &lt;ns:tgrmNo>&#xa;                        &lt;xsl:copy-of select=&quot;$ParseJSON/ns:tgrmNo/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ParseJSON/ns:tgrmNo&quot;/>&#xa;                    &lt;/ns:tgrmNo>&#xa;                    &lt;ns:tgrmSendDtm>&#xa;                        &lt;xsl:copy-of select=&quot;$ParseJSON/ns:tgrmSendDtm/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ParseJSON/ns:tgrmSendDtm&quot;/>&#xa;                    &lt;/ns:tgrmSendDtm>&#xa;                    &lt;ns:testYn>&#xa;                        &lt;xsl:copy-of select=&quot;$ParseJSON/ns:testYn/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ParseJSON/ns:testYn&quot;/>&#xa;                    &lt;/ns:testYn>&#xa;                    &lt;ns:tgrmType>&#xa;                        &lt;xsl:copy-of select=&quot;$ParseJSON/ns:tgrmType/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ParseJSON/ns:tgrmType&quot;/>&#xa;                    &lt;/ns:tgrmType>&#xa;                    &lt;ns:prepVal>&#xa;                        &lt;xsl:copy-of select=&quot;$ParseJSON/ns:prepVal/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ParseJSON/ns:prepVal&quot;/>&#xa;                    &lt;/ns:prepVal>&#xa;                    &lt;ns:tgrmLen>&#xa;                        &lt;xsl:copy-of select=&quot;$ParseJSON/ns:tgrmLen/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ParseJSON/ns:tgrmLen&quot;/>&#xa;                    &lt;/ns:tgrmLen>&#xa;                    &lt;ns:respCd>&#xa;                        &lt;xsl:copy-of select=&quot;$ParseJSON/ns:respCd/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ParseJSON/ns:respCd&quot;/>&#xa;                    &lt;/ns:respCd>&#xa;                &lt;/ns:bizHeader>&#xa;                &lt;ns:bizBody>&#xa;                    &lt;ns:alliCrdAcptDt>&#xa;                        &lt;xsl:copy-of select=&quot;$ParseJSON/ns:alliCrdAcptDt/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ParseJSON/ns:alliCrdAcptDt&quot;/>&#xa;                    &lt;/ns:alliCrdAcptDt>&#xa;                    &lt;ns:custNm>&#xa;                        &lt;xsl:copy-of select=&quot;$ParseJSON/ns:custNm/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ParseJSON/ns:custNm&quot;/>&#xa;                    &lt;/ns:custNm>&#xa;                    &lt;ns:telpnAreaNo>&#xa;                        &lt;xsl:copy-of select=&quot;$ParseJSON/ns:telpnAreaNo/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ParseJSON/ns:telpnAreaNo&quot;/>&#xa;                    &lt;/ns:telpnAreaNo>&#xa;                    &lt;ns:tels>&#xa;                        &lt;xsl:copy-of select=&quot;$ParseJSON/ns:tels/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ParseJSON/ns:tels&quot;/>&#xa;                    &lt;/ns:tels>&#xa;                    &lt;ns:telpnSeqno>&#xa;                        &lt;xsl:copy-of select=&quot;$ParseJSON/ns:telpnSeqno/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ParseJSON/ns:telpnSeqno&quot;/>&#xa;                    &lt;/ns:telpnSeqno>&#xa;                    &lt;ns:alliCrdCustNo>&#xa;                        &lt;xsl:copy-of select=&quot;$ParseJSON/ns:alliCrdCustNo/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ParseJSON/ns:alliCrdCustNo&quot;/>&#xa;                    &lt;/ns:alliCrdCustNo>&#xa;                    &lt;ns:alliCrdCorpGbcd>&#xa;                        &lt;xsl:copy-of select=&quot;$ParseJSON/ns:alliCrdCorpGbcd/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ParseJSON/ns:alliCrdCorpGbcd&quot;/>&#xa;                    &lt;/ns:alliCrdCorpGbcd>&#xa;                    &lt;ns:adr1>&#xa;                        &lt;xsl:copy-of select=&quot;$ParseJSON/ns:adr1/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ParseJSON/ns:adr1&quot;/>&#xa;                    &lt;/ns:adr1>&#xa;                    &lt;ns:adr2>&#xa;                        &lt;xsl:copy-of select=&quot;$ParseJSON/ns:adr2/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ParseJSON/ns:adr2&quot;/>&#xa;                    &lt;/ns:adr2>&#xa;                    &lt;ns:rstMsg>&#xa;                        &lt;xsl:copy-of select=&quot;$ParseJSON/ns:rstMsg/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ParseJSON/ns:rstMsg&quot;/>&#xa;                    &lt;/ns:rstMsg>&#xa;                    &lt;ns:prepVal1>&#xa;                        &lt;xsl:copy-of select=&quot;$ParseJSON/ns:prepVal1/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ParseJSON/ns:prepVal1&quot;/>&#xa;                    &lt;/ns:prepVal1>&#xa;                &lt;/ns:bizBody>&#xa;            &lt;/ns:data>&#xa;        &lt;/ns:root>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
-                    </tibex:inputBindings>
-                    <tibex:config>
-                        <bwext:BWActivity
-                            activityTypeID="bw.restjson.JsonRender"
-                            xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
-                            xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
-                            xmlns:restjson="http://ns.tibco.com/bw/palette/restjson" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                            <activityConfig>
-                                <properties name="config" xsi:type="activityconfig:EMFProperty">
-                                    <type href="http://ns.tibco.com/bw/palette/restjson#//JsonRender"/>
-                                    <value jsonOutputStyle="None"
-                                    schemaType="Xsd" xsi:type="restjson:JsonRender">
-                                    <inputEditorElement href="platform:/resource/HCNCIS01.module/Schemas/HCN_DEFT_CIS_DEFT/HCNCISCTJD0120103_OutReq.xsd#//root;XSDElementDeclaration"/>
-                                    </value>
                                 </properties>
                             </activityConfig>
                         </bwext:BWActivity>
@@ -2400,7 +2361,40 @@
                                     <type href="http://ns.tibco.com/bw/palette/restjson#//JsonParser"/>
                                     <value jsonInputStyle="None"
                                     schemaType="Xsd" xsi:type="restjson:JsonParser">
-                                    <outputEditorElement href="platform:/resource/HcisCommon.smodule/Schemas/HcisInterface.xsd#//HcisInterfaceExtElement;XSDElementDeclaration"/>
+                                    <outputEditorElement href="platform:/resource/HcisCommon.smodule/Schemas/HcisInterface.xsd#//HcisInterface;XSDElementDeclaration"/>
+                                    </value>
+                                </properties>
+                            </activityConfig>
+                        </bwext:BWActivity>
+                    </tibex:config>
+                </tibex:activityExtension>
+            </bpws:extensionActivity>
+            <bpws:extensionActivity>
+                <tibex:activityExtension inputVariable="outReq-input"
+                    name="outReq" outputVariable="outReq"
+                    tibex:xpdlId="0537d885-03cc-4580-821c-e74df8fb7bb6" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                    <bpws:targets>
+                        <bpws:target linkName="ParseJSONToRenderJSON"/>
+                    </bpws:targets>
+                    <bpws:sources>
+                        <bpws:source linkName="RenderJSONToInvokeRESTAPI"/>
+                    </bpws:sources>
+                    <tibex:inputBindings>
+                        <tibex:inputBinding
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns5=&quot;http://tns.tibco.com/bw/json/1669605737318&quot; xmlns:ns=&quot;http://schema.hcis.com/xsd/HCNCISCTJD0120103&quot; xmlns:ns1=&quot;http://schema.hcis.com/json&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;InterfaceInfo&quot;/>&lt;xsl:param name=&quot;inReq&quot;/>&lt;xsl:template name=&quot;outReq-input&quot; match=&quot;/&quot;>&lt;ns:root>&lt;ns:header>&lt;xsl:if test=&quot;not((string($InterfaceInfo/tns5:source/tns5:sysId/@xsi:nil)=(&amp;quot;true&amp;quot;)) or (string($InterfaceInfo/tns5:source/tns5:sysId/@xsi:nil)=(&amp;quot;1&amp;quot;))) and exists($InterfaceInfo/tns5:source/tns5:sysId)&quot;>&lt;ns1:sendSysCd>&lt;xsl:value-of select=&quot;$InterfaceInfo/tns5:source/tns5:sysId&quot;/>&lt;/ns1:sendSysCd>&lt;/xsl:if>&lt;xsl:if test=&quot;not((string($InterfaceInfo/tns5:target/tns5:sysId/@xsi:nil)=(&amp;quot;true&amp;quot;)) or (string($InterfaceInfo/tns5:target/tns5:sysId/@xsi:nil)=(&amp;quot;1&amp;quot;))) and exists($InterfaceInfo/tns5:target/tns5:sysId)&quot;>&lt;ns1:rcvSysCd>&lt;xsl:value-of select=&quot;$InterfaceInfo/tns5:target/tns5:sysId&quot;/>&lt;/ns1:rcvSysCd>&lt;/xsl:if>&lt;/ns:header>&lt;ns:data>&lt;ns:bizHeader>&lt;ns:trdCd>&lt;xsl:copy-of select=&quot;$inReq/ns:trdCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$inReq/ns:trdCd&quot;/>&lt;/ns:trdCd>&lt;ns:tgrmCd>&lt;xsl:copy-of select=&quot;$inReq/ns:tgrmCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$inReq/ns:tgrmCd&quot;/>&lt;/ns:tgrmCd>&lt;ns:tgrmNo>&lt;xsl:copy-of select=&quot;$inReq/ns:tgrmNo/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$inReq/ns:tgrmNo&quot;/>&lt;/ns:tgrmNo>&lt;ns:tgrmSendDtm>&lt;xsl:copy-of select=&quot;$inReq/ns:tgrmSendDtm/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$inReq/ns:tgrmSendDtm&quot;/>&lt;/ns:tgrmSendDtm>&lt;ns:testYn>&lt;xsl:copy-of select=&quot;$inReq/ns:testYn/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$inReq/ns:testYn&quot;/>&lt;/ns:testYn>&lt;ns:tgrmType>&lt;xsl:copy-of select=&quot;$inReq/ns:tgrmType/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$inReq/ns:tgrmType&quot;/>&lt;/ns:tgrmType>&lt;ns:prepVal>&lt;xsl:copy-of select=&quot;$inReq/ns:prepVal/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$inReq/ns:prepVal&quot;/>&lt;/ns:prepVal>&lt;ns:tgrmLen>&lt;xsl:copy-of select=&quot;$inReq/ns:tgrmLen/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$inReq/ns:tgrmLen&quot;/>&lt;/ns:tgrmLen>&lt;ns:respCd>&lt;xsl:copy-of select=&quot;$inReq/ns:respCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$inReq/ns:respCd&quot;/>&lt;/ns:respCd>&lt;/ns:bizHeader>&lt;ns:bizBody>&lt;ns:alliCrdAcptDt>&lt;xsl:copy-of select=&quot;$inReq/ns:alliCrdAcptDt/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$inReq/ns:alliCrdAcptDt&quot;/>&lt;/ns:alliCrdAcptDt>&lt;ns:custNm>&lt;xsl:copy-of select=&quot;$inReq/ns:custNm/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$inReq/ns:custNm&quot;/>&lt;/ns:custNm>&lt;ns:telpnAreaNo>&lt;xsl:copy-of select=&quot;$inReq/ns:telpnAreaNo/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$inReq/ns:telpnAreaNo&quot;/>&lt;/ns:telpnAreaNo>&lt;ns:tels>&lt;xsl:copy-of select=&quot;$inReq/ns:tels/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$inReq/ns:tels&quot;/>&lt;/ns:tels>&lt;ns:telpnSeqno>&lt;xsl:copy-of select=&quot;$inReq/ns:telpnSeqno/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$inReq/ns:telpnSeqno&quot;/>&lt;/ns:telpnSeqno>&lt;ns:alliCrdCustNo>&lt;xsl:copy-of select=&quot;$inReq/ns:alliCrdCustNo/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$inReq/ns:alliCrdCustNo&quot;/>&lt;/ns:alliCrdCustNo>&lt;ns:alliCrdCorpGbcd>&lt;xsl:copy-of select=&quot;$inReq/ns:alliCrdCorpGbcd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$inReq/ns:alliCrdCorpGbcd&quot;/>&lt;/ns:alliCrdCorpGbcd>&lt;ns:adr1>&lt;xsl:copy-of select=&quot;$inReq/ns:adr1/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$inReq/ns:adr1&quot;/>&lt;/ns:adr1>&lt;ns:adr2>&lt;xsl:copy-of select=&quot;$inReq/ns:adr2/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$inReq/ns:adr2&quot;/>&lt;/ns:adr2>&lt;ns:rstMsg>&lt;xsl:copy-of select=&quot;$inReq/ns:rstMsg/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$inReq/ns:rstMsg&quot;/>&lt;/ns:rstMsg>&lt;ns:prepVal1>&lt;xsl:copy-of select=&quot;$inReq/ns:prepVal1/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$inReq/ns:prepVal1&quot;/>&lt;/ns:prepVal1>&lt;/ns:bizBody>&lt;/ns:data>&lt;/ns:root>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                    </tibex:inputBindings>
+                    <tibex:config>
+                        <bwext:BWActivity
+                            activityTypeID="bw.restjson.JsonRender"
+                            xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
+                            xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
+                            xmlns:restjson="http://ns.tibco.com/bw/palette/restjson" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <activityConfig>
+                                <properties name="config" xsi:type="activityconfig:EMFProperty">
+                                    <type href="http://ns.tibco.com/bw/palette/restjson#//JsonRender"/>
+                                    <value jsonOutputStyle="None"
+                                    schemaType="Xsd" xsi:type="restjson:JsonRender">
+                                    <inputEditorElement href="platform:/resource/HCNCIS01.module/Schemas/HCN_DEFT_CIS_DEFT/HCNCISCTJD0120103_OutReq.xsd#//root;XSDElementDeclaration"/>
                                     </value>
                                 </properties>
                             </activityConfig>

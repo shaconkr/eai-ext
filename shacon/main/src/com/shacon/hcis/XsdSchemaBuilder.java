@@ -2,6 +2,9 @@ package com.shacon.hcis;
 
 import com.google.common.base.Joiner;
 import com.google.common.collect.Lists;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import kr.shacon.edi.type.MapDeserializer;
 import kr.shacon.edi.util.CastUtils;
 import org.apache.ws.commons.schema.*;
 import org.apache.ws.commons.schema.constants.Constants;
@@ -59,6 +62,15 @@ public class XsdSchemaBuilder {
     String schemaPath;
     String resourcePath;
 
+    protected static Gson gson;
+
+    static {
+        gson = new GsonBuilder()
+                .registerTypeAdapter(Map.class, new MapDeserializer())
+                .setDateFormat("yyyy-MM-dd HH:mm:ss")
+                .serializeNulls()
+                .create();
+    }
 
     public XsdSchemaBuilder(String eimsPath, String projPath) {
         this.eimsPath = eimsPath;
@@ -74,6 +86,8 @@ public class XsdSchemaBuilder {
     public void createIntXSD(String ifId) {
         try {
             Map<String, Object> eaiInfo = eimsParser.parseXML(ifId, null);
+            log.debug(gson.toJson(eaiInfo));
+
             Map<String, String> reqInfo = CastUtils.cast((Map<?, ?>) eaiInfo.get("request"));
             Map<String, String> source = CastUtils.cast((Map<?, ?>) eaiInfo.get("source"));
             Map<String, String> target = CastUtils.cast((Map<?, ?>) eaiInfo.get("target"));
@@ -121,6 +135,7 @@ public class XsdSchemaBuilder {
         String folder = (resIfId != null) ? "/" + reqIfId + "_" + resIfId : "/" + reqIfId;
         try {
             Map<String, Object> eaiInfo = eimsParser.parseXML(reqIfId, resIfId);
+            log.debug(gson.toJson(eaiInfo));
             Map<String, String> reqInfo = CastUtils.cast((Map<?, ?>) eaiInfo.get("request"));
             Map<String, String> source = CastUtils.cast((Map<?, ?>) eaiInfo.get("source"));
             Map<String, String> target = CastUtils.cast((Map<?, ?>) eaiInfo.get("target"));

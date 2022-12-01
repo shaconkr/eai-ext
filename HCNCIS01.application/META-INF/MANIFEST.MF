@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: HCNCIS01 Application
-Bundle-SymbolicName: HCNCIS01.application
+Bundle-SymbolicName: HCNCIS01E.application
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: TIBCO Software Inc.
 TIBCO-BW-Version: 6.8.1 HF1 V43 2022-08-11

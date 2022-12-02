@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>HCNCIS01E.module</name>
+	<name>HCNCIS301.module</name>
 	<comment></comment>
 	<projects>
 		<project>HcisCommon.smodule</project>

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <beanio xmlns="http://www.beanio.org/2012/03" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.beanio.org/2012/03 http://www.beanio.org/2012/03/mapping.xsd">
-  <typeHandler type="java.util.Date" class="rg.beanio.types.DateTypeHandler">
+  <typeHandler type="java.util.Date" class="org.beanio.types.DateTypeHandler">
     <property name="pattern" value="yyyyMMddhhmm"/>
   </typeHandler>
   <stream kor="" name="CISHCNCTJD0120104_InRes" format="fixedlength">

@@ -8,7 +8,7 @@
     <parser>
       <property name="recordTerminator" value="\r\n"/>
     </parser>
-    <record name="HCN_InReq" class="map">
+    <record name="HCN_InReq" class="java.util.LinkedHashMap">
       <field kor="거래코드" name="trdCd" position="0" length="4" type="string"/>
       <field kor="전문코드" name="tgrmCd" position="4" length="5" type="string"/>
       <field kor="전문번호" name="tgrmNo" position="9" length="8" type="string"/>

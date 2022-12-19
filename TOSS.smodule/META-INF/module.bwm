@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_3hwzwX9DEe2YPcn3ilumbw" targetNamespace="http://tns.tibco.com/bw/composite/TOSS.smodule" name="TOSS.smodule" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:property xmi:id="_3lVsMH9DEe2YPcn3ilumbw" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_3lfdMH9DEe2YPcn3ilumbw" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_3lfdMX9DEe2YPcn3ilumbw" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_3lfdMn9DEe2YPcn3ilumbw" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_3lfdM39DEe2YPcn3ilumbw" name="BW.DOMAIN.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_3lfdNH9DEe2YPcn3ilumbw" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_3lfdNX9DEe2YPcn3ilumbw" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_3lfdNn9DEe2YPcn3ilumbw" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_3lfdN39DEe2YPcn3ilumbw" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_zFmqIH9GEe2YPcn3ilumbw" name="hostIPAddrOnline1" type="XMLSchema:string" scaext:simpleValue="" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_Bzzj8H9HEe2YPcn3ilumbw" name="hostPortOnline1" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_Oj39IH9HEe2YPcn3ilumbw" name="hostIPAddrOnline2" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_QaNMoH9HEe2YPcn3ilumbw" name="hostPortOnline2" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_Vy4hgH9HEe2YPcn3ilumbw" name="hostIPAddrOnline3" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_bEuOkH9HEe2YPcn3ilumbw" name="hostPortOnline3" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_PIf3sH9IEe2YPcn3ilumbw" name="magicLinkID" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_RKwDUH9IEe2YPcn3ilumbw" name="magicLinkPW" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+</sca:composite>

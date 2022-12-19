@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmlns:tcpconnection="http://ns.tibco.com/bw/palette/tcpconnection" xmi:id="_8gMf0X9HEe2YPcn3ilumbw" name="toss.smodule.TOSS_OL3" type="tcpconnection:tcpconnection">
+  <jndi:description>TOSS 즉시결재 TCP 접속</jndi:description>
+  <jndi:configuration xsi:type="tcpconnection:TCPConnection" xmi:id="_8gMf0n9HEe2YPcn3ilumbw" whenExhaustedAction="Block">
+    <substitutionBindings xmi:id="_-Tr2sH9HEe2YPcn3ilumbw" template="host" propName="hostIPAddrOnline3"/>
+    <substitutionBindings xmi:id="__lMh4H9HEe2YPcn3ilumbw" template="port" propName="hostPortOnline3"/>
+  </jndi:configuration>
+</jndi:namedResource>

@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <beanio xmlns="http://www.beanio.org/2012/03" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.beanio.org/2012/03 http://www.beanio.org/2012/03/mapping.xsd">
   <typeHandler type="java.util.Date" class="org.beanio.types.DateTypeHandler">
     <property name="pattern" value="yyyyMMddhhmm"/>
@@ -7,27 +8,27 @@
     <parser>
       <property name="recordTerminator" value="\r\n"/>
     </parser>
-    <record name="HCN_InRes" class="map">
-      <field kor="거래코드" name="trdCd" position="0" length="4" type="string"/>
-      <field kor="전문코드" name="tgrmCd" position="4" length="5" type="string"/>
-      <field kor="전문번호" name="tgrmNo" position="9" length="8" type="string"/>
-      <field kor="전문전송일시" name="tgrmSendDtm" position="17" length="16" type="string"/>
-      <field kor="테스트여부" name="testYn" position="33" length="1" type="string"/>
-      <field kor="전문유형" name="tgrmType" position="34" length="1" type="string"/>
-      <field kor="예비값" name="prepVal" position="35" length="19" type="string"/>
-      <field kor="전문길이" name="tgrmLen" position="54" length="6" type="string"/>
-      <field kor="응답코드" name="respCd" position="60" length="4" type="string"/>
-      <field kor="제휴카드접수일자" name="alliCrdAcptDt" position="64" length="8" type="string"/>
-      <field kor="고객명" name="custNm" position="72" length="70" type="string"/>
-      <field kor="전화지역번호" name="telpnAreaNo" position="142" length="4" type="string"/>
-      <field kor="전화국번호" name="tels" position="146" length="4" type="string"/>
-      <field kor="전화일련번호" name="telpnSeqno" position="150" length="4" type="string"/>
-      <field kor="제휴카드고객번호" name="alliCrdCustNo" position="154" length="9" type="string"/>
-      <field kor="제휴카드법인구분코드" name="alliCrdCorpGbcd" position="163" length="3" type="string"/>
-      <field kor="주소1" name="adr1" position="166" length="200" type="string"/>
-      <field kor="주소2" name="adr2" position="366" length="200" type="string"/>
-      <field kor="결과메시지" name="rstMsg" position="566" length="80" type="string"/>
-      <field kor="예비값1" name="prepVal1" position="646" length="230" type="string"/>
+    <record name="HCN_InRes" class="java.util.LinkedHashMap">
+      <field kor="거래코드" name="trdCd" position="876" length="4" type="string"/>
+      <field kor="전문코드" name="tgrmCd" position="880" length="5" type="string"/>
+      <field kor="전문번호" name="tgrmNo" position="885" length="8" type="string"/>
+      <field kor="전문전송일시" name="tgrmSendDtm" position="893" length="16" type="string"/>
+      <field kor="테스트여부" name="testYn" position="909" length="1" type="string"/>
+      <field kor="전문유형" name="tgrmType" position="910" length="1" type="string"/>
+      <field kor="예비값" name="prepVal" position="911" length="19" type="string"/>
+      <field kor="전문길이" name="tgrmLen" position="930" length="6" type="string"/>
+      <field kor="응답코드" name="respCd" position="936" length="4" type="string"/>
+      <field kor="제휴카드접수일자" name="alliCrdAcptDt" position="940" length="8" type="string"/>
+      <field kor="고객명" name="custNm" position="948" length="70" type="string"/>
+      <field kor="전화지역번호" name="telpnAreaNo" position="1018" length="4" type="string"/>
+      <field kor="전화국번호" name="tels" position="1022" length="4" type="string"/>
+      <field kor="전화일련번호" name="telpnSeqno" position="1026" length="4" type="string"/>
+      <field kor="제휴카드고객번호" name="alliCrdCustNo" position="1030" length="9" type="string"/>
+      <field kor="제휴카드법인구분코드" name="alliCrdCorpGbcd" position="1039" length="3" type="string"/>
+      <field kor="주소1" name="adr1" position="1042" length="200" type="string"/>
+      <field kor="주소2" name="adr2" position="1242" length="200" type="string"/>
+      <field kor="결과메시지" name="rstMsg" position="1442" length="80" type="string"/>
+      <field kor="예비값1" name="prepVal1" position="1522" length="230" type="string"/>
     </record>
   </stream>
 </beanio>

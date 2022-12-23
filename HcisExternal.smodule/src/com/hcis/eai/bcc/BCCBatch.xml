@@ -1,0 +1,216 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<beanio xmlns="http://www.beanio.org/2012/03"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.beanio.org/2012/03 http://www.beanio.org/2012/03/mapping.xsd">
+
+    <typeHandler type="java.util.Date" class="org.org.beanio.types.DateTypeHandler">
+        <property name="pattern" value="yyyyMMddhhmm"/>
+    </typeHandler>
+
+    <stream kor="업무관리" name="BCC_COM_HDR" format="fixedlength">
+        <parser>
+            <property name="recordTerminator" value="\r\n"/>
+        </parser>
+        <record name="record" class="map">
+            <field kor="전문길이" name="dataSize" position="0" length="4" justify="right" padding="0"/>
+            <field kor="업무구분코드" name="tskGbCd" position="4" length="3" />
+            <field kor="기관코드" name="istnCd" position="7" length="2" />
+            <field kor="전문종별코드" name="tgrmSubCCd" position="9" length="4" />
+            <field kor="거래구분코드" name="trdGbCd" position="13" length="1" />
+            <field kor="송수신플래그" name="sdRvFlag" position="14" length="1" />
+            <field kor="파일명" name="fileName" position="15" length="8" />
+            <field kor="응답코드" name="respCd" position="23" length="3" />
+        </record>
+    </stream>
+
+    <stream kor="업무관리" name="BCC_0600" format="fixedlength">
+        <parser>
+            <property name="recordTerminator" value="\r\n"/>
+        </parser>
+        <record name="record" class="map">
+            <field kor="전문전송일시" name="trgmSendDtm" position="0" length="10" />
+            <field kor="업무관리정보" name="jobMngInfo" position="10" length="3" />
+            <field kor="송신자명" name="senderNm" position="13" length="20" />
+            <field kor="송신자암호" name="senderPw" position="33" length="16" />
+        </record>
+    </stream>
+
+    <stream kor="업무관리응답" name="BCC_0610" format="fixedlength">
+        <parser>
+            <property name="recordTerminator" value="\r\n"/>
+        </parser>
+        <record name="record" class="map">
+            <field kor="전문길이" name="dataSize" position="0" length="4" />
+            <field kor="업무구분코드" name="tskGbCd" position="4" length="3" />
+            <field kor="기관코드" name="istnCd" position="7" length="2" />
+            <field kor="전문종별코드" name="tgrmSubCCd" position="9" length="4" />
+            <field kor="거래구분코드" name="trdGbCd" position="13" length="1" />
+            <field kor="송수신플래그" name="sdRvFlag" position="14" length="1" />
+            <field kor="파일명" name="fileName" position="15" length="8" />
+            <field kor="응답코드" name="respCd" position="23" length="3" />
+            <field kor="전문전송일시" name="trgmSendDtm" position="26" length="10" />
+            <field kor="업무관리정보" name="jobMngInfo" position="36" length="3" />
+            <field kor="송신자명" name="senderNm" position="39" length="20" />
+            <field kor="송신자암호" name="senderPw" position="59" length="16" />
+        </record>
+    </stream>
+
+    <stream kor="결번전문확인" name="BCC_0620" format="fixedlength">
+        <parser>
+            <property name="recordTerminator" value="\r\n"/>
+        </parser>
+        <record name="record" class="map">
+            <field kor="전문길이" name="dataSize" position="0" length="4" />
+            <field kor="업무구분코드" name="tskGbCd" position="4" length="3" />
+            <field kor="기관코드" name="istnCd" position="7" length="2" />
+            <field kor="전문종별코드" name="tgrmSubCCd" position="9" length="4" />
+            <field kor="거래구분코드" name="trdGbCd" position="13" length="1" />
+            <field kor="송수신플래그" name="sdRvFlag" position="14" length="1" />
+            <field kor="파일명" name="fileName" position="15" length="8" />
+            <field kor="응답코드" name="respCd" position="23" length="3" />
+            <field kor="Block번호" name="blockNo" position="26" length="4" type="int"/>
+            <field kor="최종Seq번호" name="lastSeqNo" position="30" length="3" type="int"/>
+        </record>
+    </stream>
+
+    <stream kor="파일정보관리" name="BCC_0630" format="fixedlength">
+        <parser>
+            <property name="recordTerminator" value="\r\n"/>
+        </parser>
+        <record name="record" class="map">
+            <field kor="전문길이" name="dataSize" position="0" length="4" />
+            <field kor="업무구분코드" name="tskGbCd" position="4" length="3" />
+            <field kor="기관코드" name="istnCd" position="7" length="2" />
+            <field kor="전문종별코드" name="tgrmSubCCd" position="9" length="4" />
+            <field kor="거래구분코드" name="trdGbCd" position="13" length="1" />
+            <field kor="송수신플래그" name="sdRvFlag" position="14" length="1" />
+            <field kor="파일명" name="fileName" position="15" length="8" />
+            <field kor="응답코드" name="respCd" position="23" length="3" />
+            <field kor="파일명" name="fileName" position="26" length="8" />
+            <field kor="파일사이즈" name="fileSize" position="34" length="12" />
+            <field kor="전문Byte수" name="ediByte" position="46" length="4" />
+        </record>
+    </stream>
+
+    <stream kor="파일정보관리응답" name="BCC_0640" format="fixedlength">
+        <parser>
+            <property name="recordTerminator" value="\r\n"/>
+        </parser>
+        <record name="record" class="map">
+            <field kor="전문길이" name="dataSize" position="0" length="4" />
+            <field kor="업무구분코드" name="tskGbCd" position="4" length="3" />
+            <field kor="기관코드" name="istnCd" position="7" length="2" />
+            <field kor="전문종별코드" name="tgrmSubCCd" position="9" length="4" />
+            <field kor="거래구분코드" name="trdGbCd" position="13" length="1" />
+            <field kor="송수신플래그" name="sdRvFlag" position="14" length="1" />
+            <field kor="파일명" name="fileName" position="15" length="8" />
+            <field kor="응답코드" name="respCd" position="23" length="3" />
+            <field kor="파일명" name="fileName" position="26" length="8" />
+            <field kor="파일사이즈" name="fileSize" position="34" length="12" />
+            <field kor="전문Byte수" name="ediByte" position="46" length="4" />
+        </record>
+    </stream>
+
+    <stream kor="결번자료내역전송" name="BCC_0300" format="fixedlength">
+        <parser>
+            <property name="recordTerminator" value="\r\n"/>
+        </parser>
+        <record name="record" class="map">
+            <field kor="전문길이" name="dataSize" position="0" length="4" />
+            <field kor="업무구분코드" name="tskGbCd" position="4" length="3" />
+            <field kor="기관코드" name="istnCd" position="7" length="2" />
+            <field kor="전문종별코드" name="tgrmSubCCd" position="9" length="4" />
+            <field kor="거래구분코드" name="trdGbCd" position="13" length="1" />
+            <field kor="송수신플래그" name="sdRvFlag" position="14" length="1" />
+            <field kor="파일명" name="fileName" position="15" length="8" />
+            <field kor="응답코드" name="respCd" position="23" length="3" />
+            <field kor="BLOCK번호" name="blockNo" position="26" length="4" />
+            <field kor="최종SEQ번호" name="lastSeqNo" position="30" length="3" />
+            <field kor="결번갯수" name="lostCnt" position="33" length="3" />
+            <field kor="결번확인" name="lostChk" position="36" length="100"  trim="true"/>
+        </record>
+    </stream>
+
+    <stream kor="걸번DATA전송" name="BCC_0310" format="fixedlength">
+        <parser>
+            <property name="recordTerminator" value="\r\n"/>
+        </parser>
+        <record name="record" class="map">
+            <field kor="전문길이" name="dataSize" position="0" length="4" />
+            <field kor="업무구분코드" name="tskGbCd" position="4" length="3" />
+            <field kor="기관코드" name="istnCd" position="7" length="2" />
+            <field kor="전문종별코드" name="tgrmSubCCd" position="9" length="4" />
+            <field kor="거래구분코드" name="trdGbCd" position="13" length="1" />
+            <field kor="송수신플래그" name="sdRvFlag" position="14" length="1" />
+            <field kor="파일명" name="fileName" position="15" length="8" />
+            <field kor="응답코드" name="respCd" position="23" length="3" />
+            <field kor="BLOCK번호" name="blockNo" position="26" length="4" />
+            <field kor="SEQ번호" name="seqNo" position="30" length="3" />
+            <field kor="실DATA바이트수" name="realDataByte" position="33" length="4" />
+            <field kor="파일내역" name="fileSpec" position="37" length="4059"  trim="true"/>
+        </record>
+    </stream>
+
+    <stream kor="DATA전문" name="BCC_0320" format="fixedlength">
+        <parser>
+            <property name="recordTerminator" value="\r\n"/>
+        </parser>
+        <record name="record" class="map">
+            <field kor="전문길이" name="dataSize" position="0" length="4" />
+            <field kor="업무구분코드" name="tskGbCd" position="4" length="3" />
+            <field kor="기관코드" name="istnCd" position="7" length="2" />
+            <field kor="전문종별코드" name="tgrmSubCCd" position="9" length="4" />
+            <field kor="거래구분코드" name="trdGbCd" position="13" length="1" />
+            <field kor="송수신플래그" name="sdRvFlag" position="14" length="1" />
+            <field kor="파일명" name="fileName" position="15" length="8" />
+            <field kor="응답코드" name="respCd" position="23" length="3" />
+            <field kor="BLOCK번호" name="blockNo" position="26" length="4" />
+            <field kor="SEQ번호" name="seqNo" position="30" length="3" />
+            <field kor="실DATA바이트수" name="realDataByte" position="33" length="4" />
+            <field kor="파일내역" name="fileSpec" position="37" length="4059"  trim="true"/>
+        </record>
+    </stream>
+
+    <stream kor="송수신Header_trailer요청" name="BCC_0320_HT" format="fixedlength">
+        <parser>
+            <property name="recordTerminator" value="\r\n"/>
+        </parser>
+        <record name="record" class="map">
+            <field kor="전문길이" name="dataSize" position="0" length="4" />
+            <field kor="업무구분코드" name="tskGbCd" position="4" length="3" />
+            <field kor="기관코드" name="istnCd" position="7" length="2" />
+            <field kor="전문종별코드" name="tgrmSubCCd" position="9" length="4" />
+            <field kor="거래구분코드" name="trdGbCd" position="13" length="1" />
+            <field kor="송수신플래그" name="sdRvFlag" position="14" length="1" />
+            <field kor="파일명" name="fileName" position="15" length="8" />
+            <field kor="응답코드" name="respCd" position="23" length="3" />
+            <field kor="BLOCK번호" name="blockNo" position="26" length="4" />
+            <field kor="SEQ번호" name="seqNo" position="30" length="3" />
+            <field kor="REC건수" name="recCnt" position="33" length="4" />
+            <field kor="REC데이터" name="recData" position="37" length="4059"  trim="true"/>
+        </record>
+    </stream>
+
+    <stream kor="송수신Header_trailer응답" name="BCC_0330_HT" format="fixedlength">
+        <parser>
+            <property name="recordTerminator" value="\r\n"/>
+        </parser>
+        <record name="record" class="map">
+            <field kor="전문길이" name="dataSize" position="0" length="4" />
+            <field kor="업무구분코드" name="tskGbCd" position="4" length="3" />
+            <field kor="기관코드" name="istnCd" position="7" length="2" />
+            <field kor="전문종별코드" name="tgrmSubCCd" position="9" length="4" />
+            <field kor="거래구분코드" name="trdGbCd" position="13" length="1" />
+            <field kor="송수신플래그" name="sdRvFlag" position="14" length="1" />
+            <field kor="파일명" name="fileName" position="15" length="8" />
+            <field kor="응답코드" name="respCd" position="23" length="3" />
+            <field kor="BLOCK번호" name="blockNo" position="26" length="4" />
+            <field kor="SEQ번호" name="seqNo" position="30" length="3" />
+            <field kor="REC건수" name="recCnt" position="33" length="4" />
+            <field kor="UNUSED" name="unUsed" position="37" length="19"  trim="true"/>
+            <field kor="REC전체건수" name="recTotal" position="37" length="19"  trim="true"/>
+        </record>
+    </stream>
+
+
+</beanio>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beanio xmlns="http://www.beanio.org/2012/03" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.beanio.org/2012/03 http://www.beanio.org/2012/03/mapping.xsd">
+  <typeHandler type="java.util.Date" class="org.beanio.types.DateTypeHandler">
+    <property name="pattern" value="yyyyMMddhhmm"/>
+  </typeHandler>
+  <stream kor="" name="CISARBCTJD0090101_InRes" format="fixedlength">
+    <parser>
+      <property name="recordTerminator" value="\r\n"/>
+    </parser>
+    <record name="ARB_InRes" class="java.util.LinkedHashMap">
+      <field kor="거래코드" name="trdCd" position="764" length="4" type="string"/>
+      <field kor="전문코드" name="tgrmCd" position="768" length="5" type="string"/>
+      <field kor="전문번호" name="tgrmNo" position="773" length="8" type="string"/>
+      <field kor="전문전송일시" name="tgrmSendDtm" position="781" length="16" type="string"/>
+      <field kor="테스트여부" name="testYn" position="797" length="1" type="string"/>
+      <field kor="전문유형" name="tgrmType" position="798" length="1" type="string"/>
+      <field kor="예비값" name="prepVal" position="799" length="19" type="string"/>
+      <field kor="전문길이" name="tgrmLen" position="818" length="6" type="string"/>
+      <field kor="응답코드" name="respCd" position="824" length="4" type="string"/>
+      <field kor="제휴카드접수일자" name="alliCrdAcptDt" position="828" length="8" type="string"/>
+      <field kor="고객명" name="custNm" position="836" length="70" type="string"/>
+      <field kor="전화지역번호" name="telpnAreaNo" position="906" length="4" type="string"/>
+      <field kor="전화국번호" name="tels" position="910" length="4" type="string"/>
+      <field kor="전화일련번호" name="telpnSeqno" position="914" length="4" type="string"/>
+      <field kor="주소1" name="adr1" position="918" length="200" type="string"/>
+      <field kor="주소2" name="adr2" position="1118" length="200" type="string"/>
+      <field kor="제휴카드고객번호" name="alliCrdCustNo" position="1318" length="9" type="string"/>
+      <field kor="거래고유번호" name="trdInntNo" position="1327" length="8" type="string"/>
+      <field kor="신청취소일자" name="reqCnclDt" position="1335" length="8" type="string"/>
+      <field kor="신청취소거래고유번호" name="reqCnclTranInntNo" position="1343" length="8" type="string"/>
+      <field kor="신청취소고객번호" name="reqCnclCustNo" position="1351" length="9" type="string"/>
+      <field kor="가입취소구분" name="joinCnclGb" position="1360" length="1" type="string"/>
+      <field kor="결과메시지" name="rstMsg" position="1361" length="80" type="string"/>
+      <field kor="예비값" name="prepVal" position="1441" length="87" type="string"/>
+    </record>
+  </stream>
+</beanio>

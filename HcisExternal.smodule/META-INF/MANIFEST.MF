@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: HcisExternal Smodule Module
+Bundle-SymbolicName: HcisExternal.smodule
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: .
+Bundle-Vendor: TIBCO Software Inc.
+Export-Package: com.hcis.eai,
+ com.hcis.eai.bcc,
+ com.hcis.eai.kft,
+ com.hcis.eai.tos
+Require-Bundle: HcisCommon.smodule;bundle-version="1.0.0"
+Provide-Capability: com.tibco.bw.module; name="HcisExternal.smodule"; version:Version="1.0.0",
+ com.tibco.bw.resources; name="ext.cis",
+ com.tibco.bw.resources; name="ext.tos",
+ com.tibco.bw.resources; name="ext.bcc"
+Import-Package: com.google.gson,
+ org.slf4j;version="1.8.1100"
+TIBCO-BW-JobSharedVariables: META-INF/module.jsv
+TIBCO-BW-ConfigProfile: META-INF/default.substvar
+TIBCO-BW-ModuleSharedVariables: META-INF/module.msv
+TIBCO-BW-Edition: bwe
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Require-Capability: com.tibco.bw.model; filter:="(name=bwext)",
+ com.tibco.bw.module; filter:="(&(name=HcisCommon.smodule)(version=1.0.0))",
+ com.tibco.bw.sharedresource.model; filter:="(name=bw.java)",
+ com.tibco.bw.sharedresource.model; filter:="(name=bw.tcp)"
+TIBCO-BW-Version: 6.9.0 V26 2022-11-02
+TIBCO-BW-SharedModule: META-INF/module.bwm

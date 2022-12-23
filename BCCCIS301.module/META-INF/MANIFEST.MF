@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: BCCCIS301 Module
+Bundle-SymbolicName: BCCCIS301.module
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: .
+Bundle-Vendor: TIBCO Software Inc.
+Require-Bundle: HcisExternal.smodule;bundle-version="1.0.0",
+ HcisCommon.smodule;bundle-version="1.0.0"
+TIBCO-BW-Edition: bwe
+TIBCO-BW-JobSharedVariables: META-INF/module.jsv
+TIBCO-BW-ApplicationModule: META-INF/module.bwm
+TIBCO-BW-Version: 6.9.0 V26 2022-11-02
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+TIBCO-BW-ConfigProfile: META-INF/default.substvar
+TIBCO-BW-ModuleSharedVariables: META-INF/module.msv
+Require-Capability: com.tibco.bw.model; filter:="(name=bwext)",com.tibco.bw.module; filter:="(&(name=HcisExternal.smodule)(version=1.0.0))",com.tibco.bw.module; filter:="(&(name=HcisCommon.smodule)(version=1.0.0))",com.tibco.bw.module; filter:="(&(name=CSPI_Library)(version=2.0.0))",com.tibco.bw.palette; filter:="(name=bw.file)",com.tibco.bw.palette; filter:="(name=bw.tcp)",com.tibco.bw.palette; filter:="(name=bw.java)"

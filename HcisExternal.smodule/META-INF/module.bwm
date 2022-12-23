@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_-6WMEH9dEe2Bb-lwhnXa4A" targetNamespace="http://tns.tibco.com/bw/composite/HcisExternal.smodule" name="HcisExternal.smodule" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:property xmi:id="__Ej4AH9dEe2Bb-lwhnXa4A" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="__FmZ0H9dEe2Bb-lwhnXa4A" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="__FwK0H9dEe2Bb-lwhnXa4A" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="__FwK0X9dEe2Bb-lwhnXa4A" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="__F5UwH9dEe2Bb-lwhnXa4A" name="BW.DOMAIN.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="__F5UwX9dEe2Bb-lwhnXa4A" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="__F5Uwn9dEe2Bb-lwhnXa4A" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="__GDFwH9dEe2Bb-lwhnXa4A" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="__GDFwX9dEe2Bb-lwhnXa4A" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_ofGWwIG9Ee2-kqzdA-_O3A" name="BC_CARD_RCV_PORT" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+</sca:composite>

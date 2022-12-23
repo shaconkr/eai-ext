@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmlns:tcpconnection="http://ns.tibco.com/bw/palette/tcpconnection" xmi:id="_u7UbAX9GEe2YPcn3ilumbw" name="ext.tos.TOSS_OL1" type="tcpconnection:tcpconnection">
+  <jndi:description>TOSS 가상계좌 TCP 접속</jndi:description>
+  <jndi:configuration xsi:type="tcpconnection:TCPConnection" xmi:id="_u7UbAn9GEe2YPcn3ilumbw" whenExhaustedAction="Block">
+    <substitutionBindings xmi:id="_yYBLYH9GEe2YPcn3ilumbw" template="host" propName="hostIPAddrOnline2"/>
+    <substitutionBindings xmi:id="_yYXUMH9HEe2YPcn3ilumbw" template="port" propName="hostPortOnline1"/>
+  </jndi:configuration>
+</jndi:namedResource>

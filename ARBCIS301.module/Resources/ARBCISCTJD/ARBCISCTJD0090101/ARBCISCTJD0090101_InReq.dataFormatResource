@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jndi:namedResource xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ARBCISCTJD0090101="http://schema.hcis.com/xsd/ARBCISCTJD0090101" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" name="ARBCISCTJD/ARBCISCTJD0090101.ARBCISCTJD0090101_InReq" type="dataformat:DataFormat">
+  <jndi:imports importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/ARBCISCTJD0090101_InReq.xsd" namespace="http://schema.hcis.com/xsd/ARBCISCTJD0090101"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="ARBCISCTJD0090101:main" lineLength="764" fieldOffsetsStr="trdCd(0,4)&#xA;tgrmCd(4,9)&#xA;tgrmNo(9,17)&#xA;tgrmSendDtm(17,33)&#xA;testYn(33,34)&#xA;tgrmType(34,35)&#xA;prepVal(35,54)&#xA;tgrmLen(54,60)&#xA;respCd(60,64)&#xA;alliCrdAcptDt(64,72)&#xA;custNm(72,142)&#xA;telpnAreaNo(142,146)&#xA;tels(146,150)&#xA;telpnSeqno(150,154)&#xA;adr1(154,354)&#xA;adr2(354,554)&#xA;alliCrdCustNo(554,563)&#xA;trdInntNo(563,571)&#xA;reqCnclDt(571,579)&#xA;reqCnclTranInntNo(579,587)&#xA;reqCnclCustNo(587,596)&#xA;joinCnclGb(596,597)&#xA;rstMsg(597,677)&#xA;prepVal(677,764)">
+    <fieldOffsets kor="거래코드" type="string" name="trdCd" start="0" end="4"/>
+    <fieldOffsets kor="전문코드" type="string" name="tgrmCd" start="4" end="9"/>
+    <fieldOffsets kor="전문번호" type="string" name="tgrmNo" start="9" end="17"/>
+    <fieldOffsets kor="전문전송일시" type="string" name="tgrmSendDtm" start="17" end="33"/>
+    <fieldOffsets kor="테스트여부" type="string" name="testYn" start="33" end="34"/>
+    <fieldOffsets kor="전문유형" type="string" name="tgrmType" start="34" end="35"/>
+    <fieldOffsets kor="예비값" type="string" name="prepVal" start="35" end="54"/>
+    <fieldOffsets kor="전문길이" type="string" name="tgrmLen" start="54" end="60"/>
+    <fieldOffsets kor="응답코드" type="string" name="respCd" start="60" end="64"/>
+    <fieldOffsets kor="제휴카드접수일자" type="string" name="alliCrdAcptDt" start="64" end="72"/>
+    <fieldOffsets kor="고객명" type="string" name="custNm" start="72" end="142"/>
+    <fieldOffsets kor="전화지역번호" type="string" name="telpnAreaNo" start="142" end="146"/>
+    <fieldOffsets kor="전화국번호" type="string" name="tels" start="146" end="150"/>
+    <fieldOffsets kor="전화일련번호" type="string" name="telpnSeqno" start="150" end="154"/>
+    <fieldOffsets kor="주소1" type="string" name="adr1" start="154" end="354"/>
+    <fieldOffsets kor="주소2" type="string" name="adr2" start="354" end="554"/>
+    <fieldOffsets kor="제휴카드고객번호" type="string" name="alliCrdCustNo" start="554" end="563"/>
+    <fieldOffsets kor="거래고유번호" type="string" name="trdInntNo" start="563" end="571"/>
+    <fieldOffsets kor="신청취소일자" type="string" name="reqCnclDt" start="571" end="579"/>
+    <fieldOffsets kor="신청취소거래고유번호" type="string" name="reqCnclTranInntNo" start="579" end="587"/>
+    <fieldOffsets kor="신청취소고객번호" type="string" name="reqCnclCustNo" start="587" end="596"/>
+    <fieldOffsets kor="가입취소구분" type="string" name="joinCnclGb" start="596" end="597"/>
+    <fieldOffsets kor="결과메시지" type="string" name="rstMsg" start="597" end="677"/>
+    <fieldOffsets kor="예비값" type="string" name="prepVal" start="677" end="764"/>
+  </jndi:configuration>
+</jndi:namedResource>

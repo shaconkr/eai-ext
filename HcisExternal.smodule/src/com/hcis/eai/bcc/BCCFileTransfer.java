@@ -69,17 +69,17 @@ public class BCCFileTransfer extends BatchFTP600 {
         return buildEDI("BCC_0610", msg);
     }
 
-    public byte[] build0640(){
+    public byte[] build0640(String param){
         Map<String,Object> msg = ImmutableMap.<String,Object>builder()
                             .putAll(buildHeader("0640"))
-                            .put("fileName"	, "")
-                            .put("fileSize"		, "0")
-                            .put("ediByte"		, "")
+                            .put("fileName"	, getQueryStringValue(param, "fileName"))
+                            .put("fileSize"	, getQueryStringValue(param, "fileSize"))
+                            .put("ediByte"	, getQueryStringValue(param, "ediByte"))
                             .build();
         return buildEDI("BCC_0640", msg);
     }
     
-    public byte[] build0300(int blockNo, int lastSeqNo, int lostCnt, int lostChk){
+    public byte[] build0300(String blockNo, String lastSeqNo, int lostCnt, int lostChk){
         Map<String,Object> msg = ImmutableMap.<String,Object>builder()
                             .putAll(buildHeader("0300"))
                             .put("blockNo"		, blockNo)

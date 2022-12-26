@@ -11,7 +11,9 @@ import org.beanio.internal.util.IOUtil;
 
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
+import java.util.Arrays;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class BatchFTP600 {
 
@@ -76,4 +78,9 @@ public class BatchFTP600 {
         }
         return factory;
     }
+    
+	protected String getQueryStringValue(String queryString, String key )  {
+		Map<String, String> queryMap = Arrays.stream(queryString.split("&")).map(s -> s.split("=")).collect(Collectors.toMap(s -> s[0], s -> s[1]));		
+		return queryMap.get(key);
+	}
 }

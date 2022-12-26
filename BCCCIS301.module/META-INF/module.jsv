@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jsv:DocumentRoot xmlns:jsv="http://tns.tibco.com/bw/model/core/jobSV">
-  <jobSharedVariables/>
+  <jobSharedVariables>
+    <jobSharedVariable name="fileName" type="{http://www.w3.org/2001/XMLSchema}string" initialValueMode="none"/>
+    <jobSharedVariable name="fileCnt" type="{http://www.w3.org/2001/XMLSchema}string" initialValueMode="none"/>
+    <jobSharedVariable name="jobSharedVariable" type="{http://www.w3.org/2001/XMLSchema}string" initialValueMode="none"/>
+  </jobSharedVariables>
 </jsv:DocumentRoot>

@@ -1,38 +1,41 @@
 package com.hcis.eai.bcc;
 
+import com.google.common.base.Joiner;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
 import com.hcis.eai.BatchFTP600;
 
+import kr.shacon.edi.util.CastUtils;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.*;
 
 public class BCCFileTransfer extends BatchFTP600 {
 
-    public BCCFileTransfer(String beanioXml, String encoding) {
+    protected String trCode = "";
+	protected String msgCode = "";
+	protected byte[] bytes = null;
+	public BCCFileTransfer(String beanioXml, String encoding) {
         super(beanioXml, encoding);
     }
 
     /**
-     * 전문종별
+     * getHeader
      * @param bytes
-     * @return
+     * @return  QueryString
      */
-    public String getMsgCode(byte[] bytes){
-        Map<String,Object> msg = parseEDI("BCC_COM_HDR", bytes);
-        return String.valueOf(msg.get("tgrmSubCCd"));
+    public String getHeader(byte[] bytes){
+    	Map<String,String> head = CastUtils.cast((Map<?,?>)parseEDI("BCC_COM_HDR", bytes));
+//    	return  head.entrySet().stream().map(Object::toString).collect(Collectors.joining("&"));
+    	return  Joiner.on("&").withKeyValueSeparator("=").join(head);       
     }
 
-    public String getBlockNo(byte[] bytes){
-        Map<String,Object> msg = parseEDI("BCC_COM_HDR", bytes);
-        return String.valueOf(msg.get("blockNo"));
-    }
-
-    
-    public String getJobMngInfo(byte[] bytes){
-        Map<String,Object> msg = parseEDI("BCC_0600", bytes);
-        return String.valueOf(msg.get("jobMngInfo"));
+    public String getData(byte[] bytes, String msgCode){
+        Map<String,String> data = CastUtils.cast((Map<?,?>)parseEDI("BCC_"+msgCode, bytes));        
+        return Joiner.on("&").withKeyValueSeparator("=").join(data);
     }
     
     /**
@@ -85,5 +88,26 @@ public class BCCFileTransfer extends BatchFTP600 {
                             .put("lostChk"		, lostChk)
                             .build();
         return buildEDI("BCC_0300", msg);
-    }    
+    }
+
+	public String getTrCode() {
+			return trCode;
+		}
+	public void setTrCode(String val) {
+			trCode = val;
+		}
+
+	public String getMsgCode() {
+			return msgCode;
+		}
+	public void setMsgCode(String val) {
+			msgCode = val;
+		}
+
+	public byte[] getBytes() {
+			return bytes;
+		}
+	public void setBytes(byte[] val) {
+			bytes = val;
+		}    
 }

@@ -2,6 +2,7 @@
 <bpws:process exitOnStandardFault="no" name="BCCCISCT.BCFileReceve"
     suppressJoinFailure="yes"
     targetNamespace="http://xmlns.example.com/20221222145603"
+    xmlns:HCIS="http://hcis.ehyundai.com"
     xmlns:bpws="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
     xmlns:info="http://www.tibco.com/bw/process/info"
     xmlns:ns="http://www.tibco.com/pe/EngineTypes"
@@ -52,6 +53,9 @@
     xmlns:ns49="www.tibco.com/plugin/java/JavaInvokeActivityOutput+15bfd382-fa91-4148-9f8a-2d44b0b2fe88+JavaInvokeActivityOutput"
     xmlns:ns5="http://tns.tibco.com/bw/palette/internal/activityerror+bw.tcp.write"
     xmlns:ns50="http://tns.tibco.com/bw/palette/internal/activityerror+15bfd382-fa91-4148-9f8a-2d44b0b2fe88"
+    xmlns:ns51="www.tibco.com/plugin/java/JavaInvokeActivityInput+537fd257-3336-46e4-8216-cc99cce42ea9+JavaInvokeActivityInput"
+    xmlns:ns52="www.tibco.com/plugin/java/JavaInvokeActivityOutput+537fd257-3336-46e4-8216-cc99cce42ea9+JavaInvokeActivityOutput"
+    xmlns:ns53="http://tns.tibco.com/bw/palette/internal/activityerror+537fd257-3336-46e4-8216-cc99cce42ea9"
     xmlns:ns6="http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataInput+8448440c-fd00-4942-91db-6aa62c77b6a8+ActivityInput"
     xmlns:ns7="http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataOutput+8448440c-fd00-4942-91db-6aa62c77b6a8+ActivityOutput"
     xmlns:ns8="http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataInput+5c6c7049-6a52-4fc0-9427-4cf17fc9222f+ActivityInput"
@@ -63,8 +67,9 @@
     <tibex:VariableDescriptor type="MemorySaving">
         <task name="flow">
             <endingVariables>
-                <variable>TCPReceiver</variable>
                 <variable>전문종별</variable>
+                <variable>업무구분</variable>
+                <variable>TCPReceiver</variable>
             </endingVariables>
         </task>
         <task name="BCC_HEADER">
@@ -182,7 +187,6 @@
         <task name="업무구분">
             <endingVariables>
                 <variable>업무구분-input</variable>
-                <variable>업무구분</variable>
                 <variable>BCC_0600</variable>
             </endingVariables>
         </task>
@@ -1377,6 +1381,8 @@
                 <sequence>
                     <element form="unqualified" maxOccurs="1"
                         minOccurs="1" name="bytes" type="base64Binary"/>
+                    <element form="unqualified" maxOccurs="1"
+                        minOccurs="1" name="msgCode" type="string"/>
                 </sequence>
             </complexType>
             <element name="JavaInvokeActivityInput" type="tns:MutTypeMethodInputRoot"/>
@@ -1507,7 +1513,7 @@
                                     <element href="//0/@process/@activity/@activity/@activities.1"/>
                                     <layoutConstraint
                                     height="40" width="40"
-                                    x="11"
+                                    x="-29"
                                     xsi:type="notation:Bounds" y="255"/>
                                     </children>
                                     <children type="4002 bw.tcp.write">
@@ -2241,7 +2247,7 @@
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.5"
             target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.4" type="4006">
             <children type="6002">
-                <layoutConstraint x="25" xsi:type="notation:Location" y="-15"/>
+                <layoutConstraint x="-17" xsi:type="notation:Location" y="-17"/>
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="맑은 고딕" xsi:type="notation:FontStyle"/>
@@ -2271,7 +2277,7 @@
             <styles fontName="맑은 고딕" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.4"/>
             <bendpoints
-                points="[25, 0, -182, 61]$[71, 0, -136, 61]$[71, -57, -136, 4]$[183, -57, -24, 4]" xsi:type="notation:RelativeBendpoints"/>
+                points="[25, 0, -173, 68]$[65, 0, -133, 68]$[65, -62, -133, 6]$[174, -62, -24, 6]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.4"
@@ -2299,25 +2305,25 @@
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.5"
             target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.8" type="4006">
             <children type="6002">
-                <layoutConstraint x="37" xsi:type="notation:Location" y="-17"/>
+                <layoutConstraint x="-8" xsi:type="notation:Location" y="-11"/>
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="맑은 고딕" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.7"/>
             <bendpoints
-                points="[25, 0, -193, -72]$[66, 0, -152, -72]$[66, 72, -152, 0]$[194, 72, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
+                points="[0, 25, -218, -47]$[0, 72, -218, 0]$[194, 72, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.5"
             target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.9" type="4006">
             <children type="6002">
-                <layoutConstraint x="36" xsi:type="notation:Location" y="-54"/>
+                <layoutConstraint x="50" xsi:type="notation:Location" y="-17"/>
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="맑은 고딕" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.8"/>
             <bendpoints
-                points="[25, -6, -193, -193]$[66, -6, -152, -193]$[66, 187, -152, 0]$[194, 187, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
+                points="[0, 25, -218, -162]$[0, 187, -218, 0]$[194, 187, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.8"
@@ -2334,13 +2340,13 @@
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.5"
             target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.11" type="4006">
             <children type="6002">
-                <layoutConstraint x="79" xsi:type="notation:Location" y="-50"/>
+                <layoutConstraint x="18" xsi:type="notation:Location" y="-67"/>
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="맑은 고딕" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.10"/>
             <bendpoints
-                points="[25, 0, -211, -307]$[66, 0, -170, -307]$[66, 307, -170, 0]$[212, 307, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
+                points="[0, 25, -236, -282]$[0, 307, -236, 0]$[212, 307, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.12"
@@ -2396,7 +2402,7 @@
             <styles fontName="맑은 고딕" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.15"/>
             <bendpoints
-                points="[25, -11, -177, -29]$[65, -11, -137, -29]$[65, 6, -137, -12]$[202, 6, 0, -12]" xsi:type="notation:RelativeBendpoints"/>
+                points="[25, -14, -177, -32]$[65, -14, -137, -32]$[65, 6, -137, -12]$[202, 6, 0, -12]" xsi:type="notation:RelativeBendpoints"/>
             <sourceAnchor id="(0.4897959183673469,0.7755102040816326)" xsi:type="notation:IdentityAnchor"/>
             <targetAnchor id="(0.0,0.7346938775510204)" xsi:type="notation:IdentityAnchor"/>
         </edges>
@@ -2511,6 +2517,12 @@
             namespace="www.tibco.com/plugin/java/JavaInvokeActivityInput+d41f87dd-7c3a-494c-9d4e-e9d3a3f7c3d1+JavaInvokeActivityInput" prefix="tns18"/>
         <tibex:namespaceItem
             namespace="http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpwritedata+c834c2cb-50a8-43ec-8e34-d74e466c18df+ActivityInput" prefix="tns19"/>
+        <tibex:namespaceItem
+            namespace="http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataOutput+a555af50-771e-4148-bc00-e13d893c3b0a+ActivityOutput" prefix="Q2"/>
+        <tibex:namespaceItem
+            namespace="www.tibco.com/plugin/java/JavaInvokeActivityInput+537fd257-3336-46e4-8216-cc99cce42ea9+JavaInvokeActivityInput" prefix="tns20"/>
+        <tibex:namespaceItem
+            namespace="http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataOutput+8448440c-fd00-4942-91db-6aa62c77b6a8+ActivityOutput" prefix="Q3"/>
     </tibex:NamespaceRegistry>
     <bpws:variables>
         <bpws:variable element="ns:ProcessContext"
@@ -2646,19 +2658,19 @@
         <bpws:flow name="flow">
             <bpws:links>
                 <bpws:link name="TCPReceiverToReadTCPData" tibex:linkType="SUCCESS"/>
-                <bpws:link name="BCC_0600ToReadTCPData1" tibex:linkType="SUCCESS"/>
+                <bpws:link name="BCC_HEADERTo전문종별" tibex:linkType="SUCCESS"/>
                 <bpws:link name="JavaInvokeToBCC_Name"
                     tibex:label="파일정보수신" tibex:linkType="SUCCESSWITHCONDITION"/>
                 <bpws:link name="JavaInvokeToBCC_or"
                     tibex:label="업무개시or종료" tibex:linkType="SUCCESSWITHCONDITION"/>
                 <bpws:link name="JavaInvokeTobuild0610_Name"
-                    tibex:label="업무개시" tibex:linkType="SUCCESS"/>
+                    tibex:label="업무개시" tibex:linkType="SUCCESSWITHCONDITION"/>
                 <bpws:link name="BCC_0630ToJavaInvoke2" tibex:linkType="SUCCESS"/>
                 <bpws:link name="JavaInvoke2ToWriteTCPData" tibex:linkType="SUCCESS"/>
                 <bpws:link name="JavaInvokeToReadTCPData_Name"
-                    tibex:label="데이터전송" tibex:linkType="SUCCESSWITHCONDITION"/>
+                    tibex:label="데이터수신" tibex:linkType="SUCCESSWITHCONDITION"/>
                 <bpws:link name="JavaInvokeToReadTCPData1_Name"
-                    tibex:label="결번데이터전송" tibex:linkType="SUCCESSWITHCONDITION"/>
+                    tibex:label="결번데이터수신" tibex:linkType="SUCCESSWITHCONDITION"/>
                 <bpws:link name="BCC_0320ToWriteFile" tibex:linkType="SUCCESS"/>
                 <bpws:link name="JavaInvokeToReadTCPData2_Name"
                     tibex:label="결번확인요청" tibex:linkType="SUCCESSWITHCONDITION"/>
@@ -2668,14 +2680,14 @@
                 <bpws:link name="BCC_0620ToJavaInvoke" tibex:linkType="SUCCESS"/>
                 <bpws:link name="JavaInvokeToWriteTCPData_Name"
                     tibex:label="결번확인응답" tibex:linkType="SUCCESS"/>
-                <bpws:link name="개별업무종료 " tibex:label="개별업무종료" tibex:linkType="SUCCESS"/>
+                <bpws:link name="개별업무종료 " tibex:label="개별업무종료" tibex:linkType="SUCCESSWITHCONDITION"/>
                 <bpws:link name="BCC_0600ToBCC_0610_004" tibex:linkType="SUCCESS"/>
                 <bpws:link name="BCC_0610_004ToTCPCloseConnection" tibex:linkType="SUCCESS"/>
                 <bpws:link name="JavaInvoke1ToBCC_0610" tibex:linkType="SUCCESS"/>
                 <bpws:link name="JavaInvoke3ToBCC_0610_003" tibex:linkType="SUCCESS"/>
                 <bpws:link name="JavaInvoke4ToBCC_0610_004" tibex:linkType="SUCCESS"/>
                 <bpws:link name="JavaInvokeToJavaInvoke4_Name"
-                    tibex:label="전체업무종료" tibex:linkType="SUCCESS"/>
+                    tibex:label="전체업무종료" tibex:linkType="SUCCESSWITHCONDITION"/>
             </bpws:links>
             <bpws:extensionActivity>
                 <tibex:receiveEvent createInstance="yes"
@@ -2715,7 +2727,7 @@
                         <bpws:target linkName="TCPReceiverToReadTCPData"/>
                     </bpws:targets>
                     <bpws:sources>
-                        <bpws:source linkName="BCC_0600ToReadTCPData1"/>
+                        <bpws:source linkName="BCC_HEADERTo전문종별"/>
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
@@ -2819,7 +2831,8 @@
                             <activityConfig>
                                 <properties name="config" xsi:type="activityconfig:EMFProperty">
                                     <type href="http://ns.tibco.com/bw/palette/tcp#//ReadTCPData"/>
-                                    <value separator="No Separator"
+                                    <value bytesToRead="24"
+                                    separator="No Separator"
                                     type="Binary" xsi:type="tcpPalette:ReadTCPData"/>
                                 </properties>
                             </activityConfig>
@@ -2832,48 +2845,48 @@
                     name="전문종별" outputVariable="전문종별"
                     tibex:xpdlId="4eafc8a0-612f-4d33-8b36-a122eff217a6" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
-                        <bpws:target linkName="BCC_0600ToReadTCPData1"/>
+                        <bpws:target linkName="BCC_HEADERTo전문종별"/>
                     </bpws:targets>
                     <bpws:sources>
                         <bpws:source linkName="JavaInvokeToBCC_Name">
                             <tibex:DesignExpression>
                                 <tibex:expression
-                                    expression="contains($전문종별/MethodReturnValue, &quot;0630&quot;)" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                                    expression="HCIS:getQueryStringValue($전문종별/MethodReturnValue, &quot;tskGbCd&quot;) eq &quot;0630&quot;" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
                             </tibex:DesignExpression>
-                            <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[contains($전문종별/MethodReturnValue, "0630")]]></bpws:transitionCondition>
+                            <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[HCIS:getQueryStringValue($전문종별/MethodReturnValue, "tskGbCd") eq "0630"]]></bpws:transitionCondition>
                         </bpws:source>
                         <bpws:source linkName="JavaInvokeToBCC_or">
                             <tibex:DesignExpression>
                                 <tibex:expression
-                                    expression="$전문종별/MethodReturnValue eq &quot;0600&quot;" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                                    expression="HCIS:getQueryStringValue($전문종별/MethodReturnValue, &quot;tskGbCd&quot;) eq &quot;0600&quot;" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
                             </tibex:DesignExpression>
-                            <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[$전문종별/MethodReturnValue eq "0600"]]></bpws:transitionCondition>
+                            <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[HCIS:getQueryStringValue($전문종별/MethodReturnValue, "tskGbCd") eq "0600"]]></bpws:transitionCondition>
                         </bpws:source>
                         <bpws:source linkName="JavaInvokeToReadTCPData_Name">
                             <tibex:DesignExpression>
                                 <tibex:expression
-                                    expression="contains($전문종별/MethodReturnValue, &quot;0320&quot;)" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                                    expression="HCIS:getQueryStringValue($전문종별/MethodReturnValue, &quot;tskGbCd&quot;) eq &quot;0320&quot;" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
                             </tibex:DesignExpression>
-                            <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[contains($전문종별/MethodReturnValue, "0320")]]></bpws:transitionCondition>
+                            <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[HCIS:getQueryStringValue($전문종별/MethodReturnValue, "tskGbCd") eq "0320"]]></bpws:transitionCondition>
                         </bpws:source>
                         <bpws:source linkName="JavaInvokeToReadTCPData1_Name">
                             <tibex:DesignExpression>
                                 <tibex:expression
-                                    expression="contains($전문종별/MethodReturnValue, &quot;0310&quot;)" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                                    expression="HCIS:getQueryStringValue($전문종별/MethodReturnValue, &quot;tskGbCd&quot;) eq &quot;0310&quot;" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
                             </tibex:DesignExpression>
-                            <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[contains($전문종별/MethodReturnValue, "0310")]]></bpws:transitionCondition>
+                            <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[HCIS:getQueryStringValue($전문종별/MethodReturnValue, "tskGbCd") eq "0310"]]></bpws:transitionCondition>
                         </bpws:source>
                         <bpws:source linkName="JavaInvokeToReadTCPData2_Name">
                             <tibex:DesignExpression>
                                 <tibex:expression
-                                    expression="contains($전문종별/MethodReturnValue, &quot;0620&quot;)" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                                    expression="HCIS:getQueryStringValue($전문종별/MethodReturnValue, &quot;tskGbCd&quot;) eq &quot;0620&quot;" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
                             </tibex:DesignExpression>
-                            <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[contains($전문종별/MethodReturnValue, "0620")]]></bpws:transitionCondition>
+                            <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[HCIS:getQueryStringValue($전문종별/MethodReturnValue, "tskGbCd") eq "0620"]]></bpws:transitionCondition>
                         </bpws:source>
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns8=&quot;www.tibco.com/plugin/java/JavaInvokeActivityInput+4eafc8a0-612f-4d33-8b36-a122eff217a6+JavaInvokeActivityInput&quot; xmlns:Q2=&quot;http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataOutput+a555af50-771e-4148-bc00-e13d893c3b0a+ActivityOutput&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;BCC_HEADER&quot;/>&#xa;    &lt;xsl:template name=&quot;getMsgCode-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns8:JavaInvokeActivityInput>&#xa;            &lt;MethodParameters>&#xa;                &lt;bytes>&#xa;                    &lt;xsl:value-of select=&quot;$BCC_HEADER/Q2:data&quot;/>&#xa;                &lt;/bytes>&#xa;            &lt;/MethodParameters>&#xa;        &lt;/tns8:JavaInvokeActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns8=&quot;www.tibco.com/plugin/java/JavaInvokeActivityInput+4eafc8a0-612f-4d33-8b36-a122eff217a6+JavaInvokeActivityInput&quot; xmlns:Q2=&quot;http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataOutput+a555af50-771e-4148-bc00-e13d893c3b0a+ActivityOutput&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;BCC_HEADER&quot;/>&lt;xsl:template name=&quot;전문종별-input&quot; match=&quot;/&quot;>&lt;tns8:JavaInvokeActivityInput>&lt;MethodParameters>&lt;bytes>&lt;xsl:value-of select=&quot;$BCC_HEADER/Q2:data&quot;/>&lt;/bytes>&lt;/MethodParameters>&lt;/tns8:JavaInvokeActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -2886,13 +2899,26 @@
                                     <type href="http://ns.tibco.com/bw/palette/java#//JavaMethod"/>
                                     <value
                                     className="com.hcis.eai.bcc.BCCFileTransfer"
+                                    icon="HcisCommon.smodule\Resources\icons\broadcasting-48.png"
                                     isNew="true"
                                     isNewActivity="true"
                                     javaGlobalInstance="BCCFtpHelper"
-                                    methodName="getMsgCode"
+                                    methodName="getHeader"
                                     methodReturn="string" xsi:type="java:JavaMethod">
                                     <methodParameter
                                     paramName="bytes" paramType="byte[]"/>
+                                    <javaActivityParameter
+                                    parameterCardinality="Repeating"
+                                    parameterDataType="byte"
+                                    parameterName="bytes" parameterType="IN"/>
+                                    <javaActivityParameter
+                                    parameterCardinality="Optional"
+                                    parameterDataType="string"
+                                    parameterName="msgCode" parameterType="OUT"/>
+                                    <javaActivityParameter
+                                    parameterCardinality="Optional"
+                                    parameterDataType="string"
+                                    parameterName="trCode" parameterType="OUT"/>
                                     </value>
                                 </properties>
                             </activityConfig>
@@ -2912,7 +2938,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns20=&quot;www.tibco.com/plugin/java/JavaInvokeActivityInput+8f5933df-512b-42cc-a206-fb0829d9cc8e+JavaInvokeActivityInput&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:template name=&quot;JavaInvoke2-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns20:JavaInvokeActivityInput/>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns21=&quot;www.tibco.com/plugin/java/JavaInvokeActivityInput+8f5933df-512b-42cc-a206-fb0829d9cc8e+JavaInvokeActivityInput&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:template name=&quot;JavaInvoke2-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns21:JavaInvokeActivityInput/>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -2925,6 +2951,7 @@
                                     <type href="http://ns.tibco.com/bw/palette/java#//JavaMethod"/>
                                     <value
                                     className="com.hcis.eai.bcc.BCCFileTransfer"
+                                    icon="HcisCommon.smodule\Resources\icons\edit-node-48.png"
                                     isNew="true"
                                     isNewActivity="true"
                                     javaGlobalInstance="BCCFtpHelper"
@@ -3074,7 +3101,8 @@
                             <activityConfig>
                                 <properties name="config" xsi:type="activityconfig:EMFProperty">
                                     <type href="http://ns.tibco.com/bw/palette/tcp#//ReadTCPData"/>
-                                    <value separator="No Separator"
+                                    <value bytesToRead="7"
+                                    separator="No Separator"
                                     type="Binary" xsi:type="tcpPalette:ReadTCPData"/>
                                 </properties>
                             </activityConfig>
@@ -3114,6 +3142,7 @@
                                     <type href="http://ns.tibco.com/bw/palette/java#//JavaMethod"/>
                                     <value
                                     className="com.hcis.eai.bcc.BCCFileTransfer"
+                                    icon="HcisCommon.smodule\Resources\icons\export-48.png"
                                     isNew="true"
                                     isNewActivity="true"
                                     javaGlobalInstance="BCCFtpHelper"
@@ -3140,7 +3169,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns20=&quot;www.tibco.com/plugin/java/JavaInvokeActivityInput+85c7d426-9d77-45b8-9175-79862fc10e86+JavaInvokeActivityInput&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:template name=&quot;JavaInvoke-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns20:JavaInvokeActivityInput/>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns21=&quot;www.tibco.com/plugin/java/JavaInvokeActivityInput+85c7d426-9d77-45b8-9175-79862fc10e86+JavaInvokeActivityInput&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:template name=&quot;JavaInvoke-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns21:JavaInvokeActivityInput/>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -3153,6 +3182,7 @@
                                     <type href="http://ns.tibco.com/bw/palette/java#//JavaMethod"/>
                                     <value
                                     className="com.hcis.eai.bcc.BCCFileTransfer"
+                                    icon="HcisCommon.smodule\Resources\icons\edit-node-48.png"
                                     isNew="true"
                                     isNewActivity="true"
                                     javaGlobalInstance="BCCFtpHelper"
@@ -3313,6 +3343,7 @@
                                     <type href="http://ns.tibco.com/bw/palette/java#//JavaMethod"/>
                                     <value
                                     className="com.hcis.eai.bcc.BCCFileTransfer"
+                                    icon="HcisCommon.smodule\Resources\icons\edit-node-48.png"
                                     isNew="true"
                                     isNewActivity="true"
                                     javaGlobalInstance="BCCFtpHelper"
@@ -3353,6 +3384,7 @@
                                     <type href="http://ns.tibco.com/bw/palette/java#//JavaMethod"/>
                                     <value
                                     className="com.hcis.eai.bcc.BCCFileTransfer"
+                                    icon="HcisCommon.smodule\Resources\icons\edit-node-48.png"
                                     isNew="true"
                                     isNewActivity="true"
                                     javaGlobalInstance="BCCFtpHelper"
@@ -3393,6 +3425,7 @@
                                     <type href="http://ns.tibco.com/bw/palette/java#//JavaMethod"/>
                                     <value
                                     className="com.hcis.eai.bcc.BCCFileTransfer"
+                                    icon="HcisCommon.smodule\Resources\icons\edit-node-48.png"
                                     isNew="true"
                                     isNewActivity="true"
                                     javaGlobalInstance="BCCFtpHelper"
@@ -3415,13 +3448,31 @@
                         <bpws:target linkName="BCC_0600ToBCC_0610_004"/>
                     </bpws:targets>
                     <bpws:sources>
-                        <bpws:source linkName="JavaInvokeToJavaInvoke4_Name"/>
-                        <bpws:source linkName="JavaInvokeTobuild0610_Name"/>
-                        <bpws:source linkName="개별업무종료 "/>
+                        <bpws:source linkName="JavaInvokeToJavaInvoke4_Name">
+                            <tibex:DesignExpression>
+                                <tibex:expression
+                                    expression="HCIS:getQueryStringValue($업무구분/MethodReturnValue, &quot;jobMngInfo&quot;) eq &quot;004&quot;" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                            </tibex:DesignExpression>
+                            <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[HCIS:getQueryStringValue($업무구분/MethodReturnValue, "jobMngInfo") eq "004"]]></bpws:transitionCondition>
+                        </bpws:source>
+                        <bpws:source linkName="JavaInvokeTobuild0610_Name">
+                            <tibex:DesignExpression>
+                                <tibex:expression
+                                    expression="HCIS:getQueryStringValue($업무구분/MethodReturnValue, &quot;jobMngInfo&quot;) eq &quot;001&quot;" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                            </tibex:DesignExpression>
+                            <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[HCIS:getQueryStringValue($업무구분/MethodReturnValue, "jobMngInfo") eq "001"]]></bpws:transitionCondition>
+                        </bpws:source>
+                        <bpws:source linkName="개별업무종료 ">
+                            <tibex:DesignExpression>
+                                <tibex:expression
+                                    expression="HCIS:getQueryStringValue($업무구분/MethodReturnValue, &quot;jobMngInfo&quot;) eq &quot;003&quot;" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                            </tibex:DesignExpression>
+                            <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[HCIS:getQueryStringValue($업무구분/MethodReturnValue, "jobMngInfo") eq "003"]]></bpws:transitionCondition>
+                        </bpws:source>
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns14=&quot;www.tibco.com/plugin/java/JavaInvokeActivityInput+15bfd382-fa91-4148-9f8a-2d44b0b2fe88+JavaInvokeActivityInput&quot; xmlns:Q2=&quot;http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataOutput+8448440c-fd00-4942-91db-6aa62c77b6a8+ActivityOutput&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;BCC_0600&quot;/>&#xa;    &lt;xsl:template name=&quot;업무구분-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns14:JavaInvokeActivityInput>&#xa;            &lt;MethodParameters>&#xa;                &lt;bytes>&#xa;                    &lt;xsl:value-of select=&quot;$BCC_0600/Q2:data&quot;/>&#xa;                &lt;/bytes>&#xa;            &lt;/MethodParameters>&#xa;        &lt;/tns14:JavaInvokeActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns14=&quot;www.tibco.com/plugin/java/JavaInvokeActivityInput+15bfd382-fa91-4148-9f8a-2d44b0b2fe88+JavaInvokeActivityInput&quot; xmlns:Q3=&quot;http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataOutput+8448440c-fd00-4942-91db-6aa62c77b6a8+ActivityOutput&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;BCC_0600&quot;/>&lt;xsl:template name=&quot;업무구분-input&quot; match=&quot;/&quot;>&lt;tns14:JavaInvokeActivityInput>&lt;MethodParameters>&lt;bytes>&lt;xsl:value-of select=&quot;$BCC_0600/Q3:data&quot;/>&lt;/bytes>&lt;msgCode>&lt;xsl:value-of select=&quot;&amp;quot;0600&amp;quot;&quot;/>&lt;/msgCode>&lt;/MethodParameters>&lt;/tns14:JavaInvokeActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -3434,13 +3485,16 @@
                                     <type href="http://ns.tibco.com/bw/palette/java#//JavaMethod"/>
                                     <value
                                     className="com.hcis.eai.bcc.BCCFileTransfer"
+                                    icon="HcisCommon.smodule\Resources\icons\broadcasting-48.png"
                                     isNew="true"
                                     isNewActivity="true"
                                     javaGlobalInstance="BCCFtpHelper"
-                                    methodName="getJobMngInfo"
+                                    methodName="getData"
                                     methodReturn="string" xsi:type="java:JavaMethod">
                                     <methodParameter
                                     paramName="bytes" paramType="byte[]"/>
+                                    <methodParameter
+                                    paramName="msgCode" paramType="string"/>
                                     </value>
                                 </properties>
                             </activityConfig>

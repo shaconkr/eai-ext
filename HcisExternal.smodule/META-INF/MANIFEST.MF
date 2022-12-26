@@ -14,8 +14,7 @@ Provide-Capability: com.tibco.bw.module; name="HcisExternal.smodule"; version:Ve
  com.tibco.bw.resources; name="ext.cis",
  com.tibco.bw.resources; name="ext.tos",
  com.tibco.bw.resources; name="ext.bcc"
-Import-Package: com.google.gson,
- org.slf4j;version="1.8.1100"
+Import-Package: org.slf4j;version="1.7.5"
 TIBCO-BW-JobSharedVariables: META-INF/module.jsv
 TIBCO-BW-ConfigProfile: META-INF/default.substvar
 TIBCO-BW-ModuleSharedVariables: META-INF/module.msv

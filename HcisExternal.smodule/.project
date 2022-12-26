@@ -3,7 +3,6 @@
 	<name>HcisExternal.smodule</name>
 	<comment></comment>
 	<projects>
-		<project>HcisCommon.smodule</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

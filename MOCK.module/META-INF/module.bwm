@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_VFdQ8IWAEe2r_MNDUx_6ew" targetNamespace="http://tns.tibco.com/bw/composite/MOCK.module" name="MOCK.module" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:property xmi:id="_V50tIIWAEe2r_MNDUx_6ew" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_V5-eIIWAEe2r_MNDUx_6ew" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_V6CvkIWAEe2r_MNDUx_6ew" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_V6D9sIWAEe2r_MNDUx_6ew" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_V6D9sYWAEe2r_MNDUx_6ew" name="BW.DOMAIN.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_V6D9soWAEe2r_MNDUx_6ew" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_V6NusIWAEe2r_MNDUx_6ew" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_V6NusYWAEe2r_MNDUx_6ew" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_V6NusoWAEe2r_MNDUx_6ew" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:component xmi:id="_VRSGcIWAEe2r_MNDUx_6ew" name="ComponentProcess" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_VRSGcYWAEe2r_MNDUx_6ew" processName="mock.module.Process"/>
+  </sca:component>
+  <sca:component xmi:id="_d7RU4IWdEe2WH_PkATSbLw" name="ComponentHttpMockService" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_d7RU4YWdEe2WH_PkATSbLw" processName="mock.module.HttpMockService"/>
+  </sca:component>
+  <sca:component xmi:id="_eOl5gIWdEe2WH_PkATSbLw" name="ComponentProvisioning" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_eOl5gYWdEe2WH_PkATSbLw" processName="mock.module.Provisioning"/>
+  </sca:component>
+</sca:composite>

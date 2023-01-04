@@ -6,8 +6,13 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
-	<classpathentry kind="lib" path="/HcisCommon.smodule/lib/guava-31.1-jre.jar"/>
-	<classpathentry kind="lib" path="/HcisCommon.smodule/lib/gson-2.10.jar"/>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+		<accessrules>
+			<accessrule kind="accessible" pattern="org/slf4j/*"/>
+		</accessrules>
+	</classpathentry>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

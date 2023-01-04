@@ -1773,8 +1773,8 @@
                                     <element href="//0/@process/@activity/@activity/@activities.1"/>
                                     <layoutConstraint
                                     height="40" width="40"
-                                    x="1102"
-                                    xsi:type="notation:Bounds" y="521"/>
+                                    x="1104"
+                                    xsi:type="notation:Bounds" y="239"/>
                                     </children>
                                     <children type="4018">
                                     <children type="3018">
@@ -3564,7 +3564,7 @@
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity"/>
-                                    <layoutConstraint height="879"
+                                    <layoutConstraint height="836"
                                     width="1313" xsi:type="notation:Bounds"/>
                                 </children>
                                 <styles xsi:type="notation:SortingStyle"/>
@@ -3695,8 +3695,8 @@
             <children type="6002">
                 <layoutConstraint x="41" xsi:type="notation:Location" y="-17"/>
             </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="맑은 고딕" xsi:type="notation:FontStyle"/>
+            <styles lineColor="16711680" xsi:type="notation:ConnectorStyle"/>
+            <styles fontColor="16711680" fontName="맑은 고딕" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@activities.2/@activity/@activities.1/@activity/@links/@children.6"/>
             <bendpoints
                 points="[0, 25, -218, -162]$[0, 187, -218, 0]$[194, 187, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
@@ -4269,9 +4269,7 @@
                     </tibex:config>
                 </tibex:activityExtension>
             </bpws:extensionActivity>
-            <bpws:scope name="Repeat" tibex:group="repeatUntil"
-                tibex:indexOriginalName="index"
-                tibex:indexToGlobal="false" tibex:xpdlId="4a1ecb3a-bc0b-4183-ba23-e51bc00d3030">
+            <bpws:scope name="Repeat" tibex:group="repeatUntil" tibex:xpdlId="4a1ecb3a-bc0b-4183-ba23-e51bc00d3030">
                 <bpws:targets>
                     <bpws:target linkName="TCPReceiverToRepeat"/>
                 </bpws:targets>

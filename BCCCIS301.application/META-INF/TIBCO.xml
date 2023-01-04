@@ -66,83 +66,6 @@
       <packaging:overrideValue>false</packaging:overrideValue>
     </packaging:property>
     <packaging:property>
-      <packaging:name>//HcisCommon.smodule//BW.DEPLOYMENTUNIT.TYPE</packaging:name>
-      <packaging:type>xsd:string</packaging:type>
-      <packaging:visibility>private</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisCommon.smodule//PROJ_PATH</packaging:name>
-      <packaging:type>xsd:string</packaging:type>
-      <packaging:visibility>public</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisCommon.smodule//EIMS_PATH</packaging:name>
-      <packaging:type>xsd:string</packaging:type>
-      <packaging:visibility>public</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisCommon.smodule//BW.APPNODE.NAME</packaging:name>
-      <packaging:type>xsd:string</packaging:type>
-      <packaging:visibility>private</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisCommon.smodule//BW.DEPLOYMENTUNIT.NAME</packaging:name>
-      <packaging:type>xsd:string</packaging:type>
-      <packaging:visibility>private</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisCommon.smodule//BW.HOST.NAME</packaging:name>
-      <packaging:type>xsd:string</packaging:type>
-      <packaging:visibility>private</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisCommon.smodule//BW.DOMAIN.NAME</packaging:name>
-      <packaging:type>xsd:string</packaging:type>
-      <packaging:visibility>private</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisCommon.smodule//BW.DEPLOYMENTUNIT.VERSION</packaging:name>
-      <packaging:type>xsd:string</packaging:type>
-      <packaging:visibility>private</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisCommon.smodule//BW.APPSPACE.NAME</packaging:name>
-      <packaging:type>xsd:string</packaging:type>
-      <packaging:visibility>private</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisCommon.smodule//BW.MODULE.VERSION</packaging:name>
-      <packaging:type>xsd:string</packaging:type>
-      <packaging:visibility>private</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisCommon.smodule//BW.MODULE.NAME</packaging:name>
-      <packaging:type>xsd:string</packaging:type>
-      <packaging:visibility>private</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
       <packaging:name>//CSPI_Library//BW.DEPLOYMENTUNIT.TYPE</packaging:name>
       <packaging:type>xsd:string</packaging:type>
       <packaging:visibility>private</packaging:visibility>
@@ -381,6 +304,13 @@
       <packaging:overrideValue>false</packaging:overrideValue>
     </packaging:property>
     <packaging:property>
+      <packaging:name>//HcisExternal.smodule//BC_CARD_RCV_PORT</packaging:name>
+      <packaging:type>xsd:int</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
       <packaging:name>//HcisExternal.smodule//BW.MODULE.VERSION</packaging:name>
       <packaging:type>xsd:string</packaging:type>
       <packaging:visibility>private</packaging:visibility>
@@ -395,9 +325,79 @@
       <packaging:overrideValue>false</packaging:overrideValue>
     </packaging:property>
     <packaging:property>
-      <packaging:name>//HcisExternal.smodule//BC_CARD_RCV_PORT</packaging:name>
-      <packaging:type>xsd:int</packaging:type>
+      <packaging:name>//HcisCommon.smodule//BW.DEPLOYMENTUNIT.TYPE</packaging:name>
+      <packaging:type>xsd:string</packaging:type>
+      <packaging:visibility>private</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisCommon.smodule//PROJ_PATH</packaging:name>
+      <packaging:type>xsd:string</packaging:type>
       <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisCommon.smodule//EIMS_PATH</packaging:name>
+      <packaging:type>xsd:string</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisCommon.smodule//BW.APPNODE.NAME</packaging:name>
+      <packaging:type>xsd:string</packaging:type>
+      <packaging:visibility>private</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisCommon.smodule//BW.DEPLOYMENTUNIT.NAME</packaging:name>
+      <packaging:type>xsd:string</packaging:type>
+      <packaging:visibility>private</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisCommon.smodule//BW.HOST.NAME</packaging:name>
+      <packaging:type>xsd:string</packaging:type>
+      <packaging:visibility>private</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisCommon.smodule//BW.DOMAIN.NAME</packaging:name>
+      <packaging:type>xsd:string</packaging:type>
+      <packaging:visibility>private</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisCommon.smodule//BW.DEPLOYMENTUNIT.VERSION</packaging:name>
+      <packaging:type>xsd:string</packaging:type>
+      <packaging:visibility>private</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisCommon.smodule//BW.APPSPACE.NAME</packaging:name>
+      <packaging:type>xsd:string</packaging:type>
+      <packaging:visibility>private</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisCommon.smodule//BW.MODULE.VERSION</packaging:name>
+      <packaging:type>xsd:string</packaging:type>
+      <packaging:visibility>private</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisCommon.smodule//BW.MODULE.NAME</packaging:name>
+      <packaging:type>xsd:string</packaging:type>
+      <packaging:visibility>private</packaging:visibility>
       <packaging:scalable>true</packaging:scalable>
       <packaging:overrideValue>false</packaging:overrideValue>
     </packaging:property>
@@ -409,11 +409,6 @@
       <packaging:technologyVersion>1.0.0.qualifier</packaging:technologyVersion>
     </packaging:module>
     <packaging:module>
-      <packaging:symbolicName>HcisCommon.smodule</packaging:symbolicName>
-      <packaging:technologyType>osgi-bundle,bw-sharedmodule</packaging:technologyType>
-      <packaging:technologyVersion>1.0.0.qualifier</packaging:technologyVersion>
-    </packaging:module>
-    <packaging:module>
       <packaging:symbolicName>CSPI_Library</packaging:symbolicName>
       <packaging:technologyType>osgi-bundle,bw-sharedmodule</packaging:technologyType>
       <packaging:technologyVersion>2.0.0.qualifier</packaging:technologyVersion>
@@ -422,6 +417,16 @@
       <packaging:symbolicName>HcisExternal.smodule</packaging:symbolicName>
       <packaging:technologyType>osgi-bundle,bw-sharedmodule</packaging:technologyType>
       <packaging:technologyVersion>1.0.0.qualifier</packaging:technologyVersion>
+    </packaging:module>
+    <packaging:module>
+      <packaging:symbolicName>HcisCommon.smodule</packaging:symbolicName>
+      <packaging:technologyType>osgi-bundle,bw-sharedmodule</packaging:technologyType>
+      <packaging:technologyVersion>1.0.0.qualifier</packaging:technologyVersion>
+    </packaging:module>
+    <packaging:module>
+      <packaging:symbolicName>JeinSoft.dataformat.plugin</packaging:symbolicName>
+      <packaging:technologyType>osgi-bundle</packaging:technologyType>
+      <packaging:technologyVersion>1.0.1</packaging:technologyVersion>
     </packaging:module>
   </packaging:modules>
 </packaging:packageUnit>

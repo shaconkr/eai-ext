@@ -2,26 +2,8 @@
 
 <jndi:namedResource xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CISGCSCTJD0160104="http://schema.hcis.com/xsd/CISGCSCTJD0160104" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" name="GCSCISCTJD/GCSCISCTJD0160104.CISGCSCTJD0160104_InRes" type="dataformat:DataFormat">
   <jndi:imports importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/CISGCSCTJD0160104_InRes.xsd" namespace="http://schema.hcis.com/xsd/CISGCSCTJD0160104"/>
-  <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="CISGCSCTJD0160104:main" lineLength="764" fieldOffsetsStr="trdCd(0,4)&#xA;tgrmCd(4,9)&#xA;tgrmNo(9,17)&#xA;tgrmSendDtm(17,33)&#xA;testYn(33,34)&#xA;tgrmType(34,35)&#xA;prepVal(35,54)&#xA;tgrmLen(54,60)&#xA;respCd(60,64)&#xA;alliCrdAcptDt(64,72)&#xA;custNm(72,142)&#xA;telpnAreaNo(142,146)&#xA;tels(146,150)&#xA;telpnSeqno(150,154)&#xA;adr1(154,354)&#xA;adr2(354,554)&#xA;alliCrdCustNo(554,564)&#xA;alliCrdCorpGbcd(564,568)&#xA;rstMsg(568,648)&#xA;prepVal(648,764)">
-    <fieldOffsets kor="거래코드" type="string" name="trdCd" start="0" end="4"/>
-    <fieldOffsets kor="전문코드" type="string" name="tgrmCd" start="4" end="9"/>
-    <fieldOffsets kor="전문번호" type="string" name="tgrmNo" start="9" end="17"/>
-    <fieldOffsets kor="전문전송일시" type="string" name="tgrmSendDtm" start="17" end="33"/>
-    <fieldOffsets kor="테스트여부" type="string" name="testYn" start="33" end="34"/>
-    <fieldOffsets kor="전문유형" type="string" name="tgrmType" start="34" end="35"/>
-    <fieldOffsets kor="예비값" type="string" name="prepVal" start="35" end="54"/>
-    <fieldOffsets kor="전문길이" type="string" name="tgrmLen" start="54" end="60"/>
-    <fieldOffsets kor="응답코드" type="string" name="respCd" start="60" end="64"/>
-    <fieldOffsets kor="제휴카드접수일자" type="string" name="alliCrdAcptDt" start="64" end="72"/>
-    <fieldOffsets kor="고객명" type="string" name="custNm" start="72" end="142"/>
-    <fieldOffsets kor="전화지역번호" type="string" name="telpnAreaNo" start="142" end="146"/>
-    <fieldOffsets kor="전화국번호" type="string" name="tels" start="146" end="150"/>
-    <fieldOffsets kor="전화일련번호" type="string" name="telpnSeqno" start="150" end="154"/>
-    <fieldOffsets kor="주소1" type="string" name="adr1" start="154" end="354"/>
-    <fieldOffsets kor="주소2" type="string" name="adr2" start="354" end="554"/>
-    <fieldOffsets kor="제휴카드고객번호" type="string" name="alliCrdCustNo" start="554" end="564"/>
-    <fieldOffsets kor="제휴카드법인구분코드" type="string" name="alliCrdCorpGbcd" start="564" end="568"/>
-    <fieldOffsets kor="결과메시지" type="string" name="rstMsg" start="568" end="648"/>
-    <fieldOffsets kor="예비값" type="string" name="prepVal" start="648" end="764"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="CISGCSCTJD0160104:main" lineLength="0" fieldOffsetsStr="bizHeader(0,0)&#xA;bizBody(0,0)">
+    <fieldOffsets kor="0" type="CISGCSCTJD0160104_InRes_Header" name="bizHeader" start="0" end="0"/>
+    <fieldOffsets kor="0" type="CISGCSCTJD0160104_InRes_Body" name="bizBody" start="0" end="0"/>
   </jndi:configuration>
 </jndi:namedResource>

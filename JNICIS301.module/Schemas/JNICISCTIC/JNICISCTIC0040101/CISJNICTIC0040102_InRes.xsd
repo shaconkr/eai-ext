@@ -1,5 +1,5 @@
 <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:e="http://shacon.kr/xsd" xmlns:ns="http://schema.hcis.com/xsd/CISJNICTIC0040102" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.hcis.com/xsd/CISJNICTIC0040102">
-    <complexType name="CISJNICTIC0040102_InRes">
+    <complexType name="CISJNICTIC0040102_InRes_Header">
         <sequence>
             <element e:kor="거래코드" e:length="4" e:padder="SpaceRight" name="trdCd" nillable="true" type="string"/>
             <element e:kor="전문코드" e:length="5" e:padder="SpaceRight" name="tgrmCd" nillable="true" type="string"/>
@@ -10,12 +10,27 @@
             <element e:kor="예비값" e:length="19" e:padder="SpaceRight" name="prepVal" nillable="true" type="string"/>
             <element e:kor="전문길이" e:length="6" e:padder="SpaceRight" name="tgrmLen" nillable="true" type="string"/>
             <element e:kor="응답코드" e:length="4" e:padder="SpaceRight" name="respCd" nillable="true" type="string"/>
+        </sequence>
+    </complexType>
+    <complexType name="CISJNICTIC0040102_InRes_Body">
+        <sequence>
             <element e:kor="발송번호" e:length="24" e:padder="SpaceRight" name="senmNo" nillable="true" type="string"/>
             <element e:kor="처리일자" e:length="8" e:padder="SpaceRight" name="procDt" nillable="true" type="string"/>
             <element e:kor="처리시간" e:length="6" e:padder="SpaceRight" name="procTime" nillable="true" type="string"/>
             <element e:kor="카드배송진행상태코드" e:length="2" e:padder="SpaceRight" name="crdDlvPrgrStatCd" nillable="true" type="string"/>
             <element e:kor="카드발송진행상태내용" e:length="21" e:padder="SpaceRight" name="crdSendPrgrStatCntn" nillable="true" type="string"/>
             <element e:kor="비고" e:length="175" e:padder="SpaceRight" name="rmrk" nillable="true" type="string"/>
+        </sequence>
+    </complexType>
+    <complexType name="CISJNICTIC0040102_InRes">
+        <sequence>
+            <element name="bizHeader" type="ns:CISJNICTIC0040102_InRes_Header"/>
+            <element name="bizBody" type="ns:CISJNICTIC0040102_InRes_Body"/>
+        </sequence>
+    </complexType>
+    <complexType name="rootType">
+        <sequence>
+            <element name="data" type="ns:CISJNICTIC0040102_InRes"/>
         </sequence>
     </complexType>
     <element name="root" type="ns:CISJNICTIC0040102_InRes"/>

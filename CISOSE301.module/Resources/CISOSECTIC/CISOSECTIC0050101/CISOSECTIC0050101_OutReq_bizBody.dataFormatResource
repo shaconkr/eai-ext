@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jndi:namedResource xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CISOSECTIC0050101="http://schema.hcis.com/xsd/CISOSECTIC0050101" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" name="CISOSECTIC/CISOSECTIC0050101.CISOSECTIC0050101_OutReq_bizBody" type="dataformat:DataFormat">
+  <jndi:imports importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/CISOSECTIC0050101_OutReq_bizBody.xsd" namespace="http://schema.hcis.com/xsd/CISOSECTIC0050101"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="CISOSECTIC0050101:main" lineLength="93" fieldOffsetsStr="procMthdCd(0,1)&#xA;virtTelno1(1,16)&#xA;telno11(16,31)&#xA;telno12(31,46)&#xA;virtTelno2(46,61)&#xA;telno21(61,76)&#xA;telno22(76,91)&#xA;useStatGbcd(91,92)&#xA;endGbVal(92,93)">
+    <fieldOffsets kor="처리방법코드" type="string" name="procMthdCd" start="0" end="1"/>
+    <fieldOffsets kor="가상전화번호1" type="string" name="virtTelno1" start="1" end="16"/>
+    <fieldOffsets kor="전화번호11" type="string" name="telno11" start="16" end="31"/>
+    <fieldOffsets kor="전화번호12" type="string" name="telno12" start="31" end="46"/>
+    <fieldOffsets kor="가상전화번호2" type="string" name="virtTelno2" start="46" end="61"/>
+    <fieldOffsets kor="전화번호21" type="string" name="telno21" start="61" end="76"/>
+    <fieldOffsets kor="전화번호22" type="string" name="telno22" start="76" end="91"/>
+    <fieldOffsets kor="사용상태구분코드" type="string" name="useStatGbcd" start="91" end="92"/>
+    <fieldOffsets kor="종료구분값" type="string" name="endGbVal" start="92" end="93"/>
+  </jndi:configuration>
+</jndi:namedResource>

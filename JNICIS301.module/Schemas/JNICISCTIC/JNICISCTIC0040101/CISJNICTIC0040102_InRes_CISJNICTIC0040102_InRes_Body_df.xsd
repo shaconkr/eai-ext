@@ -1,0 +1,14 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:e="http://shacon.kr/xsd" xmlns:ns="http://schema.hcis.com/xsd/CISJNICTIC0040102" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://schema.hcis.com/xsd/CISJNICTIC0040102">
+    <element name="root">
+        <complexType>
+            <sequence>
+                <element e:kor="발송번호" e:length="24" e:padder="SpaceRight" name="senmNo" nillable="true" type="string"/>
+                <element e:kor="처리일자" e:length="8" e:padder="SpaceRight" name="procDt" nillable="true" type="string"/>
+                <element e:kor="처리시간" e:length="6" e:padder="SpaceRight" name="procTime" nillable="true" type="string"/>
+                <element e:kor="카드배송진행상태코드" e:length="2" e:padder="SpaceRight" name="crdDlvPrgrStatCd" nillable="true" type="string"/>
+                <element e:kor="카드발송진행상태내용" e:length="21" e:padder="SpaceRight" name="crdSendPrgrStatCntn" nillable="true" type="string"/>
+                <element e:kor="비고" e:length="175" e:padder="SpaceRight" name="rmrk" nillable="true" type="string"/>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

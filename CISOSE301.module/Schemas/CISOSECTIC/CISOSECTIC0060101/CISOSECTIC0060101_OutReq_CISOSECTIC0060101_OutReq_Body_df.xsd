@@ -1,0 +1,17 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:e="http://shacon.kr/xsd" xmlns:ns="http://schema.hcis.com/xsd/CISOSECTIC0060101" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://schema.hcis.com/xsd/CISOSECTIC0060101">
+    <element name="root">
+        <complexType>
+            <sequence>
+                <element e:kor="처리방법코드" e:length="1" e:padder="SpaceRight" name="procMthdCd" nillable="true" type="string"/>
+                <element e:kor="가상전화번호1" e:length="15" e:padder="SpaceRight" name="virtTelno1" nillable="true" type="string"/>
+                <element e:kor="전화번호11" e:length="15" e:padder="SpaceRight" name="telno11" nillable="true" type="string"/>
+                <element e:kor="전화번호12" e:length="15" e:padder="SpaceRight" name="telno12" nillable="true" type="string"/>
+                <element e:kor="가상전화번호2" e:length="15" e:padder="SpaceRight" name="virtTelno2" nillable="true" type="string"/>
+                <element e:kor="전화번호21" e:length="15" e:padder="SpaceRight" name="telno21" nillable="true" type="string"/>
+                <element e:kor="전화번호22" e:length="15" e:padder="SpaceRight" name="telno22" nillable="true" type="string"/>
+                <element e:kor="사용상태구분코드" e:length="1" e:padder="SpaceRight" name="useStatGbcd" nillable="true" type="string"/>
+                <element e:kor="종료구분값" e:length="1" e:padder="SpaceRight" name="endGbVal" nillable="true" type="string"/>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jndi:namedResource xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CISJNICTIC0030102="http://schema.hcis.com/xsd/CISJNICTIC0030102" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" name="JNICISCTIC/JNICISCTIC0030101.CISJNICTIC0030102_InRes_bizHeader" type="dataformat:DataFormat">
+  <jndi:imports importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/CISJNICTIC0030102_InRes_bizHeader.xsd" namespace="http://schema.hcis.com/xsd/CISJNICTIC0030102"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="CISJNICTIC0030102:main" lineLength="64" fieldOffsetsStr="trdCd(0,4)&#xA;tgrmCd(4,9)&#xA;tgrmNo(9,17)&#xA;tgrmSendDtm(17,33)&#xA;testYn(33,34)&#xA;tgrmType(34,35)&#xA;prepVal(35,54)&#xA;tgrmLen(54,60)&#xA;respCd(60,64)">
+    <fieldOffsets kor="거래코드" type="string" name="trdCd" start="0" end="4"/>
+    <fieldOffsets kor="전문코드" type="string" name="tgrmCd" start="4" end="9"/>
+    <fieldOffsets kor="전문번호" type="string" name="tgrmNo" start="9" end="17"/>
+    <fieldOffsets kor="전문전송일시" type="string" name="tgrmSendDtm" start="17" end="33"/>
+    <fieldOffsets kor="테스트여부" type="string" name="testYn" start="33" end="34"/>
+    <fieldOffsets kor="전문유형" type="string" name="tgrmType" start="34" end="35"/>
+    <fieldOffsets kor="예비값" type="string" name="prepVal" start="35" end="54"/>
+    <fieldOffsets kor="전문길이" type="string" name="tgrmLen" start="54" end="60"/>
+    <fieldOffsets kor="응답코드" type="string" name="respCd" start="60" end="64"/>
+  </jndi:configuration>
+</jndi:namedResource>

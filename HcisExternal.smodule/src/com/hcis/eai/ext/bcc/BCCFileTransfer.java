@@ -3,7 +3,7 @@ package com.hcis.eai.ext.bcc;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
 import com.google.common.base.Joiner;
-import com.hcis.eai.ext.BatchFTP600;
+import com.hcis.eai.ext.EDIParserAndBuilder;
 import kr.shacon.util.CastUtils;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.*;
 
-public class BCCFileTransfer extends BatchFTP600 {
+public class BCCFileTransfer extends EDIParserAndBuilder {
 
     protected String trCode = "";
 	protected String msgCode = "";

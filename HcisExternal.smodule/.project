@@ -3,6 +3,7 @@
 	<name>HcisExternal.smodule</name>
 	<comment></comment>
 	<projects>
+		<project>CSPI_Library</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

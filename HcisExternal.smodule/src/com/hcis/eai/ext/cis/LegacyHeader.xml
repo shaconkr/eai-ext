@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beanio xmlns="http://www.beanio.org/2012/03" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.beanio.org/2012/03 http://www.beanio.org/2012/03/mapping.xsd">
+  <typeHandler type="java.util.Date" class="org.beanio.types.DateTypeHandler">
+    <property name="pattern" value="yyyyMMddhhmm"/>
+  </typeHandler>
+  <stream kor="" name="LegacyInternalHeader" format="fixedlength">
+    <parser>
+      <property name="recordTerminator" value="\r\n"/>
+    </parser>
+    <record name="LegacyInternalHeader" class="java.util.LinkedHashMap">
+      <segment name="bizHeader" minOccurs="1" collection="list" maxOccurs="unbounded" class="map">
+        <field kor="거래코드" name="trdCd" position="0" length="4"/>
+        <field kor="전문코드" name="tgrmCd" position="4" length="5"/>
+        <field kor="전문번호" name="tgrmNo" position="9" length="8"/>
+        <field kor="전문전송일시" name="tgrmSendDtm" position="17" length="16"/>
+        <field kor="테스트여부" name="testYn" position="33" length="1"/>
+        <field kor="전문유형" name="tgrmType" position="34" length="1"/>
+        <field kor="예비값" name="prepVal" position="35" length="19"/>
+        <field kor="전문길이" name="tgrmLen" position="54" length="6"/>
+        <field kor="응답코드" name="respCd" position="60" length="4"/>
+      </segment>
+    </record>
+  </stream>
+</beanio>

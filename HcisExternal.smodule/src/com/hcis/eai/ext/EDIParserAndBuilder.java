@@ -15,7 +15,7 @@ import java.util.Arrays;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class BatchFTP600 {
+public class EDIParserAndBuilder {
 
     protected StreamFactory factory;
     protected String encoding;
@@ -29,8 +29,16 @@ public class BatchFTP600 {
                 .serializeNulls()
                 .create();
     }
-
-    public BatchFTP600(String beanioXml, String encoding) {
+    
+    public EDIParserAndBuilder() {
+    }
+    
+    public void init(String beanioXml, String encoding) {
+        this.factory = newStreamFactory(beanioXml);
+        this.encoding = encoding;
+    }
+    
+    public EDIParserAndBuilder(String beanioXml, String encoding) {
         this.factory = newStreamFactory(beanioXml);
         this.encoding = encoding;
     }

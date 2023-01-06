@@ -4045,7 +4045,7 @@
         <bpws:variable name="HcisExternal.smodule-BC_CARD_RCV_PORT"
             sca-bpel:hotUpdate="false" sca-bpel:privateProperty="true"
             sca-bpel:property="yes"
-            tibex:propertySource="//HcisExternal.smodule//BC_CARD_RCV_PORT" type="xsd:int"/>
+            tibex:propertySource="//HcisExternal.smodule///LISTENER/BC_CARD_RCV_PORT" type="xsd:int"/>
         <bpws:variable element="ns1:ActivityInput"
             name="BCC_HEADER-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns2:ActivityOutput" name="BCC_HEADER" sca-bpel:internal="true"/>

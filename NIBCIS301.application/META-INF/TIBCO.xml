@@ -465,5 +465,15 @@
       <packaging:technologyType>osgi-bundle,bw-sharedmodule</packaging:technologyType>
       <packaging:technologyVersion>2.0.0.qualifier</packaging:technologyVersion>
     </packaging:module>
+    <packaging:module>
+      <packaging:symbolicName>JeinSoft.dataformat.plugin</packaging:symbolicName>
+      <packaging:technologyType>osgi-bundle</packaging:technologyType>
+      <packaging:technologyVersion>1.0.0.qualifier</packaging:technologyVersion>
+    </packaging:module>
+    <packaging:module>
+      <packaging:symbolicName>JeinSoft.function.plugin</packaging:symbolicName>
+      <packaging:technologyType>osgi-bundle</packaging:technologyType>
+      <packaging:technologyVersion>1.0.0.qualifier</packaging:technologyVersion>
+    </packaging:module>
   </packaging:modules>
 </packaging:packageUnit>

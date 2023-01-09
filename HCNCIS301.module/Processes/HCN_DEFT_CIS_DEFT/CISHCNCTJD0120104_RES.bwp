@@ -35,6 +35,63 @@
     xmlns:sca-bpel="http://docs.oasis-open.org/ns/opencsa/sca-bpel/200801"
     xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"
     xmlns:tibprop="http://ns.tibco.com/bw/property" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <tibex:VariableDescriptor type="MemorySaving">
+        <task name="flow">
+            <endingVariables>
+                <variable>OUT_RES</variable>
+                <variable>IN_RES</variable>
+            </endingVariables>
+        </task>
+        <task name="IN_RES">
+            <endingVariables>
+                <variable>IN_RES-input</variable>
+                <variable>HTTPReceiver</variable>
+            </endingVariables>
+        </task>
+        <task name="HeaderDevelope">
+            <endingVariables>
+                <variable>HeaderDevelope-input</variable>
+            </endingVariables>
+        </task>
+        <task name="JSONtoEDI">
+            <endingVariables>
+                <variable>JSONtoEDI-input</variable>
+            </endingVariables>
+        </task>
+        <task name="TCPOpenConnection">
+            <endingVariables>
+                <variable>TCPOpenConnection-input</variable>
+            </endingVariables>
+        </task>
+        <task name="WriteTCPData">
+            <endingVariables>
+                <variable>WriteTCPData-input</variable>
+                <variable>TCPOpenConnection</variable>
+            </endingVariables>
+        </task>
+        <task name="OUT_RES">
+            <endingVariables>
+                <variable>OUT_RES-input</variable>
+                <variable>JSONtoEDI</variable>
+            </endingVariables>
+        </task>
+        <task name="InResLog">
+            <endingVariables>
+                <variable>InResLog-input</variable>
+            </endingVariables>
+        </task>
+        <task name="TransLog">
+            <endingVariables>
+                <variable>TransLog-input</variable>
+                <variable>HeaderDevelope</variable>
+            </endingVariables>
+        </task>
+        <task name="OutResLog">
+            <endingVariables>
+                <variable>OutResLog-input</variable>
+            </endingVariables>
+        </task>
+    </tibex:VariableDescriptor>
     <tibex:Types>
         <xs:schema attributeFormDefault="unqualified"
             elementFormDefault="qualified"
@@ -1410,6 +1467,13 @@
             </xs:complexType>
             <xs:element name="ActivityInput" type="tns:LogParametersType"/>
         </xs:schema>
+        <schema elementFormDefault="qualified"
+            targetNamespace="http://www.tibco.com/tnt/utilitySchema"
+            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.tibco.com/tnt/utilitySchema">
+            <simpleType name="nativeJavaObjectKey">
+                <restriction base="string"/>
+            </simpleType>
+        </schema>
     </tibex:Types>
     <tibex:ProcessInfo callable="false" createdBy="javal"
         createdOn="Thu Dec 01 12:35:52 KST 2022" description=""
@@ -1814,7 +1878,7 @@
             </children>
             <styles fontName="맑은 고딕" lineColor="0" xsi:type="notation:ShapeStyle"/>
             <element href="//0/@process"/>
-            <layoutConstraint height="366" width="1155" xsi:type="notation:Bounds"/>
+            <layoutConstraint height="366" width="1210" xsi:type="notation:Bounds"/>
         </children>
         <styles xsi:type="notation:DiagramStyle"/>
         <element href="//0"/>

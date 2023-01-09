@@ -10,9 +10,9 @@
   <sca:property xmi:id="_wdEw4IyoEe2AltnxqgZQRA" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_wdOh4IyoEe2AltnxqgZQRA" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
   <sca:component xmi:id="_Mg2ksIypEe2AltnxqgZQRA" name="ComponentNIBCISCTJD0130101_Sub" compositeext:version="1.0.0.qualifier">
-    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_Mg2ksYypEe2AltnxqgZQRA" processName="NIBCISCTJD.NIBCISCTJD0130101.NIBCISCTJD0130101_RequestRecv"/>
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_Mg2ksYypEe2AltnxqgZQRA" processName="NIBCISCTJD.NIBCISCTJD0130101.NIBCISCTJD0130101_REQ"/>
   </sca:component>
-  <sca:component xmi:id="_BxcWQI1aEe2dwLXsqlnqWg" name="ComponentCISNIBCTJD0130102_ResponseSend" compositeext:version="1.0.0.qualifier">
-    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_BxcWQY1aEe2dwLXsqlnqWg" processName="NIBCISCTJD.CISNIBCTJD0130102.CISNIBCTJD0130102_ResponseSend"/>
+  <sca:component xmi:id="_5GCmAI_CEe2qrsWmCYgWNg" name="ComponentNIBCISCTJD0130101_REQ" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_5GCmAY_CEe2qrsWmCYgWNg" processName="NIBCISCTJD.CISNIBCTJD0130102.CISNIBCTJD0130102_RES"/>
   </sca:component>
 </sca:composite>

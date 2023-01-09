@@ -9,7 +9,7 @@
       <property name="recordTerminator" value="\r\n"/>
     </parser>
     <record name="JNI_InReq" class="java.util.LinkedHashMap">
-      <segment name="bizHeader" minOccurs="1" collection="list" maxOccurs="unbounded" class="map">
+      <segment name="bizHeader" minOccurs="1" maxOccurs="1" class="map">
         <field kor="거래코드" name="trdCd" position="0" length="4"/>
         <field kor="전문코드" name="tgrmCd" position="4" length="5"/>
         <field kor="전문번호" name="tgrmNo" position="9" length="8"/>
@@ -20,7 +20,7 @@
         <field kor="전문길이" name="tgrmLen" position="54" length="6"/>
         <field kor="응답코드" name="respCd" position="60" length="4"/>
       </segment>
-      <segment name="bizBody" minOccurs="1" collection="list" maxOccurs="unbounded" class="map">
+      <segment name="bizBody" minOccurs="1" maxOccurs="1" class="map">
         <field kor="발송번호" name="senmNo" position="64" length="24"/>
         <field kor="처리일자" name="procDt" position="88" length="8"/>
         <field kor="처리시간" name="procTime" position="96" length="6"/>

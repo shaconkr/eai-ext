@@ -9,7 +9,7 @@
       <property name="recordTerminator" value="\r\n"/>
     </parser>
     <record name="ARB_InReq" class="java.util.LinkedHashMap">
-      <segment name="bizHeader" minOccurs="1" collection="list" maxOccurs="unbounded" class="map">
+      <segment name="bizHeader" minOccurs="1" maxOccurs="1" class="map">
         <field kor="거래코드" name="trdCd" position="0" length="4"/>
         <field kor="전문코드" name="tgrmCd" position="4" length="5"/>
         <field kor="전문번호" name="tgrmNo" position="9" length="8"/>
@@ -20,7 +20,7 @@
         <field kor="전문길이" name="tgrmLen" position="54" length="6"/>
         <field kor="응답코드" name="respCd" position="60" length="4"/>
       </segment>
-      <segment name="bizBody" minOccurs="1" collection="list" maxOccurs="unbounded" class="map">
+      <segment name="bizBody" minOccurs="1" maxOccurs="1" class="map">
         <field kor="제휴카드접수일자" name="alliCrdAcptDt" position="64" length="8"/>
         <field kor="고객명" name="custNm" position="72" length="70"/>
         <field kor="전화지역번호" name="telpnAreaNo" position="142" length="4"/>

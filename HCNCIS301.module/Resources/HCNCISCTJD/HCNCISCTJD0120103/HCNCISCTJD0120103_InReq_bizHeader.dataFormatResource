@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:HCNCISCTJD0120103="http://schema.hcis.com/xsd/HCNCISCTJD0120103" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmi:id="_syOS4I_hEe2-RphsMl58DQ" name="HCNCISCTJD.HCNCISCTJD0120103.HCNCISCTJD0120103_InReq_bizHeader" type="dataformat:DataFormat">
+  <imports xmi:id="_syOS4Y_hEe2-RphsMl58DQ" importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/HCNCISCTJD0120103_InReq_bizHeader.xsd" namespace="http://schema.hcis.com/xsd/HCNCISCTJD0120103"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" xmi:id="_syOS4o_hEe2-RphsMl58DQ" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="HCNCISCTJD0120103:main" lineLength="64" fieldOffsetsStr="trdCd(0,4)&#xA;tgrmCd(4,9)&#xA;tgrmNo(9,17)&#xA;tgrmSendDtm(17,33)&#xA;testYn(33,34)&#xA;tgrmType(34,35)&#xA;prepVal(35,54)&#xA;tgrmLen(54,60)&#xA;respCd(60,64)">
+    <fieldOffsets xmi:id="_syOS44_hEe2-RphsMl58DQ" name="trdCd" end="4" kor="거래코드" type="string"/>
+    <fieldOffsets xmi:id="_syOS5I_hEe2-RphsMl58DQ" name="tgrmCd" start="4" end="9" kor="전문코드" type="string"/>
+    <fieldOffsets xmi:id="_syOS5Y_hEe2-RphsMl58DQ" name="tgrmNo" start="9" end="17" kor="전문번호" type="string"/>
+    <fieldOffsets xmi:id="_syOS5o_hEe2-RphsMl58DQ" name="tgrmSendDtm" start="17" end="33" kor="전문전송일시" type="string"/>
+    <fieldOffsets xmi:id="_syOS54_hEe2-RphsMl58DQ" name="testYn" start="33" end="34" kor="테스트여부" type="string"/>
+    <fieldOffsets xmi:id="_syOS6I_hEe2-RphsMl58DQ" name="tgrmType" start="34" end="35" kor="전문유형" type="string"/>
+    <fieldOffsets xmi:id="_syOS6Y_hEe2-RphsMl58DQ" name="prepVal" start="35" end="54" kor="예비값" type="string"/>
+    <fieldOffsets xmi:id="_syOS6o_hEe2-RphsMl58DQ" name="tgrmLen" start="54" end="60" kor="전문길이" type="string"/>
+    <fieldOffsets xmi:id="_syOS64_hEe2-RphsMl58DQ" name="respCd" start="60" end="64" kor="응답코드" type="string"/>
+  </jndi:configuration>
+</jndi:namedResource>

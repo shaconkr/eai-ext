@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmlns:sslserver="http://xsd.tns.tibco.com/bw/sharedresource/trinity/models/sslserver" xmi:id="_-6WMEH9dEe2Bb-lwhnXa4A" targetNamespace="http://tns.tibco.com/bw/composite/HcisExternal.smodule" name="HcisExternal.smodule" compositeext:version="1.0.0" compositeext:formatVersion="2">
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:property="http://ns.tibco.com/bw/property" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmlns:sslserver="http://xsd.tns.tibco.com/bw/sharedresource/trinity/models/sslserver" xmi:id="_-6WMEH9dEe2Bb-lwhnXa4A" targetNamespace="http://tns.tibco.com/bw/composite/HcisExternal.smodule" name="HcisExternal.smodule" compositeext:version="1.0.0" compositeext:formatVersion="2">
   <sca:property xmi:id="__Ej4AH9dEe2Bb-lwhnXa4A" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="__FmZ0H9dEe2Bb-lwhnXa4A" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="__FwK0H9dEe2Bb-lwhnXa4A" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
@@ -9,14 +9,27 @@
   <sca:property xmi:id="__F5Uwn9dEe2Bb-lwhnXa4A" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="__GDFwH9dEe2Bb-lwhnXa4A" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="__GDFwX9dEe2Bb-lwhnXa4A" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
-  <sca:property xmi:id="_WbTDcI2MEe2nL8wwN8HNrg" name="SSLServerConfigurationProperty" type="sslserver:SSLServerConfiguration" scaext:simpleValue="" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_SwiMcI2NEe2nL8wwN8HNrg" name="/LISTENER/HOST" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_RX28YI1YEe2dwLXsqlnqWg" name="/LISTENER/BC_CARD_RCV_PORT" type="XMLSchema:int" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_X_0UwI2NEe2nL8wwN8HNrg" name="/LISTENER/CIS_RCV_PORT" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_tc1qEI1YEe2dwLXsqlnqWg" name="/ENDPOINT/CIS/RES_PATH" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_v1NPoI1YEe2dwLXsqlnqWg" name="/ENDPOINT/CIS/CIS_HOST" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_w7_RgI1YEe2dwLXsqlnqWg" name="/ENDPOINT/CIS/CIS_PORT" type="XMLSchema:int" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_6psqsJB-Ee2Bjt8ERpvB0A" name="/ENDPOINT/NIC_FTP/SC/HOSTNAME" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_sExMMJB_Ee2Bjt8ERpvB0A" name="/ENDPOINT/NIC_FTP/SC/USERNAME" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_tR4fkJB_Ee2Bjt8ERpvB0A" name="/ENDPOINT/NIC_FTP/SC/PASSWORD" type="property:password" scaext:simpleValue="#!PItM/bx63kIqdIR8lvPtKg==" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_zld2IJCCEe2Bjt8ERpvB0A" name="/ENDPOINT/NIC_FTP/SC/CRSC_SAM_PATH_KIS_RECV" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_2lQIYJB_Ee2Bjt8ERpvB0A" name="/ENDPOINT/NIC_FTP/CT/HOSTNAME" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_3tF6MJB_Ee2Bjt8ERpvB0A" name="/ENDPOINT/NIC_FTP/CT/USERNAME" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_4t-vcJB_Ee2Bjt8ERpvB0A" name="/ENDPOINT/NIC_FTP/CT/PASSWORD" type="property:password" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_y0IxwJCAEe2Bjt8ERpvB0A" name="/ENDPOINT/NIC_FTP/CT/CRCT_SAM_PATH_KIS_RECV" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:component xmi:id="_AR3LUI2FEe2TR-Ao8dSg5A" name="ComponentHCIS_CT_INBOUND" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_AR3LUY2FEe2TR-Ao8dSg5A" processName="hcisexternal.smodule.HCIS_CT_INBOUND"/>
+  </sca:component>
+  <sca:component xmi:id="_gxvXAI_2Ee2WfJIl-TnKbg" name="ComponentNIC_FTP_RCV" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_gxvXAY_2Ee2WfJIl-TnKbg" processName="hcisexternal.smodule.NIC_FTP_CT_RCV"/>
+  </sca:component>
+  <sca:component xmi:id="_rmnTwJCDEe2Bjt8ERpvB0A" name="ComponentCopyOfNIC_FTP_CT_RCV" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_rmnTwZCDEe2Bjt8ERpvB0A" processName="hcisexternal.smodule.NIC_FTP_SC_RCV"/>
   </sca:component>
 </sca:composite>

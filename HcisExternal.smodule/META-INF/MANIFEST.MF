@@ -9,14 +9,17 @@ Export-Package: com.hcis.eai.ext,
  com.hcis.eai.ext.bcc,
  com.hcis.eai.ext.cis,
  com.hcis.eai.ext.kft,
+ com.hcis.eai.ext.nic,
  com.hcis.eai.ext.tos
 Require-Bundle: HcisCommon.smodule;bundle-version="1.0.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Provide-Capability: com.tibco.bw.module; name="HcisExternal.smodule"; version:Version="1.0.0",
+ com.tibco.bw.schemas; ns="http://tns.tibco.com/bw/json/1673317890834",
  com.tibco.bw.resources; name="ext.cis",
  com.tibco.bw.resources; name="ext.tos",
  com.tibco.bw.resources; name="ext.bcc",
- com.tibco.bw.processes; name="hcisexternal.smodule"
+ com.tibco.bw.processes; name="hcisexternal.smodule",
+ com.tibco.bw.resources; name="ext.nic"
 TIBCO-BW-Version: 6.9.0 V26 2022-11-02
 Import-Package: com.google.common.base,
  com.google.common.collect,
@@ -35,9 +38,13 @@ Require-Capability: com.tibco.bw.model; filter:="(name=bwext)",
  com.tibco.bw.module; filter:="(&(name=HcisCommon.smodule)(version=1.0.0))",
  com.tibco.bw.module; filter:="(&(name=CSPI_Library)(version=2.0.0))",
  com.tibco.bw.palette; filter:="(name=bw.generalactivities)",
+ com.tibco.bw.palette; filter:="(name=bw.file)",
+ com.tibco.bw.palette; filter:="(name=bw.ftp)",
+ com.tibco.bw.palette; filter:="(name=bw.restjson)",
  com.tibco.bw.palette; filter:="(name=bw.tcp)",
  com.tibco.bw.palette; filter:="(name=bw.java)",
  com.tibco.bw.palette; filter:="(name=bw.jms)",
+ com.tibco.bw.sharedresource.model; filter:="(name=bw.ftp)",
  com.tibco.bw.sharedresource.model; filter:="(name=bw.httpclient)",
  com.tibco.bw.sharedresource.model; filter:="(name=bw.java)",
  com.tibco.bw.sharedresource.model; filter:="(name=bw.tcp)"

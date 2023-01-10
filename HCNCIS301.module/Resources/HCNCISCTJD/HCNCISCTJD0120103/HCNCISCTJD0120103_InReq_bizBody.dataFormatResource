@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:HCNCISCTJD0120103="http://schema.hcis.com/xsd/HCNCISCTJD0120103" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmi:id="_syLPkI_hEe2-RphsMl58DQ" name="HCNCISCTJD.HCNCISCTJD0120103.HCNCISCTJD0120103_InReq_bizBody" type="dataformat:DataFormat">
+  <imports xmi:id="_syLPkY_hEe2-RphsMl58DQ" importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/HCNCISCTJD0120103_InReq_bizBody.xsd" namespace="http://schema.hcis.com/xsd/HCNCISCTJD0120103"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" xmi:id="_syLPko_hEe2-RphsMl58DQ" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="HCNCISCTJD0120103:main" lineLength="812" fieldOffsetsStr="alliCrdAcptDt(0,8)&#xA;custNm(8,78)&#xA;telpnAreaNo(78,82)&#xA;tels(82,86)&#xA;telpnSeqno(86,90)&#xA;alliCrdCustNo(90,99)&#xA;alliCrdCorpGbcd(99,102)&#xA;adr1(102,302)&#xA;adr2(302,502)&#xA;rstMsg(502,582)&#xA;prepVal1(582,812)">
+    <fieldOffsets xmi:id="_syLPk4_hEe2-RphsMl58DQ" name="alliCrdAcptDt" end="8" kor="제휴카드접수일자" type="string"/>
+    <fieldOffsets xmi:id="_syLPlI_hEe2-RphsMl58DQ" name="custNm" start="8" end="78" kor="고객명" type="string"/>
+    <fieldOffsets xmi:id="_syLPlY_hEe2-RphsMl58DQ" name="telpnAreaNo" start="78" end="82" kor="전화지역번호" type="string"/>
+    <fieldOffsets xmi:id="_syLPlo_hEe2-RphsMl58DQ" name="tels" start="82" end="86" kor="전화국번호" type="string"/>
+    <fieldOffsets xmi:id="_syLPl4_hEe2-RphsMl58DQ" name="telpnSeqno" start="86" end="90" kor="전화일련번호" type="string"/>
+    <fieldOffsets xmi:id="_syLPmI_hEe2-RphsMl58DQ" name="alliCrdCustNo" start="90" end="99" kor="제휴카드고객번호" type="string"/>
+    <fieldOffsets xmi:id="_syLPmY_hEe2-RphsMl58DQ" name="alliCrdCorpGbcd" start="99" end="102" kor="제휴카드법인구분코드" type="string"/>
+    <fieldOffsets xmi:id="_syLPmo_hEe2-RphsMl58DQ" name="adr1" start="102" end="302" kor="주소1" type="string"/>
+    <fieldOffsets xmi:id="_syLPm4_hEe2-RphsMl58DQ" name="adr2" start="302" end="502" kor="주소2" type="string"/>
+    <fieldOffsets xmi:id="_syLPnI_hEe2-RphsMl58DQ" name="rstMsg" start="502" end="582" kor="결과메시지" type="string"/>
+    <fieldOffsets xmi:id="_syLPnY_hEe2-RphsMl58DQ" name="prepVal1" start="582" end="812" kor="예비값1" type="string"/>
+  </jndi:configuration>
+</jndi:namedResource>

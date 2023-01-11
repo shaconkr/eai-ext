@@ -19,7 +19,8 @@ Provide-Capability: com.tibco.bw.module; name="HcisExternal.smodule"; version:Ve
  com.tibco.bw.resources; name="ext.tos",
  com.tibco.bw.resources; name="ext.bcc",
  com.tibco.bw.processes; name="hcisexternal.smodule",
- com.tibco.bw.resources; name="ext.nic"
+ com.tibco.bw.resources; name="ext.nic",
+ com.tibco.bw.resources; name="ext.kft"
 TIBCO-BW-Version: 6.9.0 V26 2022-11-02
 Import-Package: com.google.common.base,
  com.google.common.collect,

@@ -23,6 +23,10 @@
   <sca:property xmi:id="_3tF6MJB_Ee2Bjt8ERpvB0A" name="/ENDPOINT/NIC_FTP/CT/USERNAME" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_4t-vcJB_Ee2Bjt8ERpvB0A" name="/ENDPOINT/NIC_FTP/CT/PASSWORD" type="property:password" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_y0IxwJCAEe2Bjt8ERpvB0A" name="/ENDPOINT/NIC_FTP/CT/CRCT_SAM_PATH_KIS_RECV" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_dwx-wJFnEe2cHpbgkwVwbw" name="/ENDPOINT/KFT/HOSTNAME" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_vgBnsJFnEe2cHpbgkwVwbw" name="/ENDPOINT/KFT/PORT" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_7gIjkJFnEe2cHpbgkwVwbw" name="/ENDPOINT/KFT_OL/HOSTNAME" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="__X9JsJFnEe2cHpbgkwVwbw" name="/ENDPOINT/KFT_OL/PORT" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
   <sca:component xmi:id="_AR3LUI2FEe2TR-Ao8dSg5A" name="ComponentHCIS_CT_INBOUND" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_AR3LUY2FEe2TR-Ao8dSg5A" processName="hcisexternal.smodule.HCIS_CT_INBOUND"/>
   </sca:component>

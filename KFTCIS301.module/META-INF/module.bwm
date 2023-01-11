@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmlns:tcpconnection="http://ns.tibco.com/bw/palette/tcpconnection" xmi:id="_5JcLQJFiEe2XkLftBlyHgQ" targetNamespace="http://tns.tibco.com/bw/composite/KFTCIS301.module" name="KFTCIS301.module" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:property xmi:id="_59mzIJFiEe2XkLftBlyHgQ" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_59mzIZFiEe2XkLftBlyHgQ" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_59v9EJFiEe2XkLftBlyHgQ" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_59v9EZFiEe2XkLftBlyHgQ" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_59v9EpFiEe2XkLftBlyHgQ" name="BW.DOMAIN.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_595uEJFiEe2XkLftBlyHgQ" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_595uEZFiEe2XkLftBlyHgQ" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_5-DfEJFiEe2XkLftBlyHgQ" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_5-DfEZFiEe2XkLftBlyHgQ" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_ZxPxoJFoEe2cHpbgkwVwbw" name="TCPConnectionProperty" type="tcpconnection:tcpconnection" scaext:simpleValue="" publicAccess="true" scalable="true"/>
+  <sca:component xmi:id="_Ezhz0JFjEe2XkLftBlyHgQ" name="ComponentKFTFileReceve" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_Ezhz0ZFjEe2XkLftBlyHgQ" processName="KFTCISPM.KFTFileReceve"/>
+  </sca:component>
+</sca:composite>

@@ -1,5 +1,8 @@
 package com.hcis.eai.ext;
 
+import com.google.common.base.Joiner;
+import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.Maps;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import kr.shacon.types.MapDeserializer;
@@ -43,6 +46,26 @@ public class EDIParserAndBuilder {
         this.encoding = encoding;
     }
 
+    public String getHeaderQueryString(byte[] bytes){
+    	Map<String,String> head = CastUtils.cast((Map<?,?>)parseEDI("COMMON", bytes));
+//    	return  head.entrySet().stream().map(Object::toString).collect(Collectors.joining("&"));
+    	return  Joiner.on("&").withKeyValueSeparator("=").join(head);       
+    }
+
+    public String getDataQueryString(byte[] bytes, String msgCode){
+        Map<String,String> data = CastUtils.cast((Map<?,?>)parseEDI("M_"+msgCode, bytes));        
+        return Joiner.on("&").withKeyValueSeparator("=").join(data);
+    }
+    public String getHeaderJson(byte[] bytes){
+    	Map<String,String> head = CastUtils.cast((Map<?,?>)parseEDI("COMMON", bytes));
+    	return  gson.toJson(head);       
+    }
+
+    public String getDataJson(byte[] bytes, String msgCode){
+        Map<String,String> data = CastUtils.cast((Map<?,?>)parseEDI("M_"+msgCode, bytes));        
+        return gson.toJson(data);
+    }      
+    
     public byte[] buildEDI(String msgType, Map<String,Object> msgMap){
         Marshaller marshaller = factory.createMarshaller(msgType);
         String edi = marshaller.marshal(msgMap,encoding).toString();
@@ -90,5 +113,20 @@ public class EDIParserAndBuilder {
 	protected String getQueryStringValue(String queryString, String key )  {
 		Map<String, String> queryMap = Arrays.stream(queryString.split("&")).map(s -> s.split("=")).collect(Collectors.toMap(s -> s[0], s -> s[1]));		
 		return queryMap.get(key);
+	}
+	
+	protected byte[] concatBytes(byte[] bytes1, byte[] bytes2) {
+        byte[] bytes = new byte[bytes1.length + bytes2.length];
+        System.arraycopy(bytes1, 0, bytes, 0 , bytes1.length);
+        System.arraycopy(bytes2, 0, bytes, bytes1.length , bytes2.length);
+        return bytes;
+    }
+	
+	@SuppressWarnings("unchecked")
+	protected String concatJson(String json1, String json2) {
+		Map<String,Object> map1 = gson.fromJson(json1, Map.class);
+		Map<String,Object> map2 = gson.fromJson(json2, Map.class);
+		return gson.toJson(Maps.newLinkedHashMap(ImmutableMap.<String, Object>builder().putAll(map1).putAll(map2).build()));
+		
 	}
 }

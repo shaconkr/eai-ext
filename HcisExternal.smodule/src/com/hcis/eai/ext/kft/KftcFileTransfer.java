@@ -1,9 +1,14 @@
 package com.hcis.eai.ext.kft;
 
+import com.google.common.base.Joiner;
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import com.hcis.eai.ext.EDIParserAndBuilder;
+
+import kr.shacon.util.CastUtils;
+
 import org.beanio.Marshaller;
 import org.beanio.StreamFactory;
 import org.beanio.internal.util.IOUtil;
@@ -11,11 +16,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Map;
 
-public class KftcFileTransfer {
+public class KftcFileTransfer extends EDIParserAndBuilder  {
     private static final Logger LOGGER = LoggerFactory.getLogger(KftcFileTransfer.class);
     StreamFactory factory = newStreamFactory("kftcbatch.xml");
 
@@ -31,32 +37,23 @@ public class KftcFileTransfer {
 
     private static final String KFTC_ENCODING = "euc-kr";
 
-
-    enum ERRCD {
-        E000("정상"),
-        E090("시스템 장애"),
-        E310("송신자명 오류"),
-        E320("송신자암호 오류"),
-        E630("기전송 완료"),
-        E631("미등록 업무"),
-        E632("비정상 파일명"),
-        E633("비정상 전문 BYTE 수"),
-        E634("파일송신 가능시간/일자 완료"),
-        E635("E13파일 검증완료 전 EB13파일 수신"),
-        E800("FORMAT 오류");
-
-        private final String stringValue;
-
-        ERRCD(final String s) {
-            stringValue = s;
-        }
-
-        public String toString() {
-            return stringValue;
-        }
-    }
-
-    public String kftc600(Map<String, Object> common, String blnSdRv, String jobMngInfo) {
+    protected String trCode = "";
+	protected String msgCode = "";
+	protected byte[] bytes = null;
+	public KftcFileTransfer(String beanioXml, String encoding) {
+        super(beanioXml, encoding);
+    }        
+    
+	@SuppressWarnings("unused")
+	private byte[] setTotalLength(byte[] bytes, int len) throws UnsupportedEncodingException {
+		int byteLen = bytes.length - len;
+        byte[] totalLength = String.format("%0"+len +"d", byteLen).getBytes(KFTC_ENCODING);
+        System.arraycopy(totalLength, 0, bytes, 0, totalLength.length);	
+        return bytes;
+	}
+	
+	
+    public byte[] kftc600(String blnSdRv, String jobMngInfo) throws UnsupportedEncodingException {
         String trdGbCd = (blnSdRv.equals(KFTC_SD)) ? "R" : "S";
         Map<String, Object> msg = putCommon(0, "0600", trdGbCd, "E", spaces(8), "000");
         msg.put("trgmSendDtm", LocalDateTime.now().format(DateTimeFormatter.ofPattern("MMddHH24mmss")));
@@ -64,7 +61,7 @@ public class KftcFileTransfer {
         String sendDt = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyMMdd"));
         msg.put("senderNm", KFTC_SENDER_NM);
         msg.put("senderPw", senderEncrypt(KFTC_SENDER_NM, KFTC_SENDER_PW, KFTC_COMPANY_CD, sendDt));
-        return marshall("KFTC_0600", msg);
+        return setTotalLength(marshall("M_0600", msg).getBytes(KFTC_ENCODING), 4);
     }
 
     public String kftc610(Map<String, Object> common, String blnSdRv, String jobMngInfo) {
@@ -88,14 +85,16 @@ public class KftcFileTransfer {
         return marshall("KFTC_0630", msg);
     }
 
-    public String kftc640(Map<String, Object> common, String blnSdRv, String fileName, String fileSize) {
+    @SuppressWarnings("unchecked")
+	public byte[] kftc640(String data0630, String blnSdRv) throws UnsupportedEncodingException {
         String trdGbCd = (blnSdRv.equals(KFTC_SD)) ? "R" : "S";
         Map<String, Object> msg = putCommon(0, "0640", trdGbCd, "E", spaces(8), "000");
+        Map<String, Object> dat = gson.fromJson(data0630, Map.class);
         msg.put("trgmSendDtm", LocalDateTime.now().format(DateTimeFormatter.ofPattern("MMddHH24mmss")));
-        msg.put("fileName", fileName);
-        msg.put("fileSize", fileSize);
+        msg.put("fileName", dat.get("fileName"));
+        msg.put("fileSize", dat.get("fileSize"));
         msg.put("fileSize", KFTC_EDI_BYTE);
-        return marshall("KFTC_0640", msg);
+        return setTotalLength(marshall("KFTC_0640", msg).getBytes(KFTC_ENCODING), 4);
     }
 
     public String kftc620(Map<String, Object> common, String blnSdRv, String fileName, String blockNo, String lastSeqNo) {
@@ -150,16 +149,16 @@ public class KftcFileTransfer {
      * @param respCd     응답코드
      * @return 공통부
      */
-    private Map<String, Object> putCommon(long sendByte, String tgrmSubCCd, String trdGbCd, String sdRvFlag, String fileName, String respCd) {
+    public Map<String, Object> putCommon(long sendByte, String tgrmSubCCd, String trdGbCd, String sdRvFlag, String fileName, String respCd) {
         return Maps.newHashMap(ImmutableMap.<String, Object>builder()
-                .put("sendByte", sendByte)
-                .put("tskGbCd", "FTE")
-                .put("istnCd", KFTC_COMPANY_CD)
-                .put("tgrmSubCCd", tgrmSubCCd)
-                .put("trdGbCd", trdGbCd)
-                .put("sdRvFlag", sdRvFlag)
-                .put("fileName", fileName)
-                .put("respCd", respCd)
+                .put("sendByte", sendByte)			// 송수신 바이트,4
+                .put("tskGbCd", "FTE")				// 업무구분코드, 3
+                .put("istnCd", KFTC_COMPANY_CD)		// 기관코드, 8
+                .put("tgrmSubCCd", tgrmSubCCd)		// 전문종별코드, 4
+                .put("trdGbCd", trdGbCd)			// 거래구분코드, 1  - 센터수신 R , 센터송신 S
+                .put("sdRvFlag", sdRvFlag)			// 송수신플래그,1  - 센터전문발생 C , 기관전분발생 E
+                .put("fileName", fileName)			// 파일명, 8
+                .put("respCd", respCd)				// 응답코드, 3
                 .build());
     }
 

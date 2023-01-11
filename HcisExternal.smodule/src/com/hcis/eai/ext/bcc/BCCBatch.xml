@@ -7,7 +7,7 @@
         <property name="pattern" value="yyyyMMddhhmm"/>
     </typeHandler>
 
-    <stream kor="업무관리" name="BCC_COM_HDR" format="fixedlength">
+    <stream kor="공통부" name="COMMON" format="fixedlength">
         <parser>
             <property name="recordTerminator" value="\r\n"/>
         </parser>
@@ -23,7 +23,7 @@
         </record>
     </stream>
 
-    <stream kor="업무관리" name="BCC_0600" format="fixedlength">
+    <stream kor="업무개시요구" name="M_0600" format="fixedlength">
         <parser>
             <property name="recordTerminator" value="\r\n"/>
         </parser>
@@ -35,7 +35,7 @@
         </record>
     </stream>
 
-    <stream kor="업무관리응답" name="BCC_0610" format="fixedlength">
+    <stream kor="업무개시통보" name="M_0610" format="fixedlength">
         <parser>
             <property name="recordTerminator" value="\r\n"/>
         </parser>
@@ -55,7 +55,7 @@
         </record>
     </stream>
 
-    <stream kor="결번전문확인" name="BCC_0620" format="fixedlength">
+    <stream kor="결번전문확인" name="M_0620" format="fixedlength">
         <parser>
             <property name="recordTerminator" value="\r\n"/>
         </parser>
@@ -65,7 +65,7 @@
         </record>
     </stream>
 
-    <stream kor="파일정보관리" name="BCC_0630" format="fixedlength">
+    <stream kor="파일정보관리" name="M_0630" format="fixedlength">
         <parser>
             <property name="recordTerminator" value="\r\n"/>
         </parser>
@@ -76,7 +76,7 @@
         </record>
     </stream>
 
-    <stream kor="파일정보관리응답" name="BCC_0640" format="fixedlength">
+    <stream kor="파일정보관리응답" name="M_0640" format="fixedlength">
         <parser>
             <property name="recordTerminator" value="\r\n"/>
         </parser>
@@ -95,7 +95,7 @@
         </record>
     </stream>
 
-    <stream kor="결번자료내역전송" name="BCC_0300" format="fixedlength">
+    <stream kor="결번자료내역전송" name="M_0300" format="fixedlength">
         <parser>
             <property name="recordTerminator" value="\r\n"/>
         </parser>
@@ -115,7 +115,7 @@
         </record>
     </stream>
 
-    <stream kor="걸번DATA전송" name="BCC_0310" format="fixedlength">
+    <stream kor="걸번DATA전송" name="M_0310" format="fixedlength">
         <parser>
             <property name="recordTerminator" value="\r\n"/>
         </parser>
@@ -127,7 +127,7 @@
         </record>
     </stream>
 
-    <stream kor="DATA전문" name="BCC_0320" format="fixedlength">
+    <stream kor="DATA전문" name="M_0320" format="fixedlength">
         <parser>
             <property name="recordTerminator" value="\r\n"/>
         </parser>
@@ -139,7 +139,7 @@
         </record>
     </stream>
 
-    <stream kor="송수신Header_trailer요청" name="BCC_0320_HT" format="fixedlength">
+    <stream kor="송수신Header_trailer요청" name="M_0320_HT" format="fixedlength">
         <parser>
             <property name="recordTerminator" value="\r\n"/>
         </parser>
@@ -159,7 +159,7 @@
         </record>
     </stream>
 
-    <stream kor="송수신Header_trailer응답" name="BCC_0330_HT" format="fixedlength">
+    <stream kor="송수신Header_trailer응답" name="M_0330_HT" format="fixedlength">
         <parser>
             <property name="recordTerminator" value="\r\n"/>
         </parser>

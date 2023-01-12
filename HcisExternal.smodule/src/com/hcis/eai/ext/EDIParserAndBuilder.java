@@ -114,6 +114,11 @@ public class EDIParserAndBuilder {
 		Map<String, String> queryMap = Arrays.stream(queryString.split("&")).map(s -> s.split("=")).collect(Collectors.toMap(s -> s[0], s -> s[1]));		
 		return queryMap.get(key);
 	}
+
+	protected Map<String,String> queryStringToMap(String queryString)  {
+		return Arrays.stream(queryString.split("&")).map(s -> s.split("=")).collect(Collectors.toMap(s -> s[0], s -> s[1]));		
+	}
+	
 	
 	protected byte[] concatBytes(byte[] bytes1, byte[] bytes2) {
         byte[] bytes = new byte[bytes1.length + bytes2.length];

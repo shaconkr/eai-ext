@@ -13,4 +13,7 @@
   <sca:component xmi:id="_Ezhz0JFjEe2XkLftBlyHgQ" name="ComponentKFTFileReceve" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_Ezhz0ZFjEe2XkLftBlyHgQ" processName="KFTCISPM.KFTFileReceve"/>
   </sca:component>
+  <sca:component xmi:id="_8DT1IJJDEe2bH572H7AwlA" name="ComponentJOBPASS_NOTI" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_8DT1IZJDEe2bH572H7AwlA" processName="KFTCISPM.JOBPASS_NOTI"/>
+  </sca:component>
 </sca:composite>

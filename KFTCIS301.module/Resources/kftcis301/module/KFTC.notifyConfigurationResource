@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Schema_SubProc="http://www.example.org/Schema_SubProc" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmlns:notifyconfiguration="http://ns.tibco.com/bw/sharedresource/notifyconfiguration" xmi:id="_YM39UZJDEe2bH572H7AwlA" name="kftcis301.module.KFTC" type="notifyconfiguration:NotifyConfiguration">
+  <imports xmi:id="_KupBIJJEEe2bH572H7AwlA" importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.org/Schema_SubProc"/>
+  <jndi:configuration xsi:type="notifyconfiguration:NotifyConfiguration" xmi:id="_YNBuUJJDEe2bH572H7AwlA" schemaElementQname="Schema_SubProc:subElement"/>
+</jndi:namedResource>

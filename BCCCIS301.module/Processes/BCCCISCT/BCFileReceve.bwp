@@ -720,7 +720,6 @@
             targetNamespace="www.tibco.com/plugin/java/JavaMethodActivityExceptionjava.io.UnsupportedEncodingException"
             xmlns="http://www.w3.org/2001/XMLSchema"
             xmlns:Q1="http://www.tibco.com/tnt/utilitySchema" xmlns:tns="www.tibco.com/plugin/java/JavaMethodActivityExceptionjava.io.UnsupportedEncodingException">
-            <import namespace="http://www.tibco.com/tnt/utilitySchema"/>
             <element name="java.io.UnsupportedEncodingException" type="tns:java.io.UnsupportedEncodingException"/>
             <complexType name="java.io.UnsupportedEncodingException">
                 <sequence>

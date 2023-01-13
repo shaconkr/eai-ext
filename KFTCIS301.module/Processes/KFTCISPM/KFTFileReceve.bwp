@@ -1791,6 +1791,13 @@
                 </choice>
             </complexType>
         </schema>
+        <schema elementFormDefault="qualified"
+            targetNamespace="http://www.tibco.com/tnt/utilitySchema"
+            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.tibco.com/tnt/utilitySchema">
+            <simpleType name="nativeJavaObjectKey">
+                <restriction base="string"/>
+            </simpleType>
+        </schema>
         <wsdl:definitions
             targetNamespace="http://xmlns.example.com/20230111125022"
             xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
@@ -1860,7 +1867,7 @@
                                     <element href="//0/@process/@activity/@activity/@activities.0"/>
                                     <layoutConstraint
                                     height="40" width="40"
-                                    x="1294"
+                                    x="1434"
                                     xsi:type="notation:Bounds" y="249"/>
                                     </children>
                                     <children type="4018">
@@ -1938,8 +1945,8 @@
                                     <layoutConstraint
                                     height="40"
                                     width="40"
-                                    x="26"
-                                    xsi:type="notation:Bounds" y="452"/>
+                                    x="71"
+                                    xsi:type="notation:Bounds" y="211"/>
                                     </children>
 
                                     <children type="4002 bw.tcp.read">
@@ -1994,7 +2001,7 @@
                                     <layoutConstraint
                                     height="40"
                                     width="40"
-                                    x="248"
+                                    x="356"
                                     xsi:type="notation:Bounds" y="107"/>
                                     </children>
 
@@ -2050,7 +2057,7 @@
                                     <layoutConstraint
                                     height="40"
                                     width="40"
-                                    x="143"
+                                    x="251"
                                     xsi:type="notation:Bounds" y="361"/>
                                     </children>
 
@@ -2106,8 +2113,8 @@
                                     <layoutConstraint
                                     height="40"
                                     width="40"
-                                    x="-11"
-                                    xsi:type="notation:Bounds" y="268"/>
+                                    x="71"
+                                    xsi:type="notation:Bounds" y="300"/>
                                     </children>
 
                                     <children type="4002 bw.java.javamethod">
@@ -2162,7 +2169,7 @@
                                     <layoutConstraint
                                     height="40"
                                     width="40"
-                                    x="838"
+                                    x="946"
                                     xsi:type="notation:Bounds" y="384"/>
                                     </children>
 
@@ -2218,7 +2225,7 @@
                                     <layoutConstraint
                                     height="40"
                                     width="40"
-                                    x="936"
+                                    x="1044"
                                     xsi:type="notation:Bounds" y="384"/>
                                     </children>
 
@@ -2274,7 +2281,7 @@
                                     <layoutConstraint
                                     height="40"
                                     width="40"
-                                    x="160"
+                                    x="268"
                                     xsi:type="notation:Bounds" y="500"/>
                                     </children>
 
@@ -2330,7 +2337,7 @@
                                     <layoutConstraint
                                     height="40"
                                     width="40"
-                                    x="168"
+                                    x="276"
                                     xsi:type="notation:Bounds" y="647"/>
                                     </children>
 
@@ -2386,7 +2393,7 @@
                                     <layoutConstraint
                                     height="40"
                                     width="40"
-                                    x="661"
+                                    x="769"
                                     xsi:type="notation:Bounds" y="647"/>
                                     </children>
 
@@ -2442,7 +2449,7 @@
                                     <layoutConstraint
                                     height="40"
                                     width="40"
-                                    x="778"
+                                    x="886"
                                     xsi:type="notation:Bounds" y="647"/>
                                     </children>
 
@@ -2498,7 +2505,7 @@
                                     <layoutConstraint
                                     height="40"
                                     width="40"
-                                    x="838"
+                                    x="946"
                                     xsi:type="notation:Bounds" y="107"/>
                                     </children>
 
@@ -2554,7 +2561,7 @@
                                     <layoutConstraint
                                     height="40"
                                     width="40"
-                                    x="761"
+                                    x="869"
                                     xsi:type="notation:Bounds" y="198"/>
                                     </children>
 
@@ -2610,7 +2617,7 @@
                                     <layoutConstraint
                                     height="40"
                                     width="40"
-                                    x="661"
+                                    x="769"
                                     xsi:type="notation:Bounds" y="107"/>
                                     </children>
 
@@ -2666,7 +2673,7 @@
                                     <layoutConstraint
                                     height="40"
                                     width="40"
-                                    x="601"
+                                    x="709"
                                     xsi:type="notation:Bounds" y="198"/>
                                     </children>
 
@@ -2722,7 +2729,7 @@
                                     <layoutConstraint
                                     height="40"
                                     width="40"
-                                    x="347"
+                                    x="455"
                                     xsi:type="notation:Bounds" y="107"/>
                                     </children>
 
@@ -2778,7 +2785,7 @@
                                     <layoutConstraint
                                     height="40"
                                     width="40"
-                                    x="216"
+                                    x="324"
                                     xsi:type="notation:Bounds" y="361"/>
                                     </children>
 
@@ -2834,7 +2841,7 @@
                                     <layoutConstraint
                                     height="40"
                                     width="40"
-                                    x="254"
+                                    x="362"
                                     xsi:type="notation:Bounds" y="647"/>
                                     </children>
 
@@ -2890,7 +2897,7 @@
                                     <layoutConstraint
                                     height="40"
                                     width="40"
-                                    x="248"
+                                    x="356"
                                     xsi:type="notation:Bounds" y="500"/>
                                     </children>
 
@@ -2946,7 +2953,7 @@
                                     <layoutConstraint
                                     height="40"
                                     width="40"
-                                    x="649"
+                                    x="757"
                                     xsi:type="notation:Bounds" y="512"/>
                                     </children>
 
@@ -3002,7 +3009,7 @@
                                     <layoutConstraint
                                     height="40"
                                     width="40"
-                                    x="977"
+                                    x="1085"
                                     xsi:type="notation:Bounds" y="512"/>
                                     </children>
 
@@ -3058,7 +3065,7 @@
                                     <layoutConstraint
                                     height="40"
                                     width="40"
-                                    x="248"
+                                    x="356"
                                     xsi:type="notation:Bounds" y="252"/>
                                     </children>
 
@@ -3114,7 +3121,7 @@
                                     <layoutConstraint
                                     height="40"
                                     width="40"
-                                    x="358"
+                                    x="466"
                                     xsi:type="notation:Bounds" y="252"/>
                                     </children>
 
@@ -3170,7 +3177,7 @@
                                     <layoutConstraint
                                     height="40"
                                     width="40"
-                                    x="613"
+                                    x="721"
                                     xsi:type="notation:Bounds" y="281"/>
                                     </children>
 
@@ -3226,7 +3233,7 @@
                                     <layoutConstraint
                                     height="40"
                                     width="40"
-                                    x="860"
+                                    x="968"
                                     xsi:type="notation:Bounds" y="198"/>
                                     </children>
 
@@ -3282,7 +3289,7 @@
                                     <layoutConstraint
                                     height="40"
                                     width="40"
-                                    x="374"
+                                    x="482"
                                     xsi:type="notation:Bounds" y="361"/>
                                     </children>
 
@@ -3338,7 +3345,7 @@
                                     <layoutConstraint
                                     height="40"
                                     width="40"
-                                    x="451"
+                                    x="559"
                                     xsi:type="notation:Bounds" y="352"/>
                                     </children>
 
@@ -3394,7 +3401,7 @@
                                     <layoutConstraint
                                     height="40"
                                     width="40"
-                                    x="538"
+                                    x="646"
                                     xsi:type="notation:Bounds" y="352"/>
                                     </children>
 
@@ -3450,7 +3457,7 @@
                                     <layoutConstraint
                                     height="40"
                                     width="40"
-                                    x="631"
+                                    x="739"
                                     xsi:type="notation:Bounds" y="361"/>
                                     </children>
 
@@ -3506,7 +3513,7 @@
                                     <layoutConstraint
                                     height="40"
                                     width="40"
-                                    x="713"
+                                    x="821"
                                     xsi:type="notation:Bounds" y="17"/>
                                     </children>
 
@@ -3562,7 +3569,7 @@
                                     <layoutConstraint
                                     height="40"
                                     width="40"
-                                    x="881"
+                                    x="989"
                                     xsi:type="notation:Bounds" y="17"/>
                                     </children>
 
@@ -3618,7 +3625,7 @@
                                     <layoutConstraint
                                     height="40"
                                     width="40"
-                                    x="347"
+                                    x="455"
                                     xsi:type="notation:Bounds" y="500"/>
                                     </children>
 
@@ -3674,7 +3681,7 @@
                                     <layoutConstraint
                                     height="40"
                                     width="40"
-                                    x="430"
+                                    x="538"
                                     xsi:type="notation:Bounds" y="500"/>
                                     </children>
 
@@ -3730,7 +3737,7 @@
                                     <layoutConstraint
                                     height="40"
                                     width="40"
-                                    x="755"
+                                    x="863"
                                     xsi:type="notation:Bounds" y="512"/>
                                     </children>
 
@@ -3786,7 +3793,7 @@
                                     <layoutConstraint
                                     height="40"
                                     width="40"
-                                    x="860"
+                                    x="968"
                                     xsi:type="notation:Bounds" y="512"/>
                                     </children>
 
@@ -3842,7 +3849,7 @@
                                     <layoutConstraint
                                     height="40"
                                     width="40"
-                                    x="524"
+                                    x="632"
                                     xsi:type="notation:Bounds" y="560"/>
                                     </children>
 
@@ -3898,7 +3905,7 @@
                                     <layoutConstraint
                                     height="40"
                                     width="40"
-                                    x="524"
+                                    x="632"
                                     xsi:type="notation:Bounds" y="452"/>
                                     </children>
 
@@ -3954,7 +3961,7 @@
                                     <layoutConstraint
                                     height="40"
                                     width="40"
-                                    x="730"
+                                    x="838"
                                     xsi:type="notation:Bounds" y="336"/>
                                     </children>
 
@@ -4010,7 +4017,7 @@
                                     <layoutConstraint
                                     height="40"
                                     width="40"
-                                    x="730"
+                                    x="838"
                                     xsi:type="notation:Bounds" y="418"/>
                                     </children>
 
@@ -4066,7 +4073,7 @@
                                     <layoutConstraint
                                     height="40"
                                     width="40"
-                                    x="296"
+                                    x="404"
                                     xsi:type="notation:Bounds" y="361"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
@@ -4084,8 +4091,8 @@
                                     <element href="//0/@process/@activity/@activity/@activities.1/@activity/@activities.1/@activity"/>
 
                                     <layoutConstraint
-                                    height="822"
-                                    width="1171" xsi:type="notation:Bounds"/>
+                                    height="798"
+                                    width="1311" xsi:type="notation:Bounds"/>
                                     </children>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
@@ -4098,7 +4105,7 @@
                                     <element href="//0/@process/@activity/@activity/@activities.1"/>
                                     <layoutConstraint
                                     height="798"
-                                    width="1174"
+                                    width="1314"
                                     x="15"
                                     xsi:type="notation:Bounds" y="20"/>
                                     </children>
@@ -4194,7 +4201,7 @@
                                     <element href="//0/@process/@activity/@activity/@activities.1"/>
                                     <layoutConstraint
                                     height="842"
-                                    width="1214" x="100"
+                                    width="1354" x="100"
                                     xsi:type="notation:Bounds" y="2"/>
                                     </children>
                                     <children type="4002 bw.tcp.tcpopenconnection">
@@ -4452,7 +4459,7 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.9"/>
-                                    <layoutConstraint x="1294"
+                                    <layoutConstraint x="1434"
                                     xsi:type="notation:Bounds" y="381"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
@@ -4468,7 +4475,7 @@
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity"/>
                                     <layoutConstraint height="885"
-                                    width="1525" xsi:type="notation:Bounds"/>
+                                    width="1618" xsi:type="notation:Bounds"/>
                                 </children>
                                 <styles xsi:type="notation:SortingStyle"/>
                                 <styles xsi:type="notation:FilteringStyle"/>
@@ -4477,7 +4484,7 @@
                             <styles xsi:type="bwnotation:BackgroundStyle"/>
                             <styles xsi:type="bwnotation:ResizingStyle"/>
                             <element href="//0/@process/@activity"/>
-                            <layoutConstraint height="885" width="1528" xsi:type="notation:Bounds"/>
+                            <layoutConstraint height="885" width="1621" xsi:type="notation:Bounds"/>
                         </children>
                         <children type="4022">
                             <children type="3022">
@@ -4583,7 +4590,7 @@
                     <styles xsi:type="bwnotation:BackgroundStyle"/>
                     <styles xsi:type="bwnotation:ResizingStyle"/>
                     <element href="//0/@process/@activity"/>
-                    <layoutConstraint height="930" width="1486" x="1"
+                    <layoutConstraint height="930" width="1621" x="1"
                         xsi:type="notation:Bounds" y="1"/>
                 </children>
                 <styles xsi:type="notation:SortingStyle"/>
@@ -4592,7 +4599,7 @@
             </children>
             <styles fontName="맑은 고딕" lineColor="0" xsi:type="notation:ShapeStyle"/>
             <element href="//0/@process"/>
-            <layoutConstraint height="982" width="1828" xsi:type="notation:Bounds"/>
+            <layoutConstraint height="982" width="1963" xsi:type="notation:Bounds"/>
         </children>
         <styles xsi:type="notation:DiagramStyle"/>
         <element href="//0"/>
@@ -4606,13 +4613,13 @@
             <styles fontName="맑은 고딕" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@activities.1/@activity/@activities.1/@activity/@links/@children.0"/>
             <bendpoints
-                points="[0, -24, 38, 152]$[0, -87, 38, 89]$[-38, -87, 0, 89]$[-38, -151, 0, 25]" xsi:type="notation:RelativeBendpoints"/>
+                points="[-24, 0, -24, -89]$[-63, 0, -63, -89]$[-63, 100, -63, 11]$[-24, 100, -24, 11]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1/@children.0/@children.1/@children.0/@children.0/@children.0/@children.3"
             target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1/@children.0/@children.1/@children.0/@children.0/@children.0/@children.2" type="4006">
             <children type="6002">
-                <layoutConstraint x="94" xsi:type="notation:Location" y="27"/>
+                <layoutConstraint x="96" xsi:type="notation:Location" y="6"/>
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="맑은 고딕" xsi:type="notation:FontStyle"/>
@@ -4658,7 +4665,7 @@
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1/@children.0/@children.1/@children.0/@children.0/@children.0/@children.3"
             target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1/@children.0/@children.1/@children.0/@children.0/@children.0/@children.6" type="4006">
             <children type="6002">
-                <layoutConstraint x="90" xsi:type="notation:Location" y="-68"/>
+                <layoutConstraint x="62" xsi:type="notation:Location" y="-96"/>
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="맑은 고딕" xsi:type="notation:FontStyle"/>
@@ -4681,7 +4688,7 @@
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1/@children.0/@children.1/@children.0/@children.0/@children.0/@children.3"
             target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1/@children.0/@children.1/@children.0/@children.0/@children.0/@children.7" type="4006">
             <children type="6002">
-                <layoutConstraint x="155" xsi:type="notation:Location" y="-70"/>
+                <layoutConstraint x="129" xsi:type="notation:Location" y="-107"/>
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="맑은 고딕" xsi:type="notation:FontStyle"/>
@@ -4846,7 +4853,7 @@
             <styles fontName="맑은 고딕" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@activities.1/@activity/@activities.1/@activity/@links/@children.19"/>
             <bendpoints
-                points="[12, -1, -97, -109]$[38, -1, -71, -109]$[38, 92, -71, -16]$[85, 92, -24, -16]" xsi:type="notation:RelativeBendpoints"/>
+                points="[12, -5, -128, 154]$[47, -5, -93, 154]$[47, -206, -93, -47]$[187, -206, 47, -47]$[187, -154, 47, 5]$[165, -154, 25, 5]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2"
@@ -5647,7 +5654,8 @@
                     </tibex:config>
                 </tibex:activityExtension>
             </bpws:extensionActivity>
-            <bpws:scope name="While" tibex:group="while" tibex:xpdlId="096af973-6fc2-48f8-bdde-f0157eab599d">
+            <bpws:scope name="While" tibex:group="while"
+                tibex:indexToGlobal="false" tibex:xpdlId="096af973-6fc2-48f8-bdde-f0157eab599d">
                 <bpws:targets>
                     <bpws:target linkName="W_0600_001ToWhile"/>
                 </bpws:targets>

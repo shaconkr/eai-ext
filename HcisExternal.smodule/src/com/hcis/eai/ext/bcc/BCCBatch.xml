@@ -40,18 +40,10 @@
             <property name="recordTerminator" value="\r\n"/>
         </parser>
         <record name="record" class="map">
-            <field kor="전문길이" name="dataSize" position="0" length="4" />
-            <field kor="업무구분코드" name="tskGbCd" position="4" length="3" />
-            <field kor="기관코드" name="istnCd" position="7" length="2" />
-            <field kor="전문종별코드" name="tgrmSubCCd" position="9" length="4" />
-            <field kor="거래구분코드" name="trdGbCd" position="13" length="1" />
-            <field kor="송수신플래그" name="sdRvFlag" position="14" length="1" />
-            <field kor="파일명" name="fileName" position="15" length="8" />
-            <field kor="응답코드" name="respCd" position="23" length="3" />
-            <field kor="전문전송일시" name="trgmSendDtm" position="26" length="10" />
-            <field kor="업무관리정보" name="jobMngInfo" position="36" length="3" />
-            <field kor="송신자명" name="senderNm" position="39" length="20" />
-            <field kor="송신자암호" name="senderPw" position="59" length="16" />
+            <field kor="전문전송일시" name="trgmSendDtm" position="0" length="10" />
+            <field kor="업무관리정보" name="jobMngInfo" position="10" length="3" />
+            <field kor="송신자명" name="senderNm" position="13" length="20" />
+            <field kor="송신자암호" name="senderPw" position="33" length="16" />
         </record>
     </stream>
 
@@ -81,14 +73,6 @@
             <property name="recordTerminator" value="\r\n"/>
         </parser>
         <record name="record" class="map">
-            <field kor="전문길이" name="dataSize" position="0" length="4" />
-            <field kor="업무구분코드" name="tskGbCd" position="4" length="3" />
-            <field kor="기관코드" name="istnCd" position="7" length="2" />
-            <field kor="전문종별코드" name="tgrmSubCCd" position="9" length="4" />
-            <field kor="거래구분코드" name="trdGbCd" position="13" length="1" />
-            <field kor="송수신플래그" name="sdRvFlag" position="14" length="1" />
-            <field kor="파일명" name="fileName" position="15" length="8" />
-            <field kor="응답코드" name="respCd" position="23" length="3" />
             <field kor="파일명" name="fileName" position="26" length="8" />
             <field kor="파일사이즈" name="fileSize" position="34" length="12" />
             <field kor="전문Byte수" name="ediByte" position="46" length="4" />
@@ -100,18 +84,10 @@
             <property name="recordTerminator" value="\r\n"/>
         </parser>
         <record name="record" class="map">
-            <field kor="전문길이" name="dataSize" position="0" length="4" />
-            <field kor="업무구분코드" name="tskGbCd" position="4" length="3" />
-            <field kor="기관코드" name="istnCd" position="7" length="2" />
-            <field kor="전문종별코드" name="tgrmSubCCd" position="9" length="4" />
-            <field kor="거래구분코드" name="trdGbCd" position="13" length="1" />
-            <field kor="송수신플래그" name="sdRvFlag" position="14" length="1" />
-            <field kor="파일명" name="fileName" position="15" length="8" />
-            <field kor="응답코드" name="respCd" position="23" length="3" />
-            <field kor="BLOCK번호" name="blockNo" position="26" length="4" />
-            <field kor="최종SEQ번호" name="lastSeqNo" position="30" length="3" />
-            <field kor="결번갯수" name="lostCnt" position="33" length="3" />
-            <field kor="결번확인" name="lostChk" position="36" length="100"  trim="true"/>
+            <field kor="BLOCK번호" name="blockNo" position="0" length="4" />
+            <field kor="최종SEQ번호" name="lastSeqNo" position="4" length="3" />
+            <field kor="결번갯수" name="lostCnt" position="7" length="3" />
+            <field kor="결번확인" name="lostChk" position="10" length="100"  trim="true"/>
         </record>
     </stream>
 
@@ -144,18 +120,10 @@
             <property name="recordTerminator" value="\r\n"/>
         </parser>
         <record name="record" class="map">
-            <field kor="전문길이" name="dataSize" position="0" length="4" />
-            <field kor="업무구분코드" name="tskGbCd" position="4" length="3" />
-            <field kor="기관코드" name="istnCd" position="7" length="2" />
-            <field kor="전문종별코드" name="tgrmSubCCd" position="9" length="4" />
-            <field kor="거래구분코드" name="trdGbCd" position="13" length="1" />
-            <field kor="송수신플래그" name="sdRvFlag" position="14" length="1" />
-            <field kor="파일명" name="fileName" position="15" length="8" />
-            <field kor="응답코드" name="respCd" position="23" length="3" />
-            <field kor="BLOCK번호" name="blockNo" position="26" length="4" />
-            <field kor="SEQ번호" name="seqNo" position="30" length="3" />
-            <field kor="REC건수" name="recCnt" position="33" length="4" />
-            <field kor="REC데이터" name="recData" position="37" length="4059"  trim="true"/>
+            <field kor="BLOCK번호" name="blockNo" position="0" length="4" />
+            <field kor="SEQ번호" name="seqNo" position="4" length="3" />
+            <field kor="REC건수" name="recCnt" position="7" length="4" />
+            <field kor="REC데이터" name="recData" position="11" length="4059"  trim="true"/>
         </record>
     </stream>
 
@@ -164,19 +132,11 @@
             <property name="recordTerminator" value="\r\n"/>
         </parser>
         <record name="record" class="map">
-            <field kor="전문길이" name="dataSize" position="0" length="4" />
-            <field kor="업무구분코드" name="tskGbCd" position="4" length="3" />
-            <field kor="기관코드" name="istnCd" position="7" length="2" />
-            <field kor="전문종별코드" name="tgrmSubCCd" position="9" length="4" />
-            <field kor="거래구분코드" name="trdGbCd" position="13" length="1" />
-            <field kor="송수신플래그" name="sdRvFlag" position="14" length="1" />
-            <field kor="파일명" name="fileName" position="15" length="8" />
-            <field kor="응답코드" name="respCd" position="23" length="3" />
-            <field kor="BLOCK번호" name="blockNo" position="26" length="4" />
-            <field kor="SEQ번호" name="seqNo" position="30" length="3" />
-            <field kor="REC건수" name="recCnt" position="33" length="4" />
-            <field kor="UNUSED" name="unUsed" position="37" length="19"  trim="true"/>
-            <field kor="REC전체건수" name="recTotal" position="37" length="19"  trim="true"/>
+            <field kor="BLOCK번호" name="blockNo" position="0" length="4" />
+            <field kor="SEQ번호" name="seqNo" position="4" length="3" />
+            <field kor="REC건수" name="recCnt" position="7" length="4" />
+            <field kor="UNUSED" name="unUsed" position="11" length="19"  trim="true"/>
+            <field kor="REC전체건수" name="recTotal" position="30" length="19"  trim="true"/>
         </record>
     </stream>
 

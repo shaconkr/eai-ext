@@ -42,15 +42,7 @@ public class KftcFileTransfer extends EDIParserAndBuilder  {
 	protected byte[] bytes = null;
 	public KftcFileTransfer(String beanioXml, String encoding) {
         super(beanioXml, encoding);
-    }        
-    
-	@SuppressWarnings("unused")
-	private byte[] setTotalLength(byte[] bytes, int len) throws UnsupportedEncodingException {
-		int byteLen = bytes.length - len;
-        byte[] totalLength = String.format("%0"+len +"d", byteLen).getBytes(KFTC_ENCODING);
-        System.arraycopy(totalLength, 0, bytes, 0, totalLength.length);	
-        return bytes;
-	}
+    }       
 	
 	
     public byte[] kftc600(String blnSdRv, String jobMngInfo) throws UnsupportedEncodingException {
@@ -61,7 +53,7 @@ public class KftcFileTransfer extends EDIParserAndBuilder  {
         String sendDt = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyMMdd"));
         msg.put("senderNm", KFTC_SENDER_NM);
         msg.put("senderPw", senderEncrypt(KFTC_SENDER_NM, KFTC_SENDER_PW, KFTC_COMPANY_CD, sendDt));
-        return setTotalLength(marshall("M_0600", msg).getBytes(KFTC_ENCODING), 4);
+        return setTotalLength(marshall("M_0600", msg).getBytes(KFTC_ENCODING), 4, KFTC_ENCODING);
     }
 
     public byte[] kftc610(String queryString, String blnSdRv, String jobMngInfo) throws UnsupportedEncodingException {
@@ -72,7 +64,7 @@ public class KftcFileTransfer extends EDIParserAndBuilder  {
         String sendDt = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyMMdd"));
         msg.put("senderNm", KFTC_SENDER_NM);
         msg.put("senderPw", senderEncrypt(KFTC_SENDER_NM, KFTC_SENDER_PW, KFTC_COMPANY_CD, sendDt));
-        return setTotalLength(marshall("M_0610", msg).getBytes(KFTC_ENCODING), 4);
+        return setTotalLength(marshall("M_0610", msg).getBytes(KFTC_ENCODING), 4, KFTC_ENCODING);
     }
 
     public byte[] kftc630(String queryString, String blnSdRv, String fileName, String fileSize) throws UnsupportedEncodingException {
@@ -82,7 +74,7 @@ public class KftcFileTransfer extends EDIParserAndBuilder  {
         msg.put("fileName", fileName);
         msg.put("fileSize", fileSize);
         msg.put("ediByte", KFTC_EDI_BYTE);
-        return setTotalLength(marshall("M_0630", msg).getBytes(KFTC_ENCODING), 4);
+        return setTotalLength(marshall("M_0630", msg).getBytes(KFTC_ENCODING), 4, KFTC_ENCODING);
     }
 
     public byte[] kftc640(String queryString, String blnSdRv) throws UnsupportedEncodingException {
@@ -93,7 +85,7 @@ public class KftcFileTransfer extends EDIParserAndBuilder  {
         msg.put("fileName", dat.get("fileName"));
         msg.put("fileSize", dat.get("fileSize"));
         msg.put("ediByte", KFTC_EDI_BYTE);
-        return setTotalLength(marshall("KFTC_0640", msg).getBytes(KFTC_ENCODING), 4);
+        return setTotalLength(marshall("KFTC_0640", msg).getBytes(KFTC_ENCODING), 4, KFTC_ENCODING);
     }
 
     public byte[] kftc620(String queryString, String blnSdRv, String fileName, String blockNo, String lastSeqNo) throws UnsupportedEncodingException {
@@ -103,7 +95,7 @@ public class KftcFileTransfer extends EDIParserAndBuilder  {
         msg.put("fileName", fileName);
         msg.put("blockNo", blockNo);
         msg.put("lastSeqNo", lastSeqNo);
-        return setTotalLength(marshall("M_0620", msg).getBytes(KFTC_ENCODING), 4);
+        return setTotalLength(marshall("M_0620", msg).getBytes(KFTC_ENCODING), 4, KFTC_ENCODING);
     }
 
     public byte[] kftc300(String queryString, String blnSdRv, String blockNo, String lastSeqNo, String lostCnt, String lostChk) throws UnsupportedEncodingException {
@@ -114,7 +106,7 @@ public class KftcFileTransfer extends EDIParserAndBuilder  {
         msg.put("lastSeqNo", lastSeqNo);
         msg.put("lostCnt", lostCnt);
         msg.put("lostChk", lostChk);
-        return setTotalLength(marshall("M_0300", msg).getBytes(KFTC_ENCODING), 4);
+        return setTotalLength(marshall("M_0300", msg).getBytes(KFTC_ENCODING), 4, KFTC_ENCODING);
     }
 
     public byte[] kftc310(String queryString, String blnSdRv, String blockNo, String seqNo, String realDataByte, String fileSpec) throws UnsupportedEncodingException {
@@ -125,7 +117,7 @@ public class KftcFileTransfer extends EDIParserAndBuilder  {
         msg.put("seqNo", seqNo);
         msg.put("realDataByte", realDataByte);
         msg.put("fileSpec", fileSpec);
-        return setTotalLength(marshall("M_0310", msg).getBytes(KFTC_ENCODING), 4);
+        return setTotalLength(marshall("M_0310", msg).getBytes(KFTC_ENCODING), 4, KFTC_ENCODING);
     }
 
     public byte[] kftc320(String queryString, String blnSdRv, String fileName, String blockNo, String seqNo, String realDataByte, String fileSpec) throws UnsupportedEncodingException {
@@ -136,7 +128,7 @@ public class KftcFileTransfer extends EDIParserAndBuilder  {
         msg.put("seqNo", seqNo);
         msg.put("realDataByte", realDataByte);
         msg.put("fileSpec", fileSpec);
-        return setTotalLength(marshall("M_0320", msg).getBytes(KFTC_ENCODING), 4);
+        return setTotalLength(marshall("M_0320", msg).getBytes(KFTC_ENCODING), 4, KFTC_ENCODING);
     }
 
     /**

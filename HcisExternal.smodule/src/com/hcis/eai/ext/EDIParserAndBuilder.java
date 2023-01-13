@@ -131,7 +131,13 @@ public class EDIParserAndBuilder {
 	protected String concatJson(String json1, String json2) {
 		Map<String,Object> map1 = gson.fromJson(json1, Map.class);
 		Map<String,Object> map2 = gson.fromJson(json2, Map.class);
-		return gson.toJson(Maps.newLinkedHashMap(ImmutableMap.<String, Object>builder().putAll(map1).putAll(map2).build()));
-		
+		return gson.toJson(Maps.newLinkedHashMap(ImmutableMap.<String, Object>builder().putAll(map1).putAll(map2).build()));		
 	}
+	
+	protected byte[] setTotalLength(byte[] bytes, int len, String encoding) throws UnsupportedEncodingException {
+		int byteLen = bytes.length - len;
+        byte[] totalLength = String.format("%0"+len +"d", byteLen).getBytes(encoding);
+        System.arraycopy(totalLength, 0, bytes, 0, totalLength.length);	
+        return bytes;
+	}	
 }

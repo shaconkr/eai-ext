@@ -102,8 +102,8 @@
         </task>
         <task name="GroupEnd">
             <endingVariables>
-                <variable>P_COMMON</variable>
                 <variable>P_0600</variable>
+                <variable>P_COMMON</variable>
             </endingVariables>
         </task>
         <task name="R_COMMON">
@@ -4565,12 +4565,11 @@
                                     <styles fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
                                     <styles xsi:type="bwnotation:BackgroundStyle"/>
-                                    <styles collapsed="true"
-                                    restoreHeight="108"
+                                    <styles restoreHeight="108"
                                     restoreWidth="1436" xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@faultHandlers/@catchAll"/>
-                                    <layoutConstraint height="22"
-                                    width="1436" xsi:type="notation:Bounds"/>
+                                    <layoutConstraint height="108"
+                                    width="1571" xsi:type="notation:Bounds"/>
                                 </children>
                                 <styles xsi:type="notation:SortingStyle"/>
                                 <styles xsi:type="notation:FilteringStyle"/>
@@ -4579,7 +4578,7 @@
                             <styles xsi:type="bwnotation:BackgroundStyle"/>
                             <styles xsi:type="bwnotation:ResizingStyle"/>
                             <element href="//0/@process/@activity/@faultHandlers"/>
-                            <layoutConstraint height="44" width="1446"
+                            <layoutConstraint height="130" width="1581"
                                 x="22" xsi:type="notation:Bounds" y="885"/>
                         </children>
                         <styles xsi:type="notation:SortingStyle"/>
@@ -4590,7 +4589,7 @@
                     <styles xsi:type="bwnotation:BackgroundStyle"/>
                     <styles xsi:type="bwnotation:ResizingStyle"/>
                     <element href="//0/@process/@activity"/>
-                    <layoutConstraint height="930" width="1621" x="1"
+                    <layoutConstraint height="1016" width="1621" x="1"
                         xsi:type="notation:Bounds" y="1"/>
                 </children>
                 <styles xsi:type="notation:SortingStyle"/>
@@ -4599,7 +4598,7 @@
             </children>
             <styles fontName="맑은 고딕" lineColor="0" xsi:type="notation:ShapeStyle"/>
             <element href="//0/@process"/>
-            <layoutConstraint height="982" width="1963" xsi:type="notation:Bounds"/>
+            <layoutConstraint height="1068" width="1963" xsi:type="notation:Bounds"/>
         </children>
         <styles xsi:type="notation:DiagramStyle"/>
         <element href="//0"/>

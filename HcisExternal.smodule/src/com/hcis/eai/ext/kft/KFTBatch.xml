@@ -7,7 +7,7 @@
         <property name="pattern" value="yyyyMMddhhmm"/>
     </typeHandler>
 
-    <stream kor="공통부" name="M_0600" format="fixedlength">
+    <stream kor="공통부" name="M_COMMON" format="fixedlength">
         <parser>
             <property name="recordTerminator" value="\r\n"/>
         </parser>

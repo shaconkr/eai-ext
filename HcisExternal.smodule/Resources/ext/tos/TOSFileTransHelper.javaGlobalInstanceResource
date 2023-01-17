@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:javasharedresource="http://ns.tibco.com/bw/palette/javasharedresource" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmi:id="_x4JnMZX9Ee27aNGRi8FG7A" name="ext.tos.TOSFileTransHelper" type="javasharedresource:JavaGlobalInstanceResource">
+  <jndi:configuration xsi:type="javasharedresource:JavaGlobalInstance" xmi:id="_x4JnMpX9Ee27aNGRi8FG7A" className="com.hcis.eai.ext.tos.TossFileTransfer" methodName="TossFileTransfer" isNewShared="true">
+    <javaConstructorParameter xmi:id="_1sZU4ZX9Ee27aNGRi8FG7A" paramName="beanioXml" paramType="string" paramValue="/com/hcis/eai/ext/tos/TOSBatch.xml"/>
+    <javaConstructorParameter xmi:id="_1sZU45X9Ee27aNGRi8FG7A" paramName="encoding" paramType="string" paramValue="euc-kr"/>
+    <methodParameters xmi:id="_1sZU4JX9Ee27aNGRi8FG7A" paramType="string"/>
+    <methodParameters xmi:id="_1sZU4pX9Ee27aNGRi8FG7A" paramType="string"/>
+  </jndi:configuration>
+</jndi:namedResource>

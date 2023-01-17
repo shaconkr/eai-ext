@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_Dt2nQJVrEe2iOLcBMBCoJw" targetNamespace="http://tns.tibco.com/bw/composite/TOSCIS301.module" name="TOSCIS301.module" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:property xmi:id="_FIFJkJVrEe2iOLcBMBCoJw" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_FIRW0JVrEe2iOLcBMBCoJw" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_FIYrkJVrEe2iOLcBMBCoJw" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_FIdkEJVrEe2iOLcBMBCoJw" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_FIhOcJVrEe2iOLcBMBCoJw" name="BW.DOMAIN.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_FIk40JVrEe2iOLcBMBCoJw" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_FIojMJVrEe2iOLcBMBCoJw" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_FIs0oJVrEe2iOLcBMBCoJw" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_FIxtIJVrEe2iOLcBMBCoJw" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_KKKI0JYaEe2rJ7i8AUx5cg" name="PM_TOSS_PATH" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:component xmi:id="_DGq2AJVsEe2iOLcBMBCoJw" name="ComponentTOS_FILE_RECV" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_DGq2AZVsEe2iOLcBMBCoJw" processName="TOSCISPM.TOS_FILE_RECV"/>
+  </sca:component>
+</sca:composite>

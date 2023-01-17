@@ -1,37 +1,20 @@
 package com.hcis.eai.ext.bcc;
 
-import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.Maps;
-import com.google.common.base.Joiner;
-import com.hcis.eai.ext.EDIParserAndBuilder;
-import kr.shacon.util.CastUtils;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Map;
 
-public class BCCFileTransfer extends EDIParserAndBuilder {
+import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.Maps;
+import com.hcis.eai.ext.EDIParserAndBuilder;
 
+public class BCCFileTransfer extends EDIParserAndBuilder {
+	
     protected String trCode = "";
 	protected String msgCode = "";
 	protected byte[] bytes = null;
 	public BCCFileTransfer(String beanioXml, String encoding) {
         super(beanioXml, encoding);
-    }
-
-    /**
-     * getHeader
-     * @param bytes
-     * @return  QueryString
-     */
-    public String getHeader(byte[] bytes){
-    	Map<String,String> head = CastUtils.cast((Map<?,?>)parseEDI("BCC_COM_HDR", bytes));
-//    	return  head.entrySet().stream().map(Object::toString).collect(Collectors.joining("&"));
-    	return  Joiner.on("&").withKeyValueSeparator("=").join(head);       
-    }
-
-    public String getData(byte[] bytes, String msgCode){
-        Map<String,String> data = CastUtils.cast((Map<?,?>)parseEDI("BCC_"+msgCode, bytes));        
-        return Joiner.on("&").withKeyValueSeparator("=").join(data);
     }
     
     /**

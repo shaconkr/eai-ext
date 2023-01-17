@@ -1,20 +1,20 @@
 package com.hcis.eai.ext.tos;
 
-import com.google.common.base.Strings;
-import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.Maps;
-import kr.shacon.util.CastUtils;
-import org.beanio.Marshaller;
-import org.beanio.StreamFactory;
-import org.beanio.Unmarshaller;
-import org.beanio.internal.util.IOUtil;
-
-import java.io.InputStream;
 import java.util.Map;
 
-public class TossFileTransfer {
+import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.Maps;
+import com.hcis.eai.ext.EDIParserAndBuilder;
+
+public class TossFileTransfer extends EDIParserAndBuilder {
 
     private static final String TOSS_ENCODING = "euc-kr";
+    protected String trCode = "";
+	protected String msgCode = "";
+	protected byte[] bytes = null;
+	public TossFileTransfer(String beanioXml, String encoding) {
+        super(beanioXml, encoding);
+    }
 
     enum ERRCD {
         E000("정상"),
@@ -40,20 +40,34 @@ public class TossFileTransfer {
         }
     }
 
-    StreamFactory factory = newStreamFactory("/com/hcis/eai/tos/TOSBatch.xml");
 
+    private Map<String,Object> putCommon(String ediNo){
+        Map<String,Object> msg = ImmutableMap.<String,Object>builder()
+                .put("trdCd"	, spaces(9))      // TR코드
+                .put("trgmCd"	, ediNo)        // 전문번호
+                .put("respCd"	, "000")        // 응답코드
+                .put("workFld"	, spaces(20))   // 업무필드
+                .put("filler1"	, spaces(5))    // 예비1
+                .build();
+        return  Maps.newHashMap(msg);
+    }
 
-    public String getT003(String jobType, String startDay, String endDay, String fileName) {
-        Map<String, Object> msg = Maps.newLinkedHashMap(putCommon("003"));
-        msg.put("userId", "HELP518");
-        msg.put("passwd", "1111");
-        msg.put("jobType", jobType);
-        if (jobType.equals("SD")) {
-            msg.put("fileName", spaces(20));
-            msg.put("flag", spaces(1));
-            msg.put("startTime", spaces(12));
-            msg.put("endTime", spaces(12));
-        } else {
+    /**
+     * 로그인 요구
+     * @param jobType
+     * @param startDay
+     * @param endDay
+     * @param fileName
+     * @return
+     */
+    public byte[] build003(String jobType, String startDay, String endDay, String fileName) {
+        Map<String, Object> msg = Maps.newHashMap(ImmutableMap.<String,Object>builder()
+        						.putAll(putCommon("003"))		// 공통부
+        						.put("userId", "HELP518")		// magiclink id
+        						.put("passwd", "1111")
+        						.put("jobType", jobType)		// SD 자료송신, RD 자료수신
+        						.build());                
+        if (jobType.equals("RD")) {
             msg.put("fileName", fileName);
             msg.put("flag", "E");
             msg.put("startTime", startDay + "0000");
@@ -61,116 +75,111 @@ public class TossFileTransfer {
         }
         msg.put("chgPwdYn", "N");
         msg.put("commSize", 2048);
-        msg.put("destId", spaces(10));
-        return marshall("TOSS_003", msg);
+        msg.put("destId", spaces(10));        
+        msg.put("filler", spaces(12));
+        return buildEDI("M_003", msg);
     }
 
-    public String getRespStatus(String edi) {
-        Map<String, Object> msg = unmarshall("TOSS_030", edi);
-        String retCd = String.valueOf(msg.get("respCd"));
-        String retMsg = ERRCD.valueOf("E" + retCd).toString();
-        //TODO add LOG
-        return retCd;
+
+    /**
+     * 송신파일 통보응답
+     * @param queryString
+     * @return
+     */
+    public byte[] build110(String queryString) {
+       	Map<String,String> req = queryStringToMap(queryString);
+        Map<String,Object> msg = ImmutableMap.<String,Object>builder()
+                            .putAll(req)
+                            .put("trgmCd"	, "110")
+                            .build();
+        return buildEDI("M_110", msg);
+    }
+    
+    /**
+     * 로그아웃 요구
+     * @param jobType
+     * @param startDay
+     * @param endDay
+     * @param fileName
+     * @return
+     */
+    public byte[] build007(String jobType, String startDay, String endDay, String fileName) {
+        Map<String, Object> msg = Maps.newHashMap(ImmutableMap.<String,Object>builder()
+				.putAll(putCommon("003"))		// 공통부
+				.put("userId", "HELP518")		// magiclink id
+				.put("passwd", "1111")
+				.put("jobType", jobType)		// SD 자료송신, RD 자료수신
+				.build());                
+		if (jobType.equals("RD")) {		// 송신
+			msg.put("fileName", fileName);
+			msg.put("flag", "E");
+			msg.put("startTime", startDay + "0000");
+			msg.put("endTime", endDay + "2400");
+		}
+        msg.put("filler", spaces(35));        
+		return buildEDI("M_007", msg);
     }
 
-    public String getT007(String jobType, String startDay, String endDay, String fileName) {
-        Map<String, Object> msg = Maps.newLinkedHashMap(putCommon("007"));
-        msg.put("userId", "HELP518");
-        msg.put("passwd", "1111");
-        msg.put("jobType", jobType);
-        if (jobType.equals("SD")) {
-            msg.put("fileName", spaces(20));
-            msg.put("flag", spaces(1));
-            msg.put("startTime", spaces(12));
-            msg.put("endTime", spaces(12));
-        } else {
-            msg.put("fileName", fileName);
-            msg.put("flag", "E");
-            msg.put("startTime", startDay + "0000");
-            msg.put("endTime", endDay + "2400");
-        }
-        return marshall("TOSS_007", msg);
-    }
-
-    public String logoutRes(String edi) {
-        Map<String, Object> msg = unmarshall("TOSS_070", edi);
-        String retCd = String.valueOf(msg.get("respCd"));
-        String retMsg = ERRCD.valueOf("E" + retCd).toString();
-        //TODO add LOG
-        return retCd;
-    }
-
-    public String getT100(String filename, String filesize, String lastYn) {
+    /**
+     * 송신 파일 통보
+     * @param filename
+     * @param filesize
+     * @param lastYn
+     * @return
+     */
+    public byte[]  build100(String filename, String filesize, String lastYn) {
         Map<String, Object> msg = Maps.newLinkedHashMap(putCommon("100"));
         msg.put("fileName", filename);
         msg.put("fileSize", filesize);
-        msg.put("sndId", spaces(20));
-        msg.put("rcvId", spaces(20));
-        msg.put("lastYn", lastYn);
-        msg.put("commTy", "NEW");  // APP 이어받기 사용안함
-        msg.put("endTime", spaces(12));
-        return marshall("TOSS_100", msg);
+//        msg.put("sndId", spaces(20));
+//        msg.put("rcvId", spaces(20));
+//        msg.put("filler1", spaces(1));
+//        msg.put("filler2", spaces(10));
+        msg.put("lastYn", lastYn);		// NXT 다음에 전송할 파일있음, END 다음에 전송할 파일 없음
+        msg.put("commTy", "NEW");  		// NEW 일반적인 송수신 , APP 이어보내기받기(사용안함)
+//        msg.put("endTime", spaces(12));
+//        msg.put("filler3", spaces(1));
+//        msg.put("filler4", spaces(22));
+		return buildEDI("M_100", msg);
     }
 
-    public String sendFileRes(String edi) {
-        Map<String, Object> msg = unmarshall("TOSS_110", edi);
-        String retCd = String.valueOf(msg.get("respCd"));
-        String retMsg = ERRCD.valueOf("E" + retCd).toString();
-        //TODO add LOG
-        return retCd;
+    /**
+     * 송신 파일 통보 응답
+     * @param filename
+     * @param filesize
+     * @param lastYn
+     * @return
+     */
+    public byte[]  build110(String filename, String filesize, String lastYn) {
+        Map<String, Object> msg = Maps.newLinkedHashMap(putCommon("100"));
+        msg.put("fileName", filename);
+        msg.put("fileSize", filesize);
+//        msg.put("sndId", spaces(20));
+//        msg.put("rcvId", spaces(20));
+//        msg.put("filler1", spaces(1));
+//        msg.put("filler2", spaces(10));
+        msg.put("lastYn", lastYn);		// NXT 다음에 전송할 파일있음, END 다음에 전송할 파일 없음
+        msg.put("commTy", "NEW");  		// NEW 일반적인 송수신 , APP 이어보내기받기(사용안함)
+//        msg.put("endTime", spaces(12));
+//        msg.put("filler3", spaces(1));
+//        msg.put("filler4", spaces(22));
+		return buildEDI("M_110", msg);
     }
 
-    public String rcvConfirm(String fileName, String fileSize, String procYn) {
+    /**
+     * 수신 확인
+     * @param filename
+     * @param filesize
+     * @param procYn
+     * @return
+     */
+    public byte[]  build130(String filename, String filesize, String procYn) {
         Map<String, Object> msg = Maps.newLinkedHashMap(putCommon("130"));
-        msg.put("fileName", fileName);
-        msg.put("fileSize", fileSize);
+        msg.put("fileName", filename);
+        msg.put("fileSize", filesize);
         msg.put("procYn", procYn);
-        return marshall("TOSS_130", msg);
+//      msg.put("filler1", spaces(79));        
+		return buildEDI("M_110", msg);
     }
 
-    public Map<String, Object> putCommon(String trgmCd) {
-        return ImmutableMap.<String, Object>builder().put("trdCd", spaces(9))
-                .put("trgmCd", trgmCd).put("respCd", "000").put("workFld", spaces(20))
-                .put("filler1", spaces(5)).build();
-    }
-
-    public String spaces(int len) {
-        return Strings.padStart(" ", len, ' ');
-    }
-
-
-    /**
-     * EDI to Map
-     *
-     * @param msgType loginReq, loginRes, logoutReq, logoutRes, sendFileNoti, sendFileRes, rcvConfirm
-     * @param rec
-     * @return
-     */
-    public Map<String, Object> unmarshall(String msgType, String rec) {
-        Unmarshaller unmarshaller = factory.createUnmarshaller(msgType);
-        return CastUtils.cast((Map<?, ?>) unmarshaller.unmarshal(rec, TOSS_ENCODING));
-    }
-
-    /**
-     * @param msgType loginReq, loginRes, logoutReq, logoutRes, sendFileNoti, sendFileRes, rcvConfirm
-     * @param map
-     * @return
-     */
-    public String marshall(String msgType, Map<String, Object> map) {
-        Marshaller marshaller = factory.createMarshaller(msgType);
-        return marshaller.marshal(map, TOSS_ENCODING).toString();
-    }
-
-    private StreamFactory newStreamFactory(String config) {
-        StreamFactory factory = StreamFactory.newInstance();
-        InputStream is = getClass().getResourceAsStream(config);
-        try {
-            factory.load(is);
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            IOUtil.closeQuietly(is);
-        }
-        return factory;
-    }
 }

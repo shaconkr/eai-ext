@@ -147,8 +147,8 @@
         </task>
         <task name="GroupEnd">
             <endingVariables>
-                <variable>P_COMMON</variable>
                 <variable>P_0600</variable>
+                <variable>P_COMMON</variable>
             </endingVariables>
         </task>
         <task name="R_COMMON">
@@ -5337,7 +5337,8 @@
                     </tibex:config>
                 </tibex:activityExtension>
             </bpws:extensionActivity>
-            <bpws:scope name="Repeat" tibex:group="repeatUntil" tibex:xpdlId="4a1ecb3a-bc0b-4183-ba23-e51bc00d3030">
+            <bpws:scope name="Repeat" tibex:group="repeatUntil"
+                tibex:indexToGlobal="false" tibex:xpdlId="4a1ecb3a-bc0b-4183-ba23-e51bc00d3030">
                 <bpws:targets>
                     <bpws:target linkName="TCPReceiverToRepeat"/>
                 </bpws:targets>

@@ -1,6 +1,7 @@
 package com.hcis.eai.ext;
 
 import com.google.common.base.Joiner;
+import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
 import com.google.gson.Gson;
@@ -47,7 +48,7 @@ public class EDIParserAndBuilder {
     }
 
     public String getHeaderQueryString(byte[] bytes){
-    	Map<String,String> head = CastUtils.cast((Map<?,?>)parseEDI("COMMON", bytes));
+    	Map<String,String> head = CastUtils.cast((Map<?,?>)parseEDI("M_COMMON", bytes));
 //    	return  head.entrySet().stream().map(Object::toString).collect(Collectors.joining("&"));
     	return  Joiner.on("&").withKeyValueSeparator("=").join(head);       
     }
@@ -140,4 +141,9 @@ public class EDIParserAndBuilder {
         System.arraycopy(totalLength, 0, bytes, 0, totalLength.length);	
         return bytes;
 	}	
+	
+    protected String spaces(int len) {
+        return Strings.padStart(" ", len, ' ');
+    }
+
 }

@@ -1,23 +1,25 @@
 package com.hcis.eai.ext;
 
+import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
+import java.util.Arrays;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+import org.beanio.Marshaller;
+import org.beanio.StreamFactory;
+import org.beanio.Unmarshaller;
+import org.beanio.internal.util.IOUtil;
+
 import com.google.common.base.Joiner;
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+
 import kr.shacon.types.MapDeserializer;
 import kr.shacon.util.CastUtils;
-import org.beanio.Marshaller;
-import org.beanio.StreamFactory;
-import org.beanio.Unmarshaller;
-import org.beanio.internal.util.IOUtil;
-
-import java.io.InputStream;
-import java.io.UnsupportedEncodingException;
-import java.util.Arrays;
-import java.util.Map;
-import java.util.stream.Collectors;
 
 public class EDIParserAndBuilder {
 
@@ -145,5 +147,16 @@ public class EDIParserAndBuilder {
     protected String spaces(int len) {
         return Strings.padStart(" ", len, ' ');
     }
+
+    public int getBytesLength(byte[] bytes)  {
+	    return  bytes.length;
+	}
+	
+    public byte[] readBytes(byte[] bytes, int offset, int len)  {
+		byte[] readBytes = new byte[len];
+		System.arraycopy(bytes, offset, readBytes, 0, len);
+	    return readBytes;
+	}	
+	
 
 }

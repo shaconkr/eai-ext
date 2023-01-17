@@ -521,7 +521,7 @@
       <packaging:overrideValue>false</packaging:overrideValue>
     </packaging:property>
     <packaging:property>
-      <packaging:name>//TOSCIS301.module//PM_TOSS_PATH</packaging:name>
+      <packaging:name>//TOSCIS301.module//PM_TOSS_RCV_PATH</packaging:name>
       <packaging:type>xsd:string</packaging:type>
       <packaging:visibility>public</packaging:visibility>
       <packaging:scalable>true</packaging:scalable>

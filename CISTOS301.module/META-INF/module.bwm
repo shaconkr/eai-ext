@@ -9,7 +9,7 @@
   <sca:property xmi:id="_ekLwgJVrEe2iOLcBMBCoJw" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_ekPa4JVrEe2iOLcBMBCoJw" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_ekR3IJVrEe2iOLcBMBCoJw" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
-  <sca:component xmi:id="_7F1zIJVrEe2iOLcBMBCoJw" name="ComponentTOS_FILE_SEND" compositeext:version="1.0.0.qualifier">
-    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_7F1zIZVrEe2iOLcBMBCoJw" processName="CISTOSPM.TOS_FILE_SEND"/>
+  <sca:component xmi:id="_mNGDkJYkEe2rJ7i8AUx5cg" name="ComponentTOS_FILE_RECV" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_mNGDkZYkEe2rJ7i8AUx5cg" processName="CISTOSPM.TOS_FILE_SEND"/>
   </sca:component>
 </sca:composite>

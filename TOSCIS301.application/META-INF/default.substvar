@@ -668,7 +668,7 @@
 			<useLookupValue>false</useLookupValue>
 		</globalVariable>
 		<globalVariable>
-			<name>//TOSCIS301.module//PM_TOSS_PATH</name>
+			<name>//TOSCIS301.module//PM_TOSS_RCV_PATH</name>
 			<value>/hcisnas/sam/pm/dacom/rcv/</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>

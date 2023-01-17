@@ -9,7 +9,7 @@
   <sca:property xmi:id="_FIojMJVrEe2iOLcBMBCoJw" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_FIs0oJVrEe2iOLcBMBCoJw" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_FIxtIJVrEe2iOLcBMBCoJw" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
-  <sca:property xmi:id="_KKKI0JYaEe2rJ7i8AUx5cg" name="PM_TOSS_PATH" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_KKKI0JYaEe2rJ7i8AUx5cg" name="PM_TOSS_RCV_PATH" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:component xmi:id="_DGq2AJVsEe2iOLcBMBCoJw" name="ComponentTOS_FILE_RECV" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_DGq2AZVsEe2iOLcBMBCoJw" processName="TOSCISPM.TOS_FILE_RECV"/>
   </sca:component>

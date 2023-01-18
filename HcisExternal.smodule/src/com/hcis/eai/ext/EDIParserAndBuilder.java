@@ -1,5 +1,8 @@
 package com.hcis.eai.ext;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
@@ -157,6 +160,26 @@ public class EDIParserAndBuilder {
 		System.arraycopy(bytes, offset, readBytes, 0, len);
 	    return readBytes;
 	}	
-	
+    
+    /**
+     * Byte Stream 을 Record 길이 단위로 
+     * 개행문자 UNIX(0A) 삽입
+     * 참고 MAC(0D) , WIN(0D0A)
+     * 
+     * @param bytes
+     * @param recordLength
+     * @return
+     * @throws IOException
+     */
+    public byte[] chunkRecord(byte[] bytes, int recordLength) throws IOException  {    	
+    	int recordCount = bytes.length / recordLength;
+    	ByteArrayInputStream  in = new ByteArrayInputStream(bytes);
+    	ByteArrayOutputStream out = new ByteArrayOutputStream();    		
+		for(int i=0;i<recordCount;i++) {
+			out.write(in.readNBytes(recordLength));
+			out.write(0x0a);		// \n
+		}
+		return out.toByteArray();
+	}		
 
 }

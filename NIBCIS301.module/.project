@@ -3,8 +3,8 @@
 	<name>NIBCIS301.module</name>
 	<comment></comment>
 	<projects>
-		<project>HcisExternal.smodule</project>
 		<project>CSPI_Library</project>
+		<project>HcisExternal.smodule</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

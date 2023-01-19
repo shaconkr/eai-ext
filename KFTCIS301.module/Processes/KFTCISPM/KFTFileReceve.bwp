@@ -2,7 +2,7 @@
 <bpws:process exitOnStandardFault="no" name="KFTCISPM.KFTFileReceve"
     suppressJoinFailure="yes"
     targetNamespace="http://xmlns.example.com/20230111125022"
-    xmlns:HCIS="http://hcis.ehyundai.com"
+    xmlns:HCIS="http://shacon.kr/202301"
     xmlns:bpws="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
     xmlns:info="http://www.tibco.com/bw/process/info"
     xmlns:ns="http://www.tibco.com/pe/EngineTypes"

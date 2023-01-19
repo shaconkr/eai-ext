@@ -34,7 +34,8 @@ Import-Package: com.google.common.base,
  org.apache.commons.lang3,
  org.beanio,
  org.beanio.internal.util,
- org.dom4j;version="1.7.0"
+ org.dom4j;version="1.7.0",
+ org.slf4j;version="1.8.1100"
 TIBCO-BW-Edition: bwe
 Require-Capability: com.tibco.bw.model; filter:="(name=bwext)",
  com.tibco.bw.module; filter:="(&(name=HcisCommon.smodule)(version=1.0.0))",

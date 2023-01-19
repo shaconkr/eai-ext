@@ -1,13 +1,10 @@
 package com.hcis.eai.ext.kft;
 
-import com.google.common.base.Joiner;
-import com.google.common.base.Strings;
-import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
-import com.hcis.eai.ext.EDIParserAndBuilder;
-
-import kr.shacon.util.CastUtils;
+import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Map;
 
 import org.beanio.Marshaller;
 import org.beanio.StreamFactory;
@@ -15,11 +12,10 @@ import org.beanio.internal.util.IOUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.InputStream;
-import java.io.UnsupportedEncodingException;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Map;
+import com.google.common.base.Strings;
+import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.Maps;
+import com.hcis.eai.ext.EDIParserAndBuilder;
 
 public class KftcFileTransfer extends EDIParserAndBuilder  {
     private static final Logger LOGGER = LoggerFactory.getLogger(KftcFileTransfer.class);

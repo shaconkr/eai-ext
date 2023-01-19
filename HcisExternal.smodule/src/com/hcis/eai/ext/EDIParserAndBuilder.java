@@ -144,7 +144,7 @@ public class EDIParserAndBuilder {
 	 * 전체전문길이 설정
 	 * @param bytes 
 	 * @param len       전체전문길이 항목의 길이
-	 * @param flag      포함여부
+	 * @param flag      포함하지 않음 true
 	 * @param encoding
 	 * @return
 	 * @throws UnsupportedEncodingException

@@ -9,34 +9,30 @@
       <property name="recordTerminator" value="\r\n"/>
     </parser>
     <record name="JNI_InReq" class="java.util.LinkedHashMap">
-      <segment name="bizHeader" minOccurs="1" maxOccurs="1" class="map">
-        <field kor="거래코드" name="trdCd" position="0" length="4"/>
-        <field kor="전문코드" name="tgrmCd" position="4" length="5"/>
-        <field kor="전문번호" name="tgrmNo" position="9" length="8"/>
-        <field kor="전문전송일시" name="tgrmSendDtm" position="17" length="16"/>
-        <field kor="테스트여부" name="testYn" position="33" length="1"/>
-        <field kor="전문유형" name="tgrmType" position="34" length="1"/>
-        <field kor="예비값" name="prepVal" position="35" length="19"/>
-        <field kor="전문길이" name="tgrmLen" position="54" length="6"/>
-        <field kor="응답코드" name="respCd" position="60" length="4"/>
-      </segment>
-      <segment name="bizBody" minOccurs="1" maxOccurs="1" class="map">
-        <field kor="발송번호" name="senmNo" position="64" length="24"/>
-        <field kor="카드수령일자" name="crdRcvnDt" position="88" length="8"/>
-        <field kor="카드수령자생년월일" name="crdRcvnrBymd" position="96" length="6"/>
-        <field kor="카드수령자성별구분코드" name="crdRcvnrSexGbcd" position="102" length="1"/>
-        <field kor="예비값1" name="prepVal1" position="103" length="6"/>
-        <field kor="카드수령자명" name="crdRcvnrNm" position="109" length="20"/>
-        <field kor="본인관계구분코드" name="selfRelGbcd" position="129" length="2"/>
-        <field kor="반송사유구분코드" name="sndbRsnGbcd" position="131" length="2"/>
-        <field kor="개인정보조회동의여부1" name="psnInfQryAgrYn1" position="133" length="1"/>
-        <field kor="개인정보수집이용필수동의여부" name="psnInfGthrUtlzMndrAgrYn" position="134" length="1"/>
-        <field kor="개인정보수집이용선택동의여부" name="psnInfGthrUtlzChocAgrYn" position="135" length="1"/>
-        <field kor="개인정보제공필수동의여부" name="psnInfOffrMndrAgrYn" position="136" length="1"/>
-        <field kor="개인정보조회동의여부2" name="psnInfQryAgrYn2" position="137" length="1"/>
-        <field kor="배달사원명" name="dlvryEmpNm" position="138" length="20"/>
-        <field kor="예비값2" name="prepVal2" position="158" length="102"/>
-      </segment>
+      <field kor="거래코드" name="trdCd" position="0" length="4"/>
+      <field kor="전문코드" name="tgrmCd" position="4" length="5"/>
+      <field kor="전문번호" name="tgrmNo" position="9" length="8"/>
+      <field kor="전문전송일시" name="tgrmSendDtm" position="17" length="16"/>
+      <field kor="테스트여부" name="testYn" position="33" length="1"/>
+      <field kor="전문유형" name="tgrmType" position="34" length="1"/>
+      <field kor="예비값" name="prepVal" position="35" length="19"/>
+      <field kor="전문길이" name="tgrmLen" position="54" length="6"/>
+      <field kor="응답코드" name="respCd" position="60" length="4"/>
+      <field kor="발송번호" name="senmNo" position="64" length="24"/>
+      <field kor="카드수령일자" name="crdRcvnDt" position="88" length="8"/>
+      <field kor="카드수령자생년월일" name="crdRcvnrBymd" position="96" length="6"/>
+      <field kor="카드수령자성별구분코드" name="crdRcvnrSexGbcd" position="102" length="1"/>
+      <field kor="예비값1" name="prepVal1" position="103" length="6"/>
+      <field kor="카드수령자명" name="crdRcvnrNm" position="109" length="20"/>
+      <field kor="본인관계구분코드" name="selfRelGbcd" position="129" length="2"/>
+      <field kor="반송사유구분코드" name="sndbRsnGbcd" position="131" length="2"/>
+      <field kor="개인정보조회동의여부1" name="psnInfQryAgrYn1" position="133" length="1"/>
+      <field kor="개인정보수집이용필수동의여부" name="psnInfGthrUtlzMndrAgrYn" position="134" length="1"/>
+      <field kor="개인정보수집이용선택동의여부" name="psnInfGthrUtlzChocAgrYn" position="135" length="1"/>
+      <field kor="개인정보제공필수동의여부" name="psnInfOffrMndrAgrYn" position="136" length="1"/>
+      <field kor="개인정보조회동의여부2" name="psnInfQryAgrYn2" position="137" length="1"/>
+      <field kor="배달사원명" name="dlvryEmpNm" position="138" length="20"/>
+      <field kor="예비값2" name="prepVal2" position="158" length="102"/>
     </record>
   </stream>
 </beanio>

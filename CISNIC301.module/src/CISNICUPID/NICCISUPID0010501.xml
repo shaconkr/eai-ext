@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beanio xmlns="http://www.beanio.org/2012/03" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.beanio.org/2012/03 http://www.beanio.org/2012/03/mapping.xsd">
+  <typeHandler type="java.util.Date" class="org.beanio.types.DateTypeHandler">
+    <property name="pattern" value="yyyyMMddhhmm"/>
+  </typeHandler>
+  <stream kor="" name="NICCISUPID0010501_OutRes" format="fixedlength">
+    <parser>
+      <property name="recordTerminator" value="\r\n"/>
+    </parser>
+    <record name="NIC_OutRes" class="java.util.LinkedHashMap">
+      <field kor="거래코드" name="trdCd" position="0" length="9"/>
+      <field kor="전문채널코드" name="tgrmChCd" position="9" length="9"/>
+      <field kor="전문종별코드" name="tgrmSubCCd" position="18" length="4" justify="right" padding="0"/>
+      <field kor="거래구분코드" name="trdGbcd" position="22" length="5"/>
+      <field kor="송수신구분" name="tnrGb" position="27" length="1"/>
+      <field kor="단말기정보구분코드" name="teInfGbcd" position="28" length="3"/>
+      <field kor="응답코드" name="respCd" position="31" length="4"/>
+      <field kor="사용자ID" name="userId" position="35" length="9"/>
+      <field kor="기관전문관리번호" name="istnTgrmMngNo" position="44" length="10" justify="right" padding="0"/>
+      <field kor="기관전문전송시간" name="istnTgrmSendTime" position="54" length="14" justify="right" padding="0"/>
+      <field kor="NICE전문관리번호" name="niceTgrmMngNo" position="68" length="10"/>
+      <field kor="NICE전문전송시간" name="niceTgrmSendTime" position="78" length="14" justify="right" padding="0"/>
+      <field kor="공백값" name="nullVal" position="92" length="17"/>
+      <field kor="업무구분코드" name="tskGbcd" position="109" length="2" justify="right" padding="0"/>
+      <field kor="등록구분코드" name="regGbcd" position="111" length="2" justify="right" padding="0"/>
+      <field kor="직업코드" name="jobCd" position="113" length="2" justify="right" padding="0"/>
+      <field kor="주민등록번호" name="rrno" position="115" length="13" justify="right" padding="0"/>
+      <field kor="고객명" name="custNm" position="128" length="20"/>
+      <field kor="사업자등록번호" name="rgno" position="148" length="10" justify="right" padding="0"/>
+      <field kor="사업자명" name="bscmNm" position="158" length="40"/>
+      <field kor="발생일자" name="ocrnDt" position="198" length="8" justify="right" padding="0"/>
+      <field kor="해제일자" name="clerDt" position="206" length="8" justify="right" padding="0"/>
+      <field kor="연체금액" name="odueAmt" position="214" length="8" justify="right" padding="0"/>
+      <field kor="사유코드" name="rsnCd" position="222" length="4" justify="right" padding="0"/>
+      <field kor="카드회원번호" name="crdMemNo" position="226" length="17"/>
+      <field kor="공백값1" name="nullVal1" position="243" length="18"/>
+      <field kor="해제사유코드" name="clerRsnCd" position="261" length="2"/>
+      <field kor="동의서구분코드" name="agrmtGbcd" position="263" length="1" justify="right" padding="0"/>
+      <field kor="공백값2" name="nullVal2" position="264" length="15"/>
+    </record>
+  </stream>
+</beanio>

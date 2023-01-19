@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jndi:namedResource xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:NICCISUPID0010501="http://schema.hcis.com/xsd/NICCISUPID0010501" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" name="CISNICUPID/CISNICUPID0010501.NICCISUPID0010501_OutRes" type="dataformat:DataFormat">
+  <jndi:imports importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/NICCISUPID0010501_OutRes.xsd" namespace="http://schema.hcis.com/xsd/NICCISUPID0010501"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="NICCISUPID0010501:main" lineLength="279" fieldOffsetsStr="trdCd(0,9)&#xA;tgrmChCd(9,18)&#xA;tgrmSubCCd(18,22)&#xA;trdGbcd(22,27)&#xA;tnrGb(27,28)&#xA;teInfGbcd(28,31)&#xA;respCd(31,35)&#xA;userId(35,44)&#xA;istnTgrmMngNo(44,54)&#xA;istnTgrmSendTime(54,68)&#xA;niceTgrmMngNo(68,78)&#xA;niceTgrmSendTime(78,92)&#xA;nullVal(92,109)&#xA;tskGbcd(109,111)&#xA;regGbcd(111,113)&#xA;jobCd(113,115)&#xA;rrno(115,128)&#xA;custNm(128,148)&#xA;rgno(148,158)&#xA;bscmNm(158,198)&#xA;ocrnDt(198,206)&#xA;clerDt(206,214)&#xA;odueAmt(214,222)&#xA;rsnCd(222,226)&#xA;crdMemNo(226,243)&#xA;nullVal1(243,261)&#xA;clerRsnCd(261,263)&#xA;agrmtGbcd(263,264)&#xA;nullVal2(264,279)">
+    <fieldOffsets kor="거래코드" type="string" name="trdCd" start="0" end="9"/>
+    <fieldOffsets kor="전문채널코드" type="string" name="tgrmChCd" start="9" end="18"/>
+    <fieldOffsets kor="전문종별코드" type="long" name="tgrmSubCCd" start="18" end="22"/>
+    <fieldOffsets kor="거래구분코드" type="string" name="trdGbcd" start="22" end="27"/>
+    <fieldOffsets kor="송수신구분" type="string" name="tnrGb" start="27" end="28"/>
+    <fieldOffsets kor="단말기정보구분코드" type="string" name="teInfGbcd" start="28" end="31"/>
+    <fieldOffsets kor="응답코드" type="string" name="respCd" start="31" end="35"/>
+    <fieldOffsets kor="사용자ID" type="string" name="userId" start="35" end="44"/>
+    <fieldOffsets kor="기관전문관리번호" type="long" name="istnTgrmMngNo" start="44" end="54"/>
+    <fieldOffsets kor="기관전문전송시간" type="long" name="istnTgrmSendTime" start="54" end="68"/>
+    <fieldOffsets kor="NICE전문관리번호" type="string" name="niceTgrmMngNo" start="68" end="78"/>
+    <fieldOffsets kor="NICE전문전송시간" type="long" name="niceTgrmSendTime" start="78" end="92"/>
+    <fieldOffsets kor="공백값" type="string" name="nullVal" start="92" end="109"/>
+    <fieldOffsets kor="업무구분코드" type="long" name="tskGbcd" start="109" end="111"/>
+    <fieldOffsets kor="등록구분코드" type="long" name="regGbcd" start="111" end="113"/>
+    <fieldOffsets kor="직업코드" type="long" name="jobCd" start="113" end="115"/>
+    <fieldOffsets kor="주민등록번호" type="long" name="rrno" start="115" end="128"/>
+    <fieldOffsets kor="고객명" type="string" name="custNm" start="128" end="148"/>
+    <fieldOffsets kor="사업자등록번호" type="long" name="rgno" start="148" end="158"/>
+    <fieldOffsets kor="사업자명" type="string" name="bscmNm" start="158" end="198"/>
+    <fieldOffsets kor="발생일자" type="long" name="ocrnDt" start="198" end="206"/>
+    <fieldOffsets kor="해제일자" type="long" name="clerDt" start="206" end="214"/>
+    <fieldOffsets kor="연체금액" type="long" name="odueAmt" start="214" end="222"/>
+    <fieldOffsets kor="사유코드" type="long" name="rsnCd" start="222" end="226"/>
+    <fieldOffsets kor="카드회원번호" type="string" name="crdMemNo" start="226" end="243"/>
+    <fieldOffsets kor="공백값1" type="string" name="nullVal1" start="243" end="261"/>
+    <fieldOffsets kor="해제사유코드" type="string" name="clerRsnCd" start="261" end="263"/>
+    <fieldOffsets kor="동의서구분코드" type="long" name="agrmtGbcd" start="263" end="264"/>
+    <fieldOffsets kor="공백값2" type="string" name="nullVal2" start="264" end="279"/>
+  </jndi:configuration>
+</jndi:namedResource>

@@ -140,8 +140,17 @@ public class EDIParserAndBuilder {
 		return gson.toJson(Maps.newLinkedHashMap(ImmutableMap.<String, Object>builder().putAll(map1).putAll(map2).build()));		
 	}
 	
-	protected byte[] setTotalLength(byte[] bytes, int len, String encoding) throws UnsupportedEncodingException {
-		int byteLen = bytes.length - len;
+	/**
+	 * 전체전문길이 설정
+	 * @param bytes 
+	 * @param len       전체전문길이 항목의 길이
+	 * @param flag      포함여부
+	 * @param encoding
+	 * @return
+	 * @throws UnsupportedEncodingException
+	 */
+	protected byte[] setTotalLength(byte[] bytes, int len, boolean flag, String encoding) throws UnsupportedEncodingException {		
+		int byteLen = (flag) ? bytes.length - len : bytes.length;		
         byte[] totalLength = String.format("%0"+len +"d", byteLen).getBytes(encoding);
         System.arraycopy(totalLength, 0, bytes, 0, totalLength.length);	
         return bytes;

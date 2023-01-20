@@ -3,7 +3,6 @@
 	<name>TOSCIS301.module</name>
 	<comment></comment>
 	<projects>
-		<project>HcisExternal.smodule</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CISTOSPMMZ0140401="http://schema.hcis.com/xsd/CISTOSPMMZ0140401" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmi:id="_rNrMwJxfEe2Xs_MkOHaDkA" name="CISTOSPMMZ.CISTOSPMMZ0140401.CISTOSPMMZ0140401_OutReq_bizHeader" type="dataformat:DataFormat">
+  <imports xmi:id="_rNrMwZxfEe2Xs_MkOHaDkA" importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/CISTOSPMMZ0140401_OutReq_bizHeader.xsd" namespace="http://schema.hcis.com/xsd/CISTOSPMMZ0140401"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" xmi:id="_rNrMwpxfEe2Xs_MkOHaDkA" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="CISTOSPMMZ0140401:main" lineLength="120" fieldOffsetsStr="trCode(0,12)&#xA;svcGb(12,15)&#xA;sdFlag(15,16)&#xA;sdId(16,26)&#xA;rvId(26,36)&#xA;msgId(36,48)&#xA;cpnyCd(48,56)&#xA;bnkCd(56,58)&#xA;ediCd(58,62)&#xA;jobGb(62,65)&#xA;ediNo(65,71)&#xA;sdDate(71,79)&#xA;sdTime(79,85)&#xA;retCd(85,89)&#xA;spareArea(89,120)">
+    <fieldOffsets xmi:id="_rNrMw5xfEe2Xs_MkOHaDkA" name="trCode" end="12" kor="식별코드" type="string"/>
+    <fieldOffsets xmi:id="_rNrMxJxfEe2Xs_MkOHaDkA" name="svcGb" start="12" end="15" kor="서비스구분" type="string"/>
+    <fieldOffsets xmi:id="_rNrMxZxfEe2Xs_MkOHaDkA" name="sdFlag" start="15" end="16" kor="송신자FLAG" type="string"/>
+    <fieldOffsets xmi:id="_rNrMxpxfEe2Xs_MkOHaDkA" name="sdId" start="16" end="26" kor="송신자ID" type="string"/>
+    <fieldOffsets xmi:id="_rNrMx5xfEe2Xs_MkOHaDkA" name="rvId" start="26" end="36" kor="수신자ID" type="string"/>
+    <fieldOffsets xmi:id="_rNrMyJxfEe2Xs_MkOHaDkA" name="msgId" start="36" end="48" kor="메시지ID" type="string"/>
+    <fieldOffsets xmi:id="_rNrMyZxfEe2Xs_MkOHaDkA" name="cpnyCd" start="48" end="56" kor="고객코드" type="string"/>
+    <fieldOffsets xmi:id="_rNrMypxfEe2Xs_MkOHaDkA" name="bnkCd" start="56" end="58" kor="은행코드" type="string"/>
+    <fieldOffsets xmi:id="_rNrMy5xfEe2Xs_MkOHaDkA" name="ediCd" start="58" end="62" kor="전문코드" type="string"/>
+    <fieldOffsets xmi:id="_rNrMzJxfEe2Xs_MkOHaDkA" name="jobGb" start="62" end="65" kor="업무구분" type="string"/>
+    <fieldOffsets xmi:id="_rNrMzZxfEe2Xs_MkOHaDkA" name="ediNo" start="65" end="71" kor="전문번호" type="string"/>
+    <fieldOffsets xmi:id="_rNrMzpxfEe2Xs_MkOHaDkA" name="sdDate" start="71" end="79" kor="전송일자" type="string"/>
+    <fieldOffsets xmi:id="_rNrMz5xfEe2Xs_MkOHaDkA" name="sdTime" start="79" end="85" kor="전송시간" type="string"/>
+    <fieldOffsets xmi:id="_rNrM0JxfEe2Xs_MkOHaDkA" name="retCd" start="85" end="89" kor="응답코드" type="string"/>
+    <fieldOffsets xmi:id="_rNrM0ZxfEe2Xs_MkOHaDkA" name="spareArea" start="89" end="120" kor="예비영역" type="string"/>
+  </jndi:configuration>
+</jndi:namedResource>

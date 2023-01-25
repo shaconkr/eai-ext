@@ -2,8 +2,7 @@
     <element name="root">
         <complexType>
             <sequence>
-                <element name="bizHeader" type="ns:CISTOSPMMZ0140401_OutReq_Header"/>
-                <element name="bizBody" type="ns:CISTOSPMMZ0140401_OutReq_Body"/>
+                <element name="data" type="ns:CISTOSPMMZ0140401_OutReq"/>
             </sequence>
         </complexType>
     </element>

@@ -1,10 +1,14 @@
 package com.hcis.eai.ext;
 
+import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -189,6 +193,14 @@ public class EDIParserAndBuilder {
 			out.write(0x0a);		// \n
 		}
 		return out.toByteArray();
-	}		
+	}	
+    
+    @SuppressWarnings("unchecked")
+	protected Map<String, Object> loadJson(String jsonFile) throws IOException {
+		ClassLoader loader = Thread.currentThread().getContextClassLoader();
+		InputStream is = loader.getResourceAsStream(jsonFile);		
+	    String json =  new String(is.readAllBytes(), StandardCharsets.UTF_8);
+	    return gson.fromJson(json, Map.class);
+    }
 
 }

@@ -244,5 +244,23 @@
 			<isOverride>false</isOverride>
 			<useLookupValue>false</useLookupValue>
 		</globalVariable>
+		<globalVariable>
+			<name>/SECURITY/TOS/TOS__USER_ID</name>
+			<value>HELP518</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>/SECURITY/TOS/TOS_PWD</name>
+			<value>1111</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
 	</globalVariables>
 </repository>

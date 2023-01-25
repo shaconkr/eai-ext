@@ -1,0 +1,28 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:e="http://shacon.kr/xsd" xmlns:ns="http://schema.hcis.com/xsd/CISTOSPMMZ0140401" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://schema.hcis.com/xsd/CISTOSPMMZ0140401">
+    <element name="root">
+        <complexType>
+            <sequence>
+                <element e:kor="모계좌번호" e:length="15" e:padder="SpaceRight" name="parAcno" nillable="true" type="string"/>
+                <element e:kor="비밀번호" e:length="8" e:padder="SpaceRight" name="pwd" nillable="true" type="string"/>
+                <element e:kor="이중암호" e:length="6" e:padder="SpaceRight" name="encodingCd" nillable="true" type="string"/>
+                <element e:kor="미사용1" e:length="2" e:padder="SpaceRight" name="noUse1" nillable="true" type="string"/>
+                <element e:kor="이체금액" e:length="13" e:padder="SpaceRight" name="trsfAmt" nillable="true" type="string"/>
+                <element e:kor="미사용2" e:length="1" e:padder="SpaceRight" name="noUse2" nillable="true" type="string"/>
+                <element e:kor="미사용3" e:length="13" e:padder="SpaceRight" name="noUse3" nillable="true" type="string"/>
+                <element e:kor="조회계좌은행코드" e:length="2" e:padder="SpaceRight" name="qryAcntBnkCd" nillable="true" type="string"/>
+                <element e:kor="조회계좌번호" e:length="15" e:padder="SpaceRight" name="qryAcno" nillable="true" type="string"/>
+                <element e:kor="수수료" e:length="9" e:padder="SpaceRight" name="cmis" nillable="true" type="string"/>
+                <element e:kor="미사용4" e:length="16" e:padder="SpaceRight" name="noUse4" nillable="true" type="string"/>
+                <element e:kor="조회계좌성명" e:length="16" e:padder="SpaceRight" name="qryAcntNm" nillable="true" type="string"/>
+                <element e:kor="미사용5" e:length="6" e:padder="SpaceRight" name="noUse5" nillable="true" type="string"/>
+                <element e:kor="실명번호" e:length="13" e:padder="SpaceRight" name="juminBusnNo" nillable="true" type="string"/>
+                <element e:kor="예비영역1" e:length="39" e:padder="SpaceRight" name="spareArea1" nillable="true" type="string"/>
+                <element e:kor="은행전문번호" e:length="6" e:padder="SpaceRight" name="bnkEdiNo" nillable="true" type="string"/>
+                <element e:kor="자통법적용구분" e:length="1" e:padder="SpaceRight" name="jatongApplYn" nillable="true" type="string"/>
+                <element e:kor="공통부은행코드" e:length="3" e:padder="SpaceRight" name="commBnkCd" nillable="true" type="string"/>
+                <element e:kor="개별부은행코드" e:length="3" e:padder="SpaceRight" name="indiBnkCd" nillable="true" type="string"/>
+                <element e:kor="예비영역2" e:length="43" e:padder="SpaceRight" name="spareArea2" nillable="true" type="string"/>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

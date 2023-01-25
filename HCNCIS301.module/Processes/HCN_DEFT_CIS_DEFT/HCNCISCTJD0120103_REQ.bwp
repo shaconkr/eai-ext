@@ -51,6 +51,64 @@
     xmlns:sca-bpel="http://docs.oasis-open.org/ns/opencsa/sca-bpel/200801"
     xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"
     xmlns:tibprop="http://ns.tibco.com/bw/property" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <tibex:VariableDescriptor type="MemorySaving">
+        <task name="flow">
+            <endingVariables>
+                <variable>OUT_REQ</variable>
+                <variable>ReadTCPData</variable>
+                <variable>EDItoJSON</variable>
+            </endingVariables>
+        </task>
+        <task name="ReadTCPData">
+            <endingVariables>
+                <variable>ReadTCPData-input</variable>
+                <variable>TCPReceiver</variable>
+            </endingVariables>
+        </task>
+        <task name="InvokeRESTAPI">
+            <endingVariables>
+                <variable>InvokeRESTAPI-input</variable>
+                <variable>InvokeRESTAPI</variable>
+            </endingVariables>
+        </task>
+        <task name="inReqLog">
+            <endingVariables>
+                <variable>inReqLog-input</variable>
+            </endingVariables>
+        </task>
+        <task name="transLog">
+            <endingVariables>
+                <variable>transLog-input</variable>
+            </endingVariables>
+        </task>
+        <task name="outReqLog">
+            <endingVariables>
+                <variable>outReqLog-input</variable>
+            </endingVariables>
+        </task>
+        <task name="IN_REQ">
+            <endingVariables>
+                <variable>IN_REQ-input</variable>
+            </endingVariables>
+        </task>
+        <task name="OUT_REQ">
+            <endingVariables>
+                <variable>OUT_REQ-input</variable>
+                <variable>HeaderEnvelope</variable>
+            </endingVariables>
+        </task>
+        <task name="EDItoJSON">
+            <endingVariables>
+                <variable>EDItoJSON-input</variable>
+                <variable>IN_REQ</variable>
+            </endingVariables>
+        </task>
+        <task name="HeaderEnvelope">
+            <endingVariables>
+                <variable>HeaderEnvelope-input</variable>
+            </endingVariables>
+        </task>
+    </tibex:VariableDescriptor>
     <tibex:Types>
         <xs:schema attributeFormDefault="unqualified"
             elementFormDefault="qualified"
@@ -1467,11 +1525,17 @@
             <complexType name="MutTypeMethodParameters">
                 <sequence>
                     <element form="unqualified" maxOccurs="1"
-                        minOccurs="1" name="ediString" type="string"/>
+                        minOccurs="1" name="projPath" type="string"/>
                     <element form="unqualified" maxOccurs="1"
-                        minOccurs="1" name="ver" type="int"/>
+                        minOccurs="1" name="processName" type="string"/>
                     <element form="unqualified" maxOccurs="1"
-                        minOccurs="1" name="dirction" type="string"/>
+                        minOccurs="1" name="msgType" type="string"/>
+                    <element form="unqualified" maxOccurs="1"
+                        minOccurs="1" name="ediBytes" type="base64Binary"/>
+                    <element form="unqualified" maxOccurs="1"
+                        minOccurs="1" name="encoding" type="string"/>
+                    <element form="unqualified" maxOccurs="1"
+                        minOccurs="1" name="xml" type="string"/>
                 </sequence>
             </complexType>
             <element name="JavaInvokeActivityInput" type="tns:MutTypeMethodInputRoot"/>
@@ -1547,6 +1611,13 @@
                     <element maxOccurs="1" minOccurs="0" ref="Q1:InvocationException"/>
                 </choice>
             </complexType>
+        </schema>
+        <schema elementFormDefault="qualified"
+            targetNamespace="http://www.tibco.com/tnt/utilitySchema"
+            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.tibco.com/tnt/utilitySchema">
+            <simpleType name="nativeJavaObjectKey">
+                <restriction base="string"/>
+            </simpleType>
         </schema>
     </tibex:Types>
     <tibex:ProcessInfo callable="false" createdBy="javal"
@@ -2528,19 +2599,25 @@
                                 <properties name="config" xsi:type="activityconfig:EMFProperty">
                                     <type href="http://ns.tibco.com/bw/palette/java#//JavaMethod"/>
                                     <value
-                                    className="com.hcis.eai.HCISHelper"
+                                    className="com.hcis.eai.module.HCISHelper"
                                     constructDeclaredClass="true"
                                     icon="HcisCommon.smodule\Resources\icons\binary-file-48.png"
                                     isNew="true"
                                     isNewActivity="true"
-                                    methodName="toJSON"
+                                    methodName="EDIbytesToJson"
                                     methodReturn="string" xsi:type="java:JavaMethod">
                                     <exceptionTypes>java.lang.Exception</exceptionTypes>
                                     <methodParameter
-                                    paramName="ediString" paramType="string"/>
-                                    <methodParameter paramName="ver" paramType="int"/>
+                                    paramName="projPath" paramType="string"/>
                                     <methodParameter
-                                    paramName="dirction" paramType="string"/>
+                                    paramName="processName" paramType="string"/>
+                                    <methodParameter
+                                    paramName="msgType" paramType="string"/>
+                                    <methodParameter
+                                    paramName="ediBytes" paramType="byte[]"/>
+                                    <methodParameter
+                                    paramName="encoding" paramType="string"/>
+                                    <methodParameter paramName="xml" paramType="string"/>
                                     </value>
                                 </properties>
                             </activityConfig>

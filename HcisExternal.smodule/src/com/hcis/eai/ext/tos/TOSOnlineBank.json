@@ -1,32 +1,76 @@
 {
-	"TEST":{
-	 {"03":{"bnkCd":"03","rvId":"HELP018", "cpnyCd":"00000049", "motherAccntNo":"05902234601017 ", "motherAccntPwd":"        ", "orgCd":"          "}}, //기업
-	 {"04":{"bnkCd":"04","rvId":"HELP017", "cpnyCd":"00001327", "motherAccntNo":"75480101362348 ", "motherAccntPwd":"        ", "orgCd":"          "}}, //국민
-	 {"05":{"bnkCd":"05","rvId":"HELP008", "cpnyCd":"02055TOT", "motherAccntNo":"611016579428   ", "motherAccntPwd":"        ", "orgCd":"6510202055"}}, //외환
-	 {"10":{"bnkCd":"10","rvId":"HELP037", "cpnyCd":"10039   ", "motherAccntNo":"114301035592   ", "motherAccntPwd":"        ", "orgCd":"          "}}, //농협
-	 {"11":{"bnkCd":"11","rvId":"HELP037", "cpnyCd":"10039   ", "motherAccntNo":"114301035592   ", "motherAccntPwd":"        ", "orgCd":"1105736   "}}, //농협(중앙회)
-	 {"12":{"bnkCd":"12","rvId":"HELP037", "cpnyCd":"10039   ", "motherAccntNo":"114301035592   ", "motherAccntPwd":"        ", "orgCd":"1105736   "}}, //농협(조합)
-	 {"20":{"bnkCd":"20","rvId":"HELP003", "cpnyCd":"00012206", "motherAccntNo":"1006500065360  ", "motherAccntPwd":"        ", "orgCd":"1010350   "}}, //우리    
-	 {"21":{"bnkCd":"21","rvId":"HEDRCHB", "cpnyCd":"D636952 ", "motherAccntNo":"39801025317    ", "motherAccntPwd":"0000    ", "orgCd":"          "}}, //조흥    
-	 {"23":{"bnkCd":"23","rvId":"HELP039", "cpnyCd":"0002802 ", "motherAccntNo":"86010013687    ", "motherAccntPwd":"        ", "orgCd":"          "}}, //제일
-	 {"26":{"bnkCd":"26","rvId":"HEDRCHB", "cpnyCd":"D636952 ", "motherAccntNo":"39801025317    ", "motherAccntPwd":"        ", "orgCd":"          "}}, //신한
-	 {"27":{"bnkCd":"27","rvId":"HELP026", "cpnyCd":"96227262", "motherAccntNo":"12052423255    ", "motherAccntPwd":"        ", "orgCd":"96227262  "}}, //씨티
-	 {"32":{"bnkCd":"32","rvId":"HELP032", "cpnyCd":"P777111 ", "motherAccntNo":"103010040937   ", "motherAccntPwd":"        ", "orgCd":"P034008   "}}, //부산
-	 {"81":{"bnkCd":"81","rvId":"HELP036", "cpnyCd":"BKDR518 ", "motherAccntNo":"29489001970105 ", "motherAccntPwd":"        ", "orgCd":"BKDR518   "}}  //하나
+	"test":{
+	 "03":{"bnkCd":"03","rvId":"HELP018", "cpnyCd":"00000049", "motherAccntNo":"05902234601017 ", "motherAccntPwd":"        ", "orgCd":"          ", "bnkNm":"기업"},
+	 "04":{"bnkCd":"04","rvId":"HELP017", "cpnyCd":"00001327", "motherAccntNo":"75480101362348 ", "motherAccntPwd":"        ", "orgCd":"          ", "bnkNm":"국민"},
+	 "05":{"bnkCd":"05","rvId":"HELP008", "cpnyCd":"02055TOT", "motherAccntNo":"611016579428   ", "motherAccntPwd":"        ", "orgCd":"6510202055", "bnkNm":"외환"},
+	 "10":{"bnkCd":"10","rvId":"HELP037", "cpnyCd":"10039   ", "motherAccntNo":"114301035592   ", "motherAccntPwd":"        ", "orgCd":"          ", "bnkNm":"농협"},
+	 "11":{"bnkCd":"11","rvId":"HELP037", "cpnyCd":"10039   ", "motherAccntNo":"114301035592   ", "motherAccntPwd":"        ", "orgCd":"1105736   ", "bnkNm":"농협(중앙회)"},
+	 "12":{"bnkCd":"12","rvId":"HELP037", "cpnyCd":"10039   ", "motherAccntNo":"114301035592   ", "motherAccntPwd":"        ", "orgCd":"1105736   ", "bnkNm":"농협(조합)"},
+	 "20":{"bnkCd":"20","rvId":"HELP003", "cpnyCd":"00012206", "motherAccntNo":"1006500065360  ", "motherAccntPwd":"        ", "orgCd":"1010350   ", "bnkNm":"우리"},
+	 "21":{"bnkCd":"21","rvId":"HEDRCHB", "cpnyCd":"D636952 ", "motherAccntNo":"39801025317    ", "motherAccntPwd":"0000    ", "orgCd":"          ", "bnkNm":"조흥"},
+	 "23":{"bnkCd":"23","rvId":"HELP039", "cpnyCd":"0002802 ", "motherAccntNo":"86010013687    ", "motherAccntPwd":"        ", "orgCd":"          ", "bnkNm":"제일"},
+	 "26":{"bnkCd":"26","rvId":"HEDRCHB", "cpnyCd":"D636952 ", "motherAccntNo":"39801025317    ", "motherAccntPwd":"        ", "orgCd":"          ", "bnkNm":"신한"},
+	 "27":{"bnkCd":"27","rvId":"HELP026", "cpnyCd":"96227262", "motherAccntNo":"12052423255    ", "motherAccntPwd":"        ", "orgCd":"96227262  ", "bnkNm":"씨티"},
+	 "32":{"bnkCd":"32","rvId":"HELP032", "cpnyCd":"P777111 ", "motherAccntNo":"103010040937   ", "motherAccntPwd":"        ", "orgCd":"P034008   ", "bnkNm":"부산"},
+	 "81":{"bnkCd":"81","rvId":"HELP036", "cpnyCd":"BKDR518 ", "motherAccntNo":"29489001970105 ", "motherAccntPwd":"        ", "orgCd":"BKDR518   ", "bnkNm":"하나"}
 	},
-	"REAL":{
-	 {"03":{"bnkCd":"03","rvId":"BKDR018", "cpnyCd":"00000049", "motherAccntNo":"05902234601017 ", "motherAccntPwd":"        ", "orgCd":"00000049  "}}, //기업
-	 {"04":{"bnkCd":"04","rvId":"BKDR017", "cpnyCd":"00001327", "motherAccntNo":"730010019692   ", "motherAccntPwd":"        ", "orgCd":"          "}}, //국민
-	 {"05":{"bnkCd":"05","rvId":"BKDR008", "cpnyCd":"02055TOT", "motherAccntNo":"10113382347    ", "motherAccntPwd":"        ", "orgCd":"6510202055"}}, //외환
-	 {"10":{"bnkCd":"10","rvId":"BKDR037", "cpnyCd":"10039   ", "motherAccntNo":"114301035592   ", "motherAccntPwd":"        ", "orgCd":"1105736   "}}, //농협
-	 {"11":{"bnkCd":"11","rvId":"BKDR037", "cpnyCd":"10039   ", "motherAccntNo":"114301035592   ", "motherAccntPwd":"        ", "orgCd":"1105736   "}}, //농협(중앙회)
-	 {"12":{"bnkCd":"12","rvId":"BKDR037", "cpnyCd":"10039   ", "motherAccntNo":"114301035592   ", "motherAccntPwd":"        ", "orgCd":"1105736   "}}, //농협(조합)
-	 {"20":{"bnkCd":"20","rvId":"BKDR003", "cpnyCd":"00012206", "motherAccntNo":"10100908701065 ", "motherAccntPwd":"        ", "orgCd":"1010350   "}}, //우리    
-	 {"21":{"bnkCd":"21","rvId":"BKDR024", "cpnyCd":"D636952 ", "motherAccntNo":"39801025317    ", "motherAccntPwd":"0000    ", "orgCd":"D636952   "}}, //조흥    
-	 {"23":{"bnkCd":"23","rvId":"BKDR039", "cpnyCd":"0002802 ", "motherAccntNo":"20020071643    ", "motherAccntPwd":"        ", "orgCd":"          "}}, //제일
-	 {"26":{"bnkCd":"26","rvId":"BKDR024", "cpnyCd":"D636952 ", "motherAccntNo":"39801025317    ", "motherAccntPwd":"0000    ", "orgCd":"D636952   "}}, //신한
-	 {"27":{"bnkCd":"27","rvId":"BKDR026", "cpnyCd":"96227262", "motherAccntNo":"12052423255    ", "motherAccntPwd":"        ", "orgCd":"96227262  "}}, //씨티
-	 {"32":{"bnkCd":"32","rvId":"BKDR032", "cpnyCd":"P777111 ", "motherAccntNo":"103010040937   ", "motherAccntPwd":"        ", "orgCd":"P034008   "}}, //부산
-	 {"81":{"bnkCd":"81","rvId":"BKDR036", "cpnyCd":"BKDR518 ", "motherAccntNo":"10091002020704 ", "motherAccntPwd":"        ", "orgCd":"BKDR518   "}}  //하나
-	}
+	"real":{
+	 "03":{"bnkCd":"03","rvId":"BKDR018", "cpnyCd":"00000049", "motherAccntNo":"05902234601017 ", "motherAccntPwd":"        ", "orgCd":"00000049  ", "bnkNm":"기업"},
+	 "04":{"bnkCd":"04","rvId":"BKDR017", "cpnyCd":"00001327", "motherAccntNo":"730010019692   ", "motherAccntPwd":"        ", "orgCd":"          ", "bnkNm":"국민"},
+	 "05":{"bnkCd":"05","rvId":"BKDR008", "cpnyCd":"02055TOT", "motherAccntNo":"10113382347    ", "motherAccntPwd":"        ", "orgCd":"6510202055", "bnkNm":"외환"},
+	 "10":{"bnkCd":"10","rvId":"BKDR037", "cpnyCd":"10039   ", "motherAccntNo":"114301035592   ", "motherAccntPwd":"        ", "orgCd":"1105736   ", "bnkNm":"농협"},
+	 "11":{"bnkCd":"11","rvId":"BKDR037", "cpnyCd":"10039   ", "motherAccntNo":"114301035592   ", "motherAccntPwd":"        ", "orgCd":"1105736   ", "bnkNm":"농협(중앙회)"},
+	 "12":{"bnkCd":"12","rvId":"BKDR037", "cpnyCd":"10039   ", "motherAccntNo":"114301035592   ", "motherAccntPwd":"        ", "orgCd":"1105736   ", "bnkNm":"농협(조합)"},
+	 "20":{"bnkCd":"20","rvId":"BKDR003", "cpnyCd":"00012206", "motherAccntNo":"10100908701065 ", "motherAccntPwd":"        ", "orgCd":"1010350   ", "bnkNm":"우리"},
+	 "21":{"bnkCd":"21","rvId":"BKDR024", "cpnyCd":"D636952 ", "motherAccntNo":"39801025317    ", "motherAccntPwd":"0000    ", "orgCd":"D636952   ", "bnkNm":"조흥"},
+	 "23":{"bnkCd":"23","rvId":"BKDR039", "cpnyCd":"0002802 ", "motherAccntNo":"20020071643    ", "motherAccntPwd":"        ", "orgCd":"          ", "bnkNm":"제일"},
+	 "26":{"bnkCd":"26","rvId":"BKDR024", "cpnyCd":"D636952 ", "motherAccntNo":"39801025317    ", "motherAccntPwd":"0000    ", "orgCd":"D636952   ", "bnkNm":"신한"},
+	 "27":{"bnkCd":"27","rvId":"BKDR026", "cpnyCd":"96227262", "motherAccntNo":"12052423255    ", "motherAccntPwd":"        ", "orgCd":"96227262  ", "bnkNm":"씨티"},
+	 "32":{"bnkCd":"32","rvId":"BKDR032", "cpnyCd":"P777111 ", "motherAccntNo":"103010040937   ", "motherAccntPwd":"        ", "orgCd":"P034008   ", "bnkNm":"부산"},
+	 "81":{"bnkCd":"81","rvId":"BKDR036", "cpnyCd":"BKDR518 ", "motherAccntNo":"10091002020704 ", "motherAccntPwd":"        ", "orgCd":"BKDR518   ", "bnkNm":"하나"}
+	},
+	"bank":{"desc":"가상계좌용",
+			"test":{"sdId":"HELP443", "info":{"20":{"bnkCd":"20","svcGb":"DY2","rvId":"HECA020","cpnyCd":"0300164 ","bnkNm":"우리은행"},
+											 "04":{"bnkCd":"04","svcGb":"VAS","rvId":"HECA004","cpnyCd":"50500985","bnkNm":"국민은행"},
+											 "26":{"bnkCd":"26","svcGb":"VAS","rvId":"HECA026","cpnyCd":"20000371","bnkNm":"신한은행"},
+											 "11":{"bnkCd":"11","svcGb":"VAS","rvId":"HECAK11","cpnyCd":"30000519","bnkNm":"농협"},
+											 "32":{"bnkCd":"32","svcGb":"VAS","rvId":"HECA032","cpnyCd":"A000009","bnkNm":"부산은행"},
+											 "31":{"bnkCd":"31","svcGb":"VAS","rvId":"HECA031","cpnyCd":"EHYUN001","bnkNm":"대구은행"}}},
+			"real":{"sdId":"BKDR443", "info":{"20":{"bnkCd":"20","svcGb":"DY2","rvId":"BKCA020","cpnyCd":"0300164","bnkNm":"우리은행"},
+											 "04":{"bnkCd":"04","svcGb":"VAS","rvId":"BKCA004","cpnyCd":"50500985","bnkNm":"국민은행"},
+											 "26":{"bnkCd":"26","svcGb":"VAS","rvId":"BKCA026","cpnyCd":"20000371","bnkNm":"신한은행"},
+											 "11":{"bnkCd":"11","svcGb":"VAS","rvId":"BKCAK11","cpnyCd":"30000519","bnkNm":"농협"},
+											 "32":{"bnkCd":"32","svcGb":"VAS","rvId":"BKCA032","cpnyCd":"A000009","bnkNm":"부산은행"},
+											 "31":{"bnkCd":"31","svcGb":"VAS","rvId":"BKCA031","cpnyCd":"EHYUN001","bnkNm":"대구은행"}}},
+	"bank2":{"desc":"계좌검증용",
+			"test":{"sdId":"HELP450", "info":{"20":{"bnkCd":"20","svcGb":"DY2","rvId":"HELP003","cpnyCd":"00022099","bnkNm":"우리은행"}}},
+			"real":{"sdId":"BKDR450", "info":{"20":{"bnkCd":"20","svcGb":"DY2","rvId":"BKDR003","cpnyCd":"00022099","bnkNm":"우리은행"}}}},
+
+	"bank3":{"desc":"즉시출금용",
+			"test":{"sdId":"HELP450", "info":{"03":{"bnkCd":"03","svcGb":"DY2","rvId":"HELP018","cpnyCd":"00000049","bnkNm":"기업"},
+											 "04":{"bnkCd":"04","svcGb":"DY2","rvId":"HELP017","cpnyCd":"00001327","bnkNm":"국민"},
+											 "05":{"bnkCd":"05","svcGb":"DY2","rvId":"HELP008","cpnyCd":"02055TOT","bnkNm":"외환"},
+											 "10":{"bnkCd":"10","svcGb":"DY2","rvId":"HELP037","cpnyCd":"10039   ","bnkNm":"농협"},
+											 "11":{"bnkCd":"11","svcGb":"DY2","rvId":"HELP037","cpnyCd":"10039   ","bnkNm":"농협(중앙회"},
+											 "12":{"bnkCd":"12","svcGb":"DY2","rvId":"HELP037","cpnyCd":"10039   ","bnkNm":"농협(조합)"},
+											 "20":{"bnkCd":"20","svcGb":"DY2","rvId":"HELP003","cpnyCd":"00012206","bnkNm":"우리"},
+											 "21":{"bnkCd":"21","svcGb":"DY2","rvId":"HEDRCHB","cpnyCd":"D636952 ","bnkNm":"조흥"},
+											 "23":{"bnkCd":"23","svcGb":"DY2","rvId":"HELP039","cpnyCd":"0002802 ","bnkNm":"제일"},
+											 "26":{"bnkCd":"26","svcGb":"DY2","rvId":"HEDRCHB","cpnyCd":"D636952 ","bnkNm":"신한"},
+											 "27":{"bnkCd":"27","svcGb":"DY2","rvId":"HELP026","cpnyCd":"96227262","bnkNm":"씨티"},
+											 "32":{"bnkCd":"32","svcGb":"DY2","rvId":"HELP032","cpnyCd":"P777111 ","bnkNm":"부산"},
+											 "81":{"bnkCd":"81","svcGb":"DY2","rvId":"HELP036","cpnyCd":"BKDR518 ","bnkNm":"하나"}}},
+			"real":{"sdId":"BKDR450", "info":{"03":{"bnkCd":"03","svcGb":"DY2","rvId":"BKDR018","cpnyCd":"00000049","bnkNm":"기업"},
+											 "04":{"bnkCd":"04","svcGb":"DY2","rvId":"BKDR017","cpnyCd":"00001327","bnkNm":"국민"},
+											 "05":{"bnkCd":"05","svcGb":"DY2","rvId":"BKDR008","cpnyCd":"02055TOT","bnkNm":"외환"},
+											 "10":{"bnkCd":"10","svcGb":"DY2","rvId":"BKDR037","cpnyCd":"10039   ","bnkNm":"농협"},
+											 "11":{"bnkCd":"11","svcGb":"DY2","rvId":"BKDR037","cpnyCd":"10039   ","bnkNm":"농협(중앙회"},
+											 "12":{"bnkCd":"12","svcGb":"DY2","rvId":"BKDR037","cpnyCd":"10039   ","bnkNm":"농협(조합)"},
+											 "20":{"bnkCd":"20","svcGb":"DY2","rvId":"BKDR003","cpnyCd":"00012206","bnkNm":"우리"},
+											 "21":{"bnkCd":"21","svcGb":"DY2","rvId":"BKDR024","cpnyCd":"D636952 ","bnkNm":"조흥"},
+											 "23":{"bnkCd":"23","svcGb":"DY2","rvId":"BKDR039","cpnyCd":"0002802 ","bnkNm":"제일"},
+											 "26":{"bnkCd":"26","svcGb":"DY2","rvId":"BKDR024","cpnyCd":"D636952 ","bnkNm":"신한"},
+											 "27":{"bnkCd":"27","svcGb":"DY2","rvId":"BKDR026","cpnyCd":"96227262","bnkNm":"씨티"},
+											 "32":{"bnkCd":"32","svcGb":"DY2","rvId":"BKDR032","cpnyCd":"P777111 ","bnkNm":"부산"},
+											 "81":{"bnkCd":"81","svcGb":"DY2","rvId":"BKDR036","cpnyCd":"BKDR518 ","bnkNm":"하나"}}}
 }

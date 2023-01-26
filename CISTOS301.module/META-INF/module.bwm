@@ -12,4 +12,7 @@
   <sca:component xmi:id="_mNGDkJYkEe2rJ7i8AUx5cg" name="ComponentTOS_FILE_RECV" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_mNGDkZYkEe2rJ7i8AUx5cg" processName="CISTOSPM.TOS_FILE_SEND"/>
   </sca:component>
+  <sca:component xmi:id="_duZpgJ02Ee2J2YQCWHlc5A" name="ComponentTOS_ONL_START" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_duZpgZ02Ee2J2YQCWHlc5A" processName="CISTOSPM.TOS_ONL_START"/>
+  </sca:component>
 </sca:composite>

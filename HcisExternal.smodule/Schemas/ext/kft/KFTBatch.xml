@@ -1,12 +1,9 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<beanio xmlns="http://www.beanio.org/2012/03"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.beanio.org/2012/03 http://www.beanio.org/2012/03/mapping.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
 
-    <typeHandler type="java.util.Date" class="org.org.beanio.types.DateTypeHandler">
-        <property name="pattern" value="yyyyMMddhhmm"/>
-    </typeHandler>
-
+<beanio xmlns="http://www.beanio.org/2012/03" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.beanio.org/2012/03 http://www.beanio.org/2012/03/mapping.xsd">
+  <typeHandler type="java.util.Date" class="org.beanio.types.DateTypeHandler">
+    <property name="pattern" value="yyyyMMddhhmm"/>
+  </typeHandler>
     <stream kor="공통부" name="M_COMMON" format="fixedlength">
         <parser>
             <property name="recordTerminator" value="\r\n"/>

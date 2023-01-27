@@ -1,16 +1,12 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<beanio xmlns="http://www.beanio.org/2012/03"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.beanio.org/2012/03 http://www.beanio.org/2012/03/mapping.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
 
-    <typeHandler type="java.util.Date" class="org.org.beanio.types.DateTypeHandler">
-        <property name="pattern" value="yyyyMMddhhmm"/>
-    </typeHandler>
-
+<beanio xmlns="http://www.beanio.org/2012/03" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.beanio.org/2012/03 http://www.beanio.org/2012/03/mapping.xsd">
+  <typeHandler type="java.util.Date" class="org.beanio.types.DateTypeHandler">
+    <property name="pattern" value="yyyyMMddhhmm"/>
+  </typeHandler>
     <stream kor="공통부" name="M_COMMON" format="fixedlength">
         <parser>
             <property name="recordTerminator" value="\r\n"/>
-            <property name="totalSize" value="120"/>
         </parser>
         <record name="record" class="map">
 	        <field kor="식별코드" name="trCode" position="0" length="12" padding=" "/>
@@ -30,7 +26,6 @@
 	        <field kor="예비영역" name="spareArea" position="89" length="31" padding=" "/>
         </record>
     </stream>
-
     <stream kor="업무개시" name="M_0800_100" format="fixedlength">
         <parser>
             <property name="recordTerminator" value="\r\n"/>
@@ -43,8 +38,16 @@
             <field kor="예비2" name="spareArea2" position="184" length="46" padding=" "/>            
         </record>
     </stream>
-
-
- 
-
+    <stream kor="업무종료" name="M_0800_300" format="fixedlength">
+        <parser>
+            <property name="recordTerminator" value="\r\n"/>
+        </parser>
+        <record name="record" class="map">
+            <field kor="예비" name="spareArea" position="0" length="174" padding=" "/>
+            <field kor="은행전문번호" name="bnkEdiNo" position="174" length="6" padding=" "/>
+            <field kor="자통법적용구분" name="jatongApplYn" position="180" length="1" padding=" "/>
+            <field kor="공통부은행코드" name="commBnkCd" position="181" length="3" padding=" "/>
+            <field kor="예비2" name="spareArea2" position="184" length="46" padding=" "/>            
+        </record>
+    </stream>
 </beanio>

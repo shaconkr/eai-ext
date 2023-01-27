@@ -13,6 +13,7 @@ public class BCCFileTransfer extends EDIParserAndBuilder {
     protected String trCode = "";
 	protected String msgCode = "";
 	protected byte[] bytes = null;
+	
 	public BCCFileTransfer(String beanioXml, String encoding) {
         super(beanioXml, encoding);
     }

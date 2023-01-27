@@ -36,6 +36,7 @@ public class KftcFileTransfer extends EDIParserAndBuilder  {
     protected String trCode = "";
 	protected String msgCode = "";
 	protected byte[] bytes = null;
+	
 	public KftcFileTransfer(String beanioXml, String encoding) {
         super(beanioXml, encoding);
     }       
@@ -212,19 +213,6 @@ public class KftcFileTransfer extends EDIParserAndBuilder  {
     public String marshall(String msgType, Map<String, Object> map) {
         Marshaller marshaller = factory.createMarshaller(msgType);
         return marshaller.marshal(map, KFTC_ENCODING).toString();
-    }
-
-    private StreamFactory newStreamFactory(String config) {
-        StreamFactory factory = StreamFactory.newInstance();
-        InputStream is = getClass().getResourceAsStream(config);
-        try {
-            factory.load(is);
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            IOUtil.closeQuietly(is);
-        }
-        return factory;
     }
 
     public String spaces(int len) {

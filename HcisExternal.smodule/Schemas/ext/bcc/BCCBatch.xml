@@ -1,12 +1,9 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<beanio xmlns="http://www.beanio.org/2012/03"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.beanio.org/2012/03 http://www.beanio.org/2012/03/mapping.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
 
-    <typeHandler type="java.util.Date" class="org.org.beanio.types.DateTypeHandler">
-        <property name="pattern" value="yyyyMMddhhmm"/>
-    </typeHandler>
-
+<beanio xmlns="http://www.beanio.org/2012/03" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.beanio.org/2012/03 http://www.beanio.org/2012/03/mapping.xsd">
+  <typeHandler type="java.util.Date" class="org.beanio.types.DateTypeHandler">
+    <property name="pattern" value="yyyyMMddhhmm"/>
+  </typeHandler>
     <stream kor="공통부" name="M_COMMON" format="fixedlength">
         <parser>
             <property name="recordTerminator" value="\r\n"/>
@@ -22,7 +19,6 @@
             <field kor="응답코드" name="respCd" position="23" length="3" />
         </record>
     </stream>
-
     <stream kor="업무개시요구" name="M_0600" format="fixedlength">
         <parser>
             <property name="recordTerminator" value="\r\n"/>
@@ -34,7 +30,6 @@
             <field kor="송신자암호" name="senderPw" position="33" length="16" />
         </record>
     </stream>
-
     <stream kor="업무개시통보" name="M_0610" format="fixedlength">
         <parser>
             <property name="recordTerminator" value="\r\n"/>
@@ -46,7 +41,6 @@
             <field kor="송신자암호" name="senderPw" position="33" length="16" />
         </record>
     </stream>
-
     <stream kor="결번전문확인" name="M_0620" format="fixedlength">
         <parser>
             <property name="recordTerminator" value="\r\n"/>
@@ -56,7 +50,6 @@
             <field kor="최종Seq번호" name="lastSeqNo" position="4" length="3" type="int"/>
         </record>
     </stream>
-
     <stream kor="파일정보관리" name="M_0630" format="fixedlength">
         <parser>
             <property name="recordTerminator" value="\r\n"/>
@@ -67,7 +60,6 @@
             <field kor="전문Byte수" name="ediByte" position="20" length="4" />
         </record>
     </stream>
-
     <stream kor="파일정보관리응답" name="M_0640" format="fixedlength">
         <parser>
             <property name="recordTerminator" value="\r\n"/>
@@ -78,7 +70,6 @@
             <field kor="전문Byte수" name="ediByte" position="46" length="4" />
         </record>
     </stream>
-
     <stream kor="결번자료내역전송" name="M_0300" format="fixedlength">
         <parser>
             <property name="recordTerminator" value="\r\n"/>
@@ -90,7 +81,6 @@
             <field kor="결번확인" name="lostChk" position="10" length="100"  trim="true"/>
         </record>
     </stream>
-
     <stream kor="걸번DATA전송" name="M_0310" format="fixedlength">
         <parser>
             <property name="recordTerminator" value="\r\n"/>
@@ -102,7 +92,6 @@
             <field kor="파일내역" name="fileSpec" position="11" length="4033"  trim="true"/>
         </record>
     </stream>
-
     <stream kor="DATA전문" name="M_0320" format="fixedlength">
         <parser>
             <property name="recordTerminator" value="\r\n"/>
@@ -114,7 +103,6 @@
             <field kor="파일내역" name="fileSpec" position="11" length="4033"  trim="true"/>
         </record>
     </stream>
-
     <stream kor="송수신Header_trailer요청" name="M_0320_HT" format="fixedlength">
         <parser>
             <property name="recordTerminator" value="\r\n"/>
@@ -126,7 +114,6 @@
             <field kor="REC데이터" name="recData" position="11" length="4059"  trim="true"/>
         </record>
     </stream>
-
     <stream kor="송수신Header_trailer응답" name="M_0330_HT" format="fixedlength">
         <parser>
             <property name="recordTerminator" value="\r\n"/>
@@ -139,6 +126,4 @@
             <field kor="REC전체건수" name="recTotal" position="30" length="19"  trim="true"/>
         </record>
     </stream>
-
-
 </beanio>

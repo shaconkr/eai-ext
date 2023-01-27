@@ -1,12 +1,9 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<beanio xmlns="http://www.beanio.org/2012/03"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.beanio.org/2012/03 http://www.beanio.org/2012/03/mapping.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
 
-    <typeHandler type="java.util.Date" class="org.org.beanio.types.DateTypeHandler">
-        <property name="pattern" value="yyyyMMddhhmm"/>
-    </typeHandler>
-
+<beanio xmlns="http://www.beanio.org/2012/03" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.beanio.org/2012/03 http://www.beanio.org/2012/03/mapping.xsd">
+  <typeHandler type="java.util.Date" class="org.beanio.types.DateTypeHandler">
+    <property name="pattern" value="yyyyMMddhhmm"/>
+  </typeHandler>
     <stream kor="공통부" name="M_COMMON" format="fixedlength">
         <parser>
             <property name="recordTerminator" value="\r\n"/>
@@ -18,8 +15,7 @@
             <field kor="업무필드" name="workFld" position="15" length="20" type="string"/>
             <field kor="예비1" name="filler1" position="35" length="5" type="string" padding=" "/>
         </record>
-    </stream>
-    
+    </stream>   
     <stream kor="로그인요청" name="M_003" format="fixedlength">
         <parser>
             <property name="recordTerminator" value="\r\n"/>
@@ -39,7 +35,6 @@
             <field kor="예비" name="filler" position="98" length="12" padding=" "/>
         </record>
     </stream>
-
     <stream kor="로그인응답" name="M_030" format="fixedlength">
         <parser>
             <property name="recordTerminator" value="\r\n"/>
@@ -59,7 +54,6 @@
             <field kor="예비" name="filler" position="98" length="12" padding=" "/>
         </record>
     </stream>
-
     <stream kor="로그아웃요청" name="M_007" format="fixedlength">
         <parser>
             <property name="recordTerminator" value="\r\n"/>
@@ -74,7 +68,6 @@
             <field kor="예비" name="filler" position="55" length="35" padding=" "/>
         </record>
     </stream>
-
     <stream kor="로그아웃응답" name="M_070" format="fixedlength">
         <parser>
             <property name="recordTerminator" value="\r\n"/>
@@ -89,7 +82,6 @@
             <field kor="예비" name="filler" position="55" length="35" padding=" "/>
         </record>
     </stream>
-
     <stream kor="송신파일통보" name="M_100" format="fixedlength">
         <parser>
             <property name="recordTerminator" value="\r\n"/>
@@ -107,7 +99,6 @@
             <field kor="예비4" name="filler4" position="88" length="22" padding=" "/>
         </record>
     </stream>
-
     <stream kor="송신파일응답" name="M_110" format="fixedlength">
         <parser>
             <property name="recordTerminator" value="\r\n"/>
@@ -125,7 +116,6 @@
             <field kor="예비4" name="filler4" position="88" length="22" padding=" "/>
         </record>
     </stream>
-
     <stream kor="수신확인" name="M_130" format="fixedlength">
         <parser>
             <property name="recordTerminator" value="\r\n"/>
@@ -137,5 +127,4 @@
             <field kor="예비1" name="filler1" position="31" length="79" padding=" "/>
         </record>
     </stream>
-
 </beanio>

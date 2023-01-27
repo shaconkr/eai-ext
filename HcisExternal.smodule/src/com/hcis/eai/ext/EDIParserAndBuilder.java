@@ -1,12 +1,9 @@
 package com.hcis.eai.ext;
 
-import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
@@ -17,6 +14,8 @@ import org.beanio.Marshaller;
 import org.beanio.StreamFactory;
 import org.beanio.Unmarshaller;
 import org.beanio.internal.util.IOUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.google.common.base.Joiner;
 import com.google.common.base.Strings;
@@ -29,6 +28,8 @@ import kr.shacon.types.MapDeserializer;
 import kr.shacon.util.CastUtils;
 
 public class EDIParserAndBuilder {
+	
+    private static final Logger log = LoggerFactory.getLogger(EDIParserAndBuilder.class);
 
     protected StreamFactory factory;
     protected String encoding;
@@ -107,12 +108,25 @@ public class EDIParserAndBuilder {
         return msgMap;
     }
 
-    private StreamFactory newStreamFactory(String config) {
+    protected StreamFactory newStreamFactory(String config) {
+    	log.debug("## beanIO xml path : [{}]", config);
+    	log.debug("## CLASSPATH {}", System.getProperty("java.class.path"));
+    	
+    	
         StreamFactory factory = StreamFactory.newInstance();
         InputStream is = getClass().getResourceAsStream(config);
+        
         try {
+//        	String xml = new java.io.BufferedReader(
+//        			new java.io.InputStreamReader(is,StandardCharsets.UTF_8))
+//        			.lines()
+//        			.collect(Collectors.joining("\n"));
+//        	log.debug("## LOAD beanIO xml path : [{}] {}", config, xml);
+        	
             factory.load(is);
+            
         } catch (Exception e) {
+        	log.error("## ERROR beanIO xml path : [{}]", config);
             e.printStackTrace();
         } finally {
             IOUtil.closeQuietly(is);
@@ -197,9 +211,12 @@ public class EDIParserAndBuilder {
     
     @SuppressWarnings("unchecked")
 	protected Map<String, Object> loadJson(String jsonFile) throws IOException {
-		ClassLoader loader = Thread.currentThread().getContextClassLoader();
-		InputStream is = loader.getResourceAsStream(jsonFile);		
-	    String json =  new String(is.readAllBytes(), StandardCharsets.UTF_8);
+    	InputStream is = getClass().getResourceAsStream(jsonFile);       
+    	String json = new java.io.BufferedReader(
+    			new java.io.InputStreamReader(is,StandardCharsets.UTF_8))
+    			.lines()
+    			.collect(Collectors.joining("\n"));
+    	log.debug("## {}",json);
 	    return gson.fromJson(json, Map.class);
     }
 

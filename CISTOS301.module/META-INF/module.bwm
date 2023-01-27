@@ -13,6 +13,12 @@
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_mNGDkZYkEe2rJ7i8AUx5cg" processName="CISTOSPM.TOS_FILE_SEND"/>
   </sca:component>
   <sca:component xmi:id="_duZpgJ02Ee2J2YQCWHlc5A" name="ComponentTOS_ONL_START" compositeext:version="1.0.0.qualifier">
-    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_duZpgZ02Ee2J2YQCWHlc5A" processName="CISTOSPM.TOS_ONL_START"/>
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_duZpgZ02Ee2J2YQCWHlc5A" processName="CISTOSPM.TOS_ONL1_START"/>
+  </sca:component>
+  <sca:component xmi:id="_RIR_EJ1NEe2J2YQCWHlc5A" name="ComponentTOS_ONL3_START" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_RIR_EZ1NEe2J2YQCWHlc5A" processName="CISTOSPM.TOS_ONL3_START"/>
+  </sca:component>
+  <sca:component xmi:id="_W2ZYcJ1NEe2J2YQCWHlc5A" name="ComponentTOS_ONL1_END" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_W2ZYcZ1NEe2J2YQCWHlc5A" processName="CISTOSPM.TOS_ONL1_END"/>
   </sca:component>
 </sca:composite>

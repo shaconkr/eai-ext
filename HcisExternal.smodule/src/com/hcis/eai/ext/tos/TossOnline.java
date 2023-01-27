@@ -51,7 +51,7 @@ public class TossOnline extends EDIParserAndBuilder {
 	
 	public TossOnline(String beanioXml, String stage, String encoding) throws IOException {
         super(beanioXml, encoding);       
-        BANK.putAll(loadJson("/com/hcis/eai/ext/TOSOnlineBank.json"));
+        BANK.putAll(loadJson("/Resources/ext/tos/TOSOnlineBank.json"));
         STAGE = stage;
     }
 
@@ -94,8 +94,8 @@ public class TossOnline extends EDIParserAndBuilder {
 	 * @param ediNo
 	 * @return
 	 */
-    public byte[] build_0800_100(String bnkCd) {
-    	Map<String, Object> hdr = putCommon(bnkCd, "0800", "100", spaces(6));	// 공통부
+    public byte[] build_0800_100(String bnkCd, String ediNo) {
+    	Map<String, Object> hdr = putCommon(bnkCd, "0800", "100", ediNo);	// 공통부
         Map<String, Object> dat = Maps.newHashMap(ImmutableMap.<String,Object>builder()
 						        .put("jatongApplYn", "Y")				// 자통법적용구분
 						        .put("commBnkCd", "0" + bnkCd)			// 공통부은행코드
@@ -106,6 +106,24 @@ public class TossOnline extends EDIParserAndBuilder {
     }
 
 
+	/**
+	 * 업무종료
+	 * @param sdId
+	 * @param bnkCd
+	 * @param ediNo
+	 * @return
+	 */
+    public byte[] build_0800_300(String bnkCd, String ediNo) {
+    	Map<String, Object> hdr = putCommon(bnkCd, "0800", "300", ediNo);	// 공통부
+        Map<String, Object> dat = Maps.newHashMap(ImmutableMap.<String,Object>builder()
+						        .put("jatongApplYn", "Y")				// 자통법적용구분
+						        .put("commBnkCd", "0" + bnkCd)			// 공통부은행코드
+						        .build());
+        byte[] common = buildEDI("M_COMMON", hdr);
+        byte[] data = buildEDI("M_0800_300", dat);        
+        return concatBytes(common, data);
+    }    
+    
     /**
      * 통보응답
      * @param queryString

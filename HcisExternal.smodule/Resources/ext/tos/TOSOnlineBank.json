@@ -45,7 +45,6 @@
 	"bank2":{"desc":"계좌검증용",
 			"test":{"sdId":"HELP450", "info":{"20":{"bnkCd":"20","svcGb":"DY2","rvId":"HELP003","cpnyCd":"00022099","bnkNm":"우리은행"}}},
 			"real":{"sdId":"BKDR450", "info":{"20":{"bnkCd":"20","svcGb":"DY2","rvId":"BKDR003","cpnyCd":"00022099","bnkNm":"우리은행"}}}},
-
 	"bank3":{"desc":"즉시출금용",
 			"test":{"sdId":"HELP450", "info":{"03":{"bnkCd":"03","svcGb":"DY2","rvId":"HELP018","cpnyCd":"00000049","bnkNm":"기업"},
 											 "04":{"bnkCd":"04","svcGb":"DY2","rvId":"HELP017","cpnyCd":"00001327","bnkNm":"국민"},
@@ -72,5 +71,4 @@
 											 "26":{"bnkCd":"26","svcGb":"DY2","rvId":"BKDR024","cpnyCd":"D636952 ","bnkNm":"신한"},
 											 "27":{"bnkCd":"27","svcGb":"DY2","rvId":"BKDR026","cpnyCd":"96227262","bnkNm":"씨티"},
 											 "32":{"bnkCd":"32","svcGb":"DY2","rvId":"BKDR032","cpnyCd":"P777111 ","bnkNm":"부산"},
-											 "81":{"bnkCd":"81","svcGb":"DY2","rvId":"BKDR036","cpnyCd":"BKDR518 ","bnkNm":"하나"}}}
-}
+											 "81":{"bnkCd":"81","svcGb":"DY2","rvId":"BKDR036","cpnyCd":"BKDR518 ","bnkNm":"하나"}}}}}}

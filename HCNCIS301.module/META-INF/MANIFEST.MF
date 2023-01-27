@@ -3,7 +3,8 @@ Bundle-ManifestVersion: 2
 Bundle-Name: HCNCIS01 Module
 Bundle-SymbolicName: HCNCIS301.module
 Bundle-Version: 1.0.0.qualifier
-Bundle-ClassPath: .,.annoxfiles/
+Bundle-ClassPath: .,
+ .annoxfiles/
 Bundle-Vendor: TIBCO Software Inc.
 Export-Package: HCNCISCTJD
 Require-Bundle: HcisCommon.smodule;bundle-version="1.0.0"

@@ -57,6 +57,10 @@ public class EDIParserAndBuilder {
         this.encoding = encoding;
     }
 
+    public String mapToQueryString(Map<String,String> p) {
+    	return Joiner.on("&").withKeyValueSeparator("=").join(p);
+    }
+    
     public String getHeaderQueryString(byte[] bytes){
     	Map<String,String> head = CastUtils.cast((Map<?,?>)parseEDI("M_COMMON", bytes));
 //    	return  head.entrySet().stream().map(Object::toString).collect(Collectors.joining("&"));

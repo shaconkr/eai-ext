@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:_01fbc230-cc5c-43b6-a016-433dc4099811="http://ns.tibco.com/bw/sharedresource/notifyconfiguration/01fbc230-cc5c-43b6-a016-433dc4099811" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmlns:notifyconfiguration="http://ns.tibco.com/bw/sharedresource/notifyconfiguration" xmi:id="_d1KIEZX_Ee2rJ7i8AUx5cg" name="ext.tos.TOS" type="notifyconfiguration:NotifyConfiguration">
-  <imports xmi:id="_VrMagJYDEe2rJ7i8AUx5cg" importType="http://www.w3.org/2001/XMLSchema" namespace="http://ns.tibco.com/bw/sharedresource/notifyconfiguration/01fbc230-cc5c-43b6-a016-433dc4099811"/>
-  <jndi:configuration xsi:type="notifyconfiguration:NotifyConfiguration" xmi:id="_d1KIEpX_Ee2rJ7i8AUx5cg" schemaElementQname="_01fbc230-cc5c-43b6-a016-433dc4099811:root"/>
-</jndi:namedResource>

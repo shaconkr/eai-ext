@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ASCII"?>
+<annox:class xmlns:annox="http://annox.dev.java.net" xmlns:jaxb="http://annox.dev.java.net/javax.xml.bind.annotation" name="HCISHelperAnc">
+  <jaxb:XmlAccessorType value="NONE"/>
+  <jaxb:XmlType name="HCISHelperAncType" propOrder="processName rList rString "/>
+  <jaxb:XmlRootElement name="HCISHelperAnc" namespace="www.tibco.com/plugin/java/xmlSchema/com.hcis.eai.common.HCISHelperAnc"/>
+  <annox:field name="processName">
+    <jaxb:XmlElement name="ProcessName" namespace="www.tibco.com/plugin/java/xmlSchema/com.hcis.eai.common.HCISHelperAnc" required="false"/>
+  </annox:field>
+  <annox:field name="rList">
+    <jaxb:XmlElement name="rList" namespace="www.tibco.com/plugin/java/xmlSchema/com.hcis.eai.common.HCISHelperAnc"/>
+  </annox:field>
+  <annox:field name="rString">
+    <jaxb:XmlElement name="rString" namespace="www.tibco.com/plugin/java/xmlSchema/com.hcis.eai.common.HCISHelperAnc"/>
+  </annox:field>
+</annox:class>

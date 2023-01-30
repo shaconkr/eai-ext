@@ -1,10 +1,18 @@
 package com.hcis.eai.ext.tos;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
+import com.google.common.base.Joiner;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
 import com.hcis.eai.ext.EDIParserAndBuilder;
+
+import kr.shacon.util.CastUtils;
 
 public class TossFileTransfer extends EDIParserAndBuilder {
 
@@ -12,8 +20,11 @@ public class TossFileTransfer extends EDIParserAndBuilder {
     protected String trCode = "";
 	protected String msgCode = "";
 	protected byte[] bytes = null;
-	public TossFileTransfer(String beanioXml, String encoding) {
+	
+	Map<String,Object> BANK = Maps.newHashMap();
+	public TossFileTransfer(String beanioXml, String encoding) throws IOException {
         super(beanioXml, encoding);
+        BANK.putAll(loadJson("/Resources/ext/tos/TOSBank.json"));
     }
 
     enum ERRCD {
@@ -182,4 +193,21 @@ public class TossFileTransfer extends EDIParserAndBuilder {
 		return buildEDI("M_110", msg);
     }
 
+    /**
+     * TOSS EDI 수신 목록
+     * @return
+     */
+    public ArrayList<String> getTOSRecvEdiList() {
+		ArrayList<String> aList = new ArrayList<String>();
+    	List<Map<String,Object>> lst = CastUtils.cast((List<?>) BANK.get("RecvEdiList"));
+		lst.stream().forEach(maps -> {
+			maps.entrySet().forEach(map -> {
+				Map<String,String> row = CastUtils.cast((Map<?,?>) map.getValue());
+				String qStr = Joiner.on("&").withKeyValueSeparator("=").join(row);
+				aList.add(qStr);					
+			});
+		});
+		
+    	return aList;
+    }
 }

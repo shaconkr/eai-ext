@@ -51,7 +51,7 @@ public class TossOnline extends EDIParserAndBuilder {
 	
 	public TossOnline(String beanioXml, String stage, String encoding) throws IOException {
         super(beanioXml, encoding);       
-        BANK.putAll(loadJson("/Resources/ext/tos/TOSOnlineBank.json"));
+        BANK.putAll(loadJson("/Resources/ext/tos/TOSBank.json"));
         STAGE = stage;
     }
 

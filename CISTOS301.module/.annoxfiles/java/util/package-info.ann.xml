@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ASCII"?>
+<annox:package xmlns:annox="http://annox.dev.java.net" xmlns:jaxb="http://annox.dev.java.net/javax.xml.bind.annotation">
+  <annox:class name="Collection">
+    <jaxb:XmlAccessorType value="NONE"/>
+    <jaxb:XmlType name="CollectionType" propOrder=""/>
+    <jaxb:XmlRootElement name="Collection" namespace="www.tibco.com/plugin/java/xmlSchema/java.util.Collection"/>
+  </annox:class>
+  <jaxb:XmlSchema elementFormDefault="QUALIFIED" namespace="www.tibco.com/plugin/java/xmlSchema/java.util.Collection"/>
+</annox:package>

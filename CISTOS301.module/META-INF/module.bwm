@@ -21,4 +21,7 @@
   <sca:component xmi:id="_W2ZYcJ1NEe2J2YQCWHlc5A" name="ComponentTOS_ONL1_END" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_W2ZYcZ1NEe2J2YQCWHlc5A" processName="CISTOSPM.TOS_ONL1_END"/>
   </sca:component>
+  <sca:component xmi:id="_X2aUoKBmEe2VJOgPDPNtKw" name="ComponentCopyOfTOS_FILE_SEND" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_X2aUoaBmEe2VJOgPDPNtKw" processName="CISTOSPM.CopyOfTOS_FILE_SEND"/>
+  </sca:component>
 </sca:composite>

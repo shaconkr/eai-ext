@@ -1,5 +1,5 @@
 {
-	"test":{
+	"test":[
 	 "03":{"bnkCd":"03","rvId":"HELP018", "cpnyCd":"00000049", "motherAccntNo":"05902234601017 ", "motherAccntPwd":"        ", "orgCd":"          ", "bnkNm":"기업"},
 	 "04":{"bnkCd":"04","rvId":"HELP017", "cpnyCd":"00001327", "motherAccntNo":"75480101362348 ", "motherAccntPwd":"        ", "orgCd":"          ", "bnkNm":"국민"},
 	 "05":{"bnkCd":"05","rvId":"HELP008", "cpnyCd":"02055TOT", "motherAccntNo":"611016579428   ", "motherAccntPwd":"        ", "orgCd":"6510202055", "bnkNm":"외환"},
@@ -13,8 +13,8 @@
 	 "27":{"bnkCd":"27","rvId":"HELP026", "cpnyCd":"96227262", "motherAccntNo":"12052423255    ", "motherAccntPwd":"        ", "orgCd":"96227262  ", "bnkNm":"씨티"},
 	 "32":{"bnkCd":"32","rvId":"HELP032", "cpnyCd":"P777111 ", "motherAccntNo":"103010040937   ", "motherAccntPwd":"        ", "orgCd":"P034008   ", "bnkNm":"부산"},
 	 "81":{"bnkCd":"81","rvId":"HELP036", "cpnyCd":"BKDR518 ", "motherAccntNo":"29489001970105 ", "motherAccntPwd":"        ", "orgCd":"BKDR518   ", "bnkNm":"하나"}
-	},
-	"real":{
+	],
+	"real":[
 	 "03":{"bnkCd":"03","rvId":"BKDR018", "cpnyCd":"00000049", "motherAccntNo":"05902234601017 ", "motherAccntPwd":"        ", "orgCd":"00000049  ", "bnkNm":"기업"},
 	 "04":{"bnkCd":"04","rvId":"BKDR017", "cpnyCd":"00001327", "motherAccntNo":"730010019692   ", "motherAccntPwd":"        ", "orgCd":"          ", "bnkNm":"국민"},
 	 "05":{"bnkCd":"05","rvId":"BKDR008", "cpnyCd":"02055TOT", "motherAccntNo":"10113382347    ", "motherAccntPwd":"        ", "orgCd":"6510202055", "bnkNm":"외환"},
@@ -28,25 +28,66 @@
 	 "27":{"bnkCd":"27","rvId":"BKDR026", "cpnyCd":"96227262", "motherAccntNo":"12052423255    ", "motherAccntPwd":"        ", "orgCd":"96227262  ", "bnkNm":"씨티"},
 	 "32":{"bnkCd":"32","rvId":"BKDR032", "cpnyCd":"P777111 ", "motherAccntNo":"103010040937   ", "motherAccntPwd":"        ", "orgCd":"P034008   ", "bnkNm":"부산"},
 	 "81":{"bnkCd":"81","rvId":"BKDR036", "cpnyCd":"BKDR518 ", "motherAccntNo":"10091002020704 ", "motherAccntPwd":"        ", "orgCd":"BKDR518   ", "bnkNm":"하나"}
-	},
+	],
+	"PayReq":[
+	 "03":{"bnkCd":"03","fnm":"IB100","bnkNm":"기업"},
+	 "04":{"bnkCd":"04","fnm":"KK700","bnkNm":"국민"},
+	 "05":{"bnkCd":"05","fnm":"KE700","bnkNm":"외환"},
+	 "11":{"bnkCd":"11","fnm":"NA700","bnkNm":"농협(중앙회)"},
+	 "20":{"bnkCd":"20","fnm":"HV710","bnkNm":"우리"},
+	 "23":{"bnkCd":"23","fnm":"HP700","bnkNm":"제일"},
+	 "27":{"bnkCd":"27","fnm":"KC011","bnkNm":"씨티"},
+	 "32":{"bnkCd":"32","fnm":"HDBHJ","bnkNm":"부산"},
+	 "81":{"bnkCd":"81","fnm":"HD700","bnkNm":"하나"},
+	 "31":{"bnkCd":"81","fnm":"HDB10","bnkNm":"대구"},
+	 "88":{"bnkCd":"81","fnm":"JH500","bnkNm":"신한??"}
+	],
+	"bnkGb":[
+	 "2":"EB21",
+	 "3":"FB300",
+	 "4":"EI13",
+	 "7":"EB13",
+	 "5":"EC21",
+	 "6":"HDB11"
+	],	
+	"RecvEdiList":[
+	 "03":{"bnkCd":"03","fnmRqst":"IB100","fnmRepay":"IB100","fnmAcntRcpt":"     ","bnkNm":"기업"},
+	 "04":{"bnkCd":"04","fnmRqst":"KK700","fnmRepay":"CN700","fnmAcntRcpt":"CN900","bnkNm":"국민"},
+	 "05":{"bnkCd":"05","fnmRqst":"KE700","fnmRepay":"FB700","fnmAcntRcpt":"FB900","bnkNm":"외환"},
+	 "05":{"bnkCd":"05","fnmRqst":"FB300","fnmRepay":"FB300","fnmAcntRcpt":"FB900","bnkNm":"외환"},
+	 "20":{"bnkCd":"20","fnmRqst":"HV710","fnmRepay":"HV710","fnmAcntRcpt":"CB900","bnkNm":"우리"},
+	 "20":{"bnkCd":"20","fnmRqst":"FB720","fnmRepay":"FB730","fnmAcntRcpt":"CB900","bnkNm":"우리"},
+	 "21":{"bnkCd":"21","fnmRqst":"JH500","fnmRepay":"JH700","fnmAcntRcpt":"JH900","bnkNm":"조흥"},
+	 "23":{"bnkCd":"23","fnmRqst":"HP700","fnmRepay":"KF700","fnmAcntRcpt":"KF900","bnkNm":"제일"},
+	 "26":{"bnkCd":"26","fnmRqst":"HM210","fnmRepay":"SH210","fnmAcntRcpt":"SH230","bnkNm":"신한"},
+	 "27":{"bnkCd":"27","fnmRqst":"KC011","fnmRepay":"KB011","fnmAcntRcpt":"KB006","bnkNm":"한미"},
+	 "32":{"bnkCd":"32","fnmRqst":"HDBHJ","fnmRepay":"HDBHJ","fnmAcntRcpt":"PSHDB","bnkNm":"부산"},
+	 "81":{"bnkCd":"81","fnmRqst":"HD700","fnmRepay":"HD022","fnmAcntRcpt":"HD020","bnkNm":"하나"},
+	 "11":{"bnkCd":"11","fnmRqst":"NA700","fnmRepay":"NA700","fnmAcntRcpt":"     ","bnkNm":"농협"},
+	 "31":{"bnkCd":"31","fnmRqst":"HDB10","fnmRepay":"HDB10","fnmAcntRcpt":"HDB11","bnkNm":"대구"}
+	 ],	
+	 "RecvEdiListRealtime":{
+	 	"files":["LU211","LU222","LU320"],
+	 	"banks":["03", "04", "05", "20", "21", "23", "26", "27", "32", "81", "11", "31"]
+	 },		
 	"bank":{"desc":"가상계좌용",
-			"test":{"sdId":"HELP443", "info":{"20":{"bnkCd":"20","svcGb":"DY2","rvId":"HECA020","cpnyCd":"0300164 ","bnkNm":"우리은행"},
+			"test":{"sdId":"HELP443","info":["20":{"bnkCd":"20","svcGb":"DY2","rvId":"HECA020","cpnyCd":"0300164 ","bnkNm":"우리은행"},
 											 "04":{"bnkCd":"04","svcGb":"VAS","rvId":"HECA004","cpnyCd":"50500985","bnkNm":"국민은행"},
 											 "26":{"bnkCd":"26","svcGb":"VAS","rvId":"HECA026","cpnyCd":"20000371","bnkNm":"신한은행"},
 											 "11":{"bnkCd":"11","svcGb":"VAS","rvId":"HECAK11","cpnyCd":"30000519","bnkNm":"농협"},
 											 "32":{"bnkCd":"32","svcGb":"VAS","rvId":"HECA032","cpnyCd":"A000009","bnkNm":"부산은행"},
-											 "31":{"bnkCd":"31","svcGb":"VAS","rvId":"HECA031","cpnyCd":"EHYUN001","bnkNm":"대구은행"}}},
-			"real":{"sdId":"BKDR443", "info":{"20":{"bnkCd":"20","svcGb":"DY2","rvId":"BKCA020","cpnyCd":"0300164","bnkNm":"우리은행"},
+											 "31":{"bnkCd":"31","svcGb":"VAS","rvId":"HECA031","cpnyCd":"EHYUN001","bnkNm":"대구은행"}}],
+			"real":{"sdId":"BKDR443", "info":["20":{"bnkCd":"20","svcGb":"DY2","rvId":"BKCA020","cpnyCd":"0300164","bnkNm":"우리은행"},
 											 "04":{"bnkCd":"04","svcGb":"VAS","rvId":"BKCA004","cpnyCd":"50500985","bnkNm":"국민은행"},
 											 "26":{"bnkCd":"26","svcGb":"VAS","rvId":"BKCA026","cpnyCd":"20000371","bnkNm":"신한은행"},
 											 "11":{"bnkCd":"11","svcGb":"VAS","rvId":"BKCAK11","cpnyCd":"30000519","bnkNm":"농협"},
 											 "32":{"bnkCd":"32","svcGb":"VAS","rvId":"BKCA032","cpnyCd":"A000009","bnkNm":"부산은행"},
-											 "31":{"bnkCd":"31","svcGb":"VAS","rvId":"BKCA031","cpnyCd":"EHYUN001","bnkNm":"대구은행"}}},
+											 "31":{"bnkCd":"31","svcGb":"VAS","rvId":"BKCA031","cpnyCd":"EHYUN001","bnkNm":"대구은행"}}],
 	"bank2":{"desc":"계좌검증용",
 			"test":{"sdId":"HELP450", "info":{"20":{"bnkCd":"20","svcGb":"DY2","rvId":"HELP003","cpnyCd":"00022099","bnkNm":"우리은행"}}},
 			"real":{"sdId":"BKDR450", "info":{"20":{"bnkCd":"20","svcGb":"DY2","rvId":"BKDR003","cpnyCd":"00022099","bnkNm":"우리은행"}}}},
 	"bank3":{"desc":"즉시출금용",
-			"test":{"sdId":"HELP450", "info":{"03":{"bnkCd":"03","svcGb":"DY2","rvId":"HELP018","cpnyCd":"00000049","bnkNm":"기업"},
+			"test":{"sdId":"HELP450", "info":["03":{"bnkCd":"03","svcGb":"DY2","rvId":"HELP018","cpnyCd":"00000049","bnkNm":"기업"},
 											 "04":{"bnkCd":"04","svcGb":"DY2","rvId":"HELP017","cpnyCd":"00001327","bnkNm":"국민"},
 											 "05":{"bnkCd":"05","svcGb":"DY2","rvId":"HELP008","cpnyCd":"02055TOT","bnkNm":"외환"},
 											 "10":{"bnkCd":"10","svcGb":"DY2","rvId":"HELP037","cpnyCd":"10039   ","bnkNm":"농협"},
@@ -58,8 +99,8 @@
 											 "26":{"bnkCd":"26","svcGb":"DY2","rvId":"HEDRCHB","cpnyCd":"D636952 ","bnkNm":"신한"},
 											 "27":{"bnkCd":"27","svcGb":"DY2","rvId":"HELP026","cpnyCd":"96227262","bnkNm":"씨티"},
 											 "32":{"bnkCd":"32","svcGb":"DY2","rvId":"HELP032","cpnyCd":"P777111 ","bnkNm":"부산"},
-											 "81":{"bnkCd":"81","svcGb":"DY2","rvId":"HELP036","cpnyCd":"BKDR518 ","bnkNm":"하나"}}},
-			"real":{"sdId":"BKDR450", "info":{"03":{"bnkCd":"03","svcGb":"DY2","rvId":"BKDR018","cpnyCd":"00000049","bnkNm":"기업"},
+											 "81":{"bnkCd":"81","svcGb":"DY2","rvId":"HELP036","cpnyCd":"BKDR518 ","bnkNm":"하나"}}],
+			"real":{"sdId":"BKDR450", "info":["03":{"bnkCd":"03","svcGb":"DY2","rvId":"BKDR018","cpnyCd":"00000049","bnkNm":"기업"},
 											 "04":{"bnkCd":"04","svcGb":"DY2","rvId":"BKDR017","cpnyCd":"00001327","bnkNm":"국민"},
 											 "05":{"bnkCd":"05","svcGb":"DY2","rvId":"BKDR008","cpnyCd":"02055TOT","bnkNm":"외환"},
 											 "10":{"bnkCd":"10","svcGb":"DY2","rvId":"BKDR037","cpnyCd":"10039   ","bnkNm":"농협"},
@@ -71,4 +112,4 @@
 											 "26":{"bnkCd":"26","svcGb":"DY2","rvId":"BKDR024","cpnyCd":"D636952 ","bnkNm":"신한"},
 											 "27":{"bnkCd":"27","svcGb":"DY2","rvId":"BKDR026","cpnyCd":"96227262","bnkNm":"씨티"},
 											 "32":{"bnkCd":"32","svcGb":"DY2","rvId":"BKDR032","cpnyCd":"P777111 ","bnkNm":"부산"},
-											 "81":{"bnkCd":"81","svcGb":"DY2","rvId":"BKDR036","cpnyCd":"BKDR518 ","bnkNm":"하나"}}}}}}
+											 "81":{"bnkCd":"81","svcGb":"DY2","rvId":"BKDR036","cpnyCd":"BKDR518 ","bnkNm":"하나"}}]}}}

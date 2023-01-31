@@ -11,10 +11,15 @@ public class GenSchema {
 	
 	   @Test
 	    public void prepareOne() throws Exception {
-	        HCISHelperAnc helper = new HCISHelperAnc(eimsPath, projPath, "NIBCIS301.module");
-	        helper.setProcessName("CISTOSPMMZ.CISTOSPMMZ0140401.CISTOSPMMZ0140401_Sub");
-	        helper.prepare("CISTOSPMMZ0140401", "TOSCISPMMZ0140402");
+		   String reqIfId = "JNICISCTIC0030101";
+		   String resIfId = "CISJNICTIC0030102";
+	        String packageName = reqIfId.substring(0,10) + "/" + reqIfId;
+	        String moduleName = reqIfId.substring(0,6) +  "301.module";
+	    	String processName = packageName + "." + reqIfId + "_Sub";
+		   
+	        HCISHelperAnc helper = new HCISHelperAnc(eimsPath, projPath, moduleName);
+	        helper.setProcessName(processName);
+	        helper.prepare(reqIfId, resIfId);
 	    }
-
 
 }

@@ -10,7 +10,7 @@ import kr.shacon.util.CastUtils;
 public class LegacyHeaderParser extends EDIParserAndBuilder {
 
 	public LegacyHeaderParser() {
-		String xml = "/com/hcis/eai/ext/cis/LegacyHeader.xml";
+		String xml = "/Schemas/ext/cis/LegacyHeader.xml";
 		init(xml, "euc-kr");
 	
 	}

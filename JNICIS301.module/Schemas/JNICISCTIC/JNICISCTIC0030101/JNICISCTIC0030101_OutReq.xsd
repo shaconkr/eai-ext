@@ -79,8 +79,8 @@
     </complexType>
     <complexType name="JNICISCTIC0030101_OutReq">
         <sequence>
-            <element name="bizHeader" type="ns:JNICISCTIC0030101_OutReq_Header"/>
-            <element name="bizBody" type="ns:JNICISCTIC0030101_OutReq_Body"/>
+            <element name="bizHeader" type="ns:JNICISCTIC0030101_OutReq_Header" nillable="true"/>
+            <element name="bizBody" type="ns:JNICISCTIC0030101_OutReq_Body" nillable="true"/>
         </sequence>
     </complexType>
     <complexType name="rootType">

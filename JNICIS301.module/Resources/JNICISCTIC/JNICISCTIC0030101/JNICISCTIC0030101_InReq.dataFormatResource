@@ -2,30 +2,8 @@
 
 <jndi:namedResource xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:JNICISCTIC0030101="http://schema.hcis.com/xsd/JNICISCTIC0030101" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" name="JNICISCTIC/JNICISCTIC0030101.JNICISCTIC0030101_InReq" type="dataformat:DataFormat">
   <jndi:imports importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/JNICISCTIC0030101_InReq.xsd" namespace="http://schema.hcis.com/xsd/JNICISCTIC0030101"/>
-  <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="JNICISCTIC0030101:main" lineLength="260" fieldOffsetsStr="trdCd(0,4)&#xA;tgrmCd(4,9)&#xA;tgrmNo(9,17)&#xA;tgrmSendDtm(17,33)&#xA;testYn(33,34)&#xA;tgrmType(34,35)&#xA;prepVal(35,54)&#xA;tgrmLen(54,60)&#xA;respCd(60,64)&#xA;senmNo(64,88)&#xA;crdRcvnDt(88,96)&#xA;crdRcvnrBymd(96,102)&#xA;crdRcvnrSexGbcd(102,103)&#xA;prepVal1(103,109)&#xA;crdRcvnrNm(109,129)&#xA;selfRelGbcd(129,131)&#xA;sndbRsnGbcd(131,133)&#xA;psnInfQryAgrYn1(133,134)&#xA;psnInfGthrUtlzMndrAgrYn(134,135)&#xA;psnInfGthrUtlzChocAgrYn(135,136)&#xA;psnInfOffrMndrAgrYn(136,137)&#xA;psnInfQryAgrYn2(137,138)&#xA;dlvryEmpNm(138,158)&#xA;prepVal2(158,260)">
-    <fieldOffsets kor="거래코드" type="string" name="trdCd" start="0" end="4"/>
-    <fieldOffsets kor="전문코드" type="string" name="tgrmCd" start="4" end="9"/>
-    <fieldOffsets kor="전문번호" type="string" name="tgrmNo" start="9" end="17"/>
-    <fieldOffsets kor="전문전송일시" type="string" name="tgrmSendDtm" start="17" end="33"/>
-    <fieldOffsets kor="테스트여부" type="string" name="testYn" start="33" end="34"/>
-    <fieldOffsets kor="전문유형" type="string" name="tgrmType" start="34" end="35"/>
-    <fieldOffsets kor="예비값" type="string" name="prepVal" start="35" end="54"/>
-    <fieldOffsets kor="전문길이" type="string" name="tgrmLen" start="54" end="60"/>
-    <fieldOffsets kor="응답코드" type="string" name="respCd" start="60" end="64"/>
-    <fieldOffsets kor="발송번호" type="string" name="senmNo" start="64" end="88"/>
-    <fieldOffsets kor="카드수령일자" type="string" name="crdRcvnDt" start="88" end="96"/>
-    <fieldOffsets kor="카드수령자생년월일" type="string" name="crdRcvnrBymd" start="96" end="102"/>
-    <fieldOffsets kor="카드수령자성별구분코드" type="string" name="crdRcvnrSexGbcd" start="102" end="103"/>
-    <fieldOffsets kor="예비값1" type="string" name="prepVal1" start="103" end="109"/>
-    <fieldOffsets kor="카드수령자명" type="string" name="crdRcvnrNm" start="109" end="129"/>
-    <fieldOffsets kor="본인관계구분코드" type="string" name="selfRelGbcd" start="129" end="131"/>
-    <fieldOffsets kor="반송사유구분코드" type="string" name="sndbRsnGbcd" start="131" end="133"/>
-    <fieldOffsets kor="개인정보조회동의여부1" type="string" name="psnInfQryAgrYn1" start="133" end="134"/>
-    <fieldOffsets kor="개인정보수집이용필수동의여부" type="string" name="psnInfGthrUtlzMndrAgrYn" start="134" end="135"/>
-    <fieldOffsets kor="개인정보수집이용선택동의여부" type="string" name="psnInfGthrUtlzChocAgrYn" start="135" end="136"/>
-    <fieldOffsets kor="개인정보제공필수동의여부" type="string" name="psnInfOffrMndrAgrYn" start="136" end="137"/>
-    <fieldOffsets kor="개인정보조회동의여부2" type="string" name="psnInfQryAgrYn2" start="137" end="138"/>
-    <fieldOffsets kor="배달사원명" type="string" name="dlvryEmpNm" start="138" end="158"/>
-    <fieldOffsets kor="예비값2" type="string" name="prepVal2" start="158" end="260"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="JNICISCTIC0030101:main" lineLength="0" fieldOffsetsStr="bizHeader(0,0)&#xA;bizBody(0,0)">
+    <fieldOffsets kor="0" type="JNICISCTIC0030101_InReq_Header" name="bizHeader" start="0" end="0"/>
+    <fieldOffsets kor="0" type="JNICISCTIC0030101_InReq_Body" name="bizBody" start="0" end="0"/>
   </jndi:configuration>
 </jndi:namedResource>

@@ -9,13 +9,16 @@
   <sca:property xmi:id="_4BVR0KEHEe2cWKFPt3VDnA" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_4BebwKEHEe2cWKFPt3VDnA" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_4BoMwKEHEe2cWKFPt3VDnA" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
-  <sca:component xmi:id="_XHDj8KEZEe22sd99WkbK5A" name="ComponentJNICISCTIC0030101_REQ" compositeext:version="1.0.0.qualifier">
-    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_XHDj8aEZEe22sd99WkbK5A" processName="JNICISCTIC.JNICISCTIC0030101.JNICISCTIC0030101_REQ_BB"/>
-  </sca:component>
   <sca:component xmi:id="_FBF3kKEuEe2EBq1naxZwAg" name="ComponentCISNIBCTJD0130102_RES" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_FBF3kaEuEe2EBq1naxZwAg" processName="CISJNICTIC.CISJNICTIC0030102.CISJNICTIC0030102_RES"/>
   </sca:component>
   <sca:component xmi:id="_HFJxUKE_Ee2GkYVwXyXsvA" name="Component1JNICISCTIC0030101_REQ" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_HFJxUaE_Ee2GkYVwXyXsvA" processName="JNICISCTIC.JNICISCTIC0030101.JNICISCTIC0030101_REQ"/>
+  </sca:component>
+  <sca:component xmi:id="_1eha8qHEEe2GkYVwXyXsvA" name="ComponentJNICISCTIC0040101_REQ" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_1eha86HEEe2GkYVwXyXsvA" processName="JNICISCTIC.JNICISCTIC0040101.JNICISCTIC0040101_REQ"/>
+  </sca:component>
+  <sca:component xmi:id="_5jlL1KHEEe2GkYVwXyXsvA" name="ComponentCISJNICTIC0040102_RES" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_5jlL1aHEEe2GkYVwXyXsvA" processName="CISJNICTIC.CISJNICTIC0040102.CISJNICTIC0040102_RES"/>
   </sca:component>
 </sca:composite>

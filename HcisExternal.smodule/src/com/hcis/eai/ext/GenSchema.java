@@ -11,8 +11,8 @@ public class GenSchema {
 	
 	   @Test
 	    public void prepareOne() throws Exception {
-		   String reqIfId = "JNICISCTIC0030101";
-		   String resIfId = "CISJNICTIC0030102";
+		   String reqIfId = "JNICISCTIC0040101";
+		   String resIfId = "CISJNICTIC0040102";
 	        String packageName = reqIfId.substring(0,10) + "/" + reqIfId;
 	        String moduleName = reqIfId.substring(0,6) +  "301.module";
 	    	String processName = packageName + "." + reqIfId + "_Sub";

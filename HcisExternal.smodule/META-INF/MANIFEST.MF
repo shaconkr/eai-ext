@@ -21,7 +21,8 @@ Provide-Capability: com.tibco.bw.module; name="HcisExternal.smodule"; version:Ve
  com.tibco.bw.resources; name="ext.bcc",
  com.tibco.bw.processes; name="hcisexternal.smodule",
  com.tibco.bw.resources; name="ext.nic",
- com.tibco.bw.resources; name="ext.kft"
+ com.tibco.bw.resources; name="ext.kft",
+ com.tibco.bw.resources; name="ext.jni"
 TIBCO-BW-Version: 6.9.0 V26 2022-11-02
 Import-Package: com.google.common.base,
  com.google.common.collect,
@@ -50,7 +51,7 @@ Require-Capability: com.tibco.bw.model; filter:="(name=bwext)",
  com.tibco.bw.sharedresource.model; filter:="(name=bw.ftp)",
  com.tibco.bw.sharedresource.model; filter:="(name=bw.httpclient)",
  com.tibco.bw.sharedresource.model; filter:="(name=bw.java)",
- com.tibco.bw.sharedresource.model; filter:="(name=bw.notifyconfiguration)",
+ com.tibco.bw.sharedresource.model; filter:="(name=bw.sftp)",
  com.tibco.bw.sharedresource.model; filter:="(name=bw.tcp)"
 TIBCO-BW-SharedModule: META-INF/module.bwm
 TIBCO-BW-JobSharedVariables: META-INF/module.jsv

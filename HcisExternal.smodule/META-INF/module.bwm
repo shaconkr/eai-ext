@@ -33,6 +33,10 @@
   <sca:property xmi:id="_X5UVIJ3pEe2IxNDPoh7i8A" name="/ENDPOINT/TOS/OL2_PORT" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_ZLlOQJ3pEe2IxNDPoh7i8A" name="/ENDPOINT/TOS/OL3_HOST" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_ZiU6UJ3pEe2IxNDPoh7i8A" name="/ENDPOINT/TOS/OL3_PORT" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_BKypQKHPEe2-8f6ig-5LkQ" name="/ENDPOINT/JNI_SFTP/HOSTNAME" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_aAjB4KHPEe2-8f6ig-5LkQ" name="/ENDPOINT/JNI_SFTP/USERNAME" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_daNsYKHPEe2-8f6ig-5LkQ" name="/ENDPOINT/JNI_SFTP/PASSWORD" type="property:password" scaext:simpleValue="#!OSQg4YvlErr3aGTm7O+Agw==" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_m589QKHPEe2-8f6ig-5LkQ" name="/ENDPOINT/JNI_SFTP/PORT" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_K4GXIJxgEe2Xs_MkOHaDkA" name="/SECURITY/TOS/TOS__USER_ID" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_Rpd9QJxgEe2Xs_MkOHaDkA" name="/SECURITY/TOS/TOS_PWD" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_y6EEEJ04Ee2J2YQCWHlc5A" name="/common/stage" type="XMLSchema:string" publicAccess="true" scalable="true"/>

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmlns:tcpconnection="http://ns.tibco.com/bw/palette/tcpconnection" xmi:id="_E2pxQX9EEe2YPcn3ilumbw" name="nice.smodule.NICE" type="tcpconnection:tcpconnection">
-  <jndi:configuration xsi:type="tcpconnection:TCPConnection" xmi:id="_E2pxQn9EEe2YPcn3ilumbw" whenExhaustedAction="Block">
-    <substitutionBindings xmi:id="_HqgY8H9EEe2YPcn3ilumbw" template="host" propName="hostIP"/>
-    <substitutionBindings xmi:id="_88GgEH9EEe2YPcn3ilumbw" template="port" propName="hostPort"/>
-  </jndi:configuration>
-</jndi:namedResource>

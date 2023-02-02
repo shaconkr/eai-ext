@@ -1,0 +1,10 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:e="http://shacon.kr/xsd" xmlns:ns="http://schema.hcis.com/xsd/CISKCBCTJB0020302" xmlns:ns0="http://schema.hcis.com/xsd/KCBCISCTJB0020302" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://schema.hcis.com/xsd/CISKCBCTJB0020302">
+    <element name="root">
+        <complexType>
+            <sequence>
+                <element e:kor="세그멘트ID" e:length="3" e:padder="SpaceRight" name="segId" nillable="true" type="string"/>
+                <element e:kor="프로파일코드" e:length="9" e:padder="SpaceRight" name="prfCd" nillable="true" type="string"/>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

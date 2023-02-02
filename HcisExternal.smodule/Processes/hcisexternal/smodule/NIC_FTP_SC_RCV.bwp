@@ -533,13 +533,6 @@
                 </choice>
             </complexType>
         </schema>
-        <schema elementFormDefault="qualified"
-            targetNamespace="http://www.tibco.com/tnt/utilitySchema"
-            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.tibco.com/tnt/utilitySchema">
-            <simpleType name="nativeJavaObjectKey">
-                <restriction base="string"/>
-            </simpleType>
-        </schema>
     </tibex:Types>
     <tibex:ProcessInfo callable="false" createdBy="javal"
         createdOn="Mon Jan 09 17:20:43 KST 2023" description=""
@@ -1377,7 +1370,7 @@
             sca-bpel:property="yes"
             sca-bpel:sharedResourceType="{http://ns.tibco.com/bw/palette/javasharedresource}JavaGlobalInstanceResource" type="xsd:string">
             <bpws:from>
-                <bpws:literal>ext.nic.NIC</bpws:literal>
+                <bpws:literal>ext.nic.NIC_O</bpws:literal>
             </bpws:from>
         </bpws:variable>
     </bpws:variables>

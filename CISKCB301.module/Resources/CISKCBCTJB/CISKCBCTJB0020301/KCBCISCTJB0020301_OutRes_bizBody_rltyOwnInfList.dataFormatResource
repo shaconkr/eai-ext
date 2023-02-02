@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jndi:namedResource xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KCBCISCTJB0020301="http://schema.hcis.com/xsd/KCBCISCTJB0020301" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" name="CISKCBCTJB/CISKCBCTJB0020301.KCBCISCTJB0020301_OutRes_bizBody_rltyOwnInfList" type="dataformat:DataFormat">
+  <jndi:imports importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/KCBCISCTJB0020301_OutRes_bizBody_rltyOwnInfList.xsd" namespace="http://schema.hcis.com/xsd/KCBCISCTJB0020301"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="KCBCISCTJB0020301:main" lineLength="580" fieldOffsetsStr="segId(0,3)&#xA;rmailInntNo(3,17)&#xA;rltyInntNo(17,50)&#xA;ownRdnmAdr(50,250)&#xA;ownJibunAdr(250,450)&#xA;lgtd(450,470)&#xA;lttd(470,490)&#xA;rltyGb(490,492)&#xA;ownShaNume(492,502)&#xA;ownShaDnom(502,512)&#xA;ownBsicDt(512,520)&#xA;lastOwnMvmtRmailDt(520,528)&#xA;stofPossIdnfNeedYn(528,529)&#xA;rmailAcboKndCd(529,530)&#xA;prepVal111(530,531)&#xA;bldDsclsPrc(531,540)&#xA;bldRealTrdPrc(540,549)&#xA;landTotDsclsPrc(549,558)&#xA;bldWkUsageCd(558,563)&#xA;prepVal(563,580)">
+    <fieldOffsets kor="세그멘트ID" type="string" name="segId" start="0" end="3"/>
+    <fieldOffsets kor="등기고유번호" type="string" name="rmailInntNo" start="3" end="17"/>
+    <fieldOffsets kor="부동산고유번호" type="string" name="rltyInntNo" start="17" end="50"/>
+    <fieldOffsets kor="소유도로명주소" type="string" name="ownRdnmAdr" start="50" end="250"/>
+    <fieldOffsets kor="소유지번주소" type="string" name="ownJibunAdr" start="250" end="450"/>
+    <fieldOffsets kor="경도" type="string" name="lgtd" start="450" end="470"/>
+    <fieldOffsets kor="위도" type="string" name="lttd" start="470" end="490"/>
+    <fieldOffsets kor="부동산구분" type="string" name="rltyGb" start="490" end="492"/>
+    <fieldOffsets kor="소유지분분자" type="string" name="ownShaNume" start="492" end="502"/>
+    <fieldOffsets kor="소유지분분모" type="string" name="ownShaDnom" start="502" end="512"/>
+    <fieldOffsets kor="소유기준일자" type="string" name="ownBsicDt" start="512" end="520"/>
+    <fieldOffsets kor="최종소유변동등기일자" type="string" name="lastOwnMvmtRmailDt" start="520" end="528"/>
+    <fieldOffsets kor="상계가능확인필요여부" type="string" name="stofPossIdnfNeedYn" start="528" end="529"/>
+    <fieldOffsets kor="등기대장종류코드" type="string" name="rmailAcboKndCd" start="529" end="530"/>
+    <fieldOffsets kor="예비값111" type="string" name="prepVal111" start="530" end="531"/>
+    <fieldOffsets kor="건물공시가격" type="string" name="bldDsclsPrc" start="531" end="540"/>
+    <fieldOffsets kor="건물실거래가격" type="string" name="bldRealTrdPrc" start="540" end="549"/>
+    <fieldOffsets kor="토지총공시가격" type="string" name="landTotDsclsPrc" start="549" end="558"/>
+    <fieldOffsets kor="건물주용도코드" type="string" name="bldWkUsageCd" start="558" end="563"/>
+    <fieldOffsets kor="예비값" type="string" name="prepVal" start="563" end="580"/>
+  </jndi:configuration>
+</jndi:namedResource>

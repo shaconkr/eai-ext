@@ -1,0 +1,10 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:e="http://shacon.kr/xsd" xmlns:ns="http://schema.hcis.com/xsd/CISKCBCTJB0020302" xmlns:ns0="http://schema.hcis.com/xsd/KCBCISCTJB0020302" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://schema.hcis.com/xsd/CISKCBCTJB0020302">
+    <element name="root">
+        <complexType>
+            <sequence>
+                <element name="bizHeader" type="ns:CISKCBCTJB0020302_OutReq_Header"/>
+                <element name="bizBody" type="ns:CISKCBCTJB0020302_OutReq_Body"/>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

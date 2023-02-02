@@ -1,0 +1,104 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:e="http://shacon.kr/xsd" xmlns:ns="http://schema.hcis.com/xsd/CISKCBCTJB0020302" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.hcis.com/xsd/CISKCBCTJB0020302">
+    <complexType name="CISHeaderType">
+        <sequence>
+            <element e:kor="전체전문길이" e:length="8" e:padder="SpaceRight" minOccurs="0" name="totTgrmLen" nillable="true" type="integer"/>
+            <element e:kor="헤더길이" e:length="8" e:padder="SpaceRight" minOccurs="0" name="hdrLen" nillable="true" type="integer"/>
+            <element e:kor="전문형식코드" e:length="1" e:padder="SpaceRight" minOccurs="0" name="tgrmFrmCd" nillable="true" type="string"/>
+            <element e:kor="시스템환경구분코드" e:length="1" e:padder="SpaceRight" minOccurs="0" name="sysEnvGbcd" nillable="true" type="string"/>
+            <element e:kor="IP주소" e:length="40" e:padder="SpaceRight" minOccurs="0" name="ipAdr" nillable="true" type="string"/>
+            <element e:kor="GUID" e:length="38" e:padder="SpaceRight" minOccurs="0" name="guid" nillable="true" type="string"/>
+            <element e:kor="진행번호" e:length="3" e:padder="SpaceRight" minOccurs="0" name="prgrNo" nillable="true" type="integer"/>
+            <element e:kor="최초GUID" e:length="38" e:padder="SpaceRight" minOccurs="0" name="frstGuid" nillable="true" type="string"/>
+            <element e:kor="전송시스템코드" e:length="3" e:padder="SpaceRight" minOccurs="0" name="sendSysCd" nillable="true" type="string"/>
+            <element e:kor="최초전송시스템코드" e:length="3" e:padder="SpaceRight" minOccurs="0" name="frstSendSysCd" nillable="true" type="string"/>
+            <element e:kor="시스템공통예비내용" e:length="21" e:padder="SpaceRight" minOccurs="0" name="sysCommTrtyPrepCntn" nillable="true" type="string"/>
+            <element e:kor="EIMS전문ID" e:length="17" e:padder="SpaceRight" minOccurs="0" name="eimsTgrmId" nillable="true" type="string"/>
+            <element e:kor="EIMS전문번호" e:length="3" e:padder="SpaceRight" minOccurs="0" name="eimsTgrmVerNo" nillable="true" type="string"/>
+            <element e:kor="프래임워크거래ID" e:length="12" e:padder="SpaceRight" minOccurs="0" name="frwkTrdId" nillable="true" type="string"/>
+            <element e:kor="수신시스템코드" e:length="3" e:padder="SpaceRight" minOccurs="0" name="rcvSysCd" nillable="true" type="string"/>
+            <element e:kor="연계전문코드" e:length="10" e:padder="SpaceRight" minOccurs="0" name="tieTgrmCd" nillable="true" type="string"/>
+            <element e:kor="연계서비스그룹코드" e:length="2" e:padder="SpaceRight" minOccurs="0" name="tieSrvGrpCd" nillable="true" type="string"/>
+            <element e:kor="연계서비스명" e:length="30" e:padder="SpaceRight" minOccurs="0" name="tieSrvNm" nillable="true" type="string"/>
+            <element e:kor="화면번호" e:length="20" e:padder="SpaceRight" minOccurs="0" name="scrnNo" nillable="true" type="string"/>
+            <element e:kor="요청응답구분코드" e:length="1" e:padder="SpaceRight" minOccurs="0" name="reqnRespGbcd" nillable="true" type="string"/>
+            <element e:kor="동기처리구분코드" e:length="1" e:padder="SpaceRight" minOccurs="0" name="syncProcGbcd" nillable="true" type="string"/>
+            <element e:kor="거래응답코드" e:length="1" e:padder="SpaceRight" minOccurs="0" name="trdRespCd" nillable="true" type="string"/>
+            <element e:kor="페이지번호" e:length="9" e:padder="SpaceRight" minOccurs="0" name="pageNo" nillable="true" type="integer"/>
+            <element e:kor="페이지행건수" e:length="9" e:padder="SpaceRight" minOccurs="0" name="pageRowCnt" nillable="true" type="integer"/>
+            <element e:kor="전체레코드건수" e:length="9" e:padder="SpaceRight" minOccurs="0" name="totRowCnt" nillable="true" type="integer"/>
+            <element e:kor="다음페이지여부" e:length="1" e:padder="SpaceRight" minOccurs="0" name="nxtPageYn" nillable="true" type="string"/>
+            <element e:kor="요청일시" e:length="17" e:padder="SpaceRight" minOccurs="0" name="reqnDtm" nillable="true" type="string"/>
+            <element e:kor="응답일시" e:length="17" e:padder="SpaceRight" minOccurs="0" name="respDtm" nillable="true" type="string"/>
+            <element e:kor="점코드" e:length="3" e:padder="SpaceRight" minOccurs="0" name="storeCd" nillable="true" type="string"/>
+            <element e:kor="사용자ID" e:length="8" e:padder="SpaceRight" minOccurs="0" name="userId" nillable="true" type="string"/>
+            <element e:kor="거래공통영역예비내용" e:length="100" e:padder="SpaceRight" minOccurs="0" name="trdCommTrtyPrepCntn" nillable="true" type="string"/>
+            <element e:kor="메시지그룹명" e:length="0" e:padder="SpaceRight" maxOccurs="unbounded" minOccurs="0" name="msgGrpNm" nillable="true" type="ns:msgGrpNmType"/>
+            <element e:kor="표준전문종료문자값" e:length="2" e:padder="SpaceRight" minOccurs="0" name="stdTgrmEndLettrVal" nillable="true" type="string"/>
+        </sequence>
+    </complexType>
+    <complexType name="msgGrpNmType">
+        <sequence>
+            <element e:kor="메시지표시방법구분코드" e:length="1" e:padder="SpaceRight" minOccurs="0" name="msgShwMthdGbcd" nillable="true" type="string"/>
+            <element e:kor="오류발생전문항목명" e:length="50" e:padder="SpaceRight" minOccurs="0" name="errOcrnTgrmClasNm" nillable="true" type="string"/>
+            <element e:kor="메시지코드" e:length="10" e:padder="SpaceRight" minOccurs="0" name="msgCd" nillable="true" type="string"/>
+            <element e:kor="메시지내용" e:length="300" e:padder="SpaceRight" minOccurs="0" name="msgCntn" nillable="true" type="string"/>
+            <element e:kor="메시지세부내용" e:length="1000" e:padder="SpaceRight" minOccurs="0" name="msgDtlCntn" nillable="true" type="string"/>
+        </sequence>
+    </complexType>
+    <complexType name="CISKCBCTJB0020302_InReq_Header">
+        <sequence>
+            <element e:kor="전문길이" e:length="4" e:padder="SpaceRight" name="tgrmLen" nillable="true" type="string"/>
+            <element e:kor="거래코드" e:length="9" e:padder="SpaceRight" name="trdCd" nillable="true" type="string"/>
+            <element e:kor="회원사코드" e:length="8" e:padder="SpaceRight" name="mmcoCd" nillable="true" type="string"/>
+            <element e:kor="전문종별코드" e:length="4" e:padder="SpaceRight" name="tgrmSubCCd" nillable="true" type="string"/>
+            <element e:kor="업무구분코드" e:length="3" e:padder="SpaceRight" name="tskGbcd" nillable="true" type="string"/>
+            <element e:kor="송수신구분" e:length="1" e:padder="SpaceRight" name="tnrGb" nillable="true" type="string"/>
+            <element e:kor="응답코드" e:length="4" e:padder="SpaceRight" name="respCd" nillable="true" type="string"/>
+            <element e:kor="KCB전문관리번호" e:length="7" e:padder="SpaceRight" name="kcbTgrmMngNo" nillable="true" type="string"/>
+            <element e:kor="KCB전문전송시간" e:length="14" e:padder="SpaceRight" name="kcbTgrmSendTime" nillable="true" type="string"/>
+            <element e:kor="회원사전문관리번호" e:length="7" e:padder="SpaceRight" name="mmcoTgrmMngNo" nillable="true" type="string"/>
+            <element e:kor="회원사전문전송시간" e:length="14" e:padder="SpaceRight" name="mmcoTgrmSendTime" nillable="true" type="string"/>
+            <element e:kor="시스템정보" e:length="16" e:padder="SpaceRight" name="sysInf" nillable="true" type="string"/>
+            <element e:kor="조회동의코드" e:length="1" e:padder="SpaceRight" name="qryAgrCd" nillable="true" type="string"/>
+            <element e:kor="예비값" e:length="42" e:padder="SpaceRight" name="prepVal" nillable="true" type="string"/>
+        </sequence>
+    </complexType>
+    <complexType name="CISKCBCTJB0020302_InReq_Body">
+        <sequence>
+            <element e:kor="인증번호" e:length="12" e:padder="SpaceRight" name="certNo" nillable="true" type="string"/>
+            <element e:kor="재요청횟수" e:length="2" e:padder="SpaceRight" name="reReqnCnt" nillable="true" type="string"/>
+            <element e:kor="식별번호구분코드" e:length="1" e:padder="SpaceRight" name="idntNoGbcd" nillable="true" type="string"/>
+            <element e:kor="식별번호" e:length="13" e:padder="SpaceRight" name="idntNo" nillable="true" type="string"/>
+            <element e:kor="조회목적코드" e:length="2" e:padder="SpaceRight" name="qryPurpseCd" nillable="true" type="string"/>
+            <element e:kor="성명" e:length="50" e:padder="SpaceRight" name="fnmNm" nillable="true" type="string"/>
+            <element e:kor="조회지점명" e:length="20" e:padder="SpaceRight" name="qryBrnNm" nillable="true" type="string"/>
+            <element e:kor="담당자ID" e:length="15" e:padder="SpaceRight" name="asgnrId" nillable="true" type="string"/>
+            <element e:kor="신상정보총수신건수" e:length="3" e:padder="ZeroLeft" name="pinfInfTotRcvCnt" nillable="true" type="long"/>
+            <element e:kor="신상정보요청건수" e:length="2" e:padder="ZeroLeft" name="pinfInfReqnCnt" nillable="true" type="long"/>
+            <element e:kor="APS총수신건수" e:length="3" e:padder="ZeroLeft" name="apsTotRcvCnt" nillable="true" type="long"/>
+            <element e:kor="APS요청건수" e:length="3" e:padder="ZeroLeft" name="apsReqnCnt" nillable="true" type="long"/>
+            <element e:kor="부동산소유정보총수신건수" e:length="3" e:padder="ZeroLeft" name="rltyOwnInfTotRcvCnt" nillable="true" type="long"/>
+            <element e:kor="부동산소유정보요청건수" e:length="2" e:padder="ZeroLeft" name="rltyOwnInfReqnCnt" nillable="true" type="long"/>
+            <element e:kor="APS반복부_배열" e:padder="ZeroLeft" maxOccurs="unbounded" name="apsReqnList" nillable="true" type="ns:APS_REQN_LIST_TYPE"/>
+        </sequence>
+    </complexType>
+    <complexType name="APS_REQN_LIST_TYPE">
+        <sequence>
+            <element e:kor="세그멘트ID" e:length="3" e:padder="SpaceRight" name="segId" nillable="true" type="string"/>
+            <element e:kor="프로파일코드" e:length="9" e:padder="SpaceRight" name="prfCd" nillable="true" type="string"/>
+        </sequence>
+    </complexType>
+    <complexType name="CISKCBCTJB0020302_InReq">
+        <sequence>
+            <element name="bizHeader" type="ns:CISKCBCTJB0020302_InReq_Header"/>
+            <element name="bizBody" type="ns:CISKCBCTJB0020302_InReq_Body"/>
+        </sequence>
+    </complexType>
+    <complexType name="rootType">
+        <sequence>
+            <element name="header" type="ns:CISHeaderType"/>
+            <element name="data" type="ns:CISKCBCTJB0020302_InReq"/>
+        </sequence>
+    </complexType>
+    <element name="root" type="ns:rootType"/>
+</schema>

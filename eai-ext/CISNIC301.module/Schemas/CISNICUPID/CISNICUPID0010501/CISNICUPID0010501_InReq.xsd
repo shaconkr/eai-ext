@@ -1,0 +1,51 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:e="http://shacon.kr/xsd" xmlns:ns="http://schema.hcis.com/xsd/CISNICUPID0010501" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.hcis.com/xsd/CISNICUPID0010501">
+    <complexType name="CISNICUPID0010501_InReq_Header">
+        <sequence>
+            <element e:kor="거래코드" e:length="9" e:padder="SpaceRight" name="trdCd" nillable="true" type="string"/>
+            <element e:kor="전문채널코드" e:length="9" e:padder="SpaceRight" name="tgrmChCd" nillable="true" type="string"/>
+            <element e:kor="전문종별코드" e:length="4" e:padder="ZeroLeft" name="tgrmSubCCd" nillable="true" type="long"/>
+            <element e:kor="거래구분코드" e:length="5" e:padder="SpaceRight" name="trdGbcd" nillable="true" type="string"/>
+            <element e:kor="송수신구분" e:length="1" e:padder="SpaceRight" name="tnrGb" nillable="true" type="string"/>
+            <element e:kor="단말기정보구분코드" e:length="3" e:padder="SpaceRight" name="teInfGbcd" nillable="true" type="string"/>
+            <element e:kor="응답코드" e:length="4" e:padder="SpaceRight" name="respCd" nillable="true" type="string"/>
+            <element e:kor="사용자ID" e:length="9" e:padder="SpaceRight" name="userId" nillable="true" type="string"/>
+            <element e:kor="기관전문관리번호" e:length="10" e:padder="ZeroLeft" name="istnTgrmMngNo" nillable="true" type="long"/>
+            <element e:kor="기관전문전송시간" e:length="14" e:padder="ZeroLeft" name="istnTgrmSendTime" nillable="true" type="long"/>
+            <element e:kor="NICE전문관리번호" e:length="10" e:padder="SpaceRight" name="niceTgrmMngNo" nillable="true" type="string"/>
+            <element e:kor="NICE전문전송시간" e:length="14" e:padder="ZeroLeft" name="niceTgrmSendTime" nillable="true" type="long"/>
+            <element e:kor="공백값" e:length="17" e:padder="SpaceRight" name="nullVal" nillable="true" type="string"/>
+        </sequence>
+    </complexType>
+    <complexType name="CISNICUPID0010501_InReq_Body">
+        <sequence>
+            <element e:kor="업무구분코드" e:length="2" e:padder="ZeroLeft" name="tskGbcd" nillable="true" type="long"/>
+            <element e:kor="등록구분코드" e:length="2" e:padder="ZeroLeft" name="regGbcd" nillable="true" type="long"/>
+            <element e:kor="직업코드" e:length="2" e:padder="ZeroLeft" name="jobCd" nillable="true" type="long"/>
+            <element e:kor="주민등록번호" e:length="13" e:padder="ZeroLeft" name="rrno" nillable="true" type="long"/>
+            <element e:kor="고객명" e:length="20" e:padder="SpaceRight" name="custNm" nillable="true" type="string"/>
+            <element e:kor="사업자등록번호" e:length="10" e:padder="ZeroLeft" name="rgno" nillable="true" type="long"/>
+            <element e:kor="사업자명" e:length="40" e:padder="SpaceRight" name="bscmNm" nillable="true" type="string"/>
+            <element e:kor="발생일자" e:length="8" e:padder="ZeroLeft" name="ocrnDt" nillable="true" type="long"/>
+            <element e:kor="해제일자" e:length="8" e:padder="ZeroLeft" name="clerDt" nillable="true" type="long"/>
+            <element e:kor="연체금액" e:length="8" e:padder="ZeroLeft" name="odueAmt" nillable="true" type="long"/>
+            <element e:kor="사유코드" e:length="4" e:padder="ZeroLeft" name="rsnCd" nillable="true" type="long"/>
+            <element e:kor="카드회원번호" e:length="17" e:padder="SpaceRight" name="crdMemNo" nillable="true" type="string"/>
+            <element e:kor="공백값1" e:length="18" e:padder="SpaceRight" name="nullVal1" nillable="true" type="string"/>
+            <element e:kor="해제사유코드" e:length="2" e:padder="SpaceRight" name="clerRsnCd" nillable="true" type="string"/>
+            <element e:kor="동의서구분코드" e:length="1" e:padder="ZeroLeft" name="agrmtGbcd" nillable="true" type="long"/>
+            <element e:kor="공백값2" e:length="15" e:padder="SpaceRight" name="nullVal2" nillable="true" type="string"/>
+        </sequence>
+    </complexType>
+    <complexType name="CISNICUPID0010501_InReq">
+        <sequence>
+            <element name="bizHeader" type="ns:CISNICUPID0010501_InReq_Header"/>
+            <element name="bizBody" type="ns:CISNICUPID0010501_InReq_Body"/>
+        </sequence>
+    </complexType>
+    <complexType name="rootType">
+        <sequence>
+            <element name="data" type="ns:CISNICUPID0010501_InReq"/>
+        </sequence>
+    </complexType>
+    <element name="root" type="ns:CISNICUPID0010501_InReq"/>
+</schema>

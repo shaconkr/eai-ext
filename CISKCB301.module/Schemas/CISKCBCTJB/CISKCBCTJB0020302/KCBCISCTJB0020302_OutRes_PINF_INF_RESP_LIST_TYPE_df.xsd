@@ -1,0 +1,40 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:e="http://shacon.kr/xsd" xmlns:ns="http://schema.hcis.com/xsd/KCBCISCTJB0020302" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://schema.hcis.com/xsd/KCBCISCTJB0020302">
+    <element name="root">
+        <complexType>
+            <sequence>
+                <element e:kor="세그멘트ID" e:length="3" e:padder="SpaceRight" name="segId" nillable="true" type="string"/>
+                <element e:kor="자택주소등록일자" e:length="8" e:padder="SpaceRight" name="hmAdrRegDt" nillable="true" type="string"/>
+                <element e:kor="자택우편번호" e:length="6" e:padder="SpaceRight" name="hmPostNo" nillable="true" type="string"/>
+                <element e:kor="자택주소1" e:length="100" e:padder="SpaceRight" name="hmAdr1" nillable="true" type="string"/>
+                <element e:kor="자택주소2" e:length="100" e:padder="SpaceRight" name="hmAdr2" nillable="true" type="string"/>
+                <element e:kor="자택전화번호" e:length="12" e:padder="SpaceRight" name="hmTelno" nillable="true" type="string"/>
+                <element e:kor="실거주주소등록일자" e:length="8" e:padder="SpaceRight" name="realLiveAdrRegDt" nillable="true" type="string"/>
+                <element e:kor="실거주우편번호" e:length="6" e:padder="SpaceRight" name="realLivePostNo" nillable="true" type="string"/>
+                <element e:kor="실거주주소1" e:length="100" e:padder="SpaceRight" name="realLiveAdr1" nillable="true" type="string"/>
+                <element e:kor="실거주주소2" e:length="100" e:padder="SpaceRight" name="realLiveAdr2" nillable="true" type="string"/>
+                <element e:kor="실거주전화번호" e:length="1" e:padder="SpaceRight" name="realLiveTelno" nillable="true" type="string"/>
+                <element e:kor="직장주소등록일자" e:length="1" e:padder="SpaceRight" name="ofcAdrRegDt" nillable="true" type="string"/>
+                <element e:kor="직장우편번호" e:length="6" e:padder="SpaceRight" name="ofcPostNo" nillable="true" type="string"/>
+                <element e:kor="직장주소1" e:length="200" e:padder="SpaceRight" name="ofcAdr1" nillable="true" type="string"/>
+                <element e:kor="직장주소2" e:length="200" e:padder="SpaceRight" name="ofcAdr2" nillable="true" type="string"/>
+                <element e:kor="직장전화번호" e:length="20" e:padder="SpaceRight" name="ofcTelno" nillable="true" type="string"/>
+                <element e:kor="직장전화내선번호" e:length="1" e:padder="SpaceRight" name="ofcTelpnExtsNo" nillable="true" type="string"/>
+                <element e:kor="직장명" e:length="50" e:padder="SpaceRight" name="ofcNm" nillable="true" type="string"/>
+                <element e:kor="부서명" e:length="50" e:padder="SpaceRight" name="deptNm" nillable="true" type="string"/>
+                <element e:kor="현직장입사년월" e:length="6" e:padder="SpaceRight" name="crrnOfcJncoYm" nillable="true" type="string"/>
+                <element e:kor="년소득등록일자" e:length="8" e:padder="SpaceRight" name="yrIncmRegDt" nillable="true" type="string"/>
+                <element e:kor="년소득금액" e:length="9" e:padder="ZeroLeft" name="yrIncmAmt" nillable="true" type="long"/>
+                <element e:kor="재산세등록일자" e:length="8" e:padder="SpaceRight" name="pptaxRegDt" nillable="true" type="string"/>
+                <element e:kor="재산세금액" e:length="9" e:padder="ZeroLeft" name="pptaxAmt" nillable="true" type="long"/>
+                <element e:kor="휴대폰번호등록일자" e:length="8" e:padder="SpaceRight" name="mphonNoRegDt" nillable="true" type="string"/>
+                <element e:kor="휴대폰번호" e:length="12" e:padder="SpaceRight" name="mphonNo" nillable="true" type="string"/>
+                <element e:kor="자택주소구분" e:length="1" e:padder="SpaceRight" name="hmAdrGb" nillable="true" type="string"/>
+                <element e:kor="실거주주소구분" e:length="1" e:padder="SpaceRight" name="realLiveAdrGb" nillable="true" type="string"/>
+                <element e:kor="직장주소구분" e:length="1" e:padder="SpaceRight" name="ofcAdrGb" nillable="true" type="string"/>
+                <element e:kor="이메일주소등록일자" e:length="8" e:padder="SpaceRight" name="emailAdrRegDt" nillable="true" type="string"/>
+                <element e:kor="이메일주소" e:length="50" e:padder="SpaceRight" name="emailAdr" nillable="true" type="string"/>
+                <element e:kor="예비값" e:length="14" e:padder="SpaceRight" name="prepVal" nillable="true" type="string"/>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

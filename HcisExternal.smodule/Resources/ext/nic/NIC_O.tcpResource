@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmlns:tcpconnection="http://ns.tibco.com/bw/palette/tcpconnection" xmi:id="_l3e48aKmEe2ZLOHaxoc2FA" name="ext.nic.NIC_O" type="tcpconnection:tcpconnection">
+  <jndi:configuration xsi:type="tcpconnection:TCPConnection" xmi:id="_l3fgAKKmEe2ZLOHaxoc2FA" whenExhaustedAction="Block">
+    <substitutionBindings xmi:id="_-MTuwKKmEe2ZLOHaxoc2FA" template="host" propName="/ENDPOINT/NIC/NIC_HOST"/>
+    <substitutionBindings xmi:id="_AB7MkKKnEe2ZLOHaxoc2FA" template="port" propName="/ENDPOINT/NIC/NIC_PORT"/>
+  </jndi:configuration>
+</jndi:namedResource>

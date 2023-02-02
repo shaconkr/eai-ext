@@ -1,0 +1,169 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:e="http://shacon.kr/xsd" xmlns:ns="http://schema.hcis.com/xsd/KCBCISCTJB0020302" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.hcis.com/xsd/KCBCISCTJB0020302">
+    <complexType name="CISHeaderType">
+        <sequence>
+            <element e:kor="전체전문길이" e:length="8" e:padder="SpaceRight" minOccurs="0" name="totTgrmLen" nillable="true" type="integer"/>
+            <element e:kor="헤더길이" e:length="8" e:padder="SpaceRight" minOccurs="0" name="hdrLen" nillable="true" type="integer"/>
+            <element e:kor="전문형식코드" e:length="1" e:padder="SpaceRight" minOccurs="0" name="tgrmFrmCd" nillable="true" type="string"/>
+            <element e:kor="시스템환경구분코드" e:length="1" e:padder="SpaceRight" minOccurs="0" name="sysEnvGbcd" nillable="true" type="string"/>
+            <element e:kor="IP주소" e:length="40" e:padder="SpaceRight" minOccurs="0" name="ipAdr" nillable="true" type="string"/>
+            <element e:kor="GUID" e:length="38" e:padder="SpaceRight" minOccurs="0" name="guid" nillable="true" type="string"/>
+            <element e:kor="진행번호" e:length="3" e:padder="SpaceRight" minOccurs="0" name="prgrNo" nillable="true" type="integer"/>
+            <element e:kor="최초GUID" e:length="38" e:padder="SpaceRight" minOccurs="0" name="frstGuid" nillable="true" type="string"/>
+            <element e:kor="전송시스템코드" e:length="3" e:padder="SpaceRight" minOccurs="0" name="sendSysCd" nillable="true" type="string"/>
+            <element e:kor="최초전송시스템코드" e:length="3" e:padder="SpaceRight" minOccurs="0" name="frstSendSysCd" nillable="true" type="string"/>
+            <element e:kor="시스템공통예비내용" e:length="21" e:padder="SpaceRight" minOccurs="0" name="sysCommTrtyPrepCntn" nillable="true" type="string"/>
+            <element e:kor="EIMS전문ID" e:length="17" e:padder="SpaceRight" minOccurs="0" name="eimsTgrmId" nillable="true" type="string"/>
+            <element e:kor="EIMS전문번호" e:length="3" e:padder="SpaceRight" minOccurs="0" name="eimsTgrmVerNo" nillable="true" type="string"/>
+            <element e:kor="프래임워크거래ID" e:length="12" e:padder="SpaceRight" minOccurs="0" name="frwkTrdId" nillable="true" type="string"/>
+            <element e:kor="수신시스템코드" e:length="3" e:padder="SpaceRight" minOccurs="0" name="rcvSysCd" nillable="true" type="string"/>
+            <element e:kor="연계전문코드" e:length="10" e:padder="SpaceRight" minOccurs="0" name="tieTgrmCd" nillable="true" type="string"/>
+            <element e:kor="연계서비스그룹코드" e:length="2" e:padder="SpaceRight" minOccurs="0" name="tieSrvGrpCd" nillable="true" type="string"/>
+            <element e:kor="연계서비스명" e:length="30" e:padder="SpaceRight" minOccurs="0" name="tieSrvNm" nillable="true" type="string"/>
+            <element e:kor="화면번호" e:length="20" e:padder="SpaceRight" minOccurs="0" name="scrnNo" nillable="true" type="string"/>
+            <element e:kor="요청응답구분코드" e:length="1" e:padder="SpaceRight" minOccurs="0" name="reqnRespGbcd" nillable="true" type="string"/>
+            <element e:kor="동기처리구분코드" e:length="1" e:padder="SpaceRight" minOccurs="0" name="syncProcGbcd" nillable="true" type="string"/>
+            <element e:kor="거래응답코드" e:length="1" e:padder="SpaceRight" minOccurs="0" name="trdRespCd" nillable="true" type="string"/>
+            <element e:kor="페이지번호" e:length="9" e:padder="SpaceRight" minOccurs="0" name="pageNo" nillable="true" type="integer"/>
+            <element e:kor="페이지행건수" e:length="9" e:padder="SpaceRight" minOccurs="0" name="pageRowCnt" nillable="true" type="integer"/>
+            <element e:kor="전체레코드건수" e:length="9" e:padder="SpaceRight" minOccurs="0" name="totRowCnt" nillable="true" type="integer"/>
+            <element e:kor="다음페이지여부" e:length="1" e:padder="SpaceRight" minOccurs="0" name="nxtPageYn" nillable="true" type="string"/>
+            <element e:kor="요청일시" e:length="17" e:padder="SpaceRight" minOccurs="0" name="reqnDtm" nillable="true" type="string"/>
+            <element e:kor="응답일시" e:length="17" e:padder="SpaceRight" minOccurs="0" name="respDtm" nillable="true" type="string"/>
+            <element e:kor="점코드" e:length="3" e:padder="SpaceRight" minOccurs="0" name="storeCd" nillable="true" type="string"/>
+            <element e:kor="사용자ID" e:length="8" e:padder="SpaceRight" minOccurs="0" name="userId" nillable="true" type="string"/>
+            <element e:kor="거래공통영역예비내용" e:length="100" e:padder="SpaceRight" minOccurs="0" name="trdCommTrtyPrepCntn" nillable="true" type="string"/>
+            <element e:kor="메시지그룹명" e:length="0" e:padder="SpaceRight" maxOccurs="unbounded" minOccurs="0" name="msgGrpNm" nillable="true" type="ns:msgGrpNmType"/>
+            <element e:kor="표준전문종료문자값" e:length="2" e:padder="SpaceRight" minOccurs="0" name="stdTgrmEndLettrVal" nillable="true" type="string"/>
+        </sequence>
+    </complexType>
+    <complexType name="msgGrpNmType">
+        <sequence>
+            <element e:kor="메시지표시방법구분코드" e:length="1" e:padder="SpaceRight" minOccurs="0" name="msgShwMthdGbcd" nillable="true" type="string"/>
+            <element e:kor="오류발생전문항목명" e:length="50" e:padder="SpaceRight" minOccurs="0" name="errOcrnTgrmClasNm" nillable="true" type="string"/>
+            <element e:kor="메시지코드" e:length="10" e:padder="SpaceRight" minOccurs="0" name="msgCd" nillable="true" type="string"/>
+            <element e:kor="메시지내용" e:length="300" e:padder="SpaceRight" minOccurs="0" name="msgCntn" nillable="true" type="string"/>
+            <element e:kor="메시지세부내용" e:length="1000" e:padder="SpaceRight" minOccurs="0" name="msgDtlCntn" nillable="true" type="string"/>
+        </sequence>
+    </complexType>
+    <complexType name="KCBCISCTJB0020302_InRes_Header">
+        <sequence>
+            <element e:kor="전문길이" e:length="4" e:padder="SpaceRight" name="tgrmLen" nillable="true" type="string"/>
+            <element e:kor="거래코드" e:length="9" e:padder="SpaceRight" name="trdCd" nillable="true" type="string"/>
+            <element e:kor="회원사코드" e:length="8" e:padder="SpaceRight" name="mmcoCd" nillable="true" type="string"/>
+            <element e:kor="전문종별코드" e:length="4" e:padder="SpaceRight" name="tgrmSubCCd" nillable="true" type="string"/>
+            <element e:kor="업무구분코드" e:length="3" e:padder="SpaceRight" name="tskGbcd" nillable="true" type="string"/>
+            <element e:kor="송수신구분" e:length="1" e:padder="SpaceRight" name="tnrGb" nillable="true" type="string"/>
+            <element e:kor="응답코드" e:length="4" e:padder="SpaceRight" name="respCd" nillable="true" type="string"/>
+            <element e:kor="KCB전문관리번호" e:length="7" e:padder="SpaceRight" name="kcbTgrmMngNo" nillable="true" type="string"/>
+            <element e:kor="KCB전문전송시간" e:length="14" e:padder="SpaceRight" name="kcbTgrmSendTime" nillable="true" type="string"/>
+            <element e:kor="회원사전문관리번호" e:length="7" e:padder="SpaceRight" name="mmcoTgrmMngNo" nillable="true" type="string"/>
+            <element e:kor="회원사전문전송시간" e:length="14" e:padder="SpaceRight" name="mmcoTgrmSendTime" nillable="true" type="string"/>
+            <element e:kor="시스템정보" e:length="16" e:padder="SpaceRight" name="sysInf" nillable="true" type="string"/>
+            <element e:kor="조회동의코드" e:length="1" e:padder="SpaceRight" name="qryAgrCd" nillable="true" type="string"/>
+            <element e:kor="예비값" e:length="42" e:padder="SpaceRight" name="prepVal" nillable="true" type="string"/>
+        </sequence>
+    </complexType>
+    <complexType name="KCBCISCTJB0020302_InRes_Body">
+        <sequence>
+            <element e:kor="인증번호" e:length="12" e:padder="SpaceRight" name="certNo" nillable="true" type="string"/>
+            <element e:kor="정보연속여부" e:length="1" e:padder="SpaceRight" name="infCnscYn" nillable="true" type="string"/>
+            <element e:kor="재요청횟수" e:length="2" e:padder="SpaceRight" name="reReqnCnt" nillable="true" type="string"/>
+            <element e:kor="식별번호구분코드" e:length="1" e:padder="SpaceRight" name="idntNoGbcd" nillable="true" type="string"/>
+            <element e:kor="식별번호" e:length="13" e:padder="SpaceRight" name="idntNo" nillable="true" type="string"/>
+            <element e:kor="성명" e:length="50" e:padder="SpaceRight" name="fnmNm" nillable="true" type="string"/>
+            <element e:kor="정보유무체크비트" e:length="10" e:padder="SpaceRight" name="infEnChkBit" nillable="true" type="string"/>
+            <element e:kor="신상정보총건수" e:length="3" e:padder="ZeroLeft" name="pinfInfTotCnt" nillable="true" type="long"/>
+            <element e:kor="신상정보총송신건수" e:length="3" e:padder="ZeroLeft" name="pinfInfTotTrsCnt" nillable="true" type="long"/>
+            <element e:kor="신상정보응답건수" e:length="2" e:padder="ZeroLeft" name="pinfInfRespCnt" nillable="true" type="long"/>
+            <element e:kor="APS총건수" e:length="3" e:padder="ZeroLeft" name="apsTotCnt" nillable="true" type="long"/>
+            <element e:kor="APS총송신건수" e:length="3" e:padder="ZeroLeft" name="apsTotTrsCnt" nillable="true" type="long"/>
+            <element e:kor="APS응답건수" e:length="3" e:padder="ZeroLeft" name="apsRespCnt" nillable="true" type="long"/>
+            <element e:kor="부동산소유정보총건수" e:length="3" e:padder="ZeroLeft" name="rltyOwnInfTotCnt" nillable="true" type="long"/>
+            <element e:kor="부동산소유정보총송신건수" e:length="3" e:padder="ZeroLeft" name="rltyOwnInfTotTrsCnt" nillable="true" type="long"/>
+            <element e:kor="부동산소유정보응답건수" e:length="2" e:padder="ZeroLeft" name="rltyOwnInfRespCnt" nillable="true" type="long"/>
+            <element e:kor="신상정보_배열" e:padder="ZeroLeft" maxOccurs="unbounded" name="pinfInfRespList" nillable="true" type="ns:PINF_INF_RESP_LIST_TYPE"/>
+            <element e:kor="APS정보_배열" e:padder="ZeroLeft" maxOccurs="unbounded" name="apsInfList" nillable="true" type="ns:APS_INF_LIST_TYPE"/>
+            <element e:kor="부동산소유정보_배열" e:padder="ZeroLeft" maxOccurs="unbounded" name="rltyOwnInfList" nillable="true" type="ns:RLTY_OWN_INF_LIST_TYPE"/>
+        </sequence>
+    </complexType>
+    <complexType name="PINF_INF_RESP_LIST_TYPE">
+        <sequence>
+            <element e:kor="세그멘트ID" e:length="3" e:padder="SpaceRight" name="segId" nillable="true" type="string"/>
+            <element e:kor="자택주소등록일자" e:length="8" e:padder="SpaceRight" name="hmAdrRegDt" nillable="true" type="string"/>
+            <element e:kor="자택우편번호" e:length="6" e:padder="SpaceRight" name="hmPostNo" nillable="true" type="string"/>
+            <element e:kor="자택주소1" e:length="100" e:padder="SpaceRight" name="hmAdr1" nillable="true" type="string"/>
+            <element e:kor="자택주소2" e:length="100" e:padder="SpaceRight" name="hmAdr2" nillable="true" type="string"/>
+            <element e:kor="자택전화번호" e:length="12" e:padder="SpaceRight" name="hmTelno" nillable="true" type="string"/>
+            <element e:kor="실거주주소등록일자" e:length="8" e:padder="SpaceRight" name="realLiveAdrRegDt" nillable="true" type="string"/>
+            <element e:kor="실거주우편번호" e:length="6" e:padder="SpaceRight" name="realLivePostNo" nillable="true" type="string"/>
+            <element e:kor="실거주주소1" e:length="100" e:padder="SpaceRight" name="realLiveAdr1" nillable="true" type="string"/>
+            <element e:kor="실거주주소2" e:length="100" e:padder="SpaceRight" name="realLiveAdr2" nillable="true" type="string"/>
+            <element e:kor="실거주전화번호" e:length="1" e:padder="SpaceRight" name="realLiveTelno" nillable="true" type="string"/>
+            <element e:kor="직장주소등록일자" e:length="1" e:padder="SpaceRight" name="ofcAdrRegDt" nillable="true" type="string"/>
+            <element e:kor="직장우편번호" e:length="6" e:padder="SpaceRight" name="ofcPostNo" nillable="true" type="string"/>
+            <element e:kor="직장주소1" e:length="200" e:padder="SpaceRight" name="ofcAdr1" nillable="true" type="string"/>
+            <element e:kor="직장주소2" e:length="200" e:padder="SpaceRight" name="ofcAdr2" nillable="true" type="string"/>
+            <element e:kor="직장전화번호" e:length="20" e:padder="SpaceRight" name="ofcTelno" nillable="true" type="string"/>
+            <element e:kor="직장전화내선번호" e:length="1" e:padder="SpaceRight" name="ofcTelpnExtsNo" nillable="true" type="string"/>
+            <element e:kor="직장명" e:length="50" e:padder="SpaceRight" name="ofcNm" nillable="true" type="string"/>
+            <element e:kor="부서명" e:length="50" e:padder="SpaceRight" name="deptNm" nillable="true" type="string"/>
+            <element e:kor="현직장입사년월" e:length="6" e:padder="SpaceRight" name="crrnOfcJncoYm" nillable="true" type="string"/>
+            <element e:kor="년소득등록일자" e:length="8" e:padder="SpaceRight" name="yrIncmRegDt" nillable="true" type="string"/>
+            <element e:kor="년소득금액" e:length="9" e:padder="ZeroLeft" name="yrIncmAmt" nillable="true" type="long"/>
+            <element e:kor="재산세등록일자" e:length="8" e:padder="SpaceRight" name="pptaxRegDt" nillable="true" type="string"/>
+            <element e:kor="재산세금액" e:length="9" e:padder="ZeroLeft" name="pptaxAmt" nillable="true" type="long"/>
+            <element e:kor="휴대폰번호등록일자" e:length="8" e:padder="SpaceRight" name="mphonNoRegDt" nillable="true" type="string"/>
+            <element e:kor="휴대폰번호" e:length="12" e:padder="SpaceRight" name="mphonNo" nillable="true" type="string"/>
+            <element e:kor="자택주소구분" e:length="1" e:padder="SpaceRight" name="hmAdrGb" nillable="true" type="string"/>
+            <element e:kor="실거주주소구분" e:length="1" e:padder="SpaceRight" name="realLiveAdrGb" nillable="true" type="string"/>
+            <element e:kor="직장주소구분" e:length="1" e:padder="SpaceRight" name="ofcAdrGb" nillable="true" type="string"/>
+            <element e:kor="이메일주소등록일자" e:length="8" e:padder="SpaceRight" name="emailAdrRegDt" nillable="true" type="string"/>
+            <element e:kor="이메일주소" e:length="50" e:padder="SpaceRight" name="emailAdr" nillable="true" type="string"/>
+            <element e:kor="예비값" e:length="14" e:padder="SpaceRight" name="prepVal" nillable="true" type="string"/>
+        </sequence>
+    </complexType>
+    <complexType name="APS_INF_LIST_TYPE">
+        <sequence>
+            <element e:kor="세그멘트ID" e:length="3" e:padder="SpaceRight" name="segId" nillable="true" type="string"/>
+            <element e:kor="프로파일코드" e:length="9" e:padder="SpaceRight" name="prfCd" nillable="true" type="string"/>
+            <element e:kor="프로파일결과값" e:length="9" e:padder="SpaceRight" name="prfRstVal" nillable="true" type="string"/>
+        </sequence>
+    </complexType>
+    <complexType name="RLTY_OWN_INF_LIST_TYPE">
+        <sequence>
+            <element e:kor="세그멘트ID" e:length="3" e:padder="SpaceRight" name="segId" nillable="true" type="string"/>
+            <element e:kor="등기고유번호" e:length="14" e:padder="SpaceRight" name="rmailInntNo" nillable="true" type="string"/>
+            <element e:kor="부동산고유번호" e:length="33" e:padder="SpaceRight" name="rltyInntNo" nillable="true" type="string"/>
+            <element e:kor="소유도로명주소" e:length="200" e:padder="SpaceRight" name="ownRdnmAdr" nillable="true" type="string"/>
+            <element e:kor="소유지번주소" e:length="200" e:padder="SpaceRight" name="ownJibunAdr" nillable="true" type="string"/>
+            <element e:kor="경도" e:length="20" e:padder="SpaceRight" name="lgtd" nillable="true" type="string"/>
+            <element e:kor="위도" e:length="20" e:padder="SpaceRight" name="lttd" nillable="true" type="string"/>
+            <element e:kor="부동산구분" e:length="2" e:padder="SpaceRight" name="rltyGb" nillable="true" type="string"/>
+            <element e:kor="소유지분분자" e:length="10" e:padder="SpaceRight" name="ownShaNume" nillable="true" type="string"/>
+            <element e:kor="소유지분분모" e:length="10" e:padder="SpaceRight" name="ownShaDnom" nillable="true" type="string"/>
+            <element e:kor="소유기준일자" e:length="8" e:padder="SpaceRight" name="ownBsicDt" nillable="true" type="string"/>
+            <element e:kor="최종소유변동등기일자" e:length="8" e:padder="SpaceRight" name="lastOwnMvmtRmailDt" nillable="true" type="string"/>
+            <element e:kor="상계가능확인필요여부" e:length="1" e:padder="SpaceRight" name="stofPossIdnfNeedYn" nillable="true" type="string"/>
+            <element e:kor="등기대장종류코드" e:length="1" e:padder="SpaceRight" name="rmailAcboKndCd" nillable="true" type="string"/>
+            <element e:kor="예비값111" e:length="1" e:padder="SpaceRight" name="prepVal111" nillable="true" type="string"/>
+            <element e:kor="건물공시가격" e:length="9" e:padder="SpaceRight" name="bldDsclsPrc" nillable="true" type="string"/>
+            <element e:kor="건물실거래가격" e:length="9" e:padder="SpaceRight" name="bldRealTrdPrc" nillable="true" type="string"/>
+            <element e:kor="토지총공시가격" e:length="9" e:padder="SpaceRight" name="landTotDsclsPrc" nillable="true" type="string"/>
+            <element e:kor="건물주용도코드" e:length="5" e:padder="SpaceRight" name="bldWkUsageCd" nillable="true" type="string"/>
+            <element e:kor="예비값" e:length="17" e:padder="SpaceRight" name="prepVal" nillable="true" type="string"/>
+        </sequence>
+    </complexType>
+    <complexType name="KCBCISCTJB0020302_InRes">
+        <sequence>
+            <element name="bizHeader" type="ns:KCBCISCTJB0020302_InRes_Header"/>
+            <element name="bizBody" type="ns:KCBCISCTJB0020302_InRes_Body"/>
+        </sequence>
+    </complexType>
+    <complexType name="rootType">
+        <sequence>
+            <element name="header" type="ns:CISHeaderType"/>
+            <element name="data" type="ns:KCBCISCTJB0020302_InRes"/>
+        </sequence>
+    </complexType>
+    <element name="root" type="ns:rootType"/>
+</schema>

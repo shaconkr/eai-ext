@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:javasharedresource="http://ns.tibco.com/bw/palette/javasharedresource" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmi:id="_73e6gaKoEe2ZLOHaxoc2FA" name="CISNICUPID.NIC_J" type="javasharedresource:JavaGlobalInstanceResource">
+  <jndi:configuration xsi:type="javasharedresource:JavaGlobalInstance" xmi:id="_73e6gqKoEe2ZLOHaxoc2FA" className="com.hcis.eai.module.HCISHelper" methodName="HCISHelper" isNewShared="true">
+    <javaConstructorParameter xmi:id="_-fMjoKKoEe2ZLOHaxoc2FA" paramName="eimsPath" paramType="string">
+      <substitutionBindings xmi:id="_BE2XQKKpEe2ZLOHaxoc2FA" template="paramValue" propName="//HcisCommon.smodule//EIMS_PATH"/>
+    </javaConstructorParameter>
+    <javaConstructorParameter xmi:id="_-fMjoqKoEe2ZLOHaxoc2FA" paramName="projPath" paramType="string">
+      <substitutionBindings xmi:id="_EEzhQKKpEe2ZLOHaxoc2FA" template="paramValue" propName="//HcisCommon.smodule//PROJ_PATH"/>
+    </javaConstructorParameter>
+    <javaConstructorParameter xmi:id="_-fMjpKKoEe2ZLOHaxoc2FA" paramName="moduleName" paramType="string">
+      <substitutionBindings xmi:id="_G-jVkKKpEe2ZLOHaxoc2FA" template="paramValue" propName="BW.MODULE.NAME"/>
+    </javaConstructorParameter>
+    <methodParameters xmi:id="_-fDZsKKoEe2ZLOHaxoc2FA" paramType="string"/>
+    <methodParameters xmi:id="_-fMjoaKoEe2ZLOHaxoc2FA" paramType="string"/>
+    <methodParameters xmi:id="_-fMjo6KoEe2ZLOHaxoc2FA" paramType="string"/>
+  </jndi:configuration>
+</jndi:namedResource>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jndi:namedResource xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KCBCISCTJB0100101="http://schema.hcis.com/xsd/KCBCISCTJB0100101" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" name="CISKCBCTJB/CISKCBCTJB0100101.KCBCISCTJB0100101_OutRes_bizBody" type="dataformat:DataFormat">
+  <jndi:imports importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/KCBCISCTJB0100101_OutRes_bizBody.xsd" namespace="http://schema.hcis.com/xsd/KCBCISCTJB0100101"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="KCBCISCTJB0100101:main" lineLength="520" fieldOffsetsStr="segId(0,3)&#xA;regRsnCd(3,5)&#xA;custNoGbcd(5,6)&#xA;memNo(6,46)&#xA;memNm(46,96)&#xA;bymd(96,104)&#xA;sexCd(104,105)&#xA;mophIdntNo(105,108)&#xA;mobiTels(108,112)&#xA;mobiTeli(112,116)&#xA;idinfGbcd(116,118)&#xA;idinf(118,218)&#xA;bsicDt(218,226)&#xA;prepVal(226,500)&#xA;errRespCd(500,504)&#xA;errChkBitVal(504,520)">
+    <fieldOffsets kor="세그멘트ID" type="string" name="segId" start="0" end="3"/>
+    <fieldOffsets kor="등록사유코드" type="string" name="regRsnCd" start="3" end="5"/>
+    <fieldOffsets kor="고객번호구분코드" type="string" name="custNoGbcd" start="5" end="6"/>
+    <fieldOffsets kor="회원번호" type="string" name="memNo" start="6" end="46"/>
+    <fieldOffsets kor="회원명" type="string" name="memNm" start="46" end="96"/>
+    <fieldOffsets kor="생년월일" type="string" name="bymd" start="96" end="104"/>
+    <fieldOffsets kor="성별코드" type="string" name="sexCd" start="104" end="105"/>
+    <fieldOffsets kor="휴대전화식별번호" type="string" name="mophIdntNo" start="105" end="108"/>
+    <fieldOffsets kor="휴대전화국번호" type="string" name="mobiTels" start="108" end="112"/>
+    <fieldOffsets kor="휴대전화개별번호" type="string" name="mobiTeli" start="112" end="116"/>
+    <fieldOffsets kor="고유식별정보구분코드" type="string" name="idinfGbcd" start="116" end="118"/>
+    <fieldOffsets kor="고유식별정보" type="string" name="idinf" start="118" end="218"/>
+    <fieldOffsets kor="기준일자" type="string" name="bsicDt" start="218" end="226"/>
+    <fieldOffsets kor="예비값" type="string" name="prepVal" start="226" end="500"/>
+    <fieldOffsets kor="오류응답코드" type="string" name="errRespCd" start="500" end="504"/>
+    <fieldOffsets kor="오류체크비트값" type="string" name="errChkBitVal" start="504" end="520"/>
+  </jndi:configuration>
+</jndi:namedResource>

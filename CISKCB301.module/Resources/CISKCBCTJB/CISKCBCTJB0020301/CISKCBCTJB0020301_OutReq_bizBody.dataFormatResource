@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jndi:namedResource xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CISKCBCTJB0020301="http://schema.hcis.com/xsd/CISKCBCTJB0020301" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" name="CISKCBCTJB/CISKCBCTJB0020301.CISKCBCTJB0020301_OutReq_bizBody" type="dataformat:DataFormat">
+  <jndi:imports importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/CISKCBCTJB0020301_OutReq_bizBody.xsd" namespace="http://schema.hcis.com/xsd/CISKCBCTJB0020301"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="CISKCBCTJB0020301:main" lineLength="131" fieldOffsetsStr="certNo(0,12)&#xA;reReqnCnt(12,14)&#xA;idntNoGbcd(14,15)&#xA;idntNo(15,28)&#xA;qryPurpseCd(28,30)&#xA;fnmNm(30,80)&#xA;qryBrnNm(80,100)&#xA;asgnrId(100,115)&#xA;pinfInfTotRcvCnt(115,118)&#xA;pinfInfReqnCnt(118,120)&#xA;apsTotRcvCnt(120,123)&#xA;apsReqnCnt(123,126)&#xA;rltyOwnInfTotRcvCnt(126,129)&#xA;rltyOwnInfReqnCnt(129,131)&#xA;apsReqnList(131,131)">
+    <fieldOffsets kor="인증번호" type="string" name="certNo" start="0" end="12"/>
+    <fieldOffsets kor="재요청횟수" type="string" name="reReqnCnt" start="12" end="14"/>
+    <fieldOffsets kor="식별번호구분코드" type="string" name="idntNoGbcd" start="14" end="15"/>
+    <fieldOffsets kor="식별번호" type="string" name="idntNo" start="15" end="28"/>
+    <fieldOffsets kor="조회목적코드" type="string" name="qryPurpseCd" start="28" end="30"/>
+    <fieldOffsets kor="성명" type="string" name="fnmNm" start="30" end="80"/>
+    <fieldOffsets kor="조회지점명" type="string" name="qryBrnNm" start="80" end="100"/>
+    <fieldOffsets kor="담당자ID" type="string" name="asgnrId" start="100" end="115"/>
+    <fieldOffsets kor="신상정보총수신건수" type="long" name="pinfInfTotRcvCnt" start="115" end="118"/>
+    <fieldOffsets kor="신상정보요청건수" type="long" name="pinfInfReqnCnt" start="118" end="120"/>
+    <fieldOffsets kor="APS총수신건수" type="long" name="apsTotRcvCnt" start="120" end="123"/>
+    <fieldOffsets kor="APS요청건수" type="long" name="apsReqnCnt" start="123" end="126"/>
+    <fieldOffsets kor="부동산소유정보총수신건수" type="long" name="rltyOwnInfTotRcvCnt" start="126" end="129"/>
+    <fieldOffsets kor="부동산소유정보요청건수" type="long" name="rltyOwnInfReqnCnt" start="129" end="131"/>
+    <fieldOffsets kor="APS반복부_배열" type="APS_REQN_LIST_TYPE" name="apsReqnList" start="131" end="131"/>
+  </jndi:configuration>
+</jndi:namedResource>

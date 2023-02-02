@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jndi:namedResource xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:NICCISUPID0010501="http://schema.hcis.com/xsd/NICCISUPID0010501" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" name="CISNICUPID/CISNICUPID0010501.NICCISUPID0010501_OutRes_bizBody" type="dataformat:DataFormat">
+  <jndi:imports importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/NICCISUPID0010501_OutRes_bizBody.xsd" namespace="http://schema.hcis.com/xsd/NICCISUPID0010501"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="NICCISUPID0010501:main" lineLength="170" fieldOffsetsStr="tskGbcd(0,2)&#xA;regGbcd(2,4)&#xA;jobCd(4,6)&#xA;rrno(6,19)&#xA;custNm(19,39)&#xA;rgno(39,49)&#xA;bscmNm(49,89)&#xA;ocrnDt(89,97)&#xA;clerDt(97,105)&#xA;odueAmt(105,113)&#xA;rsnCd(113,117)&#xA;crdMemNo(117,134)&#xA;nullVal1(134,152)&#xA;clerRsnCd(152,154)&#xA;agrmtGbcd(154,155)&#xA;nullVal2(155,170)">
+    <fieldOffsets kor="업무구분코드" type="long" name="tskGbcd" start="0" end="2"/>
+    <fieldOffsets kor="등록구분코드" type="long" name="regGbcd" start="2" end="4"/>
+    <fieldOffsets kor="직업코드" type="long" name="jobCd" start="4" end="6"/>
+    <fieldOffsets kor="주민등록번호" type="long" name="rrno" start="6" end="19"/>
+    <fieldOffsets kor="고객명" type="string" name="custNm" start="19" end="39"/>
+    <fieldOffsets kor="사업자등록번호" type="long" name="rgno" start="39" end="49"/>
+    <fieldOffsets kor="사업자명" type="string" name="bscmNm" start="49" end="89"/>
+    <fieldOffsets kor="발생일자" type="long" name="ocrnDt" start="89" end="97"/>
+    <fieldOffsets kor="해제일자" type="long" name="clerDt" start="97" end="105"/>
+    <fieldOffsets kor="연체금액" type="long" name="odueAmt" start="105" end="113"/>
+    <fieldOffsets kor="사유코드" type="long" name="rsnCd" start="113" end="117"/>
+    <fieldOffsets kor="카드회원번호" type="string" name="crdMemNo" start="117" end="134"/>
+    <fieldOffsets kor="공백값1" type="string" name="nullVal1" start="134" end="152"/>
+    <fieldOffsets kor="해제사유코드" type="string" name="clerRsnCd" start="152" end="154"/>
+    <fieldOffsets kor="동의서구분코드" type="long" name="agrmtGbcd" start="154" end="155"/>
+    <fieldOffsets kor="공백값2" type="string" name="nullVal2" start="155" end="170"/>
+  </jndi:configuration>
+</jndi:namedResource>

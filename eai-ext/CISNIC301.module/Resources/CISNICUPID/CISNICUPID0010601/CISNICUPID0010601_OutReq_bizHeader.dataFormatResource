@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jndi:namedResource xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CISNICUPID0010601="http://schema.hcis.com/xsd/CISNICUPID0010601" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" name="CISNICUPID/CISNICUPID0010601.CISNICUPID0010601_OutReq_bizHeader" type="dataformat:DataFormat">
+  <jndi:imports importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/CISNICUPID0010601_OutReq_bizHeader.xsd" namespace="http://schema.hcis.com/xsd/CISNICUPID0010601"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="CISNICUPID0010601:main" lineLength="109" fieldOffsetsStr="trdCd(0,9)&#xA;tgrmChCd(9,18)&#xA;tgrmSubCCd(18,22)&#xA;trdGbcd(22,27)&#xA;tnrGb(27,28)&#xA;teInfGbcd(28,31)&#xA;respCd(31,35)&#xA;userId(35,44)&#xA;istnTgrmMngNo(44,54)&#xA;istnTgrmSendTime(54,68)&#xA;niceTgrmMngNo(68,78)&#xA;niceTgrmSendTime(78,92)&#xA;nullVal(92,109)">
+    <fieldOffsets kor="거래코드" type="string" name="trdCd" start="0" end="9"/>
+    <fieldOffsets kor="전문채널코드" type="string" name="tgrmChCd" start="9" end="18"/>
+    <fieldOffsets kor="전문종별코드" type="long" name="tgrmSubCCd" start="18" end="22"/>
+    <fieldOffsets kor="거래구분코드" type="string" name="trdGbcd" start="22" end="27"/>
+    <fieldOffsets kor="송수신구분" type="string" name="tnrGb" start="27" end="28"/>
+    <fieldOffsets kor="단말기정보구분코드" type="string" name="teInfGbcd" start="28" end="31"/>
+    <fieldOffsets kor="응답코드" type="string" name="respCd" start="31" end="35"/>
+    <fieldOffsets kor="사용자ID" type="string" name="userId" start="35" end="44"/>
+    <fieldOffsets kor="기관전문관리번호" type="long" name="istnTgrmMngNo" start="44" end="54"/>
+    <fieldOffsets kor="기관전문전송시간" type="long" name="istnTgrmSendTime" start="54" end="68"/>
+    <fieldOffsets kor="NICE전문관리번호" type="string" name="niceTgrmMngNo" start="68" end="78"/>
+    <fieldOffsets kor="NICE전문전송시간" type="long" name="niceTgrmSendTime" start="78" end="92"/>
+    <fieldOffsets kor="공백값" type="string" name="nullVal" start="92" end="109"/>
+  </jndi:configuration>
+</jndi:namedResource>

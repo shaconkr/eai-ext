@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jndi:namedResource xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KCBCISCTJB0020301="http://schema.hcis.com/xsd/KCBCISCTJB0020301" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" name="CISKCBCTJB/CISKCBCTJB0020301.KCBCISCTJB0020301_OutRes_bizBody" type="dataformat:DataFormat">
+  <jndi:imports importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/KCBCISCTJB0020301_OutRes_bizBody.xsd" namespace="http://schema.hcis.com/xsd/KCBCISCTJB0020301"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="KCBCISCTJB0020301:main" lineLength="114" fieldOffsetsStr="certNo(0,12)&#xA;infCnscYn(12,13)&#xA;reReqnCnt(13,15)&#xA;idntNoGbcd(15,16)&#xA;idntNo(16,29)&#xA;fnmNm(29,79)&#xA;infEnChkBit(79,89)&#xA;pinfInfTotCnt(89,92)&#xA;pinfInfTotTrsCnt(92,95)&#xA;pinfInfRespCnt(95,97)&#xA;apsTotCnt(97,100)&#xA;apsTotTrsCnt(100,103)&#xA;apsRespCnt(103,106)&#xA;rltyOwnInfTotCnt(106,109)&#xA;rltyOwnInfTotTrsCnt(109,112)&#xA;rltyOwnInfRespCnt(112,114)&#xA;pinfInfRespList(114,114)&#xA;apsInfList(114,114)&#xA;rltyOwnInfList(114,114)">
+    <fieldOffsets kor="인증번호" type="string" name="certNo" start="0" end="12"/>
+    <fieldOffsets kor="정보연속여부" type="string" name="infCnscYn" start="12" end="13"/>
+    <fieldOffsets kor="재요청횟수" type="string" name="reReqnCnt" start="13" end="15"/>
+    <fieldOffsets kor="식별번호구분코드" type="string" name="idntNoGbcd" start="15" end="16"/>
+    <fieldOffsets kor="식별번호" type="string" name="idntNo" start="16" end="29"/>
+    <fieldOffsets kor="성명" type="string" name="fnmNm" start="29" end="79"/>
+    <fieldOffsets kor="정보유무체크비트" type="string" name="infEnChkBit" start="79" end="89"/>
+    <fieldOffsets kor="신상정보총건수" type="long" name="pinfInfTotCnt" start="89" end="92"/>
+    <fieldOffsets kor="신상정보총송신건수" type="long" name="pinfInfTotTrsCnt" start="92" end="95"/>
+    <fieldOffsets kor="신상정보응답건수" type="long" name="pinfInfRespCnt" start="95" end="97"/>
+    <fieldOffsets kor="APS총건수" type="long" name="apsTotCnt" start="97" end="100"/>
+    <fieldOffsets kor="APS총송신건수" type="long" name="apsTotTrsCnt" start="100" end="103"/>
+    <fieldOffsets kor="APS응답건수" type="long" name="apsRespCnt" start="103" end="106"/>
+    <fieldOffsets kor="부동산소유정보총건수" type="long" name="rltyOwnInfTotCnt" start="106" end="109"/>
+    <fieldOffsets kor="부동산소유정보총송신건수" type="long" name="rltyOwnInfTotTrsCnt" start="109" end="112"/>
+    <fieldOffsets kor="부동산소유정보응답건수" type="long" name="rltyOwnInfRespCnt" start="112" end="114"/>
+    <fieldOffsets kor="신상정보_배열" type="PINF_INF_RESP_LIST_TYPE" name="pinfInfRespList" start="114" end="114"/>
+    <fieldOffsets kor="APS정보_배열" type="APS_INF_LIST_TYPE" name="apsInfList" start="114" end="114"/>
+    <fieldOffsets kor="부동산소유정보_배열" type="RLTY_OWN_INF_LIST_TYPE" name="rltyOwnInfList" start="114" end="114"/>
+  </jndi:configuration>
+</jndi:namedResource>

@@ -335,6 +335,24 @@
 			<useLookupValue>false</useLookupValue>
 		</globalVariable>
 		<globalVariable>
+			<name>/ENDPOINT/NIC/NIC_HOST</name>
+			<value>10.103.237.98</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>/ENDPOINT/NIC/NIC_PORT</name>
+			<value>29162</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>Integer</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
 			<name>/SECURITY/TOS/TOS__USER_ID</name>
 			<value>HELP518</value>
 			<deploymentSettable>false</deploymentSettable>

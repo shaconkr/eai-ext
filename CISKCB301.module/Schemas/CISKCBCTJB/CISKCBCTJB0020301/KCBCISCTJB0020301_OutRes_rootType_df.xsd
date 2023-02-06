@@ -1,9 +1,0 @@
-<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:e="http://shacon.kr/xsd" xmlns:ns="http://schema.hcis.com/xsd/KCBCISCTJB0020301" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://schema.hcis.com/xsd/KCBCISCTJB0020301">
-    <element name="root">
-        <complexType>
-            <sequence>
-                <element name="data" type="ns:KCBCISCTJB0020301_OutRes"/>
-            </sequence>
-        </complexType>
-    </element>
-</schema>

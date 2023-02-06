@@ -1,4 +1,4 @@
-<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:e="http://shacon.kr/xsd" xmlns:ns="http://schema.hcis.com/xsd/JNICISCTIC0030101" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.hcis.com/xsd/JNICISCTIC0030101">
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:e="http://shacon.kr/xsd" xmlns:ns="http://schema.hcis.com/xsd/JNICISCTIC0030101_OutReq" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.hcis.com/xsd/JNICISCTIC0030101_OutReq">
     <complexType name="CISHeaderType">
         <sequence>
             <element e:kor="전체전문길이" e:length="8" e:padder="SpaceRight" minOccurs="0" name="totTgrmLen" nillable="true" type="integer"/>
@@ -79,8 +79,8 @@
     </complexType>
     <complexType name="JNICISCTIC0030101_OutReq">
         <sequence>
-            <element name="bizHeader" type="ns:JNICISCTIC0030101_OutReq_Header" nillable="true"/>
-            <element name="bizBody" type="ns:JNICISCTIC0030101_OutReq_Body" nillable="true"/>
+            <element name="bizHeader" type="ns:JNICISCTIC0030101_OutReq_Header"/>
+            <element name="bizBody" type="ns:JNICISCTIC0030101_OutReq_Body"/>
         </sequence>
     </complexType>
     <complexType name="rootType">

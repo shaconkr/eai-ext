@@ -1,0 +1,20 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:e="http://shacon.kr/xsd" xmlns:ns="http://schema.hcis.com/xsd/CISNICUPID0010501_OutReq_Header" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://schema.hcis.com/xsd/CISNICUPID0010501_OutReq_Header">
+    <element name="root" type="ns:CISNICUPID0010501_OutReq_Header"/>
+    <complexType name="CISNICUPID0010501_OutReq_Header">
+        <sequence>
+            <element e:kor="거래코드" e:length="9" e:padder="SpaceRight" name="trdCd" nillable="true" type="string"/>
+            <element e:kor="전문채널코드" e:length="9" e:padder="SpaceRight" name="tgrmChCd" nillable="true" type="string"/>
+            <element e:kor="전문종별코드" e:length="4" e:padder="ZeroLeft" name="tgrmSubCCd" nillable="true" type="long"/>
+            <element e:kor="거래구분코드" e:length="5" e:padder="SpaceRight" name="trdGbcd" nillable="true" type="string"/>
+            <element e:kor="송수신구분" e:length="1" e:padder="SpaceRight" name="tnrGb" nillable="true" type="string"/>
+            <element e:kor="단말기정보구분코드" e:length="3" e:padder="SpaceRight" name="teInfGbcd" nillable="true" type="string"/>
+            <element e:kor="응답코드" e:length="4" e:padder="SpaceRight" name="respCd" nillable="true" type="string"/>
+            <element e:kor="사용자ID" e:length="9" e:padder="SpaceRight" name="userId" nillable="true" type="string"/>
+            <element e:kor="기관전문관리번호" e:length="10" e:padder="ZeroLeft" name="istnTgrmMngNo" nillable="true" type="long"/>
+            <element e:kor="기관전문전송시간" e:length="14" e:padder="ZeroLeft" name="istnTgrmSendTime" nillable="true" type="long"/>
+            <element e:kor="NICE전문관리번호" e:length="10" e:padder="SpaceRight" name="niceTgrmMngNo" nillable="true" type="string"/>
+            <element e:kor="NICE전문전송시간" e:length="14" e:padder="ZeroLeft" name="niceTgrmSendTime" nillable="true" type="long"/>
+            <element e:kor="공백값" e:length="17" e:padder="SpaceRight" name="nullVal" nillable="true" type="string"/>
+        </sequence>
+    </complexType>
+</schema>

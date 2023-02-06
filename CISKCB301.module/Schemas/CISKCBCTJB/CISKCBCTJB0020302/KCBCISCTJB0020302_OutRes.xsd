@@ -1,4 +1,4 @@
-<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:e="http://shacon.kr/xsd" xmlns:ns="http://schema.hcis.com/xsd/KCBCISCTJB0020302" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.hcis.com/xsd/KCBCISCTJB0020302">
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:e="http://shacon.kr/xsd" xmlns:ns="http://schema.hcis.com/xsd/KCBCISCTJB0020302_OutRes" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.hcis.com/xsd/KCBCISCTJB0020302_OutRes">
     <complexType name="KCBCISCTJB0020302_OutRes_Header">
         <sequence>
             <element e:kor="전문길이" e:length="4" e:padder="SpaceRight" name="tgrmLen" nillable="true" type="string"/>

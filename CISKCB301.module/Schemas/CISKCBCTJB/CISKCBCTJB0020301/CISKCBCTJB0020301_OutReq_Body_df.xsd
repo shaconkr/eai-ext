@@ -1,0 +1,28 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:e="http://shacon.kr/xsd" xmlns:ns="http://schema.hcis.com/xsd/CISKCBCTJB0020301_OutReq_Body" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://schema.hcis.com/xsd/CISKCBCTJB0020301_OutReq_Body">
+    <element name="root" type="ns:CISKCBCTJB0020301_OutReq_Body"/>
+    <complexType name="CISKCBCTJB0020301_OutReq_Body">
+        <sequence>
+            <element e:kor="인증번호" e:length="12" e:padder="SpaceRight" name="certNo" nillable="true" type="string"/>
+            <element e:kor="재요청횟수" e:length="2" e:padder="SpaceRight" name="reReqnCnt" nillable="true" type="string"/>
+            <element e:kor="식별번호구분코드" e:length="1" e:padder="SpaceRight" name="idntNoGbcd" nillable="true" type="string"/>
+            <element e:kor="식별번호" e:length="13" e:padder="SpaceRight" name="idntNo" nillable="true" type="string"/>
+            <element e:kor="조회목적코드" e:length="2" e:padder="SpaceRight" name="qryPurpseCd" nillable="true" type="string"/>
+            <element e:kor="성명" e:length="50" e:padder="SpaceRight" name="fnmNm" nillable="true" type="string"/>
+            <element e:kor="조회지점명" e:length="20" e:padder="SpaceRight" name="qryBrnNm" nillable="true" type="string"/>
+            <element e:kor="담당자ID" e:length="15" e:padder="SpaceRight" name="asgnrId" nillable="true" type="string"/>
+            <element e:kor="신상정보총수신건수" e:length="3" e:padder="ZeroLeft" name="pinfInfTotRcvCnt" nillable="true" type="long"/>
+            <element e:kor="신상정보요청건수" e:length="2" e:padder="ZeroLeft" name="pinfInfReqnCnt" nillable="true" type="long"/>
+            <element e:kor="APS총수신건수" e:length="3" e:padder="ZeroLeft" name="apsTotRcvCnt" nillable="true" type="long"/>
+            <element e:kor="APS요청건수" e:length="3" e:padder="ZeroLeft" name="apsReqnCnt" nillable="true" type="long"/>
+            <element e:kor="부동산소유정보총수신건수" e:length="3" e:padder="ZeroLeft" name="rltyOwnInfTotRcvCnt" nillable="true" type="long"/>
+            <element e:kor="부동산소유정보요청건수" e:length="2" e:padder="ZeroLeft" name="rltyOwnInfReqnCnt" nillable="true" type="long"/>
+            <element e:kor="APS반복부_배열" e:padder="ZeroLeft" maxOccurs="unbounded" name="apsReqnList" type="ns:APS_REQN_LIST_TYPE"/>
+        </sequence>
+    </complexType>
+    <complexType name="APS_REQN_LIST_TYPE">
+        <sequence>
+            <element e:kor="세그멘트ID" e:length="3" e:padder="SpaceRight" name="segId" nillable="true" type="string"/>
+            <element e:kor="프로파일코드" e:length="9" e:padder="SpaceRight" name="prfCd" nillable="true" type="string"/>
+        </sequence>
+    </complexType>
+</schema>

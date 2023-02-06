@@ -12,10 +12,16 @@ import com.hcis.eai.common.HCISHelperAnc;
 public class GenSchema {
 	
 	String eimsPath = "D:/HCIS/eai-repo/";
-	String projPath = "D:/HCIS/eai-ext/";
+	String projPath = "D:/HCIS/";
 	
-	String reqIfId = "CISNICUPID0010501";
-	String resIfId = "NICCISUPID0010501";
+	String reqIfId = "CISKCBCTJB0100101";   
+	String resIfId = "KCBCISCTJB0100101"; 
+	
+//	String reqIfId = "CISKCBCTJB0020301";  
+//	String resIfId = "KCBCISCTJB0020301"; 
+	
+//	String reqIfId = "CISKCBCTJB0020302";  
+//	String resIfId = "KCBCISCTJB0020302"; 	
     
 	String moduleName = reqIfId.substring(0,6) +  "301.module";
 	
@@ -34,7 +40,7 @@ public class GenSchema {
 	   
 	@Test
 	public void afterOne() throws IOException {
-		String processPath = projPath + moduleName + "/Processes";
+		String processPath = projPath + "eai-ext/" + moduleName + "/Processes";
 		
 		Path reqIf = Paths.get(processPath + "/" + reqIfId.substring(0,10) + "/" + reqIfId );
 		Files.createDirectories(reqIf);

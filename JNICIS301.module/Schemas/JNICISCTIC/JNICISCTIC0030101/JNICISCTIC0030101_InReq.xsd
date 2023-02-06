@@ -1,4 +1,4 @@
-<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:e="http://shacon.kr/xsd" xmlns:ns="http://schema.hcis.com/xsd/JNICISCTIC0030101" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.hcis.com/xsd/JNICISCTIC0030101">
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:e="http://shacon.kr/xsd" xmlns:ns="http://schema.hcis.com/xsd/JNICISCTIC0030101_InReq" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.hcis.com/xsd/JNICISCTIC0030101_InReq">
     <complexType name="JNICISCTIC0030101_InReq_Header">
         <sequence>
             <element e:kor="거래코드" e:length="4" e:padder="SpaceRight" name="trdCd" nillable="true" type="string"/>

@@ -1,4 +1,4 @@
-<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:e="http://shacon.kr/xsd" xmlns:ns="http://schema.hcis.com/xsd/TOSCISPMMZ0140402" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.hcis.com/xsd/TOSCISPMMZ0140402">
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:e="http://shacon.kr/xsd" xmlns:ns="http://schema.hcis.com/xsd/TOSCISPMMZ0140402_OutRes" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.hcis.com/xsd/TOSCISPMMZ0140402_OutRes">
     <complexType name="TOSCISPMMZ0140402_OutRes_Header">
         <sequence>
             <element e:kor="식별코드" e:length="12" e:padder="SpaceRight" name="trCode" nillable="true" type="string"/>

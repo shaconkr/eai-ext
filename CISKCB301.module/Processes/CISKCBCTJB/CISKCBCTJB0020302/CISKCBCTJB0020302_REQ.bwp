@@ -2462,10 +2462,12 @@
         <tibex:namespaceItem
             namespace="www.tibco.com/plugin/java/JavaInvokeActivityInput+0c1a2555-081e-4b3e-b0d0-3f472e289b18+JavaInvokeActivityInput" prefix="tns6"/>
     </tibex:NamespaceRegistry>
-    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.cspi_library.org/Log"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema"
+        location="../../../Schemas/CISKCBCTJB/CISKCBCTJB0020302/KCBCISCTJB0020302_OutRes.xsd" namespace="http://schema.hcis.com/xsd/KCBCISCTJB0020302_OutRes"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema"
+        location="../../../Schemas/CISKCBCTJB/CISKCBCTJB0020302/CISKCBCTJB0020302_InReq.xsd" namespace="http://schema.hcis.com/xsd/CISKCBCTJB0020302_InReq"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.cspi_library.org/Library"/>
-    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://schema.hcis.com/xsd/CISKCBCTJB0020302_InReq"/>
-    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://schema.hcis.com/xsd/KCBCISCTJB0020302_OutRes"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.cspi_library.org/Log"/>
     <bpws:variables>
         <bpws:variable element="ns:ProcessContext"
             name="_processContext" sca-bpel:internal="true"/>

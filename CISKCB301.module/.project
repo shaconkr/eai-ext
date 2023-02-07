@@ -8,6 +8,11 @@
 	</projects>
 	<buildSpec>
 		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
 			<name>org.eclipse.pde.ManifestBuilder</name>
 			<arguments>
 			</arguments>
@@ -57,5 +62,6 @@
 		<nature>org.eclipse.pde.PluginNature</nature>
 		<nature>com.tibco.bw.design.bwNature</nature>
 		<nature>com.tibco.xpd.resources.xpdNature</nature>
+		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
 </projectDescription>

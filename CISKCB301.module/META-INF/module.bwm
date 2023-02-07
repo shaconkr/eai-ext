@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_xe8l4KNXEe2I6OEBdyWgvQ" targetNamespace="http://tns.tibco.com/bw/composite/CISKCB301.module" name="CISKCB301.module" compositeext:version="1.0.0" compositeext:formatVersion="2">
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_xe8l4KNXEe2I6OEBdyWgvQ" targetNamespace="http://tns.tibco.com/bw/composite/CISKCB301.module" name="CISKCB301.module" compositeext:version="1.0.0" compositeext:formatVersion="2">
   <sca:property xmi:id="_zDeTsKNXEe2I6OEBdyWgvQ" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_zDm2kKNXEe2I6OEBdyWgvQ" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_zDrvEKNXEe2I6OEBdyWgvQ" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
@@ -9,4 +9,22 @@
   <sca:property xmi:id="_zD9b4KNXEe2I6OEBdyWgvQ" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_zEBtUKNXEe2I6OEBdyWgvQ" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_zEGl0KNXEe2I6OEBdyWgvQ" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:component xmi:id="_-lkI4KavEe27k4y1-tS--Q" name="ComponentCISNICUPID0010501_REQ" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_-lkI4aavEe27k4y1-tS--Q" processName="CISKCBCTJB.CISKCBCTJB0020301.CISKCBCTJB0020301_REQ"/>
+  </sca:component>
+  <sca:component xmi:id="_A2ebkKawEe27k4y1-tS--Q" name="ComponentNICCISUPID0010501_RES" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_A2ebkaawEe27k4y1-tS--Q" processName="KCBCISCTJB.KCBCISCTJB0020301.KCBCISCTJB0020301_RES"/>
+  </sca:component>
+  <sca:component xmi:id="_Y1utMKa0Ee2ZJPS22iLa-Q" name="ComponentCISKCBCTJB0020301_REQ" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_Y1utMaa0Ee2ZJPS22iLa-Q" processName="CISKCBCTJB.CISKCBCTJB0020302.CISKCBCTJB0020302_REQ"/>
+  </sca:component>
+  <sca:component xmi:id="_f5XIAKa0Ee2ZJPS22iLa-Q" name="ComponentCISKCBCTJB0020302_REQ" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_f5XIAaa0Ee2ZJPS22iLa-Q" processName="CISKCBCTJB.CISKCBCTJB0100101.CISKCBCTJB0100101_REQ"/>
+  </sca:component>
+  <sca:component xmi:id="_k7rLUKa0Ee2ZJPS22iLa-Q" name="ComponentKCBCISCTJB0020301_RES" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_k7rLUaa0Ee2ZJPS22iLa-Q" processName="KCBCISCTJB.KCBCISCTJB0020302.KCBCISCTJB0020302_RES"/>
+  </sca:component>
+  <sca:component xmi:id="_tsCNsKa0Ee2ZJPS22iLa-Q" name="ComponentKCBCISCTJB0020302_RES" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_tsCNsaa0Ee2ZJPS22iLa-Q" processName="KCBCISCTJB.KCBCISCTJB0100101.KCBCISCTJB0100101_RES"/>
+  </sca:component>
 </sca:composite>

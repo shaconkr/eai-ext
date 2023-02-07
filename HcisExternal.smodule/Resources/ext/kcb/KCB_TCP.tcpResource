@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmlns:tcpconnection="http://ns.tibco.com/bw/palette/tcpconnection" xmi:id="_JK6E4aNYEe2I6OEBdyWgvQ" name="ext.kcb.KCB" type="tcpconnection:tcpconnection">
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmlns:tcpconnection="http://ns.tibco.com/bw/palette/tcpconnection" xmi:id="_JK6E4aNYEe2I6OEBdyWgvQ" name="ext.kcb.KCB_TCP" type="tcpconnection:tcpconnection">
   <jndi:configuration xsi:type="tcpconnection:TCPConnection" xmi:id="_JK6E4qNYEe2I6OEBdyWgvQ" whenExhaustedAction="Block">
     <substitutionBindings xmi:id="_KB-20KNYEe2I6OEBdyWgvQ" template="host" propName="/ENDPOINT/KCB/KCB_HOST"/>
     <substitutionBindings xmi:id="_b85kQKNYEe2I6OEBdyWgvQ" template="port" propName="/ENDPOINT/KCB/KCB_PORT"/>

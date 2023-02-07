@@ -3,6 +3,8 @@
 	<name>CISKCB301.module</name>
 	<comment></comment>
 	<projects>
+		<project>CSPI_Library</project>
+		<project>HcisExternal.smodule</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

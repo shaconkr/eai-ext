@@ -41,6 +41,8 @@
   <sca:property xmi:id="_yTwMYKKmEe2ZLOHaxoc2FA" name="/ENDPOINT/NIC/NIC_PORT" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_NNODwKNYEe2I6OEBdyWgvQ" name="/ENDPOINT/KCB/KCB_HOST" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_Rr9f8KNYEe2I6OEBdyWgvQ" name="/ENDPOINT/KCB/KCB_PORT" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_t5snUKaVEe2MspbPgxPMzQ" name="/ENDPOINT/KIC/KIC_HOST" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_xMAFkKaVEe2MspbPgxPMzQ" name="/ENDPOINT/KIC/KIC_PORT" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_K4GXIJxgEe2Xs_MkOHaDkA" name="/SECURITY/TOS/TOS__USER_ID" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_Rpd9QJxgEe2Xs_MkOHaDkA" name="/SECURITY/TOS/TOS_PWD" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_y6EEEJ04Ee2J2YQCWHlc5A" name="/common/stage" type="XMLSchema:string" publicAccess="true" scalable="true"/>

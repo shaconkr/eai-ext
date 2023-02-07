@@ -14,14 +14,8 @@ public class GenSchema {
 	String eimsPath = "D:/HCIS/eai-repo/";
 	String projPath = "D:/HCIS/";
 	
-	String reqIfId = "JNICISCTIC0030101";   
-	String resIfId = "CISJNICTIC0030102"; 
-	
-//	String reqIfId = "CISKCBCTJB0020301";  
-//	String resIfId = "KCBCISCTJB0020301"; 
-	
-//	String reqIfId = "CISKCBCTJB0020302";  
-//	String resIfId = "KCBCISCTJB0020302"; 	
+	String reqIfId = "CISNICUPID0010601";   
+	String resIfId = "NICCISUPID0010601"; 	
     
 	String moduleName = reqIfId.substring(0,6) +  "301.module";
 	

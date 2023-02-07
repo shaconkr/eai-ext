@@ -36,6 +36,8 @@
     xmlns:ns33="http://tns.tibco.com/bw/palette/internal/activityerror+0c1a2555-081e-4b3e-b0d0-3f472e289b18"
     xmlns:ns34="http://schema.hcis.com/xsd/CISNICUPID0010601"
     xmlns:ns35="http://schema.hcis.com/xsd/NICCISUPID0010601"
+    xmlns:ns36="http://schema.hcis.com/xsd/NICCISUPID0010601_OutRes"
+    xmlns:ns37="http://schema.hcis.com/xsd/CISNICUPID0010601_InReq"
     xmlns:ns4="www.tibco.com/plugin/java/JavaInvokeActivityOutput+9668acd8-9b1b-42f2-8127-acae1d4663a5+JavaInvokeActivityOutput"
     xmlns:ns5="http://tns.tibco.com/bw/palette/internal/activityerror+9668acd8-9b1b-42f2-8127-acae1d4663a5"
     xmlns:ns6="activity.jsonParser.input+280e1bdb-b3ba-4eaf-8a2b-635de1b6af2c+ActivityInputType"
@@ -1548,6 +1550,13 @@
                 </choice>
             </complexType>
         </schema>
+        <schema elementFormDefault="qualified"
+            targetNamespace="http://www.tibco.com/tnt/utilitySchema"
+            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.tibco.com/tnt/utilitySchema">
+            <simpleType name="nativeJavaObjectKey">
+                <restriction base="string"/>
+            </simpleType>
+        </schema>
     </tibex:Types>
     <tibex:ProcessInfo callable="false" createdBy="javal"
         createdOn="Thu Feb 02 12:16:12 KST 2023" description=""
@@ -2453,16 +2462,8 @@
     </tibex:NamespaceRegistry>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.cspi_library.org/Log"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.cspi_library.org/Library"/>
-    <bpws:import importType="http://www.w3.org/2001/XMLSchema"
-        location="../../../Schemas/CISNICUPID/CISNICUPID0010501/CISNICUPID0010501_InReq.xsd" namespace="http://schema.hcis.com/xsd/CISNICUPID0010501"/>
-    <bpws:import importType="http://www.w3.org/2001/XMLSchema"
-        location="../../../Schemas/CISNICUPID/CISNICUPID0010501/NICCISUPID0010501_OutRes.xsd" namespace="http://schema.hcis.com/xsd/NICCISUPID0010501"/>
-    <bpws:import importType="http://www.w3.org/2001/XMLSchema"
-        location="../../../Schemas/CISNICUPID/CISNICUPID0010501/NICCISUPID0010501_InRes.xsd" namespace="http://schema.hcis.com/xsd/NICCISUPID0010501"/>
-    <bpws:import importType="http://www.w3.org/2001/XMLSchema"
-        location="../../../Schemas/CISNICUPID/CISNICUPID0010601/CISNICUPID0010601_InReq.xsd" namespace="http://schema.hcis.com/xsd/CISNICUPID0010601"/>
-    <bpws:import importType="http://www.w3.org/2001/XMLSchema"
-        location="../../../Schemas/CISNICUPID/CISNICUPID0010601/NICCISUPID0010601_OutRes.xsd" namespace="http://schema.hcis.com/xsd/NICCISUPID0010601"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://schema.hcis.com/xsd/NICCISUPID0010601_OutRes"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://schema.hcis.com/xsd/CISNICUPID0010601_InReq"/>
     <bpws:variables>
         <bpws:variable element="ns:ProcessContext"
             name="_processContext" sca-bpel:internal="true"/>
@@ -2494,7 +2495,7 @@
             name="_error_setProcessName" sca-bpel:internal="true"/>
         <bpws:variable element="ns6:ActivityInputClass"
             name="Parse_IN_Req-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns34:root" name="Parse_IN_Req" sca-bpel:internal="true"/>
+        <bpws:variable element="ns37:root" name="Parse_IN_Req" sca-bpel:internal="true"/>
         <bpws:variable element="ns8:ActivityErrorData"
             name="_error_Parse_IN_Req" sca-bpel:internal="true"/>
         <bpws:variable element="ns:ErrorReport" name="_error" sca-bpel:internal="true"/>
@@ -2532,7 +2533,7 @@
             name="_error_BytesToHex" sca-bpel:internal="true"/>
         <bpws:variable element="ns26:ActivityInputClass"
             name="Parse_OUT_RES-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns35:root" name="Parse_OUT_RES" sca-bpel:internal="true"/>
+        <bpws:variable element="ns36:root" name="Parse_OUT_RES" sca-bpel:internal="true"/>
         <bpws:variable element="ns8:ActivityErrorData"
             name="_error_Parse_OUT_RES" sca-bpel:internal="true"/>
         <bpws:variable element="ns1:SetLog" name="L_Set_LogEnd-input" sca-bpel:internal="true"/>
@@ -2856,7 +2857,7 @@
                                     icon="HcisCommon.smodule\Resources\icons\edifact-48.png"
                                     isNew="true"
                                     isNewActivity="true"
-                                    javaGlobalInstance="ModuleHelper1"
+                                    javaGlobalInstance="ModuleHelper"
                                     methodName="JsonToEDIbytes"
                                     methodReturn="byte[]" xsi:type="java:JavaMethod">
                                     <exceptionTypes>java.lang.Exception</exceptionTypes>

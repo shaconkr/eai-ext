@@ -371,6 +371,24 @@
 			<useLookupValue>false</useLookupValue>
 		</globalVariable>
 		<globalVariable>
+			<name>/ENDPOINT/KIC/KIC_HOST</name>
+			<value>10.103.248.2</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>/ENDPOINT/KIC/KIC_PORT</name>
+			<value>3040</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>Integer</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
 			<name>/SECURITY/TOS/TOS__USER_ID</name>
 			<value>HELP518</value>
 			<deploymentSettable>false</deploymentSettable>

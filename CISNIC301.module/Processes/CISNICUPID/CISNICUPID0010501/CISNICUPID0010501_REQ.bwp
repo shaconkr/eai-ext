@@ -34,6 +34,8 @@
     xmlns:ns31="www.tibco.com/plugin/java/JavaInvokeActivityInput+0c1a2555-081e-4b3e-b0d0-3f472e289b18+JavaInvokeActivityInput"
     xmlns:ns32="www.tibco.com/plugin/java/JavaInvokeActivityOutput+0c1a2555-081e-4b3e-b0d0-3f472e289b18+JavaInvokeActivityOutput"
     xmlns:ns33="http://tns.tibco.com/bw/palette/internal/activityerror+0c1a2555-081e-4b3e-b0d0-3f472e289b18"
+    xmlns:ns34="http://schema.hcis.com/xsd/NICCISUPID0010501_OutRes"
+    xmlns:ns35="http://schema.hcis.com/xsd/CISNICUPID0010501_InReq"
     xmlns:ns4="www.tibco.com/plugin/java/JavaInvokeActivityOutput+9668acd8-9b1b-42f2-8127-acae1d4663a5+JavaInvokeActivityOutput"
     xmlns:ns5="http://tns.tibco.com/bw/palette/internal/activityerror+9668acd8-9b1b-42f2-8127-acae1d4663a5"
     xmlns:ns6="activity.jsonParser.input+280e1bdb-b3ba-4eaf-8a2b-635de1b6af2c+ActivityInputType"
@@ -1546,6 +1548,13 @@
                 </choice>
             </complexType>
         </schema>
+        <schema elementFormDefault="qualified"
+            targetNamespace="http://www.tibco.com/tnt/utilitySchema"
+            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.tibco.com/tnt/utilitySchema">
+            <simpleType name="nativeJavaObjectKey">
+                <restriction base="string"/>
+            </simpleType>
+        </schema>
     </tibex:Types>
     <tibex:ProcessInfo callable="false" createdBy="javal"
         createdOn="Thu Feb 02 12:16:12 KST 2023" description=""
@@ -2402,12 +2411,8 @@
     </tibex:NamespaceRegistry>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.cspi_library.org/Log"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.cspi_library.org/Library"/>
-    <bpws:import importType="http://www.w3.org/2001/XMLSchema"
-        location="../../../Schemas/CISNICUPID/CISNICUPID0010501/CISNICUPID0010501_InReq.xsd" namespace="http://schema.hcis.com/xsd/CISNICUPID0010501"/>
-    <bpws:import importType="http://www.w3.org/2001/XMLSchema"
-        location="../../../Schemas/CISNICUPID/CISNICUPID0010501/NICCISUPID0010501_OutRes.xsd" namespace="http://schema.hcis.com/xsd/NICCISUPID0010501"/>
-    <bpws:import importType="http://www.w3.org/2001/XMLSchema"
-        location="../../../Schemas/CISNICUPID/CISNICUPID0010501/NICCISUPID0010501_InRes.xsd" namespace="http://schema.hcis.com/xsd/NICCISUPID0010501"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://schema.hcis.com/xsd/CISNICUPID0010501_InReq"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://schema.hcis.com/xsd/NICCISUPID0010501_OutRes"/>
     <bpws:variables>
         <bpws:variable element="ns:ProcessContext"
             name="_processContext" sca-bpel:internal="true"/>
@@ -2439,7 +2444,7 @@
             name="_error_setProcessName" sca-bpel:internal="true"/>
         <bpws:variable element="ns6:ActivityInputClass"
             name="Parse_IN_Req-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns7:root" name="Parse_IN_Req" sca-bpel:internal="true"/>
+        <bpws:variable element="ns35:root" name="Parse_IN_Req" sca-bpel:internal="true"/>
         <bpws:variable element="ns8:ActivityErrorData"
             name="_error_Parse_IN_Req" sca-bpel:internal="true"/>
         <bpws:variable element="ns:ErrorReport" name="_error" sca-bpel:internal="true"/>
@@ -2477,7 +2482,7 @@
             name="_error_BytesToHex" sca-bpel:internal="true"/>
         <bpws:variable element="ns26:ActivityInputClass"
             name="Parse_OUT_RES-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns27:root" name="Parse_OUT_RES" sca-bpel:internal="true"/>
+        <bpws:variable element="ns34:root" name="Parse_OUT_RES" sca-bpel:internal="true"/>
         <bpws:variable element="ns8:ActivityErrorData"
             name="_error_Parse_OUT_RES" sca-bpel:internal="true"/>
         <bpws:variable element="ns1:SetLog" name="L_Set_LogEnd-input" sca-bpel:internal="true"/>
@@ -2549,6 +2554,7 @@
                     <bpws:sources>
                         <bpws:source linkName="JMSReceiveMessageToL_Get_InterfaceInfo"/>
                     </bpws:sources>
+                    <bpws:correlations/>
                     <tibex:eventSource>
                         <bwext:BWActivity
                             activityTypeID="bw.jms.receive"
@@ -2871,6 +2877,7 @@
                         <tibex:inputBinding
                             expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns4=&quot;http://www.tibco.com/namespaces/tnt/plugins/jms+c0c4434f-89db-48e9-bb31-6d54b5d3bc86+input&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;Build_IN_RES&quot;/>&#xa;    &lt;xsl:template name=&quot;ReplytoJMSMessage-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns4:ActivityInput>&#xa;            &lt;Body>&#xa;                &lt;xsl:value-of select=&quot;$Build_IN_RES/MethodReturnValue&quot;/>&#xa;            &lt;/Body>&#xa;        &lt;/tns4:ActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
+                    <bpws:correlations/>
                     <tibex:config>
                         <bwext:BWActivity activityTypeID="bw.jms.reply"
                             version="6.0.0.20132205"

@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<jndi:namedResource xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CISJNICTIC0030102="http://schema.hcis.com/xsd/CISJNICTIC0030102_InRes_Body" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" name="JNICISCTIC/JNICISCTIC0030101.CISJNICTIC0030102_InRes_Body" type="dataformat:DataFormat">
-  <jndi:imports importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/CISJNICTIC0030102_InRes_Body_df.xsd" namespace="http://schema.hcis.com/xsd/CISJNICTIC0030102_InRes_Body"/>
-  <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="CISJNICTIC0030102:main" lineLength="246" fieldOffsetsStr="tgrmLen(0,6)&#xA;prepVal(6,242)&#xA;respCd(242,246)">
-    <fieldOffsets kor="전문길이" type="string" name="tgrmLen" start="0" end="6"/>
-    <fieldOffsets kor="예비값" type="string" name="prepVal" start="6" end="242"/>
-    <fieldOffsets kor="응답코드" type="string" name="respCd" start="242" end="246"/>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CISJNICTIC0030102="http://schema.hcis.com/xsd/CISJNICTIC0030102_InRes_Body" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmi:id="_oNWDUKanEe2MspbPgxPMzQ" name="JNICISCTIC.JNICISCTIC0030101.CISJNICTIC0030102_InRes_Body" type="dataformat:DataFormat">
+  <imports xmi:id="_oNWDUaanEe2MspbPgxPMzQ" importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/CISJNICTIC0030102_InRes_Body_df.xsd" namespace="http://schema.hcis.com/xsd/CISJNICTIC0030102_InRes_Body"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" xmi:id="_oNWDUqanEe2MspbPgxPMzQ" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="CISJNICTIC0030102:main" lineLength="246" fieldOffsetsStr="tgrmLen(0,6)&#xA;prepVal(6,242)&#xA;respCd(242,246)">
+    <fieldOffsets xmi:id="_oNWDU6anEe2MspbPgxPMzQ" name="tgrmLen" end="6" kor="전문길이" type="string"/>
+    <fieldOffsets xmi:id="_oNWDVKanEe2MspbPgxPMzQ" name="prepVal" start="6" end="242" kor="예비값" type="string"/>
+    <fieldOffsets xmi:id="_oNWqYKanEe2MspbPgxPMzQ" name="respCd" start="242" end="246" kor="응답코드" type="string"/>
   </jndi:configuration>
 </jndi:namedResource>

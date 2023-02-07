@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<jndi:namedResource xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:JNICISCTIC0030101="http://schema.hcis.com/xsd/JNICISCTIC0030101_InReq" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" name="JNICISCTIC/JNICISCTIC0030101.JNICISCTIC0030101_InReq" type="dataformat:DataFormat">
-  <jndi:imports importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/JNICISCTIC0030101_InReq_df.xsd" namespace="http://schema.hcis.com/xsd/JNICISCTIC0030101_InReq"/>
-  <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="JNICISCTIC0030101:main" lineLength="0" fieldOffsetsStr="bizHeader(0,0)&#xA;bizBody(0,0)">
-    <fieldOffsets kor="0" type="JNICISCTIC0030101_InReq_Header" name="bizHeader" start="0" end="0"/>
-    <fieldOffsets kor="0" type="JNICISCTIC0030101_InReq_Body" name="bizBody" start="0" end="0"/>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:JNICISCTIC0030101="http://schema.hcis.com/xsd/JNICISCTIC0030101_InReq" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmi:id="_oOLJwKanEe2MspbPgxPMzQ" name="JNICISCTIC.JNICISCTIC0030101.JNICISCTIC0030101_InReq" type="dataformat:DataFormat">
+  <imports xmi:id="_oOLJwaanEe2MspbPgxPMzQ" importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/JNICISCTIC0030101_InReq_df.xsd" namespace="http://schema.hcis.com/xsd/JNICISCTIC0030101_InReq"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" xmi:id="_oOLJwqanEe2MspbPgxPMzQ" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="JNICISCTIC0030101:main" fieldOffsetsStr="bizHeader(0,0)&#xA;bizBody(0,0)">
+    <fieldOffsets xmi:id="_oOLw0KanEe2MspbPgxPMzQ" name="bizHeader" kor="0" type="JNICISCTIC0030101_InReq_Header"/>
+    <fieldOffsets xmi:id="_oOLw0aanEe2MspbPgxPMzQ" name="bizBody" kor="0" type="JNICISCTIC0030101_InReq_Body"/>
   </jndi:configuration>
 </jndi:namedResource>

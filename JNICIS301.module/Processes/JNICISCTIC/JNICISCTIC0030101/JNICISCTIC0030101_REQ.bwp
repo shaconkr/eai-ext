@@ -28,7 +28,9 @@
     xmlns:ns26="http://tns.tibco.com/bw/palette/internal/activityerror+864dd51b-08ea-4ed0-8d2e-73caae61bfb4"
     xmlns:ns27="http://www.tibco.com/namespaces/tnt/plugins/jms+efdfae5d-c669-4046-a3e9-370596b0a833+input"
     xmlns:ns28="http://tns.tibco.com/bw/palette/internal/activityerror+bw.jms.reply"
+    xmlns:ns29="http://schema.hcis.com/xsd/JNICISCTIC0030101_InReq"
     xmlns:ns3="http://tns.tibco.com/bw/palette/internal/activityerror+c2037ae7-c684-427b-80b7-e8cbaf8714ce"
+    xmlns:ns30="http://schema.hcis.com/xsd/JNICISCTIC0030101_OutReq"
     xmlns:ns4="http://www.cspi_library.org/Log"
     xmlns:ns5="http://www.cspi_library.org/Library"
     xmlns:ns6="www.tibco.com/plugin/java/JavaInvokeActivityInput+fa8e4c1b-5f33-493d-85c4-4bbfcd00517c+JavaInvokeActivityInput"
@@ -2342,10 +2344,9 @@
     </tibex:NamespaceRegistry>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.cspi_library.org/Log"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.cspi_library.org/Library"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://schema.hcis.com/xsd/JNICISCTIC0030101_OutReq"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema"
-        location="../../../Schemas/JNICISCTIC/JNICISCTIC0030101/JNICISCTIC0030101_InReq.xsd" namespace="http://schema.hcis.com/xsd/JNICISCTIC0030101"/>
-    <bpws:import importType="http://www.w3.org/2001/XMLSchema"
-        location="../../../Schemas/JNICISCTIC/JNICISCTIC0030101/JNICISCTIC0030101_OutReq.xsd" namespace="http://schema.hcis.com/xsd/JNICISCTIC0030101"/>
+        location="../../../Schemas/JNICISCTIC/JNICISCTIC0030101/JNICISCTIC0030101_InReq.xsd" namespace="http://schema.hcis.com/xsd/JNICISCTIC0030101_InReq"/>
     <bpws:variables>
         <bpws:variable element="ns:ProcessContext"
             name="_processContext" sca-bpel:internal="true"/>
@@ -2389,7 +2390,7 @@
             name="_error_to3ByteHangle" sca-bpel:internal="true"/>
         <bpws:variable element="ns12:ActivityInputClass"
             name="SOURCE-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns14:root" name="SOURCE" sca-bpel:internal="true"/>
+        <bpws:variable element="ns29:root" name="SOURCE" sca-bpel:internal="true"/>
         <bpws:variable element="ns13:ActivityErrorData"
             name="_error_SOURCE" sca-bpel:internal="true"/>
         <bpws:variable element="ns:ErrorReport" name="_error" sca-bpel:internal="true"/>
@@ -2401,10 +2402,10 @@
             name="_error_putCISHeader" sca-bpel:internal="true"/>
         <bpws:variable element="ns18:ActivityInputClass"
             name="TARGET-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns14:root" name="TARGET" sca-bpel:internal="true"/>
+        <bpws:variable element="ns30:root" name="TARGET" sca-bpel:internal="true"/>
         <bpws:variable element="ns13:ActivityErrorData"
             name="_error_TARGET" sca-bpel:internal="true"/>
-        <bpws:variable element="ns14:root" name="RenderJSON-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns30:root" name="RenderJSON-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns19:ActivityOutputClass"
             name="RenderJSON" sca-bpel:internal="true"/>
         <bpws:variable element="ns20:ActivityErrorData"

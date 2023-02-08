@@ -498,7 +498,7 @@
             sca-bpel:property="yes"
             sca-bpel:sharedResourceType="{http://ns.tibco.com/bw/palette/ftpconnection}ftpconnection" type="xsd:string">
             <bpws:from>
-                <bpws:literal>ext.nic.NIC_CT</bpws:literal>
+                <bpws:literal>ext.nic.NIC_FTP_CT</bpws:literal>
             </bpws:from>
         </bpws:variable>
         <bpws:variable element="ns1:FTPGetInputDataFile"

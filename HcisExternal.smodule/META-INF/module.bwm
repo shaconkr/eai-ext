@@ -18,11 +18,18 @@
   <sca:property xmi:id="_6psqsJB-Ee2Bjt8ERpvB0A" name="/ENDPOINT/NIC_FTP/SC/HOSTNAME" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_sExMMJB_Ee2Bjt8ERpvB0A" name="/ENDPOINT/NIC_FTP/SC/USERNAME" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_tR4fkJB_Ee2Bjt8ERpvB0A" name="/ENDPOINT/NIC_FTP/SC/PASSWORD" type="property:password" scaext:simpleValue="#!PItM/bx63kIqdIR8lvPtKg==" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_girrMKdLEe2kRZld14Zk_A" name="/ENDPOINT/NIC_FTP/SC/PWD_PLAIN" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_zld2IJCCEe2Bjt8ERpvB0A" name="/ENDPOINT/NIC_FTP/SC/CRSC_SAM_PATH_KIS_RECV" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_2lQIYJB_Ee2Bjt8ERpvB0A" name="/ENDPOINT/NIC_FTP/CT/HOSTNAME" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_3tF6MJB_Ee2Bjt8ERpvB0A" name="/ENDPOINT/NIC_FTP/CT/USERNAME" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_4t-vcJB_Ee2Bjt8ERpvB0A" name="/ENDPOINT/NIC_FTP/CT/PASSWORD" type="property:password" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_jR9U4KdLEe2kRZld14Zk_A" name="/ENDPOINT/NIC_FTP/CT/PWD_PLAIN" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_y0IxwJCAEe2Bjt8ERpvB0A" name="/ENDPOINT/NIC_FTP/CT/CRCT_SAM_PATH_KIS_RECV" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_XCcn4KdHEe2kRZld14Zk_A" name="/ENDPOINT/NIC_FTP/UP/HOSTNAME" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_imHfYKdHEe2kRZld14Zk_A" name="/ENDPOINT/NIC_FTP/UP/USERNAME" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_lNa40KdHEe2kRZld14Zk_A" name="/ENDPOINT/NIC_FTP/UP/PASSWORD" type="property:password" scaext:simpleValue="#!aQjQZZOIXe+gC+ha03l3iA==" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_lVAHgKdHEe2kRZld14Zk_A" name="/ENDPOINT/NIC_FTP/UP/PWD_PLAIN" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_mhK_sKdHEe2kRZld14Zk_A" name="/ENDPOINT/NIC_FTP/UP/UPID_SAM_PATH_NIC_RECV" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_dwx-wJFnEe2cHpbgkwVwbw" name="/ENDPOINT/KFT/HOSTNAME" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_vgBnsJFnEe2cHpbgkwVwbw" name="/ENDPOINT/KFT/PORT" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_7gIjkJFnEe2cHpbgkwVwbw" name="/ENDPOINT/KFT_OL/HOSTNAME" type="XMLSchema:string" publicAccess="true" scalable="true"/>
@@ -43,6 +50,16 @@
   <sca:property xmi:id="_Rr9f8KNYEe2I6OEBdyWgvQ" name="/ENDPOINT/KCB/KCB_PORT" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_t5snUKaVEe2MspbPgxPMzQ" name="/ENDPOINT/KIC/KIC_HOST" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_xMAFkKaVEe2MspbPgxPMzQ" name="/ENDPOINT/KIC/KIC_PORT" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_INoRgKa_Ee2kRZld14Zk_A" name="/ENDPOINT/NIC_SFTP/HOSTNAME" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_PEQLEKa_Ee2kRZld14Zk_A" name="/ENDPOINT/NIC_SFTP/USERNAME" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_QmrAEKa_Ee2kRZld14Zk_A" name="/ENDPOINT/NIC_SFTP/PASSWORD" type="property:password" scaext:simpleValue="#!YoEvVE4KsPEZXtC3ndMSTg==" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_fR1M8Ka_Ee2kRZld14Zk_A" name="/ENDPOINT/NIC_SFTP/PWD_PLAIN" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_TJQRkKa_Ee2kRZld14Zk_A" name="/ENDPOINT/NIC_SFTP/MT_SAM_PATH_NIC_RECV" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_nw3aEKdUEe2kRZld14Zk_A" name="/ENDPOINT/KTT_FTP/HOSTNAME" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_sA8vMKdUEe2kRZld14Zk_A" name="/ENDPOINT/KTT_FTP/USERNAME" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_sYH5EKdUEe2kRZld14Zk_A" name="/ENDPOINT/KTT_FTP/PASSWORD" type="property:password" scaext:simpleValue="#!w0/2aTrOSEBhNALCz85U5Q==" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_se_9IKdUEe2kRZld14Zk_A" name="/ENDPOINT/KTT_FTP/PWD_PLAIN" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_tckYoKdUEe2kRZld14Zk_A" name="/ENDPOINT/KTT_FTP/SAM_CT_KT_RCV_PATH" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_K4GXIJxgEe2Xs_MkOHaDkA" name="/SECURITY/TOS/TOS__USER_ID" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_Rpd9QJxgEe2Xs_MkOHaDkA" name="/SECURITY/TOS/TOS_PWD" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_y6EEEJ04Ee2J2YQCWHlc5A" name="/common/stage" type="XMLSchema:string" publicAccess="true" scalable="true"/>

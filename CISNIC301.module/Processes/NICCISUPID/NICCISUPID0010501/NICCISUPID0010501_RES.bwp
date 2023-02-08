@@ -1771,7 +1771,7 @@
             sca-bpel:property="yes"
             sca-bpel:sharedResourceType="{http://ns.tibco.com/bw/palette/tcpconnection}tcpconnection" type="xsd:string">
             <bpws:from>
-                <bpws:literal>ext.nic.NIC_O</bpws:literal>
+                <bpws:literal>ext.nic.NIC_TCP</bpws:literal>
             </bpws:from>
         </bpws:variable>
         <bpws:variable element="ns6:ActivityInput"

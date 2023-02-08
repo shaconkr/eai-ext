@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_wnQ80KbBEe2kRZld14Zk_A" targetNamespace="http://tns.tibco.com/bw/composite/NICCIS301.module" name="NICCIS301.module" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:property xmi:id="_xuPL8KbBEe2kRZld14Zk_A" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_xuPL8abBEe2kRZld14Zk_A" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_xuPL8qbBEe2kRZld14Zk_A" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_xuPL86bBEe2kRZld14Zk_A" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_xuY88KbBEe2kRZld14Zk_A" name="BW.DOMAIN.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_xuY88abBEe2kRZld14Zk_A" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_xuY88qbBEe2kRZld14Zk_A" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_xuY886bBEe2kRZld14Zk_A" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_xuY89KbBEe2kRZld14Zk_A" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:component xmi:id="_hUnKwabEEe2kRZld14Zk_A" name="ComponentJNICISCTIC0020101" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_hUnKwqbEEe2kRZld14Zk_A" processName="NICCISUPID.NICCISUP_SFTP_GET"/>
+  </sca:component>
+  <sca:component xmi:id="_fNPs0KdMEe2kRZld14Zk_A" name="ComponentNICCIS_FTP_GET" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_fNPs0adMEe2kRZld14Zk_A" processName="NICCISUPID.NICCISUP_TRNSEWS"/>
+  </sca:component>
+  <sca:component xmi:id="_RunHAKdYEe2kRZld14Zk_A" name="ComponentNICCISUP_NTRNSEWS" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_RunHAadYEe2kRZld14Zk_A" processName="NICCISUPID.NICCISUP_NTRNSEWS"/>
+  </sca:component>
+  <sca:component xmi:id="_tSk1gKdcEe2kRZld14Zk_A" name="ComponentNICCISUP_DELQINF" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_tSk1gadcEe2kRZld14Zk_A" processName="NICCISUPID.NICCISUP_DELQINF"/>
+  </sca:component>
+</sca:composite>

@@ -57,7 +57,8 @@ Provide-Capability: com.tibco.bw.module; name="HcisExternal.smodule"; version:Ve
  com.tibco.bw.resources; name="ext.kft",
  com.tibco.bw.resources; name="ext.jni",
  com.tibco.bw.resources; name="ext.kcb",
- com.tibco.bw.resources; name="ext.kic"
+ com.tibco.bw.resources; name="ext.kic",
+ com.tibco.bw.resources; name="ext.ktt"
 TIBCO-BW-Version: 6.9.0 V26 2022-11-02
 TIBCO-BW-ModuleSharedVariables: META-INF/module.msv
 Automatic-Module-Name: HcisExternal.smodule

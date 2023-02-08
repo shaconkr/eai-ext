@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmlns:sftpconnection="http://ns.tibco.com/bw/palette/sftpconnection" xmi:id="_Agnigaa_Ee2kRZld14Zk_A" name="ext.nic.NIC_SFTP" type="sftpconnection:sftpconnection">
+  <jndi:configuration xsi:type="sftpconnection:SFTPConnection" xmi:id="_Agnigqa_Ee2kRZld14Zk_A" port="222">
+    <substitutionBindings xmi:id="_AWuxQKbAEe2kRZld14Zk_A" template="host" propName="/ENDPOINT/NIC_SFTP/HOSTNAME"/>
+    <substitutionBindings xmi:id="_NrM4AKbAEe2kRZld14Zk_A" template="userName" propName="/ENDPOINT/NIC_SFTP/USERNAME"/>
+    <substitutionBindings xmi:id="_PgGkIKbAEe2kRZld14Zk_A" template="password" propName="/ENDPOINT/NIC_SFTP/PASSWORD"/>
+  </jndi:configuration>
+</jndi:namedResource>

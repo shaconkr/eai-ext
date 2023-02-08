@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ftpconnection="http://ns.tibco.com/bw/palette/ftpconnection" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmi:id="_3DUNkY_0Ee2WfJIl-TnKbg" name="ext.nic.NIC_SC" type="ftpconnection:ftpconnection">
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ftpconnection="http://ns.tibco.com/bw/palette/ftpconnection" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmi:id="_3DUNkY_0Ee2WfJIl-TnKbg" name="ext.nic.NIC_FTP_SC" type="ftpconnection:ftpconnection">
   <jndi:configuration xsi:type="ftpconnection:FTPConnection" xmi:id="_3DWCwI_0Ee2WfJIl-TnKbg" remoteFileNameEncoding="Cp1252" proxyPort="8080">
     <substitutionBindings xmi:id="_4KXVMI_0Ee2WfJIl-TnKbg" template="host" propName="/ENDPOINT/NIC_FTP/SC/HOSTNAME"/>
     <substitutionBindings xmi:id="_8NB5YI_0Ee2WfJIl-TnKbg" template="userName" propName="/ENDPOINT/NIC_FTP/SC/USERNAME"/>

@@ -27,4 +27,7 @@
   <sca:component xmi:id="_cH5XkKdvEe2kRZld14Zk_A" name="ComponentNICCISUP_IEALINF" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_cH5XkadvEe2kRZld14Zk_A" processName="NICCISUPID.NICCISUP_IEALINF"/>
   </sca:component>
+  <sca:component xmi:id="_2rDT4Kd0Ee2kRZld14Zk_A" name="ComponentNICCISUP_SPALINF" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_2rDT4ad0Ee2kRZld14Zk_A" processName="NICCISUPID.NICCISUP_SPALINF"/>
+  </sca:component>
 </sca:composite>

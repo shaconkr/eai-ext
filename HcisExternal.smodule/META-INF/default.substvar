@@ -272,6 +272,15 @@
 			<useLookupValue>false</useLookupValue>
 		</globalVariable>
 		<globalVariable>
+			<name>/ENDPOINT/NIC_FTP/UP/UPID_SAM_PATH_NIC_SEND</name>
+			<value>/app/sam/sc/nice/snd</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
 			<name>/ENDPOINT/KFT/HOSTNAME</name>
 			<value>99.51.105.20</value>
 			<deploymentSettable>false</deploymentSettable>

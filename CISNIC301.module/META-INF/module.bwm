@@ -21,4 +21,22 @@
   <sca:component xmi:id="_9iPfQKLAEe2Mvp86zImF9w" name="Component1NICCISUPID0010501_RES" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_9iPfQaLAEe2Mvp86zImF9w" processName="NICCISUPID.NICCISUPID0010601.NICCISUPID0010601_RES"/>
   </sca:component>
+  <sca:component xmi:id="_-EsAoKeEEe2kRZld14Zk_A" name="ComponentNICCISUP_DELQINF" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_-EsAoaeEEe2kRZld14Zk_A" processName="CISNICUPID.CISNICUP_ACCCINF"/>
+  </sca:component>
+  <sca:component xmi:id="_4KSM0KeGEe2kRZld14Zk_A" name="ComponentCISNICUP_CUADINF" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_4KSM0aeGEe2kRZld14Zk_A" processName="CISNICUPID.CISNICUP_CUADINF"/>
+  </sca:component>
+  <sca:component xmi:id="_Y7IzwqeHEe2kRZld14Zk_A" name="ComponentCISNICUP_CRDTINF" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_Y7Izw6eHEe2kRZld14Zk_A" processName="CISNICUPID.CISNICUP_CRDTINF"/>
+  </sca:component>
+  <sca:component xmi:id="_tR_YIqeHEe2kRZld14Zk_A" name="ComponentCISNICUP_CUSTINF" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_tR_YI6eHEe2kRZld14Zk_A" processName="CISNICUPID.CISNICUP_CUSTINF"/>
+  </sca:component>
+  <sca:component xmi:id="_Al1AUqeIEe2kRZld14Zk_A" name="ComponentCISNICUP_AHRCINF" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_Al1AU6eIEe2kRZld14Zk_A" processName="CISNICUPID.CISNICUP_AHRCINF"/>
+  </sca:component>
+  <sca:component xmi:id="_VfbscqeIEe2kRZld14Zk_A" name="ComponentCISNICUP_DELQMST" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_Vfbsc6eIEe2kRZld14Zk_A" processName="CISNICUPID.CISNICUP_DELQMST"/>
+  </sca:component>
 </sca:composite>

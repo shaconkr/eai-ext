@@ -30,6 +30,7 @@
   <sca:property xmi:id="_lNa40KdHEe2kRZld14Zk_A" name="/ENDPOINT/NIC_FTP/UP/PASSWORD" type="property:password" scaext:simpleValue="#!aQjQZZOIXe+gC+ha03l3iA==" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_lVAHgKdHEe2kRZld14Zk_A" name="/ENDPOINT/NIC_FTP/UP/PWD_PLAIN" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_mhK_sKdHEe2kRZld14Zk_A" name="/ENDPOINT/NIC_FTP/UP/UPID_SAM_PATH_NIC_RECV" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_i1OTwKeGEe2kRZld14Zk_A" name="/ENDPOINT/NIC_FTP/UP/UPID_SAM_PATH_NIC_SEND" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_dwx-wJFnEe2cHpbgkwVwbw" name="/ENDPOINT/KFT/HOSTNAME" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_vgBnsJFnEe2cHpbgkwVwbw" name="/ENDPOINT/KFT/PORT" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_7gIjkJFnEe2cHpbgkwVwbw" name="/ENDPOINT/KFT_OL/HOSTNAME" type="XMLSchema:string" publicAccess="true" scalable="true"/>

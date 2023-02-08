@@ -6,7 +6,8 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: TIBCO Software Inc.
 Export-Package: CISNICUPID
-Require-Bundle: HcisExternal.smodule;bundle-version="1.0.0",HcisCommon.smodule;bundle-version="1.0.0"
+Require-Bundle: HcisExternal.smodule;bundle-version="1.0.0",
+ HcisCommon.smodule;bundle-version="1.0.0"
 TIBCO-BW-Version: 6.9.0 V26 2022-11-02
 TIBCO-BW-JobSharedVariables: META-INF/module.jsv
 Bundle-RequiredExecutionEnvironment: JavaSE-11
@@ -18,6 +19,7 @@ Require-Capability: com.tibco.bw.model; filter:="(name=bwext)",
  com.tibco.bw.module; filter:="(&(name=HcisExternal.smodule)(version=1.0.0))",
  com.tibco.bw.module; filter:="(&(name=HcisCommon.smodule)(version=1.0.0))",
  com.tibco.bw.palette; filter:="(name=bw.generalactivities)",
+ com.tibco.bw.palette; filter:="(name=bw.ftp)",
  com.tibco.bw.palette; filter:="(name=bw.restjson)",
  com.tibco.bw.palette; filter:="(name=bw.tcp)",
  com.tibco.bw.palette; filter:="(name=bw.java)",

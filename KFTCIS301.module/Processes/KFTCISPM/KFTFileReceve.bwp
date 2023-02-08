@@ -102,8 +102,8 @@
         </task>
         <task name="GroupEnd">
             <endingVariables>
-                <variable>P_COMMON</variable>
                 <variable>P_0600</variable>
+                <variable>P_COMMON</variable>
             </endingVariables>
         </task>
         <task name="R_COMMON">

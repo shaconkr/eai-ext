@@ -1,27 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<jndi:namedResource xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CISTOSPMMZ0140401="http://schema.hcis.com/xsd/CISTOSPMMZ0140401_OutReq_Body" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" name="CISTOSPMMZ/CISTOSPMMZ0140401.CISTOSPMMZ0140401_OutReq_Body" type="dataformat:DataFormat">
-  <jndi:imports importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/CISTOSPMMZ0140401_OutReq_Body_df.xsd" namespace="http://schema.hcis.com/xsd/CISTOSPMMZ0140401_OutReq_Body"/>
-  <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="CISTOSPMMZ0140401:main" lineLength="230" fieldOffsetsStr="parAcno(0,15)&#xA;pwd(15,23)&#xA;encodingCd(23,29)&#xA;noUse1(29,31)&#xA;trsfAmt(31,44)&#xA;noUse2(44,45)&#xA;noUse3(45,58)&#xA;qryAcntBnkCd(58,60)&#xA;qryAcno(60,75)&#xA;cmis(75,84)&#xA;noUse4(84,100)&#xA;qryAcntNm(100,116)&#xA;noUse5(116,122)&#xA;juminBusnNo(122,135)&#xA;spareArea1(135,174)&#xA;bnkEdiNo(174,180)&#xA;jatongApplYn(180,181)&#xA;commBnkCd(181,184)&#xA;indiBnkCd(184,187)&#xA;spareArea2(187,230)">
-    <fieldOffsets kor="모계좌번호" type="string" name="parAcno" start="0" end="15"/>
-    <fieldOffsets kor="비밀번호" type="string" name="pwd" start="15" end="23"/>
-    <fieldOffsets kor="이중암호" type="string" name="encodingCd" start="23" end="29"/>
-    <fieldOffsets kor="미사용1" type="string" name="noUse1" start="29" end="31"/>
-    <fieldOffsets kor="이체금액" type="string" name="trsfAmt" start="31" end="44"/>
-    <fieldOffsets kor="미사용2" type="string" name="noUse2" start="44" end="45"/>
-    <fieldOffsets kor="미사용3" type="string" name="noUse3" start="45" end="58"/>
-    <fieldOffsets kor="조회계좌은행코드" type="string" name="qryAcntBnkCd" start="58" end="60"/>
-    <fieldOffsets kor="조회계좌번호" type="string" name="qryAcno" start="60" end="75"/>
-    <fieldOffsets kor="수수료" type="string" name="cmis" start="75" end="84"/>
-    <fieldOffsets kor="미사용4" type="string" name="noUse4" start="84" end="100"/>
-    <fieldOffsets kor="조회계좌성명" type="string" name="qryAcntNm" start="100" end="116"/>
-    <fieldOffsets kor="미사용5" type="string" name="noUse5" start="116" end="122"/>
-    <fieldOffsets kor="실명번호" type="string" name="juminBusnNo" start="122" end="135"/>
-    <fieldOffsets kor="예비영역1" type="string" name="spareArea1" start="135" end="174"/>
-    <fieldOffsets kor="은행전문번호" type="string" name="bnkEdiNo" start="174" end="180"/>
-    <fieldOffsets kor="자통법적용구분" type="string" name="jatongApplYn" start="180" end="181"/>
-    <fieldOffsets kor="공통부은행코드" type="string" name="commBnkCd" start="181" end="184"/>
-    <fieldOffsets kor="개별부은행코드" type="string" name="indiBnkCd" start="184" end="187"/>
-    <fieldOffsets kor="예비영역2" type="string" name="spareArea2" start="187" end="230"/>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CISTOSPMMZ0140401="http://schema.hcis.com/xsd/CISTOSPMMZ0140401_OutReq_Body" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmi:id="_kIbl4Kd3Ee2kRZld14Zk_A" name="CISTOSPMMZ.CISTOSPMMZ0140401.CISTOSPMMZ0140401_OutReq_Body" type="dataformat:DataFormat">
+  <imports xmi:id="_kIbl4ad3Ee2kRZld14Zk_A" importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/CISTOSPMMZ0140401_OutReq_Body_df.xsd" namespace="http://schema.hcis.com/xsd/CISTOSPMMZ0140401_OutReq_Body"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" xmi:id="_kIbl4qd3Ee2kRZld14Zk_A" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="CISTOSPMMZ0140401:main" lineLength="230" fieldOffsetsStr="parAcno(0,15)&#xA;pwd(15,23)&#xA;encodingCd(23,29)&#xA;noUse1(29,31)&#xA;trsfAmt(31,44)&#xA;noUse2(44,45)&#xA;noUse3(45,58)&#xA;qryAcntBnkCd(58,60)&#xA;qryAcno(60,75)&#xA;cmis(75,84)&#xA;noUse4(84,100)&#xA;qryAcntNm(100,116)&#xA;noUse5(116,122)&#xA;juminBusnNo(122,135)&#xA;spareArea1(135,174)&#xA;bnkEdiNo(174,180)&#xA;jatongApplYn(180,181)&#xA;commBnkCd(181,184)&#xA;indiBnkCd(184,187)&#xA;spareArea2(187,230)">
+    <fieldOffsets xmi:id="_kIbl46d3Ee2kRZld14Zk_A" name="parAcno" end="15" kor="모계좌번호" type="string"/>
+    <fieldOffsets xmi:id="_kIbl5Kd3Ee2kRZld14Zk_A" name="pwd" start="15" end="23" kor="비밀번호" type="string"/>
+    <fieldOffsets xmi:id="_kIbl5ad3Ee2kRZld14Zk_A" name="encodingCd" start="23" end="29" kor="이중암호" type="string"/>
+    <fieldOffsets xmi:id="_kIbl5qd3Ee2kRZld14Zk_A" name="noUse1" start="29" end="31" kor="미사용1" type="string"/>
+    <fieldOffsets xmi:id="_kIbl56d3Ee2kRZld14Zk_A" name="trsfAmt" start="31" end="44" kor="이체금액" type="string"/>
+    <fieldOffsets xmi:id="_kIbl6Kd3Ee2kRZld14Zk_A" name="noUse2" start="44" end="45" kor="미사용2" type="string"/>
+    <fieldOffsets xmi:id="_kIbl6ad3Ee2kRZld14Zk_A" name="noUse3" start="45" end="58" kor="미사용3" type="string"/>
+    <fieldOffsets xmi:id="_kIbl6qd3Ee2kRZld14Zk_A" name="qryAcntBnkCd" start="58" end="60" kor="조회계좌은행코드" type="string"/>
+    <fieldOffsets xmi:id="_kIbl66d3Ee2kRZld14Zk_A" name="qryAcno" start="60" end="75" kor="조회계좌번호" type="string"/>
+    <fieldOffsets xmi:id="_kIbl7Kd3Ee2kRZld14Zk_A" name="cmis" start="75" end="84" kor="수수료" type="string"/>
+    <fieldOffsets xmi:id="_kIbl7ad3Ee2kRZld14Zk_A" name="noUse4" start="84" end="100" kor="미사용4" type="string"/>
+    <fieldOffsets xmi:id="_kIbl7qd3Ee2kRZld14Zk_A" name="qryAcntNm" start="100" end="116" kor="조회계좌성명" type="string"/>
+    <fieldOffsets xmi:id="_kIbl76d3Ee2kRZld14Zk_A" name="noUse5" start="116" end="122" kor="미사용5" type="string"/>
+    <fieldOffsets xmi:id="_kIbl8Kd3Ee2kRZld14Zk_A" name="juminBusnNo" start="122" end="135" kor="실명번호" type="string"/>
+    <fieldOffsets xmi:id="_kIbl8ad3Ee2kRZld14Zk_A" name="spareArea1" start="135" end="174" kor="예비영역1" type="string"/>
+    <fieldOffsets xmi:id="_kIbl8qd3Ee2kRZld14Zk_A" name="bnkEdiNo" start="174" end="180" kor="은행전문번호" type="string"/>
+    <fieldOffsets xmi:id="_kIbl86d3Ee2kRZld14Zk_A" name="jatongApplYn" start="180" end="181" kor="자통법적용구분" type="string"/>
+    <fieldOffsets xmi:id="_kIbl9Kd3Ee2kRZld14Zk_A" name="commBnkCd" start="181" end="184" kor="공통부은행코드" type="string"/>
+    <fieldOffsets xmi:id="_kIbl9ad3Ee2kRZld14Zk_A" name="indiBnkCd" start="184" end="187" kor="개별부은행코드" type="string"/>
+    <fieldOffsets xmi:id="_kIbl9qd3Ee2kRZld14Zk_A" name="spareArea2" start="187" end="230" kor="예비영역2" type="string"/>
   </jndi:configuration>
 </jndi:namedResource>

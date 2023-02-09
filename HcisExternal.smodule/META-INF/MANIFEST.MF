@@ -9,6 +9,7 @@ Export-Package: com.hcis.eai.ext,
  com.hcis.eai.ext.bcc,
  com.hcis.eai.ext.cis,
  com.hcis.eai.ext.kft,
+ com.hcis.eai.ext.ksn,
  com.hcis.eai.ext.nic,
  com.hcis.eai.ext.tos
 Require-Bundle: HcisCommon.smodule;bundle-version="1.0.0"
@@ -58,7 +59,8 @@ Provide-Capability: com.tibco.bw.module; name="HcisExternal.smodule"; version:Ve
  com.tibco.bw.resources; name="ext.jni",
  com.tibco.bw.resources; name="ext.kcb",
  com.tibco.bw.resources; name="ext.kic",
- com.tibco.bw.resources; name="ext.ktt"
+ com.tibco.bw.resources; name="ext.ktt",
+ com.tibco.bw.resources; name="ext.ksn"
 TIBCO-BW-Version: 6.9.0 V26 2022-11-02
 TIBCO-BW-ModuleSharedVariables: META-INF/module.msv
 Automatic-Module-Name: HcisExternal.smodule

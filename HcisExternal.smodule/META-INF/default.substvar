@@ -137,6 +137,15 @@
 			<useLookupValue>false</useLookupValue>
 		</globalVariable>
 		<globalVariable>
+			<name>/LISTENER/KSN_RCV_PORT</name>
+			<value>7014</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>Integer</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
 			<name>/ENDPOINT/CIS/RES_PATH</name>
 			<value>/serviceEndpoint/httpService/request.json</value>
 			<deploymentSettable>false</deploymentSettable>

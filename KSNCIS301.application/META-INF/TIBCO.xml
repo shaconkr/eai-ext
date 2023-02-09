@@ -3,387 +3,65 @@
   <packaging:description></packaging:description>
   <packaging:properties>
     <packaging:property>
-      <packaging:name>//CISKCB301.module//BW.DEPLOYMENTUNIT.TYPE</packaging:name>
+      <packaging:name>//KSNCIS301.module//BW.DEPLOYMENTUNIT.TYPE</packaging:name>
       <packaging:type>xsd:string</packaging:type>
       <packaging:visibility>private</packaging:visibility>
       <packaging:scalable>true</packaging:scalable>
       <packaging:overrideValue>false</packaging:overrideValue>
     </packaging:property>
     <packaging:property>
-      <packaging:name>//CISKCB301.module//BW.APPNODE.NAME</packaging:name>
+      <packaging:name>//KSNCIS301.module//BW.APPNODE.NAME</packaging:name>
       <packaging:type>xsd:string</packaging:type>
       <packaging:visibility>private</packaging:visibility>
       <packaging:scalable>true</packaging:scalable>
       <packaging:overrideValue>false</packaging:overrideValue>
     </packaging:property>
     <packaging:property>
-      <packaging:name>//CISKCB301.module//BW.DEPLOYMENTUNIT.NAME</packaging:name>
+      <packaging:name>//KSNCIS301.module//BW.DEPLOYMENTUNIT.NAME</packaging:name>
       <packaging:type>xsd:string</packaging:type>
       <packaging:visibility>private</packaging:visibility>
       <packaging:scalable>true</packaging:scalable>
       <packaging:overrideValue>false</packaging:overrideValue>
     </packaging:property>
     <packaging:property>
-      <packaging:name>//CISKCB301.module//BW.HOST.NAME</packaging:name>
+      <packaging:name>//KSNCIS301.module//BW.HOST.NAME</packaging:name>
       <packaging:type>xsd:string</packaging:type>
       <packaging:visibility>private</packaging:visibility>
       <packaging:scalable>true</packaging:scalable>
       <packaging:overrideValue>false</packaging:overrideValue>
     </packaging:property>
     <packaging:property>
-      <packaging:name>//CISKCB301.module//BW.DOMAIN.NAME</packaging:name>
+      <packaging:name>//KSNCIS301.module//BW.DOMAIN.NAME</packaging:name>
       <packaging:type>xsd:string</packaging:type>
       <packaging:visibility>private</packaging:visibility>
       <packaging:scalable>true</packaging:scalable>
       <packaging:overrideValue>false</packaging:overrideValue>
     </packaging:property>
     <packaging:property>
-      <packaging:name>//CISKCB301.module//BW.DEPLOYMENTUNIT.VERSION</packaging:name>
+      <packaging:name>//KSNCIS301.module//BW.DEPLOYMENTUNIT.VERSION</packaging:name>
       <packaging:type>xsd:string</packaging:type>
       <packaging:visibility>private</packaging:visibility>
       <packaging:scalable>true</packaging:scalable>
       <packaging:overrideValue>false</packaging:overrideValue>
     </packaging:property>
     <packaging:property>
-      <packaging:name>//CISKCB301.module//BW.APPSPACE.NAME</packaging:name>
+      <packaging:name>//KSNCIS301.module//BW.APPSPACE.NAME</packaging:name>
       <packaging:type>xsd:string</packaging:type>
       <packaging:visibility>private</packaging:visibility>
       <packaging:scalable>true</packaging:scalable>
       <packaging:overrideValue>false</packaging:overrideValue>
     </packaging:property>
     <packaging:property>
-      <packaging:name>//CISKCB301.module//BW.MODULE.VERSION</packaging:name>
+      <packaging:name>//KSNCIS301.module//BW.MODULE.VERSION</packaging:name>
       <packaging:type>xsd:string</packaging:type>
       <packaging:visibility>private</packaging:visibility>
       <packaging:scalable>true</packaging:scalable>
       <packaging:overrideValue>false</packaging:overrideValue>
     </packaging:property>
     <packaging:property>
-      <packaging:name>//CISKCB301.module//BW.MODULE.NAME</packaging:name>
+      <packaging:name>//KSNCIS301.module//BW.MODULE.NAME</packaging:name>
       <packaging:type>xsd:string</packaging:type>
       <packaging:visibility>private</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisExternal.smodule//BW.DEPLOYMENTUNIT.TYPE</packaging:name>
-      <packaging:type>xsd:string</packaging:type>
-      <packaging:visibility>private</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisExternal.smodule///ENDPOINT/JNI_SFTP/USERNAME</packaging:name>
-      <packaging:type>xsd:string</packaging:type>
-      <packaging:visibility>public</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisExternal.smodule///SECURITY/TOS/TOS_PWD</packaging:name>
-      <packaging:type>xsd:string</packaging:type>
-      <packaging:visibility>public</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisExternal.smodule///ENDPOINT/TOS/OL2_PORT</packaging:name>
-      <packaging:type>xsd:int</packaging:type>
-      <packaging:visibility>public</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisExternal.smodule///ENDPOINT/KFT_OL/PORT</packaging:name>
-      <packaging:type>xsd:int</packaging:type>
-      <packaging:visibility>public</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisExternal.smodule///ENDPOINT/NIC_FTP/CT/USERNAME</packaging:name>
-      <packaging:type>xsd:string</packaging:type>
-      <packaging:visibility>public</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisExternal.smodule///ENDPOINT/CIS/CIS_HOST</packaging:name>
-      <packaging:type>xsd:string</packaging:type>
-      <packaging:visibility>public</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisExternal.smodule///SECURITY/TOS/TOS__USER_ID</packaging:name>
-      <packaging:type>xsd:string</packaging:type>
-      <packaging:visibility>public</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisExternal.smodule///ENDPOINT/TOS/OL3_PORT</packaging:name>
-      <packaging:type>xsd:int</packaging:type>
-      <packaging:visibility>public</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisExternal.smodule///LISTENER/HOST</packaging:name>
-      <packaging:type>xsd:string</packaging:type>
-      <packaging:visibility>public</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisExternal.smodule///ENDPOINT/NIC_FTP/SC/HOSTNAME</packaging:name>
-      <packaging:type>xsd:string</packaging:type>
-      <packaging:visibility>public</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisExternal.smodule///ENDPOINT/NIC_FTP/SC/PASSWORD</packaging:name>
-      <packaging:type>ns:password</packaging:type>
-      <packaging:visibility>public</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisExternal.smodule///LISTENER/BC_CARD_RCV_PORT</packaging:name>
-      <packaging:type>xsd:int</packaging:type>
-      <packaging:visibility>public</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisExternal.smodule///ENDPOINT/NIC/NIC_PORT</packaging:name>
-      <packaging:type>xsd:int</packaging:type>
-      <packaging:visibility>public</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisExternal.smodule//BW.DEPLOYMENTUNIT.NAME</packaging:name>
-      <packaging:type>xsd:string</packaging:type>
-      <packaging:visibility>private</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisExternal.smodule///ENDPOINT/TOS/OL1_HOST</packaging:name>
-      <packaging:type>xsd:string</packaging:type>
-      <packaging:visibility>public</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisExternal.smodule///ENDPOINT/JNI_SFTP/PORT</packaging:name>
-      <packaging:type>xsd:int</packaging:type>
-      <packaging:visibility>public</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisExternal.smodule//BW.APPNODE.NAME</packaging:name>
-      <packaging:type>xsd:string</packaging:type>
-      <packaging:visibility>private</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisExternal.smodule//BW.HOST.NAME</packaging:name>
-      <packaging:type>xsd:string</packaging:type>
-      <packaging:visibility>private</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisExternal.smodule///ENDPOINT/NIC_FTP/CT/HOSTNAME</packaging:name>
-      <packaging:type>xsd:string</packaging:type>
-      <packaging:visibility>public</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisExternal.smodule//BW.DOMAIN.NAME</packaging:name>
-      <packaging:type>xsd:string</packaging:type>
-      <packaging:visibility>private</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisExternal.smodule///LISTENER/CIS_RCV_PORT</packaging:name>
-      <packaging:type>xsd:int</packaging:type>
-      <packaging:visibility>public</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisExternal.smodule///ENDPOINT/NIC_FTP/SC/CRSC_SAM_PATH_KIS_RECV</packaging:name>
-      <packaging:type>xsd:string</packaging:type>
-      <packaging:visibility>public</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisExternal.smodule///ENDPOINT/NIC_FTP/CT/PASSWORD</packaging:name>
-      <packaging:type>ns:password</packaging:type>
-      <packaging:visibility>public</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisExternal.smodule///ENDPOINT/JNI_SFTP/HOSTNAME</packaging:name>
-      <packaging:type>xsd:string</packaging:type>
-      <packaging:visibility>public</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisExternal.smodule///ENDPOINT/JNI_SFTP/PASSWORD</packaging:name>
-      <packaging:type>ns:password</packaging:type>
-      <packaging:visibility>public</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisExternal.smodule///ENDPOINT/NIC/NIC_HOST</packaging:name>
-      <packaging:type>xsd:string</packaging:type>
-      <packaging:visibility>public</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisExternal.smodule///ENDPOINT/KCB/KCB_PORT</packaging:name>
-      <packaging:type>xsd:int</packaging:type>
-      <packaging:visibility>public</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisExternal.smodule///common/stage</packaging:name>
-      <packaging:type>xsd:string</packaging:type>
-      <packaging:visibility>public</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisExternal.smodule//BW.APPSPACE.NAME</packaging:name>
-      <packaging:type>xsd:string</packaging:type>
-      <packaging:visibility>private</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisExternal.smodule///ENDPOINT/KFT/PORT</packaging:name>
-      <packaging:type>xsd:int</packaging:type>
-      <packaging:visibility>public</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisExternal.smodule///ENDPOINT/TOS/OL3_HOST</packaging:name>
-      <packaging:type>xsd:string</packaging:type>
-      <packaging:visibility>public</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisExternal.smodule///ENDPOINT/KIC/KIC_HOST</packaging:name>
-      <packaging:type>xsd:string</packaging:type>
-      <packaging:visibility>public</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisExternal.smodule//BW.MODULE.VERSION</packaging:name>
-      <packaging:type>xsd:string</packaging:type>
-      <packaging:visibility>private</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisExternal.smodule///ENDPOINT/CIS/CIS_PORT</packaging:name>
-      <packaging:type>xsd:int</packaging:type>
-      <packaging:visibility>public</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisExternal.smodule///ENDPOINT/TOS/OL2_HOST</packaging:name>
-      <packaging:type>xsd:string</packaging:type>
-      <packaging:visibility>public</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisExternal.smodule///ENDPOINT/KCB/KCB_HOST</packaging:name>
-      <packaging:type>xsd:string</packaging:type>
-      <packaging:visibility>public</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisExternal.smodule///ENDPOINT/KIC/KIC_PORT</packaging:name>
-      <packaging:type>xsd:int</packaging:type>
-      <packaging:visibility>public</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisExternal.smodule///ENDPOINT/NIC_FTP/CT/CRCT_SAM_PATH_KIS_RECV</packaging:name>
-      <packaging:type>xsd:string</packaging:type>
-      <packaging:visibility>public</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisExternal.smodule///ENDPOINT/KFT/HOSTNAME</packaging:name>
-      <packaging:type>xsd:string</packaging:type>
-      <packaging:visibility>public</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisExternal.smodule///ENDPOINT/KFT_OL/HOSTNAME</packaging:name>
-      <packaging:type>xsd:string</packaging:type>
-      <packaging:visibility>public</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisExternal.smodule///ENDPOINT/CIS/RES_PATH</packaging:name>
-      <packaging:type>xsd:string</packaging:type>
-      <packaging:visibility>public</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisExternal.smodule//BW.DEPLOYMENTUNIT.VERSION</packaging:name>
-      <packaging:type>xsd:string</packaging:type>
-      <packaging:visibility>private</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisExternal.smodule///ENDPOINT/TOS/OL1_PORT</packaging:name>
-      <packaging:type>xsd:int</packaging:type>
-      <packaging:visibility>public</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisExternal.smodule//BW.MODULE.NAME</packaging:name>
-      <packaging:type>xsd:string</packaging:type>
-      <packaging:visibility>private</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisExternal.smodule///ENDPOINT/NIC_FTP/SC/USERNAME</packaging:name>
-      <packaging:type>xsd:string</packaging:type>
-      <packaging:visibility>public</packaging:visibility>
       <packaging:scalable>true</packaging:scalable>
       <packaging:overrideValue>false</packaging:overrideValue>
     </packaging:property>
@@ -654,35 +332,14 @@
       <packaging:overrideValue>false</packaging:overrideValue>
     </packaging:property>
     <packaging:property>
+      <packaging:name>//HcisExternal.smodule///SECURITY/TOS/TOS_PWD</packaging:name>
+      <packaging:type>xsd:string</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
       <packaging:name>//HcisExternal.smodule///ENDPOINT/NIC_SFTP/MT_SAM_PATH_NIC_RECV</packaging:name>
-      <packaging:type>xsd:string</packaging:type>
-      <packaging:visibility>public</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisExternal.smodule///ENDPOINT/NIC_SFTP/PASSWORD</packaging:name>
-      <packaging:type>ns:password</packaging:type>
-      <packaging:visibility>public</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisExternal.smodule///ENDPOINT/NIC_SFTP/PWD_PLAIN</packaging:name>
-      <packaging:type>xsd:string</packaging:type>
-      <packaging:visibility>public</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisExternal.smodule///ENDPOINT/NIC_SFTP/USERNAME</packaging:name>
-      <packaging:type>xsd:string</packaging:type>
-      <packaging:visibility>public</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisExternal.smodule///ENDPOINT/NIC_SFTP/HOSTNAME</packaging:name>
       <packaging:type>xsd:string</packaging:type>
       <packaging:visibility>public</packaging:visibility>
       <packaging:scalable>true</packaging:scalable>
@@ -696,43 +353,22 @@
       <packaging:overrideValue>false</packaging:overrideValue>
     </packaging:property>
     <packaging:property>
-      <packaging:name>//HcisExternal.smodule///ENDPOINT/NIC_FTP/UP/USERNAME</packaging:name>
-      <packaging:type>xsd:string</packaging:type>
+      <packaging:name>//HcisExternal.smodule///ENDPOINT/TOS/OL2_PORT</packaging:name>
+      <packaging:type>xsd:int</packaging:type>
       <packaging:visibility>public</packaging:visibility>
       <packaging:scalable>true</packaging:scalable>
       <packaging:overrideValue>false</packaging:overrideValue>
     </packaging:property>
     <packaging:property>
-      <packaging:name>//HcisExternal.smodule///ENDPOINT/NIC_FTP/UP/HOSTNAME</packaging:name>
-      <packaging:type>xsd:string</packaging:type>
+      <packaging:name>//HcisExternal.smodule///LISTENER/KSN_RCV_PORT</packaging:name>
+      <packaging:type>xsd:int</packaging:type>
       <packaging:visibility>public</packaging:visibility>
       <packaging:scalable>true</packaging:scalable>
       <packaging:overrideValue>false</packaging:overrideValue>
     </packaging:property>
     <packaging:property>
-      <packaging:name>//HcisExternal.smodule///ENDPOINT/NIC_FTP/UP/PWD_PLAIN</packaging:name>
-      <packaging:type>xsd:string</packaging:type>
-      <packaging:visibility>public</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisExternal.smodule///ENDPOINT/NIC_FTP/UP/PASSWORD</packaging:name>
-      <packaging:type>ns:password</packaging:type>
-      <packaging:visibility>public</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisExternal.smodule///ENDPOINT/NIC_FTP/CT/PWD_PLAIN</packaging:name>
-      <packaging:type>xsd:string</packaging:type>
-      <packaging:visibility>public</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisExternal.smodule///ENDPOINT/NIC_FTP/SC/PWD_PLAIN</packaging:name>
-      <packaging:type>xsd:string</packaging:type>
+      <packaging:name>//HcisExternal.smodule///ENDPOINT/KFT_OL/PORT</packaging:name>
+      <packaging:type>xsd:int</packaging:type>
       <packaging:visibility>public</packaging:visibility>
       <packaging:scalable>true</packaging:scalable>
       <packaging:overrideValue>false</packaging:overrideValue>
@@ -745,7 +381,203 @@
       <packaging:overrideValue>false</packaging:overrideValue>
     </packaging:property>
     <packaging:property>
+      <packaging:name>//HcisExternal.smodule///SECURITY/TOS/TOS__USER_ID</packaging:name>
+      <packaging:type>xsd:string</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisExternal.smodule///ENDPOINT/TOS/OL3_PORT</packaging:name>
+      <packaging:type>xsd:int</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisExternal.smodule///LISTENER/HOST</packaging:name>
+      <packaging:type>xsd:string</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisExternal.smodule///ENDPOINT/NIC/NIC_PORT</packaging:name>
+      <packaging:type>xsd:int</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisExternal.smodule//BW.DEPLOYMENTUNIT.NAME</packaging:name>
+      <packaging:type>xsd:string</packaging:type>
+      <packaging:visibility>private</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisExternal.smodule///ENDPOINT/NIC_FTP/CT/PWD_PLAIN</packaging:name>
+      <packaging:type>xsd:string</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
       <packaging:name>//HcisExternal.smodule///ENDPOINT/KTT_FTP/USERNAME</packaging:name>
+      <packaging:type>xsd:string</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisExternal.smodule///LISTENER/TOS_RCV_PORT1</packaging:name>
+      <packaging:type>xsd:int</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisExternal.smodule///ENDPOINT/JNI_SFTP/PORT</packaging:name>
+      <packaging:type>xsd:int</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisExternal.smodule///ENDPOINT/NIC_SFTP/PASSWORD</packaging:name>
+      <packaging:type>ns:password</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisExternal.smodule//BW.HOST.NAME</packaging:name>
+      <packaging:type>xsd:string</packaging:type>
+      <packaging:visibility>private</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisExternal.smodule///ENDPOINT/NIC_FTP/CT/HOSTNAME</packaging:name>
+      <packaging:type>xsd:string</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisExternal.smodule///LISTENER/CIS_RCV_PORT</packaging:name>
+      <packaging:type>xsd:int</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisExternal.smodule///ENDPOINT/NIC_FTP/SC/CRSC_SAM_PATH_KIS_RECV</packaging:name>
+      <packaging:type>xsd:string</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisExternal.smodule///LISTENER/TOS_RCV_PORT3</packaging:name>
+      <packaging:type>xsd:int</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisExternal.smodule///ENDPOINT/NIC_FTP/UP/USERNAME</packaging:name>
+      <packaging:type>xsd:string</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisExternal.smodule///ENDPOINT/JNI_SFTP/HOSTNAME</packaging:name>
+      <packaging:type>xsd:string</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisExternal.smodule///LISTENER/TOS_RCV_PORT2</packaging:name>
+      <packaging:type>xsd:int</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisExternal.smodule///common/stage</packaging:name>
+      <packaging:type>xsd:string</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisExternal.smodule//BW.APPSPACE.NAME</packaging:name>
+      <packaging:type>xsd:string</packaging:type>
+      <packaging:visibility>private</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisExternal.smodule///ENDPOINT/TOS/OL3_HOST</packaging:name>
+      <packaging:type>xsd:string</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisExternal.smodule///ENDPOINT/CIS/CIS_PORT</packaging:name>
+      <packaging:type>xsd:int</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisExternal.smodule///ENDPOINT/NIC_FTP/CT/CRCT_SAM_PATH_KIS_RECV</packaging:name>
+      <packaging:type>xsd:string</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisExternal.smodule///ENDPOINT/KFT/HOSTNAME</packaging:name>
+      <packaging:type>xsd:string</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisExternal.smodule///ENDPOINT/KFT_OL/HOSTNAME</packaging:name>
+      <packaging:type>xsd:string</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisExternal.smodule///ENDPOINT/NIC_SFTP/PWD_PLAIN</packaging:name>
+      <packaging:type>xsd:string</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisExternal.smodule///ENDPOINT/NIC_FTP/SC/USERNAME</packaging:name>
+      <packaging:type>xsd:string</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisExternal.smodule//BW.DEPLOYMENTUNIT.TYPE</packaging:name>
+      <packaging:type>xsd:string</packaging:type>
+      <packaging:visibility>private</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisExternal.smodule///ENDPOINT/JNI_SFTP/USERNAME</packaging:name>
       <packaging:type>xsd:string</packaging:type>
       <packaging:visibility>public</packaging:visibility>
       <packaging:scalable>true</packaging:scalable>
@@ -766,8 +598,141 @@
       <packaging:overrideValue>false</packaging:overrideValue>
     </packaging:property>
     <packaging:property>
-      <packaging:name>//HcisExternal.smodule///ENDPOINT/KTT_FTP/PASSWORD</packaging:name>
+      <packaging:name>//HcisExternal.smodule///ENDPOINT/NIC_FTP/CT/USERNAME</packaging:name>
+      <packaging:type>xsd:string</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisExternal.smodule///ENDPOINT/CIS/CIS_HOST</packaging:name>
+      <packaging:type>xsd:string</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisExternal.smodule///ENDPOINT/NIC_FTP/UP/HOSTNAME</packaging:name>
+      <packaging:type>xsd:string</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisExternal.smodule///ENDPOINT/NIC_SFTP/USERNAME</packaging:name>
+      <packaging:type>xsd:string</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisExternal.smodule///ENDPOINT/NIC_FTP/SC/HOSTNAME</packaging:name>
+      <packaging:type>xsd:string</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisExternal.smodule///ENDPOINT/NIC_FTP/SC/PASSWORD</packaging:name>
       <packaging:type>ns:password</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisExternal.smodule///LISTENER/BC_CARD_RCV_PORT</packaging:name>
+      <packaging:type>xsd:int</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisExternal.smodule///ENDPOINT/NIC_FTP/SC/PWD_PLAIN</packaging:name>
+      <packaging:type>xsd:string</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisExternal.smodule///ENDPOINT/TOS/OL1_HOST</packaging:name>
+      <packaging:type>xsd:string</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisExternal.smodule///ENDPOINT/NIC_SFTP/HOSTNAME</packaging:name>
+      <packaging:type>xsd:string</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisExternal.smodule//BW.APPNODE.NAME</packaging:name>
+      <packaging:type>xsd:string</packaging:type>
+      <packaging:visibility>private</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisExternal.smodule//BW.DOMAIN.NAME</packaging:name>
+      <packaging:type>xsd:string</packaging:type>
+      <packaging:visibility>private</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisExternal.smodule///ENDPOINT/NIC_FTP/CT/PASSWORD</packaging:name>
+      <packaging:type>ns:password</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisExternal.smodule///ENDPOINT/JNI_SFTP/PASSWORD</packaging:name>
+      <packaging:type>ns:password</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisExternal.smodule///ENDPOINT/NIC/NIC_HOST</packaging:name>
+      <packaging:type>xsd:string</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisExternal.smodule///ENDPOINT/KCB/KCB_PORT</packaging:name>
+      <packaging:type>xsd:int</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisExternal.smodule///ENDPOINT/KFT/PORT</packaging:name>
+      <packaging:type>xsd:int</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisExternal.smodule///ENDPOINT/KIC/KIC_HOST</packaging:name>
+      <packaging:type>xsd:string</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisExternal.smodule//BW.MODULE.VERSION</packaging:name>
+      <packaging:type>xsd:string</packaging:type>
+      <packaging:visibility>private</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisExternal.smodule///ENDPOINT/NIC_FTP/UP/PWD_PLAIN</packaging:name>
+      <packaging:type>xsd:string</packaging:type>
       <packaging:visibility>public</packaging:visibility>
       <packaging:scalable>true</packaging:scalable>
       <packaging:overrideValue>false</packaging:overrideValue>
@@ -780,43 +745,73 @@
       <packaging:overrideValue>false</packaging:overrideValue>
     </packaging:property>
     <packaging:property>
-      <packaging:name>//HcisExternal.smodule///LISTENER/TOS_RCV_PORT1</packaging:name>
+      <packaging:name>//HcisExternal.smodule///ENDPOINT/TOS/OL2_HOST</packaging:name>
+      <packaging:type>xsd:string</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisExternal.smodule///ENDPOINT/KCB/KCB_HOST</packaging:name>
+      <packaging:type>xsd:string</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisExternal.smodule///ENDPOINT/KIC/KIC_PORT</packaging:name>
       <packaging:type>xsd:int</packaging:type>
       <packaging:visibility>public</packaging:visibility>
       <packaging:scalable>true</packaging:scalable>
       <packaging:overrideValue>false</packaging:overrideValue>
     </packaging:property>
     <packaging:property>
-      <packaging:name>//HcisExternal.smodule///LISTENER/TOS_RCV_PORT3</packaging:name>
+      <packaging:name>//HcisExternal.smodule///ENDPOINT/CIS/RES_PATH</packaging:name>
+      <packaging:type>xsd:string</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisExternal.smodule//BW.DEPLOYMENTUNIT.VERSION</packaging:name>
+      <packaging:type>xsd:string</packaging:type>
+      <packaging:visibility>private</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisExternal.smodule///ENDPOINT/KTT_FTP/PASSWORD</packaging:name>
+      <packaging:type>ns:password</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisExternal.smodule///ENDPOINT/NIC_FTP/UP/PASSWORD</packaging:name>
+      <packaging:type>ns:password</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisExternal.smodule///ENDPOINT/TOS/OL1_PORT</packaging:name>
       <packaging:type>xsd:int</packaging:type>
       <packaging:visibility>public</packaging:visibility>
       <packaging:scalable>true</packaging:scalable>
       <packaging:overrideValue>false</packaging:overrideValue>
     </packaging:property>
     <packaging:property>
-      <packaging:name>//HcisExternal.smodule///LISTENER/TOS_RCV_PORT2</packaging:name>
-      <packaging:type>xsd:int</packaging:type>
-      <packaging:visibility>public</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisExternal.smodule///LISTENER/KSN_RCV_PORT</packaging:name>
-      <packaging:type>xsd:int</packaging:type>
-      <packaging:visibility>public</packaging:visibility>
+      <packaging:name>//HcisExternal.smodule//BW.MODULE.NAME</packaging:name>
+      <packaging:type>xsd:string</packaging:type>
+      <packaging:visibility>private</packaging:visibility>
       <packaging:scalable>true</packaging:scalable>
       <packaging:overrideValue>false</packaging:overrideValue>
     </packaging:property>
   </packaging:properties>
   <packaging:modules>
     <packaging:module>
-      <packaging:symbolicName>CISKCB301.module</packaging:symbolicName>
+      <packaging:symbolicName>KSNCIS301.module</packaging:symbolicName>
       <packaging:technologyType>osgi-bundle,bw-appmodule</packaging:technologyType>
-      <packaging:technologyVersion>1.0.0.qualifier</packaging:technologyVersion>
-    </packaging:module>
-    <packaging:module>
-      <packaging:symbolicName>HcisExternal.smodule</packaging:symbolicName>
-      <packaging:technologyType>osgi-bundle,bw-sharedmodule</packaging:technologyType>
       <packaging:technologyVersion>1.0.0.qualifier</packaging:technologyVersion>
     </packaging:module>
     <packaging:module>
@@ -826,6 +821,11 @@
     </packaging:module>
     <packaging:module>
       <packaging:symbolicName>HcisCommon.smodule</packaging:symbolicName>
+      <packaging:technologyType>osgi-bundle,bw-sharedmodule</packaging:technologyType>
+      <packaging:technologyVersion>1.0.0.qualifier</packaging:technologyVersion>
+    </packaging:module>
+    <packaging:module>
+      <packaging:symbolicName>HcisExternal.smodule</packaging:symbolicName>
       <packaging:technologyType>osgi-bundle,bw-sharedmodule</packaging:technologyType>
       <packaging:technologyVersion>1.0.0.qualifier</packaging:technologyVersion>
     </packaging:module>

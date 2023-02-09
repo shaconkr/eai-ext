@@ -192,6 +192,10 @@ public class EDIParserAndBuilder {
 	    return readBytes;
 	}	
     
+    public String readBytesString(byte[] bytes, int offset, int len) throws UnsupportedEncodingException  {
+    	return new String(readBytes(bytes, offset, len), "euc-kr");
+    }
+    
     /**
      * Byte Stream 을 Record 길이 단위로 
      * 개행문자 UNIX(0A) 삽입

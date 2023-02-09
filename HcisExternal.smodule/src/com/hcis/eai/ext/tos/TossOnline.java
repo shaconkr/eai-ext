@@ -59,6 +59,7 @@ public class TossOnline extends EDIParserAndBuilder {
 	/**
 	 * 비동기 응답전문을 위한 correlation ID
 	 * 
+	 * offset 58 length 21
 	 * 전문코드(ediCd :4) + 업무구분(jobGb :3) + 전문번호(ediNo :6) + 전송일자(sdDate:8)
 	 *    
 	 * @param bytes

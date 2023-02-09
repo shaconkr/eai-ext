@@ -2,7 +2,7 @@
 <repository xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xmlns = "http://www.tibco.com/xmlns/repo/types/2002">
 	<globalVariables>
 		<globalVariable>
-			<name>//CISKCB301.module//BW.DEPLOYMENTUNIT.TYPE</name>
+			<name>//KSNCIS301.module//BW.DEPLOYMENTUNIT.TYPE</name>
 			<value></value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
@@ -11,7 +11,7 @@
 			<useLookupValue>false</useLookupValue>
 		</globalVariable>
 		<globalVariable>
-			<name>//CISKCB301.module//BW.APPNODE.NAME</name>
+			<name>//KSNCIS301.module//BW.APPNODE.NAME</name>
 			<value></value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
@@ -20,7 +20,7 @@
 			<useLookupValue>false</useLookupValue>
 		</globalVariable>
 		<globalVariable>
-			<name>//CISKCB301.module//BW.DEPLOYMENTUNIT.NAME</name>
+			<name>//KSNCIS301.module//BW.DEPLOYMENTUNIT.NAME</name>
 			<value></value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
@@ -29,7 +29,7 @@
 			<useLookupValue>false</useLookupValue>
 		</globalVariable>
 		<globalVariable>
-			<name>//CISKCB301.module//BW.HOST.NAME</name>
+			<name>//KSNCIS301.module//BW.HOST.NAME</name>
 			<value>localhost</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
@@ -38,7 +38,7 @@
 			<useLookupValue>false</useLookupValue>
 		</globalVariable>
 		<globalVariable>
-			<name>//CISKCB301.module//BW.DOMAIN.NAME</name>
+			<name>//KSNCIS301.module//BW.DOMAIN.NAME</name>
 			<value></value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
@@ -47,7 +47,7 @@
 			<useLookupValue>false</useLookupValue>
 		</globalVariable>
 		<globalVariable>
-			<name>//CISKCB301.module//BW.DEPLOYMENTUNIT.VERSION</name>
+			<name>//KSNCIS301.module//BW.DEPLOYMENTUNIT.VERSION</name>
 			<value></value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
@@ -56,7 +56,7 @@
 			<useLookupValue>false</useLookupValue>
 		</globalVariable>
 		<globalVariable>
-			<name>//CISKCB301.module//BW.APPSPACE.NAME</name>
+			<name>//KSNCIS301.module//BW.APPSPACE.NAME</name>
 			<value></value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
@@ -65,7 +65,7 @@
 			<useLookupValue>false</useLookupValue>
 		</globalVariable>
 		<globalVariable>
-			<name>//CISKCB301.module//BW.MODULE.VERSION</name>
+			<name>//KSNCIS301.module//BW.MODULE.VERSION</name>
 			<value></value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
@@ -74,422 +74,8 @@
 			<useLookupValue>false</useLookupValue>
 		</globalVariable>
 		<globalVariable>
-			<name>//CISKCB301.module//BW.MODULE.NAME</name>
+			<name>//KSNCIS301.module//BW.MODULE.NAME</name>
 			<value></value>
-			<deploymentSettable>false</deploymentSettable>
-			<serviceSettable>false</serviceSettable>
-			<type>String</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
-		</globalVariable>
-		<globalVariable>
-			<name>//HcisExternal.smodule//BW.DEPLOYMENTUNIT.TYPE</name>
-			<value></value>
-			<deploymentSettable>false</deploymentSettable>
-			<serviceSettable>false</serviceSettable>
-			<type>String</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
-		</globalVariable>
-		<globalVariable>
-			<name>//HcisExternal.smodule///ENDPOINT/JNI_SFTP/USERNAME</name>
-			<value></value>
-			<deploymentSettable>false</deploymentSettable>
-			<serviceSettable>false</serviceSettable>
-			<type>String</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
-		</globalVariable>
-		<globalVariable>
-			<name>//HcisExternal.smodule///SECURITY/TOS/TOS_PWD</name>
-			<value>1111</value>
-			<deploymentSettable>false</deploymentSettable>
-			<serviceSettable>false</serviceSettable>
-			<type>String</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
-		</globalVariable>
-		<globalVariable>
-			<name>//HcisExternal.smodule///ENDPOINT/TOS/OL2_PORT</name>
-			<value>21278</value>
-			<deploymentSettable>false</deploymentSettable>
-			<serviceSettable>false</serviceSettable>
-			<type>Integer</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
-		</globalVariable>
-		<globalVariable>
-			<name>//HcisExternal.smodule///ENDPOINT/KFT_OL/PORT</name>
-			<value>31061</value>
-			<deploymentSettable>false</deploymentSettable>
-			<serviceSettable>false</serviceSettable>
-			<type>Integer</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
-		</globalVariable>
-		<globalVariable>
-			<name>//HcisExternal.smodule///ENDPOINT/NIC_FTP/CT/USERNAME</name>
-			<value>mvone_hdstore</value>
-			<deploymentSettable>false</deploymentSettable>
-			<serviceSettable>false</serviceSettable>
-			<type>String</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
-		</globalVariable>
-		<globalVariable>
-			<name>//HcisExternal.smodule///ENDPOINT/CIS/CIS_HOST</name>
-			<value>localhost</value>
-			<deploymentSettable>false</deploymentSettable>
-			<serviceSettable>false</serviceSettable>
-			<type>String</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
-		</globalVariable>
-		<globalVariable>
-			<name>//HcisExternal.smodule///SECURITY/TOS/TOS__USER_ID</name>
-			<value>HELP518</value>
-			<deploymentSettable>false</deploymentSettable>
-			<serviceSettable>false</serviceSettable>
-			<type>String</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
-		</globalVariable>
-		<globalVariable>
-			<name>//HcisExternal.smodule///ENDPOINT/TOS/OL3_PORT</name>
-			<value>21556</value>
-			<deploymentSettable>false</deploymentSettable>
-			<serviceSettable>false</serviceSettable>
-			<type>Integer</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
-		</globalVariable>
-		<globalVariable>
-			<name>//HcisExternal.smodule///LISTENER/HOST</name>
-			<value>127.0.0.1</value>
-			<deploymentSettable>false</deploymentSettable>
-			<serviceSettable>false</serviceSettable>
-			<type>String</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
-		</globalVariable>
-		<globalVariable>
-			<name>//HcisExternal.smodule///ENDPOINT/NIC_FTP/SC/HOSTNAME</name>
-			<value>203.234.219.30</value>
-			<deploymentSettable>false</deploymentSettable>
-			<serviceSettable>false</serviceSettable>
-			<type>String</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
-		</globalVariable>
-		<globalVariable>
-			<name>//HcisExternal.smodule///ENDPOINT/NIC_FTP/SC/PASSWORD</name>
-			<value>#!9g0O6vpVQVG9dXgxQSydeFAdmNXVzxcylQSOs4uUhD4=</value>
-			<deploymentSettable>false</deploymentSettable>
-			<serviceSettable>false</serviceSettable>
-			<type>Password</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
-		</globalVariable>
-		<globalVariable>
-			<name>//HcisExternal.smodule///LISTENER/BC_CARD_RCV_PORT</name>
-			<value>7006</value>
-			<deploymentSettable>false</deploymentSettable>
-			<serviceSettable>false</serviceSettable>
-			<type>Integer</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
-		</globalVariable>
-		<globalVariable>
-			<name>//HcisExternal.smodule///ENDPOINT/NIC/NIC_PORT</name>
-			<value>29162</value>
-			<deploymentSettable>false</deploymentSettable>
-			<serviceSettable>false</serviceSettable>
-			<type>Integer</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
-		</globalVariable>
-		<globalVariable>
-			<name>//HcisExternal.smodule//BW.DEPLOYMENTUNIT.NAME</name>
-			<value></value>
-			<deploymentSettable>false</deploymentSettable>
-			<serviceSettable>false</serviceSettable>
-			<type>String</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
-		</globalVariable>
-		<globalVariable>
-			<name>//HcisExternal.smodule///ENDPOINT/TOS/OL1_HOST</name>
-			<value>203.233.124.60</value>
-			<deploymentSettable>false</deploymentSettable>
-			<serviceSettable>false</serviceSettable>
-			<type>String</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
-		</globalVariable>
-		<globalVariable>
-			<name>//HcisExternal.smodule///ENDPOINT/JNI_SFTP/PORT</name>
-			<value>0</value>
-			<deploymentSettable>false</deploymentSettable>
-			<serviceSettable>false</serviceSettable>
-			<type>Integer</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
-		</globalVariable>
-		<globalVariable>
-			<name>//HcisExternal.smodule//BW.APPNODE.NAME</name>
-			<value></value>
-			<deploymentSettable>false</deploymentSettable>
-			<serviceSettable>false</serviceSettable>
-			<type>String</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
-		</globalVariable>
-		<globalVariable>
-			<name>//HcisExternal.smodule//BW.HOST.NAME</name>
-			<value>localhost</value>
-			<deploymentSettable>false</deploymentSettable>
-			<serviceSettable>false</serviceSettable>
-			<type>String</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
-		</globalVariable>
-		<globalVariable>
-			<name>//HcisExternal.smodule///ENDPOINT/NIC_FTP/CT/HOSTNAME</name>
-			<value>203.234.219.34</value>
-			<deploymentSettable>false</deploymentSettable>
-			<serviceSettable>false</serviceSettable>
-			<type>String</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
-		</globalVariable>
-		<globalVariable>
-			<name>//HcisExternal.smodule//BW.DOMAIN.NAME</name>
-			<value></value>
-			<deploymentSettable>false</deploymentSettable>
-			<serviceSettable>false</serviceSettable>
-			<type>String</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
-		</globalVariable>
-		<globalVariable>
-			<name>//HcisExternal.smodule///LISTENER/CIS_RCV_PORT</name>
-			<value>7018</value>
-			<deploymentSettable>false</deploymentSettable>
-			<serviceSettable>false</serviceSettable>
-			<type>Integer</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
-		</globalVariable>
-		<globalVariable>
-			<name>//HcisExternal.smodule///ENDPOINT/NIC_FTP/SC/CRSC_SAM_PATH_KIS_RECV</name>
-			<value>/app/sam/sc/kis/rcv</value>
-			<deploymentSettable>false</deploymentSettable>
-			<serviceSettable>false</serviceSettable>
-			<type>String</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
-		</globalVariable>
-		<globalVariable>
-			<name>//HcisExternal.smodule///ENDPOINT/NIC_FTP/CT/PASSWORD</name>
-			<value>#!+/jjuWw+iLFkpA8DXXt6tkZ5RRE3l4rRpwU/htCBnRY=</value>
-			<deploymentSettable>false</deploymentSettable>
-			<serviceSettable>false</serviceSettable>
-			<type>Password</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
-		</globalVariable>
-		<globalVariable>
-			<name>//HcisExternal.smodule///ENDPOINT/JNI_SFTP/HOSTNAME</name>
-			<value></value>
-			<deploymentSettable>false</deploymentSettable>
-			<serviceSettable>false</serviceSettable>
-			<type>String</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
-		</globalVariable>
-		<globalVariable>
-			<name>//HcisExternal.smodule///ENDPOINT/JNI_SFTP/PASSWORD</name>
-			<value>#!OSQg4YvlErr3aGTm7O+Agw==</value>
-			<deploymentSettable>false</deploymentSettable>
-			<serviceSettable>false</serviceSettable>
-			<type>Password</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
-		</globalVariable>
-		<globalVariable>
-			<name>//HcisExternal.smodule///ENDPOINT/NIC/NIC_HOST</name>
-			<value>10.103.237.98</value>
-			<deploymentSettable>false</deploymentSettable>
-			<serviceSettable>false</serviceSettable>
-			<type>String</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
-		</globalVariable>
-		<globalVariable>
-			<name>//HcisExternal.smodule///ENDPOINT/KCB/KCB_PORT</name>
-			<value>0</value>
-			<deploymentSettable>false</deploymentSettable>
-			<serviceSettable>false</serviceSettable>
-			<type>Integer</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
-		</globalVariable>
-		<globalVariable>
-			<name>//HcisExternal.smodule///common/stage</name>
-			<value>test</value>
-			<deploymentSettable>false</deploymentSettable>
-			<serviceSettable>false</serviceSettable>
-			<type>String</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
-		</globalVariable>
-		<globalVariable>
-			<name>//HcisExternal.smodule//BW.APPSPACE.NAME</name>
-			<value></value>
-			<deploymentSettable>false</deploymentSettable>
-			<serviceSettable>false</serviceSettable>
-			<type>String</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
-		</globalVariable>
-		<globalVariable>
-			<name>//HcisExternal.smodule///ENDPOINT/KFT/PORT</name>
-			<value>29400</value>
-			<deploymentSettable>false</deploymentSettable>
-			<serviceSettable>false</serviceSettable>
-			<type>Integer</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
-		</globalVariable>
-		<globalVariable>
-			<name>//HcisExternal.smodule///ENDPOINT/TOS/OL3_HOST</name>
-			<value>203.233.124.60</value>
-			<deploymentSettable>false</deploymentSettable>
-			<serviceSettable>false</serviceSettable>
-			<type>String</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
-		</globalVariable>
-		<globalVariable>
-			<name>//HcisExternal.smodule///ENDPOINT/KIC/KIC_HOST</name>
-			<value>10.103.248.2</value>
-			<deploymentSettable>false</deploymentSettable>
-			<serviceSettable>false</serviceSettable>
-			<type>String</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
-		</globalVariable>
-		<globalVariable>
-			<name>//HcisExternal.smodule//BW.MODULE.VERSION</name>
-			<value></value>
-			<deploymentSettable>false</deploymentSettable>
-			<serviceSettable>false</serviceSettable>
-			<type>String</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
-		</globalVariable>
-		<globalVariable>
-			<name>//HcisExternal.smodule///ENDPOINT/CIS/CIS_PORT</name>
-			<value>15021</value>
-			<deploymentSettable>false</deploymentSettable>
-			<serviceSettable>false</serviceSettable>
-			<type>Integer</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
-		</globalVariable>
-		<globalVariable>
-			<name>//HcisExternal.smodule///ENDPOINT/TOS/OL2_HOST</name>
-			<value>203.233.124.60</value>
-			<deploymentSettable>false</deploymentSettable>
-			<serviceSettable>false</serviceSettable>
-			<type>String</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
-		</globalVariable>
-		<globalVariable>
-			<name>//HcisExternal.smodule///ENDPOINT/KCB/KCB_HOST</name>
-			<value></value>
-			<deploymentSettable>false</deploymentSettable>
-			<serviceSettable>false</serviceSettable>
-			<type>String</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
-		</globalVariable>
-		<globalVariable>
-			<name>//HcisExternal.smodule///ENDPOINT/KIC/KIC_PORT</name>
-			<value>3040</value>
-			<deploymentSettable>false</deploymentSettable>
-			<serviceSettable>false</serviceSettable>
-			<type>Integer</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
-		</globalVariable>
-		<globalVariable>
-			<name>//HcisExternal.smodule///ENDPOINT/NIC_FTP/CT/CRCT_SAM_PATH_KIS_RECV</name>
-			<value>/app/sam/ct/kis/rcv</value>
-			<deploymentSettable>false</deploymentSettable>
-			<serviceSettable>false</serviceSettable>
-			<type>String</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
-		</globalVariable>
-		<globalVariable>
-			<name>//HcisExternal.smodule///ENDPOINT/KFT/HOSTNAME</name>
-			<value>99.51.105.20</value>
-			<deploymentSettable>false</deploymentSettable>
-			<serviceSettable>false</serviceSettable>
-			<type>String</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
-		</globalVariable>
-		<globalVariable>
-			<name>//HcisExternal.smodule///ENDPOINT/KFT_OL/HOSTNAME</name>
-			<value>99.51.105.20</value>
-			<deploymentSettable>false</deploymentSettable>
-			<serviceSettable>false</serviceSettable>
-			<type>String</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
-		</globalVariable>
-		<globalVariable>
-			<name>//HcisExternal.smodule///ENDPOINT/CIS/RES_PATH</name>
-			<value>/serviceEndpoint/httpService/request.json</value>
-			<deploymentSettable>false</deploymentSettable>
-			<serviceSettable>false</serviceSettable>
-			<type>String</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
-		</globalVariable>
-		<globalVariable>
-			<name>//HcisExternal.smodule//BW.DEPLOYMENTUNIT.VERSION</name>
-			<value></value>
-			<deploymentSettable>false</deploymentSettable>
-			<serviceSettable>false</serviceSettable>
-			<type>String</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
-		</globalVariable>
-		<globalVariable>
-			<name>//HcisExternal.smodule///ENDPOINT/TOS/OL1_PORT</name>
-			<value>21250</value>
-			<deploymentSettable>false</deploymentSettable>
-			<serviceSettable>false</serviceSettable>
-			<type>Integer</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
-		</globalVariable>
-		<globalVariable>
-			<name>//HcisExternal.smodule//BW.MODULE.NAME</name>
-			<value></value>
-			<deploymentSettable>false</deploymentSettable>
-			<serviceSettable>false</serviceSettable>
-			<type>String</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
-		</globalVariable>
-		<globalVariable>
-			<name>//HcisExternal.smodule///ENDPOINT/NIC_FTP/SC/USERNAME</name>
-			<value>hdb01</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
@@ -839,44 +425,17 @@
 			<useLookupValue>false</useLookupValue>
 		</globalVariable>
 		<globalVariable>
+			<name>//HcisExternal.smodule///SECURITY/TOS/TOS_PWD</name>
+			<value>1111</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
 			<name>//HcisExternal.smodule///ENDPOINT/NIC_SFTP/MT_SAM_PATH_NIC_RECV</name>
 			<value>/app/sam/mt/nice/rcv/hnm_rcv</value>
-			<deploymentSettable>false</deploymentSettable>
-			<serviceSettable>false</serviceSettable>
-			<type>String</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
-		</globalVariable>
-		<globalVariable>
-			<name>//HcisExternal.smodule///ENDPOINT/NIC_SFTP/PASSWORD</name>
-			<value>#!JpFi1jCcHTs82ff7ucYH21fmfpa7j+QFqwOwwKgdciQ=</value>
-			<deploymentSettable>false</deploymentSettable>
-			<serviceSettable>false</serviceSettable>
-			<type>Password</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
-		</globalVariable>
-		<globalVariable>
-			<name>//HcisExternal.smodule///ENDPOINT/NIC_SFTP/PWD_PLAIN</name>
-			<value>hmall1234%</value>
-			<deploymentSettable>false</deploymentSettable>
-			<serviceSettable>false</serviceSettable>
-			<type>String</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
-		</globalVariable>
-		<globalVariable>
-			<name>//HcisExternal.smodule///ENDPOINT/NIC_SFTP/USERNAME</name>
-			<value>hmall</value>
-			<deploymentSettable>false</deploymentSettable>
-			<serviceSettable>false</serviceSettable>
-			<type>String</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
-		</globalVariable>
-		<globalVariable>
-			<name>//HcisExternal.smodule///ENDPOINT/NIC_SFTP/HOSTNAME</name>
-			<value>203.234.227.173</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
@@ -893,56 +452,29 @@
 			<useLookupValue>false</useLookupValue>
 		</globalVariable>
 		<globalVariable>
-			<name>//HcisExternal.smodule///ENDPOINT/NIC_FTP/UP/USERNAME</name>
-			<value>hdb01</value>
+			<name>//HcisExternal.smodule///ENDPOINT/TOS/OL2_PORT</name>
+			<value>21278</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
-			<type>String</type>
+			<type>Integer</type>
 			<isOverride>false</isOverride>
 			<useLookupValue>false</useLookupValue>
 		</globalVariable>
 		<globalVariable>
-			<name>//HcisExternal.smodule///ENDPOINT/NIC_FTP/UP/HOSTNAME</name>
-			<value>10.103.237.9</value>
+			<name>//HcisExternal.smodule///LISTENER/KSN_RCV_PORT</name>
+			<value>7014</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
-			<type>String</type>
+			<type>Integer</type>
 			<isOverride>false</isOverride>
 			<useLookupValue>false</useLookupValue>
 		</globalVariable>
 		<globalVariable>
-			<name>//HcisExternal.smodule///ENDPOINT/NIC_FTP/UP/PWD_PLAIN</name>
-			<value>hdb01_4066</value>
+			<name>//HcisExternal.smodule///ENDPOINT/KFT_OL/PORT</name>
+			<value>31061</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
-			<type>String</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
-		</globalVariable>
-		<globalVariable>
-			<name>//HcisExternal.smodule///ENDPOINT/NIC_FTP/UP/PASSWORD</name>
-			<value>#!zMUijKCSTYp1QEiXRdvNPhaZmNaDD++rKtJ3shvEYO8=</value>
-			<deploymentSettable>false</deploymentSettable>
-			<serviceSettable>false</serviceSettable>
-			<type>Password</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
-		</globalVariable>
-		<globalVariable>
-			<name>//HcisExternal.smodule///ENDPOINT/NIC_FTP/CT/PWD_PLAIN</name>
-			<value>hdstore0707</value>
-			<deploymentSettable>false</deploymentSettable>
-			<serviceSettable>false</serviceSettable>
-			<type>String</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
-		</globalVariable>
-		<globalVariable>
-			<name>//HcisExternal.smodule///ENDPOINT/NIC_FTP/SC/PWD_PLAIN</name>
-			<value>hdb015352</value>
-			<deploymentSettable>false</deploymentSettable>
-			<serviceSettable>false</serviceSettable>
-			<type>String</type>
+			<type>Integer</type>
 			<isOverride>false</isOverride>
 			<useLookupValue>false</useLookupValue>
 		</globalVariable>
@@ -956,8 +488,260 @@
 			<useLookupValue>false</useLookupValue>
 		</globalVariable>
 		<globalVariable>
+			<name>//HcisExternal.smodule///SECURITY/TOS/TOS__USER_ID</name>
+			<value>HELP518</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule///ENDPOINT/TOS/OL3_PORT</name>
+			<value>21556</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>Integer</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule///LISTENER/HOST</name>
+			<value>127.0.0.1</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule///ENDPOINT/NIC/NIC_PORT</name>
+			<value>29162</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>Integer</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule//BW.DEPLOYMENTUNIT.NAME</name>
+			<value></value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule///ENDPOINT/NIC_FTP/CT/PWD_PLAIN</name>
+			<value>hdstore0707</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
 			<name>//HcisExternal.smodule///ENDPOINT/KTT_FTP/USERNAME</name>
 			<value>hyundaidepart</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule///LISTENER/TOS_RCV_PORT1</name>
+			<value>21250</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>Integer</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule///ENDPOINT/JNI_SFTP/PORT</name>
+			<value>0</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>Integer</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule///ENDPOINT/NIC_SFTP/PASSWORD</name>
+			<value>#!JpFi1jCcHTs82ff7ucYH21fmfpa7j+QFqwOwwKgdciQ=</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>Password</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule//BW.HOST.NAME</name>
+			<value>localhost</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule///ENDPOINT/NIC_FTP/CT/HOSTNAME</name>
+			<value>203.234.219.34</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule///LISTENER/CIS_RCV_PORT</name>
+			<value>7018</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>Integer</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule///ENDPOINT/NIC_FTP/SC/CRSC_SAM_PATH_KIS_RECV</name>
+			<value>/app/sam/sc/kis/rcv</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule///LISTENER/TOS_RCV_PORT3</name>
+			<value>21556</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>Integer</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule///ENDPOINT/NIC_FTP/UP/USERNAME</name>
+			<value>hdb01</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule///ENDPOINT/JNI_SFTP/HOSTNAME</name>
+			<value></value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule///LISTENER/TOS_RCV_PORT2</name>
+			<value>21278</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>Integer</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule///common/stage</name>
+			<value>test</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule//BW.APPSPACE.NAME</name>
+			<value></value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule///ENDPOINT/TOS/OL3_HOST</name>
+			<value>203.233.124.60</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule///ENDPOINT/CIS/CIS_PORT</name>
+			<value>15021</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>Integer</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule///ENDPOINT/NIC_FTP/CT/CRCT_SAM_PATH_KIS_RECV</name>
+			<value>/app/sam/ct/kis/rcv</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule///ENDPOINT/KFT/HOSTNAME</name>
+			<value>99.51.105.20</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule///ENDPOINT/KFT_OL/HOSTNAME</name>
+			<value>99.51.105.20</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule///ENDPOINT/NIC_SFTP/PWD_PLAIN</name>
+			<value>hmall1234%</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule///ENDPOINT/NIC_FTP/SC/USERNAME</name>
+			<value>hdb01</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule//BW.DEPLOYMENTUNIT.TYPE</name>
+			<value></value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule///ENDPOINT/JNI_SFTP/USERNAME</name>
+			<value></value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
@@ -983,11 +767,182 @@
 			<useLookupValue>false</useLookupValue>
 		</globalVariable>
 		<globalVariable>
-			<name>//HcisExternal.smodule///ENDPOINT/KTT_FTP/PASSWORD</name>
-			<value>#!qWzBHLGApuAPJdLF0l+9VbQg8APmJjlRuGxrwSya35GsDPdZCr5nww==</value>
+			<name>//HcisExternal.smodule///ENDPOINT/NIC_FTP/CT/USERNAME</name>
+			<value>mvone_hdstore</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule///ENDPOINT/CIS/CIS_HOST</name>
+			<value>localhost</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule///ENDPOINT/NIC_FTP/UP/HOSTNAME</name>
+			<value>10.103.237.9</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule///ENDPOINT/NIC_SFTP/USERNAME</name>
+			<value>hmall</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule///ENDPOINT/NIC_FTP/SC/HOSTNAME</name>
+			<value>203.234.219.30</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule///ENDPOINT/NIC_FTP/SC/PASSWORD</name>
+			<value>#!9g0O6vpVQVG9dXgxQSydeFAdmNXVzxcylQSOs4uUhD4=</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>Password</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule///LISTENER/BC_CARD_RCV_PORT</name>
+			<value>7006</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>Integer</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule///ENDPOINT/NIC_FTP/SC/PWD_PLAIN</name>
+			<value>hdb015352</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule///ENDPOINT/TOS/OL1_HOST</name>
+			<value>203.233.124.60</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule///ENDPOINT/NIC_SFTP/HOSTNAME</name>
+			<value>203.234.227.173</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule//BW.APPNODE.NAME</name>
+			<value></value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule//BW.DOMAIN.NAME</name>
+			<value></value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule///ENDPOINT/NIC_FTP/CT/PASSWORD</name>
+			<value>#!+/jjuWw+iLFkpA8DXXt6tkZ5RRE3l4rRpwU/htCBnRY=</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>Password</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule///ENDPOINT/JNI_SFTP/PASSWORD</name>
+			<value>#!OSQg4YvlErr3aGTm7O+Agw==</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>Password</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule///ENDPOINT/NIC/NIC_HOST</name>
+			<value>10.103.237.98</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule///ENDPOINT/KCB/KCB_PORT</name>
+			<value>0</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>Integer</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule///ENDPOINT/KFT/PORT</name>
+			<value>29400</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>Integer</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule///ENDPOINT/KIC/KIC_HOST</name>
+			<value>10.103.248.2</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule//BW.MODULE.VERSION</name>
+			<value></value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule///ENDPOINT/NIC_FTP/UP/PWD_PLAIN</name>
+			<value>hdb01_4066</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
 			<isOverride>false</isOverride>
 			<useLookupValue>false</useLookupValue>
 		</globalVariable>
@@ -1001,7 +956,70 @@
 			<useLookupValue>false</useLookupValue>
 		</globalVariable>
 		<globalVariable>
-			<name>//HcisExternal.smodule///LISTENER/TOS_RCV_PORT1</name>
+			<name>//HcisExternal.smodule///ENDPOINT/TOS/OL2_HOST</name>
+			<value>203.233.124.60</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule///ENDPOINT/KCB/KCB_HOST</name>
+			<value></value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule///ENDPOINT/KIC/KIC_PORT</name>
+			<value>3040</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>Integer</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule///ENDPOINT/CIS/RES_PATH</name>
+			<value>/serviceEndpoint/httpService/request.json</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule//BW.DEPLOYMENTUNIT.VERSION</name>
+			<value></value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule///ENDPOINT/KTT_FTP/PASSWORD</name>
+			<value>#!qWzBHLGApuAPJdLF0l+9VbQg8APmJjlRuGxrwSya35GsDPdZCr5nww==</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>Password</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule///ENDPOINT/NIC_FTP/UP/PASSWORD</name>
+			<value>#!zMUijKCSTYp1QEiXRdvNPhaZmNaDD++rKtJ3shvEYO8=</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>Password</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule///ENDPOINT/TOS/OL1_PORT</name>
 			<value>21250</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
@@ -1010,29 +1028,11 @@
 			<useLookupValue>false</useLookupValue>
 		</globalVariable>
 		<globalVariable>
-			<name>//HcisExternal.smodule///LISTENER/TOS_RCV_PORT3</name>
-			<value>21556</value>
+			<name>//HcisExternal.smodule//BW.MODULE.NAME</name>
+			<value></value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
-			<type>Integer</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
-		</globalVariable>
-		<globalVariable>
-			<name>//HcisExternal.smodule///LISTENER/TOS_RCV_PORT2</name>
-			<value>21278</value>
-			<deploymentSettable>false</deploymentSettable>
-			<serviceSettable>false</serviceSettable>
-			<type>Integer</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
-		</globalVariable>
-		<globalVariable>
-			<name>//HcisExternal.smodule///LISTENER/KSN_RCV_PORT</name>
-			<value>7014</value>
-			<deploymentSettable>false</deploymentSettable>
-			<serviceSettable>false</serviceSettable>
-			<type>Integer</type>
+			<type>String</type>
 			<isOverride>false</isOverride>
 			<useLookupValue>false</useLookupValue>
 		</globalVariable>

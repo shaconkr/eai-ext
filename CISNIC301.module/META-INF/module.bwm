@@ -37,6 +37,6 @@
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_Al1AU6eIEe2kRZld14Zk_A" processName="CISNICUPID.CISNICUP_AHRCINF"/>
   </sca:component>
   <sca:component xmi:id="_VfbscqeIEe2kRZld14Zk_A" name="ComponentCISNICUP_DELQMST" compositeext:version="1.0.0.qualifier">
-    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_Vfbsc6eIEe2kRZld14Zk_A" processName="CISNICUPID.CISNICUP_DELQMST"/>
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_Vfbsc6eIEe2kRZld14Zk_A" processName="CISNICUPID.CISNICUPIG0020401"/>
   </sca:component>
 </sca:composite>

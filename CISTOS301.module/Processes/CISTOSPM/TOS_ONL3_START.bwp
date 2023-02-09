@@ -1761,9 +1761,7 @@
                     </tibex:config>
                 </tibex:activityExtension>
             </bpws:extensionActivity>
-            <bpws:scope name="Iterate" tibex:group="iterate"
-                tibex:indexOriginalName="index"
-                tibex:indexToGlobal="false" tibex:xpdlId="ff950cf5-d85b-48d2-aa47-31f4660b2dec">
+            <bpws:scope name="Iterate" tibex:group="iterate" tibex:xpdlId="ff950cf5-d85b-48d2-aa47-31f4660b2dec">
                 <bpws:targets>
                     <bpws:target linkName="ediNoToIterate"/>
                 </bpws:targets>

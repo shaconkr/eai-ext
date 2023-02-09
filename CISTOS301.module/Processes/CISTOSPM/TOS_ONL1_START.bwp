@@ -1689,8 +1689,7 @@
                         subProcessName="L_Set_LogEnd" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
                 </tibex:extActivity>
             </bpws:extensionActivity>
-            <bpws:scope name="Iterate" tibex:group="iterate"
-                tibex:indexToGlobal="false" tibex:xpdlId="b29034b4-81a7-413d-b905-3e4b9b544262">
+            <bpws:scope name="Iterate" tibex:group="iterate" tibex:xpdlId="b29034b4-81a7-413d-b905-3e4b9b544262">
                 <bpws:targets>
                     <bpws:target linkName="JavaInvokeToIterate"/>
                 </bpws:targets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jndi:namedResource xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CISKSNPMCO0110102="http://schema.hcis.com/xsd/CISKSNPMCO0110102_InRes_Header" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" name="KSNCISPMCO/KSNCISPMCO0110101.CISKSNPMCO0110102_InRes_Header" type="dataformat:DataFormat">
+  <jndi:imports importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/CISKSNPMCO0110102_InRes_Header_df.xsd" namespace="http://schema.hcis.com/xsd/CISKSNPMCO0110102_InRes_Header"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="CISKSNPMCO0110102:main" lineLength="100" fieldOffsetsStr="trCode(0,9)&#xA;svcGb(9,17)&#xA;bnkCd2(17,19)&#xA;msgCd(19,23)&#xA;jobGbcd(23,26)&#xA;trsCnt(26,27)&#xA;ediNo(27,33)&#xA;sdDate(33,41)&#xA;sdTime(41,47)&#xA;retCd(47,51)&#xA;bnkRetCd(51,55)&#xA;qryDt(55,63)&#xA;qryNo(63,69)&#xA;bnkEdiNo(69,84)&#xA;bnkCd3(84,87)&#xA;sdFlag(87,100)">
+    <fieldOffsets kor="식별코드" type="string" name="trCode" start="0" end="9"/>
+    <fieldOffsets kor="업체코드" type="string" name="svcGb" start="9" end="17"/>
+    <fieldOffsets kor="은행코드2" type="string" name="bnkCd2" start="17" end="19"/>
+    <fieldOffsets kor="메시지코드" type="string" name="msgCd" start="19" end="23"/>
+    <fieldOffsets kor="업무구분코드" type="string" name="jobGbcd" start="23" end="26"/>
+    <fieldOffsets kor="송신횟수" type="long" name="trsCnt" start="26" end="27"/>
+    <fieldOffsets kor="전문번호" type="string" name="ediNo" start="27" end="33"/>
+    <fieldOffsets kor="전송일자" type="string" name="sdDate" start="33" end="41"/>
+    <fieldOffsets kor="전송시간" type="string" name="sdTime" start="41" end="47"/>
+    <fieldOffsets kor="응답코드" type="string" name="retCd" start="47" end="51"/>
+    <fieldOffsets kor="은행응답코드" type="string" name="bnkRetCd" start="51" end="55"/>
+    <fieldOffsets kor="조회일자" type="string" name="qryDt" start="55" end="63"/>
+    <fieldOffsets kor="조회번호" type="string" name="qryNo" start="63" end="69"/>
+    <fieldOffsets kor="은행전문번호" type="string" name="bnkEdiNo" start="69" end="84"/>
+    <fieldOffsets kor="은행코드3" type="string" name="bnkCd3" start="84" end="87"/>
+    <fieldOffsets kor="예비" type="string" name="sdFlag" start="87" end="100"/>
+  </jndi:configuration>
+</jndi:namedResource>

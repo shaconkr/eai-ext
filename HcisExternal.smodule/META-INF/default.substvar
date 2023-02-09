@@ -110,6 +110,33 @@
 			<useLookupValue>false</useLookupValue>
 		</globalVariable>
 		<globalVariable>
+			<name>/LISTENER/TOS_RCV_PORT1</name>
+			<value>21250</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>Integer</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>/LISTENER/TOS_RCV_PORT2</name>
+			<value>21278</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>Integer</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>/LISTENER/TOS_RCV_PORT3</name>
+			<value>21556</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>Integer</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
 			<name>/ENDPOINT/CIS/RES_PATH</name>
 			<value>/serviceEndpoint/httpService/request.json</value>
 			<deploymentSettable>false</deploymentSettable>

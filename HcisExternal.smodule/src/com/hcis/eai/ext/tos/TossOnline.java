@@ -1,6 +1,7 @@
 package com.hcis.eai.ext.tos;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Map;
@@ -55,6 +56,21 @@ public class TossOnline extends EDIParserAndBuilder {
         STAGE = stage;
     }
 
+	/**
+	 * 비동기 응답전문을 위한 correlation ID
+	 * 
+	 * 전문코드(ediCd :4) + 업무구분(jobGb :3) + 전문번호(ediNo :6) + 전송일자(sdDate:8)
+	 *    
+	 * @param bytes
+	 * @return
+	 * @throws UnsupportedEncodingException
+	 */
+	public String getCorrelationId(byte[] bytes) throws UnsupportedEncodingException {
+		byte[] corrBytes = readBytes(bytes, 58, 21);
+		return new String(corrBytes, TOSS_ENCODING);
+	}
+	
+	
     /**
      * 공통부 생성
      * @param sdId		송신자ID

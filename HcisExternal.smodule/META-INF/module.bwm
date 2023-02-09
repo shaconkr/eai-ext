@@ -12,6 +12,9 @@
   <sca:property xmi:id="_SwiMcI2NEe2nL8wwN8HNrg" name="/LISTENER/HOST" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_RX28YI1YEe2dwLXsqlnqWg" name="/LISTENER/BC_CARD_RCV_PORT" type="XMLSchema:int" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_X_0UwI2NEe2nL8wwN8HNrg" name="/LISTENER/CIS_RCV_PORT" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_roVwIKg_Ee20koM4YZoY1w" name="/LISTENER/TOS_RCV_PORT1" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_rxwK0Kg_Ee20koM4YZoY1w" name="/LISTENER/TOS_RCV_PORT2" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_r3Q88Kg_Ee20koM4YZoY1w" name="/LISTENER/TOS_RCV_PORT3" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_tc1qEI1YEe2dwLXsqlnqWg" name="/ENDPOINT/CIS/RES_PATH" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_v1NPoI1YEe2dwLXsqlnqWg" name="/ENDPOINT/CIS/CIS_HOST" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_w7_RgI1YEe2dwLXsqlnqWg" name="/ENDPOINT/CIS/CIS_PORT" type="XMLSchema:int" publicAccess="true" scalable="true"/>

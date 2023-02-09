@@ -1688,9 +1688,7 @@
                     </tibex:eventSource>
                 </tibex:receiveEvent>
             </bpws:extensionActivity>
-            <bpws:scope name="Iterate" tibex:group="iterate"
-                tibex:indexOriginalName="index"
-                tibex:indexToGlobal="false" tibex:xpdlId="ac71b7e9-28b6-4c0d-bd13-65cfdb359b23">
+            <bpws:scope name="Iterate" tibex:group="iterate" tibex:xpdlId="ac71b7e9-28b6-4c0d-bd13-65cfdb359b23">
                 <bpws:targets>
                     <bpws:target linkName="bankListToIterate"/>
                 </bpws:targets>

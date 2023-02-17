@@ -56,10 +56,10 @@
                 <variable>L_Set_LogEnd-input</variable>
             </endingVariables>
         </task>
-        <task name="JMSRequestReply">
+        <task name="Q.KSN.EDICD_JOBGB">
             <endingVariables>
-                <variable>JMSRequestReply-input</variable>
-                <variable>JMSRequestReply</variable>
+                <variable>Q.KSN.EDICD_JOBGB-input</variable>
+                <variable>Q.KSN.EDICD_JOBGB</variable>
                 <variable>ReadAllBytes</variable>
             </endingVariables>
         </task>
@@ -1106,7 +1106,7 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.5"/>
-                                    <layoutConstraint x="786"
+                                    <layoutConstraint x="784"
                                     xsi:type="notation:Bounds" y="41"/>
                                     </children>
                                     <children type="4002 bw.jms.requestreply">
@@ -1142,6 +1142,26 @@
                                     x="651"
                                     xsi:type="notation:Bounds" y="41"/>
                                     </children>
+                                    <children
+                                    description="offset 19 len 7 =   전문코드(ediCd :4) + 업무구분(jobGb :3) "
+                                    fillColor="13369343"
+                                    fontName="맑은 고딕"
+                                    lineColor="6737151"
+                                    lineWidth="1"
+                                    transparency="0" type="Note" xsi:type="notation:Shape">
+                                    <children type="DiagramName" xsi:type="notation:BasicDecorationNode">
+                                    <element xsi:nil="true"/>
+                                    </children>
+                                    <children type="Description" xsi:type="notation:BasicDecorationNode">
+                                    <element xsi:nil="true"/>
+                                    </children>
+                                    <styles xsi:type="notation:TextStyle"/>
+                                    <styles xsi:type="notation:LineTypeStyle"/>
+                                    <element xsi:nil="true"/>
+                                    <layoutConstraint
+                                    height="40" x="367"
+                                    xsi:type="notation:Bounds" y="157"/>
+                                    </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
@@ -1154,7 +1174,7 @@
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity"/>
-                                    <layoutConstraint height="138"
+                                    <layoutConstraint height="207"
                                     width="1137" xsi:type="notation:Bounds"/>
                                 </children>
                                 <styles xsi:type="notation:SortingStyle"/>
@@ -1165,7 +1185,7 @@
                             <styles xsi:type="bwnotation:BackgroundStyle"/>
                             <styles xsi:type="bwnotation:ResizingStyle"/>
                             <element href="//0/@process/@activity"/>
-                            <layoutConstraint height="163" width="1140" xsi:type="notation:Bounds"/>
+                            <layoutConstraint height="207" width="1140" xsi:type="notation:Bounds"/>
                         </children>
                         <children type="4022">
                             <children type="3022">
@@ -1279,7 +1299,7 @@
                     <styles xsi:type="bwnotation:BackgroundStyle"/>
                     <styles xsi:type="bwnotation:ResizingStyle"/>
                     <element href="//0/@process/@activity"/>
-                    <layoutConstraint height="280" width="1140" x="1"
+                    <layoutConstraint height="349" width="1140" x="1"
                         xsi:type="notation:Bounds" y="1"/>
                 </children>
                 <styles xsi:type="notation:SortingStyle"/>
@@ -1288,7 +1308,7 @@
             </children>
             <styles fontName="맑은 고딕" lineColor="0" xsi:type="notation:ShapeStyle"/>
             <element href="//0/@process"/>
-            <layoutConstraint height="332" width="1482" xsi:type="notation:Bounds"/>
+            <layoutConstraint height="401" width="1482" xsi:type="notation:Bounds"/>
         </children>
         <styles xsi:type="notation:DiagramStyle"/>
         <element href="//0"/>
@@ -1367,6 +1387,15 @@
             <element href="//0/@process/@activity/@activity/@links/@children.5"/>
             <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
+        <edges lineColor="0" lineWidth="1"
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.8"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3"
+            type="NoteAttachment" xsi:type="notation:Connector">
+            <styles xsi:type="notation:ArrowStyle"/>
+            <styles xsi:type="notation:LineTypeStyle"/>
+            <element xsi:nil="true"/>
+            <bendpoints points="[0, 0, -531, -65]$[507, 62, -24, -3]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
     </notation:Diagram>
     <tibex:NamespaceRegistry enabled="true">
         <tibex:namespaceItem
@@ -1413,14 +1442,6 @@
                 <bpws:literal>Jms.ESB</bpws:literal>
             </bpws:from>
         </bpws:variable>
-        <bpws:variable name="JavaGlobalInstanceProperty"
-            sca-bpel:hotUpdate="false" sca-bpel:privateProperty="true"
-            sca-bpel:property="yes"
-            sca-bpel:sharedResourceType="{http://ns.tibco.com/bw/palette/javasharedresource}JavaGlobalInstanceResource" type="xsd:string">
-            <bpws:from>
-                <bpws:literal>ext.ksn.KSN_JAVA</bpws:literal>
-            </bpws:from>
-        </bpws:variable>
         <bpws:variable name="HcisExternal.smodule-HOST"
             sca-bpel:hotUpdate="false" sca-bpel:privateProperty="true"
             sca-bpel:property="yes"
@@ -1435,14 +1456,6 @@
             name="getQnameFromHeader" sca-bpel:internal="true"/>
         <bpws:variable element="ns14:ActivityErrorData"
             name="_error_getQnameFromHeader" sca-bpel:internal="true"/>
-        <bpws:variable name="JavaGlobalInstanceProperty1"
-            sca-bpel:hotUpdate="false" sca-bpel:privateProperty="true"
-            sca-bpel:property="yes"
-            sca-bpel:sharedResourceType="{http://ns.tibco.com/bw/palette/javasharedresource}JavaGlobalInstanceResource" type="xsd:string">
-            <bpws:from>
-                <bpws:literal>ext.tos.TOSOnlineHelper</bpws:literal>
-            </bpws:from>
-        </bpws:variable>
         <bpws:variable element="ns12:JavaInvokeActivityInput"
             name="getQnameFromHeader-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns15:SetInterface"
@@ -1459,11 +1472,11 @@
             sca-bpel:property="yes"
             tibex:propertySource="//HcisExternal.smodule///LISTENER/KSN_RCV_PORT" type="xsd:int"/>
         <bpws:variable element="ns17:ActivityInput"
-            name="JMSRequestReply-input" sca-bpel:internal="true"/>
+            name="Q.KSN.EDICD_JOBGB-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns18:ActivityOutput"
-            name="JMSRequestReply" sca-bpel:internal="true"/>
+            name="Q.KSN.EDICD_JOBGB" sca-bpel:internal="true"/>
         <bpws:variable element="ns19:ActivityErrorData"
-            name="_error_JMSRequestReply" sca-bpel:internal="true"/>
+            name="_error_Q.KSN.EDICD_JOBGB" sca-bpel:internal="true"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -1598,9 +1611,9 @@
                                     <type href="http://ns.tibco.com/bw/palette/java#//JavaMethod"/>
                                     <value
                                     className="com.hcis.eai.ext.ksn.KsnetParserAndBuilder"
+                                    constructDeclaredClass="true"
                                     isNew="true"
                                     isNewActivity="true"
-                                    javaGlobalInstance="JavaGlobalInstanceProperty"
                                     methodName="readBytesString"
                                     methodReturn="string" xsi:type="java:JavaMethod">
                                     <exceptionTypes>java.io.UnsupportedEncodingException</exceptionTypes>
@@ -1674,9 +1687,9 @@
             </bpws:extensionActivity>
             <bpws:extensionActivity>
                 <tibex:activityExtension
-                    inputVariable="JMSRequestReply-input"
-                    name="JMSRequestReply"
-                    outputVariable="JMSRequestReply"
+                    inputVariable="Q.KSN.EDICD_JOBGB-input"
+                    name="Q.KSN.EDICD_JOBGB"
+                    outputVariable="Q.KSN.EDICD_JOBGB"
                     tibex:xpdlId="61c4d501-49af-4371-a2e8-9d38afc68ab4" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
                         <bpws:target linkName="getQnameFromHeaderToJMSRequestReply"/>
@@ -1686,7 +1699,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns6=&quot;http://www.tibco.com/namespaces/tnt/plugins/jms+61c4d501-49af-4371-a2e8-9d38afc68ab4+input&quot; xmlns:Q1=&quot;http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataOutput+fbd28e3d-be7c-46e0-894f-bffb44ffaff7+ActivityOutput&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;ReadAllBytes&quot;/>&lt;xsl:param name=&quot;getQnameFromHeader&quot;/>&lt;xsl:template name=&quot;JMSRequestReply-input&quot; match=&quot;/&quot;>&lt;tns6:ActivityInput>&lt;xsl:if test=&quot;$getQnameFromHeader/MethodReturnValue&quot;>&lt;destination>&lt;xsl:value-of select=&quot;$getQnameFromHeader/MethodReturnValue&quot;/>&lt;/destination>&lt;/xsl:if>&lt;Body>&lt;xsl:value-of select=&quot;$ReadAllBytes/Q1:data&quot;/>&lt;/Body>&lt;/tns6:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns6=&quot;http://www.tibco.com/namespaces/tnt/plugins/jms+61c4d501-49af-4371-a2e8-9d38afc68ab4+input&quot; xmlns:Q1=&quot;http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataOutput+fbd28e3d-be7c-46e0-894f-bffb44ffaff7+ActivityOutput&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;ReadAllBytes&quot;/>&lt;xsl:param name=&quot;getQnameFromHeader&quot;/>&lt;xsl:template name=&quot;Q.KSN.EDICD.JOBGB-input&quot; match=&quot;/&quot;>&lt;tns6:ActivityInput>&lt;destination>&lt;xsl:value-of select=&quot;concat(&amp;quot;Q.KSN.&amp;quot;,$getQnameFromHeader/MethodReturnValue)&quot;/>&lt;/destination>&lt;Body>&lt;xsl:value-of select=&quot;$ReadAllBytes/Q1:data&quot;/>&lt;/Body>&lt;/tns6:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity

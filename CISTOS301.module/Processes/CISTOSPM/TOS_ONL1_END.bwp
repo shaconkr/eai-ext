@@ -3,6 +3,7 @@
     suppressJoinFailure="yes"
     targetNamespace="http://xmlns.example.com/20230126164500"
     xmlns:bpws="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+    xmlns:bw="http://www.tibco.com/bw/xpath/bw-custom-functions"
     xmlns:info="http://www.tibco.com/bw/process/info"
     xmlns:ns="http://www.tibco.com/pe/EngineTypes"
     xmlns:ns0="http://ns.tibco.com/bw/sharedresource/notifyconfiguration/01fbc230-cc5c-43b6-a016-433dc4099811"
@@ -46,9 +47,9 @@
                 <variable>bankList</variable>
             </endingVariables>
         </task>
-        <task name="B_0800_100">
+        <task name="B_0800_300">
             <endingVariables>
-                <variable>B_0800_100-input</variable>
+                <variable>B_0800_300-input</variable>
             </endingVariables>
         </task>
         <task name="TCPOpenConnection">
@@ -59,7 +60,7 @@
         <task name="WriteTCPData">
             <endingVariables>
                 <variable>WriteTCPData-input</variable>
-                <variable>B_0800_100</variable>
+                <variable>B_0800_300</variable>
             </endingVariables>
         </task>
         <task name="TCPCloseConnection">
@@ -252,6 +253,8 @@
             xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="www.tibco.com/plugin/java/JavaInvokeActivityInput+b613c43c-f514-4469-9531-177e5a10f1ae+JavaInvokeActivityInput">
             <complexType name="MutTypeMethodParameters">
                 <sequence>
+                    <element form="unqualified" maxOccurs="1"
+                        minOccurs="1" name="stage" type="string"/>
                     <element form="unqualified" maxOccurs="1"
                         minOccurs="1" name="bnkCd" type="string"/>
                     <element form="unqualified" maxOccurs="1"
@@ -568,8 +571,8 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.0"/>
-                                    <layoutConstraint x="-31"
-                                    xsi:type="notation:Bounds" y="153"/>
+                                    <layoutConstraint x="-25"
+                                    xsi:type="notation:Bounds" y="121"/>
                                     </children>
                                     <children type="4002">
                                     <children type="4017">
@@ -603,13 +606,13 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.1"/>
-                                    <layoutConstraint x="103"
-                                    xsi:type="notation:Bounds" y="153"/>
+                                    <layoutConstraint x="65"
+                                    xsi:type="notation:Bounds" y="169"/>
                                     </children>
                                     <children
                                     description="가상계좌 종료전문&#xd;&#xa;&#xd;&#xa;50 23 * * * 우리 &#xd;&#xa;51 23 * * * 대구"
                                     fillColor="13369343"
-                                    fontHeight="12"
+                                    fontHeight="10"
                                     fontName="맑은 고딕"
                                     lineColor="6737151"
                                     lineWidth="1"
@@ -624,7 +627,7 @@
                                     <styles xsi:type="notation:LineTypeStyle"/>
                                     <element xsi:nil="true"/>
                                     <layoutConstraint
-                                    height="116" width="206"
+                                    height="96" width="152"
                                     x="159"
                                     xsi:type="notation:Bounds" y="2"/>
                                     </children>
@@ -648,7 +651,7 @@
                                     xsi:type="notation:Bounds" y="540"/>
                                     </children>
                                     <children
-                                    description="은행별 개시전문송신"
+                                    description="은행별 종료전문송신"
                                     fillColor="13369343"
                                     fontName="맑은 고딕"
                                     lineColor="6737151"
@@ -963,7 +966,7 @@
                                     </children>
 
                                     <children
-                                    description="은행별개시전문생성"
+                                    description="은행별종료전문생성"
                                     fillColor="13369343"
                                     fontName="맑은 고딕"
                                     lineColor="6737151"
@@ -1181,8 +1184,8 @@
                                     <element href="//0/@process/@activity/@activity/@activities.5"/>
                                     <layoutConstraint
                                     height="40" width="40"
-                                    x="34"
-                                    xsi:type="notation:Bounds" y="305"/>
+                                    x="1"
+                                    xsi:type="notation:Bounds" y="383"/>
                                     </children>
                                     <children
                                     description="우라,대구&#xd;&#xa;20, 31"
@@ -1201,7 +1204,40 @@
                                     <styles xsi:type="notation:LineTypeStyle"/>
                                     <element xsi:nil="true"/>
                                     <layoutConstraint x="-13"
-                                    xsi:type="notation:Bounds" y="398"/>
+                                    xsi:type="notation:Bounds" y="463"/>
+                                    </children>
+                                    <children type="4002 bw.generalactivities.bwassign">
+                                    <children type="4017">
+                                    <styles fontName="맑은 고딕"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles fontName="맑은 고딕"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles fontName="맑은 고딕"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles fontName="맑은 고딕"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <styles fontName="맑은 고딕"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.6"/>
+                                    <layoutConstraint
+                                    height="40" width="40"
+                                    x="1"
+                                    xsi:type="notation:Bounds" y="276"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
@@ -1215,7 +1251,7 @@
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity"/>
-                                    <layoutConstraint height="648"
+                                    <layoutConstraint height="661"
                                     width="992" xsi:type="notation:Bounds"/>
                                 </children>
                                 <styles xsi:type="notation:SortingStyle"/>
@@ -1226,7 +1262,7 @@
                             <styles xsi:type="bwnotation:BackgroundStyle"/>
                             <styles xsi:type="bwnotation:ResizingStyle"/>
                             <element href="//0/@process/@activity"/>
-                            <layoutConstraint height="648" width="995" xsi:type="notation:Bounds"/>
+                            <layoutConstraint height="661" width="995" xsi:type="notation:Bounds"/>
                         </children>
                         <children type="4022">
                             <children type="3022">
@@ -1331,7 +1367,7 @@
                     <styles xsi:type="bwnotation:BackgroundStyle"/>
                     <styles xsi:type="bwnotation:ResizingStyle"/>
                     <element href="//0/@process/@activity"/>
-                    <layoutConstraint height="769" width="995" x="1"
+                    <layoutConstraint height="782" width="995" x="1"
                         xsi:type="notation:Bounds" y="1"/>
                 </children>
                 <styles xsi:type="notation:SortingStyle"/>
@@ -1340,7 +1376,7 @@
             </children>
             <styles fontName="맑은 고딕" lineColor="0" xsi:type="notation:ShapeStyle"/>
             <element href="//0/@process"/>
-            <layoutConstraint height="821" width="1337" xsi:type="notation:Bounds"/>
+            <layoutConstraint height="834" width="1337" xsi:type="notation:Bounds"/>
         </children>
         <styles xsi:type="notation:DiagramStyle"/>
         <element href="//0"/>
@@ -1462,14 +1498,15 @@
         </edges>
         <edges
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.8" type="4006">
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.10" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="맑은 고딕" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.3"/>
-            <bendpoints points="[-11, 25, 58, -127]$[-58, 128, 11, -24]" xsi:type="notation:RelativeBendpoints"/>
+            <bendpoints
+                points="[25, 0, 89, -107]$[33, 0, 97, -107]$[33, 54, 97, -53]$[-64, 54, 0, -53]$[-64, 83, 0, -24]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.8"
@@ -1490,6 +1527,17 @@
             <styles xsi:type="notation:LineTypeStyle"/>
             <element xsi:nil="true"/>
             <bendpoints points="[0, 0, -95, -329]$[88, 305, -7, -24]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.10"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.8" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="맑은 고딕" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.5"/>
+            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
     </notation:Diagram>
     <tibex:NamespaceRegistry enabled="true">
@@ -1521,20 +1569,12 @@
         <bpws:variable element="ns2:SetLog" name="L_Set_LogStart-input" sca-bpel:internal="true"/>
         <bpws:variable name="bnkCd" type="xsd:string"/>
         <bpws:variable element="ns3:JavaInvokeActivityInput"
-            name="B_0800_100-input" sca-bpel:internal="true"/>
+            name="B_0800_300-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns4:JavaInvokeActivityOutput"
-            name="B_0800_100" sca-bpel:internal="true"/>
+            name="B_0800_300" sca-bpel:internal="true"/>
         <bpws:variable element="ns5:ActivityErrorData"
-            name="_error_B_0800_100" sca-bpel:internal="true"/>
+            name="_error_B_0800_300" sca-bpel:internal="true"/>
         <bpws:variable element="ns:ErrorReport" name="_error" sca-bpel:internal="true"/>
-        <bpws:variable name="JavaGlobalInstanceProperty"
-            sca-bpel:hotUpdate="false" sca-bpel:privateProperty="true"
-            sca-bpel:property="yes"
-            sca-bpel:sharedResourceType="{http://ns.tibco.com/bw/palette/javasharedresource}JavaGlobalInstanceResource" type="xsd:string">
-            <bpws:from>
-                <bpws:literal>ext.tos.TOSOnlineHelper</bpws:literal>
-            </bpws:from>
-        </bpws:variable>
         <bpws:variable name="tcpConnectionProperty"
             sca-bpel:hotUpdate="false" sca-bpel:privateProperty="true"
             sca-bpel:property="yes"
@@ -1562,19 +1602,13 @@
         <bpws:variable element="ns2:SetLog" name="L_Set_LogError-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns2:SetLog" name="L_Set_LogEnd-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns12:TimerOutputSchema" name="Timer" sca-bpel:internal="true"/>
-        <bpws:variable name="CommonHelper" sca-bpel:hotUpdate="false"
-            sca-bpel:privateProperty="true" sca-bpel:property="yes"
-            sca-bpel:sharedResourceType="{http://ns.tibco.com/bw/palette/javasharedresource}JavaGlobalInstanceResource" type="xsd:string">
-            <bpws:from>
-                <bpws:literal>hciscommon.smodule.HcisCommon</bpws:literal>
-            </bpws:from>
-        </bpws:variable>
         <bpws:variable element="ns14:JavaInvokeActivityInput"
             name="bankList-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns13:JavaInvokeActivityOutput"
             name="bankList" sca-bpel:internal="true"/>
         <bpws:variable element="ns15:ActivityErrorData"
             name="_error_bankList" sca-bpel:internal="true"/>
+        <bpws:variable name="stage" type="xsd:string"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -1617,6 +1651,7 @@
                 <bpws:link name="IterateToL_Set_LogEnd" tibex:linkType="SUCCESS"/>
                 <bpws:link name="L_Set_LogStartTobankList" tibex:linkType="SUCCESS"/>
                 <bpws:link name="bankListToIterate" tibex:linkType="SUCCESS"/>
+                <bpws:link name="AssignTobankList" tibex:linkType="SUCCESS"/>
             </bpws:links>
             <bpws:extensionActivity>
                 <tibex:extActivity
@@ -1743,9 +1778,9 @@
                                 </bpws:empty>
                                 <bpws:extensionActivity>
                                     <tibex:activityExtension
-                                    inputVariable="B_0800_100-input"
-                                    name="B_0800_100"
-                                    outputVariable="B_0800_100"
+                                    inputVariable="B_0800_300-input"
+                                    name="B_0800_300"
+                                    outputVariable="B_0800_300"
                                     tibex:xpdlId="b613c43c-f514-4469-9531-177e5a10f1ae" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:targets>
                                     <bpws:target linkName="GroupStartToB_0800_100"/>
@@ -1755,7 +1790,7 @@
                                     </bpws:sources>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;www.tibco.com/plugin/java/JavaInvokeActivityInput+b613c43c-f514-4469-9531-177e5a10f1ae+JavaInvokeActivityInput&quot; xmlns:HCIS=&quot;http://shacon.kr/202301&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;bnkCd&quot;/>&lt;xsl:template name=&quot;B_0800_100-input&quot; match=&quot;/&quot;>&lt;tns:JavaInvokeActivityInput>&lt;MethodParameters>&lt;bnkCd>&lt;xsl:value-of select=&quot;$bnkCd&quot;/>&lt;/bnkCd>&lt;ediNo>&lt;xsl:value-of select=&quot;HCIS:repeateString(&amp;quot; &amp;quot;, 6)&quot;/>&lt;/ediNo>&lt;/MethodParameters>&lt;/tns:JavaInvokeActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;www.tibco.com/plugin/java/JavaInvokeActivityInput+b613c43c-f514-4469-9531-177e5a10f1ae+JavaInvokeActivityInput&quot; xmlns:HCIS=&quot;http://shacon.kr/202301&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;bnkCd&quot;/>&lt;xsl:param name=&quot;stage&quot;/>&lt;xsl:template name=&quot;B_0800_100-input&quot; match=&quot;/&quot;>&lt;tns:JavaInvokeActivityInput>&lt;MethodParameters>&lt;stage>&lt;xsl:value-of select=&quot;$stage&quot;/>&lt;/stage>&lt;bnkCd>&lt;xsl:value-of select=&quot;$bnkCd&quot;/>&lt;/bnkCd>&lt;ediNo>&lt;xsl:value-of select=&quot;HCIS:repeateString(&amp;quot; &amp;quot;, 6)&quot;/>&lt;/ediNo>&lt;/MethodParameters>&lt;/tns:JavaInvokeActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:config>
                                     <bwext:BWActivity
@@ -1769,12 +1804,15 @@
                                     <type href="http://ns.tibco.com/bw/palette/java#//JavaMethod"/>
                                     <value
                                     className="com.hcis.eai.ext.tos.TossOnline"
+                                    constructDeclaredClass="true"
                                     icon="HcisCommon.smodule\Resources\icons\edit-node-48.png"
                                     isNew="true"
                                     isNewActivity="true"
-                                    javaGlobalInstance="JavaGlobalInstanceProperty"
-                                    methodName="build_0800_100"
+                                    methodName="build_0800_300"
                                     methodReturn="byte[]" xsi:type="java:JavaMethod">
+
+                                    <methodParameter
+                                    paramName="stage" paramType="string"/>
 
                                     <methodParameter
                                     paramName="bnkCd" paramType="string"/>
@@ -1835,7 +1873,7 @@
                                     </bpws:sources>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpwritedata+65f4ff56-2ff6-4663-9d9e-84cf1a3b7fd9+ActivityInput&quot; xmlns:tns3=&quot;http://www.tibco.com/namespaces/tnt/plugins/tcp&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;B_0800_100&quot;/>&#xa;    &lt;xsl:param name=&quot;TCPOpenConnection&quot;/>&#xa;    &lt;xsl:template name=&quot;WriteTCPData-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns1:ActivityInput>&#xa;            &lt;tns1:connection>&#xa;                &lt;xsl:value-of select=&quot;$TCPOpenConnection/tns3:connection&quot;/>&#xa;            &lt;/tns1:connection>&#xa;            &lt;tns1:data>&#xa;                &lt;xsl:value-of select=&quot;$B_0800_100/MethodReturnValue&quot;/>&#xa;            &lt;/tns1:data>&#xa;            &lt;tns1:encoding>&#xa;                &lt;xsl:value-of select=&quot;&amp;quot;euc-kr&amp;quot;&quot;/>&#xa;            &lt;/tns1:encoding>&#xa;        &lt;/tns1:ActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpwritedata+65f4ff56-2ff6-4663-9d9e-84cf1a3b7fd9+ActivityInput&quot; xmlns:tns3=&quot;http://www.tibco.com/namespaces/tnt/plugins/tcp&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;B_0800_300&quot;/>&#xa;    &lt;xsl:param name=&quot;TCPOpenConnection&quot;/>&#xa;    &lt;xsl:template name=&quot;WriteTCPData-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns1:ActivityInput>&#xa;            &lt;tns1:connection>&#xa;                &lt;xsl:value-of select=&quot;$TCPOpenConnection/tns3:connection&quot;/>&#xa;            &lt;/tns1:connection>&#xa;            &lt;tns1:data>&#xa;                &lt;xsl:value-of select=&quot;$B_0800_300/MethodReturnValue&quot;/>&#xa;            &lt;/tns1:data>&#xa;            &lt;tns1:encoding>&#xa;                &lt;xsl:value-of select=&quot;&amp;quot;euc-kr&amp;quot;&quot;/>&#xa;            &lt;/tns1:encoding>&#xa;        &lt;/tns1:ActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:config>
                                     <bwext:BWActivity
@@ -1914,7 +1952,7 @@
                     name="bankList" outputVariable="bankList"
                     tibex:xpdlId="045216e5-287c-4948-bdd1-b30ee2fe00b0" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
-                        <bpws:target linkName="L_Set_LogStartTobankList"/>
+                        <bpws:target linkName="AssignTobankList"/>
                     </bpws:targets>
                     <bpws:sources>
                         <bpws:source linkName="bankListToIterate"/>
@@ -1933,15 +1971,45 @@
                                 <properties name="config" xsi:type="activityconfig:EMFProperty">
                                     <type href="http://ns.tibco.com/bw/palette/java#//JavaMethod"/>
                                     <value
-                                    className="com.hcis.eai.common.HCISHelperAnc"
+                                    className="com.hcis.eai.common.HCISHelper"
+                                    constructDeclaredClass="true"
                                     isNew="true"
                                     isNewActivity="true"
-                                    javaGlobalInstance="CommonHelper"
                                     methodName="stringArrayToList"
                                     methodReturn="ArrayList" xsi:type="java:JavaMethod">
                                     <methodParameter
                                     paramName="rString" paramType="string"/>
                                     </value>
+                                </properties>
+                            </activityConfig>
+                        </bwext:BWActivity>
+                    </tibex:config>
+                </tibex:activityExtension>
+            </bpws:extensionActivity>
+            <bpws:extensionActivity>
+                <tibex:activityExtension inputVariable="stage"
+                    name="STAGE" outputVariable="stage"
+                    tibex:xpdlId="f80429e2-5fc1-4f64-b6c8-05a337f87e3c" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                    <bpws:targets>
+                        <bpws:target linkName="L_Set_LogStartTobankList"/>
+                    </bpws:targets>
+                    <bpws:sources>
+                        <bpws:source linkName="AssignTobankList"/>
+                    </bpws:sources>
+                    <tibex:inputBindings>
+                        <tibex:inputBinding
+                            expression="bw:getModuleProperty(&quot;common.stage&quot;)" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                    </tibex:inputBindings>
+                    <tibex:config>
+                        <bwext:BWActivity
+                            activityTypeID="bw.generalactivities.bwassign"
+                            xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
+                            xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
+                            xmlns:generalactivities="http://ns.tibco.com/bw/palette/generalactivities" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <activityConfig>
+                                <properties name="config" xsi:type="activityconfig:EMFProperty">
+                                    <type href="http://ns.tibco.com/bw/palette/generalactivities#//BWAssign"/>
+                                    <value processVariable="stage" xsi:type="generalactivities:BWAssign"/>
                                 </properties>
                             </activityConfig>
                         </bwext:BWActivity>

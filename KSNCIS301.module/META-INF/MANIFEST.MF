@@ -31,3 +31,4 @@ Import-Package: com.tibco.bw.palette.shared.java;version="6.2.1600",
  org.beanio,
  org.beanio.internal.util,
  org.slf4j
+Automatic-Module-Name: KSNCIS301.module

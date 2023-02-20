@@ -48,12 +48,12 @@ public class TossOnline extends EDIParserAndBuilder {
 	protected byte[] bytes = null;
 	
 	Map<String,Object> BANK = Maps.newHashMap();
-	String STAGE;
 	
-	public TossOnline(String beanioXml, String stage, String encoding) throws IOException {
-        super(beanioXml, encoding);       
+	public TossOnline() throws IOException {
+        String beanioXml = "/Schemas/ext/tos/TOSOnline.xml";
+        String encoding = "euc-kr";
+		init(beanioXml, encoding);       
         BANK.putAll(loadJson("/Resources/ext/tos/TOSBank.json"));
-        STAGE = stage;
     }
 
 	/**
@@ -74,6 +74,7 @@ public class TossOnline extends EDIParserAndBuilder {
 	
     /**
      * 공통부 생성
+     * @param stage		'test' , 'real'
      * @param sdId		송신자ID
      * @param bnkCd		은행코드
      * @param ediCd		전문코드
@@ -81,10 +82,10 @@ public class TossOnline extends EDIParserAndBuilder {
      * @param ediNo		전문번호
      * @return
      */
-	public Map<String,Object> putCommon(String bnkCd,  String ediCd, String jobGb, String ediNo){
+	public Map<String,Object> putCommon(String stage, String bnkCd,  String ediCd, String jobGb, String ediNo){
     	
 		String section = (ediCd.equals("0600600")) ? "bank" : "bank2";		
-		Map<String,Object> bank = CastUtils.cast((Map<?,?>) CastUtils.cast((Map<?,?>) BANK.get(section)).get(STAGE));    	
+		Map<String,Object> bank = CastUtils.cast((Map<?,?>) CastUtils.cast((Map<?,?>) BANK.get(section)).get(stage));    	
     	String sdId = String.valueOf(bank.get("sdId"));
 		Map<String,String> bankInfo = CastUtils.cast((Map<?,?>) CastUtils.cast((Map<?,?>) bank.get("info")).get(bnkCd));
 		String svcGb = bankInfo.get("svcGb");    	
@@ -111,8 +112,8 @@ public class TossOnline extends EDIParserAndBuilder {
 	 * @param ediNo
 	 * @return
 	 */
-    public byte[] build_0800_100(String bnkCd, String ediNo) {
-    	Map<String, Object> hdr = putCommon(bnkCd, "0800", "100", ediNo);	// 공통부
+    public byte[] build_0800_100(String stage, String bnkCd, String ediNo) {
+    	Map<String, Object> hdr = putCommon(stage, bnkCd, "0800", "100", ediNo);	// 공통부
         Map<String, Object> dat = Maps.newHashMap(ImmutableMap.<String,Object>builder()
 						        .put("jatongApplYn", "Y")				// 자통법적용구분
 						        .put("commBnkCd", "0" + bnkCd)			// 공통부은행코드
@@ -130,8 +131,8 @@ public class TossOnline extends EDIParserAndBuilder {
 	 * @param ediNo
 	 * @return
 	 */
-    public byte[] build_0800_300(String bnkCd, String ediNo) {
-    	Map<String, Object> hdr = putCommon(bnkCd, "0800", "300", ediNo);	// 공통부
+    public byte[] build_0800_300(String stage, String bnkCd, String ediNo) {
+    	Map<String, Object> hdr = putCommon(stage, bnkCd, "0800", "300", ediNo);	// 공통부
         Map<String, Object> dat = Maps.newHashMap(ImmutableMap.<String,Object>builder()
 						        .put("jatongApplYn", "Y")				// 자통법적용구분
 						        .put("commBnkCd", "0" + bnkCd)			// 공통부은행코드
@@ -154,7 +155,5 @@ public class TossOnline extends EDIParserAndBuilder {
                             .build();
         return buildEDI("M_110", msg);
     }
-    
    
-
 }

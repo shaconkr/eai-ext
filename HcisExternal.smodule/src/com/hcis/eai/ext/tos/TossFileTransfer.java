@@ -202,16 +202,17 @@ public class TossFileTransfer extends EDIParserAndBuilder {
      * @return
      */
     public ArrayList<String> getTOSRecvEdiList() {
-		ArrayList<String> aList = new ArrayList<String>();
-    	List<Map<String,Object>> lst = CastUtils.cast((List<?>) BANK.get("RecvEdiList"));
-		lst.stream().forEach(maps -> {
-			maps.entrySet().forEach(map -> {
-				Map<String,String> row = CastUtils.cast((Map<?,?>) map.getValue());
-				String qStr = Joiner.on("&").withKeyValueSeparator("=").join(row);
-				aList.add(qStr);					
-			});
-		});
-		
-    	return aList;
-    }
+        ArrayList<String> aList = new ArrayList<String>();
+        List<Map<String,Object>> lst = CastUtils.cast((List<?>) BANK.get("RecvEdiList"));
+        lst.stream().forEach(maps -> {
+            maps.entrySet().forEach(map -> {
+                Map<String,String> row = CastUtils.cast((Map<?,?>) map.getValue());
+                String qStr = Joiner.on("&").withKeyValueSeparator("=").join(row);
+                aList.add(qStr);                    
+            });
+        });
+        
+        return aList;
+    }   
+
 }

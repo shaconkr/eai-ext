@@ -4086,7 +4086,7 @@
                                     <layoutConstraint
                                     height="40"
                                     width="40"
-                                    x="1355"
+                                    x="1346"
                                     xsi:type="notation:Bounds" y="422"/>
                                     </children>
 
@@ -5427,7 +5427,8 @@
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="맑은 고딕" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@activities.3/@activity/@activities.1/@activity/@activity/@links/@children.13"/>
-            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
+            <bendpoints
+                points="[25, 0, -196, 339]$[169, 0, -52, 339]$[169, -339, -52, 0]$[209, -339, -12, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2"
@@ -5606,14 +5607,6 @@
         <bpws:variable element="ns3:ActivityErrorData"
             name="_error_TCPOpenConnection" sca-bpel:internal="true"/>
         <bpws:variable element="ns:ErrorReport" name="_error" sca-bpel:internal="true"/>
-        <bpws:variable name="TOSFileTransHelper"
-            sca-bpel:hotUpdate="false" sca-bpel:privateProperty="true"
-            sca-bpel:property="yes"
-            sca-bpel:sharedResourceType="{http://ns.tibco.com/bw/palette/javasharedresource}JavaGlobalInstanceResource" type="xsd:string">
-            <bpws:from>
-                <bpws:literal>ext.tos.TOSFileTransHelper</bpws:literal>
-            </bpws:from>
-        </bpws:variable>
         <bpws:variable element="ns4:JavaInvokeActivityInput"
             name="B_300-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns5:JavaInvokeActivityOutput"
@@ -5753,13 +5746,6 @@
             name="EDIList" sca-bpel:internal="true"/>
         <bpws:variable element="ns59:ActivityErrorData"
             name="_error_EDIList" sca-bpel:internal="true"/>
-        <bpws:variable name="CommonHelper" sca-bpel:hotUpdate="false"
-            sca-bpel:privateProperty="true" sca-bpel:property="yes"
-            sca-bpel:sharedResourceType="{http://ns.tibco.com/bw/palette/javasharedresource}JavaGlobalInstanceResource" type="xsd:string">
-            <bpws:from>
-                <bpws:literal>hciscommon.smodule.HcisCommon</bpws:literal>
-            </bpws:from>
-        </bpws:variable>
         <bpws:variable name="fnmRepay" type="xsd:string"/>
     </bpws:variables>
     <bpws:extensions>
@@ -5872,9 +5858,7 @@
                     </tibex:eventSource>
                 </tibex:receiveEvent>
             </bpws:extensionActivity>
-            <bpws:scope name="Iterate" tibex:group="iterate"
-                tibex:indexOriginalName="index2"
-                tibex:indexToGlobal="false" tibex:xpdlId="c8a06c81-a928-4d9a-980e-edd2fbf011dd">
+            <bpws:scope name="Iterate" tibex:group="iterate" tibex:xpdlId="c8a06c81-a928-4d9a-980e-edd2fbf011dd">
                 <bpws:targets>
                     <bpws:target linkName="JavaInvokeToIterate"/>
                 </bpws:targets>
@@ -6008,10 +5992,10 @@
                                     <type href="http://ns.tibco.com/bw/palette/java#//JavaMethod"/>
                                     <value
                                     className="com.hcis.eai.ext.tos.TossFileTransfer"
+                                    constructDeclaredClass="true"
                                     icon="HcisCommon.smodule\Resources\icons\edit-node-48.png"
                                     isNew="true"
                                     isNewActivity="true"
-                                    javaGlobalInstance="TOSFileTransHelper"
                                     methodName="build003"
                                     methodReturn="byte[]" xsi:type="java:JavaMethod">
 
@@ -6228,10 +6212,10 @@
 
                                     <value
                                     className="com.hcis.eai.ext.tos.TossFileTransfer"
+                                    constructDeclaredClass="true"
                                     icon="HcisCommon.smodule\Resources\icons\binary-code-48.png"
                                     isNew="true"
                                     isNewActivity="true"
-                                    javaGlobalInstance="TOSFileTransHelper"
                                     methodName="getHeaderQueryString"
                                     methodReturn="string" xsi:type="java:JavaMethod">
 
@@ -6362,10 +6346,10 @@
 
                                     <value
                                     className="com.hcis.eai.ext.tos.TossFileTransfer"
+                                    constructDeclaredClass="true"
                                     icon="HcisCommon.smodule\Resources\icons\binary-code-48.png"
                                     isNew="true"
                                     isNewActivity="true"
-                                    javaGlobalInstance="TOSFileTransHelper"
                                     methodName="getDataQueryString"
                                     methodReturn="string" xsi:type="java:JavaMethod">
 
@@ -6415,10 +6399,10 @@
 
                                     <value
                                     className="com.hcis.eai.ext.tos.TossFileTransfer"
+                                    constructDeclaredClass="true"
                                     icon="HcisCommon.smodule\Resources\icons\edit-node-48.png"
                                     isNew="true"
                                     isNewActivity="true"
-                                    javaGlobalInstance="TOSFileTransHelper"
                                     methodName="build110"
                                     methodReturn="byte[]" xsi:type="java:JavaMethod">
 
@@ -7230,10 +7214,10 @@
 
                                     <value
                                     className="com.hcis.eai.ext.tos.TossFileTransfer"
+                                    constructDeclaredClass="true"
                                     icon="HcisCommon.smodule\Resources\icons\binary-code-48.png"
                                     isNew="true"
                                     isNewActivity="true"
-                                    javaGlobalInstance="TOSFileTransHelper"
                                     methodName="getDataQueryString"
                                     methodReturn="string" xsi:type="java:JavaMethod">
 
@@ -7281,10 +7265,10 @@
                                     <type href="http://ns.tibco.com/bw/palette/java#//JavaMethod"/>
                                     <value
                                     className="com.hcis.eai.ext.tos.TossFileTransfer"
+                                    constructDeclaredClass="true"
                                     icon="HcisCommon.smodule\Resources\icons\edit-node-48.png"
                                     isNew="true"
                                     isNewActivity="true"
-                                    javaGlobalInstance="TOSFileTransHelper"
                                     methodName="build007"
                                     methodReturn="byte[]" xsi:type="java:JavaMethod">
 
@@ -7403,10 +7387,10 @@
                                     <type href="http://ns.tibco.com/bw/palette/java#//JavaMethod"/>
                                     <value
                                     className="com.hcis.eai.ext.tos.TossFileTransfer"
+                                    constructDeclaredClass="true"
                                     icon="HcisCommon.smodule\Resources\icons\binary-code-48.png"
                                     isNew="true"
                                     isNewActivity="true"
-                                    javaGlobalInstance="TOSFileTransHelper"
                                     methodName="getDataQueryString"
                                     methodReturn="string" xsi:type="java:JavaMethod">
 
@@ -7486,10 +7470,10 @@
                                     <type href="http://ns.tibco.com/bw/palette/java#//JavaMethod"/>
                                     <value
                                     className="com.hcis.eai.ext.tos.TossFileTransfer"
+                                    constructDeclaredClass="true"
                                     icon="HcisCommon.smodule\Resources\icons\binary-code-48.png"
                                     isNew="true"
                                     isNewActivity="true"
-                                    javaGlobalInstance="TOSFileTransHelper"
                                     methodName="getHeaderQueryString"
                                     methodReturn="string" xsi:type="java:JavaMethod">
 
@@ -7758,9 +7742,9 @@
                                     <type href="http://ns.tibco.com/bw/palette/java#//JavaMethod"/>
                                     <value
                                     className="com.hcis.eai.ext.tos.TossFileTransfer"
+                                    constructDeclaredClass="true"
                                     isNew="true"
                                     isNewActivity="true"
-                                    javaGlobalInstance="TOSFileTransHelper"
                                     methodName="getTOSRecvEdiList"
                                     methodReturn="ArrayList" xsi:type="java:JavaMethod"/>
                                 </properties>

@@ -906,6 +906,13 @@
                 </choice>
             </complexType>
         </schema>
+        <schema elementFormDefault="qualified"
+            targetNamespace="http://www.tibco.com/tnt/utilitySchema"
+            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.tibco.com/tnt/utilitySchema">
+            <simpleType name="nativeJavaObjectKey">
+                <restriction base="string"/>
+            </simpleType>
+        </schema>
     </tibex:Types>
     <tibex:ProcessInfo callable="false" createdBy="javal"
         createdOn="Thu Feb 09 14:29:27 KST 2023" description=""
@@ -1551,14 +1558,6 @@
             name="concatBytes" sca-bpel:internal="true"/>
         <bpws:variable element="ns11:ActivityErrorData"
             name="_error_concatBytes" sca-bpel:internal="true"/>
-        <bpws:variable name="JavaGlobalInstanceProperty"
-            sca-bpel:hotUpdate="false" sca-bpel:privateProperty="true"
-            sca-bpel:property="yes"
-            sca-bpel:sharedResourceType="{http://ns.tibco.com/bw/palette/javasharedresource}JavaGlobalInstanceResource" type="xsd:string">
-            <bpws:from>
-                <bpws:literal>ext.tos.TOSOnlineHelper</bpws:literal>
-            </bpws:from>
-        </bpws:variable>
         <bpws:variable name="HcisExternal.smodule-HOST"
             sca-bpel:hotUpdate="false" sca-bpel:privateProperty="true"
             sca-bpel:property="yes"
@@ -1573,14 +1572,6 @@
             name="CorrelationID" sca-bpel:internal="true"/>
         <bpws:variable element="ns14:ActivityErrorData"
             name="_error_CorrelationID" sca-bpel:internal="true"/>
-        <bpws:variable name="JavaGlobalInstanceProperty1"
-            sca-bpel:hotUpdate="false" sca-bpel:privateProperty="true"
-            sca-bpel:property="yes"
-            sca-bpel:sharedResourceType="{http://ns.tibco.com/bw/palette/javasharedresource}JavaGlobalInstanceResource" type="xsd:string">
-            <bpws:from>
-                <bpws:literal>ext.tos.TOSOnlineHelper</bpws:literal>
-            </bpws:from>
-        </bpws:variable>
         <bpws:variable element="ns12:JavaInvokeActivityInput"
             name="CorrelationID-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns15:SetInterface"
@@ -1792,9 +1783,9 @@
                                     <type href="http://ns.tibco.com/bw/palette/java#//JavaMethod"/>
                                     <value
                                     className="com.hcis.eai.ext.tos.TossOnline"
+                                    constructDeclaredClass="true"
                                     isNew="true"
                                     isNewActivity="true"
-                                    javaGlobalInstance="JavaGlobalInstanceProperty"
                                     methodName="concatBytes"
                                     methodReturn="byte[]" xsi:type="java:JavaMethod">
                                     <methodParameter
@@ -1835,9 +1826,9 @@
                                     <type href="http://ns.tibco.com/bw/palette/java#//JavaMethod"/>
                                     <value
                                     className="com.hcis.eai.ext.tos.TossOnline"
+                                    constructDeclaredClass="true"
                                     isNew="true"
                                     isNewActivity="true"
-                                    javaGlobalInstance="JavaGlobalInstanceProperty"
                                     methodName="getCorrelationId"
                                     methodReturn="string" xsi:type="java:JavaMethod">
                                     <exceptionTypes>java.io.UnsupportedEncodingException</exceptionTypes>

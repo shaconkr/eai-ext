@@ -13,10 +13,10 @@
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_UcyfAYG9Ee2-kqzdA-_O3A" processName="BCCCISCT.BCFileReceve"/>
   </sca:component>
   <sca:component xmi:id="_XGyyQKHqEe2X_LG_j4sUXQ" name="ComponentJNICISCTIC0040101_REQ" compositeext:version="1.0.0.qualifier">
-    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_XGyyQaHqEe2X_LG_j4sUXQ" processName="BCCCISCT.BCCCISCTCN0010201.BCCCISCTCN0010201_REQ"/>
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_XGyyQaHqEe2X_LG_j4sUXQ" processName="BCCCISCTCN.BCCCISCTCN0010201.BCCCISCTCN0010201_REQ"/>
   </sca:component>
   <sca:component xmi:id="_aQhjUKHqEe2X_LG_j4sUXQ" name="ComponentCISJNICTIC0040102_RES" compositeext:version="1.0.0.qualifier">
-    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_aQhjUaHqEe2X_LG_j4sUXQ" processName="BCCCISCT.BCCCISCTCN0010201.CISBCCCTCN0010201_RES"/>
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_aQhjUaHqEe2X_LG_j4sUXQ" processName="CISBCCCTCN.CISBCCCTCN0010201.CISBCCCTCN0010201_RES"/>
   </sca:component>
   <sca:component xmi:id="_VhTeUKHuEe2X_LG_j4sUXQ" name="ComponentAH20_REQ" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_VhTeUaHuEe2X_LG_j4sUXQ" processName="BCCCISCT.AH21.AH21_REQ"/>

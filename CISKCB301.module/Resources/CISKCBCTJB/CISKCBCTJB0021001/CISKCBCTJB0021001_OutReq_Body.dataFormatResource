@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jndi:namedResource xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CISKCBCTJB0021001="http://schema.hcis.com/xsd/CISKCBCTJB0021001_OutReq_Body" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" name="CISKCBCTJB/CISKCBCTJB0021001.CISKCBCTJB0021001_OutReq_Body" type="dataformat:DataFormat">
+  <jndi:imports importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/CISKCBCTJB0021001_OutReq_Body_df.xsd" namespace="http://schema.hcis.com/xsd/CISKCBCTJB0021001_OutReq_Body"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="CISKCBCTJB0021001:main" lineLength="150" fieldOffsetsStr="certNo(0,12)&#xA;reReqnCnt(12,14)&#xA;idntNoGbcd(14,15)&#xA;rmailInntNo(15,48)&#xA;qryBrnNm(48,68)&#xA;asgnrId(68,83)&#xA;dsclsPrcTotRcvCnt(83,86)&#xA;dsclsPrcReqnCnt(86,89)&#xA;siDTotRcvCnt(89,92)&#xA;siDReqnCnt(92,95)&#xA;realTrdPrcTotRcvCnt(95,98)&#xA;realTrdPrcReqnCnt(98,101)&#xA;prepVal(101,150)">
+    <fieldOffsets kor="인증번호" type="string" name="certNo" start="0" end="12"/>
+    <fieldOffsets kor="재요청횟수" type="string" name="reReqnCnt" start="12" end="14"/>
+    <fieldOffsets kor="식별번호구분코드" type="string" name="idntNoGbcd" start="14" end="15"/>
+    <fieldOffsets kor="등기고유번호" type="string" name="rmailInntNo" start="15" end="48"/>
+    <fieldOffsets kor="조회지점명" type="string" name="qryBrnNm" start="48" end="68"/>
+    <fieldOffsets kor="담당자ID" type="string" name="asgnrId" start="68" end="83"/>
+    <fieldOffsets kor="공시가격총수신건수" type="long" name="dsclsPrcTotRcvCnt" start="83" end="86"/>
+    <fieldOffsets kor="공시가격요청건수" type="long" name="dsclsPrcReqnCnt" start="86" end="89"/>
+    <fieldOffsets kor="시세총수신건수" type="long" name="siDTotRcvCnt" start="89" end="92"/>
+    <fieldOffsets kor="시세요청건수" type="long" name="siDReqnCnt" start="92" end="95"/>
+    <fieldOffsets kor="실거래가격총수신건수" type="long" name="realTrdPrcTotRcvCnt" start="95" end="98"/>
+    <fieldOffsets kor="실거래가격요청건수" type="long" name="realTrdPrcReqnCnt" start="98" end="101"/>
+    <fieldOffsets kor="예비값" type="string" name="prepVal" start="101" end="150"/>
+  </jndi:configuration>
+</jndi:namedResource>

@@ -1,0 +1,52 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:e="http://shacon.kr/xsd" xmlns:ns="http://schema.hcis.com/xsd/KCBCISCTJB0100101_InRes" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.hcis.com/xsd/KCBCISCTJB0100101_InRes">
+    <complexType name="KCBCISCTJB0100101_InRes_Header">
+        <sequence>
+            <element e:kor="전문길이" e:length="4" e:padder="SpaceRight" name="tgrmLen" nillable="true" type="string"/>
+            <element e:kor="거래코드" e:length="9" e:padder="SpaceRight" name="trdCd" nillable="true" type="string"/>
+            <element e:kor="회원사코드" e:length="8" e:padder="SpaceRight" name="mmcoCd" nillable="true" type="string"/>
+            <element e:kor="전문종별코드" e:length="4" e:padder="SpaceRight" name="tgrmSubCCd" nillable="true" type="string"/>
+            <element e:kor="업무구분코드" e:length="3" e:padder="SpaceRight" name="tskGbcd" nillable="true" type="string"/>
+            <element e:kor="송수신구분" e:length="1" e:padder="SpaceRight" name="tnrGb" nillable="true" type="string"/>
+            <element e:kor="응답코드" e:length="4" e:padder="SpaceRight" name="respCd" nillable="true" type="string"/>
+            <element e:kor="KCB전문관리번호" e:length="7" e:padder="SpaceRight" name="kcbTgrmMngNo" nillable="true" type="string"/>
+            <element e:kor="KCB전문전송시간" e:length="14" e:padder="SpaceRight" name="kcbTgrmSendTime" nillable="true" type="string"/>
+            <element e:kor="회원사전문관리번호" e:length="7" e:padder="SpaceRight" name="mmcoTgrmMngNo" nillable="true" type="string"/>
+            <element e:kor="회원사전문전송시간" e:length="14" e:padder="SpaceRight" name="mmcoTgrmSendTime" nillable="true" type="string"/>
+            <element e:kor="시스템정보" e:length="16" e:padder="SpaceRight" name="sysInf" nillable="true" type="string"/>
+            <element e:kor="조회동의코드" e:length="1" e:padder="SpaceRight" name="qryAgrCd" nillable="true" type="string"/>
+            <element e:kor="예비값" e:length="42" e:padder="SpaceRight" name="prepVal" nillable="true" type="string"/>
+        </sequence>
+    </complexType>
+    <complexType name="KCBCISCTJB0100101_InRes_Body">
+        <sequence>
+            <element e:kor="세그멘트ID" e:length="3" e:padder="SpaceRight" name="segId" nillable="true" type="string"/>
+            <element e:kor="등록사유코드" e:length="2" e:padder="SpaceRight" name="regRsnCd" nillable="true" type="string"/>
+            <element e:kor="고객번호구분코드" e:length="1" e:padder="SpaceRight" name="custNoGbcd" nillable="true" type="string"/>
+            <element e:kor="회원번호" e:length="40" e:padder="SpaceRight" name="memNo" nillable="true" type="string"/>
+            <element e:kor="회원명" e:length="50" e:padder="SpaceRight" name="memNm" nillable="true" type="string"/>
+            <element e:kor="생년월일" e:length="8" e:padder="SpaceRight" name="bymd" nillable="true" type="string"/>
+            <element e:kor="성별코드" e:length="1" e:padder="SpaceRight" name="sexCd" nillable="true" type="string"/>
+            <element e:kor="휴대전화식별번호" e:length="3" e:padder="SpaceRight" name="mophIdntNo" nillable="true" type="string"/>
+            <element e:kor="휴대전화국번호" e:length="4" e:padder="SpaceRight" name="mobiTels" nillable="true" type="string"/>
+            <element e:kor="휴대전화개별번호" e:length="4" e:padder="SpaceRight" name="mobiTeli" nillable="true" type="string"/>
+            <element e:kor="고유식별정보구분코드" e:length="2" e:padder="SpaceRight" name="idinfGbcd" nillable="true" type="string"/>
+            <element e:kor="고유식별정보" e:length="100" e:padder="SpaceRight" name="idinf" nillable="true" type="string"/>
+            <element e:kor="기준일자" e:length="8" e:padder="SpaceRight" name="bsicDt" nillable="true" type="string"/>
+            <element e:kor="예비값" e:length="274" e:padder="SpaceRight" name="prepVal" nillable="true" type="string"/>
+            <element e:kor="오류응답코드" e:length="4" e:padder="SpaceRight" name="errRespCd" nillable="true" type="string"/>
+            <element e:kor="오류체크비트값" e:length="16" e:padder="SpaceRight" name="errChkBitVal" nillable="true" type="string"/>
+        </sequence>
+    </complexType>
+    <complexType name="KCBCISCTJB0100101_InRes">
+        <sequence>
+            <element name="bizHeader" type="ns:KCBCISCTJB0100101_InRes_Header"/>
+            <element name="bizBody" type="ns:KCBCISCTJB0100101_InRes_Body"/>
+        </sequence>
+    </complexType>
+    <complexType name="rootType">
+        <sequence>
+            <element name="data" type="ns:KCBCISCTJB0100101_InRes"/>
+        </sequence>
+    </complexType>
+    <element name="root" type="ns:KCBCISCTJB0100101_InRes"/>
+</schema>

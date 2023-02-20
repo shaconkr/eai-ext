@@ -1,0 +1,13 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:e="http://shacon.kr/xsd" xmlns:ns="http://schema.hcis.com/xsd/KCBCISCTJB0021001_OutRes_REAL_TRD_PRC_LIST_TYPE" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://schema.hcis.com/xsd/KCBCISCTJB0021001_OutRes_REAL_TRD_PRC_LIST_TYPE">
+    <element name="root" type="ns:REAL_TRD_PRC_LIST_TYPE"/>
+    <complexType name="REAL_TRD_PRC_LIST_TYPE">
+        <sequence>
+            <element e:kor="세그멘트ID" e:length="3" e:padder="SpaceRight" name="segId" nillable="true" type="string"/>
+            <element e:kor="거래년월" e:length="6" e:padder="SpaceRight" name="trdYm" nillable="true" type="string"/>
+            <element e:kor="전용면적" e:length="30" e:padder="ZeroLeft" name="exclSarea" nillable="true" type="long"/>
+            <element e:kor="층수" e:length="3" e:padder="ZeroLeft" name="flrCnt" nillable="true" type="long"/>
+            <element e:kor="거래실거래가격" e:length="15" e:padder="ZeroLeft" name="trdRealTrdPrc" nillable="true" type="long"/>
+            <element e:kor="예비값" e:length="56" e:padder="SpaceRight" name="prepVal" nillable="true" type="string"/>
+        </sequence>
+    </complexType>
+</schema>

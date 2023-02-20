@@ -1,0 +1,12 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:e="http://shacon.kr/xsd" xmlns:ns="http://schema.hcis.com/xsd/KCBCISCTJB0021001_OutRes_DSCLS_PRC_LIST_TYPE" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://schema.hcis.com/xsd/KCBCISCTJB0021001_OutRes_DSCLS_PRC_LIST_TYPE">
+    <element name="root" type="ns:DSCLS_PRC_LIST_TYPE"/>
+    <complexType name="DSCLS_PRC_LIST_TYPE">
+        <sequence>
+            <element e:kor="세그멘트ID" e:length="3" e:padder="SpaceRight" name="segId" nillable="true" type="string"/>
+            <element e:kor="기준년월" e:length="6" e:padder="SpaceRight" name="bsicYm" nillable="true" type="string"/>
+            <element e:kor="공시가격구분코드" e:length="1" e:padder="SpaceRight" name="dsclsPrcGbcd" nillable="true" type="string"/>
+            <element e:kor="공시가격" e:length="15" e:padder="ZeroLeft" name="dsclsPrc" nillable="true" type="long"/>
+            <element e:kor="예비값" e:length="75" e:padder="SpaceRight" name="prepVal" nillable="true" type="string"/>
+        </sequence>
+    </complexType>
+</schema>

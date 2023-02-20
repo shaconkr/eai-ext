@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jndi:namedResource xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CISBCCCTCN0010201="http://schema.hcis.com/xsd/CISBCCCTCN0010201_InRes_Body" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" name="CISBCCCTCN/CISBCCCTCN0010201.CISBCCCTCN0010201_InRes_Body" type="dataformat:DataFormat">
+  <jndi:imports importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/CISBCCCTCN0010201_InRes_Body_df.xsd" namespace="http://schema.hcis.com/xsd/CISBCCCTCN0010201_InRes_Body"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="CISBCCCTCN0010201:main" lineLength="1771" fieldOffsetsStr="crdMemNo(0,9)&#xA;crdMemNoCiVal(9,97)&#xA;memHnm(97,117)&#xA;memEnm(117,147)&#xA;sexGbcd(147,148)&#xA;emailAdr(148,198)&#xA;tmRcvYn(198,199)&#xA;dmRcvYn(199,200)&#xA;smsRcvYn(200,201)&#xA;emailRcvYn(201,202)&#xA;hmPostNo(202,208)&#xA;hmNewOldAdrGbcd(208,209)&#xA;hmRdnmRfrKey(209,234)&#xA;hmAdr1(234,434)&#xA;hmAdr2(434,634)&#xA;hmTelno(634,650)&#xA;ofcNm(650,680)&#xA;deptNm(680,720)&#xA;pstnNm(720,740)&#xA;ofcPostNo(740,746)&#xA;ofcNewOldAdrGbcd(746,747)&#xA;ofcRdnmRfrKey(747,772)&#xA;ofcAdr1(772,972)&#xA;ofcAdr2(972,1172)&#xA;ofcTelno(1172,1188)&#xA;biltoPostNo(1188,1194)&#xA;biltoNewOldGbcd(1194,1195)&#xA;biltoRdnmRfrKey(1195,1220)&#xA;biltoAdr1(1220,1420)&#xA;biltoAdr2(1420,1620)&#xA;billSenmGbcd(1620,1621)&#xA;mrrgYn(1621,1622)&#xA;mrrgClbrDt(1622,1630)&#xA;bymd(1630,1638)&#xA;birGbcd(1638,1639)&#xA;mobiTelno(1639,1655)&#xA;rstMsg(1655,1735)&#xA;prepInf(1735,1771)">
+    <fieldOffsets kor="카드회원번호" type="string" name="crdMemNo" start="0" end="9"/>
+    <fieldOffsets kor="카드회원번호CI값" type="string" name="crdMemNoCiVal" start="9" end="97"/>
+    <fieldOffsets kor="회원한글명" type="string" name="memHnm" start="97" end="117"/>
+    <fieldOffsets kor="회원영문명" type="string" name="memEnm" start="117" end="147"/>
+    <fieldOffsets kor="성별구분코드" type="string" name="sexGbcd" start="147" end="148"/>
+    <fieldOffsets kor="이메일주소" type="string" name="emailAdr" start="148" end="198"/>
+    <fieldOffsets kor="TM수신여부" type="string" name="tmRcvYn" start="198" end="199"/>
+    <fieldOffsets kor="DM수신여부" type="string" name="dmRcvYn" start="199" end="200"/>
+    <fieldOffsets kor="SMS수신여부" type="string" name="smsRcvYn" start="200" end="201"/>
+    <fieldOffsets kor="이메일수신여부" type="string" name="emailRcvYn" start="201" end="202"/>
+    <fieldOffsets kor="자택우편번호" type="string" name="hmPostNo" start="202" end="208"/>
+    <fieldOffsets kor="자택신구주소구분코드" type="string" name="hmNewOldAdrGbcd" start="208" end="209"/>
+    <fieldOffsets kor="자택도로명참조KEY" type="string" name="hmRdnmRfrKey" start="209" end="234"/>
+    <fieldOffsets kor="자택주소1" type="string" name="hmAdr1" start="234" end="434"/>
+    <fieldOffsets kor="자택주소2" type="string" name="hmAdr2" start="434" end="634"/>
+    <fieldOffsets kor="자택전화번호" type="string" name="hmTelno" start="634" end="650"/>
+    <fieldOffsets kor="직장명" type="string" name="ofcNm" start="650" end="680"/>
+    <fieldOffsets kor="부서명" type="string" name="deptNm" start="680" end="720"/>
+    <fieldOffsets kor="직위명" type="string" name="pstnNm" start="720" end="740"/>
+    <fieldOffsets kor="직장우편번호" type="string" name="ofcPostNo" start="740" end="746"/>
+    <fieldOffsets kor="직장신구주소구분코드" type="string" name="ofcNewOldAdrGbcd" start="746" end="747"/>
+    <fieldOffsets kor="직장도로명참조KEY" type="string" name="ofcRdnmRfrKey" start="747" end="772"/>
+    <fieldOffsets kor="직장주소1" type="string" name="ofcAdr1" start="772" end="972"/>
+    <fieldOffsets kor="직장주소2" type="string" name="ofcAdr2" start="972" end="1172"/>
+    <fieldOffsets kor="직장전화번호" type="string" name="ofcTelno" start="1172" end="1188"/>
+    <fieldOffsets kor="청구지우편번호" type="string" name="biltoPostNo" start="1188" end="1194"/>
+    <fieldOffsets kor="청구지신구구분코드" type="string" name="biltoNewOldGbcd" start="1194" end="1195"/>
+    <fieldOffsets kor="청구지도로명참조KEY" type="string" name="biltoRdnmRfrKey" start="1195" end="1220"/>
+    <fieldOffsets kor="청구지주소1" type="string" name="biltoAdr1" start="1220" end="1420"/>
+    <fieldOffsets kor="청구지주소2" type="string" name="biltoAdr2" start="1420" end="1620"/>
+    <fieldOffsets kor="청구서발송구분코드" type="string" name="billSenmGbcd" start="1620" end="1621"/>
+    <fieldOffsets kor="결혼여부" type="string" name="mrrgYn" start="1621" end="1622"/>
+    <fieldOffsets kor="결혼기념일자" type="string" name="mrrgClbrDt" start="1622" end="1630"/>
+    <fieldOffsets kor="생년월일" type="string" name="bymd" start="1630" end="1638"/>
+    <fieldOffsets kor="생일구분코드" type="string" name="birGbcd" start="1638" end="1639"/>
+    <fieldOffsets kor="휴대전화번호" type="string" name="mobiTelno" start="1639" end="1655"/>
+    <fieldOffsets kor="결과메시지" type="string" name="rstMsg" start="1655" end="1735"/>
+    <fieldOffsets kor="예비정보" type="string" name="prepInf" start="1735" end="1771"/>
+  </jndi:configuration>
+</jndi:namedResource>

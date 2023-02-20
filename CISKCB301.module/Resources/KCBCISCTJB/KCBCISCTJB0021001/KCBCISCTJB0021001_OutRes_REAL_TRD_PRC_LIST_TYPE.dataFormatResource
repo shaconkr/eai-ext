@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jndi:namedResource xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KCBCISCTJB0021001="http://schema.hcis.com/xsd/KCBCISCTJB0021001_OutRes_REAL_TRD_PRC_LIST_TYPE" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" name="KCBCISCTJB/KCBCISCTJB0021001.KCBCISCTJB0021001_OutRes_REAL_TRD_PRC_LIST_TYPE" type="dataformat:DataFormat">
+  <jndi:imports importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/KCBCISCTJB0021001_OutRes_REAL_TRD_PRC_LIST_TYPE_df.xsd" namespace="http://schema.hcis.com/xsd/KCBCISCTJB0021001_OutRes_REAL_TRD_PRC_LIST_TYPE"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="KCBCISCTJB0021001:main" lineLength="113" fieldOffsetsStr="segId(0,3)&#xA;trdYm(3,9)&#xA;exclSarea(9,39)&#xA;flrCnt(39,42)&#xA;trdRealTrdPrc(42,57)&#xA;prepVal(57,113)">
+    <fieldOffsets kor="세그멘트ID" type="string" name="segId" start="0" end="3"/>
+    <fieldOffsets kor="거래년월" type="string" name="trdYm" start="3" end="9"/>
+    <fieldOffsets kor="전용면적" type="long" name="exclSarea" start="9" end="39"/>
+    <fieldOffsets kor="층수" type="long" name="flrCnt" start="39" end="42"/>
+    <fieldOffsets kor="거래실거래가격" type="long" name="trdRealTrdPrc" start="42" end="57"/>
+    <fieldOffsets kor="예비값" type="string" name="prepVal" start="57" end="113"/>
+  </jndi:configuration>
+</jndi:namedResource>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jndi:namedResource xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KCBCISCTJB0021001="http://schema.hcis.com/xsd/KCBCISCTJB0021001_OutRes_Body" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" name="KCBCISCTJB/KCBCISCTJB0021001.KCBCISCTJB0021001_OutRes_Body" type="dataformat:DataFormat">
+  <jndi:imports importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/KCBCISCTJB0021001_OutRes_Body_df.xsd" namespace="http://schema.hcis.com/xsd/KCBCISCTJB0021001_OutRes_Body"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="KCBCISCTJB0021001:main" lineLength="76" fieldOffsetsStr="certNo(0,12)&#xA;infCnscYn(12,13)&#xA;reReqnCnt(13,15)&#xA;idntNoGbcd(15,16)&#xA;inntNo(16,49)&#xA;dsclsPrcTotCnt(49,52)&#xA;dsclsPrcTotTrsCnt(52,55)&#xA;dsclsPrcRespCnt(55,58)&#xA;siDTotCnt(58,61)&#xA;siDTotTrsCnt(61,64)&#xA;siDRespCnt(64,67)&#xA;realTrdPrcTotCnt(67,70)&#xA;realTrdPrcTotTrsCnt(70,73)&#xA;realTrdPrcRespCnt(73,76)&#xA;dsclsPrcList(76,76)&#xA;siDList(76,76)&#xA;realTrdPrcList(76,76)">
+    <fieldOffsets kor="인증번호" type="string" name="certNo" start="0" end="12"/>
+    <fieldOffsets kor="정보연속여부" type="string" name="infCnscYn" start="12" end="13"/>
+    <fieldOffsets kor="재요청횟수" type="string" name="reReqnCnt" start="13" end="15"/>
+    <fieldOffsets kor="식별번호구분코드" type="string" name="idntNoGbcd" start="15" end="16"/>
+    <fieldOffsets kor="고유번호" type="string" name="inntNo" start="16" end="49"/>
+    <fieldOffsets kor="공시가격총건수" type="long" name="dsclsPrcTotCnt" start="49" end="52"/>
+    <fieldOffsets kor="공시가격총송신건수" type="long" name="dsclsPrcTotTrsCnt" start="52" end="55"/>
+    <fieldOffsets kor="공시가격응답건수" type="long" name="dsclsPrcRespCnt" start="55" end="58"/>
+    <fieldOffsets kor="시세총건수" type="long" name="siDTotCnt" start="58" end="61"/>
+    <fieldOffsets kor="시세총송신건수" type="long" name="siDTotTrsCnt" start="61" end="64"/>
+    <fieldOffsets kor="시세응답건수" type="long" name="siDRespCnt" start="64" end="67"/>
+    <fieldOffsets kor="실거래가격총건수" type="long" name="realTrdPrcTotCnt" start="67" end="70"/>
+    <fieldOffsets kor="실거래가격총송신건수" type="long" name="realTrdPrcTotTrsCnt" start="70" end="73"/>
+    <fieldOffsets kor="실거래가격응답건수" type="long" name="realTrdPrcRespCnt" start="73" end="76"/>
+    <fieldOffsets kor="공시가격_배열" type="DSCLS_PRC_LIST_TYPE" name="dsclsPrcList" start="76" end="76"/>
+    <fieldOffsets kor="시세_배열" type="SI_D_LIST_TYPE" name="siDList" start="76" end="76"/>
+    <fieldOffsets kor="실거래가격_배열" type="REAL_TRD_PRC_LIST_TYPE" name="realTrdPrcList" start="76" end="76"/>
+  </jndi:configuration>
+</jndi:namedResource>

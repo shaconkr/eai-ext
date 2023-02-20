@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<jndi:namedResource xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CISNIBCTJD0130102="http://schema.hcis.com/xsd/CISNIBCTJD0130102" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" name="NIBCISCTJD/NIBCISCTJD0130101.CISNIBCTJD0130102_InRes" type="dataformat:DataFormat">
-  <jndi:imports importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/CISNIBCTJD0130102_InRes.xsd" namespace="http://schema.hcis.com/xsd/CISNIBCTJD0130102"/>
-  <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="CISNIBCTJD0130102:main" lineLength="0" fieldOffsetsStr="bizHeader(0,0)&#xA;bizBody(0,0)">
-    <fieldOffsets kor="0" type="CISNIBCTJD0130102_InRes_Header" name="bizHeader" start="0" end="0"/>
-    <fieldOffsets kor="0" type="CISNIBCTJD0130102_InRes_Body" name="bizBody" start="0" end="0"/>
-  </jndi:configuration>
-</jndi:namedResource>

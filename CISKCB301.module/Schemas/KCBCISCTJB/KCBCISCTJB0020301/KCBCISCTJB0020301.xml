@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beanio xmlns="http://www.beanio.org/2012/03" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.beanio.org/2012/03 http://www.beanio.org/2012/03/mapping.xsd">
+  <typeHandler type="java.util.Date" class="org.beanio.types.DateTypeHandler">
+    <property name="pattern" value="yyyyMMddhhmm"/>
+  </typeHandler>
+  <stream kor="" name="KCBCISCTJB0020301_OutRes" format="fixedlength">
+    <parser>
+      <property name="recordTerminator" value="\r\n"/>
+    </parser>
+    <record name="KCB_OutRes" class="java.util.LinkedHashMap">
+      <segment name="bizHeader" minOccurs="1" maxOccurs="1" class="map">
+        <field kor="전문길이" name="tgrmLen" position="0" length="4"/>
+        <field kor="거래코드" name="trdCd" position="4" length="9"/>
+        <field kor="회원사코드" name="mmcoCd" position="13" length="8"/>
+        <field kor="전문종별코드" name="tgrmSubCCd" position="21" length="4"/>
+        <field kor="업무구분코드" name="tskGbcd" position="25" length="3"/>
+        <field kor="송수신구분" name="tnrGb" position="28" length="1"/>
+        <field kor="응답코드" name="respCd" position="29" length="4"/>
+        <field kor="KCB전문관리번호" name="kcbTgrmMngNo" position="33" length="7"/>
+        <field kor="KCB전문전송시간" name="kcbTgrmSendTime" position="40" length="14"/>
+        <field kor="회원사전문관리번호" name="mmcoTgrmMngNo" position="54" length="7"/>
+        <field kor="회원사전문전송시간" name="mmcoTgrmSendTime" position="61" length="14"/>
+        <field kor="시스템정보" name="sysInf" position="75" length="16"/>
+        <field kor="조회동의코드" name="qryAgrCd" position="91" length="1"/>
+        <field kor="예비값" name="prepVal" position="92" length="42"/>
+      </segment>
+      <segment name="bizBody" minOccurs="1" maxOccurs="1" class="map">
+        <field kor="인증번호" name="certNo" position="134" length="12"/>
+        <field kor="정보연속여부" name="infCnscYn" position="146" length="1"/>
+        <field kor="재요청횟수" name="reReqnCnt" position="147" length="2"/>
+        <field kor="식별번호구분코드" name="idntNoGbcd" position="149" length="1"/>
+        <field kor="식별번호" name="idntNo" position="150" length="13"/>
+        <field kor="성명" name="fnmNm" position="163" length="50"/>
+        <field kor="정보유무체크비트" name="infEnChkBit" position="213" length="10"/>
+        <field kor="신상정보총건수" name="pinfInfTotCnt" position="223" length="3" justify="right" padding="0"/>
+        <field kor="신상정보총송신건수" name="pinfInfTotTrsCnt" position="226" length="3" justify="right" padding="0"/>
+        <field kor="신상정보응답건수" name="pinfInfRespCnt" position="229" length="2" justify="right" padding="0"/>
+        <field kor="APS총건수" name="apsTotCnt" position="231" length="3" justify="right" padding="0"/>
+        <field kor="APS총송신건수" name="apsTotTrsCnt" position="234" length="3" justify="right" padding="0"/>
+        <field kor="APS응답건수" name="apsRespCnt" position="237" length="3" justify="right" padding="0"/>
+        <field kor="부동산소유정보총건수" name="rltyOwnInfTotCnt" position="240" length="3" justify="right" padding="0"/>
+        <field kor="부동산소유정보총송신건수" name="rltyOwnInfTotTrsCnt" position="243" length="3" justify="right" padding="0"/>
+        <field kor="부동산소유정보응답건수" name="rltyOwnInfRespCnt" position="246" length="2" justify="right" padding="0"/>
+        <segment name="pinfInfRespList" minOccurs="0" collection="list" maxOccurs="unbounded" class="map">
+          <field kor="세그멘트ID" name="segId" position="248" length="3"/>
+          <field kor="자택주소등록일자" name="hmAdrRegDt" position="251" length="8"/>
+          <field kor="자택우편번호" name="hmPostNo" position="259" length="6"/>
+          <field kor="자택주소1" name="hmAdr1" position="265" length="100"/>
+          <field kor="자택주소2" name="hmAdr2" position="365" length="100"/>
+          <field kor="자택전화번호" name="hmTelno" position="465" length="12"/>
+          <field kor="실거주주소등록일자" name="realLiveAdrRegDt" position="477" length="8"/>
+          <field kor="실거주우편번호" name="realLivePostNo" position="485" length="6"/>
+          <field kor="실거주주소1" name="realLiveAdr1" position="491" length="100"/>
+          <field kor="실거주주소2" name="realLiveAdr2" position="591" length="100"/>
+          <field kor="실거주전화번호" name="realLiveTelno" position="691" length="1"/>
+          <field kor="직장주소등록일자" name="ofcAdrRegDt" position="692" length="1"/>
+          <field kor="직장우편번호" name="ofcPostNo" position="693" length="6"/>
+          <field kor="직장주소1" name="ofcAdr1" position="699" length="200"/>
+          <field kor="직장주소2" name="ofcAdr2" position="899" length="200"/>
+          <field kor="직장전화번호" name="ofcTelno" position="1099" length="20"/>
+          <field kor="직장전화내선번호" name="ofcTelpnExtsNo" position="1119" length="1"/>
+          <field kor="직장명" name="ofcNm" position="1120" length="50"/>
+          <field kor="부서명" name="deptNm" position="1170" length="50"/>
+          <field kor="현직장입사년월" name="crrnOfcJncoYm" position="1220" length="6"/>
+          <field kor="년소득등록일자" name="yrIncmRegDt" position="1226" length="8"/>
+          <field kor="년소득금액" name="yrIncmAmt" position="1234" length="9" justify="right" padding="0"/>
+          <field kor="재산세등록일자" name="pptaxRegDt" position="1243" length="8"/>
+          <field kor="재산세금액" name="pptaxAmt" position="1251" length="9" justify="right" padding="0"/>
+          <field kor="휴대폰번호등록일자" name="mphonNoRegDt" position="1260" length="8"/>
+          <field kor="휴대폰번호" name="mphonNo" position="1268" length="12"/>
+          <field kor="자택주소구분" name="hmAdrGb" position="1280" length="1"/>
+          <field kor="실거주주소구분" name="realLiveAdrGb" position="1281" length="1"/>
+          <field kor="직장주소구분" name="ofcAdrGb" position="1282" length="1"/>
+          <field kor="이메일주소등록일자" name="emailAdrRegDt" position="1283" length="8"/>
+          <field kor="이메일주소" name="emailAdr" position="1291" length="50"/>
+          <field kor="예비값" name="prepVal" position="1341" length="14"/>
+        </segment>
+        <segment name="apsInfList" minOccurs="0" collection="list" maxOccurs="unbounded" class="map">
+          <field kor="세그멘트ID" name="segId" position="1355" length="3"/>
+          <field kor="프로파일코드" name="prfCd" position="1358" length="9"/>
+          <field kor="프로파일결과값" name="prfRstVal" position="1367" length="9"/>
+        </segment>
+        <segment name="rltyOwnInfList" minOccurs="0" collection="list" maxOccurs="unbounded" class="map">
+          <field kor="세그멘트ID" name="segId" position="1376" length="3"/>
+          <field kor="등기고유번호" name="rmailInntNo" position="1379" length="14"/>
+          <field kor="부동산고유번호" name="rltyInntNo" position="1393" length="33"/>
+          <field kor="소유도로명주소" name="ownRdnmAdr" position="1426" length="200"/>
+          <field kor="소유지번주소" name="ownJibunAdr" position="1626" length="200"/>
+          <field kor="경도" name="lgtd" position="1826" length="20"/>
+          <field kor="위도" name="lttd" position="1846" length="20"/>
+          <field kor="부동산구분" name="rltyGb" position="1866" length="2"/>
+          <field kor="소유지분분자" name="ownShaNume" position="1868" length="10"/>
+          <field kor="소유지분분모" name="ownShaDnom" position="1878" length="10"/>
+          <field kor="소유기준일자" name="ownBsicDt" position="1888" length="8"/>
+          <field kor="최종소유변동등기일자" name="lastOwnMvmtRmailDt" position="1896" length="8"/>
+          <field kor="상계가능확인필요여부" name="stofPossIdnfNeedYn" position="1904" length="1"/>
+          <field kor="등기대장종류코드" name="rmailAcboKndCd" position="1905" length="1"/>
+          <field kor="최근1년내권리침해여부" name="rcnt1InyrRectPejdYn" position="1906" length="1"/>
+          <field kor="건물공시가격" name="bldDsclsPrc" position="1907" length="9"/>
+          <field kor="건물실거래가격" name="bldRealTrdPrc" position="1916" length="9"/>
+          <field kor="토지총공시가격" name="landTotDsclsPrc" position="1925" length="9"/>
+          <field kor="건물주용도코드" name="bldWkUsageCd" position="1934" length="5"/>
+          <field kor="예비값" name="prepVal" position="1939" length="17"/>
+        </segment>
+      </segment>
+    </record>
+  </stream>
+</beanio>

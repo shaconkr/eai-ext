@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jndi:namedResource xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CISJNICTIC0330102="http://schema.hcis.com/xsd/CISJNICTIC0330102_InRes_Body" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" name="CISJNICTIC/CISJNICTIC0330102.CISJNICTIC0330102_InRes_Body" type="dataformat:DataFormat">
+  <jndi:imports importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/CISJNICTIC0330102_InRes_Body_df.xsd" namespace="http://schema.hcis.com/xsd/CISJNICTIC0330102_InRes_Body"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="CISJNICTIC0330102:main" lineLength="246" fieldOffsetsStr="tgrmLen(0,6)&#xA;prepVal(6,242)&#xA;respCd(242,246)">
+    <fieldOffsets kor="전문길이" type="string" name="tgrmLen" start="0" end="6"/>
+    <fieldOffsets kor="예비값" type="string" name="prepVal" start="6" end="242"/>
+    <fieldOffsets kor="응답코드" type="string" name="respCd" start="242" end="246"/>
+  </jndi:configuration>
+</jndi:namedResource>

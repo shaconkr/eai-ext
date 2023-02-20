@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:JNICISCTIC0040101="http://schema.hcis.com/xsd/JNICISCTIC0040101_InReq_Body" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmi:id="_WJcZAKanEe2MspbPgxPMzQ" name="JNICISCTIC.JNICISCTIC0040101.JNICISCTIC0040101_InReq_Body" type="dataformat:DataFormat">
-  <imports xmi:id="_WJcZAaanEe2MspbPgxPMzQ" importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/JNICISCTIC0040101_InReq_Body_df.xsd" namespace="http://schema.hcis.com/xsd/JNICISCTIC0040101_InReq_Body"/>
-  <jndi:configuration xsi:type="dataformat:DataFormat" xmi:id="_WJcZAqanEe2MspbPgxPMzQ" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="JNICISCTIC0040101:main" lineLength="236" fieldOffsetsStr="senmNo(0,24)&#xA;procDt(24,32)&#xA;procTime(32,38)&#xA;crdDlvPrgrStatCd(38,40)&#xA;crdSendPrgrStatCntn(40,61)&#xA;rmrk(61,236)">
-    <fieldOffsets xmi:id="_WJcZA6anEe2MspbPgxPMzQ" name="senmNo" end="24" kor="발송번호" type="string"/>
-    <fieldOffsets xmi:id="_WJcZBKanEe2MspbPgxPMzQ" name="procDt" start="24" end="32" kor="처리일자" type="string"/>
-    <fieldOffsets xmi:id="_WJcZBaanEe2MspbPgxPMzQ" name="procTime" start="32" end="38" kor="처리시간" type="string"/>
-    <fieldOffsets xmi:id="_WJcZBqanEe2MspbPgxPMzQ" name="crdDlvPrgrStatCd" start="38" end="40" kor="카드배송진행상태코드" type="string"/>
-    <fieldOffsets xmi:id="_WJcZB6anEe2MspbPgxPMzQ" name="crdSendPrgrStatCntn" start="40" end="61" kor="카드발송진행상태내용" type="string"/>
-    <fieldOffsets xmi:id="_WJcZCKanEe2MspbPgxPMzQ" name="rmrk" start="61" end="236" kor="비고" type="string"/>
+
+<jndi:namedResource xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:JNICISCTIC0040101="http://schema.hcis.com/xsd/JNICISCTIC0040101_InReq_Body" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" name="JNICISCTIC/JNICISCTIC0040101.JNICISCTIC0040101_InReq_Body" type="dataformat:DataFormat">
+  <jndi:imports importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/JNICISCTIC0040101_InReq_Body_df.xsd" namespace="http://schema.hcis.com/xsd/JNICISCTIC0040101_InReq_Body"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="JNICISCTIC0040101:main" lineLength="236" fieldOffsetsStr="senmNo(0,24)&#xA;procDt(24,32)&#xA;procTime(32,38)&#xA;crdDlvPrgrStatCd(38,40)&#xA;crdSendPrgrStatCntn(40,61)&#xA;rmrk(61,236)">
+    <fieldOffsets kor="발송번호" type="string" name="senmNo" start="0" end="24"/>
+    <fieldOffsets kor="처리일자" type="string" name="procDt" start="24" end="32"/>
+    <fieldOffsets kor="처리시간" type="string" name="procTime" start="32" end="38"/>
+    <fieldOffsets kor="카드배송진행상태코드" type="string" name="crdDlvPrgrStatCd" start="38" end="40"/>
+    <fieldOffsets kor="카드발송진행상태내용" type="string" name="crdSendPrgrStatCntn" start="40" end="61"/>
+    <fieldOffsets kor="비고" type="string" name="rmrk" start="61" end="236"/>
   </jndi:configuration>
 </jndi:namedResource>

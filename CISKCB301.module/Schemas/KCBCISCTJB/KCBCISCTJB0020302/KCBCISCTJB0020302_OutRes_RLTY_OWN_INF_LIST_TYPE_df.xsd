@@ -1,0 +1,27 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:e="http://shacon.kr/xsd" xmlns:ns="http://schema.hcis.com/xsd/KCBCISCTJB0020302_OutRes_RLTY_OWN_INF_LIST_TYPE" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://schema.hcis.com/xsd/KCBCISCTJB0020302_OutRes_RLTY_OWN_INF_LIST_TYPE">
+    <element name="root" type="ns:RLTY_OWN_INF_LIST_TYPE"/>
+    <complexType name="RLTY_OWN_INF_LIST_TYPE">
+        <sequence>
+            <element e:kor="세그멘트ID" e:length="3" e:padder="SpaceRight" name="segId" nillable="true" type="string"/>
+            <element e:kor="등기고유번호" e:length="14" e:padder="SpaceRight" name="rmailInntNo" nillable="true" type="string"/>
+            <element e:kor="부동산고유번호" e:length="33" e:padder="SpaceRight" name="rltyInntNo" nillable="true" type="string"/>
+            <element e:kor="소유도로명주소" e:length="200" e:padder="SpaceRight" name="ownRdnmAdr" nillable="true" type="string"/>
+            <element e:kor="소유지번주소" e:length="200" e:padder="SpaceRight" name="ownJibunAdr" nillable="true" type="string"/>
+            <element e:kor="경도" e:length="20" e:padder="SpaceRight" name="lgtd" nillable="true" type="string"/>
+            <element e:kor="위도" e:length="20" e:padder="SpaceRight" name="lttd" nillable="true" type="string"/>
+            <element e:kor="부동산구분" e:length="2" e:padder="SpaceRight" name="rltyGb" nillable="true" type="string"/>
+            <element e:kor="소유지분분자" e:length="10" e:padder="SpaceRight" name="ownShaNume" nillable="true" type="string"/>
+            <element e:kor="소유지분분모" e:length="10" e:padder="SpaceRight" name="ownShaDnom" nillable="true" type="string"/>
+            <element e:kor="소유기준일자" e:length="8" e:padder="SpaceRight" name="ownBsicDt" nillable="true" type="string"/>
+            <element e:kor="최종소유변동등기일자" e:length="8" e:padder="SpaceRight" name="lastOwnMvmtRmailDt" nillable="true" type="string"/>
+            <element e:kor="상계가능확인필요여부" e:length="1" e:padder="SpaceRight" name="stofPossIdnfNeedYn" nillable="true" type="string"/>
+            <element e:kor="등기대장종류코드" e:length="1" e:padder="SpaceRight" name="rmailAcboKndCd" nillable="true" type="string"/>
+            <element e:kor="최근1년내권리침해여부" e:length="1" e:padder="SpaceRight" name="rcnt1InyrRectPejdYn" nillable="true" type="string"/>
+            <element e:kor="건물공시가격" e:length="9" e:padder="SpaceRight" name="bldDsclsPrc" nillable="true" type="string"/>
+            <element e:kor="건물실거래가격" e:length="9" e:padder="SpaceRight" name="bldRealTrdPrc" nillable="true" type="string"/>
+            <element e:kor="토지총공시가격" e:length="9" e:padder="SpaceRight" name="landTotDsclsPrc" nillable="true" type="string"/>
+            <element e:kor="건물주용도코드" e:length="5" e:padder="SpaceRight" name="bldWkUsageCd" nillable="true" type="string"/>
+            <element e:kor="예비값" e:length="17" e:padder="SpaceRight" name="prepVal" nillable="true" type="string"/>
+        </sequence>
+    </complexType>
+</schema>

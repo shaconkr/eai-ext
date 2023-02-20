@@ -5560,13 +5560,6 @@
             name="TCPCloseConnection-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns38:ActivityErrorData"
             name="_error_TCPCloseConnection" sca-bpel:internal="true"/>
-        <bpws:variable name="BCCFtpHelper" sca-bpel:hotUpdate="false"
-            sca-bpel:privateProperty="true" sca-bpel:property="yes"
-            sca-bpel:sharedResourceType="{http://ns.tibco.com/bw/palette/javasharedresource}JavaGlobalInstanceResource" type="xsd:string">
-            <bpws:from>
-                <bpws:literal>ext.bcc.BCCFileTransHelper</bpws:literal>
-            </bpws:from>
-        </bpws:variable>
         <bpws:variable element="ns3:ActivityErrorData"
             name="_error_ReadTCPData1" sca-bpel:internal="true"/>
         <bpws:variable element="ns70:ActivityInput"
@@ -5582,14 +5575,6 @@
         <bpws:variable element="ns75:ActivityOutput" name="R_0630" sca-bpel:internal="true"/>
         <bpws:variable element="ns3:ActivityErrorData"
             name="_error_R_0630" sca-bpel:internal="true"/>
-        <bpws:variable name="KFTCFileTransHelper"
-            sca-bpel:hotUpdate="false" sca-bpel:privateProperty="true"
-            sca-bpel:property="yes"
-            sca-bpel:sharedResourceType="{http://ns.tibco.com/bw/palette/javasharedresource}JavaGlobalInstanceResource" type="xsd:string">
-            <bpws:from>
-                <bpws:literal>ext.kft.KFTFileTransHelper</bpws:literal>
-            </bpws:from>
-        </bpws:variable>
         <bpws:variable element="ns76:JavaInvokeActivityInput"
             name="P_COMMON-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns77:JavaInvokeActivityOutput"
@@ -5844,8 +5829,7 @@
                     </tibex:config>
                 </tibex:activityExtension>
             </bpws:extensionActivity>
-            <bpws:scope name="Repeat" tibex:group="repeatUntil"
-                tibex:indexToGlobal="false" tibex:xpdlId="4a1ecb3a-bc0b-4183-ba23-e51bc00d3030">
+            <bpws:scope name="Repeat" tibex:group="repeatUntil" tibex:xpdlId="4a1ecb3a-bc0b-4183-ba23-e51bc00d3030">
                 <bpws:targets>
                     <bpws:target linkName="L_Set_LogStartToRepeat"/>
                 </bpws:targets>
@@ -6158,30 +6142,15 @@
                                     name="config" xsi:type="activityconfig:EMFProperty">
                                     <type href="http://ns.tibco.com/bw/palette/java#//JavaMethod"/>
                                     <value
-                                    className="com.hcis.eai.ext.kft.KftcFileTransfer"
+                                    className="com.hcis.eai.ext.bcc.BCCFileTransfer"
+                                    constructDeclaredClass="true"
                                     icon="HcisCommon.smodule\Resources\icons\binary-code-48.png"
                                     isNew="true"
                                     isNewActivity="true"
-                                    javaGlobalInstance="KFTCFileTransHelper"
                                     methodName="getHeaderQueryString"
                                     methodReturn="string" xsi:type="java:JavaMethod">
                                     <methodParameter
                                     paramName="bytes" paramType="byte[]"/>
-
-                                    <javaActivityParameter
-                                    parameterCardinality="Repeating"
-                                    parameterDataType="byte"
-                                    parameterName="bytes" parameterType="IN"/>
-
-                                    <javaActivityParameter
-                                    parameterCardinality="Optional"
-                                    parameterDataType="string"
-                                    parameterName="msgCode" parameterType="OUT"/>
-
-                                    <javaActivityParameter
-                                    parameterCardinality="Optional"
-                                    parameterDataType="string"
-                                    parameterName="trCode" parameterType="OUT"/>
                                     </value>
                                     </properties>
                                     </activityConfig>
@@ -6218,10 +6187,10 @@
                                     <type href="http://ns.tibco.com/bw/palette/java#//JavaMethod"/>
                                     <value
                                     className="com.hcis.eai.ext.bcc.BCCFileTransfer"
+                                    constructDeclaredClass="true"
                                     icon="HcisCommon.smodule\Resources\icons\edit-node-48.png"
                                     isNew="true"
                                     isNewActivity="true"
-                                    javaGlobalInstance="BCCFtpHelper"
                                     methodName="build0640"
                                     methodReturn="byte[]" xsi:type="java:JavaMethod">
                                     <methodParameter
@@ -6367,10 +6336,10 @@
                                     <type href="http://ns.tibco.com/bw/palette/java#//JavaMethod"/>
                                     <value
                                     className="com.hcis.eai.ext.bcc.BCCFileTransfer"
+                                    constructDeclaredClass="true"
                                     icon="HcisCommon.smodule\Resources\icons\edit-node-48.png"
                                     isNew="true"
                                     isNewActivity="true"
-                                    javaGlobalInstance="BCCFtpHelper"
                                     methodName="build0300"
                                     methodReturn="byte[]" xsi:type="java:JavaMethod">
                                     <methodParameter
@@ -6415,9 +6384,7 @@
                                     <properties
                                     name="config" xsi:type="activityconfig:EMFProperty">
                                     <type href="http://ns.tibco.com/bw/palette/tcp#//WriteTCPData"/>
-                                    <value
-                                    separator="No Separator"
-                                    type="Binary" xsi:type="tcpPalette:WriteTCPData"/>
+                                    <value type="Binary" xsi:type="tcpPalette:WriteTCPData"/>
                                     </properties>
                                     </activityConfig>
                                     </bwext:BWActivity>
@@ -6520,10 +6487,10 @@
                                     <type href="http://ns.tibco.com/bw/palette/java#//JavaMethod"/>
                                     <value
                                     className="com.hcis.eai.ext.bcc.BCCFileTransfer"
+                                    constructDeclaredClass="true"
                                     icon="HcisCommon.smodule\Resources\icons\edit-node-48.png"
                                     isNew="true"
                                     isNewActivity="true"
-                                    javaGlobalInstance="BCCFtpHelper"
                                     methodName="build0610"
                                     methodReturn="byte[]" xsi:type="java:JavaMethod">
                                     <methodParameter
@@ -6565,10 +6532,10 @@
                                     <type href="http://ns.tibco.com/bw/palette/java#//JavaMethod"/>
                                     <value
                                     className="com.hcis.eai.ext.bcc.BCCFileTransfer"
+                                    constructDeclaredClass="true"
                                     icon="HcisCommon.smodule\Resources\icons\edit-node-48.png"
                                     isNew="true"
                                     isNewActivity="true"
-                                    javaGlobalInstance="BCCFtpHelper"
                                     methodName="build0610"
                                     methodReturn="byte[]" xsi:type="java:JavaMethod">
                                     <methodParameter
@@ -6636,11 +6603,11 @@
                                     name="config" xsi:type="activityconfig:EMFProperty">
                                     <type href="http://ns.tibco.com/bw/palette/java#//JavaMethod"/>
                                     <value
-                                    className="com.hcis.eai.ext.kft.KftcFileTransfer"
+                                    className="com.hcis.eai.ext.bcc.BCCFileTransfer"
+                                    constructDeclaredClass="true"
                                     icon="HcisCommon.smodule\Resources\icons\binary-code-48.png"
                                     isNew="true"
                                     isNewActivity="true"
-                                    javaGlobalInstance="KFTCFileTransHelper"
                                     methodName="getDataQueryString"
                                     methodReturn="string" xsi:type="java:JavaMethod">
                                     <methodParameter
@@ -6681,11 +6648,11 @@
                                     name="config" xsi:type="activityconfig:EMFProperty">
                                     <type href="http://ns.tibco.com/bw/palette/java#//JavaMethod"/>
                                     <value
-                                    className="com.hcis.eai.ext.kft.KftcFileTransfer"
+                                    className="com.hcis.eai.ext.bcc.BCCFileTransfer"
+                                    constructDeclaredClass="true"
                                     icon="HcisCommon.smodule\Resources\icons\binary-code-48.png"
                                     isNew="true"
                                     isNewActivity="true"
-                                    javaGlobalInstance="KFTCFileTransHelper"
                                     methodName="getDataQueryString"
                                     methodReturn="string" xsi:type="java:JavaMethod">
                                     <methodParameter
@@ -6726,11 +6693,11 @@
                                     name="config" xsi:type="activityconfig:EMFProperty">
                                     <type href="http://ns.tibco.com/bw/palette/java#//JavaMethod"/>
                                     <value
-                                    className="com.hcis.eai.ext.kft.KftcFileTransfer"
+                                    className="com.hcis.eai.ext.bcc.BCCFileTransfer"
+                                    constructDeclaredClass="true"
                                     icon="HcisCommon.smodule\Resources\icons\binary-code-48.png"
                                     isNew="true"
                                     isNewActivity="true"
-                                    javaGlobalInstance="KFTCFileTransHelper"
                                     methodName="getDataQueryString"
                                     methodReturn="string" xsi:type="java:JavaMethod">
                                     <methodParameter
@@ -6771,11 +6738,11 @@
                                     name="config" xsi:type="activityconfig:EMFProperty">
                                     <type href="http://ns.tibco.com/bw/palette/java#//JavaMethod"/>
                                     <value
-                                    className="com.hcis.eai.ext.kft.KftcFileTransfer"
+                                    className="com.hcis.eai.ext.bcc.BCCFileTransfer"
+                                    constructDeclaredClass="true"
                                     icon="HcisCommon.smodule\Resources\icons\binary-code-48.png"
                                     isNew="true"
                                     isNewActivity="true"
-                                    javaGlobalInstance="KFTCFileTransHelper"
                                     methodName="getDataQueryString"
                                     methodReturn="string" xsi:type="java:JavaMethod">
                                     <methodParameter
@@ -7083,10 +7050,10 @@
                                     <type href="http://ns.tibco.com/bw/palette/java#//JavaMethod"/>
                                     <value
                                     className="com.hcis.eai.ext.bcc.BCCFileTransfer"
+                                    constructDeclaredClass="true"
                                     icon="HcisCommon.smodule\Resources\icons\edit-node-48.png"
                                     isNew="true"
                                     isNewActivity="true"
-                                    javaGlobalInstance="BCCFtpHelper"
                                     methodName="build0610"
                                     methodReturn="byte[]" xsi:type="java:JavaMethod">
                                     <methodParameter
@@ -7480,10 +7447,10 @@
                                     <type href="http://ns.tibco.com/bw/palette/java#//JavaMethod"/>
                                     <value
                                     className="com.hcis.eai.ext.bcc.BCCFileTransfer"
+                                    constructDeclaredClass="true"
                                     icon="HcisCommon.smodule\Resources\icons\edit-node-48.png"
                                     isNew="true"
                                     isNewActivity="true"
-                                    javaGlobalInstance="BCCFtpHelper"
                                     methodName="build0610"
                                     methodReturn="byte[]" xsi:type="java:JavaMethod">
                                     <methodParameter

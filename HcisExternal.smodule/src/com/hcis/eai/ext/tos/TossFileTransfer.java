@@ -22,8 +22,12 @@ public class TossFileTransfer extends EDIParserAndBuilder {
 	protected byte[] bytes = null;
 	
 	Map<String,Object> BANK = Maps.newHashMap();
-	public TossFileTransfer(String beanioXml, String encoding) throws IOException {
-        super(beanioXml, encoding);
+	
+	public TossFileTransfer() throws IOException {
+		String beanioXml = "/Schemas/ext/tos/TOSBatch.xml";
+		String encoding = "euc-kr";
+        init(beanioXml, encoding);
+        
         BANK.putAll(loadJson("/Resources/ext/tos/TOSBank.json"));
     }
 

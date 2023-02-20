@@ -14,8 +14,10 @@ public class BCCFileTransfer extends EDIParserAndBuilder {
 	protected String msgCode = "";
 	protected byte[] bytes = null;
 	
-	public BCCFileTransfer(String beanioXml, String encoding) {
-        super(beanioXml, encoding);
+	public BCCFileTransfer() {
+		String beanioXml = "/Schemas/ext/bcc/BCCBatch.xml";
+		String encoding = "euc-kr";
+        init(beanioXml, encoding);
     }
     
     /**

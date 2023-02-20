@@ -19,7 +19,6 @@ import com.hcis.eai.ext.EDIParserAndBuilder;
 
 public class KftcFileTransfer extends EDIParserAndBuilder  {
     private static final Logger LOGGER = LoggerFactory.getLogger(KftcFileTransfer.class);
-    StreamFactory factory = newStreamFactory("kftcbatch.xml");
 
     private static final String KFTC_COMPANY_CD = "52100280";                   // 기관코드(현대백화점) : 파일내에서는 9952100280
     private static final String KFTC_SENDER_NM = "HYUNDAIDEPARTMENT   ";
@@ -37,8 +36,10 @@ public class KftcFileTransfer extends EDIParserAndBuilder  {
 	protected String msgCode = "";
 	protected byte[] bytes = null;
 	
-	public KftcFileTransfer(String beanioXml, String encoding) {
-        super(beanioXml, encoding);
+	public KftcFileTransfer() {
+		String beanioXml = "/Schemas/ext/kft/KFTBatch.xml";
+		String encoding = "euc-kr";
+        init(beanioXml, encoding);
     }       
 	
 	

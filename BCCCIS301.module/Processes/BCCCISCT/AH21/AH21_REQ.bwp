@@ -30,6 +30,9 @@
     xmlns:ns29="http://schema.hcis.com/xsd/JNICISCTIC0040101"
     xmlns:ns3="http://tns.tibco.com/bw/palette/internal/activityerror+c2037ae7-c684-427b-80b7-e8cbaf8714ce"
     xmlns:ns30="activity.jsonParser.input+c28f78dc-ba9d-438b-ac2e-704d5720fb01+ActivityInputType"
+    xmlns:ns31="www.tibco.com/plugin/java/JavaInvokeActivityInput+efca69eb-57d2-40be-8645-cf71a03bdc55+JavaInvokeActivityInput"
+    xmlns:ns32="www.tibco.com/plugin/java/JavaInvokeActivityOutput+efca69eb-57d2-40be-8645-cf71a03bdc55+JavaInvokeActivityOutput"
+    xmlns:ns33="http://tns.tibco.com/bw/palette/internal/activityerror+efca69eb-57d2-40be-8645-cf71a03bdc55"
     xmlns:ns4="http://www.cspi_library.org/Log"
     xmlns:ns5="http://www.cspi_library.org/Library"
     xmlns:ns6="www.tibco.com/plugin/java/JavaInvokeActivityInput+fa8e4c1b-5f33-493d-85c4-4bbfcd00517c+JavaInvokeActivityInput"
@@ -41,10 +44,9 @@
     xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"
     xmlns:tibprop="http://ns.tibco.com/bw/property" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <tibex:VariableDescriptor type="MemorySaving">
-        <task name="setProcessName">
+        <task name="getInterfaceId">
             <endingVariables>
-                <variable>setProcessName-input</variable>
-                <variable>setProcessName</variable>
+                <variable>getInterfaceId-input</variable>
             </endingVariables>
         </task>
         <task name="L_Set_LogStart">
@@ -55,6 +57,7 @@
         <task name="L_Get_InterfaceInfo">
             <endingVariables>
                 <variable>L_Get_InterfaceInfo-input</variable>
+                <variable>getInterfaceId</variable>
             </endingVariables>
         </task>
         <task name="ediBytesToJson">
@@ -84,7 +87,6 @@
         <task name="HexToBytes">
             <endingVariables>
                 <variable>HexToBytes-input</variable>
-                <variable>CISRequestReply</variable>
             </endingVariables>
         </task>
         <task name="ReplytoJMSMessage">
@@ -96,7 +98,12 @@
         <task name="L_Set_LogEnd">
             <endingVariables>
                 <variable>L_Set_LogEnd-input</variable>
-                <variable>L_Get_InterfaceInfo</variable>
+                <variable>CISRequestReply</variable>
+            </endingVariables>
+        </task>
+        <task name="EDILog">
+            <endingVariables>
+                <variable>EDILog-input</variable>
             </endingVariables>
         </task>
         <task name="L_Set_LogError">
@@ -455,17 +462,11 @@
             targetNamespace="www.tibco.com/plugin/java/JavaInvokeActivityInput+c2037ae7-c684-427b-80b7-e8cbaf8714ce+JavaInvokeActivityInput"
             xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="www.tibco.com/plugin/java/JavaInvokeActivityInput+c2037ae7-c684-427b-80b7-e8cbaf8714ce+JavaInvokeActivityInput">
             <complexType name="MutTypeMethodParameters">
-                <sequence>
-                    <element form="unqualified" maxOccurs="1"
-                        minOccurs="1" name="processName" type="string"/>
-                </sequence>
+                <sequence/>
             </complexType>
             <element name="JavaInvokeActivityInput" type="tns:MutTypeMethodInputRoot"/>
             <complexType name="MutTypeMethodInputRoot">
-                <sequence>
-                    <element form="unqualified" maxOccurs="1"
-                        minOccurs="1" name="MethodParameters" type="tns:MutTypeMethodParameters"/>
-                </sequence>
+                <sequence/>
             </complexType>
         </schema>
         <schema attributeFormDefault="unqualified"
@@ -474,7 +475,10 @@
             xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="www.tibco.com/plugin/java/JavaInvokeActivityOutput+c2037ae7-c684-427b-80b7-e8cbaf8714ce+JavaInvokeActivityOutput">
             <element name="JavaInvokeActivityOutput" type="tns:MutTypeMethodOutputRoot"/>
             <complexType name="MutTypeMethodOutputRoot">
-                <sequence/>
+                <sequence>
+                    <element form="unqualified" maxOccurs="1"
+                        minOccurs="0" name="MethodReturnValue" type="string"/>
+                </sequence>
             </complexType>
         </schema>
         <schema elementFormDefault="unqualified"
@@ -532,10 +536,6 @@
             xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="www.tibco.com/plugin/java/JavaInvokeActivityInput+fa8e4c1b-5f33-493d-85c4-4bbfcd00517c+JavaInvokeActivityInput">
             <complexType name="MutTypeMethodParameters">
                 <sequence>
-                    <element form="unqualified" maxOccurs="1"
-                        minOccurs="1" name="projPath" type="string"/>
-                    <element form="unqualified" maxOccurs="1"
-                        minOccurs="1" name="processName" type="string"/>
                     <element form="unqualified" maxOccurs="1"
                         minOccurs="1" name="msgType" type="string"/>
                     <element form="unqualified" maxOccurs="1"
@@ -599,7 +599,9 @@
         <schema attributeFormDefault="unqualified"
             elementFormDefault="qualified"
             targetNamespace="www.tibco.com/plugin/java/JavaInvokeActivityInput+5fb57cb9-1492-4d88-be6d-185b0073efa5+JavaInvokeActivityInput"
-            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="www.tibco.com/plugin/java/JavaInvokeActivityInput+5fb57cb9-1492-4d88-be6d-185b0073efa5+JavaInvokeActivityInput">
+            xmlns="http://www.w3.org/2001/XMLSchema"
+            xmlns:Q1="http://www.tibco.com/tnt/utilitySchema" xmlns:tns="www.tibco.com/plugin/java/JavaInvokeActivityInput+5fb57cb9-1492-4d88-be6d-185b0073efa5+JavaInvokeActivityInput">
+            <import namespace="http://www.tibco.com/tnt/utilitySchema"/>
             <complexType name="MutTypeMethodParameters">
                 <sequence>
                     <element form="unqualified" maxOccurs="1"
@@ -611,6 +613,9 @@
             <element name="JavaInvokeActivityInput" type="tns:MutTypeMethodInputRoot"/>
             <complexType name="MutTypeMethodInputRoot">
                 <sequence>
+                    <element form="unqualified" maxOccurs="1"
+                        minOccurs="1"
+                        name="com.hcis.eai.common.HCISHelper" type="Q1:nativeJavaObjectKey"/>
                     <element form="unqualified" maxOccurs="1"
                         minOccurs="1" name="MethodParameters" type="tns:MutTypeMethodParameters"/>
                 </sequence>
@@ -1395,6 +1400,55 @@
                 </choice>
             </complexType>
         </schema>
+        <schema attributeFormDefault="unqualified"
+            elementFormDefault="qualified"
+            targetNamespace="www.tibco.com/plugin/java/JavaInvokeActivityInput+efca69eb-57d2-40be-8645-cf71a03bdc55+JavaInvokeActivityInput"
+            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="www.tibco.com/plugin/java/JavaInvokeActivityInput+efca69eb-57d2-40be-8645-cf71a03bdc55+JavaInvokeActivityInput">
+            <complexType name="MutTypeMethodParameters">
+                <sequence>
+                    <element form="unqualified" maxOccurs="1"
+                        minOccurs="1" name="bytes" type="base64Binary"/>
+                </sequence>
+            </complexType>
+            <element name="JavaInvokeActivityInput" type="tns:MutTypeMethodInputRoot"/>
+            <complexType name="MutTypeMethodInputRoot">
+                <sequence>
+                    <element form="unqualified" maxOccurs="1"
+                        minOccurs="1" name="MethodParameters" type="tns:MutTypeMethodParameters"/>
+                </sequence>
+            </complexType>
+        </schema>
+        <schema attributeFormDefault="unqualified"
+            elementFormDefault="qualified"
+            targetNamespace="www.tibco.com/plugin/java/JavaInvokeActivityOutput+efca69eb-57d2-40be-8645-cf71a03bdc55+JavaInvokeActivityOutput"
+            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="www.tibco.com/plugin/java/JavaInvokeActivityOutput+efca69eb-57d2-40be-8645-cf71a03bdc55+JavaInvokeActivityOutput">
+            <element name="JavaInvokeActivityOutput" type="tns:MutTypeMethodOutputRoot"/>
+            <complexType name="MutTypeMethodOutputRoot">
+                <sequence>
+                    <element form="unqualified" maxOccurs="1"
+                        minOccurs="0" name="MethodReturnValue" type="string"/>
+                </sequence>
+            </complexType>
+        </schema>
+        <schema elementFormDefault="unqualified"
+            targetNamespace="http://tns.tibco.com/bw/palette/internal/activityerror+efca69eb-57d2-40be-8645-cf71a03bdc55"
+            xmlns="http://www.w3.org/2001/XMLSchema"
+            xmlns:Q1="http://www.example.org/JavaExceptions" xmlns:tns="http://tns.tibco.com/bw/palette/internal/activityerror+efca69eb-57d2-40be-8645-cf71a03bdc55">
+            <import namespace="http://www.example.org/JavaExceptions"/>
+            <element name="ActivityErrorData" type="tns:ActivityErrorDataType"/>
+            <complexType name="ActivityErrorDataType">
+                <choice>
+                    <element maxOccurs="1" minOccurs="0" ref="Q1:InvocationException"/>
+                </choice>
+            </complexType>
+        </schema>
+        <schema elementFormDefault="qualified"
+            targetNamespace="http://www.tibco.com/tnt/utilitySchema"
+            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.tibco.com/tnt/utilitySchema">
+            <simpleType name="nativeJavaObjectKey">
+                <restriction base="string"/>
+            </simpleType>
+        </schema>
     </tibex:Types>
     <tibex:ProcessInfo callable="false" createdBy="javal"
         createdOn="Tue Jan 31 17:13:14 KST 2023" description=""
@@ -1467,7 +1521,7 @@
                                     <layoutConstraint
                                     height="40" width="40"
                                     x="10"
-                                    xsi:type="notation:Bounds" y="42"/>
+                                    xsi:type="notation:Bounds" y="56"/>
                                     </children>
                                     <children type="4002 bw.java.javamethod">
                                     <children type="4017">
@@ -1504,7 +1558,7 @@
                                     <layoutConstraint
                                     height="40" width="40"
                                     x="130"
-                                    xsi:type="notation:Bounds" y="42"/>
+                                    xsi:type="notation:Bounds" y="56"/>
                                     </children>
                                     <children type="4002">
                                     <children type="4017">
@@ -1538,8 +1592,8 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.2"/>
-                                    <layoutConstraint x="345"
-                                    xsi:type="notation:Bounds" y="42"/>
+                                    <layoutConstraint x="426"
+                                    xsi:type="notation:Bounds" y="56"/>
                                     </children>
                                     <children type="4002">
                                     <children type="4017">
@@ -1573,8 +1627,8 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.3"/>
-                                    <layoutConstraint x="240"
-                                    xsi:type="notation:Bounds" y="42"/>
+                                    <layoutConstraint x="229"
+                                    xsi:type="notation:Bounds" y="56"/>
                                     </children>
                                     <children type="4002 bw.java.javamethod">
                                     <children type="4017">
@@ -1610,8 +1664,8 @@
                                     <element href="//0/@process/@activity/@activity/@activities.4"/>
                                     <layoutConstraint
                                     height="40" width="40"
-                                    x="455"
-                                    xsi:type="notation:Bounds" y="42"/>
+                                    x="519"
+                                    xsi:type="notation:Bounds" y="56"/>
                                     </children>
                                     <children type="4002 bw.java.javamethod">
                                     <children type="4017">
@@ -1647,8 +1701,8 @@
                                     <element href="//0/@process/@activity/@activity/@activities.5"/>
                                     <layoutConstraint
                                     height="40" width="40"
-                                    x="560"
-                                    xsi:type="notation:Bounds" y="42"/>
+                                    x="636"
+                                    xsi:type="notation:Bounds" y="56"/>
                                     </children>
                                     <children type="4002 bw.java.javamethod">
                                     <children type="4017">
@@ -1685,7 +1739,7 @@
                                     <layoutConstraint
                                     height="40" width="40"
                                     x="757"
-                                    xsi:type="notation:Bounds" y="42"/>
+                                    xsi:type="notation:Bounds" y="56"/>
                                     </children>
                                     <children type="4002 bw.jms.requestreply">
                                     <children type="4017">
@@ -1833,6 +1887,58 @@
                                     <layoutConstraint x="684"
                                     xsi:type="notation:Bounds" y="185"/>
                                     </children>
+                                    <children
+                                    description="BC 제휴 카드정보 수신"
+                                    fillColor="13369343"
+                                    fontName="맑은 고딕"
+                                    lineColor="6737151"
+                                    lineWidth="1"
+                                    transparency="0" type="Note" xsi:type="notation:Shape">
+                                    <children type="DiagramName" xsi:type="notation:BasicDecorationNode">
+                                    <element xsi:nil="true"/>
+                                    </children>
+                                    <children type="Description" xsi:type="notation:BasicDecorationNode">
+                                    <element xsi:nil="true"/>
+                                    </children>
+                                    <styles xsi:type="notation:TextStyle"/>
+                                    <styles xsi:type="notation:LineTypeStyle"/>
+                                    <element xsi:nil="true"/>
+                                    <layoutConstraint
+                                    height="37" x="58" xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4002 bw.java.javamethod">
+                                    <children type="4017">
+                                    <styles fontName="맑은 고딕"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles fontName="맑은 고딕"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles fontName="맑은 고딕"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles fontName="맑은 고딕"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <styles fontName="맑은 고딕"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.11"/>
+                                    <layoutConstraint
+                                    height="40" width="40"
+                                    x="327"
+                                    xsi:type="notation:Bounds" y="56"/>
+                                    </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
@@ -1845,7 +1951,7 @@
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity"/>
-                                    <layoutConstraint height="384"
+                                    <layoutConstraint height="285"
                                     width="1082" xsi:type="notation:Bounds"/>
                                 </children>
                                 <styles xsi:type="notation:SortingStyle"/>
@@ -2005,7 +2111,7 @@
         </edges>
         <edges
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2" type="4006">
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.12" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
@@ -2092,6 +2198,26 @@
             <element href="//0/@process/@activity/@activity/@links/@children.9"/>
             <bendpoints points="[25, -6, -147, 0]$[148, 0, -24, 6]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
+        <edges lineColor="0" lineWidth="1"
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.11"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0"
+            type="NoteAttachment" xsi:type="notation:Connector">
+            <styles xsi:type="notation:ArrowStyle"/>
+            <styles xsi:type="notation:LineTypeStyle"/>
+            <element xsi:nil="true"/>
+            <bendpoints points="[0, 0, -71, -66]$[47, 43, -24, -23]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.12"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="맑은 고딕" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.10"/>
+            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
     </notation:Diagram>
     <tibex:NamespaceRegistry enabled="true">
         <tibex:namespaceItem
@@ -2120,6 +2246,12 @@
             namespace="http://schema.hcis.com/xsd/JNICISCTIC0040101" prefix="ns2"/>
         <tibex:namespaceItem
             namespace="activity.jsonParser.input+c28f78dc-ba9d-438b-ac2e-704d5720fb01+ActivityInputType" prefix="tns5"/>
+        <tibex:namespaceItem
+            namespace="www.tibco.com/plugin/java/JavaInvokeActivityInput+c2037ae7-c684-427b-80b7-e8cbaf8714ce+JavaInvokeActivityInput" prefix="tns13"/>
+        <tibex:namespaceItem
+            namespace="www.tibco.com/plugin/java/JavaInvokeActivityInput+efca69eb-57d2-40be-8645-cf71a03bdc55+JavaInvokeActivityInput" prefix="tns6"/>
+        <tibex:namespaceItem
+            namespace="www.tibco.com/plugin/java/JavaInvokeActivityInput+5fb57cb9-1492-4d88-be6d-185b0073efa5+JavaInvokeActivityInput" prefix="tns9"/>
     </tibex:NamespaceRegistry>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.cspi_library.org/Log"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.cspi_library.org/Library"/>
@@ -2134,19 +2266,12 @@
                 <bpws:literal>Jms.ESB</bpws:literal>
             </bpws:from>
         </bpws:variable>
-        <bpws:variable name="ModuleHelper" sca-bpel:hotUpdate="false"
-            sca-bpel:privateProperty="true" sca-bpel:property="yes"
-            sca-bpel:sharedResourceType="{http://ns.tibco.com/bw/palette/javasharedresource}JavaGlobalInstanceResource" type="xsd:string">
-            <bpws:from>
-                <bpws:literal>BCCCISCT.BC_CT</bpws:literal>
-            </bpws:from>
-        </bpws:variable>
         <bpws:variable element="ns1:JavaInvokeActivityInput"
-            name="setProcessName-input" sca-bpel:internal="true"/>
+            name="getInterfaceId-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns2:JavaInvokeActivityOutput"
-            name="setProcessName" sca-bpel:internal="true"/>
+            name="getInterfaceId" sca-bpel:internal="true"/>
         <bpws:variable element="ns3:ActivityErrorData"
-            name="_error_setProcessName" sca-bpel:internal="true"/>
+            name="_error_getInterfaceId" sca-bpel:internal="true"/>
         <bpws:variable element="ns4:SetLog" name="L_Set_LogStart-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns5:SetInterface"
             name="L_Get_InterfaceInfo-input" sca-bpel:internal="true"/>
@@ -2191,6 +2316,12 @@
         <bpws:variable name="FaultName" sca-bpel:internal="true" type="xsd:string"/>
         <bpws:variable element="ns:FaultDetail" name="FaultDetails" sca-bpel:internal="true"/>
         <bpws:variable element="ns4:SetLog" name="L_Set_LogError-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns31:JavaInvokeActivityInput"
+            name="EDILog-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns32:JavaInvokeActivityOutput"
+            name="EDILog" sca-bpel:internal="true"/>
+        <bpws:variable element="ns33:ActivityErrorData"
+            name="_error_EDILog" sca-bpel:internal="true"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -2215,7 +2346,7 @@
                                 type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                 <tibex:inputBindings>
                                     <tibex:inputBinding coercion=""
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:Log=&quot;http://www.cspi_library.org/Log&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;_error&quot;/>&lt;xsl:template name=&quot;L_Set_LogError-input&quot; match=&quot;/&quot;>&lt;Log:SetLog>&lt;Log:Error>&lt;Log:StackTrace>&lt;xsl:value-of select=&quot;$_error/StackTrace&quot;/>&lt;/Log:StackTrace>&lt;Log:Msg>&lt;xsl:value-of select=&quot;$_error/Msg&quot;/>&lt;/Log:Msg>&lt;Log:FullClass>&lt;xsl:value-of select=&quot;$_error/FullClass&quot;/>&lt;/Log:FullClass>&lt;Log:ProcessStack>&lt;xsl:value-of select=&quot;$_error/ProcessStack&quot;/>&lt;/Log:ProcessStack>&lt;xsl:if test=&quot;$_error/MsgCode&quot;>&lt;Log:MsgCode>&lt;xsl:value-of select=&quot;$_error/MsgCode&quot;/>&lt;/Log:MsgCode>&lt;/xsl:if>&lt;Log:Data>&lt;xsl:copy-of select=&quot;$_error/Data/ancestor-or-self::*/namespace::node()&quot;/>&lt;xsl:copy-of select=&quot;$_error/Data/@*&quot;/>&lt;xsl:copy-of select=&quot;$_error/Data/node()&quot;/>&lt;/Log:Data>&lt;/Log:Error>&lt;/Log:SetLog>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:Log=&quot;http://www.cspi_library.org/Log&quot; xmlns:Library=&quot;http://www.cspi_library.org/Library&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;_error&quot;/>&lt;xsl:param name=&quot;L_Get_InterfaceInfo&quot;/>&lt;xsl:param name=&quot;EDILog&quot;/>&lt;xsl:template name=&quot;L_Set_LogError-input&quot; match=&quot;/&quot;>&lt;Log:SetLog>&lt;xsl:if test=&quot;$L_Get_InterfaceInfo/Library:InterfaceSysId&quot;>&lt;Log:InterfaceSysId>&lt;xsl:value-of select=&quot;$L_Get_InterfaceInfo/Library:InterfaceSysId&quot;/>&lt;/Log:InterfaceSysId>&lt;/xsl:if>&lt;Log:Detail>&lt;Log:Key>&lt;xsl:value-of select=&quot;&amp;quot;BIZ_UUID&amp;quot;&quot;/>&lt;/Log:Key>&lt;Log:Value>&lt;xsl:value-of select=&quot;$L_Get_InterfaceInfo/Library:InterfaceId&quot;/>&lt;/Log:Value>&lt;/Log:Detail>&lt;Log:Detail>&lt;Log:Key>&lt;xsl:value-of select=&quot;&amp;quot;EI_INFO&amp;quot;&quot;/>&lt;/Log:Key>&lt;Log:Value>&lt;xsl:value-of select=&quot;$EDILog/MethodReturnValue&quot;/>&lt;/Log:Value>&lt;/Log:Detail>&lt;Log:Error>&lt;Log:StackTrace>&lt;xsl:value-of select=&quot;$_error/StackTrace&quot;/>&lt;/Log:StackTrace>&lt;Log:Msg>&lt;xsl:value-of select=&quot;$_error/Msg&quot;/>&lt;/Log:Msg>&lt;Log:FullClass>&lt;xsl:value-of select=&quot;$_error/FullClass&quot;/>&lt;/Log:FullClass>&lt;Log:ProcessStack>&lt;xsl:value-of select=&quot;$_error/ProcessStack&quot;/>&lt;/Log:ProcessStack>&lt;xsl:if test=&quot;$_error/MsgCode&quot;>&lt;Log:MsgCode>&lt;xsl:value-of select=&quot;$_error/MsgCode&quot;/>&lt;/Log:MsgCode>&lt;/xsl:if>&lt;Log:Data>&lt;xsl:copy-of select=&quot;$_error/Data/ancestor-or-self::*/namespace::node()&quot;/>&lt;xsl:copy-of select=&quot;$_error/Data/@*&quot;/>&lt;xsl:copy-of select=&quot;$_error/Data/node()&quot;/>&lt;/Log:Data>&lt;/Log:Error>&lt;/Log:SetLog>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                 </tibex:inputBindings>
                                 <tibex:CallProcess
                                     moduleRef="CSPI_Library"
@@ -2238,6 +2369,7 @@
                 <bpws:link name="JMSRequestReplyToHexToBytes" tibex:linkType="SUCCESS"/>
                 <bpws:link name="HexToBytesToReplytoJMSMessage" tibex:linkType="SUCCESS"/>
                 <bpws:link name="ReplytoJMSMessageToL_Set_LogEnd" tibex:linkType="SUCCESS"/>
+                <bpws:link name="JavaInvokeToL_Set_LogStart" tibex:linkType="SUCCESS"/>
             </bpws:links>
             <bpws:extensionActivity>
                 <tibex:receiveEvent createInstance="yes"
@@ -2272,9 +2404,9 @@
             </bpws:extensionActivity>
             <bpws:extensionActivity>
                 <tibex:activityExtension
-                    inputVariable="setProcessName-input"
-                    name="setProcessName"
-                    outputVariable="setProcessName"
+                    inputVariable="getInterfaceId-input"
+                    name="getInterfaceId"
+                    outputVariable="getInterfaceId"
                     tibex:xpdlId="c2037ae7-c684-427b-80b7-e8cbaf8714ce" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
                         <bpws:target linkName="Q.CIS.AH30STosetProcessName"/>
@@ -2284,7 +2416,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns13=&quot;www.tibco.com/plugin/java/JavaInvokeActivityInput+c2037ae7-c684-427b-80b7-e8cbaf8714ce+JavaInvokeActivityInput&quot; xmlns:bw=&quot;http://www.tibco.com/bw/xpath/bw-custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:template name=&quot;setProcessName-input&quot; match=&quot;/&quot;>&lt;tns13:JavaInvokeActivityInput>&lt;MethodParameters>&lt;processName>&lt;xsl:value-of select=&quot;bw:getModuleProperty(&amp;quot;BW.PROCESS.NAME&amp;quot;)&quot;/>&lt;/processName>&lt;/MethodParameters>&lt;/tns13:JavaInvokeActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns13=&quot;www.tibco.com/plugin/java/JavaInvokeActivityInput+c2037ae7-c684-427b-80b7-e8cbaf8714ce+JavaInvokeActivityInput&quot; xmlns:bw=&quot;http://www.tibco.com/bw/xpath/bw-custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:template name=&quot;getInterfaceId-input&quot; match=&quot;/&quot;>&lt;tns13:JavaInvokeActivityInput/>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -2296,16 +2428,13 @@
                                 <properties name="config" xsi:type="activityconfig:EMFProperty">
                                     <type href="http://ns.tibco.com/bw/palette/java#//JavaMethod"/>
                                     <value
-                                    className="com.hcis.eai.module.HCISHelper"
+                                    className="com.hcis.eai.common.HCISHelper"
+                                    constructDeclaredClass="true"
                                     icon="HcisCommon.smodule\Resources\icons\outgoing-data-48.png"
                                     isNew="true"
                                     isNewActivity="true"
-                                    javaGlobalInstance="ModuleHelper"
-                                    methodName="setProcessName"
-                                    methodReturn="void" xsi:type="java:JavaMethod">
-                                    <methodParameter
-                                    paramName="processName" paramType="string"/>
-                                    </value>
+                                    methodName="getInterfaceId"
+                                    methodReturn="string" xsi:type="java:JavaMethod"/>
                                 </properties>
                             </activityConfig>
                         </bwext:BWActivity>
@@ -2318,14 +2447,14 @@
                     tibex:xpdlId="1e79304d-167f-4195-b594-0f17f855656f"
                     type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
-                        <bpws:target linkName="L_Get_InterfaceInfoToL_Set_LogStart"/>
+                        <bpws:target linkName="JavaInvokeToL_Set_LogStart"/>
                     </bpws:targets>
                     <bpws:sources>
                         <bpws:source linkName="L_Set_LogStartToediBytesToJson"/>
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding coercion=""
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:Library=&quot;http://www.cspi_library.org/Library&quot; xmlns:Log=&quot;http://www.cspi_library.org/Log&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;L_Get_InterfaceInfo&quot;/>&lt;xsl:template name=&quot;L_Set_LogStart-input&quot; match=&quot;/&quot;>&lt;Log:SetLog>&lt;xsl:if test=&quot;$L_Get_InterfaceInfo/Library:InterfaceSysId&quot;>&lt;Log:InterfaceSysId>&lt;xsl:value-of select=&quot;$L_Get_InterfaceInfo/Library:InterfaceSysId&quot;/>&lt;/Log:InterfaceSysId>&lt;/xsl:if>&lt;/Log:SetLog>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:Library=&quot;http://www.cspi_library.org/Library&quot; xmlns:Log=&quot;http://www.cspi_library.org/Log&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;L_Get_InterfaceInfo&quot;/>&#xa;    &lt;xsl:param name=&quot;EDILog&quot;/>&#xa;    &lt;xsl:template name=&quot;L_Set_LogStart-input&quot; match=&quot;/&quot;>&#xa;        &lt;Log:SetLog>&#xa;            &lt;xsl:if test=&quot;$L_Get_InterfaceInfo/Library:InterfaceSysId&quot;>&#xa;                &lt;Log:InterfaceSysId>&#xa;                    &lt;xsl:value-of select=&quot;$L_Get_InterfaceInfo/Library:InterfaceSysId&quot;/>&#xa;                &lt;/Log:InterfaceSysId>&#xa;            &lt;/xsl:if>&#xa;            &lt;Log:Detail>&#xa;                &lt;Log:Key>&#xa;                    &lt;xsl:value-of select=&quot;&amp;quot;BIZ_UUID&amp;quot;&quot;/>&#xa;                &lt;/Log:Key>&#xa;                &lt;Log:Value>&#xa;                    &lt;xsl:value-of select=&quot;$L_Get_InterfaceInfo/Library:InterfaceId&quot;/>&#xa;                &lt;/Log:Value>&#xa;            &lt;/Log:Detail>&#xa;            &lt;Log:Detail>&#xa;                &lt;Log:Key>&#xa;                    &lt;xsl:value-of select=&quot;&amp;quot;EI_INFO&amp;quot;&quot;/>&#xa;                &lt;/Log:Key>&#xa;                &lt;Log:Value>&#xa;                    &lt;xsl:value-of select=&quot;$EDILog/MethodReturnValue&quot;/>&#xa;                &lt;/Log:Value>&#xa;            &lt;/Log:Detail>&#xa;        &lt;/Log:SetLog>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:CallProcess moduleRef="CSPI_Library"
                         subProcessName="L_Set_LogStart" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
@@ -2346,7 +2475,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding coercion=""
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:Library=&quot;http://www.cspi_library.org/Library&quot; xmlns:HCIS=&quot;http://shacon.kr/202301&quot; version=&quot;2.0&quot;>&lt;xsl:template name=&quot;L_Get_InterfaceInfo-input&quot; match=&quot;/&quot;>&lt;Library:SetInterface>&lt;Library:InterfaceId>&lt;xsl:value-of select=&quot;&amp;quot;JNICISCTIC0040101&amp;quot;&quot;/>&lt;/Library:InterfaceId>&lt;Library:InterfaceSysId>&lt;xsl:value-of select=&quot;HCIS:getGUID()&quot;/>&lt;/Library:InterfaceSysId>&lt;/Library:SetInterface>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:Library=&quot;http://www.cspi_library.org/Library&quot; xmlns:HCIS=&quot;http://shacon.kr/202301&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;getInterfaceId&quot;/>&lt;xsl:template name=&quot;L_Get_InterfaceInfo-input&quot; match=&quot;/&quot;>&lt;Library:SetInterface>&lt;Library:InterfaceId>&lt;xsl:value-of select=&quot;$getInterfaceId/MethodReturnValue&quot;/>&lt;/Library:InterfaceId>&lt;Library:InterfaceSysId>&lt;xsl:value-of select=&quot;HCIS:getGUID()&quot;/>&lt;/Library:InterfaceSysId>&lt;/Library:SetInterface>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:CallProcess moduleRef="CSPI_Library"
                         subProcessName="L_Get_InterfaceInfo" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
@@ -2366,7 +2495,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns4=&quot;www.tibco.com/plugin/java/JavaInvokeActivityInput+fa8e4c1b-5f33-493d-85c4-4bbfcd00517c+JavaInvokeActivityInput&quot; xmlns:bw=&quot;http://www.tibco.com/bw/xpath/bw-custom-functions&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;Q.CIS.AH21S&quot;/>&#xa;    &lt;xsl:template name=&quot;ediBytesToJson-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns4:JavaInvokeActivityInput>&#xa;            &lt;MethodParameters>&#xa;                &lt;projPath>&#xa;                    &lt;xsl:value-of select=&quot;bw:getModuleProperty(&amp;quot;PROJ_PATH&amp;quot;)&quot;/>&#xa;                &lt;/projPath>&#xa;                &lt;processName>&#xa;                    &lt;xsl:value-of select=&quot;bw:getModuleProperty(&amp;quot;BW.PROCESS.NAME&amp;quot;)&quot;/>&#xa;                &lt;/processName>&#xa;                &lt;msgType>&#xa;                    &lt;xsl:value-of select=&quot;&amp;quot;JNICISCTIC0040101_InReq&amp;quot;&quot;/>&#xa;                &lt;/msgType>&#xa;                &lt;ediBytes>&#xa;                    &lt;xsl:value-of select=&quot;$Q.CIS.AH21S/Body&quot;/>&#xa;                &lt;/ediBytes>&#xa;                &lt;encoding>&#xa;                    &lt;xsl:value-of select=&quot;&amp;quot;euc-kr&amp;quot;&quot;/>&#xa;                &lt;/encoding>&#xa;                &lt;xml>&#xa;                    &lt;xsl:value-of select=&quot;&amp;quot;&amp;quot;&quot;/>&#xa;                &lt;/xml>&#xa;            &lt;/MethodParameters>&#xa;        &lt;/tns4:JavaInvokeActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns4=&quot;www.tibco.com/plugin/java/JavaInvokeActivityInput+fa8e4c1b-5f33-493d-85c4-4bbfcd00517c+JavaInvokeActivityInput&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Q.CIS.AH21S&quot;/>&lt;xsl:template name=&quot;ediBytesToJson-input&quot; match=&quot;/&quot;>&lt;tns4:JavaInvokeActivityInput>&lt;MethodParameters>&lt;msgType>&lt;xsl:value-of select=&quot;&amp;quot;_InReq&amp;quot;&quot;/>&lt;/msgType>&lt;ediBytes>&lt;xsl:value-of select=&quot;$Q.CIS.AH21S/Body&quot;/>&lt;/ediBytes>&lt;encoding>&lt;xsl:value-of select=&quot;&amp;quot;euc-kr&amp;quot;&quot;/>&lt;/encoding>&lt;xml>&lt;xsl:value-of select=&quot;&amp;quot;&amp;quot;&quot;/>&lt;/xml>&lt;/MethodParameters>&lt;/tns4:JavaInvokeActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -2378,18 +2507,14 @@
                                 <properties name="config" xsi:type="activityconfig:EMFProperty">
                                     <type href="http://ns.tibco.com/bw/palette/java#//JavaMethod"/>
                                     <value
-                                    className="com.hcis.eai.module.HCISHelper"
+                                    className="com.hcis.eai.common.HCISHelper"
+                                    constructDeclaredClass="true"
                                     icon="HcisCommon.smodule\Resources\icons\json-48.png"
                                     isNew="true"
                                     isNewActivity="true"
-                                    javaGlobalInstance="ModuleHelper"
                                     methodName="EDIbytesToJson"
                                     methodReturn="string" xsi:type="java:JavaMethod">
                                     <exceptionTypes>java.lang.Exception</exceptionTypes>
-                                    <methodParameter
-                                    paramName="projPath" paramType="string"/>
-                                    <methodParameter
-                                    paramName="processName" paramType="string"/>
                                     <methodParameter
                                     paramName="msgType" paramType="string"/>
                                     <methodParameter
@@ -2417,7 +2542,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns9=&quot;www.tibco.com/plugin/java/JavaInvokeActivityInput+5fb57cb9-1492-4d88-be6d-185b0073efa5+JavaInvokeActivityInput&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;ediBytesToJson&quot;/>&#xa;    &lt;xsl:template name=&quot;JavaInvoke1-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns9:JavaInvokeActivityInput>&#xa;            &lt;MethodParameters>&#xa;                &lt;data>&#xa;                    &lt;xsl:value-of select=&quot;$ediBytesToJson/MethodReturnValue&quot;/>&#xa;                &lt;/data>&#xa;                &lt;encoding>&#xa;                    &lt;xsl:value-of select=&quot;&amp;quot;UTF-8&amp;quot;&quot;/>&#xa;                &lt;/encoding>&#xa;            &lt;/MethodParameters>&#xa;        &lt;/tns9:JavaInvokeActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns9=&quot;www.tibco.com/plugin/java/JavaInvokeActivityInput+5fb57cb9-1492-4d88-be6d-185b0073efa5+JavaInvokeActivityInput&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;ediBytesToJson&quot;/>&lt;xsl:template name=&quot;to3ByteHangle-input&quot; match=&quot;/&quot;>&lt;tns9:JavaInvokeActivityInput>&lt;com.hcis.eai.common.HCISHelper>&lt;xsl:value-of select=&quot;&amp;quot;com.hcis.eai.common.HCISHelper&amp;quot;&quot;/>&lt;/com.hcis.eai.common.HCISHelper>&lt;MethodParameters>&lt;data>&lt;xsl:value-of select=&quot;$ediBytesToJson/MethodReturnValue&quot;/>&lt;/data>&lt;encoding>&lt;xsl:value-of select=&quot;&amp;quot;UTF-8&amp;quot;&quot;/>&lt;/encoding>&lt;/MethodParameters>&lt;/tns9:JavaInvokeActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -2429,11 +2554,10 @@
                                 <properties name="config" xsi:type="activityconfig:EMFProperty">
                                     <type href="http://ns.tibco.com/bw/palette/java#//JavaMethod"/>
                                     <value
-                                    className="com.hcis.eai.module.HCISHelper"
+                                    className="com.hcis.eai.common.HCISHelper"
                                     icon="HcisCommon.smodule\Resources\icons\change-48.png"
                                     isNew="true"
                                     isNewActivity="true"
-                                    javaGlobalInstance="ModuleHelper"
                                     methodName="encodeCharset"
                                     methodReturn="string" xsi:type="java:JavaMethod">
                                     <exceptionTypes>java.io.UnsupportedEncodingException</exceptionTypes>
@@ -2473,11 +2597,11 @@
                                 <properties name="config" xsi:type="activityconfig:EMFProperty">
                                     <type href="http://ns.tibco.com/bw/palette/java#//JavaMethod"/>
                                     <value
-                                    className="com.hcis.eai.common.HCISHelperAnc"
+                                    className="com.hcis.eai.common.HCISHelper"
+                                    constructDeclaredClass="true"
                                     icon="HcisCommon.smodule\Resources\icons\edit-node-48.png"
                                     isNew="true"
                                     isNewActivity="true"
-                                    javaGlobalInstance="ModuleHelper"
                                     methodName="envelopHcis"
                                     methodReturn="string" xsi:type="java:JavaMethod">
                                     <methodParameter
@@ -2503,7 +2627,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns2=&quot;http://www.tibco.com/namespaces/tnt/plugins/jms+2d2d3f39-61f4-4ea3-ad1e-ec2d664a9226+input&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;putCISHeader&quot;/>&lt;xsl:template name=&quot;CISRequestReply-input&quot; match=&quot;/&quot;>&lt;tns2:ActivityInput>&lt;destination>&lt;xsl:value-of select=&quot;&amp;quot;Q.CIS.CISJNICTIC0030102&amp;quot;&quot;/>&lt;/destination>&lt;Body>&lt;xsl:value-of select=&quot;$putCISHeader/MethodReturnValue&quot;/>&lt;/Body>&lt;/tns2:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns2=&quot;http://www.tibco.com/namespaces/tnt/plugins/jms+2d2d3f39-61f4-4ea3-ad1e-ec2d664a9226+input&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;putCISHeader&quot;/>&lt;xsl:template name=&quot;CISRequestReply-input&quot; match=&quot;/&quot;>&lt;tns2:ActivityInput>&lt;destination>&lt;xsl:value-of select=&quot;&amp;quot;Q.CIS.AH21R&amp;quot;&quot;/>&lt;/destination>&lt;Body>&lt;xsl:value-of select=&quot;$putCISHeader/MethodReturnValue&quot;/>&lt;/Body>&lt;/tns2:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -2550,11 +2674,11 @@
                                 <properties name="config" xsi:type="activityconfig:EMFProperty">
                                     <type href="http://ns.tibco.com/bw/palette/java#//JavaMethod"/>
                                     <value
-                                    className="com.hcis.eai.module.HCISHelper"
+                                    className="com.hcis.eai.common.HCISHelper"
+                                    constructDeclaredClass="true"
                                     icon="HcisCommon.smodule\Resources\icons\binary-code-48.png"
                                     isNew="true"
                                     isNewActivity="true"
-                                    javaGlobalInstance="ModuleHelper"
                                     methodName="hexToBytes"
                                     methodReturn="byte[]" xsi:type="java:JavaMethod">
                                     <methodParameter paramName="hex" paramType="string"/>
@@ -2608,11 +2732,50 @@
                     </bpws:targets>
                     <tibex:inputBindings>
                         <tibex:inputBinding coercion=""
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:Library=&quot;http://www.cspi_library.org/Library&quot; xmlns:Log=&quot;http://www.cspi_library.org/Log&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;L_Get_InterfaceInfo&quot;/>&lt;xsl:template name=&quot;L_Set_LogEnd-input&quot; match=&quot;/&quot;>&lt;Log:SetLog>&lt;xsl:if test=&quot;$L_Get_InterfaceInfo/Library:InterfaceSysId&quot;>&lt;Log:InterfaceSysId>&lt;xsl:value-of select=&quot;$L_Get_InterfaceInfo/Library:InterfaceSysId&quot;/>&lt;/Log:InterfaceSysId>&lt;/xsl:if>&lt;/Log:SetLog>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:Library=&quot;http://www.cspi_library.org/Library&quot; xmlns:Log=&quot;http://www.cspi_library.org/Log&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;L_Get_InterfaceInfo&quot;/>&lt;xsl:param name=&quot;CISRequestReply&quot;/>&lt;xsl:template name=&quot;L_Set_LogEnd-input&quot; match=&quot;/&quot;>&lt;Log:SetLog>&lt;xsl:if test=&quot;$L_Get_InterfaceInfo/Library:InterfaceSysId&quot;>&lt;Log:InterfaceSysId>&lt;xsl:value-of select=&quot;$L_Get_InterfaceInfo/Library:InterfaceSysId&quot;/>&lt;/Log:InterfaceSysId>&lt;/xsl:if>&lt;Log:Detail>&lt;Log:Key>&lt;xsl:value-of select=&quot;&amp;quot;BIZ_INFO&amp;quot;&quot;/>&lt;/Log:Key>&lt;Log:Value>&lt;xsl:value-of select=&quot;$L_Get_InterfaceInfo/Library:InterfaceId&quot;/>&lt;/Log:Value>&lt;/Log:Detail>&lt;Log:Detail>&lt;Log:Key>&lt;xsl:value-of select=&quot;&amp;quot;EI_INFO&amp;quot;&quot;/>&lt;/Log:Key>&lt;Log:Value>&lt;xsl:value-of select=&quot;$CISRequestReply/Body&quot;/>&lt;/Log:Value>&lt;/Log:Detail>&lt;/Log:SetLog>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:CallProcess moduleRef="CSPI_Library"
                         subProcessName="L_Set_LogEnd" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
                 </tibex:extActivity>
+            </bpws:extensionActivity>
+            <bpws:extensionActivity>
+                <tibex:activityExtension inputVariable="EDILog-input"
+                    name="EDILog" outputVariable="EDILog"
+                    tibex:xpdlId="efca69eb-57d2-40be-8645-cf71a03bdc55" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                    <bpws:targets>
+                        <bpws:target linkName="L_Get_InterfaceInfoToL_Set_LogStart"/>
+                    </bpws:targets>
+                    <bpws:sources>
+                        <bpws:source linkName="JavaInvokeToL_Set_LogStart"/>
+                    </bpws:sources>
+                    <tibex:inputBindings>
+                        <tibex:inputBinding
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns6=&quot;www.tibco.com/plugin/java/JavaInvokeActivityInput+efca69eb-57d2-40be-8645-cf71a03bdc55+JavaInvokeActivityInput&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Q.CIS.AH21S&quot;/>&lt;xsl:template name=&quot;JavaInvoke-input&quot; match=&quot;/&quot;>&lt;tns6:JavaInvokeActivityInput>&lt;MethodParameters>&lt;bytes>&lt;xsl:value-of select=&quot;$Q.CIS.AH21S/Body&quot;/>&lt;/bytes>&lt;/MethodParameters>&lt;/tns6:JavaInvokeActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                    </tibex:inputBindings>
+                    <tibex:config>
+                        <bwext:BWActivity
+                            activityTypeID="bw.java.javamethod"
+                            xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
+                            xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
+                            xmlns:java="http://ns.tibco.com/bw/palette/java" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <activityConfig>
+                                <properties name="config" xsi:type="activityconfig:EMFProperty">
+                                    <type href="http://ns.tibco.com/bw/palette/java#//JavaMethod"/>
+                                    <value
+                                    className="com.hcis.eai.common.HCISHelper"
+                                    constructDeclaredClass="true"
+                                    isNew="true"
+                                    isNewActivity="true"
+                                    methodName="bytesToHexString"
+                                    methodReturn="string" xsi:type="java:JavaMethod">
+                                    <methodParameter
+                                    paramName="bytes" paramType="byte[]"/>
+                                    </value>
+                                </properties>
+                            </activityConfig>
+                        </bwext:BWActivity>
+                    </tibex:config>
+                </tibex:activityExtension>
             </bpws:extensionActivity>
         </bpws:flow>
     </bpws:scope>

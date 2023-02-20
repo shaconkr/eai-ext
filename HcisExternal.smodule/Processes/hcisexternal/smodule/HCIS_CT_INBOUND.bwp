@@ -1850,13 +1850,6 @@
                 <bpws:literal>1</bpws:literal>
             </bpws:from>
         </bpws:variable>
-        <bpws:variable name="CommonHelper" sca-bpel:hotUpdate="false"
-            sca-bpel:privateProperty="true" sca-bpel:property="yes"
-            sca-bpel:sharedResourceType="{http://ns.tibco.com/bw/palette/javasharedresource}JavaGlobalInstanceResource" type="xsd:string">
-            <bpws:from>
-                <bpws:literal>hciscommon.smodule.HcisCommon</bpws:literal>
-            </bpws:from>
-        </bpws:variable>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -2124,11 +2117,11 @@
                                 <properties name="config" xsi:type="activityconfig:EMFProperty">
                                     <type href="http://ns.tibco.com/bw/palette/java#//JavaMethod"/>
                                     <value
-                                    className="com.hcis.eai.common.HCISHelperAnc"
+                                    className="com.hcis.eai.common.HCISHelper"
+                                    constructDeclaredClass="true"
                                     icon="HcisCommon.smodule\Resources\icons\binary-file-48.png"
                                     isNew="true"
                                     isNewActivity="true"
-                                    javaGlobalInstance="CommonHelper"
                                     methodName="concatBytes"
                                     methodReturn="byte[]" xsi:type="java:JavaMethod">
                                     <methodParameter

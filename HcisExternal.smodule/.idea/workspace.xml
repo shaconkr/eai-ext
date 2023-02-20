@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c2b61949-3f95-4f00-b1ba-682405c3b1b6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../CISKCB301.module/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/../CISKCB301.module/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CISKCB301.module/Processes/CISKCBCTJB/CISKCBCTJB0020301/CISKCBCTJB0020301_REQ.bwp" beforeDir="false" afterPath="$PROJECT_DIR$/../CISKCB301.module/Processes/CISKCBCTJB/CISKCBCTJB0020301/CISKCBCTJB0020301_REQ.bwp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CISKCB301.module/Processes/CISKCBCTJB/CISKCBCTJB0020302/CISKCBCTJB0020302_REQ.bwp" beforeDir="false" afterPath="$PROJECT_DIR$/../CISKCB301.module/Processes/CISKCBCTJB/CISKCBCTJB0020302/CISKCBCTJB0020302_REQ.bwp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CISKCB301.module/Processes/CISKCBCTJB/CISKCBCTJB0100101/CISKCBCTJB0100101_REQ.bwp" beforeDir="false" afterPath="$PROJECT_DIR$/../CISKCB301.module/Processes/CISKCBCTJB/CISKCBCTJB0100101/CISKCBCTJB0100101_REQ.bwp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CISKCB301.module/Processes/KCBCISCTJB/KCBCISCTJB0020301/KCBCISCTJB0020301_RES.bwp" beforeDir="false" afterPath="$PROJECT_DIR$/../CISKCB301.module/Processes/KCBCISCTJB/KCBCISCTJB0020301/KCBCISCTJB0020301_RES.bwp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CISKCB301.module/Processes/KCBCISCTJB/KCBCISCTJB0020302/KCBCISCTJB0020302_RES.bwp" beforeDir="false" afterPath="$PROJECT_DIR$/../CISKCB301.module/Processes/KCBCISCTJB/KCBCISCTJB0020302/KCBCISCTJB0020302_RES.bwp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CISKCB301.module/Processes/KCBCISCTJB/KCBCISCTJB0100101/KCBCISCTJB0100101_RES.bwp" beforeDir="false" afterPath="$PROJECT_DIR$/../CISKCB301.module/Processes/KCBCISCTJB/KCBCISCTJB0100101/KCBCISCTJB0100101_RES.bwp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hcis/eai/ext/GenSchema.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KSNCIS301.module/build.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../KSNCIS301.module/build.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2LhrLqxcOVlXOnVppDixcoejPdg" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../eai-com/beanio3m" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c2b61949-3f95-4f00-b1ba-682405c3b1b6" name="Changes" comment="" />
+      <created>1676334141349</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1676334141349</updated>
+      <workItem from="1676334149010" duration="312000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:NICCISUPID0010501="http://schema.hcis.com/xsd/NICCISUPID0010501_OutRes" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmi:id="_J0H98KauEe2MspbPgxPMzQ" name="CISNICUPID.CISNICUPID0010501.NICCISUPID0010501_OutRes" type="dataformat:DataFormat">
-  <imports xmi:id="_J0H98aauEe2MspbPgxPMzQ" importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/NICCISUPID0010501_OutRes_df.xsd" namespace="http://schema.hcis.com/xsd/NICCISUPID0010501_OutRes"/>
-  <jndi:configuration xsi:type="dataformat:DataFormat" xmi:id="_J0H98qauEe2MspbPgxPMzQ" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="NICCISUPID0010501:main" fieldOffsetsStr="bizHeader(0,0)&#xA;bizBody(0,0)">
-    <fieldOffsets xmi:id="_J0IlAKauEe2MspbPgxPMzQ" name="bizHeader" kor="0" type="NICCISUPID0010501_OutRes_Header"/>
-    <fieldOffsets xmi:id="_J0IlAaauEe2MspbPgxPMzQ" name="bizBody" kor="0" type="NICCISUPID0010501_OutRes_Body"/>
-  </jndi:configuration>
-</jndi:namedResource>

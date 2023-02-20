@@ -1365,14 +1365,6 @@
             name="uncompressGzip" sca-bpel:internal="true"/>
         <bpws:variable element="ns15:ActivityErrorData"
             name="_error_uncompressGzip" sca-bpel:internal="true"/>
-        <bpws:variable name="JavaGlobalInstanceProperty"
-            sca-bpel:hotUpdate="false" sca-bpel:privateProperty="true"
-            sca-bpel:property="yes"
-            sca-bpel:sharedResourceType="{http://ns.tibco.com/bw/palette/javasharedresource}JavaGlobalInstanceResource" type="xsd:string">
-            <bpws:from>
-                <bpws:literal>ext.nic.NIC_TCP</bpws:literal>
-            </bpws:from>
-        </bpws:variable>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -1658,12 +1650,12 @@
                                     name="config" xsi:type="activityconfig:EMFProperty">
                                     <type href="http://ns.tibco.com/bw/palette/java#//JavaMethod"/>
                                     <value
-                                    className="com.hcis.eai.common.HCISHelperAnc"
+                                    className="com.hcis.eai.common.HCISHelper"
                                     cleanupMethod="loadInf"
+                                    constructDeclaredClass="true"
                                     icon="HcisCommon.smodule\Resources\icons\multicast-48.png"
                                     isNew="true"
                                     isNewActivity="true"
-                                    javaGlobalInstance="JavaGlobalInstanceProperty"
                                     methodName="unCompressGz"
                                     methodReturn="void" xsi:type="java:JavaMethod">
                                     <exceptionTypes>java.io.FileNotFoundException</exceptionTypes>

@@ -2477,7 +2477,7 @@
             sca-bpel:privateProperty="true" sca-bpel:property="yes"
             sca-bpel:sharedResourceType="{http://ns.tibco.com/bw/palette/javasharedresource}JavaGlobalInstanceResource" type="xsd:string">
             <bpws:from>
-                <bpws:literal>CISNICUPID.NIC_J</bpws:literal>
+                <bpws:literal>CISNICUPID.NIC_JAVA</bpws:literal>
             </bpws:from>
         </bpws:variable>
         <bpws:variable element="ns3:JavaInvokeActivityInput"
@@ -2962,7 +2962,7 @@
                                 <properties name="config" xsi:type="activityconfig:EMFProperty">
                                     <type href="http://ns.tibco.com/bw/palette/java#//JavaMethod"/>
                                     <value
-                                    className="com.hcis.eai.module.HCISHelper"
+                                    className="com.hcis.eai.common.HCISHelper"
                                     icon="HcisCommon.smodule\Resources\icons\binary-code-48.png"
                                     isNew="true"
                                     isNewActivity="true"

@@ -7,8 +7,13 @@ Bundle-ClassPath: .,
  .annoxfiles/
 Bundle-Vendor: TIBCO Software Inc.
 Export-Package: CISTOSPMMZ
-Require-Bundle: HcisExternal.smodule;bundle-version="1.0.0",
- HcisCommon.smodule;bundle-version="1.0.0"
+Require-Bundle: HcisExternal.smodule;bundle-version="1.0.0",HcisCommon.smodule;bundle-version="1.0.0"
+TIBCO-BW-Version: 6.9.0 V26 2022-11-02
+TIBCO-BW-JobSharedVariables: META-INF/module.jsv
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+TIBCO-BW-ConfigProfile: META-INF/default.substvar
+TIBCO-BW-ModuleSharedVariables: META-INF/module.msv
+TIBCO-BW-Edition: bwe
 Require-Capability: com.tibco.bw.model; filter:="(name=bwext)",
  com.tibco.bw.module; filter:="(&(name=HcisExternal.smodule)(version=1.0.0))",
  com.tibco.bw.module; filter:="(&(name=CSPI_Library)(version=2.0.0))",
@@ -20,10 +25,4 @@ Require-Capability: com.tibco.bw.model; filter:="(name=bwext)",
  com.tibco.bw.palette; filter:="(name=bw.java)",
  com.tibco.bw.palette; filter:="(name=bw.jms)",
  com.tibco.bw.sharedresource.model; filter:="(name=bw.dataformat)"
-TIBCO-BW-Version: 6.9.0 V26 2022-11-02
-TIBCO-BW-Edition: bwe
 TIBCO-BW-ApplicationModule: META-INF/module.bwm
-Bundle-RequiredExecutionEnvironment: JavaSE-11
-TIBCO-BW-ConfigProfile: META-INF/default.substvar
-TIBCO-BW-ModuleSharedVariables: META-INF/module.msv
-TIBCO-BW-JobSharedVariables: META-INF/module.jsv

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jndi:namedResource xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TOSCISPMCV0020101="http://schema.hcis.com/xsd/TOSCISPMCV0020101_InReq_Body" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" name="TOSCISPMCV/TOSCISPMCV0020101.TOSCISPMCV0020101_InReq_Body" type="dataformat:DataFormat">
+  <jndi:imports importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/TOSCISPMCV0020101_InReq_Body_df.xsd" namespace="http://schema.hcis.com/xsd/TOSCISPMCV0020101_InReq_Body"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="TOSCISPMCV0020101:main" lineLength="230" fieldOffsetsStr="prtcNtcSendDt(0,8)&#xA;prtcNtcEdiNo(8,14)&#xA;parAcno(14,29)&#xA;trdGb(29,31)&#xA;trdOcrnBnkCd(31,33)&#xA;trdAmt(33,46)&#xA;blncSmbl(46,47)&#xA;blnc(47,60)&#xA;iamtStore(60,66)&#xA;iamtNm(66,82)&#xA;checkNo(82,92)&#xA;chocArea1(92,105)&#xA;chocArea2(105,118)&#xA;virtAcno(118,131)&#xA;ptrnCd(131,147)&#xA;trdTime(147,153)&#xA;trdDt(153,161)&#xA;spareArea1(161,174)&#xA;bnkEdiNo(174,180)&#xA;jatongApplYn(180,181)&#xA;commBnkCd(181,184)&#xA;indiBnkCd(184,187)&#xA;iamtStoreCd(187,194)&#xA;spareArea2(194,229)&#xA;bill2ExpirIamtGb(229,230)">
+    <fieldOffsets kor="명세통지전송일" type="string" name="prtcNtcSendDt" start="0" end="8"/>
+    <fieldOffsets kor="명세통지전문번호" type="string" name="prtcNtcEdiNo" start="8" end="14"/>
+    <fieldOffsets kor="모계좌번호" type="string" name="parAcno" start="14" end="29"/>
+    <fieldOffsets kor="거래구분" type="string" name="trdGb" start="29" end="31"/>
+    <fieldOffsets kor="거래발생은행코드" type="string" name="trdOcrnBnkCd" start="31" end="33"/>
+    <fieldOffsets kor="거래금액" type="long" name="trdAmt" start="33" end="46"/>
+    <fieldOffsets kor="잔액부호" type="string" name="blncSmbl" start="46" end="47"/>
+    <fieldOffsets kor="잔액" type="long" name="blnc" start="47" end="60"/>
+    <fieldOffsets kor="입금점" type="string" name="iamtStore" start="60" end="66"/>
+    <fieldOffsets kor="입금인성명" type="string" name="iamtNm" start="66" end="82"/>
+    <fieldOffsets kor="수표번호" type="string" name="checkNo" start="82" end="92"/>
+    <fieldOffsets kor="선택영역1" type="string" name="chocArea1" start="92" end="105"/>
+    <fieldOffsets kor="선택영역2" type="string" name="chocArea2" start="105" end="118"/>
+    <fieldOffsets kor="가상계좌번호" type="string" name="virtAcno" start="118" end="131"/>
+    <fieldOffsets kor="거래처코드" type="string" name="ptrnCd" start="131" end="147"/>
+    <fieldOffsets kor="거래시간" type="string" name="trdTime" start="147" end="153"/>
+    <fieldOffsets kor="거래일자" type="string" name="trdDt" start="153" end="161"/>
+    <fieldOffsets kor="예비영역1" type="string" name="spareArea1" start="161" end="174"/>
+    <fieldOffsets kor="은행전문번호" type="string" name="bnkEdiNo" start="174" end="180"/>
+    <fieldOffsets kor="자통법적용구분" type="string" name="jatongApplYn" start="180" end="181"/>
+    <fieldOffsets kor="공통부은행코드" type="string" name="commBnkCd" start="181" end="184"/>
+    <fieldOffsets kor="개별부은행코드" type="string" name="indiBnkCd" start="184" end="187"/>
+    <fieldOffsets kor="입금점코드" type="string" name="iamtStoreCd" start="187" end="194"/>
+    <fieldOffsets kor="예비영역2" type="string" name="spareArea2" start="194" end="229"/>
+    <fieldOffsets kor="어음만기입금구분" type="string" name="bill2ExpirIamtGb" start="229" end="230"/>
+  </jndi:configuration>
+</jndi:namedResource>

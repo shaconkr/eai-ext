@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jndi:namedResource xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TOSCISPMCV0020201="http://schema.hcis.com/xsd/TOSCISPMCV0020201_InReq_Body" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" name="TOSCISPMCV/TOSCISPMCV0020201.TOSCISPMCV0020201_InReq_Body" type="dataformat:DataFormat">
+  <jndi:imports importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/TOSCISPMCV0020201_InReq_Body_df.xsd" namespace="http://schema.hcis.com/xsd/TOSCISPMCV0020201_InReq_Body"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="TOSCISPMCV0020201:main" lineLength="230" fieldOffsetsStr="istnCd(0,8)&#xA;iamtAcno(8,24)&#xA;iamtAcntNm(24,44)&#xA;trdAmt(44,57)&#xA;istnBrnCd(57,62)&#xA;tskGbcd(62,63)&#xA;cmisDdctGb(63,64)&#xA;trdKnd(64,66)&#xA;orgTrdNo(66,72)&#xA;spareArea1(72,174)&#xA;bnkEdiNo(174,180)&#xA;jatongApplYn(180,181)&#xA;commBnkCd(181,184)&#xA;spareArea2(184,230)">
+    <fieldOffsets kor="기관코드" type="string" name="istnCd" start="0" end="8"/>
+    <fieldOffsets kor="입금계좌번호" type="string" name="iamtAcno" start="8" end="24"/>
+    <fieldOffsets kor="입금계좌성명" type="string" name="iamtAcntNm" start="24" end="44"/>
+    <fieldOffsets kor="거래금액" type="string" name="trdAmt" start="44" end="57"/>
+    <fieldOffsets kor="기관지점코드" type="string" name="istnBrnCd" start="57" end="62"/>
+    <fieldOffsets kor="업무구분코드" type="long" name="tskGbcd" start="62" end="63"/>
+    <fieldOffsets kor="수수료공제구분" type="string" name="cmisDdctGb" start="63" end="64"/>
+    <fieldOffsets kor="거래종류" type="long" name="trdKnd" start="64" end="66"/>
+    <fieldOffsets kor="원거래번호" type="string" name="orgTrdNo" start="66" end="72"/>
+    <fieldOffsets kor="예비영역1" type="string" name="spareArea1" start="72" end="174"/>
+    <fieldOffsets kor="은행전문번호" type="string" name="bnkEdiNo" start="174" end="180"/>
+    <fieldOffsets kor="자통법적용구분" type="string" name="jatongApplYn" start="180" end="181"/>
+    <fieldOffsets kor="공통부은행코드" type="string" name="commBnkCd" start="181" end="184"/>
+    <fieldOffsets kor="예비영역2" type="string" name="spareArea2" start="184" end="230"/>
+  </jndi:configuration>
+</jndi:namedResource>

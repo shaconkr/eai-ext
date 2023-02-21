@@ -19,6 +19,7 @@ TIBCO-BW-JobSharedVariables: META-INF/module.jsv
 TIBCO-BW-ConfigProfile: META-INF/default.substvar
 TIBCO-BW-ModuleSharedVariables: META-INF/module.msv
 TIBCO-BW-Edition: bwe
+Automatic-Module-Name: BCCCIS301.module
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Require-Capability: com.tibco.bw.model; filter:="(name=bwext)",
  com.tibco.bw.module; filter:="(&(name=HcisExternal.smodule)(version=1.0.0))",
@@ -32,4 +33,3 @@ Require-Capability: com.tibco.bw.model; filter:="(name=bwext)",
  com.tibco.bw.palette; filter:="(name=bw.jms)",
  com.tibco.bw.sharedresource.model; filter:="(name=bw.dataformat)"
 TIBCO-BW-Version: 6.9.0 V26 2022-11-02
-Automatic-Module-Name: BCCCIS301.module

@@ -1569,13 +1569,6 @@
                 </choice>
             </complexType>
         </schema>
-        <schema elementFormDefault="qualified"
-            targetNamespace="http://www.tibco.com/tnt/utilitySchema"
-            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.tibco.com/tnt/utilitySchema">
-            <simpleType name="nativeJavaObjectKey">
-                <restriction base="string"/>
-            </simpleType>
-        </schema>
     </tibex:Types>
     <tibex:ProcessInfo callable="false" createdBy="javal"
         createdOn="Tue Jan 31 17:13:14 KST 2023" description=""
@@ -2502,6 +2495,14 @@
     <bpws:import importType="http://www.w3.org/2001/XMLSchema"
         location="../../../Schemas/JNICISCTIC/JNICISCTIC0040101/JNICISCTIC0040101_InReq.xsd" namespace="http://schema.hcis.com/xsd/JNICISCTIC0040101_InReq"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://schema.hcis.com/xsd/JNICISCTIC0340101_OutReq"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema"
+        location="../../../Schemas/JNICISCTIC/JNICISCTIC0340101/JNICISCTIC0340101_OutReq.xsd" namespace="http://schema.hcis.com/xsd/JNICISCTIC0340101_OutReq"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema"
+        location="../../../Schemas/JNICISCTIC/JNICISCTIC0040101/JNICISCTIC0040101_OutReq.xsd" namespace="http://schema.hcis.com/xsd/JNICISCTIC0040101_OutReq"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema"
+        location="../../../Schemas/CISJNICTIC/CISJNICTIC0040102/JNICISCTIC0040101_OutReq.xsd" namespace="http://schema.hcis.com/xsd/JNICISCTIC0040101_OutReq"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema"
+        location="../../../Schemas/CISJNICTIC/CISJNICTIC0340102/JNICISCTIC0340101_OutReq.xsd" namespace="http://schema.hcis.com/xsd/JNICISCTIC0340101_OutReq"/>
     <bpws:variables>
         <bpws:variable element="ns:ProcessContext"
             name="_processContext" sca-bpel:internal="true"/>

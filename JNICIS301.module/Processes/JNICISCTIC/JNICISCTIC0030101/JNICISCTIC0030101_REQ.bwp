@@ -2434,6 +2434,10 @@
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://schema.hcis.com/xsd/JNICISCTIC0030101_OutReq"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema"
         location="../../../Schemas/JNICISCTIC/JNICISCTIC0030101/JNICISCTIC0030101_InReq.xsd" namespace="http://schema.hcis.com/xsd/JNICISCTIC0030101_InReq"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema"
+        location="../../../Schemas/JNICISCTIC/JNICISCTIC0030101/JNICISCTIC0030101_OutReq.xsd" namespace="http://schema.hcis.com/xsd/JNICISCTIC0030101_OutReq"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema"
+        location="../../../Schemas/CISJNICTIC/CISJNICTIC0030102/JNICISCTIC0030101_OutReq.xsd" namespace="http://schema.hcis.com/xsd/JNICISCTIC0030101_OutReq"/>
     <bpws:variables>
         <bpws:variable element="ns:ProcessContext"
             name="_processContext" sca-bpel:internal="true"/>

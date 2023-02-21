@@ -6393,8 +6393,7 @@
                     </tibex:config>
                 </tibex:activityExtension>
             </bpws:extensionActivity>
-            <bpws:scope name="While" tibex:group="while"
-                tibex:indexToGlobal="false" tibex:xpdlId="07027b07-e4ac-4942-a1d3-76b96a888233">
+            <bpws:scope name="While" tibex:group="while" tibex:xpdlId="07027b07-e4ac-4942-a1d3-76b96a888233">
                 <bpws:targets>
                     <bpws:target linkName="W_300ToWhile"/>
                 </bpws:targets>

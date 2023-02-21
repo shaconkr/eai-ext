@@ -32,7 +32,7 @@
             <element e:kor="점코드" e:length="3" e:padder="SpaceRight" minOccurs="0" name="storeCd" nillable="true" type="string"/>
             <element e:kor="사용자ID" e:length="8" e:padder="SpaceRight" minOccurs="0" name="userId" nillable="true" type="string"/>
             <element e:kor="거래공통영역예비내용" e:length="100" e:padder="SpaceRight" minOccurs="0" name="trdCommTrtyPrepCntn" nillable="true" type="string"/>
-            <element e:kor="메시지그룹명" e:length="0" e:padder="SpaceRight" maxOccurs="unbounded" minOccurs="0" name="msgGrpNm" nillable="true" type="ns:msgGrpNmType"/>
+            <element e:kor="메시지그룹명" e:length="0" e:padder="SpaceRight" minOccurs="0" name="msgGrpNm" nillable="true" type="ns:msgGrpNmType"/>
             <element e:kor="표준전문종료문자값" e:length="2" e:padder="SpaceRight" minOccurs="0" name="stdTgrmEndLettrVal" nillable="true" type="string"/>
         </sequence>
     </complexType>
@@ -65,7 +65,7 @@
             <element e:kor="처리시간" e:length="6" e:padder="SpaceRight" name="procTime" nillable="true" type="string"/>
             <element e:kor="카드배송진행상태코드" e:length="2" e:padder="SpaceRight" name="crdDlvPrgrStatCd" nillable="true" type="string"/>
             <element e:kor="카드발송진행상태내용" e:length="120" e:padder="SpaceRight" name="crdSendPrgrStatCntn" nillable="true" type="string"/>
-            <element e:kor="비고" e:length="76" e:padder="SpaceRight" name="rmrk" nillable="true" type="string"/>
+            <element e:kor="처리내용비고" e:length="76" e:padder="SpaceRight" name="procCntnRmrk" nillable="true" type="string"/>
         </sequence>
     </complexType>
     <complexType name="CISJNICTIC0340102_OutRes">

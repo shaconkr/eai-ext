@@ -41,16 +41,16 @@
                 <variable>ReadHeader-input</variable>
             </endingVariables>
         </task>
-        <task name="IN_REQ">
+        <task name="INBOUND">
             <endingVariables>
-                <variable>IN_REQ-input</variable>
+                <variable>INBOUND-input</variable>
                 <variable>concatBytes</variable>
             </endingVariables>
         </task>
         <task name="WriteTCPData">
             <endingVariables>
                 <variable>WriteTCPData-input</variable>
-                <variable>IN_REQ</variable>
+                <variable>INBOUND</variable>
             </endingVariables>
         </task>
         <task name="TCPCloseConnection">
@@ -1789,10 +1789,10 @@
         <bpws:variable element="ns3:ActivityErrorData"
             name="_error_ReadHeader" sca-bpel:internal="true"/>
         <bpws:variable element="ns:ErrorReport" name="_error" sca-bpel:internal="true"/>
-        <bpws:variable element="ns4:ActivityInput" name="IN_REQ-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns5:ActivityOutput" name="IN_REQ" sca-bpel:internal="true"/>
+        <bpws:variable element="ns4:ActivityInput" name="INBOUND-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns5:ActivityOutput" name="INBOUND" sca-bpel:internal="true"/>
         <bpws:variable element="ns6:ActivityErrorData"
-            name="_error_IN_REQ" sca-bpel:internal="true"/>
+            name="_error_INBOUND" sca-bpel:internal="true"/>
         <bpws:variable element="ns7:ActivityInput"
             name="WriteTCPData-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns8:ActivityErrorData"
@@ -1963,8 +1963,8 @@
                 </tibex:activityExtension>
             </bpws:extensionActivity>
             <bpws:extensionActivity>
-                <tibex:activityExtension inputVariable="IN_REQ-input"
-                    name="IN_REQ" outputVariable="IN_REQ"
+                <tibex:activityExtension inputVariable="INBOUND-input"
+                    name="INBOUND" outputVariable="INBOUND"
                     tibex:xpdlId="a029b1a8-6674-4fe9-a105-dd509815d529" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
                         <bpws:target linkName="concatBytesToIN_REQ"/>
@@ -1988,7 +1988,7 @@
                                     <type href="http://ns.tibco.com/bw/palette/jms#//JMSRequestReplyActivity"/>
                                     <value
                                     connectionReference="Property"
-                                    destinationName="Q.CIS"
+                                    destinationName=""
                                     messageType="Bytes"
                                     messagingStyle="Queue"
                                     priority="4" xsi:type="jms:JMSRequestReplyActivity"/>
@@ -2011,7 +2011,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns5=&quot;http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpwritedata+ab5835ef-2b9c-4296-90ab-9732f7c9c3ba+ActivityInput&quot; xmlns:tns1=&quot;http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreceiver+833c4710-0ef8-4bac-9dac-dcd4cfb5c165+ActivityOutput&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;TCPReceiver7018&quot;/>&#xa;    &lt;xsl:param name=&quot;IN_REQ&quot;/>&#xa;    &lt;xsl:template name=&quot;WriteTCPData-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns5:ActivityInput>&#xa;            &lt;tns5:connection>&#xa;                &lt;xsl:value-of select=&quot;$TCPReceiver7018/tns1:connection&quot;/>&#xa;            &lt;/tns5:connection>&#xa;            &lt;tns5:data>&#xa;                &lt;xsl:value-of select=&quot;$IN_REQ/Body&quot;/>&#xa;            &lt;/tns5:data>&#xa;        &lt;/tns5:ActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns5=&quot;http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpwritedata+ab5835ef-2b9c-4296-90ab-9732f7c9c3ba+ActivityInput&quot; xmlns:tns1=&quot;http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreceiver+833c4710-0ef8-4bac-9dac-dcd4cfb5c165+ActivityOutput&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;TCPReceiver7018&quot;/>&#xa;    &lt;xsl:param name=&quot;INBOUND&quot;/>&#xa;    &lt;xsl:template name=&quot;WriteTCPData-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns5:ActivityInput>&#xa;            &lt;tns5:connection>&#xa;                &lt;xsl:value-of select=&quot;$TCPReceiver7018/tns1:connection&quot;/>&#xa;            &lt;/tns5:connection>&#xa;            &lt;tns5:data>&#xa;                &lt;xsl:value-of select=&quot;$INBOUND/Body&quot;/>&#xa;            &lt;/tns5:data>&#xa;        &lt;/tns5:ActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity activityTypeID="bw.tcp.write"

@@ -26,7 +26,7 @@
             <element e:kor="처리시간" e:length="6" e:padder="SpaceRight" name="procTime" nillable="true" type="string"/>
             <element e:kor="카드배송진행상태코드" e:length="2" e:padder="SpaceRight" name="crdDlvPrgrStatCd" nillable="true" type="string"/>
             <element e:kor="카드발송진행상태내용" e:length="120" e:padder="SpaceRight" name="crdSendPrgrStatCntn" nillable="true" type="string"/>
-            <element e:kor="비고" e:length="76" e:padder="SpaceRight" name="rmrk" nillable="true" type="string"/>
+            <element e:kor="처리내용비고" e:length="76" e:padder="SpaceRight" name="procCntnRmrk" nillable="true" type="string"/>
         </sequence>
     </complexType>
 </schema>

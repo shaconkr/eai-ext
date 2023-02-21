@@ -9,6 +9,8 @@
   <sca:property xmi:id="_nPSxMIG8Ee2-kqzdA-_O3A" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_nPSxMYG8Ee2-kqzdA-_O3A" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_nPSxMoG8Ee2-kqzdA-_O3A" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_S88akLGZEe2qCf8kiCi74w" name="Property" type="XMLSchema:string" scaext:simpleValue="" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_T-Si0LGZEe2qCf8kiCi74w" name="Property1" type="XMLSchema:string" scaext:simpleValue="" publicAccess="true" scalable="true"/>
   <sca:component xmi:id="_UcyfAIG9Ee2-kqzdA-_O3A" name="ComponentBCFileReceve" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_UcyfAYG9Ee2-kqzdA-_O3A" processName="BCCCISCT.BCFileReceve"/>
   </sca:component>

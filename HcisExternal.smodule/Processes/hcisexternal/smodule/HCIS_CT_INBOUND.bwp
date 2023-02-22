@@ -1380,7 +1380,7 @@
                                     xsi:type="notation:Bounds" y="151"/>
                                     </children>
                                     <children
-                                    description="Q.CIS.송신측시스템명.전문코드(업무코드2+번호2+송수신구분"
+                                    description="Q.전문코드(업무코드2+번호2+송수신구분)"
                                     fillColor="13369343"
                                     fontName="맑은 고딕"
                                     lineColor="6737151"
@@ -2246,7 +2246,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="concat(&quot;Q.CIS.&quot;,HCIS:getQueryStringValue($parseHeader/MethodReturnValue, &quot;trdCd&quot;),&quot;.&quot;,HCIS:getQueryStringValue($parseHeader/MethodReturnValue, &quot;tgrmCd&quot;))" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                            expression="concat(&quot;Q.&quot;,HCIS:getQueryStringValue($parseHeader/MethodReturnValue, &quot;trdCd&quot;))" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity

@@ -27,4 +27,7 @@
   <sca:component xmi:id="_6Gs29KgaEe20koM4YZoY1w" name="ComponentNICCISUPID0010501_RES" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_6Gs29agaEe20koM4YZoY1w" processName="TOSCISPMMZ.TOSCISPMMZ0140402.TOSCISPMMZ0140402_RES"/>
   </sca:component>
+  <sca:component xmi:id="_Uc2AoLJVEe2VuYtbuNdpMw" name="ComponentCISTOSPMMZ0140401_REQ" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_Uc2AobJVEe2VuYtbuNdpMw" processName="CISTOSPMMZ.CISTOSPMMZ0140101.CISTOSPMMZ0140101_REQ"/>
+  </sca:component>
 </sca:composite>

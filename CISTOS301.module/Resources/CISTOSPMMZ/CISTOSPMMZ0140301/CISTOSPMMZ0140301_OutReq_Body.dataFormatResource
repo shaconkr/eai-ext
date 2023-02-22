@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jndi:namedResource xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CISTOSPMMZ0140301="http://schema.hcis.com/xsd/CISTOSPMMZ0140301_OutReq_Body" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" name="CISTOSPMMZ/CISTOSPMMZ0140301.CISTOSPMMZ0140301_OutReq_Body" type="dataformat:DataFormat">
+  <jndi:imports importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/CISTOSPMMZ0140301_OutReq_Body_df.xsd" namespace="http://schema.hcis.com/xsd/CISTOSPMMZ0140301_OutReq_Body"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="CISTOSPMMZ0140301:main" lineLength="230" fieldOffsetsStr="trsfTgrmSendDt(0,8)&#xA;trsfTgrmNo(8,14)&#xA;parAcno(14,29)&#xA;trdAcntBnkCd(29,31)&#xA;trdAcno(31,46)&#xA;trdGb(46,48)&#xA;trsfAmt(48,61)&#xA;trsfProcTime(61,67)&#xA;cmis(67,76)&#xA;cmsCd(76,92)&#xA;payerNm(92,108)&#xA;subSeq(108,114)&#xA;trsfProcRslt(114,118)&#xA;obnkProcNo(118,124)&#xA;pmpsnNo(124,144)&#xA;spareArea1(144,174)&#xA;bnkEdiNo(174,180)&#xA;jatongApplYn(180,181)&#xA;commBnkCd(181,184)&#xA;indiBnkCd(184,187)&#xA;spareArea2(187,230)">
+    <fieldOffsets kor="이체전문전송일" type="string" name="trsfTgrmSendDt" start="0" end="8"/>
+    <fieldOffsets kor="이체전문번호" type="string" name="trsfTgrmNo" start="8" end="14"/>
+    <fieldOffsets kor="모계좌번호" type="string" name="parAcno" start="14" end="29"/>
+    <fieldOffsets kor="거래계좌은행코드" type="string" name="trdAcntBnkCd" start="29" end="31"/>
+    <fieldOffsets kor="거래계좌번호" type="string" name="trdAcno" start="31" end="46"/>
+    <fieldOffsets kor="거래구분" type="string" name="trdGb" start="46" end="48"/>
+    <fieldOffsets kor="이체금액" type="long" name="trsfAmt" start="48" end="61"/>
+    <fieldOffsets kor="이체처리시간" type="string" name="trsfProcTime" start="61" end="67"/>
+    <fieldOffsets kor="수수료" type="long" name="cmis" start="67" end="76"/>
+    <fieldOffsets kor="CMS코드" type="string" name="cmsCd" start="76" end="92"/>
+    <fieldOffsets kor="송금인성명" type="string" name="payerNm" start="92" end="108"/>
+    <fieldOffsets kor="SUB SEQ" type="string" name="subSeq" start="108" end="114"/>
+    <fieldOffsets kor="이체처리결과조회" type="string" name="trsfProcRslt" start="114" end="118"/>
+    <fieldOffsets kor="타행처리번호" type="string" name="obnkProcNo" start="118" end="124"/>
+    <fieldOffsets kor="납부자번호" type="string" name="pmpsnNo" start="124" end="144"/>
+    <fieldOffsets kor="예비영역1" type="string" name="spareArea1" start="144" end="174"/>
+    <fieldOffsets kor="은행전문번호" type="string" name="bnkEdiNo" start="174" end="180"/>
+    <fieldOffsets kor="자통법적용구분" type="string" name="jatongApplYn" start="180" end="181"/>
+    <fieldOffsets kor="공통부은행코드" type="string" name="commBnkCd" start="181" end="184"/>
+    <fieldOffsets kor="개별부은행코드" type="string" name="indiBnkCd" start="184" end="187"/>
+    <fieldOffsets kor="예비영역2" type="string" name="spareArea2" start="187" end="230"/>
+  </jndi:configuration>
+</jndi:namedResource>

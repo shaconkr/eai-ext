@@ -1,0 +1,32 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:e="http://shacon.kr/xsd" xmlns:ns="http://schema.hcis.com/xsd/CISTOSPMMZ0140101_OutReq_Body" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://schema.hcis.com/xsd/CISTOSPMMZ0140101_OutReq_Body">
+    <element name="root" type="ns:CISTOSPMMZ0140101_OutReq_Body"/>
+    <complexType name="CISTOSPMMZ0140101_OutReq_Body">
+        <sequence>
+            <element e:kor="모계좌번호" e:length="15" e:padder="SpaceRight" name="parAcno" nillable="true" type="string"/>
+            <element e:kor="비밀번호" e:length="8" e:padder="SpaceRight" name="pwd" nillable="true" type="string"/>
+            <element e:kor="이중암호" e:length="6" e:padder="SpaceRight" name="encodingCd" nillable="true" type="string"/>
+            <element e:kor="거래구분" e:length="2" e:padder="SpaceRight" name="trdGb" nillable="true" type="string"/>
+            <element e:kor="이체금액" e:length="13" e:padder="ZeroLeft" name="trsfAmt" nillable="true" type="long"/>
+            <element e:kor="잔액부호" e:length="1" e:padder="SpaceRight" name="blncSmbl" nillable="true" type="string"/>
+            <element e:kor="잔액" e:length="13" e:padder="ZeroLeft" name="blnc" nillable="true" type="long"/>
+            <element e:kor="거래계좌은행코드" e:length="2" e:padder="SpaceRight" name="trdAcntBnkCd" nillable="true" type="string"/>
+            <element e:kor="거래계좌번호" e:length="15" e:padder="SpaceRight" name="trdAcno" nillable="true" type="string"/>
+            <element e:kor="수수료" e:length="9" e:padder="ZeroLeft" name="cmis" nillable="true" type="long"/>
+            <element e:kor="CMS코드" e:length="16" e:padder="SpaceRight" name="cmsCd" nillable="true" type="string"/>
+            <element e:kor="송금인성명" e:length="16" e:padder="SpaceRight" name="payerNm" nillable="true" type="string"/>
+            <element e:kor="실명번호" e:length="13" e:padder="SpaceRight" name="juminBusnNo" nillable="true" type="string"/>
+            <element e:kor="납부자번호" e:length="20" e:padder="SpaceRight" name="pmpsnNo" nillable="true" type="string"/>
+            <element e:kor="고객코드" e:length="10" e:padder="SpaceRight" name="kikwanCode" nillable="true" type="string"/>
+            <element e:kor="예비영역1" e:length="15" e:padder="SpaceRight" name="spareArea1" nillable="true" type="string"/>
+            <element e:kor="은행전문번호" e:length="6" e:padder="SpaceRight" name="bnkEdiNo" nillable="true" type="string"/>
+            <element e:kor="자통법적용구분" e:length="1" e:padder="SpaceRight" name="jatongApplYn" nillable="true" type="string"/>
+            <element e:kor="공통부은행코드" e:length="3" e:padder="SpaceRight" name="commBnkCd" nillable="true" type="string"/>
+            <element e:kor="개별부은행코드" e:length="3" e:padder="SpaceRight" name="indiBnkCd" nillable="true" type="string"/>
+            <element e:kor="자금종류코드" e:length="2" e:padder="SpaceRight" name="moneyKndCd" nillable="true" type="string"/>
+            <element e:kor="부분출금여부" e:length="1" e:padder="SpaceRight" name="inpaWthdrwlYn" nillable="true" type="string"/>
+            <element e:kor="처리금액" e:length="13" e:padder="ZeroLeft" name="procAmt" nillable="true" type="long"/>
+            <element e:kor="미처리금액" e:length="13" e:padder="ZeroLeft" name="nprocAmt" nillable="true" type="long"/>
+            <element e:kor="예비영역2" e:length="14" e:padder="SpaceRight" name="spareArea2" nillable="true" type="string"/>
+        </sequence>
+    </complexType>
+</schema>

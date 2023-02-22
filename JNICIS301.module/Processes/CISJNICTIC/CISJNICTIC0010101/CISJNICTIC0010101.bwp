@@ -753,13 +753,13 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.8"/>
-                                    <layoutConstraint x="724"
-                                    xsi:type="notation:Bounds" y="175"/>
+                                    <layoutConstraint x="869"
+                                    xsi:type="notation:Bounds" y="35"/>
                                     </children>
                                     <children
                                     description="회원카드발급관련정보 제니엘송신"
                                     fillColor="13369343"
-                                    fontHeight="11"
+                                    fontHeight="10"
                                     fontName="맑은 고딕"
                                     lineColor="6737151"
                                     lineWidth="1"
@@ -773,8 +773,9 @@
                                     <styles xsi:type="notation:TextStyle"/>
                                     <styles xsi:type="notation:LineTypeStyle"/>
                                     <element xsi:nil="true"/>
-                                    <layoutConstraint x="55"
-                                    xsi:type="notation:Bounds" y="175"/>
+                                    <layoutConstraint
+                                    height="26" x="46"
+                                    xsi:type="notation:Bounds" y="-26"/>
                                     </children>
                                     <children type="4002 bw.sftp.put">
                                     <children type="4017">
@@ -821,8 +822,8 @@
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity"/>
-                                    <layoutConstraint height="310"
-                                    width="886" xsi:type="notation:Bounds"/>
+                                    <layoutConstraint height="299"
+                                    width="1073" xsi:type="notation:Bounds"/>
                                 </children>
                                 <styles xsi:type="notation:SortingStyle"/>
                                 <styles xsi:type="notation:FilteringStyle"/>
@@ -953,7 +954,7 @@
             </children>
             <styles fontName="맑은 고딕" lineColor="0" xsi:type="notation:ShapeStyle"/>
             <element href="//0/@process"/>
-            <layoutConstraint height="493" width="1231" xsi:type="notation:Bounds"/>
+            <layoutConstraint height="383" width="1418" xsi:type="notation:Bounds"/>
         </children>
         <styles xsi:type="notation:DiagramStyle"/>
         <element href="//0"/>

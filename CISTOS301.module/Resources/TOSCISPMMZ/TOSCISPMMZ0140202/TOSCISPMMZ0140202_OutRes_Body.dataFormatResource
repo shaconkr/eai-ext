@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jndi:namedResource xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TOSCISPMMZ0140202="http://schema.hcis.com/xsd/TOSCISPMMZ0140202_OutRes_Body" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" name="TOSCISPMMZ/TOSCISPMMZ0140202.TOSCISPMMZ0140202_OutRes_Body" type="dataformat:DataFormat">
+  <jndi:imports importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/TOSCISPMMZ0140202_OutRes_Body_df.xsd" namespace="http://schema.hcis.com/xsd/TOSCISPMMZ0140202_OutRes_Body"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="TOSCISPMMZ0140202:main" lineLength="230" fieldOffsetsStr="parAcno(0,15)&#xA;pwd(15,23)&#xA;encodingCd(23,29)&#xA;trdGb(29,31)&#xA;trsfAmt(31,44)&#xA;blncSmbl(44,45)&#xA;blnc(45,58)&#xA;trdAcntBnkCd(58,60)&#xA;trdAcno(60,75)&#xA;cmis(75,84)&#xA;cmsCd(84,100)&#xA;payerNm(100,116)&#xA;obnkProcNo(116,122)&#xA;obnkNprocFee(122,127)&#xA;obnkNprocAmt(127,135)&#xA;obnkNprocSumAmt(135,144)&#xA;spareArea1(144,174)&#xA;bnkEdiNo(174,180)&#xA;jatongApplYn(180,181)&#xA;commBnkCd(181,184)&#xA;indiBnkCd(184,187)&#xA;moneyKndCd(187,189)&#xA;spareArea2(189,230)">
+    <fieldOffsets kor="모계좌번호" type="string" name="parAcno" start="0" end="15"/>
+    <fieldOffsets kor="비밀번호" type="string" name="pwd" start="15" end="23"/>
+    <fieldOffsets kor="이중암호" type="string" name="encodingCd" start="23" end="29"/>
+    <fieldOffsets kor="거래구분" type="string" name="trdGb" start="29" end="31"/>
+    <fieldOffsets kor="이체금액" type="long" name="trsfAmt" start="31" end="44"/>
+    <fieldOffsets kor="잔액부호" type="string" name="blncSmbl" start="44" end="45"/>
+    <fieldOffsets kor="잔액" type="long" name="blnc" start="45" end="58"/>
+    <fieldOffsets kor="거래계좌은행코드" type="string" name="trdAcntBnkCd" start="58" end="60"/>
+    <fieldOffsets kor="거래계좌번호" type="string" name="trdAcno" start="60" end="75"/>
+    <fieldOffsets kor="수수료" type="long" name="cmis" start="75" end="84"/>
+    <fieldOffsets kor="CMS코드" type="string" name="cmsCd" start="84" end="100"/>
+    <fieldOffsets kor="송금인성명" type="string" name="payerNm" start="100" end="116"/>
+    <fieldOffsets kor="타행처리번호" type="string" name="obnkProcNo" start="116" end="122"/>
+    <fieldOffsets kor="타행미처리수수료" type="long" name="obnkNprocFee" start="122" end="127"/>
+    <fieldOffsets kor="타행미처리금액" type="long" name="obnkNprocAmt" start="127" end="135"/>
+    <fieldOffsets kor="타행미처리합계금액" type="long" name="obnkNprocSumAmt" start="135" end="144"/>
+    <fieldOffsets kor="예비영역1" type="string" name="spareArea1" start="144" end="174"/>
+    <fieldOffsets kor="은행전문번호" type="string" name="bnkEdiNo" start="174" end="180"/>
+    <fieldOffsets kor="자통법적용구분" type="string" name="jatongApplYn" start="180" end="181"/>
+    <fieldOffsets kor="공통부은행코드" type="string" name="commBnkCd" start="181" end="184"/>
+    <fieldOffsets kor="개별부은행코드" type="string" name="indiBnkCd" start="184" end="187"/>
+    <fieldOffsets kor="자금종류코드" type="string" name="moneyKndCd" start="187" end="189"/>
+    <fieldOffsets kor="예비영역2" type="string" name="spareArea2" start="189" end="230"/>
+  </jndi:configuration>
+</jndi:namedResource>

@@ -1,0 +1,22 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:e="http://shacon.kr/xsd" xmlns:ns="http://schema.hcis.com/xsd/CISTOSPMMZ0140301_OutReq_Header" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://schema.hcis.com/xsd/CISTOSPMMZ0140301_OutReq_Header">
+    <element name="root" type="ns:CISTOSPMMZ0140301_OutReq_Header"/>
+    <complexType name="CISTOSPMMZ0140301_OutReq_Header">
+        <sequence>
+            <element e:kor="식별코드" e:length="12" e:padder="SpaceRight" name="trCode" nillable="true" type="string"/>
+            <element e:kor="서비스구분" e:length="3" e:padder="SpaceRight" name="svcGb" nillable="true" type="string"/>
+            <element e:kor="송신자FLAG" e:length="1" e:padder="SpaceRight" name="sdFlag" nillable="true" type="string"/>
+            <element e:kor="송신자ID" e:length="10" e:padder="SpaceRight" name="sdId" nillable="true" type="string"/>
+            <element e:kor="수신자ID" e:length="10" e:padder="SpaceRight" name="rvId" nillable="true" type="string"/>
+            <element e:kor="메시지ID" e:length="12" e:padder="SpaceRight" name="msgId" nillable="true" type="string"/>
+            <element e:kor="고객코드" e:length="8" e:padder="SpaceRight" name="cpnyCd" nillable="true" type="string"/>
+            <element e:kor="은행코드" e:length="2" e:padder="SpaceRight" name="bnkCd" nillable="true" type="string"/>
+            <element e:kor="전문코드" e:length="4" e:padder="SpaceRight" name="ediCd" nillable="true" type="string"/>
+            <element e:kor="업무구분" e:length="3" e:padder="SpaceRight" name="jobGb" nillable="true" type="string"/>
+            <element e:kor="전문번호" e:length="6" e:padder="SpaceRight" name="ediNo" nillable="true" type="string"/>
+            <element e:kor="전송일자" e:length="8" e:padder="SpaceRight" name="sdDate" nillable="true" type="string"/>
+            <element e:kor="전송시간" e:length="6" e:padder="SpaceRight" name="sdTime" nillable="true" type="string"/>
+            <element e:kor="응답코드" e:length="4" e:padder="SpaceRight" name="retCd" nillable="true" type="string"/>
+            <element e:kor="예비영역" e:length="31" e:padder="SpaceRight" name="spareArea" nillable="true" type="string"/>
+        </sequence>
+    </complexType>
+</schema>

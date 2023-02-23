@@ -9,6 +9,12 @@ Export-Package: com.hcis.eai.kcb
 Require-Bundle: HcisExternal.smodule;bundle-version="1.0.0",
  HcisCommon.smodule;bundle-version="1.0.0"
 TIBCO-BW-Version: 6.9.0 V26 2022-11-02
+Import-Package: com.tibco.bw.palette.shared.java;version="6.2.1600",
+ com.tibco.bw.runtime;version="6.3.2400",
+ kr.shacon.format,
+ org.beanio,
+ org.beanio.internal.util,
+ org.slf4j
 TIBCO-BW-JobSharedVariables: META-INF/module.jsv
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 TIBCO-BW-ConfigProfile: META-INF/default.substvar
@@ -26,9 +32,3 @@ Require-Capability: com.tibco.bw.model; filter:="(name=bwext)",
  com.tibco.bw.sharedresource.model; filter:="(name=bw.dataformat)",
  com.tibco.bw.sharedresource.model; filter:="(name=bw.java)"
 TIBCO-BW-ApplicationModule: META-INF/module.bwm
-Import-Package: com.tibco.bw.palette.shared.java;version="6.2.1600",
- com.tibco.bw.runtime;version="6.3.2400",
- kr.shacon.format,
- org.beanio,
- org.beanio.internal.util,
- org.slf4j

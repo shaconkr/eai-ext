@@ -587,6 +587,51 @@
 			<useLookupValue>false</useLookupValue>
 		</globalVariable>
 		<globalVariable>
+			<name>/ENDPOINT/HCN_FTP/HOSTNAME</name>
+			<value>10.112.1.9</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>/ENDPOINT/HCN_FTP/USERNAME</name>
+			<value>deptcard</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>/ENDPOINT/HCN_FTP/PASSWORD</name>
+			<value>#!x7JamKT7VVuvcl7nFKQfXfDT2ME3TG2geStgOM8okQQ=</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>Password</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>/ENDPOINT/HCN_FTP/PWD_PLAIN</name>
+			<value>hdcd*1278</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>/ENDPOINT/HCN_FTP/SAM_CT_HCN_SND_PATH</name>
+			<value>/hcisnas/sam/ct/hcn/snd</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
 			<name>/SECURITY/TOS/TOS__USER_ID</name>
 			<value>HELP518</value>
 			<deploymentSettable>false</deploymentSettable>

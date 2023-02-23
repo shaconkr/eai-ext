@@ -32,10 +32,10 @@
                 <variable>ReadHeader-input</variable>
             </endingVariables>
         </task>
-        <task name="JMSSendMessage">
+        <task name="Q.TOS.ONL1">
             <endingVariables>
-                <variable>JMSSendMessage-input</variable>
-                <variable>JMSSendMessage</variable>
+                <variable>Q.TOS.ONL1-input</variable>
+                <variable>Q.TOS.ONL1</variable>
                 <variable>concatBytes</variable>
             </endingVariables>
         </task>
@@ -1522,6 +1522,8 @@
         <tibex:namespaceItem namespace="http://www.cspi_library.org/Log" prefix="Log"/>
         <tibex:namespaceItem
             namespace="http://www.tibco.com/namespaces/tnt/plugins/jms" prefix="ns"/>
+        <tibex:namespaceItem
+            namespace="http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreceiver+9c33ccaf-f14f-4abf-9dcb-6c355d6a2e0a+ActivityOutput" prefix="tns5"/>
     </tibex:NamespaceRegistry>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.cspi_library.org/Library"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.cspi_library.org/Log"/>
@@ -1536,11 +1538,10 @@
             name="_error_ReadHeader" sca-bpel:internal="true"/>
         <bpws:variable element="ns:ErrorReport" name="_error" sca-bpel:internal="true"/>
         <bpws:variable element="ns4:ActivityInput"
-            name="JMSSendMessage-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns5:aEmptyOutputClass"
-            name="JMSSendMessage" sca-bpel:internal="true"/>
+            name="Q.TOS.ONL1-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns5:aEmptyOutputClass" name="Q.TOS.ONL1" sca-bpel:internal="true"/>
         <bpws:variable element="ns6:ActivityErrorData"
-            name="_error_JMSSendMessage" sca-bpel:internal="true"/>
+            name="_error_Q.TOS.ONL1" sca-bpel:internal="true"/>
         <bpws:variable name="jmsConnection" sca-bpel:hotUpdate="false"
             sca-bpel:privateProperty="true" sca-bpel:property="yes"
             sca-bpel:sharedResourceType="{http://xsd.tns.tibco.com/bw/models/sharedresource/jms}JMSConnectionFactory" type="xsd:string">
@@ -1672,7 +1673,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns2=&quot;http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataInput+fbd28e3d-be7c-46e0-894f-bffb44ffaff7+ActivityInput&quot; xmlns:tns5=&quot;http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreceiver+9c33ccaf-f14f-4abf-9dcb-6c355d6a2e0a+ActivityOutput&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;TOS_DC&quot;/>&#xa;    &lt;xsl:template name=&quot;ReadHeader-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns2:ActivityInput>&#xa;            &lt;tns2:connection>&#xa;                &lt;xsl:value-of select=&quot;$TOS_DC/tns5:connection&quot;/>&#xa;            &lt;/tns2:connection>&#xa;        &lt;/tns2:ActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns2=&quot;http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataInput+fbd28e3d-be7c-46e0-894f-bffb44ffaff7+ActivityInput&quot; xmlns:tns5=&quot;http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreceiver+9c33ccaf-f14f-4abf-9dcb-6c355d6a2e0a+ActivityOutput&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;TOS_DC&quot;/>&lt;xsl:template name=&quot;ReadHeader-input&quot; match=&quot;/&quot;>&lt;tns2:ActivityInput>&lt;tns2:connection>&lt;xsl:value-of select=&quot;$TOS_DC/tns5:connection&quot;/>&lt;/tns2:connection>&lt;tns2:bytesToRead>&lt;xsl:value-of select=&quot;120&quot;/>&lt;/tns2:bytesToRead>&lt;/tns2:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity activityTypeID="bw.tcp.read"
@@ -1682,7 +1683,8 @@
                             <activityConfig>
                                 <properties name="config" xsi:type="activityconfig:EMFProperty">
                                     <type href="http://ns.tibco.com/bw/palette/tcp#//ReadTCPData"/>
-                                    <value separator="No Separator"
+                                    <value bytesToRead="120"
+                                    separator="No Separator"
                                     type="Binary" xsi:type="tcpPalette:ReadTCPData"/>
                                 </properties>
                             </activityConfig>
@@ -1692,9 +1694,8 @@
             </bpws:extensionActivity>
             <bpws:extensionActivity>
                 <tibex:activityExtension
-                    inputVariable="JMSSendMessage-input"
-                    name="JMSSendMessage"
-                    outputVariable="JMSSendMessage"
+                    inputVariable="Q.TOS.ONL1-input" name="Q.TOS.ONL1"
+                    outputVariable="Q.TOS.ONL1"
                     tibex:xpdlId="cfb152f1-a6d3-47c7-a954-2cca432a67d8" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
                         <bpws:target linkName="JavaInvokeToJMSSendMessage"/>
@@ -1739,7 +1740,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataInput+bf0ee0ae-7721-4d17-9c0e-ac0365a41522+ActivityInput&quot; xmlns:tns5=&quot;http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreceiver+9c33ccaf-f14f-4abf-9dcb-6c355d6a2e0a+ActivityOutput&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;TOS_DC&quot;/>&#xa;    &lt;xsl:template name=&quot;ReadData-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns3:ActivityInput>&#xa;            &lt;tns3:connection>&#xa;                &lt;xsl:value-of select=&quot;$TOS_DC/tns5:connection&quot;/>&#xa;            &lt;/tns3:connection>&#xa;        &lt;/tns3:ActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataInput+bf0ee0ae-7721-4d17-9c0e-ac0365a41522+ActivityInput&quot; xmlns:tns5=&quot;http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreceiver+9c33ccaf-f14f-4abf-9dcb-6c355d6a2e0a+ActivityOutput&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;TOS_DC&quot;/>&lt;xsl:template name=&quot;ReadData-input&quot; match=&quot;/&quot;>&lt;tns3:ActivityInput>&lt;tns3:connection>&lt;xsl:value-of select=&quot;$TOS_DC/tns5:connection&quot;/>&lt;/tns3:connection>&lt;tns3:bytesToRead>&lt;xsl:value-of select=&quot;230&quot;/>&lt;/tns3:bytesToRead>&lt;/tns3:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity activityTypeID="bw.tcp.read"
@@ -1749,7 +1750,8 @@
                             <activityConfig>
                                 <properties name="config" xsi:type="activityconfig:EMFProperty">
                                     <type href="http://ns.tibco.com/bw/palette/tcp#//ReadTCPData"/>
-                                    <value separator="No Separator"
+                                    <value bytesToRead="230"
+                                    separator="No Separator"
                                     type="Binary" xsi:type="tcpPalette:ReadTCPData"/>
                                 </properties>
                             </activityConfig>
@@ -1784,6 +1786,7 @@
                                     <value
                                     className="com.hcis.eai.ext.tos.TossOnline"
                                     constructDeclaredClass="true"
+                                    icon="HcisCommon.smodule\Resources\icons\binary-file-48.png"
                                     isNew="true"
                                     isNewActivity="true"
                                     methodName="concatBytes"

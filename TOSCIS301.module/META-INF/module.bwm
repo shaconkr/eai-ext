@@ -17,15 +17,15 @@
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_uDtYoag6Ee20koM4YZoY1w" processName="TOSCISPM.TOS_ONL1_RECV"/>
   </sca:component>
   <sca:component xmi:id="_bHIG8KhHEe20koM4YZoY1w" name="ComponentTOS_ONL2_RECV" compositeext:version="1.0.0.qualifier">
-    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_bHIG8ahHEe20koM4YZoY1w" processName="TOSCISPM.TOS_ONL2_RECV"/>
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_bHIG8ahHEe20koM4YZoY1w" processName="TOSCISPM.TOS_ONL2_RECV_ASYNC_RESP"/>
   </sca:component>
   <sca:component xmi:id="_eu9wUKhHEe20koM4YZoY1w" name="ComponentTOS_ONL3_RECV" compositeext:version="1.0.0.qualifier">
-    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_eu9wUahHEe20koM4YZoY1w" processName="TOSCISPM.TOS_ONL3_RECV"/>
-  </sca:component>
-  <sca:component xmi:id="_VjUFULDoEe2ayOlGE8mfVA" name="ComponentKSNCISPMCO0110101_REQ" compositeext:version="1.0.0.qualifier">
-    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_VjUFUbDoEe2ayOlGE8mfVA" processName="TOSCISPMCV.TOSCISPMCV0020101.TOSCISPMCV0020101_REQ"/>
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_eu9wUahHEe20koM4YZoY1w" processName="TOSCISPM.TOS_ONL3_RECV_ASYNC_RESP"/>
   </sca:component>
   <sca:component xmi:id="_cKsB8LDoEe2ayOlGE8mfVA" name="ComponentCISKSNPMCO0110102_RES" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_cKsB8bDoEe2ayOlGE8mfVA" processName="CISTOSPMCV.CISTOSPMCV0020102.CISTOSPMCV0020102_RES"/>
+  </sca:component>
+  <sca:component xmi:id="_BhevsLNOEe2tcMqM9p8Usg" name="ComponentJNICISCTIC0330101_REQ" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_BhevsbNOEe2tcMqM9p8Usg" processName="TOSCISPMCV.TOSCISPMCV0020101.TOSCISPMCV0020101_REQ"/>
   </sca:component>
 </sca:composite>

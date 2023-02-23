@@ -9,44 +9,44 @@
       <property name="recordTerminator" value="\r\n"/>
     </parser>
     <record name="KSN_InReq" class="java.util.LinkedHashMap">
-      <segment name="bizHeader" minOccurs="1" maxOccurs="1" class="map">
-        <field kor="식별코드" name="trCode" position="0" length="9"/>
-        <field kor="업체코드" name="svcGb" position="9" length="8"/>
-        <field kor="은행코드2" name="bnkCd2" position="17" length="2"/>
-        <field kor="메시지코드" name="msgCd" position="19" length="4"/>
-        <field kor="업무구분코드" name="jobGbcd" position="23" length="3"/>
-        <field kor="송신횟수" name="trsCnt" position="26" length="1" justify="right" padding="0"/>
-        <field kor="전문번호" name="ediNo" position="27" length="6"/>
-        <field kor="전송일자" name="sdDate" position="33" length="8"/>
-        <field kor="전송시간" name="sdTime" position="41" length="6"/>
-        <field kor="응답코드" name="retCd" position="47" length="4"/>
-        <field kor="은행응답코드" name="bnkRetCd" position="51" length="4"/>
-        <field kor="조회일자" name="qryDt" position="55" length="8"/>
-        <field kor="조회번호" name="qryNo" position="63" length="6"/>
-        <field kor="은행전문번호" name="bnkEdiNo" position="69" length="15"/>
-        <field kor="은행코드3" name="bnkCd3" position="84" length="3"/>
-        <field kor="예비" name="sdFlag" position="87" length="13"/>
+      <segment name="bizHeader" kor="0" minOccurs="1" maxOccurs="1" class="map">
+        <field kor="식별코드" name="trCode" minOccurs="1" maxOccurs="1" position="0" length="9"/>
+        <field kor="업체코드" name="svcGb" minOccurs="1" maxOccurs="1" position="9" length="8"/>
+        <field kor="은행코드2" name="bnkCd2" minOccurs="1" maxOccurs="1" position="17" length="2"/>
+        <field kor="메시지코드" name="msgCd" minOccurs="1" maxOccurs="1" position="19" length="4"/>
+        <field kor="업무구분코드" name="jobGbcd" minOccurs="1" maxOccurs="1" position="23" length="3"/>
+        <field kor="송신횟수" name="trsCnt" minOccurs="1" maxOccurs="1" position="26" length="1" justify="right" padding="0"/>
+        <field kor="전문번호" name="ediNo" minOccurs="1" maxOccurs="1" position="27" length="6"/>
+        <field kor="전송일자" name="sdDate" minOccurs="1" maxOccurs="1" position="33" length="8"/>
+        <field kor="전송시간" name="sdTime" minOccurs="1" maxOccurs="1" position="41" length="6"/>
+        <field kor="응답코드" name="retCd" minOccurs="1" maxOccurs="1" position="47" length="4"/>
+        <field kor="은행응답코드" name="bnkRetCd" minOccurs="1" maxOccurs="1" position="51" length="4"/>
+        <field kor="조회일자" name="qryDt" minOccurs="1" maxOccurs="1" position="55" length="8"/>
+        <field kor="조회번호" name="qryNo" minOccurs="1" maxOccurs="1" position="63" length="6"/>
+        <field kor="은행전문번호" name="bnkEdiNo" minOccurs="1" maxOccurs="1" position="69" length="15"/>
+        <field kor="은행코드3" name="bnkCd3" minOccurs="1" maxOccurs="1" position="84" length="3"/>
+        <field kor="예비" name="sdFlag" minOccurs="1" maxOccurs="1" position="87" length="13"/>
       </segment>
-      <segment name="bizBody" minOccurs="1" maxOccurs="1" class="map">
-        <field kor="계좌번호" name="acno" position="100" length="15"/>
-        <field kor="조립건수" name="asmbCnt" position="115" length="2" justify="right" padding="0"/>
-        <field kor="거래구분" name="trdGb" position="117" length="2"/>
-        <field kor="은행코드" name="bnkCd" position="119" length="2"/>
-        <field kor="금액" name="amt" position="121" length="13" justify="right" padding="0"/>
-        <field kor="잔액" name="blnc" position="134" length="13" justify="right" padding="0"/>
-        <field kor="입금지점코드6" name="iamtBrnCd6" position="147" length="6"/>
-        <field kor="적요" name="abst" position="153" length="14"/>
-        <field kor="수표번호" name="checkNo" position="167" length="10"/>
-        <field kor="현금" name="cash" position="177" length="13" justify="right" padding="0"/>
-        <field kor="타행수표금액" name="obnkCheckAmt" position="190" length="13" justify="right" padding="0"/>
-        <field kor="가계수표기타금액" name="prckEtcAmt" position="203" length="13" justify="right" padding="0"/>
-        <field kor="가상계좌번호" name="virtAcno" position="216" length="16"/>
-        <field kor="거래일자" name="trdDt" position="232" length="8"/>
-        <field kor="거래시간" name="trdTime" position="240" length="6"/>
-        <field kor="통장거래일련번호" name="bnkbTrdSeqno" position="246" length="6"/>
-        <field kor="거래은행코드3" name="trdBnkCd3" position="252" length="7"/>
-        <field kor="입금지점코드7" name="iamtBrnCd7" position="259" length="7"/>
-        <field kor="예비" name="spare" position="266" length="38"/>
+      <segment name="bizBody" kor="0" minOccurs="1" maxOccurs="1" class="map">
+        <field kor="계좌번호" name="acno" minOccurs="1" maxOccurs="1" position="100" length="15"/>
+        <field kor="조립건수" name="asmbCnt" minOccurs="1" maxOccurs="1" position="115" length="2" justify="right" padding="0"/>
+        <field kor="거래구분" name="trdGb" minOccurs="1" maxOccurs="1" position="117" length="2"/>
+        <field kor="은행코드" name="bnkCd" minOccurs="1" maxOccurs="1" position="119" length="2"/>
+        <field kor="금액" name="amt" minOccurs="1" maxOccurs="1" position="121" length="13" justify="right" padding="0"/>
+        <field kor="잔액" name="blnc" minOccurs="1" maxOccurs="1" position="134" length="13" justify="right" padding="0"/>
+        <field kor="입금지점코드6" name="iamtBrnCd6" minOccurs="1" maxOccurs="1" position="147" length="6"/>
+        <field kor="적요" name="abst" minOccurs="1" maxOccurs="1" position="153" length="14"/>
+        <field kor="수표번호" name="checkNo" minOccurs="1" maxOccurs="1" position="167" length="10"/>
+        <field kor="현금" name="cash" minOccurs="1" maxOccurs="1" position="177" length="13" justify="right" padding="0"/>
+        <field kor="타행수표금액" name="obnkCheckAmt" minOccurs="1" maxOccurs="1" position="190" length="13" justify="right" padding="0"/>
+        <field kor="가계수표기타금액" name="prckEtcAmt" minOccurs="1" maxOccurs="1" position="203" length="13" justify="right" padding="0"/>
+        <field kor="가상계좌번호" name="virtAcno" minOccurs="1" maxOccurs="1" position="216" length="16"/>
+        <field kor="거래일자" name="trdDt" minOccurs="1" maxOccurs="1" position="232" length="8"/>
+        <field kor="거래시간" name="trdTime" minOccurs="1" maxOccurs="1" position="240" length="6"/>
+        <field kor="통장거래일련번호" name="bnkbTrdSeqno" minOccurs="1" maxOccurs="1" position="246" length="6"/>
+        <field kor="거래은행코드3" name="trdBnkCd3" minOccurs="1" maxOccurs="1" position="252" length="7"/>
+        <field kor="입금지점코드7" name="iamtBrnCd7" minOccurs="1" maxOccurs="1" position="259" length="7"/>
+        <field kor="예비" name="spare" minOccurs="1" maxOccurs="1" position="266" length="38"/>
       </segment>
     </record>
   </stream>

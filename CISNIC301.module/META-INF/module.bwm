@@ -9,18 +9,6 @@
   <sca:property xmi:id="_YEvQ4qKdEe2ZLOHaxoc2FA" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_YEvQ46KdEe2ZLOHaxoc2FA" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_YE4a0KKdEe2ZLOHaxoc2FA" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
-  <sca:component xmi:id="_8f8eIKKnEe2ZLOHaxoc2FA" name="ComponentCISNICUPID0010501_REQ" compositeext:version="1.0.0.qualifier">
-    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_8f8eIaKnEe2ZLOHaxoc2FA" processName="CISNICUPID.CISNICUPID0010501.CISNICUPID0010501_REQ"/>
-  </sca:component>
-  <sca:component xmi:id="_gS3DsKKvEe2ZLOHaxoc2FA" name="ComponentNICCISUPID0010501_RES" compositeext:version="1.0.0.qualifier">
-    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_gS3DsaKvEe2ZLOHaxoc2FA" processName="NICCISUPID.NICCISUPID0010501.NICCISUPID0010501_RES"/>
-  </sca:component>
-  <sca:component xmi:id="_0lNS0qLAEe2Mvp86zImF9w" name="Component1CISNICUPID0010501_REQ" compositeext:version="1.0.0.qualifier">
-    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_0lNS06LAEe2Mvp86zImF9w" processName="CISNICUPID.CISNICUPID0010601.CISNICUPID0010601_REQ"/>
-  </sca:component>
-  <sca:component xmi:id="_9iPfQKLAEe2Mvp86zImF9w" name="Component1NICCISUPID0010501_RES" compositeext:version="1.0.0.qualifier">
-    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_9iPfQaLAEe2Mvp86zImF9w" processName="NICCISUPID.NICCISUPID0010601.NICCISUPID0010601_RES"/>
-  </sca:component>
   <sca:component xmi:id="_-EsAoKeEEe2kRZld14Zk_A" name="ComponentNICCISUP_DELQINF" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_-EsAoaeEEe2kRZld14Zk_A" processName="CISNICUPID.CISNICUP_ACCCINF"/>
   </sca:component>
@@ -36,7 +24,13 @@
   <sca:component xmi:id="_Al1AUqeIEe2kRZld14Zk_A" name="ComponentCISNICUP_AHRCINF" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_Al1AU6eIEe2kRZld14Zk_A" processName="CISNICUPID.CISNICUP_AHRCINF"/>
   </sca:component>
-  <sca:component xmi:id="_VfbscqeIEe2kRZld14Zk_A" name="ComponentCISNICUP_DELQMST" compositeext:version="1.0.0.qualifier">
-    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_Vfbsc6eIEe2kRZld14Zk_A" processName="CISNICUPID.CISNICUPIG0020401"/>
+  <sca:component xmi:id="_NTVIwLMwEe2tcMqM9p8Usg" name="ComponentCISNICUPID0010501_REQ" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_NTVIwbMwEe2tcMqM9p8Usg" processName="CISNICUPID.CISNICUPID0010601.CISNICUPID0010601_REQ"/>
+  </sca:component>
+  <sca:component xmi:id="_VIFegLMwEe2tcMqM9p8Usg" name="ComponentNICCISUPID0010501_RES" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_VIFegbMwEe2tcMqM9p8Usg" processName="NICCISUPID.NICCISUPID0010601.NICCISUPID0010601_RES"/>
+  </sca:component>
+  <sca:component xmi:id="_DQ0TQLM2Ee2tcMqM9p8Usg" name="ComponentCISNICUPIG0020401" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_DQ0TQbM2Ee2tcMqM9p8Usg" processName="CISNICUPID.CISNICUPIG0020401"/>
   </sca:component>
 </sca:composite>

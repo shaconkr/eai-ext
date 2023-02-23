@@ -9,56 +9,56 @@
       <property name="recordTerminator" value="\r\n"/>
     </parser>
     <record name="BCC_InReq" class="java.util.LinkedHashMap">
-      <segment name="bizHeader" minOccurs="1" maxOccurs="1" class="map">
-        <field kor="거래코드" name="trdCd" position="0" length="4"/>
-        <field kor="전문코드" name="tgrmCd" position="4" length="5"/>
-        <field kor="전문번호" name="tgrmNo" position="9" length="8"/>
-        <field kor="전문전송일시" name="tgrmSendDtm" position="17" length="16"/>
-        <field kor="테스트여부" name="testYn" position="33" length="1"/>
-        <field kor="전문유형" name="tgrmType" position="34" length="1"/>
-        <field kor="예비정보" name="prepInf" position="35" length="19"/>
-        <field kor="전문길이" name="tgrmLen" position="54" length="6"/>
-        <field kor="응답코드" name="respCd" position="60" length="4"/>
+      <segment name="bizHeader" kor="0" minOccurs="1" maxOccurs="1" class="map">
+        <field kor="거래코드" name="trdCd" minOccurs="1" maxOccurs="1" position="0" length="4"/>
+        <field kor="전문코드" name="tgrmCd" minOccurs="1" maxOccurs="1" position="4" length="5"/>
+        <field kor="전문번호" name="tgrmNo" minOccurs="1" maxOccurs="1" position="9" length="8"/>
+        <field kor="전문전송일시" name="tgrmSendDtm" minOccurs="1" maxOccurs="1" position="17" length="16"/>
+        <field kor="테스트여부" name="testYn" minOccurs="1" maxOccurs="1" position="33" length="1"/>
+        <field kor="전문유형" name="tgrmType" minOccurs="1" maxOccurs="1" position="34" length="1"/>
+        <field kor="예비정보" name="prepInf" minOccurs="1" maxOccurs="1" position="35" length="19"/>
+        <field kor="전문길이" name="tgrmLen" minOccurs="1" maxOccurs="1" position="54" length="6"/>
+        <field kor="응답코드" name="respCd" minOccurs="1" maxOccurs="1" position="60" length="4"/>
       </segment>
-      <segment name="bizBody" minOccurs="1" maxOccurs="1" class="map">
-        <field kor="카드회원번호" name="crdMemNo" position="64" length="9"/>
-        <field kor="카드회원번호CI값" name="crdMemNoCiVal" position="73" length="88"/>
-        <field kor="회원한글명" name="memHnm" position="161" length="20"/>
-        <field kor="회원영문명" name="memEnm" position="181" length="30"/>
-        <field kor="성별구분코드" name="sexGbcd" position="211" length="1"/>
-        <field kor="이메일주소" name="emailAdr" position="212" length="50"/>
-        <field kor="TM수신여부" name="tmRcvYn" position="262" length="1"/>
-        <field kor="DM수신여부" name="dmRcvYn" position="263" length="1"/>
-        <field kor="SMS수신여부" name="smsRcvYn" position="264" length="1"/>
-        <field kor="이메일수신여부" name="emailRcvYn" position="265" length="1"/>
-        <field kor="자택우편번호" name="hmPostNo" position="266" length="6"/>
-        <field kor="자택신구주소구분코드" name="hmNewOldAdrGbcd" position="272" length="1"/>
-        <field kor="자택도로명참조KEY" name="hmRdnmRfrKey" position="273" length="25"/>
-        <field kor="자택주소1" name="hmAdr1" position="298" length="200"/>
-        <field kor="자택주소2" name="hmAdr2" position="498" length="200"/>
-        <field kor="자택전화번호" name="hmTelno" position="698" length="16"/>
-        <field kor="직장명" name="ofcNm" position="714" length="30"/>
-        <field kor="부서명" name="deptNm" position="744" length="40"/>
-        <field kor="직위명" name="pstnNm" position="784" length="20"/>
-        <field kor="직장우편번호" name="ofcPostNo" position="804" length="6"/>
-        <field kor="직장신구주소구분코드" name="ofcNewOldAdrGbcd" position="810" length="1"/>
-        <field kor="직장도로명참조KEY" name="ofcRdnmRfrKey" position="811" length="25"/>
-        <field kor="직장주소1" name="ofcAdr1" position="836" length="200"/>
-        <field kor="직장주소2" name="ofcAdr2" position="1036" length="200"/>
-        <field kor="직장전화번호" name="ofcTelno" position="1236" length="16"/>
-        <field kor="청구지우편번호" name="biltoPostNo" position="1252" length="6"/>
-        <field kor="청구지신구구분코드" name="biltoNewOldGbcd" position="1258" length="1"/>
-        <field kor="청구지도로명참조KEY" name="biltoRdnmRfrKey" position="1259" length="25"/>
-        <field kor="청구지주소1" name="biltoAdr1" position="1284" length="200"/>
-        <field kor="청구지주소2" name="biltoAdr2" position="1484" length="200"/>
-        <field kor="청구서발송구분코드" name="billSenmGbcd" position="1684" length="1"/>
-        <field kor="결혼여부" name="mrrgYn" position="1685" length="1"/>
-        <field kor="결혼기념일자" name="mrrgClbrDt" position="1686" length="8"/>
-        <field kor="생년월일" name="bymd" position="1694" length="8"/>
-        <field kor="생일구분코드" name="birGbcd" position="1702" length="1"/>
-        <field kor="휴대전화번호" name="mobiTelno" position="1703" length="16"/>
-        <field kor="결과메시지" name="rstMsg" position="1719" length="80"/>
-        <field kor="예비정보" name="prepInf" position="1799" length="36"/>
+      <segment name="bizBody" kor="0" minOccurs="1" maxOccurs="1" class="map">
+        <field kor="카드회원번호" name="crdMemNo" minOccurs="1" maxOccurs="1" position="64" length="9"/>
+        <field kor="카드회원번호CI값" name="crdMemNoCiVal" minOccurs="1" maxOccurs="1" position="73" length="88"/>
+        <field kor="회원한글명" name="memHnm" minOccurs="1" maxOccurs="1" position="161" length="20"/>
+        <field kor="회원영문명" name="memEnm" minOccurs="1" maxOccurs="1" position="181" length="30"/>
+        <field kor="성별구분코드" name="sexGbcd" minOccurs="1" maxOccurs="1" position="211" length="1"/>
+        <field kor="이메일주소" name="emailAdr" minOccurs="1" maxOccurs="1" position="212" length="50"/>
+        <field kor="TM수신여부" name="tmRcvYn" minOccurs="1" maxOccurs="1" position="262" length="1"/>
+        <field kor="DM수신여부" name="dmRcvYn" minOccurs="1" maxOccurs="1" position="263" length="1"/>
+        <field kor="SMS수신여부" name="smsRcvYn" minOccurs="1" maxOccurs="1" position="264" length="1"/>
+        <field kor="이메일수신여부" name="emailRcvYn" minOccurs="1" maxOccurs="1" position="265" length="1"/>
+        <field kor="자택우편번호" name="hmPostNo" minOccurs="1" maxOccurs="1" position="266" length="6"/>
+        <field kor="자택신구주소구분코드" name="hmNewOldAdrGbcd" minOccurs="1" maxOccurs="1" position="272" length="1"/>
+        <field kor="자택도로명참조KEY" name="hmRdnmRfrKey" minOccurs="1" maxOccurs="1" position="273" length="25"/>
+        <field kor="자택주소1" name="hmAdr1" minOccurs="1" maxOccurs="1" position="298" length="200"/>
+        <field kor="자택주소2" name="hmAdr2" minOccurs="1" maxOccurs="1" position="498" length="200"/>
+        <field kor="자택전화번호" name="hmTelno" minOccurs="1" maxOccurs="1" position="698" length="16"/>
+        <field kor="직장명" name="ofcNm" minOccurs="1" maxOccurs="1" position="714" length="30"/>
+        <field kor="부서명" name="deptNm" minOccurs="1" maxOccurs="1" position="744" length="40"/>
+        <field kor="직위명" name="pstnNm" minOccurs="1" maxOccurs="1" position="784" length="20"/>
+        <field kor="직장우편번호" name="ofcPostNo" minOccurs="1" maxOccurs="1" position="804" length="6"/>
+        <field kor="직장신구주소구분코드" name="ofcNewOldAdrGbcd" minOccurs="1" maxOccurs="1" position="810" length="1"/>
+        <field kor="직장도로명참조KEY" name="ofcRdnmRfrKey" minOccurs="1" maxOccurs="1" position="811" length="25"/>
+        <field kor="직장주소1" name="ofcAdr1" minOccurs="1" maxOccurs="1" position="836" length="200"/>
+        <field kor="직장주소2" name="ofcAdr2" minOccurs="1" maxOccurs="1" position="1036" length="200"/>
+        <field kor="직장전화번호" name="ofcTelno" minOccurs="1" maxOccurs="1" position="1236" length="16"/>
+        <field kor="청구지우편번호" name="biltoPostNo" minOccurs="1" maxOccurs="1" position="1252" length="6"/>
+        <field kor="청구지신구구분코드" name="biltoNewOldGbcd" minOccurs="1" maxOccurs="1" position="1258" length="1"/>
+        <field kor="청구지도로명참조KEY" name="biltoRdnmRfrKey" minOccurs="1" maxOccurs="1" position="1259" length="25"/>
+        <field kor="청구지주소1" name="biltoAdr1" minOccurs="1" maxOccurs="1" position="1284" length="200"/>
+        <field kor="청구지주소2" name="biltoAdr2" minOccurs="1" maxOccurs="1" position="1484" length="200"/>
+        <field kor="청구서발송구분코드" name="billSenmGbcd" minOccurs="1" maxOccurs="1" position="1684" length="1"/>
+        <field kor="결혼여부" name="mrrgYn" minOccurs="1" maxOccurs="1" position="1685" length="1"/>
+        <field kor="결혼기념일자" name="mrrgClbrDt" minOccurs="1" maxOccurs="1" position="1686" length="8"/>
+        <field kor="생년월일" name="bymd" minOccurs="1" maxOccurs="1" position="1694" length="8"/>
+        <field kor="생일구분코드" name="birGbcd" minOccurs="1" maxOccurs="1" position="1702" length="1"/>
+        <field kor="휴대전화번호" name="mobiTelno" minOccurs="1" maxOccurs="1" position="1703" length="16"/>
+        <field kor="결과메시지" name="rstMsg" minOccurs="1" maxOccurs="1" position="1719" length="80"/>
+        <field kor="예비정보" name="prepInf" minOccurs="1" maxOccurs="1" position="1799" length="36"/>
       </segment>
     </record>
   </stream>

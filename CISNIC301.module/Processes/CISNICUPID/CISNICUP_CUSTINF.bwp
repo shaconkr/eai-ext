@@ -673,7 +673,7 @@
                                     <children
                                     description="조기경보 대상자 NICE 등록   파일명 - 25O00_CUSTINF_NICE.YYYYMMDD"
                                     fillColor="13369343"
-                                    fontHeight="11"
+                                    fontHeight="10"
                                     fontName="맑은 고딕"
                                     lineColor="6737151"
                                     lineWidth="1"
@@ -1088,8 +1088,7 @@
                                     <type href="http://ns.tibco.com/bw/palette/generalactivities#//Timer"/>
                                     <value
                                     endTime="2023-02-01T10:37:15.197+0900"
-                                    intervalUnit="Second"
-                                    runOnce="true"
+                                    intervalUnit=""
                                     startTime="2023-02-01T10:37:15.197+0900"
                                     timeInterval="1" xsi:type="generalactivities:Timer"/>
                                 </properties>

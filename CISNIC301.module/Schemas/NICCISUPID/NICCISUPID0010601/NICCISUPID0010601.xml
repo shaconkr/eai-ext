@@ -9,49 +9,49 @@
       <property name="recordTerminator" value="\r\n"/>
     </parser>
     <record name="NIC_OutRes" class="java.util.LinkedHashMap">
-      <segment name="bizHeader" minOccurs="1" maxOccurs="1" class="map">
-        <field kor="거래코드" name="trdCd" position="0" length="9"/>
-        <field kor="전문채널코드" name="tgrmChCd" position="9" length="9"/>
-        <field kor="전문종별코드" name="tgrmSubCCd" position="18" length="4" justify="right" padding="0"/>
-        <field kor="거래구분코드" name="trdGbcd" position="22" length="5"/>
-        <field kor="송수신구분" name="tnrGb" position="27" length="1"/>
-        <field kor="단말기정보구분코드" name="teInfGbcd" position="28" length="3"/>
-        <field kor="응답코드" name="respCd" position="31" length="4"/>
-        <field kor="사용자ID" name="userId" position="35" length="9"/>
-        <field kor="기관전문관리번호" name="istnTgrmMngNo" position="44" length="10" justify="right" padding="0"/>
-        <field kor="기관전문전송시간" name="istnTgrmSendTime" position="54" length="14" justify="right" padding="0"/>
-        <field kor="NICE전문관리번호" name="niceTgrmMngNo" position="68" length="10"/>
-        <field kor="NICE전문전송시간" name="niceTgrmSendTime" position="78" length="14" justify="right" padding="0"/>
-        <field kor="공백값" name="nullVal" position="92" length="17"/>
+      <segment name="bizHeader" kor="0" minOccurs="1" maxOccurs="1" class="map">
+        <field kor="거래코드" name="trdCd" minOccurs="1" maxOccurs="1" position="0" length="9"/>
+        <field kor="전문채널코드" name="tgrmChCd" minOccurs="1" maxOccurs="1" position="9" length="9"/>
+        <field kor="전문종별코드" name="tgrmSubCCd" minOccurs="1" maxOccurs="1" position="18" length="4" justify="right" padding="0"/>
+        <field kor="거래구분코드" name="trdGbcd" minOccurs="1" maxOccurs="1" position="22" length="5"/>
+        <field kor="송수신구분" name="tnrGb" minOccurs="1" maxOccurs="1" position="27" length="1"/>
+        <field kor="단말기정보구분코드" name="teInfGbcd" minOccurs="1" maxOccurs="1" position="28" length="3"/>
+        <field kor="응답코드" name="respCd" minOccurs="1" maxOccurs="1" position="31" length="4"/>
+        <field kor="사용자ID" name="userId" minOccurs="1" maxOccurs="1" position="35" length="9"/>
+        <field kor="기관전문관리번호" name="istnTgrmMngNo" minOccurs="1" maxOccurs="1" position="44" length="10" justify="right" padding="0"/>
+        <field kor="기관전문전송시간" name="istnTgrmSendTime" minOccurs="1" maxOccurs="1" position="54" length="14" justify="right" padding="0"/>
+        <field kor="NICE전문관리번호" name="niceTgrmMngNo" minOccurs="1" maxOccurs="1" position="68" length="10"/>
+        <field kor="NICE전문전송시간" name="niceTgrmSendTime" minOccurs="1" maxOccurs="1" position="78" length="14" justify="right" padding="0"/>
+        <field kor="공백값" name="nullVal" minOccurs="1" maxOccurs="1" position="92" length="17"/>
       </segment>
-      <segment name="bizBody" minOccurs="1" maxOccurs="1" class="map">
-        <field kor="등록구분코드" name="regGbcd" position="109" length="1" justify="right" padding="0"/>
-        <field kor="거래기관코드" name="trdIstnCd" position="110" length="9" justify="right" padding="0"/>
-        <field kor="거래지점코드" name="trdBrnCd" position="119" length="9"/>
-        <field kor="거래지점명" name="trdBrnNm" position="128" length="30"/>
-        <field kor="주민등록번호" name="rrno" position="158" length="13" justify="right" padding="0"/>
-        <field kor="고객명" name="custNm" position="171" length="12"/>
-        <field kor="계좌번호1" name="acno1" position="183" length="20"/>
-        <field kor="상품코드" name="itemCd" position="203" length="3"/>
-        <field kor="특수상품코드" name="spclItemCd" position="206" length="2"/>
-        <field kor="한도금액" name="bndsAmt" position="208" length="9" justify="right" padding="0"/>
-        <field kor="연체발생일자" name="odueOcrnDt" position="217" length="8" justify="right" padding="0"/>
-        <field kor="연체발생등록일자" name="odueOcrnRegDt" position="225" length="8" justify="right" padding="0"/>
-        <field kor="연체금액" name="odueAmt" position="233" length="9" justify="right" padding="0"/>
-        <field kor="연체잔액" name="odueBlnc" position="242" length="9" justify="right" padding="0"/>
-        <field kor="연체구분코드" name="odueGbcd" position="251" length="2"/>
-        <field kor="등록구분사유코드" name="regGbRsnCd" position="253" length="2"/>
-        <field kor="연체해제일자" name="odueClerDt" position="255" length="8" justify="right" padding="0"/>
-        <field kor="연체해제등록일자" name="odueClerRegDt" position="263" length="8" justify="right" padding="0"/>
-        <field kor="영업점전화지역번호" name="bizStoreTelpnAreaNo" position="271" length="4"/>
-        <field kor="영업점전화국번호" name="bizStoreTels" position="275" length="4"/>
-        <field kor="영업점전화번호" name="bizStoreTelno" position="279" length="4"/>
-        <field kor="변경주민등록번호" name="chgRrno" position="283" length="13" justify="right" padding="0"/>
-        <field kor="변경구분코드" name="chgGbcd" position="296" length="1" justify="right" padding="0"/>
-        <field kor="계좌번호2" name="acno2" position="297" length="20"/>
-        <field kor="공백값1" name="nullVal1" position="317" length="27"/>
-        <field kor="동의서구분코드" name="agrmtGbcd" position="344" length="1"/>
-        <field kor="공백값2" name="nullVal2" position="345" length="14"/>
+      <segment name="bizBody" kor="0" minOccurs="1" maxOccurs="1" class="map">
+        <field kor="등록구분코드" name="regGbcd" minOccurs="1" maxOccurs="1" position="109" length="1" justify="right" padding="0"/>
+        <field kor="거래기관코드" name="trdIstnCd" minOccurs="1" maxOccurs="1" position="110" length="9" justify="right" padding="0"/>
+        <field kor="거래지점코드" name="trdBrnCd" minOccurs="1" maxOccurs="1" position="119" length="9"/>
+        <field kor="거래지점명" name="trdBrnNm" minOccurs="1" maxOccurs="1" position="128" length="30"/>
+        <field kor="주민등록번호" name="rrno" minOccurs="1" maxOccurs="1" position="158" length="13" justify="right" padding="0"/>
+        <field kor="고객명" name="custNm" minOccurs="1" maxOccurs="1" position="171" length="12"/>
+        <field kor="계좌번호1" name="acno1" minOccurs="1" maxOccurs="1" position="183" length="20"/>
+        <field kor="상품코드" name="itemCd" minOccurs="1" maxOccurs="1" position="203" length="3"/>
+        <field kor="특수상품코드" name="spclItemCd" minOccurs="1" maxOccurs="1" position="206" length="2"/>
+        <field kor="한도금액" name="bndsAmt" minOccurs="1" maxOccurs="1" position="208" length="9" justify="right" padding="0"/>
+        <field kor="연체발생일자" name="odueOcrnDt" minOccurs="1" maxOccurs="1" position="217" length="8" justify="right" padding="0"/>
+        <field kor="연체발생등록일자" name="odueOcrnRegDt" minOccurs="1" maxOccurs="1" position="225" length="8" justify="right" padding="0"/>
+        <field kor="연체금액" name="odueAmt" minOccurs="1" maxOccurs="1" position="233" length="9" justify="right" padding="0"/>
+        <field kor="연체잔액" name="odueBlnc" minOccurs="1" maxOccurs="1" position="242" length="9" justify="right" padding="0"/>
+        <field kor="연체구분코드" name="odueGbcd" minOccurs="1" maxOccurs="1" position="251" length="2"/>
+        <field kor="등록구분사유코드" name="regGbRsnCd" minOccurs="1" maxOccurs="1" position="253" length="2"/>
+        <field kor="연체해제일자" name="odueClerDt" minOccurs="1" maxOccurs="1" position="255" length="8" justify="right" padding="0"/>
+        <field kor="연체해제등록일자" name="odueClerRegDt" minOccurs="1" maxOccurs="1" position="263" length="8" justify="right" padding="0"/>
+        <field kor="영업점전화지역번호" name="bizStoreTelpnAreaNo" minOccurs="1" maxOccurs="1" position="271" length="4"/>
+        <field kor="영업점전화국번호" name="bizStoreTels" minOccurs="1" maxOccurs="1" position="275" length="4"/>
+        <field kor="영업점전화번호" name="bizStoreTelno" minOccurs="1" maxOccurs="1" position="279" length="4"/>
+        <field kor="변경주민등록번호" name="chgRrno" minOccurs="1" maxOccurs="1" position="283" length="13" justify="right" padding="0"/>
+        <field kor="변경구분코드" name="chgGbcd" minOccurs="1" maxOccurs="1" position="296" length="1" justify="right" padding="0"/>
+        <field kor="계좌번호2" name="acno2" minOccurs="1" maxOccurs="1" position="297" length="20"/>
+        <field kor="공백값1" name="nullVal1" minOccurs="1" maxOccurs="1" position="317" length="27"/>
+        <field kor="동의서구분코드" name="agrmtGbcd" minOccurs="1" maxOccurs="1" position="344" length="1"/>
+        <field kor="공백값2" name="nullVal2" minOccurs="1" maxOccurs="1" position="345" length="14"/>
       </segment>
     </record>
   </stream>

@@ -9,40 +9,40 @@
       <property name="recordTerminator" value="\r\n"/>
     </parser>
     <record name="KCB_OutReq" class="java.util.LinkedHashMap">
-      <segment name="bizHeader" minOccurs="1" maxOccurs="1" class="map">
-        <field kor="전문길이" name="tgrmLen" position="0" length="4"/>
-        <field kor="거래코드" name="trdCd" position="4" length="9"/>
-        <field kor="회원사코드" name="mmcoCd" position="13" length="8"/>
-        <field kor="전문종별코드" name="tgrmSubCCd" position="21" length="4"/>
-        <field kor="업무구분코드" name="tskGbcd" position="25" length="3"/>
-        <field kor="송수신구분" name="tnrGb" position="28" length="1"/>
-        <field kor="응답코드" name="respCd" position="29" length="4"/>
-        <field kor="KCB전문관리번호" name="kcbTgrmMngNo" position="33" length="7"/>
-        <field kor="KCB전문전송시간" name="kcbTgrmSendTime" position="40" length="14"/>
-        <field kor="회원사전문관리번호" name="mmcoTgrmMngNo" position="54" length="7"/>
-        <field kor="회원사전문전송시간" name="mmcoTgrmSendTime" position="61" length="14"/>
-        <field kor="시스템정보" name="sysInf" position="75" length="16"/>
-        <field kor="조회동의코드" name="qryAgrCd" position="91" length="1"/>
-        <field kor="예비값" name="prepVal" position="92" length="42"/>
+      <segment name="bizHeader" kor="0" minOccurs="1" maxOccurs="1" class="map">
+        <field kor="전문길이" name="tgrmLen" minOccurs="1" maxOccurs="1" position="0" length="4"/>
+        <field kor="거래코드" name="trdCd" minOccurs="1" maxOccurs="1" position="4" length="9"/>
+        <field kor="회원사코드" name="mmcoCd" minOccurs="1" maxOccurs="1" position="13" length="8"/>
+        <field kor="전문종별코드" name="tgrmSubCCd" minOccurs="1" maxOccurs="1" position="21" length="4"/>
+        <field kor="업무구분코드" name="tskGbcd" minOccurs="1" maxOccurs="1" position="25" length="3"/>
+        <field kor="송수신구분" name="tnrGb" minOccurs="1" maxOccurs="1" position="28" length="1"/>
+        <field kor="응답코드" name="respCd" minOccurs="1" maxOccurs="1" position="29" length="4"/>
+        <field kor="KCB전문관리번호" name="kcbTgrmMngNo" minOccurs="1" maxOccurs="1" position="33" length="7"/>
+        <field kor="KCB전문전송시간" name="kcbTgrmSendTime" minOccurs="1" maxOccurs="1" position="40" length="14"/>
+        <field kor="회원사전문관리번호" name="mmcoTgrmMngNo" minOccurs="1" maxOccurs="1" position="54" length="7"/>
+        <field kor="회원사전문전송시간" name="mmcoTgrmSendTime" minOccurs="1" maxOccurs="1" position="61" length="14"/>
+        <field kor="시스템정보" name="sysInf" minOccurs="1" maxOccurs="1" position="75" length="16"/>
+        <field kor="조회동의코드" name="qryAgrCd" minOccurs="1" maxOccurs="1" position="91" length="1"/>
+        <field kor="예비값" name="prepVal" minOccurs="1" maxOccurs="1" position="92" length="42"/>
       </segment>
-      <segment name="bizBody" minOccurs="1" maxOccurs="1" class="map">
-        <field kor="인증번호" name="certNo" position="134" length="12"/>
-        <field kor="재요청횟수" name="reReqnCnt" position="146" length="2"/>
-        <field kor="식별번호구분코드" name="idntNoGbcd" position="148" length="1"/>
-        <field kor="식별번호" name="idntNo" position="149" length="13"/>
-        <field kor="조회목적코드" name="qryPurpseCd" position="162" length="2"/>
-        <field kor="성명" name="fnmNm" position="164" length="50"/>
-        <field kor="조회지점명" name="qryBrnNm" position="214" length="20"/>
-        <field kor="담당자ID" name="asgnrId" position="234" length="15"/>
-        <field kor="신상정보총수신건수" name="pinfInfTotRcvCnt" position="249" length="3" justify="right" padding="0"/>
-        <field kor="신상정보요청건수" name="pinfInfReqnCnt" position="252" length="2" justify="right" padding="0"/>
-        <field kor="APS총수신건수" name="apsTotRcvCnt" position="254" length="3" justify="right" padding="0"/>
-        <field kor="APS요청건수" name="apsReqnCnt" position="257" length="3" justify="right" padding="0"/>
-        <field kor="부동산소유정보총수신건수" name="rltyOwnInfTotRcvCnt" position="260" length="3" justify="right" padding="0"/>
-        <field kor="부동산소유정보요청건수" name="rltyOwnInfReqnCnt" position="263" length="2" justify="right" padding="0"/>
-        <segment name="apsReqnList" minOccurs="0" collection="list" maxOccurs="unbounded" class="map">
-          <field kor="세그멘트ID" name="segId" position="265" length="3"/>
-          <field kor="프로파일코드" name="prfCd" position="268" length="9"/>
+      <segment name="bizBody" kor="0" minOccurs="1" maxOccurs="1" class="map">
+        <field kor="인증번호" name="certNo" minOccurs="1" maxOccurs="1" position="134" length="12"/>
+        <field kor="재요청횟수" name="reReqnCnt" minOccurs="1" maxOccurs="1" position="146" length="2"/>
+        <field kor="식별번호구분코드" name="idntNoGbcd" minOccurs="1" maxOccurs="1" position="148" length="1"/>
+        <field kor="식별번호" name="idntNo" minOccurs="1" maxOccurs="1" position="149" length="13"/>
+        <field kor="조회목적코드" name="qryPurpseCd" minOccurs="1" maxOccurs="1" position="162" length="2"/>
+        <field kor="성명" name="fnmNm" minOccurs="1" maxOccurs="1" position="164" length="50"/>
+        <field kor="조회지점명" name="qryBrnNm" minOccurs="1" maxOccurs="1" position="214" length="20"/>
+        <field kor="담당자ID" name="asgnrId" minOccurs="1" maxOccurs="1" position="234" length="15"/>
+        <field kor="신상정보총수신건수" name="pinfInfTotRcvCnt" minOccurs="1" maxOccurs="1" position="249" length="3" justify="right" padding="0"/>
+        <field kor="신상정보요청건수" name="pinfInfReqnCnt" minOccurs="1" maxOccurs="1" position="252" length="2" justify="right" padding="0"/>
+        <field kor="APS총수신건수" name="apsTotRcvCnt" minOccurs="1" maxOccurs="1" position="254" length="3" justify="right" padding="0"/>
+        <field kor="APS요청건수" name="apsReqnCnt" minOccurs="1" maxOccurs="1" position="257" length="3" justify="right" padding="0"/>
+        <field kor="부동산소유정보총수신건수" name="rltyOwnInfTotRcvCnt" minOccurs="1" maxOccurs="1" position="260" length="3" justify="right" padding="0"/>
+        <field kor="부동산소유정보요청건수" name="rltyOwnInfReqnCnt" minOccurs="1" maxOccurs="1" position="263" length="2" justify="right" padding="0"/>
+        <segment name="apsReqnList" kor="APS반복부_배열" minOccurs="1" maxOccurs="9223372036854775807" collection="list" class="map">
+          <field kor="세그멘트ID" name="segId" minOccurs="1" maxOccurs="1" position="265" length="3"/>
+          <field kor="프로파일코드" name="prfCd" minOccurs="1" maxOccurs="1" position="268" length="9"/>
         </segment>
       </segment>
     </record>

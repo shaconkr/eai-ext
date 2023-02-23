@@ -19,13 +19,13 @@
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_Rl9p8aarEe2MspbPgxPMzQ" processName="JNICISCTIC.JNICISCTIC0020101.JNICISCTIC0020102"/>
   </sca:component>
   <sca:component xmi:id="_2oIMMLG7Ee2qCf8kiCi74w" name="ComponentBCCCISCTCN0010201_REQ" compositeext:version="1.0.0.qualifier">
-    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_2oIMMbG7Ee2qCf8kiCi74w" processName="JNICISCTIC.JNICISCTIC0030101.JNICISCTIC0030101_REQ"/>
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_2oIMMbG7Ee2qCf8kiCi74w" processName="JNICISCTIC.JNICISCTIC0330101.JNICISCTIC0330101_REQ"/>
   </sca:component>
   <sca:component xmi:id="_Hnzj8rG9Ee2qCf8kiCi74w" name="ComponentCISBCCCTCN0010201_RES" compositeext:version="1.0.0.qualifier">
-    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_Hnzj87G9Ee2qCf8kiCi74w" processName="CISJNICTIC.CISJNICTIC0030102.CISJNICTIC0030102_RES"/>
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_Hnzj87G9Ee2qCf8kiCi74w" processName="CISJNICTIC.CISJNICTIC0330102.CISJNICTIC0330102_RES"/>
   </sca:component>
   <sca:component xmi:id="_dtfPYLHCEe2qCf8kiCi74w" name="ComponentJNICISCTIC0030101_REQ" compositeext:version="1.0.0.qualifier">
-    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_dtfPYbHCEe2qCf8kiCi74w" processName="JNICISCTIC.JNICISCTIC0040101.JNICISCTIC0340101_REQ"/>
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_dtfPYbHCEe2qCf8kiCi74w" processName="JNICISCTIC.JNICISCTIC0340101.JNICISCTIC0340101_REQ"/>
   </sca:component>
   <sca:component xmi:id="_6kTCorHCEe2qCf8kiCi74w" name="ComponentCISJNICTIC0030102_RES" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_6kTCo7HCEe2qCf8kiCi74w" processName="CISJNICTIC.CISJNICTIC0340102.CISJNICTIC0340102_RES"/>

@@ -2577,10 +2577,7 @@
             namespace="http://schema.hcis.com/xsd/CISJNICTIC0340102_InRes" prefix="ns5"/>
     </tibex:NamespaceRegistry>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.cspi_library.org/Library"/>
-    <bpws:import importType="http://www.w3.org/2001/XMLSchema"
-        location="../../../Schemas/CISJNICTIC/CISJNICTIC0030102/CISJNICTIC0030102_InRes.xsd" namespace="http://schema.hcis.com/xsd/CISJNICTIC0030102_InRes"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.cspi_library.org/Log"/>
-    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://schema.hcis.com/xsd/CISJNICTIC0030102_OutRes"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://schema.hcis.com/xsd/CISJNICTIC0340102_OutRes"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema"
         location="../../../Schemas/CISJNICTIC/CISJNICTIC0340102/CISJNICTIC0340102_InRes.xsd" namespace="http://schema.hcis.com/xsd/CISJNICTIC0340102_InRes"/>

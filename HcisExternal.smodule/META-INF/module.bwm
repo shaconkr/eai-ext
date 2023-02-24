@@ -70,6 +70,36 @@
   <sca:property xmi:id="_6h8GgLNUEe2tcMqM9p8Usg" name="/ENDPOINT/HCN_FTP/PASSWORD" type="property:password" scaext:simpleValue="#!ceUA5cl46u8UpiCWohKxwA==" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_9sW0ELNUEe2tcMqM9p8Usg" name="/ENDPOINT/HCN_FTP/PWD_PLAIN" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="___kM0LNUEe2tcMqM9p8Usg" name="/ENDPOINT/HCN_FTP/SAM_CT_HCN_SND_PATH" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_rSQVMLPhEe2tcMqM9p8Usg" name="/ENDPOINT/ARB_FTP/HOSTNAME" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_0V-YcLPhEe2tcMqM9p8Usg" name="/ENDPOINT/ARB_FTP/USERNAME" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_12wOsLPhEe2tcMqM9p8Usg" name="/ENDPOINT/ARB_FTP/PASSWORD" type="property:password" scaext:simpleValue="#!FFoXjqL3Arl5ze/nXQYmqg==" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_3QheALPhEe2tcMqM9p8Usg" name="/ENDPOINT/ARB_FTP/PWD_PLAIN" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_5TI2ALPhEe2tcMqM9p8Usg" name="/ENDPOINT/ARB_FTP/SAM_CT_ARB_SND_PATH" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_XAs40LPnEe2tcMqM9p8Usg" name="/ENDPOINT/DLV_FTP/HOSTNAME" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_bSEnYLPnEe2tcMqM9p8Usg" name="/ENDPOINT/DLV_FTP/USERNAME" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_cvH0MLPnEe2tcMqM9p8Usg" name="/ENDPOINT/DLV_FTP/PASSWORD" type="property:password" scaext:simpleValue="#!24/NrnS3TlBErTba/6c1VA==" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_eXMlQLPnEe2tcMqM9p8Usg" name="/ENDPOINT/DLV_FTP/PWD_PLAIN" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_gH_0gLPnEe2tcMqM9p8Usg" name="/ENDPOINT/DLV_FTP/SAM_CT_DLV_SND_PATH" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_lrMagLPrEe2tcMqM9p8Usg" name="/ENDPOINT/GCS_FTP/HOSTNAME" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_qZyQkLPrEe2tcMqM9p8Usg" name="/ENDPOINT/GCS_FTP/USERNAME" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_2_-bYLPzEe2Yzb0bY4iB3A" name="/ENDPOINT/GCS_FTP/PASSWORD" type="property:password" scaext:simpleValue="#!HKbRpoBCqq1SdOE/zmz8Cw==" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_6X1IALPzEe2Yzb0bY4iB3A" name="/ENDPOINT/GCS_FTP/PWD_PLAIN" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_BHSCkLP0Ee2Yzb0bY4iB3A" name="/ENDPOINT/GCS_FTP/SAM_CT_GCS_SND_PATH" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_WyvCYLP0Ee2Yzb0bY4iB3A" name="/ENDPOINT/JCN_FTP/HOSTNAME" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_earrMLP0Ee2Yzb0bY4iB3A" name="/ENDPOINT/JCN_FTP/USERNAME" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_f7eIgLP0Ee2Yzb0bY4iB3A" name="/ENDPOINT/JCN_FTP/PASSWORD" type="property:password" scaext:simpleValue="#!H066d0rvjccd0fTlegvM6w==" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_hs5C0LP0Ee2Yzb0bY4iB3A" name="/ENDPOINT/JCN_FTP/PWD_PLAIN" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_jrbzILP0Ee2Yzb0bY4iB3A" name="/ENDPOINT/JCN_FTP/SAM_CT_JCN_SND_PATH" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_9oi1YLP0Ee2Yzb0bY4iB3A" name="/ENDPOINT/NIB_FTP/HOSTNAME" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_IEKfsLP1Ee2Yzb0bY4iB3A" name="/ENDPOINT/NIB_FTP/USERNAME" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_JqFUoLP1Ee2Yzb0bY4iB3A" name="/ENDPOINT/NIB_FTP/PASSWORD" type="property:password" scaext:simpleValue="#!7LaEhnhMwhDv+yDImCmFHQ==" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_Lvs9ULP1Ee2Yzb0bY4iB3A" name="/ENDPOINT/NIB_FTP/PWD_PLAIN" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_aGAUgLP1Ee2Yzb0bY4iB3A" name="/ENDPOINT/NIB_FTP/SAM_CT_NIB_SND_PATH" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_AP5SILP1Ee2Yzb0bY4iB3A" name="/ENDPOINT/TBV_FTP/HOSTNAME" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_NgXCoLP1Ee2Yzb0bY4iB3A" name="/ENDPOINT/TBV_FTP/USERNAME" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_PyEmkLP1Ee2Yzb0bY4iB3A" name="/ENDPOINT/TBV_FTP/PASSWORD" type="property:password" scaext:simpleValue="#!eljQUEuoMTD4dQte8tQYXw==" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_RYE7ELP1Ee2Yzb0bY4iB3A" name="/ENDPOINT/TBV_FTP/PWD_PLAIN" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_cfyPULP1Ee2Yzb0bY4iB3A" name="/ENDPOINT/TBV_FTP/SAM_CT_TBV_SND_PATH" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_K4GXIJxgEe2Xs_MkOHaDkA" name="/SECURITY/TOS/TOS__USER_ID" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_Rpd9QJxgEe2Xs_MkOHaDkA" name="/SECURITY/TOS/TOS_PWD" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_y6EEEJ04Ee2J2YQCWHlc5A" name="/common/stage" type="XMLSchema:string" publicAccess="true" scalable="true"/>

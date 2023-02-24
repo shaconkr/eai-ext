@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ftpconnection="http://ns.tibco.com/bw/palette/ftpconnection" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmi:id="_YIcSEbPpEe2tcMqM9p8Usg" name="ext.dlv.DLV_FTP" type="ftpconnection:ftpconnection">
+  <jndi:configuration xsi:type="ftpconnection:FTPConnection" xmi:id="_YIcSErPpEe2tcMqM9p8Usg" mode="Passive" remoteFileNameEncoding="Cp1252" proxyPort="8080">
+    <substitutionBindings xmi:id="_ZCITILPpEe2tcMqM9p8Usg" template="host" propName="/ENDPOINT/DLV_FTP/HOSTNAME"/>
+    <substitutionBindings xmi:id="_bFmmwLPpEe2tcMqM9p8Usg" template="userName" propName=""/>
+    <substitutionBindings xmi:id="_d_TXwLPpEe2tcMqM9p8Usg" template="password" propName="/ENDPOINT/DLV_FTP/PASSWORD"/>
+  </jndi:configuration>
+</jndi:namedResource>

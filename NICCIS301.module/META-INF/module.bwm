@@ -34,6 +34,6 @@
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_qxTCMad1Ee2kRZld14Zk_A" processName="NICCISUPID.NICCISUP_SCALIINF"/>
   </sca:component>
   <sca:component xmi:id="_Ds5HoKd3Ee2kRZld14Zk_A" name="ComponentNICCISUP_KIUPDB" compositeext:version="1.0.0.qualifier">
-    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_Ds5Hoad3Ee2kRZld14Zk_A" processName="NICCISUPID.NICCISUP_KIUPDB"/>
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_Ds5Hoad3Ee2kRZld14Zk_A" processName="NICCISSCAI.NICCISSCAI_KIUPDB20"/>
   </sca:component>
 </sca:composite>

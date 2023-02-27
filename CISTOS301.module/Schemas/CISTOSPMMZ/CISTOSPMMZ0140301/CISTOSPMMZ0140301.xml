@@ -9,7 +9,7 @@
       <property name="recordTerminator" value="\r\n"/>
     </parser>
     <record name="TOS_OutReq" class="java.util.LinkedHashMap">
-      <segment name="bizHeader" kor="0" minOccurs="1" maxOccurs="1" class="map">
+      <segment name="bizHeader" kor="BIZ공통부" minOccurs="1" maxOccurs="1" class="map">
         <field kor="식별코드" name="trCode" minOccurs="1" maxOccurs="1" position="0" length="12"/>
         <field kor="서비스구분" name="svcGb" minOccurs="1" maxOccurs="1" position="12" length="3"/>
         <field kor="송신자FLAG" name="sdFlag" minOccurs="1" maxOccurs="1" position="15" length="1"/>
@@ -26,7 +26,7 @@
         <field kor="응답코드" name="retCd" minOccurs="1" maxOccurs="1" position="85" length="4"/>
         <field kor="예비영역" name="spareArea" minOccurs="1" maxOccurs="1" position="89" length="31"/>
       </segment>
-      <segment name="bizBody" kor="0" minOccurs="1" maxOccurs="1" class="map">
+      <segment name="bizBody" kor="BIZ데이터부" minOccurs="1" maxOccurs="1" class="map">
         <field kor="이체전문전송일" name="trsfTgrmSendDt" minOccurs="1" maxOccurs="1" position="120" length="8"/>
         <field kor="이체전문번호" name="trsfTgrmNo" minOccurs="1" maxOccurs="1" position="128" length="6"/>
         <field kor="모계좌번호" name="parAcno" minOccurs="1" maxOccurs="1" position="134" length="15"/>

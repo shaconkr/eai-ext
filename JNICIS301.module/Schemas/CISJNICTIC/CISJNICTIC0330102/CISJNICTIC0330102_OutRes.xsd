@@ -67,14 +67,14 @@
     </complexType>
     <complexType name="CISJNICTIC0330102_OutRes">
         <sequence>
-            <element name="bizHeader" type="ns:CISJNICTIC0330102_OutRes_Header"/>
-            <element name="bizBody" type="ns:CISJNICTIC0330102_OutRes_Body"/>
+            <element e:kor="BIZ공통부" name="bizHeader" type="ns:CISJNICTIC0330102_OutRes_Header"/>
+            <element e:kor="BIZ데이터부" name="bizBody" type="ns:CISJNICTIC0330102_OutRes_Body"/>
         </sequence>
     </complexType>
     <complexType name="rootType">
         <sequence>
-            <element name="header" type="ns:CISHeaderType"/>
-            <element name="data" type="ns:CISJNICTIC0330102_OutRes"/>
+            <element e:kor="CIS공통부" name="header" type="ns:CISHeaderType"/>
+            <element e:kor="CIS데이터부" name="data" type="ns:CISJNICTIC0330102_OutRes"/>
         </sequence>
     </complexType>
     <element name="root" type="ns:rootType"/>

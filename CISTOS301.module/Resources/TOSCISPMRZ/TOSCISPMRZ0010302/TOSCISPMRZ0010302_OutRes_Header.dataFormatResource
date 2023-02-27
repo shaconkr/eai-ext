@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jndi:namedResource xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TOSCISPMRZ0010302="http://schema.hcis.com/xsd/TOSCISPMRZ0010302_OutRes_Header" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" name="TOSCISPMRZ/TOSCISPMRZ0010302.TOSCISPMRZ0010302_OutRes_Header" type="dataformat:DataFormat">
+  <jndi:imports importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/TOSCISPMRZ0010302_OutRes_Header_df.xsd" namespace="http://schema.hcis.com/xsd/TOSCISPMRZ0010302_OutRes_Header"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="TOSCISPMRZ0010302:main" lineLength="120" fieldOffsetsStr="trCode(0,12)&#xA;svcGb(12,15)&#xA;sdFlag(15,16)&#xA;sdId(16,26)&#xA;rvId(26,36)&#xA;msgId(36,48)&#xA;cpnyCd(48,56)&#xA;bnkCd(56,58)&#xA;ediCd(58,62)&#xA;jobGb(62,65)&#xA;ediNo(65,71)&#xA;sdDate(71,79)&#xA;sdTime(79,85)&#xA;retCd(85,89)&#xA;spareArea(89,120)">
+    <fieldOffsets kor="식별코드" type="string" name="trCode" start="0" end="12"/>
+    <fieldOffsets kor="서비스구분" type="string" name="svcGb" start="12" end="15"/>
+    <fieldOffsets kor="송신자FLAG" type="string" name="sdFlag" start="15" end="16"/>
+    <fieldOffsets kor="송신자ID" type="string" name="sdId" start="16" end="26"/>
+    <fieldOffsets kor="수신자ID" type="string" name="rvId" start="26" end="36"/>
+    <fieldOffsets kor="메시지ID" type="string" name="msgId" start="36" end="48"/>
+    <fieldOffsets kor="고객코드" type="string" name="cpnyCd" start="48" end="56"/>
+    <fieldOffsets kor="은행코드" type="string" name="bnkCd" start="56" end="58"/>
+    <fieldOffsets kor="전문코드" type="string" name="ediCd" start="58" end="62"/>
+    <fieldOffsets kor="업무구분" type="string" name="jobGb" start="62" end="65"/>
+    <fieldOffsets kor="전문번호" type="string" name="ediNo" start="65" end="71"/>
+    <fieldOffsets kor="전송일자" type="string" name="sdDate" start="71" end="79"/>
+    <fieldOffsets kor="전송시간" type="string" name="sdTime" start="79" end="85"/>
+    <fieldOffsets kor="응답코드" type="string" name="retCd" start="85" end="89"/>
+    <fieldOffsets kor="예비영역" type="string" name="spareArea" start="89" end="120"/>
+  </jndi:configuration>
+</jndi:namedResource>

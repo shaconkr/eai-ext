@@ -9,7 +9,7 @@
       <property name="recordTerminator" value="\r\n"/>
     </parser>
     <record name="NIC_OutReq" class="java.util.LinkedHashMap">
-      <segment name="bizHeader" kor="0" minOccurs="1" maxOccurs="1" class="map">
+      <segment name="bizHeader" kor="BIZ공통부" minOccurs="1" maxOccurs="1" class="map">
         <field kor="거래코드" name="trdCd" minOccurs="1" maxOccurs="1" position="0" length="9"/>
         <field kor="전문채널코드" name="tgrmChCd" minOccurs="1" maxOccurs="1" position="9" length="9"/>
         <field kor="전문종별코드" name="tgrmSubCCd" minOccurs="1" maxOccurs="1" position="18" length="4" justify="right" padding="0"/>
@@ -24,7 +24,7 @@
         <field kor="NICE전문전송시간" name="niceTgrmSendTime" minOccurs="1" maxOccurs="1" position="78" length="14" justify="right" padding="0"/>
         <field kor="공백값" name="nullVal" minOccurs="1" maxOccurs="1" position="92" length="17"/>
       </segment>
-      <segment name="bizBody" kor="0" minOccurs="1" maxOccurs="1" class="map">
+      <segment name="bizBody" kor="BIZ데이터부" minOccurs="1" maxOccurs="1" class="map">
         <field kor="업무구분코드" name="tskGbcd" minOccurs="1" maxOccurs="1" position="109" length="2" justify="right" padding="0"/>
         <field kor="등록구분코드" name="regGbcd" minOccurs="1" maxOccurs="1" position="111" length="2" justify="right" padding="0"/>
         <field kor="직업코드" name="jobCd" minOccurs="1" maxOccurs="1" position="113" length="2" justify="right" padding="0"/>

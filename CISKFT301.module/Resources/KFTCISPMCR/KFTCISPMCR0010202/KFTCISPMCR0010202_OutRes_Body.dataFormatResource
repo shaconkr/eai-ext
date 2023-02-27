@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jndi:namedResource xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KFTCISPMCR0010202="http://schema.hcis.com/xsd/KFTCISPMCR0010202_OutRes_Body" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" name="KFTCISPMCR/KFTCISPMCR0010202.KFTCISPMCR0010202_OutRes_Body" type="dataformat:DataFormat">
+  <jndi:imports importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/KFTCISPMCR0010202_OutRes_Body_df.xsd" namespace="http://schema.hcis.com/xsd/KFTCISPMCR0010202_OutRes_Body"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="KFTCISPMCR0010202:main" lineLength="163" fieldOffsetsStr="trdTime(0,6)&#xA;trdDt(6,10)&#xA;istnCd(10,19)&#xA;wthdrwlAcno(19,58)&#xA;idntCd(58,73)&#xA;pmpsnNo(73,113)&#xA;dpsrNm(113,156)&#xA;respCd(156,163)">
+    <fieldOffsets kor="거래시간" type="string" name="trdTime" start="0" end="6"/>
+    <fieldOffsets kor="거래일자" type="string" name="trdDt" start="6" end="10"/>
+    <fieldOffsets kor="기관코드" type="string" name="istnCd" start="10" end="19"/>
+    <fieldOffsets kor="출금계좌번호" type="string" name="wthdrwlAcno" start="19" end="58"/>
+    <fieldOffsets kor="식별코드" type="string" name="idntCd" start="58" end="73"/>
+    <fieldOffsets kor="납부자번호" type="string" name="pmpsnNo" start="73" end="113"/>
+    <fieldOffsets kor="예금주명" type="string" name="dpsrNm" start="113" end="156"/>
+    <fieldOffsets kor="응답코드" type="string" name="respCd" start="156" end="163"/>
+  </jndi:configuration>
+</jndi:namedResource>

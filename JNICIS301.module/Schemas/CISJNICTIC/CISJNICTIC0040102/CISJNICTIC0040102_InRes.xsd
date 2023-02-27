@@ -24,13 +24,13 @@
     </complexType>
     <complexType name="CISJNICTIC0040102_InRes">
         <sequence>
-            <element name="bizHeader" type="ns:CISJNICTIC0040102_InRes_Header"/>
-            <element name="bizBody" type="ns:CISJNICTIC0040102_InRes_Body"/>
+            <element e:kor="BIZ공통부" name="bizHeader" type="ns:CISJNICTIC0040102_InRes_Header"/>
+            <element e:kor="BIZ데이터부" name="bizBody" type="ns:CISJNICTIC0040102_InRes_Body"/>
         </sequence>
     </complexType>
     <complexType name="rootType">
         <sequence>
-            <element name="data" type="ns:CISJNICTIC0040102_InRes"/>
+            <element e:kor="데이터부" name="data" type="ns:CISJNICTIC0040102_InRes"/>
         </sequence>
     </complexType>
     <element name="root" type="ns:CISJNICTIC0040102_InRes"/>

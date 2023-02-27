@@ -49,13 +49,13 @@
     </complexType>
     <complexType name="CISTOSPMCV0020102_InRes">
         <sequence>
-            <element name="bizHeader" type="ns:CISTOSPMCV0020102_InRes_Header"/>
-            <element name="bizBody" type="ns:CISTOSPMCV0020102_InRes_Body"/>
+            <element e:kor="BIZ공통부" name="bizHeader" type="ns:CISTOSPMCV0020102_InRes_Header"/>
+            <element e:kor="BIZ데이터부" name="bizBody" type="ns:CISTOSPMCV0020102_InRes_Body"/>
         </sequence>
     </complexType>
     <complexType name="rootType">
         <sequence>
-            <element name="data" type="ns:CISTOSPMCV0020102_InRes"/>
+            <element e:kor="데이터부" name="data" type="ns:CISTOSPMCV0020102_InRes"/>
         </sequence>
     </complexType>
     <element name="root" type="ns:CISTOSPMCV0020102_InRes"/>

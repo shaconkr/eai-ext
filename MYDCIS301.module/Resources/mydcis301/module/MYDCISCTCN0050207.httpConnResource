@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:httpconnector="http://xsd.tns.tibco.com/bw/models/sharedresource/httpconnector" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmi:id="_3DNLAbZjEe20weVuCkOF1g" name="mydcis301.module.MYDCISCTCN0050207" type="httpconnector:HttpConnectorConfiguration">
+  <jndi:configuration xsi:type="httpconnector:HttpConnectorConfiguration" xmi:id="_3DNLArZjEe20weVuCkOF1g">
+    <substitutionBindings xmi:id="_3DNLA7ZjEe20weVuCkOF1g" template="host" propName="BW.HOST.NAME"/>
+  </jndi:configuration>
+</jndi:namedResource>

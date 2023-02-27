@@ -72,13 +72,13 @@
     </complexType>
     <complexType name="KCBCISCTJB0021001_OutRes">
         <sequence>
-            <element name="bizHeader" type="ns:KCBCISCTJB0021001_OutRes_Header"/>
-            <element name="bizBody" type="ns:KCBCISCTJB0021001_OutRes_Body"/>
+            <element e:kor="BIZ공통부" name="bizHeader" type="ns:KCBCISCTJB0021001_OutRes_Header"/>
+            <element e:kor="BIZ데이터부" name="bizBody" type="ns:KCBCISCTJB0021001_OutRes_Body"/>
         </sequence>
     </complexType>
     <complexType name="rootType">
         <sequence>
-            <element name="data" type="ns:KCBCISCTJB0021001_OutRes"/>
+            <element e:kor="데이터부" name="data" type="ns:KCBCISCTJB0021001_OutRes"/>
         </sequence>
     </complexType>
     <element name="root" type="ns:KCBCISCTJB0021001_OutRes"/>

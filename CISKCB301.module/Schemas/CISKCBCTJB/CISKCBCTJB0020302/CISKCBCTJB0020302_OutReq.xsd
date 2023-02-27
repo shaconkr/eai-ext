@@ -44,13 +44,13 @@
     </complexType>
     <complexType name="CISKCBCTJB0020302_OutReq">
         <sequence>
-            <element name="bizHeader" type="ns:CISKCBCTJB0020302_OutReq_Header"/>
-            <element name="bizBody" type="ns:CISKCBCTJB0020302_OutReq_Body"/>
+            <element e:kor="BIZ공통부" name="bizHeader" type="ns:CISKCBCTJB0020302_OutReq_Header"/>
+            <element e:kor="BIZ데이터부" name="bizBody" type="ns:CISKCBCTJB0020302_OutReq_Body"/>
         </sequence>
     </complexType>
     <complexType name="rootType">
         <sequence>
-            <element name="data" type="ns:CISKCBCTJB0020302_OutReq"/>
+            <element e:kor="데이터부" name="data" type="ns:CISKCBCTJB0020302_OutReq"/>
         </sequence>
     </complexType>
     <element name="root" type="ns:CISKCBCTJB0020302_OutReq"/>

@@ -1,0 +1,27 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:e="http://shacon.kr/xsd" xmlns:ns="http://schema.hcis.com/xsd/MYDCISCTCN0050701_InRes" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.hcis.com/xsd/MYDCISCTCN0050701_InRes">
+    <complexType name="MYDCISCTCN0050701_InRes">
+        <sequence>
+            <element e:kor="거래고유번호" e:length="25" e:padder="SpaceRight" name="trdInntNo" nillable="true" type="string"/>
+            <element e:kor="응답코드" e:length="5" e:padder="SpaceRight" name="respCd" nillable="true" type="string"/>
+            <element e:kor="응답메시지" e:length="450" e:padder="SpaceRight" name="respMsg" nillable="true" type="string"/>
+            <element e:kor="조회일시" e:length="14" e:padder="SpaceRight" name="qryDtm" nillable="true" type="string"/>
+            <element e:kor="리볼빙여부" e:length="1" e:padder="SpaceRight" name="revoYn" nillable="true" type="string"/>
+            <element e:kor="결제_배열건수" e:length="5" e:padder="ZeroLeft" name="stlmRowcount" nillable="true" type="long"/>
+            <element e:kor="결제_배열" e:padder="ZeroLeft" maxOccurs="unbounded" name="stlmList" nillable="true" type="ns:STLM_LIST_TYPE"/>
+        </sequence>
+    </complexType>
+    <complexType name="STLM_LIST_TYPE">
+        <sequence>
+            <element e:kor="결제순번" e:length="30" e:padder="SpaceRight" name="stlmSeq" nillable="true" type="string"/>
+            <element e:kor="결제예정일자" e:length="8" e:padder="SpaceRight" name="stlmPrrgDt" nillable="true" type="string"/>
+            <element e:kor="결제예정금액" e:length="15" e:padder="ZeroLeft" name="stlmPrrgAmt" nillable="true" type="decimal"/>
+            <element e:kor="일시불금액" e:length="18" e:padder="ZeroLeft" name="spymAmt" nillable="true" type="decimal"/>
+            <element e:kor="할부금액" e:length="18" e:padder="SpaceRight" name="insmAmt" nillable="true" type="string"/>
+            <element e:kor="단기대출금액" e:length="18" e:padder="ZeroLeft" name="shtmLoanAmt" nillable="true" type="decimal"/>
+            <element e:kor="리볼빙금액" e:length="20" e:padder="ZeroLeft" name="revoAmt" nillable="true" type="decimal"/>
+            <element e:kor="장기대출금액" e:length="18" e:padder="ZeroLeft" name="lntmLoanAmt" nillable="true" type="decimal"/>
+            <element e:kor="연회비금액" e:length="20" e:padder="ZeroLeft" name="anfeAmt" nillable="true" type="decimal"/>
+        </sequence>
+    </complexType>
+    <element name="root" type="ns:MYDCISCTCN0050701_InRes"/>
+</schema>

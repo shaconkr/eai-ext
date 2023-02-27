@@ -24,13 +24,13 @@
     </complexType>
     <complexType name="OSECISCTIC0060102_OutRes">
         <sequence>
-            <element name="bizHeader" type="ns:OSECISCTIC0060102_OutRes_Header"/>
-            <element name="bizBody" type="ns:OSECISCTIC0060102_OutRes_Body"/>
+            <element e:kor="BIZ공통부" name="bizHeader" type="ns:OSECISCTIC0060102_OutRes_Header"/>
+            <element e:kor="BIZ데이터부" name="bizBody" type="ns:OSECISCTIC0060102_OutRes_Body"/>
         </sequence>
     </complexType>
     <complexType name="rootType">
         <sequence>
-            <element name="data" type="ns:OSECISCTIC0060102_OutRes"/>
+            <element e:kor="데이터부" name="data" type="ns:OSECISCTIC0060102_OutRes"/>
         </sequence>
     </complexType>
     <element name="root" type="ns:OSECISCTIC0060102_OutRes"/>

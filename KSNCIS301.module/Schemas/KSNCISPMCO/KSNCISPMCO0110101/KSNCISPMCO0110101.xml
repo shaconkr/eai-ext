@@ -9,7 +9,7 @@
       <property name="recordTerminator" value="\r\n"/>
     </parser>
     <record name="KSN_InReq" class="java.util.LinkedHashMap">
-      <segment name="bizHeader" kor="0" minOccurs="1" maxOccurs="1" class="map">
+      <segment name="bizHeader" kor="BIZ공통부" minOccurs="1" maxOccurs="1" class="map">
         <field kor="식별코드" name="trCode" minOccurs="1" maxOccurs="1" position="0" length="9"/>
         <field kor="업체코드" name="svcGb" minOccurs="1" maxOccurs="1" position="9" length="8"/>
         <field kor="은행코드2" name="bnkCd2" minOccurs="1" maxOccurs="1" position="17" length="2"/>
@@ -27,7 +27,7 @@
         <field kor="은행코드3" name="bnkCd3" minOccurs="1" maxOccurs="1" position="84" length="3"/>
         <field kor="예비" name="sdFlag" minOccurs="1" maxOccurs="1" position="87" length="13"/>
       </segment>
-      <segment name="bizBody" kor="0" minOccurs="1" maxOccurs="1" class="map">
+      <segment name="bizBody" kor="BIZ데이터부" minOccurs="1" maxOccurs="1" class="map">
         <field kor="계좌번호" name="acno" minOccurs="1" maxOccurs="1" position="100" length="15"/>
         <field kor="조립건수" name="asmbCnt" minOccurs="1" maxOccurs="1" position="115" length="2" justify="right" padding="0"/>
         <field kor="거래구분" name="trdGb" minOccurs="1" maxOccurs="1" position="117" length="2"/>

@@ -3,7 +3,7 @@
 <jndi:namedResource xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CISKCBCTJB0020302="http://schema.hcis.com/xsd/CISKCBCTJB0020302_OutReq" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" name="CISKCBCTJB/CISKCBCTJB0020302.CISKCBCTJB0020302_OutReq" type="dataformat:DataFormat">
   <jndi:imports importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/CISKCBCTJB0020302_OutReq_df.xsd" namespace="http://schema.hcis.com/xsd/CISKCBCTJB0020302_OutReq"/>
   <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="CISKCBCTJB0020302:main" lineLength="0" fieldOffsetsStr="bizHeader(0,0)&#xA;bizBody(0,0)">
-    <fieldOffsets kor="0" type="CISKCBCTJB0020302_OutReq_Header" name="bizHeader" start="0" end="0"/>
-    <fieldOffsets kor="0" type="CISKCBCTJB0020302_OutReq_Body" name="bizBody" start="0" end="0"/>
+    <fieldOffsets kor="BIZ공통부" type="CISKCBCTJB0020302_OutReq_Header" name="bizHeader" start="0" end="0"/>
+    <fieldOffsets kor="BIZ데이터부" type="CISKCBCTJB0020302_OutReq_Body" name="bizBody" start="0" end="0"/>
   </jndi:configuration>
 </jndi:namedResource>

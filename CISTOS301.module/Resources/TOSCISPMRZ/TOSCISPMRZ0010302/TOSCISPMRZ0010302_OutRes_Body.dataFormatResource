@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jndi:namedResource xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TOSCISPMRZ0010302="http://schema.hcis.com/xsd/TOSCISPMRZ0010302_OutRes_Body" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" name="TOSCISPMRZ/TOSCISPMRZ0010302.TOSCISPMRZ0010302_OutRes_Body" type="dataformat:DataFormat">
+  <jndi:imports importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/TOSCISPMRZ0010302_OutRes_Body_df.xsd" namespace="http://schema.hcis.com/xsd/TOSCISPMRZ0010302_OutRes_Body"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="TOSCISPMRZ0010302:main" lineLength="199" fieldOffsetsStr="iqpsIdntCd(0,2)&#xA;tgrmSeq(2,17)&#xA;autoTrsfBankCd(17,20)&#xA;acno(20,70)&#xA;reqGb(70,71)&#xA;day(71,73)&#xA;bankBrnCd(73,79)&#xA;reqDt(79,87)&#xA;procYn(87,88)&#xA;inabCd(88,92)&#xA;chkYn(92,93)&#xA;bymd(93,101)&#xA;pmpsnNo(101,121)&#xA;custUseInf(121,142)&#xA;istnCd(142,154)&#xA;outEvntYn(154,155)&#xA;prepVal(155,156)&#xA;autoTrsfTgrmNo(156,160)&#xA;aplyGbcd(160,161)&#xA;commBankCd(161,164)&#xA;indvBankCd(164,167)&#xA;giroNo(167,177)&#xA;agrGbcd(177,179)&#xA;nullVal(179,199)">
+    <fieldOffsets kor="조회자식별코드" type="string" name="iqpsIdntCd" start="0" end="2"/>
+    <fieldOffsets kor="전문순번" type="string" name="tgrmSeq" start="2" end="17"/>
+    <fieldOffsets kor="자동이체은행코드" type="string" name="autoTrsfBankCd" start="17" end="20"/>
+    <fieldOffsets kor="계좌번호" type="string" name="acno" start="20" end="70"/>
+    <fieldOffsets kor="신청구분" type="string" name="reqGb" start="70" end="71"/>
+    <fieldOffsets kor="일" type="string" name="day" start="71" end="73"/>
+    <fieldOffsets kor="은행지점코드" type="string" name="bankBrnCd" start="73" end="79"/>
+    <fieldOffsets kor="신청일자" type="string" name="reqDt" start="79" end="87"/>
+    <fieldOffsets kor="처리여부" type="string" name="procYn" start="87" end="88"/>
+    <fieldOffsets kor="불능코드" type="string" name="inabCd" start="88" end="92"/>
+    <fieldOffsets kor="체크여부" type="string" name="chkYn" start="92" end="93"/>
+    <fieldOffsets kor="생년월일" type="string" name="bymd" start="93" end="101"/>
+    <fieldOffsets kor="납부자번호" type="string" name="pmpsnNo" start="101" end="121"/>
+    <fieldOffsets kor="업체사용정보" type="string" name="custUseInf" start="121" end="142"/>
+    <fieldOffsets kor="기관코드" type="string" name="istnCd" start="142" end="154"/>
+    <fieldOffsets kor="외부이벤트여부" type="string" name="outEvntYn" start="154" end="155"/>
+    <fieldOffsets kor="예비값" type="string" name="prepVal" start="155" end="156"/>
+    <fieldOffsets kor="자동이체전문번호" type="string" name="autoTrsfTgrmNo" start="156" end="160"/>
+    <fieldOffsets kor="적용구분코드" type="string" name="aplyGbcd" start="160" end="161"/>
+    <fieldOffsets kor="공통은행코드" type="string" name="commBankCd" start="161" end="164"/>
+    <fieldOffsets kor="개별은행코드" type="string" name="indvBankCd" start="164" end="167"/>
+    <fieldOffsets kor="지로번호" type="string" name="giroNo" start="167" end="177"/>
+    <fieldOffsets kor="동의구분코드" type="string" name="agrGbcd" start="177" end="179"/>
+    <fieldOffsets kor="공백값" type="string" name="nullVal" start="179" end="199"/>
+  </jndi:configuration>
+</jndi:namedResource>

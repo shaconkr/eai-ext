@@ -1351,5 +1351,50 @@
 			<isOverride>false</isOverride>
 			<useLookupValue>false</useLookupValue>
 		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule///ENDPOINT/SPC_FTP/USERNAME</name>
+			<value>hds_ifs</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule///ENDPOINT/SPC_FTP/HOSTNAME</name>
+			<value>10.0.7.223</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule///ENDPOINT/SPC_FTP/PASSWORD</name>
+			<value>#!GgRwd4NMPFhxMfBPa1b39gTWqkmScc9R+9EmE2NicHpEh9FBrpXNfHzkJ8mhSQo7</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>Password</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule///ENDPOINT/SPC_FTP/PWD_PLAIN</name>
+			<value>guseogorghkwja13!</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule///ENDPOINT/SPC_FTP/SAM_CT_SPC_SND_PATH</name>
+			<value>/hcisnas/sam/ct/spc/snd</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
 	</globalVariables>
 </repository>

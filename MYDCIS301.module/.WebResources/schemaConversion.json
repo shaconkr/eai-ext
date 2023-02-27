@@ -1,0 +1,5 @@
+{"records": [{
+    "jsonSchemaLocation": "/MYDCIS301.module/Service Descriptors/MYDCISCTCN.MYDCISCTCN0050207.MYDCISCTCN0050207-MYDCISCTCN0050207.json",
+    "conversionType": "linked",
+    "xsdSchemaTargetNamespace": "http://schema.hcis.com/xsd/MYDCISCTCN0050207_InReq"
+}]}

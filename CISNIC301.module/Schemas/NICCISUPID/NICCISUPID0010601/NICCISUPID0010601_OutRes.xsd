@@ -49,13 +49,13 @@
     </complexType>
     <complexType name="NICCISUPID0010601_OutRes">
         <sequence>
-            <element name="bizHeader" type="ns:NICCISUPID0010601_OutRes_Header"/>
-            <element name="bizBody" type="ns:NICCISUPID0010601_OutRes_Body"/>
+            <element e:kor="BIZ공통부" name="bizHeader" type="ns:NICCISUPID0010601_OutRes_Header"/>
+            <element e:kor="BIZ데이터부" name="bizBody" type="ns:NICCISUPID0010601_OutRes_Body"/>
         </sequence>
     </complexType>
     <complexType name="rootType">
         <sequence>
-            <element name="data" type="ns:NICCISUPID0010601_OutRes"/>
+            <element e:kor="데이터부" name="data" type="ns:NICCISUPID0010601_OutRes"/>
         </sequence>
     </complexType>
     <element name="root" type="ns:NICCISUPID0010601_OutRes"/>

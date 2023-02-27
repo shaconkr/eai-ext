@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:rest="http://xsd.tns.tibco.com/bw/models/binding/rest" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_7crmULZbEe20weVuCkOF1g" targetNamespace="http://tns.tibco.com/bw/composite/MYDCIS301.module" name="MYDCIS301.module" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:service xmi:id="_Pdi9grZlEe20weVuCkOF1g" name="ci" promote="ComponentMYDCISCTCN0050207/ci">
+    <sca:interface.wsdl xmi:id="_Pdi9hrZlEe20weVuCkOF1g" interface="http://xmlns.example.com/20230227150906PLT#wsdl.interface(ci)" scaext:wsdlLocation="../Processes/MYDCISCTCN/MYDCISCTCN0050207/MYDCISCTCN0050207.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_PdsugLZlEe20weVuCkOF1g" name="RestService" path="/ci" docBasePath="http://localhost:7777/MYDCIS301.module" docResourcePath="MYDCISCTCN0050207" basePath="/" connector="ext.myd.MYD_HTTP" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/MYDCISCTCN.MYDCISCTCN0050207.MYDCISCTCN0050207-MYDCISCTCN0050207.json">
+      <operation xmi:id="_Pd_pcLZlEe20weVuCkOF1g" operationName="post" nickname="post-ci" httpMethod="POST" notes="MYDCISCTCN0050207" responseStyle="element" requestStyle="element" outputPartName="item">
+        <parameters xmi:id="_2MSpwLZmEe20weVuCkOF1g">
+          <parameterMapping xmi:id="_-8sIYLZmEe20weVuCkOF1g" parameterName="x-api-tran-id" parameterType="ResponseHeader" dataType="string"/>
+          <parameterMapping xmi:id="_QXE7oLZnEe20weVuCkOF1g" parameterName="x-user-ci" parameterType="Header" dataType="string"/>
+          <parameterMapping xmi:id="_uCZVALZnEe20weVuCkOF1g" parameterName="x-api-tran-id" parameterType="Header" dataType="string"/>
+        </parameters>
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_PeTLcLZlEe20weVuCkOF1g"/>
+      <advancedConfig xmi:id="_PdsugbZlEe20weVuCkOF1g" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_Pd_pcbZlEe20weVuCkOF1g" bindingName="RestService"/>
+  </sca:service>
+  <sca:property xmi:id="_9oWzsLZbEe20weVuCkOF1g" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_9of9oLZbEe20weVuCkOF1g" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_9opuoLZbEe20weVuCkOF1g" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_9opuobZbEe20weVuCkOF1g" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_9oy4kLZbEe20weVuCkOF1g" name="BW.DOMAIN.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_9o8pkLZbEe20weVuCkOF1g" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_9pGakLZbEe20weVuCkOF1g" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_9pGakbZbEe20weVuCkOF1g" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_9pPkgLZbEe20weVuCkOF1g" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:component xmi:id="_PdZzkLZlEe20weVuCkOF1g" name="ComponentMYDCISCTCN0050207" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_PdZzkbZlEe20weVuCkOF1g" processName="MYDCISCTCN.MYDCISCTCN0050207.MYDCISCTCN0050207"/>
+    <sca:service xmi:id="_Pdi9gLZlEe20weVuCkOF1g" name="ci">
+      <sca:interface.wsdl xmi:id="_Pdi9gbZlEe20weVuCkOF1g" interface="http://xmlns.example.com/20230227150906PLT#wsdl.interface(ci)" scaext:wsdlLocation="../Processes/MYDCISCTCN/MYDCISCTCN0050207/MYDCISCTCN0050207.bwp"/>
+    </sca:service>
+  </sca:component>
+</sca:composite>

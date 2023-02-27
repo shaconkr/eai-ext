@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jndi:namedResource xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CISKFTPMCR0010101="http://schema.hcis.com/xsd/CISKFTPMCR0010101_OutReq_Body" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" name="CISKFTPMCR/CISKFTPMCR0010101.CISKFTPMCR0010101_OutReq_Body" type="dataformat:DataFormat">
+  <jndi:imports importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/CISKFTPMCR0010101_OutReq_Body_df.xsd" namespace="http://schema.hcis.com/xsd/CISKFTPMCR0010101_OutReq_Body"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="CISKFTPMCR0010101:main" lineLength="296" fieldOffsetsStr="trdTime(0,6)&#xA;trdDt(6,10)&#xA;istnCd(10,19)&#xA;wthdrwlAcno(19,58)&#xA;idntCd(58,73)&#xA;pmpsnNo(73,113)&#xA;evdnGbcd(113,114)&#xA;evdnRsrcKndIdntVal(114,119)&#xA;fileSize(119,126)&#xA;cnt(126,130)&#xA;fltrId(130,296)">
+    <fieldOffsets kor="거래시간" type="string" name="trdTime" start="0" end="6"/>
+    <fieldOffsets kor="거래일자" type="string" name="trdDt" start="6" end="10"/>
+    <fieldOffsets kor="기관코드" type="string" name="istnCd" start="10" end="19"/>
+    <fieldOffsets kor="출금계좌번호" type="string" name="wthdrwlAcno" start="19" end="58"/>
+    <fieldOffsets kor="식별코드" type="string" name="idntCd" start="58" end="73"/>
+    <fieldOffsets kor="납부자번호" type="string" name="pmpsnNo" start="73" end="113"/>
+    <fieldOffsets kor="증빙구분코드" type="string" name="evdnGbcd" start="113" end="114"/>
+    <fieldOffsets kor="증빙자료종류식별값" type="string" name="evdnRsrcKndIdntVal" start="114" end="119"/>
+    <fieldOffsets kor="파일크기" type="long" name="fileSize" start="119" end="126"/>
+    <fieldOffsets kor="건수" type="long" name="cnt" start="126" end="130"/>
+    <fieldOffsets kor="필터ID" type="string" name="fltrId" start="130" end="296"/>
+  </jndi:configuration>
+</jndi:namedResource>

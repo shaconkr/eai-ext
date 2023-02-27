@@ -3,7 +3,7 @@
 <jndi:namedResource xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TOSCISPMCV0020201="http://schema.hcis.com/xsd/TOSCISPMCV0020201_InReq" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" name="TOSCISPMCV/TOSCISPMCV0020201.TOSCISPMCV0020201_InReq" type="dataformat:DataFormat">
   <jndi:imports importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/TOSCISPMCV0020201_InReq_df.xsd" namespace="http://schema.hcis.com/xsd/TOSCISPMCV0020201_InReq"/>
   <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="TOSCISPMCV0020201:main" lineLength="0" fieldOffsetsStr="bizHeader(0,0)&#xA;bizBody(0,0)">
-    <fieldOffsets kor="0" type="TOSCISPMCV0020201_InReq_Header" name="bizHeader" start="0" end="0"/>
-    <fieldOffsets kor="0" type="TOSCISPMCV0020201_InReq_Body" name="bizBody" start="0" end="0"/>
+    <fieldOffsets kor="BIZ공통부" type="TOSCISPMCV0020201_InReq_Header" name="bizHeader" start="0" end="0"/>
+    <fieldOffsets kor="BIZ데이터부" type="TOSCISPMCV0020201_InReq_Body" name="bizBody" start="0" end="0"/>
   </jndi:configuration>
 </jndi:namedResource>

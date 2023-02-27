@@ -9,7 +9,7 @@
       <property name="recordTerminator" value="\r\n"/>
     </parser>
     <record name="OSE_OutReq" class="java.util.LinkedHashMap">
-      <segment name="bizHeader" kor="0" minOccurs="1" maxOccurs="1" class="map">
+      <segment name="bizHeader" kor="BIZ공통부" minOccurs="1" maxOccurs="1" class="map">
         <field kor="시작구분값" name="strtGbVal" minOccurs="1" maxOccurs="1" position="0" length="1"/>
         <field kor="패킷구분값" name="pacGbVal" minOccurs="1" maxOccurs="1" position="1" length="4"/>
         <field kor="회사코드" name="coCd" minOccurs="1" maxOccurs="1" position="5" length="3"/>
@@ -17,7 +17,7 @@
         <field kor="패킷구분번호" name="pacGbNo" minOccurs="1" maxOccurs="1" position="11" length="20"/>
         <field kor="처리결과코드" name="procRstCd" minOccurs="1" maxOccurs="1" position="31" length="2"/>
       </segment>
-      <segment name="bizBody" kor="0" minOccurs="1" maxOccurs="1" class="map">
+      <segment name="bizBody" kor="BIZ데이터부" minOccurs="1" maxOccurs="1" class="map">
         <field kor="처리방법코드" name="procMthdCd" minOccurs="1" maxOccurs="1" position="33" length="1"/>
         <field kor="가상전화번호1" name="virtTelno1" minOccurs="1" maxOccurs="1" position="34" length="15"/>
         <field kor="사용자1전화번호1" name="user1Telno1" minOccurs="1" maxOccurs="1" position="49" length="15"/>

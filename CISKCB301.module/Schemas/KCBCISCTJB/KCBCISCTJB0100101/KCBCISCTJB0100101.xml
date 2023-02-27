@@ -9,7 +9,7 @@
       <property name="recordTerminator" value="\r\n"/>
     </parser>
     <record name="KCB_OutRes" class="java.util.LinkedHashMap">
-      <segment name="bizHeader" kor="0" minOccurs="1" maxOccurs="1" class="map">
+      <segment name="bizHeader" kor="BIZ공통부" minOccurs="1" maxOccurs="1" class="map">
         <field kor="전문길이" name="tgrmLen" minOccurs="1" maxOccurs="1" position="0" length="4"/>
         <field kor="거래코드" name="trdCd" minOccurs="1" maxOccurs="1" position="4" length="9"/>
         <field kor="회원사코드" name="mmcoCd" minOccurs="1" maxOccurs="1" position="13" length="8"/>
@@ -25,7 +25,7 @@
         <field kor="조회동의코드" name="qryAgrCd" minOccurs="1" maxOccurs="1" position="91" length="1"/>
         <field kor="예비값" name="prepVal" minOccurs="1" maxOccurs="1" position="92" length="42"/>
       </segment>
-      <segment name="bizBody" kor="0" minOccurs="1" maxOccurs="1" class="map">
+      <segment name="bizBody" kor="BIZ데이터부" minOccurs="1" maxOccurs="1" class="map">
         <field kor="세그멘트ID" name="segId" minOccurs="1" maxOccurs="1" position="134" length="3"/>
         <field kor="등록사유코드" name="regRsnCd" minOccurs="1" maxOccurs="1" position="137" length="2"/>
         <field kor="고객번호구분코드" name="custNoGbcd" minOccurs="1" maxOccurs="1" position="139" length="1"/>

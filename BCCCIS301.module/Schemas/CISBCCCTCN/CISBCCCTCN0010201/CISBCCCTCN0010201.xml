@@ -9,7 +9,7 @@
       <property name="recordTerminator" value="\r\n"/>
     </parser>
     <record name="BCC_InRes" class="java.util.LinkedHashMap">
-      <segment name="bizHeader" kor="0" minOccurs="1" maxOccurs="1" class="map">
+      <segment name="bizHeader" kor="BIZ공통부" minOccurs="1" maxOccurs="1" class="map">
         <field kor="거래코드" name="trdCd" minOccurs="1" maxOccurs="1" position="0" length="4"/>
         <field kor="전문코드" name="tgrmCd" minOccurs="1" maxOccurs="1" position="4" length="5"/>
         <field kor="전문번호" name="tgrmNo" minOccurs="1" maxOccurs="1" position="9" length="8"/>
@@ -20,7 +20,7 @@
         <field kor="전문길이" name="tgrmLen" minOccurs="1" maxOccurs="1" position="54" length="6"/>
         <field kor="응답코드" name="respCd" minOccurs="1" maxOccurs="1" position="60" length="4"/>
       </segment>
-      <segment name="bizBody" kor="0" minOccurs="1" maxOccurs="1" class="map">
+      <segment name="bizBody" kor="BIZ데이터부" minOccurs="1" maxOccurs="1" class="map">
         <field kor="카드회원번호" name="crdMemNo" minOccurs="1" maxOccurs="1" position="64" length="9"/>
         <field kor="카드회원번호CI값" name="crdMemNoCiVal" minOccurs="1" maxOccurs="1" position="73" length="88"/>
         <field kor="회원한글명" name="memHnm" minOccurs="1" maxOccurs="1" position="161" length="20"/>

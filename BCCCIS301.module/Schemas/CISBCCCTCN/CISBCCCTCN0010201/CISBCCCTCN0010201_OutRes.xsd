@@ -102,14 +102,14 @@
     </complexType>
     <complexType name="CISBCCCTCN0010201_OutRes">
         <sequence>
-            <element name="bizHeader" type="ns:CISBCCCTCN0010201_OutRes_Header"/>
-            <element name="bizBody" type="ns:CISBCCCTCN0010201_OutRes_Body"/>
+            <element e:kor="BIZ공통부" name="bizHeader" type="ns:CISBCCCTCN0010201_OutRes_Header"/>
+            <element e:kor="BIZ데이터부" name="bizBody" type="ns:CISBCCCTCN0010201_OutRes_Body"/>
         </sequence>
     </complexType>
     <complexType name="rootType">
         <sequence>
-            <element name="header" type="ns:CISHeaderType"/>
-            <element name="data" type="ns:CISBCCCTCN0010201_OutRes"/>
+            <element e:kor="CIS공통부" name="header" type="ns:CISHeaderType"/>
+            <element e:kor="CIS데이터부" name="data" type="ns:CISBCCCTCN0010201_OutRes"/>
         </sequence>
     </complexType>
     <element name="root" type="ns:rootType"/>

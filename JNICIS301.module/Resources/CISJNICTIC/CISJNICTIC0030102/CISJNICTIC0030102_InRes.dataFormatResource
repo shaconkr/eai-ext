@@ -3,7 +3,7 @@
 <jndi:namedResource xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CISJNICTIC0030102="http://schema.hcis.com/xsd/CISJNICTIC0030102_InRes" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" name="CISJNICTIC/CISJNICTIC0030102.CISJNICTIC0030102_InRes" type="dataformat:DataFormat">
   <jndi:imports importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/CISJNICTIC0030102_InRes_df.xsd" namespace="http://schema.hcis.com/xsd/CISJNICTIC0030102_InRes"/>
   <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="CISJNICTIC0030102:main" lineLength="0" fieldOffsetsStr="bizHeader(0,0)&#xA;bizBody(0,0)">
-    <fieldOffsets kor="0" type="CISJNICTIC0030102_InRes_Header" name="bizHeader" start="0" end="0"/>
-    <fieldOffsets kor="0" type="CISJNICTIC0030102_InRes_Body" name="bizBody" start="0" end="0"/>
+    <fieldOffsets kor="BIZ공통부" type="CISJNICTIC0030102_InRes_Header" name="bizHeader" start="0" end="0"/>
+    <fieldOffsets kor="BIZ데이터부" type="CISJNICTIC0030102_InRes_Body" name="bizBody" start="0" end="0"/>
   </jndi:configuration>
 </jndi:namedResource>

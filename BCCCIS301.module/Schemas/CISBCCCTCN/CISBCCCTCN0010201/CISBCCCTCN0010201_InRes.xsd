@@ -56,13 +56,13 @@
     </complexType>
     <complexType name="CISBCCCTCN0010201_InRes">
         <sequence>
-            <element name="bizHeader" type="ns:CISBCCCTCN0010201_InRes_Header"/>
-            <element name="bizBody" type="ns:CISBCCCTCN0010201_InRes_Body"/>
+            <element e:kor="BIZ공통부" name="bizHeader" type="ns:CISBCCCTCN0010201_InRes_Header"/>
+            <element e:kor="BIZ데이터부" name="bizBody" type="ns:CISBCCCTCN0010201_InRes_Body"/>
         </sequence>
     </complexType>
     <complexType name="rootType">
         <sequence>
-            <element name="data" type="ns:CISBCCCTCN0010201_InRes"/>
+            <element e:kor="데이터부" name="data" type="ns:CISBCCCTCN0010201_InRes"/>
         </sequence>
     </complexType>
     <element name="root" type="ns:CISBCCCTCN0010201_InRes"/>

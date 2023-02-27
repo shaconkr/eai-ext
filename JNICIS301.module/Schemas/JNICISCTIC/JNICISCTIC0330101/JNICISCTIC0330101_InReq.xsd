@@ -33,13 +33,13 @@
     </complexType>
     <complexType name="JNICISCTIC0330101_InReq">
         <sequence>
-            <element name="bizHeader" type="ns:JNICISCTIC0330101_InReq_Header"/>
-            <element name="bizBody" type="ns:JNICISCTIC0330101_InReq_Body"/>
+            <element e:kor="BIZ공통부" name="bizHeader" type="ns:JNICISCTIC0330101_InReq_Header"/>
+            <element e:kor="BIZ데이터부" name="bizBody" type="ns:JNICISCTIC0330101_InReq_Body"/>
         </sequence>
     </complexType>
     <complexType name="rootType">
         <sequence>
-            <element name="data" type="ns:JNICISCTIC0330101_InReq"/>
+            <element e:kor="데이터부" name="data" type="ns:JNICISCTIC0330101_InReq"/>
         </sequence>
     </complexType>
     <element name="root" type="ns:JNICISCTIC0330101_InReq"/>

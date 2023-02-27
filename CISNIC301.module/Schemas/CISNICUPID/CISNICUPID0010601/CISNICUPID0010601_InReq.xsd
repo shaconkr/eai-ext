@@ -95,14 +95,14 @@
     </complexType>
     <complexType name="CISNICUPID0010601_InReq">
         <sequence>
-            <element name="bizHeader" type="ns:CISNICUPID0010601_InReq_Header"/>
-            <element name="bizBody" type="ns:CISNICUPID0010601_InReq_Body"/>
+            <element e:kor="BIZ공통부" name="bizHeader" type="ns:CISNICUPID0010601_InReq_Header"/>
+            <element e:kor="BIZ데이터부" name="bizBody" type="ns:CISNICUPID0010601_InReq_Body"/>
         </sequence>
     </complexType>
     <complexType name="rootType">
         <sequence>
-            <element name="header" type="ns:CISHeaderType"/>
-            <element name="data" type="ns:CISNICUPID0010601_InReq"/>
+            <element e:kor="CIS공통부" name="header" type="ns:CISHeaderType"/>
+            <element e:kor="CIS데이터부" name="data" type="ns:CISNICUPID0010601_InReq"/>
         </sequence>
     </complexType>
     <element name="root" type="ns:rootType"/>

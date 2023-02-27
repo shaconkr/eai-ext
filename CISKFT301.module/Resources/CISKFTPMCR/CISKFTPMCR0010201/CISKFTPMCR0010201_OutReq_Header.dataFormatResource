@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jndi:namedResource xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CISKFTPMCR0010201="http://schema.hcis.com/xsd/CISKFTPMCR0010201_OutReq_Header" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" name="CISKFTPMCR/CISKFTPMCR0010201.CISKFTPMCR0010201_OutReq_Header" type="dataformat:DataFormat">
+  <jndi:imports importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/CISKFTPMCR0010201_OutReq_Header_df.xsd" namespace="http://schema.hcis.com/xsd/CISKFTPMCR0010201_OutReq_Header"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="CISKFTPMCR0010201:main" lineLength="58" fieldOffsetsStr="tgrmLen(0,4)&#xA;inntChrVal(4,7)&#xA;tgrmTypeNo(7,16)&#xA;tgrmId(16,20)&#xA;tgrmCntn(20,36)&#xA;trdGbcd(36,42)&#xA;tgrmSendDtm(42,52)&#xA;tgrmTrcNo(52,58)">
+    <fieldOffsets kor="전문길이" type="string" name="tgrmLen" start="0" end="4"/>
+    <fieldOffsets kor="고유문자값" type="string" name="inntChrVal" start="4" end="7"/>
+    <fieldOffsets kor="전문유형번호" type="string" name="tgrmTypeNo" start="7" end="16"/>
+    <fieldOffsets kor="전문ID" type="string" name="tgrmId" start="16" end="20"/>
+    <fieldOffsets kor="전문내용" type="string" name="tgrmCntn" start="20" end="36"/>
+    <fieldOffsets kor="거래구분코드" type="string" name="trdGbcd" start="36" end="42"/>
+    <fieldOffsets kor="전문전송일시" type="string" name="tgrmSendDtm" start="42" end="52"/>
+    <fieldOffsets kor="전문추적번호" type="string" name="tgrmTrcNo" start="52" end="58"/>
+  </jndi:configuration>
+</jndi:namedResource>

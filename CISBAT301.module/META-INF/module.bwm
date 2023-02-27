@@ -30,4 +30,7 @@
   <sca:component xmi:id="_eGApcLP5Ee2Yzb0bY4iB3A" name="ComponentCISNIBCTCN0020102" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_eGApcbP5Ee2Yzb0bY4iB3A" processName="CT.CISTBV.CISTBVCTCN0040108"/>
   </sca:component>
+  <sca:component xmi:id="_i_RykLQGEe2Yzb0bY4iB3A" name="ComponentCISTBVCTCN0040108" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_i_RykbQGEe2Yzb0bY4iB3A" processName="CT.CISSPC.CISSPCCTCN0060101"/>
+  </sca:component>
 </sca:composite>

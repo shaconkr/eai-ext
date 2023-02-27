@@ -83,16 +83,16 @@
                 <variable>getEimsJson-input</variable>
             </endingVariables>
         </task>
-        <task name="ParseJSON">
+        <task name="EimsInfo">
             <endingVariables>
-                <variable>ParseJSON-input</variable>
+                <variable>EimsInfo-input</variable>
                 <variable>getEimsJson</variable>
             </endingVariables>
         </task>
         <task name="L_Get_InterfaceInfo">
             <endingVariables>
                 <variable>L_Get_InterfaceInfo-input</variable>
-                <variable>ParseJSON</variable>
+                <variable>EimsInfo</variable>
             </endingVariables>
         </task>
         <task name="L_Set_LogStart">
@@ -2310,11 +2310,11 @@
         <bpws:variable element="ns20:ActivityErrorData"
             name="_error_getEimsJson" sca-bpel:internal="true"/>
         <bpws:variable element="ns21:ActivityInputClass"
-            name="ParseJSON-input" sca-bpel:internal="true"/>
+            name="EimsInfo-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns24:EIMSInterfaceElement"
-            name="ParseJSON" sca-bpel:internal="true"/>
+            name="EimsInfo" sca-bpel:internal="true"/>
         <bpws:variable element="ns5:ActivityErrorData"
-            name="_error_ParseJSON" sca-bpel:internal="true"/>
+            name="_error_EimsInfo" sca-bpel:internal="true"/>
         <bpws:variable element="ns22:SetInterface"
             name="L_Get_InterfaceInfo-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns22:InterfaceInfo"
@@ -2744,9 +2744,9 @@
                             </bpws:extensionActivity>
                             <bpws:extensionActivity>
                                 <tibex:activityExtension
-                                    inputVariable="ParseJSON-input"
-                                    name="ParseJSON"
-                                    outputVariable="ParseJSON"
+                                    inputVariable="EimsInfo-input"
+                                    name="EimsInfo"
+                                    outputVariable="EimsInfo"
                                     tibex:xpdlId="9e402373-e075-4d41-a317-b42d47577ab3" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:targets>
                                     <bpws:target linkName="getEimsJsonToParseJSON"/>
@@ -2795,7 +2795,7 @@
                                     </bpws:sources>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding coercion=""
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns6=&quot;http://tns.tibco.com/bw/json/1676951614079&quot; xmlns:Library=&quot;http://www.cspi_library.org/Library&quot; xmlns:HCIS=&quot;http://shacon.kr/202301&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;ParseJSON&quot;/>&#xa;    &lt;xsl:template name=&quot;L_Get_InterfaceInfo-input&quot; match=&quot;/&quot;>&#xa;        &lt;Library:SetInterface>&#xa;            &lt;Library:InterfaceId>&#xa;                &lt;xsl:value-of select=&quot;$ParseJSON/tns6:request/tns6:ifId&quot;/>&#xa;            &lt;/Library:InterfaceId>&#xa;            &lt;Library:InterfaceSysId>&#xa;                &lt;xsl:value-of select=&quot;HCIS:getGUID()&quot;/>&#xa;            &lt;/Library:InterfaceSysId>&#xa;        &lt;/Library:SetInterface>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns6=&quot;http://tns.tibco.com/bw/json/1676951614079&quot; xmlns:Library=&quot;http://www.cspi_library.org/Library&quot; xmlns:HCIS=&quot;http://shacon.kr/202301&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;EimsInfo&quot;/>&#xa;    &lt;xsl:template name=&quot;L_Get_InterfaceInfo-input&quot; match=&quot;/&quot;>&#xa;        &lt;Library:SetInterface>&#xa;            &lt;Library:InterfaceId>&#xa;                &lt;xsl:value-of select=&quot;$EimsInfo/tns6:request/tns6:ifId&quot;/>&#xa;            &lt;/Library:InterfaceId>&#xa;            &lt;Library:InterfaceSysId>&#xa;                &lt;xsl:value-of select=&quot;HCIS:getGUID()&quot;/>&#xa;            &lt;/Library:InterfaceSysId>&#xa;        &lt;/Library:SetInterface>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:CallProcess
                                     moduleRef="CSPI_Library"

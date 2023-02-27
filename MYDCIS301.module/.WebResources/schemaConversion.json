@@ -1,5 +1,17 @@
-{"records": [{
-    "jsonSchemaLocation": "/MYDCIS301.module/Service Descriptors/MYDCISCTCN.MYDCISCTCN0050207.MYDCISCTCN0050207-MYDCISCTCN0050207.json",
-    "conversionType": "linked",
-    "xsdSchemaTargetNamespace": "http://schema.hcis.com/xsd/MYDCISCTCN0050207_InReq"
-}]}
+{"records": [
+    {
+        "jsonSchemaLocation": "/MYDCIS301.module/Service Descriptors/MYDCISCTCN.MYDCISCTCN0050207.MYDCISCTCN0050207-MYDCISCTCN0050207.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://schema.hcis.com/xsd/MYDCISCTCN0050207_InReq"
+    },
+    {
+        "jsonSchemaLocation": "/MYDCIS301.module/Service Descriptors/MYDCISCTCN.MYDCISCTCN0050101.MYDCISCTCN0050801-MYDCISCTCN0050801.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://schema.hcis.com/xsd/MYDCISCTCN0050101_InReq"
+    },
+    {
+        "jsonSchemaLocation": "/MYDCIS301.module/Service Descriptors/MYDCISCTCN.MYDCISCTCN0050101.MYDCISCTCN0050801-MYDCISCTCN0050801.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://schema.hcis.com/xsd/MYDCISCTCN0050101_InRes"
+    }
+]}

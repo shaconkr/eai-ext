@@ -1,0 +1,62 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "MYDCISCTCN0050801",
+    "description" : "MYDCISCTCN0050801 service"
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/polling" : {
+      "post" : {
+        "summary" : "postMYDCISCTCN0050801",
+        "description" : "postMYDCISCTCN0050801",
+        "operationId" : "post-polling",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/root"
+          },
+          "required" : true
+        }, {
+          "name" : "x-api-tran-id",
+          "in" : "header",
+          "description" : "",
+          "type" : "string",
+          "required" : false
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a root to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/root"
+            },
+            "headers" : {
+              "x-api-tran-id" : {
+                "description" : "",
+                "type" : "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "root" : {
+      "type" : "object",
+      "required" : [ "istnCd" ],
+      "properties" : {
+        "istnCd" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}

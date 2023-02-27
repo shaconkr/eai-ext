@@ -17,6 +17,22 @@
     </scaext:binding>
     <scact:bindingAdjunct xmi:id="_Pd_pcbZlEe20weVuCkOF1g" bindingName="RestService"/>
   </sca:service>
+  <sca:service xmi:id="_9RwsFLZwEe20weVuCkOF1g" name="polling" promote="ComponentMYDCISCTCN0050801/polling">
+    <sca:interface.wsdl xmi:id="_9RwsGLZwEe20weVuCkOF1g" interface="http://xmlns.example.com/20230227163258PLT#wsdl.interface(polling)" scaext:wsdlLocation="../Processes/MYDCISCTCN/MYDCISCTCN0050101/MYDCISCTCN0050801.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_9SDnALZwEe20weVuCkOF1g" name="RestService1" path="/polling" docBasePath="http://localhost:7777/MYDCIS301.module" docResourcePath="MYDCISCTCN0050801" basePath="/" connector="mydcis301.module.MYDCISCTCN0050207" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/MYDCISCTCN.MYDCISCTCN0050101.MYDCISCTCN0050801-MYDCISCTCN0050801.json">
+      <operation xmi:id="_9SNYALZwEe20weVuCkOF1g" operationName="post" nickname="post-polling" httpMethod="POST" notes="postMYDCISCTCN0050801" responseStyle="element" requestStyle="element" outputPartName="Response">
+        <parameters xmi:id="_Bn0tYLZxEe20weVuCkOF1g">
+          <parameterMapping xmi:id="_Bn0tYbZxEe20weVuCkOF1g" parameterName="x-api-tran-id" parameterType="Header" dataType="string"/>
+          <parameterMapping xmi:id="_Ght0gLZxEe20weVuCkOF1g" parameterName="x-api-tran-id" parameterType="ResponseHeader" dataType="string"/>
+        </parameters>
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_9SWh8LZwEe20weVuCkOF1g"/>
+      <advancedConfig xmi:id="_9SDnAbZwEe20weVuCkOF1g" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_9SNYAbZwEe20weVuCkOF1g" bindingName="RestService1"/>
+  </sca:service>
   <sca:property xmi:id="_9oWzsLZbEe20weVuCkOF1g" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_9of9oLZbEe20weVuCkOF1g" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_9opuoLZbEe20weVuCkOF1g" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
@@ -27,9 +43,15 @@
   <sca:property xmi:id="_9pGakbZbEe20weVuCkOF1g" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_9pPkgLZbEe20weVuCkOF1g" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
   <sca:component xmi:id="_PdZzkLZlEe20weVuCkOF1g" name="ComponentMYDCISCTCN0050207" compositeext:version="1.0.0.qualifier">
-    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_PdZzkbZlEe20weVuCkOF1g" processName="MYDCISCTCN.MYDCISCTCN0050207.MYDCISCTCN0050207"/>
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_PdZzkbZlEe20weVuCkOF1g" processName="MYDCISCTCN.MYDCISCTCN0050207.MYDCISCTCN0050207" autoStart="false"/>
     <sca:service xmi:id="_Pdi9gLZlEe20weVuCkOF1g" name="ci">
       <sca:interface.wsdl xmi:id="_Pdi9gbZlEe20weVuCkOF1g" interface="http://xmlns.example.com/20230227150906PLT#wsdl.interface(ci)" scaext:wsdlLocation="../Processes/MYDCISCTCN/MYDCISCTCN0050207/MYDCISCTCN0050207.bwp"/>
+    </sca:service>
+  </sca:component>
+  <sca:component xmi:id="_9RwsELZwEe20weVuCkOF1g" name="ComponentMYDCISCTCN0050801" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_9RwsEbZwEe20weVuCkOF1g" processName="MYDCISCTCN.MYDCISCTCN0050101.MYDCISCTCN0050101"/>
+    <sca:service xmi:id="_9RwsErZwEe20weVuCkOF1g" name="polling">
+      <sca:interface.wsdl xmi:id="_9RwsE7ZwEe20weVuCkOF1g" interface="http://xmlns.example.com/20230227163258PLT#wsdl.interface(polling)" scaext:wsdlLocation="../Processes/MYDCISCTCN/MYDCISCTCN0050101/MYDCISCTCN0050801.bwp"/>
     </sca:service>
   </sca:component>
 </sca:composite>

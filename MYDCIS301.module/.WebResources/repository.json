@@ -1,7 +1,25 @@
 {
     "records": [],
-    "resources": [{
-        "location": "Service Descriptors/MYDCISCTCN.MYDCISCTCN0050207.MYDCISCTCN0050207-MYDCISCTCN0050207.json",
-        "type": "generated"
-    }]
+    "resources": [
+        {
+            "location": "Service Descriptors/MYDCISCTCN.MYDCISCTCN0050207.MYDCISCTCN0050207-MYDCISCTCN0050207.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/MYDCISCTCN.MYDCISCTCN0050101.MYDCISCTCN0050207-MYDCISCTCN0050207.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/MYDCISCTCN.MYDCISCTCN0050101.MYDCISCTCN0050101-MYDCISCTCN0050207.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/MYDCISCTCN.MYDCISCTCN0050101.MYDCISCTCN0050801-MYDCISCTCN0050801.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/MYDCISCTCN.MYDCISCTCN0050101.MYDCISCTCN0050101-MYDCISCTCN0050801.json",
+            "type": "generated"
+        }
+    ]
 }

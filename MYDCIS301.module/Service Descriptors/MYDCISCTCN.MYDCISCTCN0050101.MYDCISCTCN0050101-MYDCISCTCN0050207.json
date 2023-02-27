@@ -1,0 +1,71 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "MYDCISCTCN0050207",
+    "description" : "마이데이터 정보주체식별"
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/ci" : {
+      "post" : {
+        "summary" : "MYDCISCTCN0050207",
+        "description" : "MYDCISCTCN0050207",
+        "operationId" : "post-ci",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/root"
+          },
+          "required" : true
+        }, {
+          "name" : "x-user-ci",
+          "in" : "header",
+          "description" : "",
+          "type" : "string",
+          "required" : false
+        }, {
+          "name" : "x-api-tran-id",
+          "in" : "header",
+          "description" : "",
+          "type" : "string",
+          "required" : false
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a root to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/root"
+            },
+            "headers" : {
+              "x-api-tran-id" : {
+                "description" : "",
+                "type" : "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "root" : {
+      "type" : "object",
+      "required" : [ "istnCd", "infMagnIdntCd" ],
+      "properties" : {
+        "istnCd" : {
+          "type" : "string"
+        },
+        "infMagnIdntCd" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:e="http://shacon.kr/xsd" xmlns:ns="http://schema.hcis.com/xsd/MYDCISCTCN0050601_InRes" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.hcis.com/xsd/MYDCISCTCN0050601_InRes">
+    <complexType name="MYDCISCTCN0050601_InRes">
+        <sequence>
+            <element e:kor="거래고유번호" e:length="25" e:padder="SpaceRight" minOccurs="0" name="trdInntNo" nillable="true" type="string"/>
+            <element e:kor="응답코드" e:length="5" e:padder="SpaceRight" minOccurs="0" name="respCd" nillable="true" type="string"/>
+            <element e:kor="응답메시지" e:length="450" e:padder="SpaceRight" minOccurs="0" name="respMsg" nillable="true" type="string"/>
+            <element e:kor="다음KEY" e:length="1000" e:padder="SpaceRight" minOccurs="0" name="nxtKey" nillable="true" type="string"/>
+            <element e:kor="청구상세내역_배열건수" e:length="5" e:padder="ZeroLeft" minOccurs="0" name="chrDtlRowcount" nillable="true" type="long"/>
+            <element e:kor="청구상세내역_배열" e:padder="ZeroLeft" maxOccurs="unbounded" minOccurs="0" name="chrDtlList" nillable="true" type="ns:CHR_DTL_LIST_TYPE"/>
+        </sequence>
+    </complexType>
+    <complexType name="CHR_DTL_LIST_TYPE">
+        <sequence>
+            <element e:kor="카드ID" e:length="64" e:padder="SpaceRight" minOccurs="0" name="crdId" nillable="true" type="string"/>
+            <element e:kor="사용일시" e:length="14" e:padder="SpaceRight" minOccurs="0" name="useDtm" nillable="true" type="string"/>
+            <element e:kor="거래번호" e:length="64" e:padder="SpaceRight" minOccurs="0" name="trdNo" nillable="true" type="string"/>
+            <element e:kor="이용금액" e:length="18" e:padder="ZeroLeft" minOccurs="0" name="utlzAmt" nillable="true" type="decimal"/>
+            <element e:kor="통화코드" e:length="3" e:padder="SpaceRight" minOccurs="0" name="crncCd" nillable="true" type="string"/>
+            <element e:kor="가맹점명" e:length="75" e:padder="SpaceRight" minOccurs="0" name="frcsNm" nillable="true" type="string"/>
+            <element e:kor="가맹점사업자등록번호" e:length="12" e:padder="SpaceRight" minOccurs="0" name="frcsRgno" nillable="true" type="string"/>
+            <element e:kor="신용판매수수료" e:length="15" e:padder="ZeroLeft" minOccurs="0" name="crdtSellCmis" nillable="true" type="long"/>
+            <element e:kor="전체할부회차" e:length="5" e:padder="ZeroLeft" minOccurs="0" name="totInsmTmnm" nillable="true" type="long"/>
+            <element e:kor="현재할부회차" e:length="5" e:padder="ZeroLeft" minOccurs="0" name="curInsmTmnm" nillable="true" type="long"/>
+            <element e:kor="할부결제후잔액" e:length="15" e:padder="ZeroLeft" minOccurs="0" name="insmStlmAfBlnc" nillable="true" type="long"/>
+            <element e:kor="상품코드" e:length="2" e:padder="SpaceRight" minOccurs="0" name="itemCd" nillable="true" type="string"/>
+        </sequence>
+    </complexType>
+    <element name="root" type="ns:MYDCISCTCN0050601_InRes"/>
+</schema>

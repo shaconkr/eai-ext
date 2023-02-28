@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beanio xmlns="http://www.beanio.org/2012/03" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.beanio.org/2012/03 http://www.beanio.org/2012/03/mapping.xsd">
+  <typeHandler type="java.util.Date" class="org.beanio.types.DateTypeHandler">
+    <property name="pattern" value="yyyyMMddhhmm"/>
+  </typeHandler>
+  <stream kor="" name="MYDCISCTCN0050401_OutReq" format="fixedlength">
+    <parser>
+      <property name="recordTerminator" value="\r\n"/>
+    </parser>
+    <record name="CIS_OutReq" class="java.util.LinkedHashMap">
+      <segment name="header" kor="공통부" minOccurs="1" maxOccurs="1" class="map">
+        <field kor="전체전문길이" name="totTgrmLen" minOccurs="0" maxOccurs="1" position="0" length="8" justify="right" padding="0"/>
+        <field kor="헤더길이" name="hdrLen" minOccurs="0" maxOccurs="1" position="8" length="8" justify="right" padding="0"/>
+        <field kor="전문형식코드" name="tgrmFrmCd" minOccurs="0" maxOccurs="1" position="16" length="1"/>
+        <field kor="시스템환경구분코드" name="sysEnvGbcd" minOccurs="0" maxOccurs="1" position="17" length="1"/>
+        <field kor="IP주소" name="ipAdr" minOccurs="0" maxOccurs="1" position="18" length="40"/>
+        <field kor="GUID" name="guid" minOccurs="0" maxOccurs="1" position="58" length="38"/>
+        <field kor="진행번호" name="prgrNo" minOccurs="0" maxOccurs="1" position="96" length="3" justify="right" padding="0"/>
+        <field kor="최초GUID" name="frstGuid" minOccurs="0" maxOccurs="1" position="99" length="38"/>
+        <field kor="전송시스템코드" name="sendSysCd" minOccurs="0" maxOccurs="1" position="137" length="3"/>
+        <field kor="최초전송시스템코드" name="frstSendSysCd" minOccurs="0" maxOccurs="1" position="140" length="3"/>
+        <field kor="시스템공통예비내용" name="sysCommTrtyPrepCntn" minOccurs="0" maxOccurs="1" position="143" length="21"/>
+        <field kor="EIMS전문ID" name="eimsTgrmId" minOccurs="0" maxOccurs="1" position="164" length="17"/>
+        <field kor="EIMS전문번호" name="eimsTgrmVerNo" minOccurs="0" maxOccurs="1" position="181" length="3"/>
+        <field kor="프래임워크거래ID" name="frwkTrdId" minOccurs="0" maxOccurs="1" position="184" length="12"/>
+        <field kor="수신시스템코드" name="rcvSysCd" minOccurs="0" maxOccurs="1" position="196" length="3"/>
+        <field kor="연계전문코드" name="tieTgrmCd" minOccurs="0" maxOccurs="1" position="199" length="10"/>
+        <field kor="연계서비스그룹코드" name="tieSrvGrpCd" minOccurs="0" maxOccurs="1" position="209" length="2"/>
+        <field kor="연계서비스명" name="tieSrvNm" minOccurs="0" maxOccurs="1" position="211" length="30"/>
+        <field kor="화면번호" name="scrnNo" minOccurs="0" maxOccurs="1" position="241" length="20"/>
+        <field kor="요청응답구분코드" name="reqnRespGbcd" minOccurs="0" maxOccurs="1" position="261" length="1"/>
+        <field kor="동기처리구분코드" name="syncProcGbcd" minOccurs="0" maxOccurs="1" position="262" length="1"/>
+        <field kor="거래응답코드" name="trdRespCd" minOccurs="0" maxOccurs="1" position="263" length="1"/>
+        <field kor="페이지번호" name="pageNo" minOccurs="0" maxOccurs="1" position="264" length="9" justify="right" padding="0"/>
+        <field kor="페이지행건수" name="pageRowCnt" minOccurs="0" maxOccurs="1" position="273" length="9" justify="right" padding="0"/>
+        <field kor="전체레코드건수" name="totRowCnt" minOccurs="0" maxOccurs="1" position="282" length="9" justify="right" padding="0"/>
+        <field kor="다음페이지여부" name="nxtPageYn" minOccurs="0" maxOccurs="1" position="291" length="1"/>
+        <field kor="요청일시" name="reqnDtm" minOccurs="0" maxOccurs="1" position="292" length="17"/>
+        <field kor="응답일시" name="respDtm" minOccurs="0" maxOccurs="1" position="309" length="17"/>
+        <field kor="점코드" name="storeCd" minOccurs="0" maxOccurs="1" position="326" length="3"/>
+        <field kor="사용자ID" name="userId" minOccurs="0" maxOccurs="1" position="329" length="8"/>
+        <field kor="거래공통영역예비내용" name="trdCommTrtyPrepCntn" minOccurs="0" maxOccurs="1" position="337" length="100"/>
+        <segment name="msgGrpNm" kor="메시지그룹명" minOccurs="0" maxOccurs="1" class="map">
+          <field kor="메시지표시방법구분코드" name="msgShwMthdGbcd" minOccurs="0" maxOccurs="1" position="437" length="1"/>
+          <field kor="오류발생전문항목명" name="errOcrnTgrmClasNm" minOccurs="0" maxOccurs="1" position="438" length="50"/>
+          <field kor="메시지코드" name="msgCd" minOccurs="0" maxOccurs="1" position="488" length="10"/>
+          <field kor="메시지내용" name="msgCntn" minOccurs="0" maxOccurs="1" position="498" length="300"/>
+          <field kor="메시지세부내용" name="msgDtlCntn" minOccurs="0" maxOccurs="1" position="798" length="1000"/>
+        </segment>
+        <field kor="표준전문종료문자값" name="stdTgrmEndLettrVal" minOccurs="0" maxOccurs="1" position="1798" length="2"/>
+      </segment>
+      <segment name="data" kor="데이터부" minOccurs="1" maxOccurs="1" class="map">
+        <field kor="CI값" name="ciVal" minOccurs="1" maxOccurs="1" position="1800" length="88"/>
+        <field kor="거래고유번호" name="trdInntNo" minOccurs="1" maxOccurs="1" position="1888" length="25"/>
+        <field kor="API구분코드" name="apiGbcd" minOccurs="1" maxOccurs="1" position="1913" length="12"/>
+        <field kor="기관코드" name="istnCd" minOccurs="1" maxOccurs="1" position="1925" length="10"/>
+        <field kor="조회일시" name="qryDtm" minOccurs="1" maxOccurs="1" position="1935" length="14" justify="right" padding="0"/>
+      </segment>
+    </record>
+  </stream>
+</beanio>

@@ -10,38 +10,38 @@
     </parser>
     <record name="KCB_OutRes" class="java.util.LinkedHashMap">
       <segment name="bizHeader" kor="BIZ공통부" minOccurs="1" maxOccurs="1" class="map">
-        <field kor="전문길이" name="tgrmLen" minOccurs="1" maxOccurs="1" position="0" length="4"/>
-        <field kor="거래코드" name="trdCd" minOccurs="1" maxOccurs="1" position="4" length="9"/>
-        <field kor="회원사코드" name="mmcoCd" minOccurs="1" maxOccurs="1" position="13" length="8"/>
-        <field kor="전문종별코드" name="tgrmSubCCd" minOccurs="1" maxOccurs="1" position="21" length="4"/>
-        <field kor="업무구분코드" name="tskGbcd" minOccurs="1" maxOccurs="1" position="25" length="3"/>
-        <field kor="송수신구분" name="tnrGb" minOccurs="1" maxOccurs="1" position="28" length="1"/>
-        <field kor="응답코드" name="respCd" minOccurs="1" maxOccurs="1" position="29" length="4"/>
-        <field kor="KCB전문관리번호" name="kcbTgrmMngNo" minOccurs="1" maxOccurs="1" position="33" length="7"/>
-        <field kor="KCB전문전송시간" name="kcbTgrmSendTime" minOccurs="1" maxOccurs="1" position="40" length="14"/>
-        <field kor="회원사전문관리번호" name="mmcoTgrmMngNo" minOccurs="1" maxOccurs="1" position="54" length="7"/>
-        <field kor="회원사전문전송시간" name="mmcoTgrmSendTime" minOccurs="1" maxOccurs="1" position="61" length="14"/>
-        <field kor="시스템정보" name="sysInf" minOccurs="1" maxOccurs="1" position="75" length="16"/>
-        <field kor="조회동의코드" name="qryAgrCd" minOccurs="1" maxOccurs="1" position="91" length="1"/>
-        <field kor="예비값" name="prepVal" minOccurs="1" maxOccurs="1" position="92" length="42"/>
+        <field kor="전문길이" name="tgrmLen" minOccurs="0" maxOccurs="1" position="0" length="4"/>
+        <field kor="거래코드" name="trdCd" minOccurs="0" maxOccurs="1" position="4" length="9"/>
+        <field kor="회원사코드" name="mmcoCd" minOccurs="0" maxOccurs="1" position="13" length="8"/>
+        <field kor="전문종별코드" name="tgrmSubCCd" minOccurs="0" maxOccurs="1" position="21" length="4"/>
+        <field kor="업무구분코드" name="tskGbcd" minOccurs="0" maxOccurs="1" position="25" length="3"/>
+        <field kor="송수신구분" name="tnrGb" minOccurs="0" maxOccurs="1" position="28" length="1"/>
+        <field kor="응답코드" name="respCd" minOccurs="0" maxOccurs="1" position="29" length="4"/>
+        <field kor="KCB전문관리번호" name="kcbTgrmMngNo" minOccurs="0" maxOccurs="1" position="33" length="7"/>
+        <field kor="KCB전문전송시간" name="kcbTgrmSendTime" minOccurs="0" maxOccurs="1" position="40" length="14"/>
+        <field kor="회원사전문관리번호" name="mmcoTgrmMngNo" minOccurs="0" maxOccurs="1" position="54" length="7"/>
+        <field kor="회원사전문전송시간" name="mmcoTgrmSendTime" minOccurs="0" maxOccurs="1" position="61" length="14"/>
+        <field kor="시스템정보" name="sysInf" minOccurs="0" maxOccurs="1" position="75" length="16"/>
+        <field kor="조회동의코드" name="qryAgrCd" minOccurs="0" maxOccurs="1" position="91" length="1"/>
+        <field kor="예비값" name="prepVal" minOccurs="0" maxOccurs="1" position="92" length="42"/>
       </segment>
       <segment name="bizBody" kor="BIZ데이터부" minOccurs="1" maxOccurs="1" class="map">
-        <field kor="세그멘트ID" name="segId" minOccurs="1" maxOccurs="1" position="134" length="3"/>
-        <field kor="등록사유코드" name="regRsnCd" minOccurs="1" maxOccurs="1" position="137" length="2"/>
-        <field kor="고객번호구분코드" name="custNoGbcd" minOccurs="1" maxOccurs="1" position="139" length="1"/>
-        <field kor="회원번호" name="memNo" minOccurs="1" maxOccurs="1" position="140" length="40"/>
-        <field kor="회원명" name="memNm" minOccurs="1" maxOccurs="1" position="180" length="50"/>
-        <field kor="생년월일" name="bymd" minOccurs="1" maxOccurs="1" position="230" length="8"/>
-        <field kor="성별코드" name="sexCd" minOccurs="1" maxOccurs="1" position="238" length="1"/>
-        <field kor="휴대전화식별번호" name="mophIdntNo" minOccurs="1" maxOccurs="1" position="239" length="3"/>
-        <field kor="휴대전화국번호" name="mobiTels" minOccurs="1" maxOccurs="1" position="242" length="4"/>
-        <field kor="휴대전화개별번호" name="mobiTeli" minOccurs="1" maxOccurs="1" position="246" length="4"/>
-        <field kor="고유식별정보구분코드" name="idinfGbcd" minOccurs="1" maxOccurs="1" position="250" length="2"/>
-        <field kor="고유식별정보" name="idinf" minOccurs="1" maxOccurs="1" position="252" length="100"/>
-        <field kor="기준일자" name="bsicDt" minOccurs="1" maxOccurs="1" position="352" length="8"/>
-        <field kor="예비값" name="prepVal" minOccurs="1" maxOccurs="1" position="360" length="274"/>
-        <field kor="오류응답코드" name="errRespCd" minOccurs="1" maxOccurs="1" position="634" length="4"/>
-        <field kor="오류체크비트값" name="errChkBitVal" minOccurs="1" maxOccurs="1" position="638" length="16"/>
+        <field kor="세그멘트ID" name="segId" minOccurs="0" maxOccurs="1" position="134" length="3"/>
+        <field kor="등록사유코드" name="regRsnCd" minOccurs="0" maxOccurs="1" position="137" length="2"/>
+        <field kor="고객번호구분코드" name="custNoGbcd" minOccurs="0" maxOccurs="1" position="139" length="1"/>
+        <field kor="회원번호" name="memNo" minOccurs="0" maxOccurs="1" position="140" length="40"/>
+        <field kor="회원명" name="memNm" minOccurs="0" maxOccurs="1" position="180" length="50"/>
+        <field kor="생년월일" name="bymd" minOccurs="0" maxOccurs="1" position="230" length="8"/>
+        <field kor="성별코드" name="sexCd" minOccurs="0" maxOccurs="1" position="238" length="1"/>
+        <field kor="휴대전화식별번호" name="mophIdntNo" minOccurs="0" maxOccurs="1" position="239" length="3"/>
+        <field kor="휴대전화국번호" name="mobiTels" minOccurs="0" maxOccurs="1" position="242" length="4"/>
+        <field kor="휴대전화개별번호" name="mobiTeli" minOccurs="0" maxOccurs="1" position="246" length="4"/>
+        <field kor="고유식별정보구분코드" name="idinfGbcd" minOccurs="0" maxOccurs="1" position="250" length="2"/>
+        <field kor="고유식별정보" name="idinf" minOccurs="0" maxOccurs="1" position="252" length="100"/>
+        <field kor="기준일자" name="bsicDt" minOccurs="0" maxOccurs="1" position="352" length="8"/>
+        <field kor="예비값" name="prepVal" minOccurs="0" maxOccurs="1" position="360" length="274"/>
+        <field kor="오류응답코드" name="errRespCd" minOccurs="0" maxOccurs="1" position="634" length="4"/>
+        <field kor="오류체크비트값" name="errChkBitVal" minOccurs="0" maxOccurs="1" position="638" length="16"/>
       </segment>
     </record>
   </stream>

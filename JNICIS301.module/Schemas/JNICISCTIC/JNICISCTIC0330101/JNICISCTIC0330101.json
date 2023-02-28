@@ -34,9 +34,6 @@
     "extHtdspNm": "타발거래",
     "extSndRcvId": "E",
     "extSndRcvNm": "수신",
-    "extOneWayYn": "N",
-    "extResTypeId": "1",
-    "extResTypeNm": "요청전문",
     "msgCd": "AH30S",
     "txCd": "JNIL",
     "extFilePath": "",
@@ -52,7 +49,10 @@
     "scheduleEnd": "",
     "afterExecute": "",
     "afterShellName": "",
-    "afterShellPath": ""
+    "afterShellPath": "",
+    "extOneWayYn": "N",
+    "extResTypeId": "1",
+    "extResTypeNm": "요청전문"
   },
   "response": {
     "ifId": "CISJNICTIC0330102",
@@ -75,9 +75,6 @@
     "extHtdspNm": "타발거래",
     "extSndRcvId": "H",
     "extSndRcvNm": "송신",
-    "extOneWayYn": "N",
-    "extResTypeId": "1",
-    "extResTypeNm": "요청전문",
     "msgCd": "AH30R",
     "txCd": "JNIL",
     "extFilePath": "",
@@ -93,6 +90,9 @@
     "scheduleEnd": "",
     "afterExecute": "",
     "afterShellName": "",
-    "afterShellPath": ""
+    "afterShellPath": "",
+    "extOneWayYn": "N",
+    "extResTypeId": "1",
+    "extResTypeNm": "요청전문"
   }
 }

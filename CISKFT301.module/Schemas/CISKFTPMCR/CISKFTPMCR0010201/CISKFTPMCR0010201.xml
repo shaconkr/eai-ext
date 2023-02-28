@@ -10,23 +10,23 @@
     </parser>
     <record name="KFT_OutReq" class="java.util.LinkedHashMap">
       <segment name="bizHeader" kor="BIZ공통부" minOccurs="1" maxOccurs="1" class="map">
-        <field kor="전문길이" name="tgrmLen" minOccurs="1" maxOccurs="1" position="0" length="4"/>
-        <field kor="고유문자값" name="inntChrVal" minOccurs="1" maxOccurs="1" position="4" length="3"/>
-        <field kor="전문유형번호" name="tgrmTypeNo" minOccurs="1" maxOccurs="1" position="7" length="9"/>
-        <field kor="전문ID" name="tgrmId" minOccurs="1" maxOccurs="1" position="16" length="4"/>
-        <field kor="전문내용" name="tgrmCntn" minOccurs="1" maxOccurs="1" position="20" length="16"/>
-        <field kor="거래구분코드" name="trdGbcd" minOccurs="1" maxOccurs="1" position="36" length="6"/>
-        <field kor="전문전송일시" name="tgrmSendDtm" minOccurs="1" maxOccurs="1" position="42" length="10"/>
-        <field kor="전문추적번호" name="tgrmTrcNo" minOccurs="1" maxOccurs="1" position="52" length="6"/>
+        <field kor="전문길이" name="tgrmLen" minOccurs="0" maxOccurs="1" position="0" length="4"/>
+        <field kor="고유문자값" name="inntChrVal" minOccurs="0" maxOccurs="1" position="4" length="3"/>
+        <field kor="전문유형번호" name="tgrmTypeNo" minOccurs="0" maxOccurs="1" position="7" length="9"/>
+        <field kor="전문ID" name="tgrmId" minOccurs="0" maxOccurs="1" position="16" length="4"/>
+        <field kor="전문내용" name="tgrmCntn" minOccurs="0" maxOccurs="1" position="20" length="16"/>
+        <field kor="거래구분코드" name="trdGbcd" minOccurs="0" maxOccurs="1" position="36" length="6"/>
+        <field kor="전문전송일시" name="tgrmSendDtm" minOccurs="0" maxOccurs="1" position="42" length="10"/>
+        <field kor="전문추적번호" name="tgrmTrcNo" minOccurs="0" maxOccurs="1" position="52" length="6"/>
       </segment>
       <segment name="bizBody" kor="BIZ데이터부" minOccurs="1" maxOccurs="1" class="map">
-        <field kor="거래시간" name="trdTime" minOccurs="1" maxOccurs="1" position="58" length="6"/>
-        <field kor="거래일자" name="trdDt" minOccurs="1" maxOccurs="1" position="64" length="4"/>
-        <field kor="기관코드" name="istnCd" minOccurs="1" maxOccurs="1" position="68" length="9"/>
-        <field kor="출금계좌번호" name="wthdrwlAcno" minOccurs="1" maxOccurs="1" position="77" length="39"/>
-        <field kor="식별코드" name="idntCd" minOccurs="1" maxOccurs="1" position="116" length="15"/>
-        <field kor="납부자번호" name="pmpsnNo" minOccurs="1" maxOccurs="1" position="131" length="40"/>
-        <field kor="비밀번호" name="pwd" minOccurs="1" maxOccurs="1" position="171" length="16"/>
+        <field kor="거래시간" name="trdTime" minOccurs="0" maxOccurs="1" position="58" length="6"/>
+        <field kor="거래일자" name="trdDt" minOccurs="0" maxOccurs="1" position="64" length="4"/>
+        <field kor="기관코드" name="istnCd" minOccurs="0" maxOccurs="1" position="68" length="9"/>
+        <field kor="출금계좌번호" name="wthdrwlAcno" minOccurs="0" maxOccurs="1" position="77" length="39"/>
+        <field kor="식별코드" name="idntCd" minOccurs="0" maxOccurs="1" position="116" length="15"/>
+        <field kor="납부자번호" name="pmpsnNo" minOccurs="0" maxOccurs="1" position="131" length="40"/>
+        <field kor="비밀번호" name="pwd" minOccurs="0" maxOccurs="1" position="171" length="16"/>
       </segment>
     </record>
   </stream>

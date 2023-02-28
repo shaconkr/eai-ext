@@ -1,0 +1,23 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:e="http://shacon.kr/xsd" xmlns:ns="http://schema.hcis.com/xsd/MYDCISCTCN0050301_InRes" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.hcis.com/xsd/MYDCISCTCN0050301_InRes">
+    <complexType name="MYDCISCTCN0050301_InRes">
+        <sequence>
+            <element e:kor="거래고유번호" e:length="25" e:padder="SpaceRight" minOccurs="0" name="trdInntNo" nillable="true" type="string"/>
+            <element e:kor="응답코드" e:length="5" e:padder="SpaceRight" minOccurs="0" name="respCd" nillable="true" type="string"/>
+            <element e:kor="응답메시지" e:length="450" e:padder="SpaceRight" minOccurs="0" name="respMsg" nillable="true" type="string"/>
+            <element e:kor="조회일시" e:length="14" e:padder="ZeroLeft" minOccurs="0" name="qryDtm" nillable="true" type="long"/>
+            <element e:kor="다음KEY" e:length="1000" e:padder="SpaceRight" minOccurs="0" name="nxtKey" nillable="true" type="string"/>
+            <element e:kor="보유카드내역_배열건수" e:length="5" e:padder="ZeroLeft" minOccurs="0" name="crdRowcount" nillable="true" type="long"/>
+            <element e:kor="보유카드내역_배열" e:padder="ZeroLeft" maxOccurs="unbounded" minOccurs="0" name="crdList" nillable="true" type="ns:CRD_LIST_TYPE"/>
+        </sequence>
+    </complexType>
+    <complexType name="CRD_LIST_TYPE">
+        <sequence>
+            <element e:kor="카드ID" e:length="64" e:padder="SpaceRight" minOccurs="0" name="crdId" nillable="true" type="string"/>
+            <element e:kor="카드번호" e:length="19" e:padder="SpaceRight" minOccurs="0" name="crdNo" nillable="true" type="string"/>
+            <element e:kor="카드상품명" e:length="300" e:padder="SpaceRight" minOccurs="0" name="crdItemNm" nillable="true" type="string"/>
+            <element e:kor="본인가족구분코드" e:length="1" e:padder="ZeroLeft" minOccurs="0" name="selfFamlGbcd" nillable="true" type="long"/>
+            <element e:kor="카드유형코드" e:length="2" e:padder="SpaceRight" minOccurs="0" name="crdTypeCd" nillable="true" type="string"/>
+        </sequence>
+    </complexType>
+    <element name="root" type="ns:MYDCISCTCN0050301_InRes"/>
+</schema>

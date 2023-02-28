@@ -2,19 +2,19 @@
     <element name="root" type="ns:CISKCBCTJB0021001_OutReq_Body"/>
     <complexType name="CISKCBCTJB0021001_OutReq_Body">
         <sequence>
-            <element e:kor="인증번호" e:length="12" e:padder="SpaceRight" name="certNo" nillable="true" type="string"/>
-            <element e:kor="재요청횟수" e:length="2" e:padder="SpaceRight" name="reReqnCnt" nillable="true" type="string"/>
-            <element e:kor="식별번호구분코드" e:length="1" e:padder="SpaceRight" name="idntNoGbcd" nillable="true" type="string"/>
-            <element e:kor="등기고유번호" e:length="33" e:padder="SpaceRight" name="rmailInntNo" nillable="true" type="string"/>
-            <element e:kor="조회지점명" e:length="20" e:padder="SpaceRight" name="qryBrnNm" nillable="true" type="string"/>
-            <element e:kor="담당자ID" e:length="15" e:padder="SpaceRight" name="asgnrId" nillable="true" type="string"/>
-            <element e:kor="공시가격총수신건수" e:length="3" e:padder="ZeroLeft" name="dsclsPrcTotRcvCnt" nillable="true" type="long"/>
-            <element e:kor="공시가격요청건수" e:length="3" e:padder="ZeroLeft" name="dsclsPrcReqnCnt" nillable="true" type="long"/>
-            <element e:kor="시세총수신건수" e:length="3" e:padder="ZeroLeft" name="siDTotRcvCnt" nillable="true" type="long"/>
-            <element e:kor="시세요청건수" e:length="3" e:padder="ZeroLeft" name="siDReqnCnt" nillable="true" type="long"/>
-            <element e:kor="실거래가격총수신건수" e:length="3" e:padder="ZeroLeft" name="realTrdPrcTotRcvCnt" nillable="true" type="long"/>
-            <element e:kor="실거래가격요청건수" e:length="3" e:padder="ZeroLeft" name="realTrdPrcReqnCnt" nillable="true" type="long"/>
-            <element e:kor="예비값" e:length="49" e:padder="SpaceRight" name="prepVal" nillable="true" type="string"/>
+            <element e:kor="인증번호" e:length="12" e:padder="SpaceRight" minOccurs="0" name="certNo" nillable="true" type="string"/>
+            <element e:kor="재요청횟수" e:length="2" e:padder="SpaceRight" minOccurs="0" name="reReqnCnt" nillable="true" type="string"/>
+            <element e:kor="식별번호구분코드" e:length="1" e:padder="SpaceRight" minOccurs="0" name="idntNoGbcd" nillable="true" type="string"/>
+            <element e:kor="등기고유번호" e:length="33" e:padder="SpaceRight" minOccurs="0" name="rmailInntNo" nillable="true" type="string"/>
+            <element e:kor="조회지점명" e:length="20" e:padder="SpaceRight" minOccurs="0" name="qryBrnNm" nillable="true" type="string"/>
+            <element e:kor="담당자ID" e:length="15" e:padder="SpaceRight" minOccurs="0" name="asgnrId" nillable="true" type="string"/>
+            <element e:kor="공시가격총수신건수" e:length="3" e:padder="ZeroLeft" minOccurs="0" name="dsclsPrcTotRcvCnt" nillable="true" type="long"/>
+            <element e:kor="공시가격요청건수" e:length="3" e:padder="ZeroLeft" minOccurs="0" name="dsclsPrcReqnCnt" nillable="true" type="long"/>
+            <element e:kor="시세총수신건수" e:length="3" e:padder="ZeroLeft" minOccurs="0" name="siDTotRcvCnt" nillable="true" type="long"/>
+            <element e:kor="시세요청건수" e:length="3" e:padder="ZeroLeft" minOccurs="0" name="siDReqnCnt" nillable="true" type="long"/>
+            <element e:kor="실거래가격총수신건수" e:length="3" e:padder="ZeroLeft" minOccurs="0" name="realTrdPrcTotRcvCnt" nillable="true" type="long"/>
+            <element e:kor="실거래가격요청건수" e:length="3" e:padder="ZeroLeft" minOccurs="0" name="realTrdPrcReqnCnt" nillable="true" type="long"/>
+            <element e:kor="예비값" e:length="49" e:padder="SpaceRight" minOccurs="0" name="prepVal" nillable="true" type="string"/>
         </sequence>
     </complexType>
 </schema>

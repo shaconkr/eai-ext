@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jndi:namedResource xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BCCCISCTCN0010101="http://schema.hcis.com/xsd/BCCCISCTCN0010101_InReq_Body" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" name="BCCCISCTCN/BCCCISCTCN0010101.BCCCISCTCN0010101_InReq_Body" type="dataformat:DataFormat">
+  <jndi:imports importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/BCCCISCTCN0010101_InReq_Body_df.xsd" namespace="http://schema.hcis.com/xsd/BCCCISCTCN0010101_InReq_Body"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="BCCCISCTCN0010101:main" lineLength="436" fieldOffsetsStr="crdNo(0,16)&#xA;crdMemNo(16,25)&#xA;selfMemNo(25,34)&#xA;tskGbcd(34,36)&#xA;selfFamlGbcd(36,37)&#xA;vlidYm(37,43)&#xA;crdIssuDt(43,51)&#xA;crdStatCd(51,52)&#xA;bankCd(52,54)&#xA;crdSrndDt(54,62)&#xA;rstMsg(62,142)&#xA;trNo(142,153)&#xA;seznGbcd(153,159)&#xA;crdMemCiVal(159,247)&#xA;prepClasInf(247,436)">
+    <fieldOffsets kor="카드번호" type="string" name="crdNo" start="0" end="16"/>
+    <fieldOffsets kor="카드회원번호" type="string" name="crdMemNo" start="16" end="25"/>
+    <fieldOffsets kor="본인회원번호" type="string" name="selfMemNo" start="25" end="34"/>
+    <fieldOffsets kor="업무구분코드" type="string" name="tskGbcd" start="34" end="36"/>
+    <fieldOffsets kor="본인가족구분코드" type="string" name="selfFamlGbcd" start="36" end="37"/>
+    <fieldOffsets kor="유효년월" type="string" name="vlidYm" start="37" end="43"/>
+    <fieldOffsets kor="카드발급일자" type="string" name="crdIssuDt" start="43" end="51"/>
+    <fieldOffsets kor="카드상태코드" type="string" name="crdStatCd" start="51" end="52"/>
+    <fieldOffsets kor="은행코드" type="string" name="bankCd" start="52" end="54"/>
+    <fieldOffsets kor="카드해약일자" type="string" name="crdSrndDt" start="54" end="62"/>
+    <fieldOffsets kor="결과메시지" type="string" name="rstMsg" start="62" end="142"/>
+    <fieldOffsets kor="TR번호" type="string" name="trNo" start="142" end="153"/>
+    <fieldOffsets kor="시즌구분코드" type="string" name="seznGbcd" start="153" end="159"/>
+    <fieldOffsets kor="카드회원CI값" type="string" name="crdMemCiVal" start="159" end="247"/>
+    <fieldOffsets kor="예비항목정보" type="string" name="prepClasInf" start="247" end="436"/>
+  </jndi:configuration>
+</jndi:namedResource>

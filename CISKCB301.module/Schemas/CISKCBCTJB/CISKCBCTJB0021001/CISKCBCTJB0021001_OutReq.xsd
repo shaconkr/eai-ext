@@ -1,37 +1,37 @@
 <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:e="http://shacon.kr/xsd" xmlns:ns="http://schema.hcis.com/xsd/CISKCBCTJB0021001_OutReq" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.hcis.com/xsd/CISKCBCTJB0021001_OutReq">
     <complexType name="CISKCBCTJB0021001_OutReq_Header">
         <sequence>
-            <element e:kor="전문길이" e:length="4" e:padder="SpaceRight" name="tgrmLen" nillable="true" type="string"/>
-            <element e:kor="거래코드" e:length="9" e:padder="SpaceRight" name="trdCd" nillable="true" type="string"/>
-            <element e:kor="회원사코드" e:length="8" e:padder="SpaceRight" name="mmcoCd" nillable="true" type="string"/>
-            <element e:kor="전문종별코드" e:length="4" e:padder="SpaceRight" name="tgrmSubCCd" nillable="true" type="string"/>
-            <element e:kor="업무구분코드" e:length="3" e:padder="SpaceRight" name="tskGbcd" nillable="true" type="string"/>
-            <element e:kor="송수신구분" e:length="1" e:padder="SpaceRight" name="tnrGb" nillable="true" type="string"/>
-            <element e:kor="응답코드" e:length="4" e:padder="SpaceRight" name="respCd" nillable="true" type="string"/>
-            <element e:kor="KCB전문관리번호" e:length="7" e:padder="SpaceRight" name="kcbTgrmMngNo" nillable="true" type="string"/>
-            <element e:kor="KCB전문전송시간" e:length="14" e:padder="SpaceRight" name="kcbTgrmSendTime" nillable="true" type="string"/>
-            <element e:kor="회원사전문관리번호" e:length="7" e:padder="SpaceRight" name="mmcoTgrmMngNo" nillable="true" type="string"/>
-            <element e:kor="회원사전문전송시간" e:length="14" e:padder="SpaceRight" name="mmcoTgrmSendTime" nillable="true" type="string"/>
-            <element e:kor="시스템정보" e:length="16" e:padder="SpaceRight" name="sysInf" nillable="true" type="string"/>
-            <element e:kor="조회동의코드" e:length="1" e:padder="SpaceRight" name="qryAgrCd" nillable="true" type="string"/>
-            <element e:kor="예비값" e:length="42" e:padder="SpaceRight" name="prepVal" nillable="true" type="string"/>
+            <element e:kor="전문길이" e:length="4" e:padder="SpaceRight" minOccurs="0" name="tgrmLen" nillable="true" type="string"/>
+            <element e:kor="거래코드" e:length="9" e:padder="SpaceRight" minOccurs="0" name="trdCd" nillable="true" type="string"/>
+            <element e:kor="회원사코드" e:length="8" e:padder="SpaceRight" minOccurs="0" name="mmcoCd" nillable="true" type="string"/>
+            <element e:kor="전문종별코드" e:length="4" e:padder="SpaceRight" minOccurs="0" name="tgrmSubCCd" nillable="true" type="string"/>
+            <element e:kor="업무구분코드" e:length="3" e:padder="SpaceRight" minOccurs="0" name="tskGbcd" nillable="true" type="string"/>
+            <element e:kor="송수신구분" e:length="1" e:padder="SpaceRight" minOccurs="0" name="tnrGb" nillable="true" type="string"/>
+            <element e:kor="응답코드" e:length="4" e:padder="SpaceRight" minOccurs="0" name="respCd" nillable="true" type="string"/>
+            <element e:kor="KCB전문관리번호" e:length="7" e:padder="SpaceRight" minOccurs="0" name="kcbTgrmMngNo" nillable="true" type="string"/>
+            <element e:kor="KCB전문전송시간" e:length="14" e:padder="SpaceRight" minOccurs="0" name="kcbTgrmSendTime" nillable="true" type="string"/>
+            <element e:kor="회원사전문관리번호" e:length="7" e:padder="SpaceRight" minOccurs="0" name="mmcoTgrmMngNo" nillable="true" type="string"/>
+            <element e:kor="회원사전문전송시간" e:length="14" e:padder="SpaceRight" minOccurs="0" name="mmcoTgrmSendTime" nillable="true" type="string"/>
+            <element e:kor="시스템정보" e:length="16" e:padder="SpaceRight" minOccurs="0" name="sysInf" nillable="true" type="string"/>
+            <element e:kor="조회동의코드" e:length="1" e:padder="SpaceRight" minOccurs="0" name="qryAgrCd" nillable="true" type="string"/>
+            <element e:kor="예비값" e:length="42" e:padder="SpaceRight" minOccurs="0" name="prepVal" nillable="true" type="string"/>
         </sequence>
     </complexType>
     <complexType name="CISKCBCTJB0021001_OutReq_Body">
         <sequence>
-            <element e:kor="인증번호" e:length="12" e:padder="SpaceRight" name="certNo" nillable="true" type="string"/>
-            <element e:kor="재요청횟수" e:length="2" e:padder="SpaceRight" name="reReqnCnt" nillable="true" type="string"/>
-            <element e:kor="식별번호구분코드" e:length="1" e:padder="SpaceRight" name="idntNoGbcd" nillable="true" type="string"/>
-            <element e:kor="등기고유번호" e:length="33" e:padder="SpaceRight" name="rmailInntNo" nillable="true" type="string"/>
-            <element e:kor="조회지점명" e:length="20" e:padder="SpaceRight" name="qryBrnNm" nillable="true" type="string"/>
-            <element e:kor="담당자ID" e:length="15" e:padder="SpaceRight" name="asgnrId" nillable="true" type="string"/>
-            <element e:kor="공시가격총수신건수" e:length="3" e:padder="ZeroLeft" name="dsclsPrcTotRcvCnt" nillable="true" type="long"/>
-            <element e:kor="공시가격요청건수" e:length="3" e:padder="ZeroLeft" name="dsclsPrcReqnCnt" nillable="true" type="long"/>
-            <element e:kor="시세총수신건수" e:length="3" e:padder="ZeroLeft" name="siDTotRcvCnt" nillable="true" type="long"/>
-            <element e:kor="시세요청건수" e:length="3" e:padder="ZeroLeft" name="siDReqnCnt" nillable="true" type="long"/>
-            <element e:kor="실거래가격총수신건수" e:length="3" e:padder="ZeroLeft" name="realTrdPrcTotRcvCnt" nillable="true" type="long"/>
-            <element e:kor="실거래가격요청건수" e:length="3" e:padder="ZeroLeft" name="realTrdPrcReqnCnt" nillable="true" type="long"/>
-            <element e:kor="예비값" e:length="49" e:padder="SpaceRight" name="prepVal" nillable="true" type="string"/>
+            <element e:kor="인증번호" e:length="12" e:padder="SpaceRight" minOccurs="0" name="certNo" nillable="true" type="string"/>
+            <element e:kor="재요청횟수" e:length="2" e:padder="SpaceRight" minOccurs="0" name="reReqnCnt" nillable="true" type="string"/>
+            <element e:kor="식별번호구분코드" e:length="1" e:padder="SpaceRight" minOccurs="0" name="idntNoGbcd" nillable="true" type="string"/>
+            <element e:kor="등기고유번호" e:length="33" e:padder="SpaceRight" minOccurs="0" name="rmailInntNo" nillable="true" type="string"/>
+            <element e:kor="조회지점명" e:length="20" e:padder="SpaceRight" minOccurs="0" name="qryBrnNm" nillable="true" type="string"/>
+            <element e:kor="담당자ID" e:length="15" e:padder="SpaceRight" minOccurs="0" name="asgnrId" nillable="true" type="string"/>
+            <element e:kor="공시가격총수신건수" e:length="3" e:padder="ZeroLeft" minOccurs="0" name="dsclsPrcTotRcvCnt" nillable="true" type="long"/>
+            <element e:kor="공시가격요청건수" e:length="3" e:padder="ZeroLeft" minOccurs="0" name="dsclsPrcReqnCnt" nillable="true" type="long"/>
+            <element e:kor="시세총수신건수" e:length="3" e:padder="ZeroLeft" minOccurs="0" name="siDTotRcvCnt" nillable="true" type="long"/>
+            <element e:kor="시세요청건수" e:length="3" e:padder="ZeroLeft" minOccurs="0" name="siDReqnCnt" nillable="true" type="long"/>
+            <element e:kor="실거래가격총수신건수" e:length="3" e:padder="ZeroLeft" minOccurs="0" name="realTrdPrcTotRcvCnt" nillable="true" type="long"/>
+            <element e:kor="실거래가격요청건수" e:length="3" e:padder="ZeroLeft" minOccurs="0" name="realTrdPrcReqnCnt" nillable="true" type="long"/>
+            <element e:kor="예비값" e:length="49" e:padder="SpaceRight" minOccurs="0" name="prepVal" nillable="true" type="string"/>
         </sequence>
     </complexType>
     <complexType name="CISKCBCTJB0021001_OutReq">

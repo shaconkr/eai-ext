@@ -10,23 +10,23 @@
     </parser>
     <record name="JNI_InRes" class="java.util.LinkedHashMap">
       <segment name="bizHeader" kor="BIZ공통부" minOccurs="1" maxOccurs="1" class="map">
-        <field kor="거래코드" name="trdCd" minOccurs="1" maxOccurs="1" position="0" length="4"/>
-        <field kor="전문코드" name="tgrmCd" minOccurs="1" maxOccurs="1" position="4" length="5"/>
-        <field kor="전문번호" name="tgrmNo" minOccurs="1" maxOccurs="1" position="9" length="8"/>
-        <field kor="전문전송일시" name="tgrmSendDtm" minOccurs="1" maxOccurs="1" position="17" length="16"/>
-        <field kor="테스트여부" name="testYn" minOccurs="1" maxOccurs="1" position="33" length="1"/>
-        <field kor="전문유형" name="tgrmType" minOccurs="1" maxOccurs="1" position="34" length="1"/>
-        <field kor="예비값" name="prepVal" minOccurs="1" maxOccurs="1" position="35" length="19"/>
-        <field kor="전문길이" name="tgrmLen" minOccurs="1" maxOccurs="1" position="54" length="6"/>
-        <field kor="응답코드" name="respCd" minOccurs="1" maxOccurs="1" position="60" length="4"/>
+        <field kor="거래코드" name="trdCd" minOccurs="0" maxOccurs="1" position="0" length="4"/>
+        <field kor="전문코드" name="tgrmCd" minOccurs="0" maxOccurs="1" position="4" length="5"/>
+        <field kor="전문번호" name="tgrmNo" minOccurs="0" maxOccurs="1" position="9" length="8"/>
+        <field kor="전문전송일시" name="tgrmSendDtm" minOccurs="0" maxOccurs="1" position="17" length="16"/>
+        <field kor="테스트여부" name="testYn" minOccurs="0" maxOccurs="1" position="33" length="1"/>
+        <field kor="전문유형" name="tgrmType" minOccurs="0" maxOccurs="1" position="34" length="1"/>
+        <field kor="예비값" name="prepVal" minOccurs="0" maxOccurs="1" position="35" length="19"/>
+        <field kor="전문길이" name="tgrmLen" minOccurs="0" maxOccurs="1" position="54" length="6"/>
+        <field kor="응답코드" name="respCd" minOccurs="0" maxOccurs="1" position="60" length="4"/>
       </segment>
       <segment name="bizBody" kor="BIZ데이터부" minOccurs="1" maxOccurs="1" class="map">
-        <field kor="발송번호" name="senmNo" minOccurs="1" maxOccurs="1" position="64" length="24"/>
-        <field kor="처리일자" name="procDt" minOccurs="1" maxOccurs="1" position="88" length="8"/>
-        <field kor="처리시간" name="procTime" minOccurs="1" maxOccurs="1" position="96" length="6"/>
-        <field kor="카드배송진행상태코드" name="crdDlvPrgrStatCd" minOccurs="1" maxOccurs="1" position="102" length="2"/>
-        <field kor="카드발송진행상태내용" name="crdSendPrgrStatCntn" minOccurs="1" maxOccurs="1" position="104" length="21"/>
-        <field kor="비고" name="rmrk" minOccurs="1" maxOccurs="1" position="125" length="175"/>
+        <field kor="발송번호" name="senmNo" minOccurs="0" maxOccurs="1" position="64" length="24"/>
+        <field kor="처리일자" name="procDt" minOccurs="0" maxOccurs="1" position="88" length="8"/>
+        <field kor="처리시간" name="procTime" minOccurs="0" maxOccurs="1" position="96" length="6"/>
+        <field kor="카드배송진행상태코드" name="crdDlvPrgrStatCd" minOccurs="0" maxOccurs="1" position="102" length="2"/>
+        <field kor="카드발송진행상태내용" name="crdSendPrgrStatCntn" minOccurs="0" maxOccurs="1" position="104" length="21"/>
+        <field kor="비고" name="rmrk" minOccurs="0" maxOccurs="1" position="125" length="175"/>
       </segment>
     </record>
   </stream>

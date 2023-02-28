@@ -10,61 +10,61 @@
     </parser>
     <record name="KCB_OutRes" class="java.util.LinkedHashMap">
       <segment name="bizHeader" kor="BIZ공통부" minOccurs="1" maxOccurs="1" class="map">
-        <field kor="전문길이" name="tgrmLen" minOccurs="1" maxOccurs="1" position="0" length="4"/>
-        <field kor="거래코드" name="trdCd" minOccurs="1" maxOccurs="1" position="4" length="9"/>
-        <field kor="회원사코드" name="mmcoCd" minOccurs="1" maxOccurs="1" position="13" length="8"/>
-        <field kor="전문종별코드" name="tgrmSubCCd" minOccurs="1" maxOccurs="1" position="21" length="4"/>
-        <field kor="업무구분코드" name="tskGbcd" minOccurs="1" maxOccurs="1" position="25" length="3"/>
-        <field kor="송수신구분" name="tnrGb" minOccurs="1" maxOccurs="1" position="28" length="1"/>
-        <field kor="응답코드" name="respCd" minOccurs="1" maxOccurs="1" position="29" length="4"/>
-        <field kor="KCB전문관리번호" name="kcbTgrmMngNo" minOccurs="1" maxOccurs="1" position="33" length="7"/>
-        <field kor="KCB전문전송시간" name="kcbTgrmSendTime" minOccurs="1" maxOccurs="1" position="40" length="14"/>
-        <field kor="회원사전문관리번호" name="mmcoTgrmMngNo" minOccurs="1" maxOccurs="1" position="54" length="7"/>
-        <field kor="회원사전문전송시간" name="mmcoTgrmSendTime" minOccurs="1" maxOccurs="1" position="61" length="14"/>
-        <field kor="시스템정보" name="sysInf" minOccurs="1" maxOccurs="1" position="75" length="16"/>
-        <field kor="조회동의코드" name="qryAgrCd" minOccurs="1" maxOccurs="1" position="91" length="1"/>
-        <field kor="예비값" name="prepVal" minOccurs="1" maxOccurs="1" position="92" length="42"/>
+        <field kor="전문길이" name="tgrmLen" minOccurs="0" maxOccurs="1" position="0" length="4"/>
+        <field kor="거래코드" name="trdCd" minOccurs="0" maxOccurs="1" position="4" length="9"/>
+        <field kor="회원사코드" name="mmcoCd" minOccurs="0" maxOccurs="1" position="13" length="8"/>
+        <field kor="전문종별코드" name="tgrmSubCCd" minOccurs="0" maxOccurs="1" position="21" length="4"/>
+        <field kor="업무구분코드" name="tskGbcd" minOccurs="0" maxOccurs="1" position="25" length="3"/>
+        <field kor="송수신구분" name="tnrGb" minOccurs="0" maxOccurs="1" position="28" length="1"/>
+        <field kor="응답코드" name="respCd" minOccurs="0" maxOccurs="1" position="29" length="4"/>
+        <field kor="KCB전문관리번호" name="kcbTgrmMngNo" minOccurs="0" maxOccurs="1" position="33" length="7"/>
+        <field kor="KCB전문전송시간" name="kcbTgrmSendTime" minOccurs="0" maxOccurs="1" position="40" length="14"/>
+        <field kor="회원사전문관리번호" name="mmcoTgrmMngNo" minOccurs="0" maxOccurs="1" position="54" length="7"/>
+        <field kor="회원사전문전송시간" name="mmcoTgrmSendTime" minOccurs="0" maxOccurs="1" position="61" length="14"/>
+        <field kor="시스템정보" name="sysInf" minOccurs="0" maxOccurs="1" position="75" length="16"/>
+        <field kor="조회동의코드" name="qryAgrCd" minOccurs="0" maxOccurs="1" position="91" length="1"/>
+        <field kor="예비값" name="prepVal" minOccurs="0" maxOccurs="1" position="92" length="42"/>
       </segment>
       <segment name="bizBody" kor="BIZ데이터부" minOccurs="1" maxOccurs="1" class="map">
-        <field kor="인증번호" name="certNo" minOccurs="1" maxOccurs="1" position="134" length="12"/>
-        <field kor="정보연속여부" name="infCnscYn" minOccurs="1" maxOccurs="1" position="146" length="1"/>
-        <field kor="재요청횟수" name="reReqnCnt" minOccurs="1" maxOccurs="1" position="147" length="2"/>
-        <field kor="식별번호구분코드" name="idntNoGbcd" minOccurs="1" maxOccurs="1" position="149" length="1"/>
-        <field kor="고유번호" name="inntNo" minOccurs="1" maxOccurs="1" position="150" length="33"/>
-        <field kor="공시가격총건수" name="dsclsPrcTotCnt" minOccurs="1" maxOccurs="1" position="183" length="3" justify="right" padding="0"/>
-        <field kor="공시가격총송신건수" name="dsclsPrcTotTrsCnt" minOccurs="1" maxOccurs="1" position="186" length="3" justify="right" padding="0"/>
-        <field kor="공시가격응답건수" name="dsclsPrcRespCnt" minOccurs="1" maxOccurs="1" position="189" length="3" justify="right" padding="0"/>
-        <field kor="시세총건수" name="siDTotCnt" minOccurs="1" maxOccurs="1" position="192" length="3" justify="right" padding="0"/>
-        <field kor="시세총송신건수" name="siDTotTrsCnt" minOccurs="1" maxOccurs="1" position="195" length="3" justify="right" padding="0"/>
-        <field kor="시세응답건수" name="siDRespCnt" minOccurs="1" maxOccurs="1" position="198" length="3" justify="right" padding="0"/>
-        <field kor="실거래가격총건수" name="realTrdPrcTotCnt" minOccurs="1" maxOccurs="1" position="201" length="3" justify="right" padding="0"/>
-        <field kor="실거래가격총송신건수" name="realTrdPrcTotTrsCnt" minOccurs="1" maxOccurs="1" position="204" length="3" justify="right" padding="0"/>
-        <field kor="실거래가격응답건수" name="realTrdPrcRespCnt" minOccurs="1" maxOccurs="1" position="207" length="3" justify="right" padding="0"/>
-        <segment name="dsclsPrcList" kor="공시가격_배열" minOccurs="1" maxOccurs="9223372036854775807" collection="list" class="map">
-          <field kor="세그멘트ID" name="segId" minOccurs="1" maxOccurs="1" position="210" length="3"/>
-          <field kor="기준년월" name="bsicYm" minOccurs="1" maxOccurs="1" position="213" length="6"/>
-          <field kor="공시가격구분코드" name="dsclsPrcGbcd" minOccurs="1" maxOccurs="1" position="219" length="1"/>
-          <field kor="공시가격" name="dsclsPrc" minOccurs="1" maxOccurs="1" position="220" length="15" justify="right" padding="0"/>
-          <field kor="예비값" name="prepVal" minOccurs="1" maxOccurs="1" position="235" length="75"/>
+        <field kor="인증번호" name="certNo" minOccurs="0" maxOccurs="1" position="134" length="12"/>
+        <field kor="정보연속여부" name="infCnscYn" minOccurs="0" maxOccurs="1" position="146" length="1"/>
+        <field kor="재요청횟수" name="reReqnCnt" minOccurs="0" maxOccurs="1" position="147" length="2"/>
+        <field kor="식별번호구분코드" name="idntNoGbcd" minOccurs="0" maxOccurs="1" position="149" length="1"/>
+        <field kor="고유번호" name="inntNo" minOccurs="0" maxOccurs="1" position="150" length="33"/>
+        <field kor="공시가격총건수" name="dsclsPrcTotCnt" minOccurs="0" maxOccurs="1" position="183" length="3" justify="right" padding="0"/>
+        <field kor="공시가격총송신건수" name="dsclsPrcTotTrsCnt" minOccurs="0" maxOccurs="1" position="186" length="3" justify="right" padding="0"/>
+        <field kor="공시가격응답건수" name="dsclsPrcRespCnt" minOccurs="0" maxOccurs="1" position="189" length="3" justify="right" padding="0"/>
+        <field kor="시세총건수" name="siDTotCnt" minOccurs="0" maxOccurs="1" position="192" length="3" justify="right" padding="0"/>
+        <field kor="시세총송신건수" name="siDTotTrsCnt" minOccurs="0" maxOccurs="1" position="195" length="3" justify="right" padding="0"/>
+        <field kor="시세응답건수" name="siDRespCnt" minOccurs="0" maxOccurs="1" position="198" length="3" justify="right" padding="0"/>
+        <field kor="실거래가격총건수" name="realTrdPrcTotCnt" minOccurs="0" maxOccurs="1" position="201" length="3" justify="right" padding="0"/>
+        <field kor="실거래가격총송신건수" name="realTrdPrcTotTrsCnt" minOccurs="0" maxOccurs="1" position="204" length="3" justify="right" padding="0"/>
+        <field kor="실거래가격응답건수" name="realTrdPrcRespCnt" minOccurs="0" maxOccurs="1" position="207" length="3" justify="right" padding="0"/>
+        <segment name="dsclsPrcList" kor="공시가격_배열" minOccurs="0" maxOccurs="9223372036854775807" collection="list" class="map">
+          <field kor="세그멘트ID" name="segId" minOccurs="0" maxOccurs="1" position="210" length="3"/>
+          <field kor="기준년월" name="bsicYm" minOccurs="0" maxOccurs="1" position="213" length="6"/>
+          <field kor="공시가격구분코드" name="dsclsPrcGbcd" minOccurs="0" maxOccurs="1" position="219" length="1"/>
+          <field kor="공시가격" name="dsclsPrc" minOccurs="0" maxOccurs="1" position="220" length="15" justify="right" padding="0"/>
+          <field kor="예비값" name="prepVal" minOccurs="0" maxOccurs="1" position="235" length="75"/>
         </segment>
-        <segment name="siDList" kor="시세_배열" minOccurs="1" maxOccurs="9223372036854775807" collection="list" class="map">
-          <field kor="세그멘트ID" name="segId" minOccurs="1" maxOccurs="1" position="310" length="3"/>
-          <field kor="기준일자" name="bsicDt" minOccurs="1" maxOccurs="1" position="313" length="8"/>
-          <field kor="거래하한가격" name="trdLwlmPrc" minOccurs="1" maxOccurs="1" position="321" length="15" justify="right" padding="0"/>
-          <field kor="거래일반가격" name="trdGnrlPrc" minOccurs="1" maxOccurs="1" position="336" length="15" justify="right" padding="0"/>
-          <field kor="거래상한가격" name="trdHgltPrc" minOccurs="1" maxOccurs="1" position="351" length="15" justify="right" padding="0"/>
-          <field kor="보증금액하한가격" name="grnteAmtLwlmPrc" minOccurs="1" maxOccurs="1" position="366" length="15" justify="right" padding="0"/>
-          <field kor="보증금액일반가격" name="grnteAmtGnrlPrc" minOccurs="1" maxOccurs="1" position="381" length="15" justify="right" padding="0"/>
-          <field kor="보증금액상한가격" name="grnteAmtHgltPrc" minOccurs="1" maxOccurs="1" position="396" length="15" justify="right" padding="0"/>
-          <field kor="예비값" name="prepVal" minOccurs="1" maxOccurs="1" position="411" length="34"/>
+        <segment name="siDList" kor="시세_배열" minOccurs="0" maxOccurs="9223372036854775807" collection="list" class="map">
+          <field kor="세그멘트ID" name="segId" minOccurs="0" maxOccurs="1" position="310" length="3"/>
+          <field kor="기준일자" name="bsicDt" minOccurs="0" maxOccurs="1" position="313" length="8"/>
+          <field kor="거래하한가격" name="trdLwlmPrc" minOccurs="0" maxOccurs="1" position="321" length="15" justify="right" padding="0"/>
+          <field kor="거래일반가격" name="trdGnrlPrc" minOccurs="0" maxOccurs="1" position="336" length="15" justify="right" padding="0"/>
+          <field kor="거래상한가격" name="trdHgltPrc" minOccurs="0" maxOccurs="1" position="351" length="15" justify="right" padding="0"/>
+          <field kor="보증금액하한가격" name="grnteAmtLwlmPrc" minOccurs="0" maxOccurs="1" position="366" length="15" justify="right" padding="0"/>
+          <field kor="보증금액일반가격" name="grnteAmtGnrlPrc" minOccurs="0" maxOccurs="1" position="381" length="15" justify="right" padding="0"/>
+          <field kor="보증금액상한가격" name="grnteAmtHgltPrc" minOccurs="0" maxOccurs="1" position="396" length="15" justify="right" padding="0"/>
+          <field kor="예비값" name="prepVal" minOccurs="0" maxOccurs="1" position="411" length="34"/>
         </segment>
-        <segment name="realTrdPrcList" kor="실거래가격_배열" minOccurs="1" maxOccurs="9223372036854775807" collection="list" class="map">
-          <field kor="세그멘트ID" name="segId" minOccurs="1" maxOccurs="1" position="445" length="3"/>
-          <field kor="거래년월" name="trdYm" minOccurs="1" maxOccurs="1" position="448" length="6"/>
-          <field kor="전용면적" name="exclSarea" minOccurs="1" maxOccurs="1" position="454" length="30" justify="right" padding="0"/>
-          <field kor="층수" name="flrCnt" minOccurs="1" maxOccurs="1" position="484" length="3" justify="right" padding="0"/>
-          <field kor="거래실거래가격" name="trdRealTrdPrc" minOccurs="1" maxOccurs="1" position="487" length="15" justify="right" padding="0"/>
-          <field kor="예비값" name="prepVal" minOccurs="1" maxOccurs="1" position="502" length="56"/>
+        <segment name="realTrdPrcList" kor="실거래가격_배열" minOccurs="0" maxOccurs="9223372036854775807" collection="list" class="map">
+          <field kor="세그멘트ID" name="segId" minOccurs="0" maxOccurs="1" position="445" length="3"/>
+          <field kor="거래년월" name="trdYm" minOccurs="0" maxOccurs="1" position="448" length="6"/>
+          <field kor="전용면적" name="exclSarea" minOccurs="0" maxOccurs="1" position="454" length="30" justify="right" padding="0"/>
+          <field kor="층수" name="flrCnt" minOccurs="0" maxOccurs="1" position="484" length="3" justify="right" padding="0"/>
+          <field kor="거래실거래가격" name="trdRealTrdPrc" minOccurs="0" maxOccurs="1" position="487" length="15" justify="right" padding="0"/>
+          <field kor="예비값" name="prepVal" minOccurs="0" maxOccurs="1" position="502" length="56"/>
         </segment>
       </segment>
     </record>

@@ -2,30 +2,30 @@
     <element name="root" type="ns:TOSCISPMRZ0010302_OutRes_Body"/>
     <complexType name="TOSCISPMRZ0010302_OutRes_Body">
         <sequence>
-            <element e:kor="조회자식별코드" e:length="2" e:padder="SpaceRight" name="iqpsIdntCd" nillable="true" type="string"/>
-            <element e:kor="전문순번" e:length="15" e:padder="SpaceRight" name="tgrmSeq" nillable="true" type="string"/>
-            <element e:kor="자동이체은행코드" e:length="3" e:padder="SpaceRight" name="autoTrsfBankCd" nillable="true" type="string"/>
-            <element e:kor="계좌번호" e:length="50" e:padder="SpaceRight" name="acno" nillable="true" type="string"/>
-            <element e:kor="신청구분" e:length="1" e:padder="SpaceRight" name="reqGb" nillable="true" type="string"/>
-            <element e:kor="일" e:length="2" e:padder="SpaceRight" name="day" nillable="true" type="string"/>
-            <element e:kor="은행지점코드" e:length="6" e:padder="SpaceRight" name="bankBrnCd" nillable="true" type="string"/>
-            <element e:kor="신청일자" e:length="8" e:padder="SpaceRight" name="reqDt" nillable="true" type="string"/>
-            <element e:kor="처리여부" e:length="1" e:padder="SpaceRight" name="procYn" nillable="true" type="string"/>
-            <element e:kor="불능코드" e:length="4" e:padder="SpaceRight" name="inabCd" nillable="true" type="string"/>
-            <element e:kor="체크여부" e:length="1" e:padder="SpaceRight" name="chkYn" nillable="true" type="string"/>
-            <element e:kor="생년월일" e:length="8" e:padder="SpaceRight" name="bymd" nillable="true" type="string"/>
-            <element e:kor="납부자번호" e:length="20" e:padder="SpaceRight" name="pmpsnNo" nillable="true" type="string"/>
-            <element e:kor="업체사용정보" e:length="21" e:padder="SpaceRight" name="custUseInf" nillable="true" type="string"/>
-            <element e:kor="기관코드" e:length="12" e:padder="SpaceRight" name="istnCd" nillable="true" type="string"/>
-            <element e:kor="외부이벤트여부" e:length="1" e:padder="SpaceRight" name="outEvntYn" nillable="true" type="string"/>
-            <element e:kor="예비값" e:length="1" e:padder="SpaceRight" name="prepVal" nillable="true" type="string"/>
-            <element e:kor="자동이체전문번호" e:length="4" e:padder="SpaceRight" name="autoTrsfTgrmNo" nillable="true" type="string"/>
-            <element e:kor="적용구분코드" e:length="1" e:padder="SpaceRight" name="aplyGbcd" nillable="true" type="string"/>
-            <element e:kor="공통은행코드" e:length="3" e:padder="SpaceRight" name="commBankCd" nillable="true" type="string"/>
-            <element e:kor="개별은행코드" e:length="3" e:padder="SpaceRight" name="indvBankCd" nillable="true" type="string"/>
-            <element e:kor="지로번호" e:length="10" e:padder="SpaceRight" name="giroNo" nillable="true" type="string"/>
-            <element e:kor="동의구분코드" e:length="2" e:padder="SpaceRight" name="agrGbcd" nillable="true" type="string"/>
-            <element e:kor="공백값" e:length="20" e:padder="SpaceRight" name="nullVal" nillable="true" type="string"/>
+            <element e:kor="조회자식별코드" e:length="2" e:padder="SpaceRight" minOccurs="0" name="iqpsIdntCd" nillable="true" type="string"/>
+            <element e:kor="전문순번" e:length="15" e:padder="SpaceRight" minOccurs="0" name="tgrmSeq" nillable="true" type="string"/>
+            <element e:kor="자동이체은행코드" e:length="3" e:padder="SpaceRight" minOccurs="0" name="autoTrsfBankCd" nillable="true" type="string"/>
+            <element e:kor="계좌번호" e:length="50" e:padder="SpaceRight" minOccurs="0" name="acno" nillable="true" type="string"/>
+            <element e:kor="신청구분" e:length="1" e:padder="SpaceRight" minOccurs="0" name="reqGb" nillable="true" type="string"/>
+            <element e:kor="일" e:length="2" e:padder="SpaceRight" minOccurs="0" name="day" nillable="true" type="string"/>
+            <element e:kor="은행지점코드" e:length="6" e:padder="SpaceRight" minOccurs="0" name="bankBrnCd" nillable="true" type="string"/>
+            <element e:kor="신청일자" e:length="8" e:padder="SpaceRight" minOccurs="0" name="reqDt" nillable="true" type="string"/>
+            <element e:kor="처리여부" e:length="1" e:padder="SpaceRight" minOccurs="0" name="procYn" nillable="true" type="string"/>
+            <element e:kor="불능코드" e:length="4" e:padder="SpaceRight" minOccurs="0" name="inabCd" nillable="true" type="string"/>
+            <element e:kor="체크여부" e:length="1" e:padder="SpaceRight" minOccurs="0" name="chkYn" nillable="true" type="string"/>
+            <element e:kor="생년월일" e:length="8" e:padder="SpaceRight" minOccurs="0" name="bymd" nillable="true" type="string"/>
+            <element e:kor="납부자번호" e:length="20" e:padder="SpaceRight" minOccurs="0" name="pmpsnNo" nillable="true" type="string"/>
+            <element e:kor="업체사용정보" e:length="21" e:padder="SpaceRight" minOccurs="0" name="custUseInf" nillable="true" type="string"/>
+            <element e:kor="기관코드" e:length="12" e:padder="SpaceRight" minOccurs="0" name="istnCd" nillable="true" type="string"/>
+            <element e:kor="외부이벤트여부" e:length="1" e:padder="SpaceRight" minOccurs="0" name="outEvntYn" nillable="true" type="string"/>
+            <element e:kor="예비값" e:length="1" e:padder="SpaceRight" minOccurs="0" name="prepVal" nillable="true" type="string"/>
+            <element e:kor="자동이체전문번호" e:length="4" e:padder="SpaceRight" minOccurs="0" name="autoTrsfTgrmNo" nillable="true" type="string"/>
+            <element e:kor="적용구분코드" e:length="1" e:padder="SpaceRight" minOccurs="0" name="aplyGbcd" nillable="true" type="string"/>
+            <element e:kor="공통은행코드" e:length="3" e:padder="SpaceRight" minOccurs="0" name="commBankCd" nillable="true" type="string"/>
+            <element e:kor="개별은행코드" e:length="3" e:padder="SpaceRight" minOccurs="0" name="indvBankCd" nillable="true" type="string"/>
+            <element e:kor="지로번호" e:length="10" e:padder="SpaceRight" minOccurs="0" name="giroNo" nillable="true" type="string"/>
+            <element e:kor="동의구분코드" e:length="2" e:padder="SpaceRight" minOccurs="0" name="agrGbcd" nillable="true" type="string"/>
+            <element e:kor="공백값" e:length="20" e:padder="SpaceRight" minOccurs="0" name="nullVal" nillable="true" type="string"/>
         </sequence>
     </complexType>
 </schema>

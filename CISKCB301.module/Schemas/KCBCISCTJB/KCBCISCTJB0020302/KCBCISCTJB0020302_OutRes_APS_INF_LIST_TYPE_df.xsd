@@ -2,9 +2,9 @@
     <element name="root" type="ns:APS_INF_LIST_TYPE"/>
     <complexType name="APS_INF_LIST_TYPE">
         <sequence>
-            <element e:kor="세그멘트ID" e:length="3" e:padder="SpaceRight" name="segId" nillable="true" type="string"/>
-            <element e:kor="프로파일코드" e:length="9" e:padder="SpaceRight" name="prfCd" nillable="true" type="string"/>
-            <element e:kor="프로파일결과값" e:length="9" e:padder="SpaceRight" name="prfRstVal" nillable="true" type="string"/>
+            <element e:kor="세그멘트ID" e:length="3" e:padder="SpaceRight" minOccurs="0" name="segId" nillable="true" type="string"/>
+            <element e:kor="프로파일코드" e:length="9" e:padder="SpaceRight" minOccurs="0" name="prfCd" nillable="true" type="string"/>
+            <element e:kor="프로파일결과값" e:length="9" e:padder="SpaceRight" minOccurs="0" name="prfRstVal" nillable="true" type="string"/>
         </sequence>
     </complexType>
 </schema>

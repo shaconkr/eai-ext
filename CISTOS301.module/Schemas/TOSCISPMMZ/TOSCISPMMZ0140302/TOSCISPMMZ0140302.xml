@@ -10,44 +10,44 @@
     </parser>
     <record name="TOS_OutRes" class="java.util.LinkedHashMap">
       <segment name="bizHeader" kor="BIZ공통부" minOccurs="1" maxOccurs="1" class="map">
-        <field kor="식별코드" name="trCode" minOccurs="1" maxOccurs="1" position="0" length="12"/>
-        <field kor="서비스구분" name="svcGb" minOccurs="1" maxOccurs="1" position="12" length="3"/>
-        <field kor="송신자FLAG" name="sdFlag" minOccurs="1" maxOccurs="1" position="15" length="1"/>
-        <field kor="송신자ID" name="sdId" minOccurs="1" maxOccurs="1" position="16" length="10"/>
-        <field kor="수신자ID" name="rvId" minOccurs="1" maxOccurs="1" position="26" length="10"/>
-        <field kor="메시지ID" name="msgId" minOccurs="1" maxOccurs="1" position="36" length="12"/>
-        <field kor="고객코드" name="cpnyCd" minOccurs="1" maxOccurs="1" position="48" length="8"/>
-        <field kor="은행코드" name="bnkCd" minOccurs="1" maxOccurs="1" position="56" length="2"/>
-        <field kor="전문코드" name="ediCd" minOccurs="1" maxOccurs="1" position="58" length="4"/>
-        <field kor="업무구분" name="jobGb" minOccurs="1" maxOccurs="1" position="62" length="3"/>
-        <field kor="전문번호" name="ediNo" minOccurs="1" maxOccurs="1" position="65" length="6"/>
-        <field kor="전송일자" name="sdDate" minOccurs="1" maxOccurs="1" position="71" length="8"/>
-        <field kor="전송시간" name="sdTime" minOccurs="1" maxOccurs="1" position="79" length="6"/>
-        <field kor="응답코드" name="retCd" minOccurs="1" maxOccurs="1" position="85" length="4"/>
-        <field kor="예비영역" name="spareArea" minOccurs="1" maxOccurs="1" position="89" length="31"/>
+        <field kor="식별코드" name="trCode" minOccurs="0" maxOccurs="1" position="0" length="12"/>
+        <field kor="서비스구분" name="svcGb" minOccurs="0" maxOccurs="1" position="12" length="3"/>
+        <field kor="송신자FLAG" name="sdFlag" minOccurs="0" maxOccurs="1" position="15" length="1"/>
+        <field kor="송신자ID" name="sdId" minOccurs="0" maxOccurs="1" position="16" length="10"/>
+        <field kor="수신자ID" name="rvId" minOccurs="0" maxOccurs="1" position="26" length="10"/>
+        <field kor="메시지ID" name="msgId" minOccurs="0" maxOccurs="1" position="36" length="12"/>
+        <field kor="고객코드" name="cpnyCd" minOccurs="0" maxOccurs="1" position="48" length="8"/>
+        <field kor="은행코드" name="bnkCd" minOccurs="0" maxOccurs="1" position="56" length="2"/>
+        <field kor="전문코드" name="ediCd" minOccurs="0" maxOccurs="1" position="58" length="4"/>
+        <field kor="업무구분" name="jobGb" minOccurs="0" maxOccurs="1" position="62" length="3"/>
+        <field kor="전문번호" name="ediNo" minOccurs="0" maxOccurs="1" position="65" length="6"/>
+        <field kor="전송일자" name="sdDate" minOccurs="0" maxOccurs="1" position="71" length="8"/>
+        <field kor="전송시간" name="sdTime" minOccurs="0" maxOccurs="1" position="79" length="6"/>
+        <field kor="응답코드" name="retCd" minOccurs="0" maxOccurs="1" position="85" length="4"/>
+        <field kor="예비영역" name="spareArea" minOccurs="0" maxOccurs="1" position="89" length="31"/>
       </segment>
       <segment name="bizBody" kor="BIZ데이터부" minOccurs="1" maxOccurs="1" class="map">
-        <field kor="이체전문전송일" name="trsfTgrmSendDt" minOccurs="1" maxOccurs="1" position="120" length="8"/>
-        <field kor="이체전문번호" name="trsfTgrmNo" minOccurs="1" maxOccurs="1" position="128" length="6"/>
-        <field kor="모계좌번호" name="parAcno" minOccurs="1" maxOccurs="1" position="134" length="15"/>
-        <field kor="거래계좌은행코드" name="trdAcntBnkCd" minOccurs="1" maxOccurs="1" position="149" length="2"/>
-        <field kor="거래계좌번호" name="trdAcno" minOccurs="1" maxOccurs="1" position="151" length="15"/>
-        <field kor="거래구분" name="trdGb" minOccurs="1" maxOccurs="1" position="166" length="2"/>
-        <field kor="이체금액" name="trsfAmt" minOccurs="1" maxOccurs="1" position="168" length="13" justify="right" padding="0"/>
-        <field kor="이체처리시간" name="trsfProcTime" minOccurs="1" maxOccurs="1" position="181" length="6"/>
-        <field kor="수수료" name="cmis" minOccurs="1" maxOccurs="1" position="187" length="9" justify="right" padding="0"/>
-        <field kor="CMS코드" name="cmsCd" minOccurs="1" maxOccurs="1" position="196" length="16"/>
-        <field kor="송금인성명" name="payerNm" minOccurs="1" maxOccurs="1" position="212" length="16"/>
-        <field kor="SUB SEQ" name="subSeq" minOccurs="1" maxOccurs="1" position="228" length="6"/>
-        <field kor="이체처리결과조회" name="trsfProcRslt" minOccurs="1" maxOccurs="1" position="234" length="4"/>
-        <field kor="타행처리번호" name="obnkProcNo" minOccurs="1" maxOccurs="1" position="238" length="6"/>
-        <field kor="납부자번호" name="pmpsnNo" minOccurs="1" maxOccurs="1" position="244" length="20"/>
-        <field kor="예비영역1" name="spareArea1" minOccurs="1" maxOccurs="1" position="264" length="30"/>
-        <field kor="은행전문번호" name="bnkEdiNo" minOccurs="1" maxOccurs="1" position="294" length="6"/>
-        <field kor="자통법적용구분" name="jatongApplYn" minOccurs="1" maxOccurs="1" position="300" length="1"/>
-        <field kor="공통부은행코드" name="commBnkCd" minOccurs="1" maxOccurs="1" position="301" length="3"/>
-        <field kor="개별부은행코드" name="indiBnkCd" minOccurs="1" maxOccurs="1" position="304" length="3"/>
-        <field kor="예비영역2" name="spareArea2" minOccurs="1" maxOccurs="1" position="307" length="43"/>
+        <field kor="이체전문전송일" name="trsfTgrmSendDt" minOccurs="0" maxOccurs="1" position="120" length="8"/>
+        <field kor="이체전문번호" name="trsfTgrmNo" minOccurs="0" maxOccurs="1" position="128" length="6"/>
+        <field kor="모계좌번호" name="parAcno" minOccurs="0" maxOccurs="1" position="134" length="15"/>
+        <field kor="거래계좌은행코드" name="trdAcntBnkCd" minOccurs="0" maxOccurs="1" position="149" length="2"/>
+        <field kor="거래계좌번호" name="trdAcno" minOccurs="0" maxOccurs="1" position="151" length="15"/>
+        <field kor="거래구분" name="trdGb" minOccurs="0" maxOccurs="1" position="166" length="2"/>
+        <field kor="이체금액" name="trsfAmt" minOccurs="0" maxOccurs="1" position="168" length="13" justify="right" padding="0"/>
+        <field kor="이체처리시간" name="trsfProcTime" minOccurs="0" maxOccurs="1" position="181" length="6"/>
+        <field kor="수수료" name="cmis" minOccurs="0" maxOccurs="1" position="187" length="9" justify="right" padding="0"/>
+        <field kor="CMS코드" name="cmsCd" minOccurs="0" maxOccurs="1" position="196" length="16"/>
+        <field kor="송금인성명" name="payerNm" minOccurs="0" maxOccurs="1" position="212" length="16"/>
+        <field kor="SUB SEQ" name="subSeq" minOccurs="0" maxOccurs="1" position="228" length="6"/>
+        <field kor="이체처리결과조회" name="trsfProcRslt" minOccurs="0" maxOccurs="1" position="234" length="4"/>
+        <field kor="타행처리번호" name="obnkProcNo" minOccurs="0" maxOccurs="1" position="238" length="6"/>
+        <field kor="납부자번호" name="pmpsnNo" minOccurs="0" maxOccurs="1" position="244" length="20"/>
+        <field kor="예비영역1" name="spareArea1" minOccurs="0" maxOccurs="1" position="264" length="30"/>
+        <field kor="은행전문번호" name="bnkEdiNo" minOccurs="0" maxOccurs="1" position="294" length="6"/>
+        <field kor="자통법적용구분" name="jatongApplYn" minOccurs="0" maxOccurs="1" position="300" length="1"/>
+        <field kor="공통부은행코드" name="commBnkCd" minOccurs="0" maxOccurs="1" position="301" length="3"/>
+        <field kor="개별부은행코드" name="indiBnkCd" minOccurs="0" maxOccurs="1" position="304" length="3"/>
+        <field kor="예비영역2" name="spareArea2" minOccurs="0" maxOccurs="1" position="307" length="43"/>
       </segment>
     </record>
   </stream>

@@ -2,22 +2,22 @@
     <element name="root" type="ns:CISKSNPMCO0110102_InRes_Header"/>
     <complexType name="CISKSNPMCO0110102_InRes_Header">
         <sequence>
-            <element e:kor="식별코드" e:length="9" e:padder="SpaceRight" name="trCode" nillable="true" type="string"/>
-            <element e:kor="업체코드" e:length="8" e:padder="SpaceRight" name="svcGb" nillable="true" type="string"/>
-            <element e:kor="은행코드2" e:length="2" e:padder="SpaceRight" name="bnkCd2" nillable="true" type="string"/>
-            <element e:kor="메시지코드" e:length="4" e:padder="SpaceRight" name="msgCd" nillable="true" type="string"/>
-            <element e:kor="업무구분코드" e:length="3" e:padder="SpaceRight" name="jobGbcd" nillable="true" type="string"/>
-            <element e:kor="송신횟수" e:length="1" e:padder="ZeroLeft" name="trsCnt" nillable="true" type="long"/>
-            <element e:kor="전문번호" e:length="6" e:padder="SpaceRight" name="ediNo" nillable="true" type="string"/>
-            <element e:kor="전송일자" e:length="8" e:padder="SpaceRight" name="sdDate" nillable="true" type="string"/>
-            <element e:kor="전송시간" e:length="6" e:padder="SpaceRight" name="sdTime" nillable="true" type="string"/>
-            <element e:kor="응답코드" e:length="4" e:padder="SpaceRight" name="retCd" nillable="true" type="string"/>
-            <element e:kor="은행응답코드" e:length="4" e:padder="SpaceRight" name="bnkRetCd" nillable="true" type="string"/>
-            <element e:kor="조회일자" e:length="8" e:padder="SpaceRight" name="qryDt" nillable="true" type="string"/>
-            <element e:kor="조회번호" e:length="6" e:padder="SpaceRight" name="qryNo" nillable="true" type="string"/>
-            <element e:kor="은행전문번호" e:length="15" e:padder="SpaceRight" name="bnkEdiNo" nillable="true" type="string"/>
-            <element e:kor="은행코드3" e:length="3" e:padder="SpaceRight" name="bnkCd3" nillable="true" type="string"/>
-            <element e:kor="예비" e:length="13" e:padder="SpaceRight" name="sdFlag" nillable="true" type="string"/>
+            <element e:kor="식별코드" e:length="9" e:padder="SpaceRight" minOccurs="0" name="trCode" nillable="true" type="string"/>
+            <element e:kor="업체코드" e:length="8" e:padder="SpaceRight" minOccurs="0" name="svcGb" nillable="true" type="string"/>
+            <element e:kor="은행코드2" e:length="2" e:padder="SpaceRight" minOccurs="0" name="bnkCd2" nillable="true" type="string"/>
+            <element e:kor="메시지코드" e:length="4" e:padder="SpaceRight" minOccurs="0" name="msgCd" nillable="true" type="string"/>
+            <element e:kor="업무구분코드" e:length="3" e:padder="SpaceRight" minOccurs="0" name="jobGbcd" nillable="true" type="string"/>
+            <element e:kor="송신횟수" e:length="1" e:padder="ZeroLeft" minOccurs="0" name="trsCnt" nillable="true" type="long"/>
+            <element e:kor="전문번호" e:length="6" e:padder="SpaceRight" minOccurs="0" name="ediNo" nillable="true" type="string"/>
+            <element e:kor="전송일자" e:length="8" e:padder="SpaceRight" minOccurs="0" name="sdDate" nillable="true" type="string"/>
+            <element e:kor="전송시간" e:length="6" e:padder="SpaceRight" minOccurs="0" name="sdTime" nillable="true" type="string"/>
+            <element e:kor="응답코드" e:length="4" e:padder="SpaceRight" minOccurs="0" name="retCd" nillable="true" type="string"/>
+            <element e:kor="은행응답코드" e:length="4" e:padder="SpaceRight" minOccurs="0" name="bnkRetCd" nillable="true" type="string"/>
+            <element e:kor="조회일자" e:length="8" e:padder="SpaceRight" minOccurs="0" name="qryDt" nillable="true" type="string"/>
+            <element e:kor="조회번호" e:length="6" e:padder="SpaceRight" minOccurs="0" name="qryNo" nillable="true" type="string"/>
+            <element e:kor="은행전문번호" e:length="15" e:padder="SpaceRight" minOccurs="0" name="bnkEdiNo" nillable="true" type="string"/>
+            <element e:kor="은행코드3" e:length="3" e:padder="SpaceRight" minOccurs="0" name="bnkCd3" nillable="true" type="string"/>
+            <element e:kor="예비" e:length="13" e:padder="SpaceRight" minOccurs="0" name="sdFlag" nillable="true" type="string"/>
         </sequence>
     </complexType>
 </schema>

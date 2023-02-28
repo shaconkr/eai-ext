@@ -2,9 +2,9 @@
     <element name="root" type="ns:CISJNICTIC0030102_InRes_Body"/>
     <complexType name="CISJNICTIC0030102_InRes_Body">
         <sequence>
-            <element e:kor="전문길이" e:length="6" e:padder="SpaceRight" name="tgrmLen" nillable="true" type="string"/>
-            <element e:kor="예비값" e:length="236" e:padder="SpaceRight" name="prepVal" nillable="true" type="string"/>
-            <element e:kor="응답코드" e:length="4" e:padder="SpaceRight" name="respCd" nillable="true" type="string"/>
+            <element e:kor="전문길이" e:length="6" e:padder="SpaceRight" minOccurs="0" name="tgrmLen" nillable="true" type="string"/>
+            <element e:kor="예비값" e:length="236" e:padder="SpaceRight" minOccurs="0" name="prepVal" nillable="true" type="string"/>
+            <element e:kor="응답코드" e:length="4" e:padder="SpaceRight" minOccurs="0" name="respCd" nillable="true" type="string"/>
         </sequence>
     </complexType>
 </schema>

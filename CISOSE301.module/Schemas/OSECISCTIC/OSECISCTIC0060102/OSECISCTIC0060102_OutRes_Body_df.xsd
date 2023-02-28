@@ -2,15 +2,15 @@
     <element name="root" type="ns:OSECISCTIC0060102_OutRes_Body"/>
     <complexType name="OSECISCTIC0060102_OutRes_Body">
         <sequence>
-            <element e:kor="처리방법코드" e:length="1" e:padder="SpaceRight" name="procMthdCd" nillable="true" type="string"/>
-            <element e:kor="가상전화번호1" e:length="15" e:padder="SpaceRight" name="virtTelno1" nillable="true" type="string"/>
-            <element e:kor="사용자1전화번호1" e:length="15" e:padder="SpaceRight" name="user1Telno1" nillable="true" type="string"/>
-            <element e:kor="사용자1전화번호2" e:length="15" e:padder="SpaceRight" name="user1Telno2" nillable="true" type="string"/>
-            <element e:kor="가상전화번호2" e:length="15" e:padder="SpaceRight" name="virtTelno2" nillable="true" type="string"/>
-            <element e:kor="사용자2전화번호1" e:length="15" e:padder="SpaceRight" name="user2Telno1" nillable="true" type="string"/>
-            <element e:kor="사용자2전화번호2" e:length="15" e:padder="SpaceRight" name="user2Telno2" nillable="true" type="string"/>
-            <element e:kor="사용상태구분코드" e:length="1" e:padder="SpaceRight" name="useStatGbcd" nillable="true" type="string"/>
-            <element e:kor="종료구분값" e:length="1" e:padder="SpaceRight" name="endGbVal" nillable="true" type="string"/>
+            <element e:kor="처리방법코드" e:length="1" e:padder="SpaceRight" minOccurs="0" name="procMthdCd" nillable="true" type="string"/>
+            <element e:kor="가상전화번호1" e:length="15" e:padder="SpaceRight" minOccurs="0" name="virtTelno1" nillable="true" type="string"/>
+            <element e:kor="사용자1전화번호1" e:length="15" e:padder="SpaceRight" minOccurs="0" name="user1Telno1" nillable="true" type="string"/>
+            <element e:kor="사용자1전화번호2" e:length="15" e:padder="SpaceRight" minOccurs="0" name="user1Telno2" nillable="true" type="string"/>
+            <element e:kor="가상전화번호2" e:length="15" e:padder="SpaceRight" minOccurs="0" name="virtTelno2" nillable="true" type="string"/>
+            <element e:kor="사용자2전화번호1" e:length="15" e:padder="SpaceRight" minOccurs="0" name="user2Telno1" nillable="true" type="string"/>
+            <element e:kor="사용자2전화번호2" e:length="15" e:padder="SpaceRight" minOccurs="0" name="user2Telno2" nillable="true" type="string"/>
+            <element e:kor="사용상태구분코드" e:length="1" e:padder="SpaceRight" minOccurs="0" name="useStatGbcd" nillable="true" type="string"/>
+            <element e:kor="종료구분값" e:length="1" e:padder="SpaceRight" minOccurs="0" name="endGbVal" nillable="true" type="string"/>
         </sequence>
     </complexType>
 </schema>

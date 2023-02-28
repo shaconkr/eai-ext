@@ -47,25 +47,25 @@
     </complexType>
     <complexType name="CISKFTPMCR0010201_InReq_Header">
         <sequence>
-            <element e:kor="전문길이" e:length="4" e:padder="SpaceRight" name="tgrmLen" nillable="true" type="string"/>
-            <element e:kor="고유문자값" e:length="3" e:padder="SpaceRight" name="inntChrVal" nillable="true" type="string"/>
-            <element e:kor="전문유형번호" e:length="9" e:padder="SpaceRight" name="tgrmTypeNo" nillable="true" type="string"/>
-            <element e:kor="전문ID" e:length="4" e:padder="SpaceRight" name="tgrmId" nillable="true" type="string"/>
-            <element e:kor="전문내용" e:length="16" e:padder="SpaceRight" name="tgrmCntn" nillable="true" type="string"/>
-            <element e:kor="거래구분코드" e:length="6" e:padder="SpaceRight" name="trdGbcd" nillable="true" type="string"/>
-            <element e:kor="전문전송일시" e:length="10" e:padder="SpaceRight" name="tgrmSendDtm" nillable="true" type="string"/>
-            <element e:kor="전문추적번호" e:length="6" e:padder="SpaceRight" name="tgrmTrcNo" nillable="true" type="string"/>
+            <element e:kor="전문길이" e:length="4" e:padder="SpaceRight" minOccurs="0" name="tgrmLen" nillable="true" type="string"/>
+            <element e:kor="고유문자값" e:length="3" e:padder="SpaceRight" minOccurs="0" name="inntChrVal" nillable="true" type="string"/>
+            <element e:kor="전문유형번호" e:length="9" e:padder="SpaceRight" minOccurs="0" name="tgrmTypeNo" nillable="true" type="string"/>
+            <element e:kor="전문ID" e:length="4" e:padder="SpaceRight" minOccurs="0" name="tgrmId" nillable="true" type="string"/>
+            <element e:kor="전문내용" e:length="16" e:padder="SpaceRight" minOccurs="0" name="tgrmCntn" nillable="true" type="string"/>
+            <element e:kor="거래구분코드" e:length="6" e:padder="SpaceRight" minOccurs="0" name="trdGbcd" nillable="true" type="string"/>
+            <element e:kor="전문전송일시" e:length="10" e:padder="SpaceRight" minOccurs="0" name="tgrmSendDtm" nillable="true" type="string"/>
+            <element e:kor="전문추적번호" e:length="6" e:padder="SpaceRight" minOccurs="0" name="tgrmTrcNo" nillable="true" type="string"/>
         </sequence>
     </complexType>
     <complexType name="CISKFTPMCR0010201_InReq_Body">
         <sequence>
-            <element e:kor="거래시간" e:length="6" e:padder="SpaceRight" name="trdTime" nillable="true" type="string"/>
-            <element e:kor="거래일자" e:length="4" e:padder="SpaceRight" name="trdDt" nillable="true" type="string"/>
-            <element e:kor="기관코드" e:length="9" e:padder="SpaceRight" name="istnCd" nillable="true" type="string"/>
-            <element e:kor="출금계좌번호" e:length="39" e:padder="SpaceRight" name="wthdrwlAcno" nillable="true" type="string"/>
-            <element e:kor="식별코드" e:length="15" e:padder="SpaceRight" name="idntCd" nillable="true" type="string"/>
-            <element e:kor="납부자번호" e:length="40" e:padder="SpaceRight" name="pmpsnNo" nillable="true" type="string"/>
-            <element e:kor="비밀번호" e:length="16" e:padder="SpaceRight" name="pwd" nillable="true" type="string"/>
+            <element e:kor="거래시간" e:length="6" e:padder="SpaceRight" minOccurs="0" name="trdTime" nillable="true" type="string"/>
+            <element e:kor="거래일자" e:length="4" e:padder="SpaceRight" minOccurs="0" name="trdDt" nillable="true" type="string"/>
+            <element e:kor="기관코드" e:length="9" e:padder="SpaceRight" minOccurs="0" name="istnCd" nillable="true" type="string"/>
+            <element e:kor="출금계좌번호" e:length="39" e:padder="SpaceRight" minOccurs="0" name="wthdrwlAcno" nillable="true" type="string"/>
+            <element e:kor="식별코드" e:length="15" e:padder="SpaceRight" minOccurs="0" name="idntCd" nillable="true" type="string"/>
+            <element e:kor="납부자번호" e:length="40" e:padder="SpaceRight" minOccurs="0" name="pmpsnNo" nillable="true" type="string"/>
+            <element e:kor="비밀번호" e:length="16" e:padder="SpaceRight" minOccurs="0" name="pwd" nillable="true" type="string"/>
         </sequence>
     </complexType>
     <complexType name="CISKFTPMCR0010201_InReq">

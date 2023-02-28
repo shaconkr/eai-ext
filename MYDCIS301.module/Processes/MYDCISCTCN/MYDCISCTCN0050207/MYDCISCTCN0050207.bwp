@@ -39,9 +39,9 @@
     <tibex:VariableDescriptor type="MemorySaving">
         <task name="pick">
             <endingVariables>
-                <variable>OutResXml</variable>
                 <variable>OutReqJson</variable>
                 <variable>L_Get_InterfaceInfo</variable>
+                <variable>OutResXml</variable>
             </endingVariables>
         </task>
         <task name="postOut">

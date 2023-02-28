@@ -10,37 +10,37 @@
     </parser>
     <record name="NIC_OutReq" class="java.util.LinkedHashMap">
       <segment name="bizHeader" kor="BIZ공통부" minOccurs="1" maxOccurs="1" class="map">
-        <field kor="거래코드" name="trdCd" minOccurs="1" maxOccurs="1" position="0" length="9"/>
-        <field kor="전문채널코드" name="tgrmChCd" minOccurs="1" maxOccurs="1" position="9" length="9"/>
-        <field kor="전문종별코드" name="tgrmSubCCd" minOccurs="1" maxOccurs="1" position="18" length="4" justify="right" padding="0"/>
-        <field kor="거래구분코드" name="trdGbcd" minOccurs="1" maxOccurs="1" position="22" length="5"/>
-        <field kor="송수신구분" name="tnrGb" minOccurs="1" maxOccurs="1" position="27" length="1"/>
-        <field kor="단말기정보구분코드" name="teInfGbcd" minOccurs="1" maxOccurs="1" position="28" length="3"/>
-        <field kor="응답코드" name="respCd" minOccurs="1" maxOccurs="1" position="31" length="4"/>
-        <field kor="사용자ID" name="userId" minOccurs="1" maxOccurs="1" position="35" length="9"/>
-        <field kor="기관전문관리번호" name="istnTgrmMngNo" minOccurs="1" maxOccurs="1" position="44" length="10" justify="right" padding="0"/>
-        <field kor="기관전문전송시간" name="istnTgrmSendTime" minOccurs="1" maxOccurs="1" position="54" length="14" justify="right" padding="0"/>
-        <field kor="NICE전문관리번호" name="niceTgrmMngNo" minOccurs="1" maxOccurs="1" position="68" length="10"/>
-        <field kor="NICE전문전송시간" name="niceTgrmSendTime" minOccurs="1" maxOccurs="1" position="78" length="14" justify="right" padding="0"/>
-        <field kor="공백값" name="nullVal" minOccurs="1" maxOccurs="1" position="92" length="17"/>
+        <field kor="거래코드" name="trdCd" minOccurs="0" maxOccurs="1" position="0" length="9"/>
+        <field kor="전문채널코드" name="tgrmChCd" minOccurs="0" maxOccurs="1" position="9" length="9"/>
+        <field kor="전문종별코드" name="tgrmSubCCd" minOccurs="0" maxOccurs="1" position="18" length="4" justify="right" padding="0"/>
+        <field kor="거래구분코드" name="trdGbcd" minOccurs="0" maxOccurs="1" position="22" length="5"/>
+        <field kor="송수신구분" name="tnrGb" minOccurs="0" maxOccurs="1" position="27" length="1"/>
+        <field kor="단말기정보구분코드" name="teInfGbcd" minOccurs="0" maxOccurs="1" position="28" length="3"/>
+        <field kor="응답코드" name="respCd" minOccurs="0" maxOccurs="1" position="31" length="4"/>
+        <field kor="사용자ID" name="userId" minOccurs="0" maxOccurs="1" position="35" length="9"/>
+        <field kor="기관전문관리번호" name="istnTgrmMngNo" minOccurs="0" maxOccurs="1" position="44" length="10" justify="right" padding="0"/>
+        <field kor="기관전문전송시간" name="istnTgrmSendTime" minOccurs="0" maxOccurs="1" position="54" length="14" justify="right" padding="0"/>
+        <field kor="NICE전문관리번호" name="niceTgrmMngNo" minOccurs="0" maxOccurs="1" position="68" length="10"/>
+        <field kor="NICE전문전송시간" name="niceTgrmSendTime" minOccurs="0" maxOccurs="1" position="78" length="14" justify="right" padding="0"/>
+        <field kor="공백값" name="nullVal" minOccurs="0" maxOccurs="1" position="92" length="17"/>
       </segment>
       <segment name="bizBody" kor="BIZ데이터부" minOccurs="1" maxOccurs="1" class="map">
-        <field kor="업무구분코드" name="tskGbcd" minOccurs="1" maxOccurs="1" position="109" length="2" justify="right" padding="0"/>
-        <field kor="등록구분코드" name="regGbcd" minOccurs="1" maxOccurs="1" position="111" length="2" justify="right" padding="0"/>
-        <field kor="직업코드" name="jobCd" minOccurs="1" maxOccurs="1" position="113" length="2" justify="right" padding="0"/>
-        <field kor="주민등록번호" name="rrno" minOccurs="1" maxOccurs="1" position="115" length="13" justify="right" padding="0"/>
-        <field kor="고객명" name="custNm" minOccurs="1" maxOccurs="1" position="128" length="20"/>
-        <field kor="사업자등록번호" name="rgno" minOccurs="1" maxOccurs="1" position="148" length="10" justify="right" padding="0"/>
-        <field kor="사업자명" name="bscmNm" minOccurs="1" maxOccurs="1" position="158" length="40"/>
-        <field kor="발생일자" name="ocrnDt" minOccurs="1" maxOccurs="1" position="198" length="8" justify="right" padding="0"/>
-        <field kor="해제일자" name="clerDt" minOccurs="1" maxOccurs="1" position="206" length="8" justify="right" padding="0"/>
-        <field kor="연체금액" name="odueAmt" minOccurs="1" maxOccurs="1" position="214" length="8" justify="right" padding="0"/>
-        <field kor="사유코드" name="rsnCd" minOccurs="1" maxOccurs="1" position="222" length="4" justify="right" padding="0"/>
-        <field kor="카드회원번호" name="crdMemNo" minOccurs="1" maxOccurs="1" position="226" length="17"/>
-        <field kor="공백값1" name="nullVal1" minOccurs="1" maxOccurs="1" position="243" length="18"/>
-        <field kor="해제사유코드" name="clerRsnCd" minOccurs="1" maxOccurs="1" position="261" length="2"/>
-        <field kor="동의서구분코드" name="agrmtGbcd" minOccurs="1" maxOccurs="1" position="263" length="1" justify="right" padding="0"/>
-        <field kor="공백값2" name="nullVal2" minOccurs="1" maxOccurs="1" position="264" length="15"/>
+        <field kor="업무구분코드" name="tskGbcd" minOccurs="0" maxOccurs="1" position="109" length="2" justify="right" padding="0"/>
+        <field kor="등록구분코드" name="regGbcd" minOccurs="0" maxOccurs="1" position="111" length="2" justify="right" padding="0"/>
+        <field kor="직업코드" name="jobCd" minOccurs="0" maxOccurs="1" position="113" length="2" justify="right" padding="0"/>
+        <field kor="주민등록번호" name="rrno" minOccurs="0" maxOccurs="1" position="115" length="13" justify="right" padding="0"/>
+        <field kor="고객명" name="custNm" minOccurs="0" maxOccurs="1" position="128" length="20"/>
+        <field kor="사업자등록번호" name="rgno" minOccurs="0" maxOccurs="1" position="148" length="10" justify="right" padding="0"/>
+        <field kor="사업자명" name="bscmNm" minOccurs="0" maxOccurs="1" position="158" length="40"/>
+        <field kor="발생일자" name="ocrnDt" minOccurs="0" maxOccurs="1" position="198" length="8" justify="right" padding="0"/>
+        <field kor="해제일자" name="clerDt" minOccurs="0" maxOccurs="1" position="206" length="8" justify="right" padding="0"/>
+        <field kor="연체금액" name="odueAmt" minOccurs="0" maxOccurs="1" position="214" length="8" justify="right" padding="0"/>
+        <field kor="사유코드" name="rsnCd" minOccurs="0" maxOccurs="1" position="222" length="4" justify="right" padding="0"/>
+        <field kor="카드회원번호" name="crdMemNo" minOccurs="0" maxOccurs="1" position="226" length="17"/>
+        <field kor="공백값1" name="nullVal1" minOccurs="0" maxOccurs="1" position="243" length="18"/>
+        <field kor="해제사유코드" name="clerRsnCd" minOccurs="0" maxOccurs="1" position="261" length="2"/>
+        <field kor="동의서구분코드" name="agrmtGbcd" minOccurs="0" maxOccurs="1" position="263" length="1" justify="right" padding="0"/>
+        <field kor="공백값2" name="nullVal2" minOccurs="0" maxOccurs="1" position="264" length="15"/>
       </segment>
     </record>
   </stream>

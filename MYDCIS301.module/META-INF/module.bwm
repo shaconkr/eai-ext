@@ -49,9 +49,12 @@
     </sca:service>
   </sca:component>
   <sca:component xmi:id="_9RwsELZwEe20weVuCkOF1g" name="ComponentMYDCISCTCN0050801" compositeext:version="1.0.0.qualifier">
-    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_9RwsEbZwEe20weVuCkOF1g" processName="MYDCISCTCN.MYDCISCTCN0050101.MYDCISCTCN0050101"/>
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_9RwsEbZwEe20weVuCkOF1g" processName="MYDCISCTCN.MYDCISCTCN0050101.MYDCISCTCN0050101" autoStart="false"/>
     <sca:service xmi:id="_9RwsErZwEe20weVuCkOF1g" name="polling">
       <sca:interface.wsdl xmi:id="_9RwsE7ZwEe20weVuCkOF1g" interface="http://xmlns.example.com/20230227163258PLT#wsdl.interface(polling)" scaext:wsdlLocation="../Processes/MYDCISCTCN/MYDCISCTCN0050101/MYDCISCTCN0050801.bwp"/>
     </sca:service>
+  </sca:component>
+  <sca:component xmi:id="_G5ji8LcEEe20weVuCkOF1g" name="ComponentMYDCISCTCN0050701" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_G5ji8bcEEe20weVuCkOF1g" processName="MYDCISCTCN.MYDCISCTCN0050701.MYDCISCTCN0050701" autoStart="false"/>
   </sca:component>
 </sca:composite>

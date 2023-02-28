@@ -47,8 +47,8 @@
     </complexType>
     <complexType name="MYDCISCTCN0050101_OutReq">
         <sequence>
-            <element e:kor="거래고유번호" e:length="25" e:padder="SpaceRight" name="trdInntNo" nillable="true" type="string"/>
-            <element e:kor="기관코드" e:length="10" e:padder="SpaceRight" name="istnCd" nillable="true" type="string"/>
+            <element e:kor="거래고유번호" e:length="25" e:padder="SpaceRight" minOccurs="0" name="trdInntNo" nillable="true" type="string"/>
+            <element e:kor="기관코드" e:length="10" e:padder="SpaceRight" minOccurs="0" name="istnCd" nillable="true" type="string"/>
         </sequence>
     </complexType>
     <complexType name="rootType">

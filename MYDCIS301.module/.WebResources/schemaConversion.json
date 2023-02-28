@@ -13,5 +13,25 @@
         "jsonSchemaLocation": "/MYDCIS301.module/Service Descriptors/MYDCISCTCN.MYDCISCTCN0050101.MYDCISCTCN0050801-MYDCISCTCN0050801.json",
         "conversionType": "linked",
         "xsdSchemaTargetNamespace": "http://schema.hcis.com/xsd/MYDCISCTCN0050101_InRes"
+    },
+    {
+        "jsonSchemaLocation": "/MYDCIS301.module/Service Descriptors/MYDCISCTCN.MYDCISCTCN0050701.MYDCISCTCN0050701-MYDCISCTCN0050701.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://schema.hcis.com/xsd/MYDCISCTCN0050207_InReq"
+    },
+    {
+        "jsonSchemaLocation": "/MYDCIS301.module/Service Descriptors/MYDCISCTCN.MYDCISCTCN0050701.MYDCISCTCN0050701-MYDCISCTCN0050701.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://schema.hcis.com/xsd/MYDCISCTCN0050207_InRes"
+    },
+    {
+        "jsonSchemaLocation": "/MYDCIS301.module/Service Descriptors/MYDCISCTCN.MYDCISCTCN0050701.MYDCISCTCN0050701-MYDCISCTCN0050701.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://schema.hcis.com/xsd/MYDCISCTCN0050701_InReq"
+    },
+    {
+        "jsonSchemaLocation": "/MYDCIS301.module/Service Descriptors/MYDCISCTCN.MYDCISCTCN0050701.MYDCISCTCN0050701-MYDCISCTCN0050701.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://schema.hcis.com/xsd/MYDCISCTCN0050701_InRes"
     }
 ]}

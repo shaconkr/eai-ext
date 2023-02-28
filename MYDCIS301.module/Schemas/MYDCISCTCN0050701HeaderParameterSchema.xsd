@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:Q1="http://tns.tibco.com/bw/REST" xmlns:source="bw.rest" xmlns:tns="http://xmlns.example.com/MYDCISCTCN0050701/headerParameters" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" targetNamespace="http://xmlns.example.com/MYDCISCTCN0050701/headerParameters">
+                  
+  
+  
+  
+  
+  
+  
+  
+  <xs:import namespace="http://tns.tibco.com/bw/REST"/>
+                  
+  
+  
+  
+  
+  
+  
+  
+  <xs:complexType name="mydcisctcn0050701PostHeaderType">
+                                    
+    
+    
+    
+    
+    
+    
+    
+    <xs:complexContent>
+                                                      
+      
+      
+      
+      
+      
+      
+      
+      <xs:extension base="Q1:httpTransportHeaders">
+                                                                        
+        
+        
+        
+        
+        
+        
+        
+        <xs:sequence>
+                                                                                          
+          
+          
+          
+          
+          
+          
+          
+          <xs:element maxOccurs="1" minOccurs="0" name="x-user-ci" type="xs:string"/>
+                                                                                        
+        
+                    
+          
+          
+          
+          
+          
+          <xs:element maxOccurs="1" minOccurs="0" name="x-api-tran-id" type="xs:string"/>
+                                                                            
+        
+                    
+          
+          
+          
+          <xs:element maxOccurs="1" minOccurs="0" name="x-api-type" type="xs:string"/>
+                                                        
+        
+        
+        
+        </xs:sequence>
+                                                                      
+      
+      
+      
+      
+      
+      
+      
+      </xs:extension>
+                                                    
+    
+    
+    
+    
+    
+    
+    
+    </xs:complexContent>
+                                  
+  
+  
+  
+  
+  
+  
+  
+  </xs:complexType>
+                  
+  
+  
+  
+  
+  
+  
+  
+  <xs:element name="mydcisctcn0050701PostHeader" type="tns:mydcisctcn0050701PostHeaderType"/>
+                
+
+
+
+
+
+    
+  
+  <xs:complexType name="mydcisctcn0050701PostResponseHeaderType">
+        
+    <xs:complexContent>
+            
+      <xs:extension base="Q1:httpTransportResponseHeaders">
+                
+        <xs:sequence>
+                    
+          <xs:element maxOccurs="1" minOccurs="0" name="x-api-tran-id" type="xs:string"/>
+                  
+        </xs:sequence>
+              
+      </xs:extension>
+          
+    </xs:complexContent>
+      
+  </xs:complexType>
+        
+  
+  <xs:element name="mydcisctcn0050701PostResponseHeader" type="tns:mydcisctcn0050701PostResponseHeaderType"/>
+    
+
+</xs:schema>

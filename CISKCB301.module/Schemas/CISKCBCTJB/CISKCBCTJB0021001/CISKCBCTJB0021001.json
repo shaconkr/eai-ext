@@ -34,9 +34,6 @@
     "extHtdspNm": "당발거래",
     "extSndRcvId": "H",
     "extSndRcvNm": "송신",
-    "extOneWayYn": "N",
-    "extResTypeId": "2",
-    "extResTypeNm": "표준헤더",
     "msgCd": "0700",
     "txCd": "749",
     "extFilePath": "",
@@ -52,7 +49,10 @@
     "scheduleEnd": "",
     "afterExecute": "",
     "afterShellName": "",
-    "afterShellPath": ""
+    "afterShellPath": "",
+    "extOneWayYn": "N",
+    "extResTypeId": "2",
+    "extResTypeNm": "표준헤더"
   },
   "response": {
     "ifId": "KCBCISCTJB0021001",
@@ -75,9 +75,6 @@
     "extHtdspNm": "당발거래",
     "extSndRcvId": "E",
     "extSndRcvNm": "수신",
-    "extOneWayYn": "N",
-    "extResTypeId": "2",
-    "extResTypeNm": "표준헤더",
     "msgCd": "0710",
     "txCd": "749",
     "extFilePath": "",
@@ -93,6 +90,9 @@
     "scheduleEnd": "",
     "afterExecute": "",
     "afterShellName": "",
-    "afterShellPath": ""
+    "afterShellPath": "",
+    "extOneWayYn": "N",
+    "extResTypeId": "2",
+    "extResTypeNm": "표준헤더"
   }
 }

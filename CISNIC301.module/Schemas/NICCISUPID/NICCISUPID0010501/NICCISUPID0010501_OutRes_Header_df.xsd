@@ -2,19 +2,19 @@
     <element name="root" type="ns:NICCISUPID0010501_OutRes_Header"/>
     <complexType name="NICCISUPID0010501_OutRes_Header">
         <sequence>
-            <element e:kor="거래코드" e:length="9" e:padder="SpaceRight" name="trdCd" nillable="true" type="string"/>
-            <element e:kor="전문채널코드" e:length="9" e:padder="SpaceRight" name="tgrmChCd" nillable="true" type="string"/>
-            <element e:kor="전문종별코드" e:length="4" e:padder="ZeroLeft" name="tgrmSubCCd" nillable="true" type="long"/>
-            <element e:kor="거래구분코드" e:length="5" e:padder="SpaceRight" name="trdGbcd" nillable="true" type="string"/>
-            <element e:kor="송수신구분" e:length="1" e:padder="SpaceRight" name="tnrGb" nillable="true" type="string"/>
-            <element e:kor="단말기정보구분코드" e:length="3" e:padder="SpaceRight" name="teInfGbcd" nillable="true" type="string"/>
-            <element e:kor="응답코드" e:length="4" e:padder="SpaceRight" name="respCd" nillable="true" type="string"/>
-            <element e:kor="사용자ID" e:length="9" e:padder="SpaceRight" name="userId" nillable="true" type="string"/>
-            <element e:kor="기관전문관리번호" e:length="10" e:padder="ZeroLeft" name="istnTgrmMngNo" nillable="true" type="long"/>
-            <element e:kor="기관전문전송시간" e:length="14" e:padder="ZeroLeft" name="istnTgrmSendTime" nillable="true" type="long"/>
-            <element e:kor="NICE전문관리번호" e:length="10" e:padder="SpaceRight" name="niceTgrmMngNo" nillable="true" type="string"/>
-            <element e:kor="NICE전문전송시간" e:length="14" e:padder="ZeroLeft" name="niceTgrmSendTime" nillable="true" type="long"/>
-            <element e:kor="공백값" e:length="17" e:padder="SpaceRight" name="nullVal" nillable="true" type="string"/>
+            <element e:kor="거래코드" e:length="9" e:padder="SpaceRight" minOccurs="0" name="trdCd" nillable="true" type="string"/>
+            <element e:kor="전문채널코드" e:length="9" e:padder="SpaceRight" minOccurs="0" name="tgrmChCd" nillable="true" type="string"/>
+            <element e:kor="전문종별코드" e:length="4" e:padder="ZeroLeft" minOccurs="0" name="tgrmSubCCd" nillable="true" type="long"/>
+            <element e:kor="거래구분코드" e:length="5" e:padder="SpaceRight" minOccurs="0" name="trdGbcd" nillable="true" type="string"/>
+            <element e:kor="송수신구분" e:length="1" e:padder="SpaceRight" minOccurs="0" name="tnrGb" nillable="true" type="string"/>
+            <element e:kor="단말기정보구분코드" e:length="3" e:padder="SpaceRight" minOccurs="0" name="teInfGbcd" nillable="true" type="string"/>
+            <element e:kor="응답코드" e:length="4" e:padder="SpaceRight" minOccurs="0" name="respCd" nillable="true" type="string"/>
+            <element e:kor="사용자ID" e:length="9" e:padder="SpaceRight" minOccurs="0" name="userId" nillable="true" type="string"/>
+            <element e:kor="기관전문관리번호" e:length="10" e:padder="ZeroLeft" minOccurs="0" name="istnTgrmMngNo" nillable="true" type="long"/>
+            <element e:kor="기관전문전송시간" e:length="14" e:padder="ZeroLeft" minOccurs="0" name="istnTgrmSendTime" nillable="true" type="long"/>
+            <element e:kor="NICE전문관리번호" e:length="10" e:padder="SpaceRight" minOccurs="0" name="niceTgrmMngNo" nillable="true" type="string"/>
+            <element e:kor="NICE전문전송시간" e:length="14" e:padder="ZeroLeft" minOccurs="0" name="niceTgrmSendTime" nillable="true" type="long"/>
+            <element e:kor="공백값" e:length="17" e:padder="SpaceRight" minOccurs="0" name="nullVal" nillable="true" type="string"/>
         </sequence>
     </complexType>
 </schema>

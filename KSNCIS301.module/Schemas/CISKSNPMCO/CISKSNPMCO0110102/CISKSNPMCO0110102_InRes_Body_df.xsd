@@ -2,25 +2,25 @@
     <element name="root" type="ns:CISKSNPMCO0110102_InRes_Body"/>
     <complexType name="CISKSNPMCO0110102_InRes_Body">
         <sequence>
-            <element e:kor="계좌번호" e:length="15" e:padder="SpaceRight" name="acno" nillable="true" type="string"/>
-            <element e:kor="조립건수" e:length="2" e:padder="ZeroLeft" name="asmbCnt" nillable="true" type="long"/>
-            <element e:kor="거래구분" e:length="2" e:padder="SpaceRight" name="trdGb" nillable="true" type="string"/>
-            <element e:kor="은행코드" e:length="2" e:padder="SpaceRight" name="bnkCd" nillable="true" type="string"/>
-            <element e:kor="금액" e:length="13" e:padder="ZeroLeft" name="amt" nillable="true" type="long"/>
-            <element e:kor="잔액" e:length="13" e:padder="ZeroLeft" name="blnc" nillable="true" type="long"/>
-            <element e:kor="입금지점코드6" e:length="6" e:padder="SpaceRight" name="iamtBrnCd6" nillable="true" type="string"/>
-            <element e:kor="적요" e:length="14" e:padder="SpaceRight" name="abst" nillable="true" type="string"/>
-            <element e:kor="수표번호" e:length="10" e:padder="SpaceRight" name="checkNo" nillable="true" type="string"/>
-            <element e:kor="현금" e:length="13" e:padder="ZeroLeft" name="cash" nillable="true" type="long"/>
-            <element e:kor="타행수표금액" e:length="13" e:padder="ZeroLeft" name="obnkCheckAmt" nillable="true" type="long"/>
-            <element e:kor="가계수표기타금액" e:length="13" e:padder="ZeroLeft" name="prckEtcAmt" nillable="true" type="long"/>
-            <element e:kor="가상계좌번호" e:length="16" e:padder="SpaceRight" name="virtAcno" nillable="true" type="string"/>
-            <element e:kor="거래일자" e:length="8" e:padder="SpaceRight" name="trdDt" nillable="true" type="string"/>
-            <element e:kor="거래시간" e:length="6" e:padder="SpaceRight" name="trdTime" nillable="true" type="string"/>
-            <element e:kor="통장거래일련번호" e:length="6" e:padder="SpaceRight" name="bnkbTrdSeqno" nillable="true" type="string"/>
-            <element e:kor="거래은행코드3" e:length="7" e:padder="SpaceRight" name="trdBnkCd3" nillable="true" type="string"/>
-            <element e:kor="입금지점코드7" e:length="7" e:padder="SpaceRight" name="iamtBrnCd7" nillable="true" type="string"/>
-            <element e:kor="예비" e:length="38" e:padder="SpaceRight" name="spare" nillable="true" type="string"/>
+            <element e:kor="계좌번호" e:length="15" e:padder="SpaceRight" minOccurs="0" name="acno" nillable="true" type="string"/>
+            <element e:kor="조립건수" e:length="2" e:padder="ZeroLeft" minOccurs="0" name="asmbCnt" nillable="true" type="long"/>
+            <element e:kor="거래구분" e:length="2" e:padder="SpaceRight" minOccurs="0" name="trdGb" nillable="true" type="string"/>
+            <element e:kor="은행코드" e:length="2" e:padder="SpaceRight" minOccurs="0" name="bnkCd" nillable="true" type="string"/>
+            <element e:kor="금액" e:length="13" e:padder="ZeroLeft" minOccurs="0" name="amt" nillable="true" type="long"/>
+            <element e:kor="잔액" e:length="13" e:padder="ZeroLeft" minOccurs="0" name="blnc" nillable="true" type="long"/>
+            <element e:kor="입금지점코드6" e:length="6" e:padder="SpaceRight" minOccurs="0" name="iamtBrnCd6" nillable="true" type="string"/>
+            <element e:kor="적요" e:length="14" e:padder="SpaceRight" minOccurs="0" name="abst" nillable="true" type="string"/>
+            <element e:kor="수표번호" e:length="10" e:padder="SpaceRight" minOccurs="0" name="checkNo" nillable="true" type="string"/>
+            <element e:kor="현금" e:length="13" e:padder="ZeroLeft" minOccurs="0" name="cash" nillable="true" type="long"/>
+            <element e:kor="타행수표금액" e:length="13" e:padder="ZeroLeft" minOccurs="0" name="obnkCheckAmt" nillable="true" type="long"/>
+            <element e:kor="가계수표기타금액" e:length="13" e:padder="ZeroLeft" minOccurs="0" name="prckEtcAmt" nillable="true" type="long"/>
+            <element e:kor="가상계좌번호" e:length="16" e:padder="SpaceRight" minOccurs="0" name="virtAcno" nillable="true" type="string"/>
+            <element e:kor="거래일자" e:length="8" e:padder="SpaceRight" minOccurs="0" name="trdDt" nillable="true" type="string"/>
+            <element e:kor="거래시간" e:length="6" e:padder="SpaceRight" minOccurs="0" name="trdTime" nillable="true" type="string"/>
+            <element e:kor="통장거래일련번호" e:length="6" e:padder="SpaceRight" minOccurs="0" name="bnkbTrdSeqno" nillable="true" type="string"/>
+            <element e:kor="거래은행코드3" e:length="7" e:padder="SpaceRight" minOccurs="0" name="trdBnkCd3" nillable="true" type="string"/>
+            <element e:kor="입금지점코드7" e:length="7" e:padder="SpaceRight" minOccurs="0" name="iamtBrnCd7" nillable="true" type="string"/>
+            <element e:kor="예비" e:length="38" e:padder="SpaceRight" minOccurs="0" name="spare" nillable="true" type="string"/>
         </sequence>
     </complexType>
 </schema>

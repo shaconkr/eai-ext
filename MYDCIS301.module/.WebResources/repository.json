@@ -20,6 +20,10 @@
         {
             "location": "Service Descriptors/MYDCISCTCN.MYDCISCTCN0050101.MYDCISCTCN0050101-MYDCISCTCN0050801.json",
             "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/MYDCISCTCN.MYDCISCTCN0050701.MYDCISCTCN0050701-MYDCISCTCN0050701.json",
+            "type": "generated"
         }
     ]
 }

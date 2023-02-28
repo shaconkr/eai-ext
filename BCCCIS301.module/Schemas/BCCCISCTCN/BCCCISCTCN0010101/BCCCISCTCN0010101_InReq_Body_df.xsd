@@ -1,0 +1,22 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:e="http://shacon.kr/xsd" xmlns:ns="http://schema.hcis.com/xsd/BCCCISCTCN0010101_InReq_Body" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://schema.hcis.com/xsd/BCCCISCTCN0010101_InReq_Body">
+    <element name="root" type="ns:BCCCISCTCN0010101_InReq_Body"/>
+    <complexType name="BCCCISCTCN0010101_InReq_Body">
+        <sequence>
+            <element e:kor="카드번호" e:length="16" e:padder="SpaceRight" minOccurs="0" name="crdNo" nillable="true" type="string"/>
+            <element e:kor="카드회원번호" e:length="9" e:padder="SpaceRight" minOccurs="0" name="crdMemNo" nillable="true" type="string"/>
+            <element e:kor="본인회원번호" e:length="9" e:padder="SpaceRight" minOccurs="0" name="selfMemNo" nillable="true" type="string"/>
+            <element e:kor="업무구분코드" e:length="2" e:padder="SpaceRight" minOccurs="0" name="tskGbcd" nillable="true" type="string"/>
+            <element e:kor="본인가족구분코드" e:length="1" e:padder="SpaceRight" minOccurs="0" name="selfFamlGbcd" nillable="true" type="string"/>
+            <element e:kor="유효년월" e:length="6" e:padder="SpaceRight" minOccurs="0" name="vlidYm" nillable="true" type="string"/>
+            <element e:kor="카드발급일자" e:length="8" e:padder="SpaceRight" minOccurs="0" name="crdIssuDt" nillable="true" type="string"/>
+            <element e:kor="카드상태코드" e:length="1" e:padder="SpaceRight" minOccurs="0" name="crdStatCd" nillable="true" type="string"/>
+            <element e:kor="은행코드" e:length="2" e:padder="SpaceRight" minOccurs="0" name="bankCd" nillable="true" type="string"/>
+            <element e:kor="카드해약일자" e:length="8" e:padder="SpaceRight" minOccurs="0" name="crdSrndDt" nillable="true" type="string"/>
+            <element e:kor="결과메시지" e:length="80" e:padder="SpaceRight" minOccurs="0" name="rstMsg" nillable="true" type="string"/>
+            <element e:kor="TR번호" e:length="11" e:padder="SpaceRight" minOccurs="0" name="trNo" nillable="true" type="string"/>
+            <element e:kor="시즌구분코드" e:length="6" e:padder="SpaceRight" minOccurs="0" name="seznGbcd" nillable="true" type="string"/>
+            <element e:kor="카드회원CI값" e:length="88" e:padder="SpaceRight" minOccurs="0" name="crdMemCiVal" nillable="true" type="string"/>
+            <element e:kor="예비항목정보" e:length="189" e:padder="SpaceRight" minOccurs="0" name="prepClasInf" nillable="true" type="string"/>
+        </sequence>
+    </complexType>
+</schema>

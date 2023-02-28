@@ -1396,5 +1396,14 @@
 			<isOverride>false</isOverride>
 			<useLookupValue>false</useLookupValue>
 		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule//Property</name>
+			<value></value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>Boolean</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
 	</globalVariables>
 </repository>

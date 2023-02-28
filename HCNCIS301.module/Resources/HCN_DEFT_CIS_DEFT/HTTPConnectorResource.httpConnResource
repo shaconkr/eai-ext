@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:httpconnector="http://xsd.tns.tibco.com/bw/models/sharedresource/httpconnector" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmi:id="_f6Y0MXEpEe22XvzrM_RWTg" name="HCN_DEFT_CIS_DEFT.HTTPConnectorResource" type="httpconnector:HttpConnectorConfiguration">
-  <jndi:configuration xsi:type="httpconnector:HttpConnectorConfiguration" xmi:id="_f6ZbQHEpEe22XvzrM_RWTg" acceptQueueSize="-1" newAccessLogs="true">
-    <substitutionBindings xmi:id="_f6ZbQXEpEe22XvzrM_RWTg" template="host" propName="BW.HOST.NAME"/>
-  </jndi:configuration>
-</jndi:namedResource>

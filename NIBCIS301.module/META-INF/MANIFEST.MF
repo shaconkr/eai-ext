@@ -5,11 +5,15 @@ Bundle-SymbolicName: NIBCIS301.module
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: TIBCO Software Inc.
-Export-Package: NIBCISCTJD
-Require-Bundle: HcisCommon.smodule;bundle-version="1.0.0",HcisExternal.smodule;bundle-version="1.0.0"
-Import-Package: com.hcis.eai.common,
- com.hcis.eai.module,
- com.tibco.bw.palette.jms.runtime.eventcontext;version="[6.0.0,7.0.0)"
+Export-Package: com.hcis.eai.nib
+Require-Bundle: HcisCommon.smodule;bundle-version="1.0.0",
+ HcisExternal.smodule;bundle-version="1.0.0"
+Import-Package: com.tibco.bw.palette.shared.java;version="6.2.1600",
+ com.tibco.bw.runtime;version="6.3.2400",
+ kr.shacon.format,
+ org.beanio,
+ org.beanio.internal.util,
+ org.slf4j
 TIBCO-BW-ApplicationModule: META-INF/module.bwm
 TIBCO-BW-JobSharedVariables: META-INF/module.jsv
 TIBCO-BW-ConfigProfile: META-INF/default.substvar

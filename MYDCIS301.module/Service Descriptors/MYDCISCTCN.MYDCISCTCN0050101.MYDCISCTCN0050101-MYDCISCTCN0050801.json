@@ -51,8 +51,10 @@
   "definitions" : {
     "root" : {
       "type" : "object",
-      "required" : [ "istnCd" ],
       "properties" : {
+        "trdInntNo" : {
+          "type" : "string"
+        },
         "istnCd" : {
           "type" : "string"
         }

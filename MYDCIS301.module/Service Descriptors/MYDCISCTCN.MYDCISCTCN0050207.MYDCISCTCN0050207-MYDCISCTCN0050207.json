@@ -57,8 +57,13 @@
   "definitions" : {
     "root" : {
       "type" : "object",
-      "required" : [ "istnCd", "infMagnIdntCd" ],
       "properties" : {
+        "ciVal" : {
+          "type" : "string"
+        },
+        "trdInntNo" : {
+          "type" : "string"
+        },
         "istnCd" : {
           "type" : "string"
         },

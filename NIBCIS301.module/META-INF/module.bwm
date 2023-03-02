@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_tXjxcIyoEe2AltnxqgZQRA" targetNamespace="http://tns.tibco.com/bw/composite/NIBCIS301.module" name="NIBCIS301.module" compositeext:version="1.0.0" compositeext:formatVersion="2">
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmi:id="_tXjxcIyoEe2AltnxqgZQRA" targetNamespace="http://tns.tibco.com/bw/composite/NIBCIS301.module" name="NIBCIS301.module" compositeext:version="1.0.0" compositeext:formatVersion="2">
   <sca:property xmi:id="_wb4eEIyoEe2AltnxqgZQRA" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_wceT8IyoEe2AltnxqgZQRA" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_wceT8YyoEe2AltnxqgZQRA" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
@@ -9,10 +9,4 @@
   <sca:property xmi:id="_wc6_4YyoEe2AltnxqgZQRA" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_wdEw4IyoEe2AltnxqgZQRA" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_wdOh4IyoEe2AltnxqgZQRA" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
-  <sca:component xmi:id="_Mg2ksIypEe2AltnxqgZQRA" name="ComponentNIBCISCTJD0130101_Sub" compositeext:version="1.0.0.qualifier">
-    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_Mg2ksYypEe2AltnxqgZQRA" processName="NIBCISCTJD.NIBCISCTJD0130101.NIBCISCTJD0130101_REQ"/>
-  </sca:component>
-  <sca:component xmi:id="_5GCmAI_CEe2qrsWmCYgWNg" name="ComponentNIBCISCTJD0130101_REQ" compositeext:version="1.0.0.qualifier">
-    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_5GCmAY_CEe2qrsWmCYgWNg" processName="NIBCISCTJD.CISNIBCTJD0130102.CISNIBCTJD0130102_RES"/>
-  </sca:component>
 </sca:composite>

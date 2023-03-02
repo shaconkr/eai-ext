@@ -22,3 +22,4 @@ Bundle-RequiredExecutionEnvironment: JavaSE-11
 TIBCO-BW-ConfigProfile: META-INF/default.substvar
 TIBCO-BW-ModuleSharedVariables: META-INF/module.msv
 TIBCO-BW-JobSharedVariables: META-INF/module.jsv
+Automatic-Module-Name: KFTCIS301.module

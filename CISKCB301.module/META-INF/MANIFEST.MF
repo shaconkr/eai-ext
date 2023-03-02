@@ -32,3 +32,4 @@ Require-Capability: com.tibco.bw.model; filter:="(name=bwext)",
  com.tibco.bw.sharedresource.model; filter:="(name=bw.dataformat)",
  com.tibco.bw.sharedresource.model; filter:="(name=bw.java)"
 TIBCO-BW-ApplicationModule: META-INF/module.bwm
+Automatic-Module-Name: CISKCB301.module

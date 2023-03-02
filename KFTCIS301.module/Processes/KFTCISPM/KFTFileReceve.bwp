@@ -102,8 +102,8 @@
         </task>
         <task name="GroupEnd">
             <endingVariables>
-                <variable>P_0600</variable>
                 <variable>P_COMMON</variable>
+                <variable>P_0600</variable>
             </endingVariables>
         </task>
         <task name="R_COMMON">
@@ -5478,14 +5478,6 @@
                 <bpws:literal>kftcis301.module.KFTC</bpws:literal>
             </bpws:from>
         </bpws:variable>
-        <bpws:variable name="KFTCFileTransHelper"
-            sca-bpel:hotUpdate="false" sca-bpel:privateProperty="true"
-            sca-bpel:property="yes"
-            sca-bpel:sharedResourceType="{http://ns.tibco.com/bw/palette/javasharedresource}JavaGlobalInstanceResource" type="xsd:string">
-            <bpws:from>
-                <bpws:literal>ext.kft.KFTFileTransHelper</bpws:literal>
-            </bpws:from>
-        </bpws:variable>
         <bpws:variable element="ns63:JavaInvokeActivityInput"
             name="B_0600_001-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns64:JavaInvokeActivityOutput"
@@ -5939,10 +5931,10 @@
                                     <type href="http://ns.tibco.com/bw/palette/java#//JavaMethod"/>
                                     <value
                                     className="com.hcis.eai.ext.kft.KftcFileTransfer"
+                                    constructDeclaredClass="true"
                                     icon="HcisCommon.smodule\Resources\icons\binary-code-48.png"
                                     isNew="true"
                                     isNewActivity="true"
-                                    javaGlobalInstance="KFTCFileTransHelper"
                                     methodName="getHeaderQueryString"
                                     methodReturn="string" xsi:type="java:JavaMethod">
                                     <methodParameter
@@ -5998,10 +5990,10 @@
                                     <type href="http://ns.tibco.com/bw/palette/java#//JavaMethod"/>
                                     <value
                                     className="com.hcis.eai.ext.kft.KftcFileTransfer"
+                                    constructDeclaredClass="true"
                                     icon="HcisCommon.smodule\Resources\icons\edit-node-48.png"
                                     isNew="true"
                                     isNewActivity="true"
-                                    javaGlobalInstance="KFTCFileTransHelper"
                                     methodName="kftc640"
                                     methodReturn="byte[]" xsi:type="java:JavaMethod">
                                     <exceptionTypes>java.io.UnsupportedEncodingException</exceptionTypes>
@@ -6150,10 +6142,10 @@
                                     <type href="http://ns.tibco.com/bw/palette/java#//JavaMethod"/>
                                     <value
                                     className="com.hcis.eai.ext.kft.KftcFileTransfer"
+                                    constructDeclaredClass="true"
                                     icon="HcisCommon.smodule\Resources\icons\edit-node-48.png"
                                     isNew="true"
                                     isNewActivity="true"
-                                    javaGlobalInstance="KFTCFileTransHelper"
                                     methodName="kftc300"
                                     methodReturn="byte[]" xsi:type="java:JavaMethod">
                                     <exceptionTypes>java.io.UnsupportedEncodingException</exceptionTypes>
@@ -6306,10 +6298,10 @@
                                     <type href="http://ns.tibco.com/bw/palette/java#//JavaMethod"/>
                                     <value
                                     className="com.hcis.eai.ext.kft.KftcFileTransfer"
+                                    constructDeclaredClass="true"
                                     icon="HcisCommon.smodule\Resources\icons\edit-node-48.png"
                                     isNew="true"
                                     isNewActivity="true"
-                                    javaGlobalInstance="KFTCFileTransHelper"
                                     methodName="kftc610"
                                     methodReturn="string" xsi:type="java:JavaMethod">
                                     <methodParameter
@@ -6353,10 +6345,10 @@
                                     <type href="http://ns.tibco.com/bw/palette/java#//JavaMethod"/>
                                     <value
                                     className="com.hcis.eai.ext.kft.KftcFileTransfer"
+                                    constructDeclaredClass="true"
                                     icon="HcisCommon.smodule\Resources\icons\edit-node-48.png"
                                     isNew="true"
                                     isNewActivity="true"
-                                    javaGlobalInstance="KFTCFileTransHelper"
                                     methodName="kftc610"
                                     methodReturn="string" xsi:type="java:JavaMethod">
                                     <methodParameter
@@ -6414,10 +6406,10 @@
                                     <type href="http://ns.tibco.com/bw/palette/java#//JavaMethod"/>
                                     <value
                                     className="com.hcis.eai.ext.kft.KftcFileTransfer"
+                                    constructDeclaredClass="true"
                                     icon="HcisCommon.smodule\Resources\icons\binary-code-48.png"
                                     isNew="true"
                                     isNewActivity="true"
-                                    javaGlobalInstance="KFTCFileTransHelper"
                                     methodName="getDataQueryString"
                                     methodReturn="string" xsi:type="java:JavaMethod">
                                     <methodParameter
@@ -6459,10 +6451,10 @@
                                     <type href="http://ns.tibco.com/bw/palette/java#//JavaMethod"/>
                                     <value
                                     className="com.hcis.eai.ext.kft.KftcFileTransfer"
+                                    constructDeclaredClass="true"
                                     icon="HcisCommon.smodule\Resources\icons\binary-code-48.png"
                                     isNew="true"
                                     isNewActivity="true"
-                                    javaGlobalInstance="KFTCFileTransHelper"
                                     methodName="getDataQueryString"
                                     methodReturn="string" xsi:type="java:JavaMethod">
                                     <methodParameter
@@ -6504,10 +6496,10 @@
                                     <type href="http://ns.tibco.com/bw/palette/java#//JavaMethod"/>
                                     <value
                                     className="com.hcis.eai.ext.kft.KftcFileTransfer"
+                                    constructDeclaredClass="true"
                                     icon="HcisCommon.smodule\Resources\icons\binary-code-48.png"
                                     isNew="true"
                                     isNewActivity="true"
-                                    javaGlobalInstance="KFTCFileTransHelper"
                                     methodName="getDataQueryString"
                                     methodReturn="string" xsi:type="java:JavaMethod">
                                     <methodParameter
@@ -6549,10 +6541,10 @@
                                     <type href="http://ns.tibco.com/bw/palette/java#//JavaMethod"/>
                                     <value
                                     className="com.hcis.eai.ext.kft.KftcFileTransfer"
+                                    constructDeclaredClass="true"
                                     icon="HcisCommon.smodule\Resources\icons\binary-code-48.png"
                                     isNew="true"
                                     isNewActivity="true"
-                                    javaGlobalInstance="KFTCFileTransHelper"
                                     methodName="getDataQueryString"
                                     methodReturn="string" xsi:type="java:JavaMethod">
                                     <methodParameter
@@ -6702,10 +6694,10 @@
                                     <type href="http://ns.tibco.com/bw/palette/java#//JavaMethod"/>
                                     <value
                                     className="com.hcis.eai.ext.kft.KftcFileTransfer"
+                                    constructDeclaredClass="true"
                                     icon="HcisCommon.smodule\Resources\icons\binary-code-48.png"
                                     isNew="true"
                                     isNewActivity="true"
-                                    javaGlobalInstance="KFTCFileTransHelper"
                                     methodName="getDataQueryString"
                                     methodReturn="string" xsi:type="java:JavaMethod">
                                     <methodParameter
@@ -6968,10 +6960,10 @@
                                     <type href="http://ns.tibco.com/bw/palette/java#//JavaMethod"/>
                                     <value
                                     className="com.hcis.eai.ext.kft.KftcFileTransfer"
+                                    constructDeclaredClass="true"
                                     icon="HcisCommon.smodule\Resources\icons\edit-node-48.png"
                                     isNew="true"
                                     isNewActivity="true"
-                                    javaGlobalInstance="KFTCFileTransHelper"
                                     methodName="kftc610"
                                     methodReturn="byte[]" xsi:type="java:JavaMethod">
                                     <exceptionTypes>java.io.UnsupportedEncodingException</exceptionTypes>
@@ -7417,10 +7409,10 @@
                                     <type href="http://ns.tibco.com/bw/palette/java#//JavaMethod"/>
                                     <value
                                     className="com.hcis.eai.ext.kft.KftcFileTransfer"
+                                    constructDeclaredClass="true"
                                     icon="HcisCommon.smodule\Resources\icons\edit-node-48.png"
                                     isNew="true"
                                     isNewActivity="true"
-                                    javaGlobalInstance="KFTCFileTransHelper"
                                     methodName="kftc600"
                                     methodReturn="byte[]" xsi:type="java:JavaMethod">
                                     <exceptionTypes>java.io.UnsupportedEncodingException</exceptionTypes>

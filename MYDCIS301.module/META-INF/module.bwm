@@ -20,7 +20,7 @@
   <sca:service xmi:id="_9RwsFLZwEe20weVuCkOF1g" name="polling" promote="ComponentMYDCISCTCN0050801/polling">
     <sca:interface.wsdl xmi:id="_9RwsGLZwEe20weVuCkOF1g" interface="http://xmlns.example.com/20230227163258PLT#wsdl.interface(polling)" scaext:wsdlLocation="../Processes/MYDCISCTCN/MYDCISCTCN0050101/MYDCISCTCN0050801.bwp"/>
     <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_9SDnALZwEe20weVuCkOF1g" name="RestService1" path="/polling" docBasePath="http://localhost:7777/MYDCIS301.module" docResourcePath="MYDCISCTCN0050801" basePath="/" connector="mydcis301.module.MYDCISCTCN0050207" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/MYDCISCTCN.MYDCISCTCN0050101.MYDCISCTCN0050801-MYDCISCTCN0050801.json">
-      <operation xmi:id="_9SNYALZwEe20weVuCkOF1g" operationName="post" nickname="post-polling" httpMethod="POST" notes="postMYDCISCTCN0050801" responseStyle="element" requestStyle="element" outputPartName="Response">
+      <operation xmi:id="_9SNYALZwEe20weVuCkOF1g" operationName="post" nickname="post-polling" httpMethod="POST" notes="postMYDCISCTCN0050801" responseStyle="element" requestStyle="array" outputPartName="Response">
         <parameters xmi:id="_Bn0tYLZxEe20weVuCkOF1g">
           <parameterMapping xmi:id="_Bn0tYbZxEe20weVuCkOF1g" parameterName="x-api-tran-id" parameterType="Header" dataType="string"/>
           <parameterMapping xmi:id="_Ght0gLZxEe20weVuCkOF1g" parameterName="x-api-tran-id" parameterType="ResponseHeader" dataType="string"/>
@@ -54,7 +54,25 @@
       <sca:interface.wsdl xmi:id="_9RwsE7ZwEe20weVuCkOF1g" interface="http://xmlns.example.com/20230227163258PLT#wsdl.interface(polling)" scaext:wsdlLocation="../Processes/MYDCISCTCN/MYDCISCTCN0050101/MYDCISCTCN0050801.bwp"/>
     </sca:service>
   </sca:component>
-  <sca:component xmi:id="_G5ji8LcEEe20weVuCkOF1g" name="ComponentMYDCISCTCN0050701" compositeext:version="1.0.0.qualifier">
-    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_G5ji8bcEEe20weVuCkOF1g" processName="MYDCISCTCN.MYDCISCTCN0050701.MYDCISCTCN0050701" autoStart="false"/>
+  <sca:component xmi:id="_gSKCoLi0Ee2isfgwnQkJLQ" name="Component1MYDCISCTCN0050207" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_gSKCobi0Ee2isfgwnQkJLQ" processName="MYDCISCTCN.MYDCISCTCN0050701.MYDCISCTCN0050207"/>
+  </sca:component>
+  <sca:component xmi:id="_MxU0YLjBEe2isfgwnQkJLQ" name="ComponentMYDCISCTCN0050206" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_MxU0YbjBEe2isfgwnQkJLQ" processName="MYDCISCTCN.MYDCISCTCN0050206"/>
+  </sca:component>
+  <sca:component xmi:id="_ULZZQbjBEe2isfgwnQkJLQ" name="ComponentMYDCISCTCN0050205" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_ULZZQrjBEe2isfgwnQkJLQ" processName="MYDCISCTCN.MYDCISCTCN0050205"/>
+  </sca:component>
+  <sca:component xmi:id="_8lELsbjBEe2isfgwnQkJLQ" name="ComponentMYDCISCTCN0050201" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_8lELsrjBEe2isfgwnQkJLQ" processName="MYDCISCTCN.MYDCISCTCN0050201"/>
+  </sca:component>
+  <sca:component xmi:id="_PYCigbjCEe2isfgwnQkJLQ" name="ComponentMYDCISCTCN0050204" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_PYCigrjCEe2isfgwnQkJLQ" processName="MYDCISCTCN.MYDCISCTCN0050204"/>
+  </sca:component>
+  <sca:component xmi:id="_eY8V4bjCEe2isfgwnQkJLQ" name="ComponentMYDCISCTCN0050203" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_eY8V4rjCEe2isfgwnQkJLQ" processName="MYDCISCTCN.MYDCISCTCN0050203"/>
+  </sca:component>
+  <sca:component xmi:id="_KSyDdbjDEe2isfgwnQkJLQ" name="ComponentMYDCISCTCN0050202" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_KSyDdrjDEe2isfgwnQkJLQ" processName="MYDCISCTCN.MYDCISCTCN0050202"/>
   </sca:component>
 </sca:composite>

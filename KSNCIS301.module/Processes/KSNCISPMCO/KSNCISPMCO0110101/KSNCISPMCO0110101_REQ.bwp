@@ -1570,6 +1570,13 @@
                 </choice>
             </complexType>
         </schema>
+        <schema elementFormDefault="qualified"
+            targetNamespace="http://www.tibco.com/tnt/utilitySchema"
+            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.tibco.com/tnt/utilitySchema">
+            <simpleType name="nativeJavaObjectKey">
+                <restriction base="string"/>
+            </simpleType>
+        </schema>
     </tibex:Types>
     <tibex:ProcessInfo callable="false" createdBy="javal"
         createdOn="Tue Jan 31 17:13:14 KST 2023" description=""
@@ -2517,15 +2524,14 @@
         <tibex:namespaceItem
             namespace="www.tibco.com/plugin/java/JavaInvokeActivityInput+3902bc05-d270-4208-9de1-1ee88b688962+JavaInvokeActivityInput" prefix="tns9"/>
     </tibex:NamespaceRegistry>
-    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.cspi_library.org/Library"/>
-    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.cspi_library.org/Log"/>
-    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://schema.hcis.com/xsd/KSNCISPMCO0110101_OutReq"/>
-    <bpws:import importType="http://www.w3.org/2001/XMLSchema"
-        location="../../../Schemas/KSNCISPMCO/KSNCISPMCO0110101/KSNCISPMCO0110101_InReq.xsd" namespace="http://schema.hcis.com/xsd/KSNCISPMCO0110101_InReq"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema"
         location="../../../Schemas/KSNCISPMCO/KSNCISPMCO0110101/KSNCISPMCO0110101_OutReq.xsd" namespace="http://schema.hcis.com/xsd/KSNCISPMCO0110101_OutReq"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema"
         location="../../../Schemas/CISKSNPMCO/CISKSNPMCO0110102/KSNCISPMCO0110101_OutReq.xsd" namespace="http://schema.hcis.com/xsd/KSNCISPMCO0110101_OutReq"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.cspi_library.org/Library"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema"
+        location="../../../Schemas/KSNCISPMCO/KSNCISPMCO0110101/KSNCISPMCO0110101_InReq.xsd" namespace="http://schema.hcis.com/xsd/KSNCISPMCO0110101_InReq"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.cspi_library.org/Log"/>
     <bpws:variables>
         <bpws:variable element="ns:ProcessContext"
             name="_processContext" sca-bpel:internal="true"/>

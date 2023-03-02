@@ -1408,5 +1408,59 @@
 			<isOverride>false</isOverride>
 			<useLookupValue>false</useLookupValue>
 		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule///ENDPOINT/MYD_SFTP/HOSTNAME</name>
+			<value>10.103.237.130</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule///ENDPOINT/MYD_SFTP/PASSWORD</name>
+			<value>#!/P6Aaf/XstU1OhHZaQwsIMv1HqOt0/jz</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>Password</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule///ENDPOINT/MYD_SFTP/PORT</name>
+			<value>50010</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>Integer</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule///ENDPOINT/MYD_SFTP/USERNAME</name>
+			<value>hyundai</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule///ENDPOINT/MYD_SFTP/PWD_PLAIN</name>
+			<value>hyundai</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//HcisExternal.smodule///ENDPOINT/MYD_SFTP/SAM_CT_MYD_RCV_PATH</name>
+			<value>/hcisnas/sam/crct/batch</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
 	</globalVariables>
 </repository>

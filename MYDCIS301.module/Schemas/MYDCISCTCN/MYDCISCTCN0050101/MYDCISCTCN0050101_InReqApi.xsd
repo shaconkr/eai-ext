@@ -1,0 +1,8 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:e="http://shacon.kr/xsd" xmlns:ns="http://schema.hcis.com/xsd/MYDCISCTCN0050101_InReqApi" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.hcis.com/xsd/MYDCISCTCN0050101_InReqApi">
+    <complexType name="MYDCISCTCN0050101_InReqApi">
+        <sequence>
+            <element e:kor="기관코드" e:length="10" e:padder="SpaceRight" minOccurs="0" name="org_code" nillable="true" type="string"/>
+        </sequence>
+    </complexType>
+    <element name="root" type="ns:MYDCISCTCN0050101_InReqApi"/>
+</schema>

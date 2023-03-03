@@ -29,6 +29,5 @@ Require-Capability: com.tibco.bw.model; filter:="(name=bwext)",
  com.tibco.bw.palette; filter:="(name=bw.sftp)",
  com.tibco.bw.palette; filter:="(name=bw.java)",
  com.tibco.bw.palette; filter:="(name=bw.http)",
- com.tibco.bw.sharedresource.model; filter:="(name=bw.httpconnector)",
- com.tibco.bw.binding.model; filter:="(name=bw.rest)"
+ com.tibco.bw.sharedresource.model; filter:="(name=bw.httpconnector)"
 TIBCO-BW-Version: 6.9.0 V26 2022-11-02

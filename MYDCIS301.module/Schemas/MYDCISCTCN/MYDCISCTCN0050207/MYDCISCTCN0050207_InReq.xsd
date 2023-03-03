@@ -1,10 +1,10 @@
 <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:e="http://shacon.kr/xsd" xmlns:ns="http://schema.hcis.com/xsd/MYDCISCTCN0050207_InReq" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.hcis.com/xsd/MYDCISCTCN0050207_InReq">
     <complexType name="MYDCISCTCN0050207_InReq">
         <sequence>
-            <element e:kor="CI값" e:length="88" e:padder="SpaceRight" minOccurs="0" name="ciVal" nillable="true" type="string"/>
-            <element e:kor="거래고유번호" e:length="25" e:padder="SpaceRight" minOccurs="0" name="trdInntNo" nillable="true" type="string"/>
-            <element e:kor="기관코드" e:length="10" e:padder="SpaceRight" minOccurs="0" name="istnCd" nillable="true" type="string"/>
-            <element e:kor="정보주체식별코드" e:length="2" e:padder="SpaceRight" minOccurs="0" name="infMagnIdntCd" nillable="true" type="string"/>
+            <element e:kor="CI값" e:length="88" e:padder="SpaceRight" minOccurs="0" name="x-user-ci" nillable="true" type="string"/>
+            <element e:kor="거래고유번호" e:length="25" e:padder="SpaceRight" minOccurs="0" name="x-api-tran-id" nillable="true" type="string"/>
+            <element e:kor="기관코드" e:length="10" e:padder="SpaceRight" minOccurs="0" name="org_code" nillable="true" type="string"/>
+            <element e:kor="정보주체식별코드" e:length="2" e:padder="SpaceRight" minOccurs="0" name="ci_code" nillable="true" type="string"/>
         </sequence>
     </complexType>
     <element name="root" type="ns:MYDCISCTCN0050207_InReq"/>

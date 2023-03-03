@@ -47,13 +47,13 @@
     </complexType>
     <complexType name="MYDCISCTCN0050301_OutReq">
         <sequence>
-            <element e:kor="CI값" e:length="88" e:padder="SpaceRight" minOccurs="0" name="ciVal" nillable="true" type="string"/>
-            <element e:kor="거래고유번호" e:length="25" e:padder="SpaceRight" minOccurs="0" name="trdInntNo" nillable="true" type="string"/>
-            <element e:kor="API구분코드" e:length="12" e:padder="SpaceRight" minOccurs="0" name="apiGbcd" nillable="true" type="string"/>
-            <element e:kor="기관코드" e:length="10" e:padder="SpaceRight" minOccurs="0" name="istnCd" nillable="true" type="string"/>
-            <element e:kor="조회일시" e:length="14" e:padder="ZeroLeft" minOccurs="0" name="qryDtm" nillable="true" type="long"/>
-            <element e:kor="다음KEY" e:length="1000" e:padder="SpaceRight" minOccurs="0" name="nxtKey" nillable="true" type="string"/>
-            <element e:kor="최대조회건수" e:length="3" e:padder="SpaceRight" minOccurs="0" name="maxQryCnt" nillable="true" type="string"/>
+            <element e:kor="종보주체식별값" e:length="88" e:padder="SpaceRight" minOccurs="0" name="x-user-ci" nillable="true" type="string"/>
+            <element e:kor="거래고유번호" e:length="25" e:padder="SpaceRight" minOccurs="0" name="x-api-tran-id" nillable="true" type="string"/>
+            <element e:kor="API유형" e:length="12" e:padder="SpaceRight" minOccurs="0" name="x-api-type" nillable="true" type="string"/>
+            <element e:kor="기관코드" e:length="10" e:padder="SpaceRight" minOccurs="0" name="org_code" nillable="true" type="string"/>
+            <element e:kor="조회타임스탬프" e:length="14" e:padder="ZeroLeft" minOccurs="0" name="search_timestamp" nillable="true" type="long"/>
+            <element e:kor="다음페이지기준개체" e:length="1000" e:padder="SpaceRight" minOccurs="0" name="next_page" nillable="true" type="string"/>
+            <element e:kor="최대조회갯수" e:length="3" e:padder="ZeroLeft" minOccurs="0" name="limit" nillable="true" type="long"/>
         </sequence>
     </complexType>
     <complexType name="rootType">

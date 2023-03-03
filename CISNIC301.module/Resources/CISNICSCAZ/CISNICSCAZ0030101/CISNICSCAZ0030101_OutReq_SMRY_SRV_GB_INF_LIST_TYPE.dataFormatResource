@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jndi:namedResource xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CISNICSCAZ0030101="http://schema.hcis.com/xsd/CISNICSCAZ0030101_OutReq_SMRY_SRV_GB_INF_LIST_TYPE" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" name="CISNICSCAZ/CISNICSCAZ0030101.CISNICSCAZ0030101_OutReq_SMRY_SRV_GB_INF_LIST_TYPE" type="dataformat:DataFormat">
+  <jndi:imports importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/CISNICSCAZ0030101_OutReq_SMRY_SRV_GB_INF_LIST_TYPE_df.xsd" namespace="http://schema.hcis.com/xsd/CISNICSCAZ0030101_OutReq_SMRY_SRV_GB_INF_LIST_TYPE"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="CISNICSCAZ0030101:main" lineLength="11" fieldOffsetsStr="smrySrvGbInf(0,2)&#xA;smryClasCd(2,11)">
+    <fieldOffsets kor="요약서비스구분정보" type="string" name="smrySrvGbInf" start="0" end="2"/>
+    <fieldOffsets kor="요약항목코드" type="string" name="smryClasCd" start="2" end="11"/>
+  </jndi:configuration>
+</jndi:namedResource>

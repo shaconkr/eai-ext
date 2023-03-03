@@ -47,22 +47,22 @@
     </complexType>
     <complexType name="MYDCISCTCN0050301_OutRes">
         <sequence>
-            <element e:kor="거래고유번호" e:length="25" e:padder="SpaceRight" minOccurs="0" name="trdInntNo" nillable="true" type="string"/>
-            <element e:kor="응답코드" e:length="5" e:padder="SpaceRight" minOccurs="0" name="respCd" nillable="true" type="string"/>
-            <element e:kor="응답메시지" e:length="450" e:padder="SpaceRight" minOccurs="0" name="respMsg" nillable="true" type="string"/>
-            <element e:kor="조회일시" e:length="14" e:padder="ZeroLeft" minOccurs="0" name="qryDtm" nillable="true" type="long"/>
-            <element e:kor="다음KEY" e:length="1000" e:padder="SpaceRight" minOccurs="0" name="nxtKey" nillable="true" type="string"/>
-            <element e:kor="보유카드내역_배열건수" e:length="5" e:padder="ZeroLeft" minOccurs="0" name="crdRowcount" nillable="true" type="long"/>
-            <element e:kor="보유카드내역_배열" e:padder="ZeroLeft" maxOccurs="unbounded" minOccurs="0" name="crdList" nillable="true" type="ns:CRD_LIST_TYPE"/>
+            <element e:kor="거래고유번호" e:length="25" e:padder="SpaceRight" minOccurs="0" name="x-api-tran-id" nillable="true" type="string"/>
+            <element e:kor="세부응답코드" e:length="5" e:padder="SpaceRight" minOccurs="0" name="rsp_code" nillable="true" type="string"/>
+            <element e:kor="세부응답메시지" e:length="450" e:padder="SpaceRight" minOccurs="0" name="rsp_msg" nillable="true" type="string"/>
+            <element e:kor="조회타임스탬프" e:length="14" e:padder="ZeroLeft" minOccurs="0" name="search_timestamp" nillable="true" type="long"/>
+            <element e:kor="다음페이지기준개체" e:length="1000" e:padder="SpaceRight" minOccurs="0" name="next_page" nillable="true" type="string"/>
+            <element e:kor="보유카드수" e:length="3" e:padder="ZeroLeft" minOccurs="0" name="card_cnt" nillable="true" type="long"/>
+            <element e:kor="보유카드목록" e:padder="ZeroLeft" maxOccurs="unbounded" minOccurs="0" name="card_list" nillable="true" type="ns:card_list_TYPE"/>
         </sequence>
     </complexType>
-    <complexType name="CRD_LIST_TYPE">
+    <complexType name="card_list_TYPE">
         <sequence>
-            <element e:kor="카드ID" e:length="64" e:padder="SpaceRight" minOccurs="0" name="crdId" nillable="true" type="string"/>
-            <element e:kor="카드번호" e:length="19" e:padder="SpaceRight" minOccurs="0" name="crdNo" nillable="true" type="string"/>
-            <element e:kor="카드상품명" e:length="300" e:padder="SpaceRight" minOccurs="0" name="crdItemNm" nillable="true" type="string"/>
-            <element e:kor="본인가족구분코드" e:length="1" e:padder="ZeroLeft" minOccurs="0" name="selfFamlGbcd" nillable="true" type="long"/>
-            <element e:kor="카드유형코드" e:length="2" e:padder="SpaceRight" minOccurs="0" name="crdTypeCd" nillable="true" type="string"/>
+            <element e:kor="카드식별자" e:length="64" e:padder="SpaceRight" minOccurs="0" name="card_id" nillable="true" type="string"/>
+            <element e:kor="카드번호" e:length="19" e:padder="SpaceRight" minOccurs="0" name="card_num" nillable="true" type="string"/>
+            <element e:kor="카드상품명" e:length="300" e:padder="SpaceRight" minOccurs="0" name="card_name" nillable="true" type="string"/>
+            <element e:kor="본인가족구분코드" e:length="1" e:padder="ZeroLeft" minOccurs="0" name="card_member" nillable="true" type="long"/>
+            <element e:kor="카드구분코드" e:length="2" e:padder="SpaceRight" minOccurs="0" name="card_type" nillable="true" type="string"/>
         </sequence>
     </complexType>
     <complexType name="rootType">

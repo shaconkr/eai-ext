@@ -21,11 +21,7 @@
           "in" : "body",
           "description" : "",
           "schema" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/root",
-              "uniqueItems" : false
-            }
+            "$ref" : "#/definitions/root"
           },
           "required" : true
         }, {

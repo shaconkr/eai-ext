@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jndi:namedResource xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CISNICSCAZ0030101="http://schema.hcis.com/xsd/CISNICSCAZ0030101_OutReq_Header" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" name="CISNICSCAZ/CISNICSCAZ0030101.CISNICSCAZ0030101_OutReq_Header" type="dataformat:DataFormat">
+  <jndi:imports importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/CISNICSCAZ0030101_OutReq_Header_df.xsd" namespace="http://schema.hcis.com/xsd/CISNICSCAZ0030101_OutReq_Header"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="CISNICSCAZ0030101:main" lineLength="35" fieldOffsetsStr="trNo(0,9)&#xA;tgrmGrpCd(9,18)&#xA;trdSubCCd(18,22)&#xA;trdGbcd(22,27)&#xA;tnrGb(27,28)&#xA;teGb(28,31)&#xA;respCd(31,35)">
+    <fieldOffsets kor="TR번호" type="string" name="trNo" start="0" end="9"/>
+    <fieldOffsets kor="전문그룹코드" type="string" name="tgrmGrpCd" start="9" end="18"/>
+    <fieldOffsets kor="거래종별코드" type="string" name="trdSubCCd" start="18" end="22"/>
+    <fieldOffsets kor="거래구분코드" type="string" name="trdGbcd" start="22" end="27"/>
+    <fieldOffsets kor="송신수신구분" type="string" name="tnrGb" start="27" end="28"/>
+    <fieldOffsets kor="단말기구분코드" type="string" name="teGb" start="28" end="31"/>
+    <fieldOffsets kor="응답코드" type="string" name="respCd" start="31" end="35"/>
+  </jndi:configuration>
+</jndi:namedResource>

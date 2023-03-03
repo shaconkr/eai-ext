@@ -47,17 +47,17 @@
     </complexType>
     <complexType name="MYDCISCTCN0050401_OutRes">
         <sequence>
-            <element e:kor="거래고유번호" e:length="25" e:padder="SpaceRight" minOccurs="0" name="trdInntNo" nillable="true" type="string"/>
-            <element e:kor="응답코드" e:length="5" e:padder="SpaceRight" minOccurs="0" name="respCd" nillable="true" type="string"/>
-            <element e:kor="응답메시지" e:length="450" e:padder="SpaceRight" minOccurs="0" name="respMsg" nillable="true" type="string"/>
-            <element e:kor="조회일시" e:length="14" e:padder="ZeroLeft" minOccurs="0" name="qryDtm" nillable="true" type="long"/>
-            <element e:kor="교통카드여부" e:length="1" e:padder="SpaceRight" minOccurs="0" name="trfcCrdYn" nillable="true" type="string"/>
-            <element e:kor="현금카드여부" e:length="1" e:padder="SpaceRight" minOccurs="0" name="cashCrdYn" nillable="true" type="string"/>
-            <element e:kor="결제은행코드" e:length="8" e:padder="SpaceRight" minOccurs="0" name="stlmBankCd" nillable="true" type="string"/>
-            <element e:kor="결제계좌번호" e:length="20" e:padder="SpaceRight" minOccurs="0" name="stlmAcno" nillable="true" type="string"/>
-            <element e:kor="카드브랜드코드" e:length="3" e:padder="SpaceRight" minOccurs="0" name="crdBrndCd" nillable="true" type="string"/>
-            <element e:kor="연회비금액" e:length="15" e:padder="ZeroLeft" minOccurs="0" name="anfeAmt" nillable="true" type="decimal"/>
-            <element e:kor="발급일자" e:length="8" e:padder="SpaceRight" minOccurs="0" name="issuDt" nillable="true" type="string"/>
+            <element e:kor="거래고유번호" e:length="25" e:padder="SpaceRight" minOccurs="0" name="x-api-tran-id" nillable="true" type="string"/>
+            <element e:kor="세부응답코드" e:length="5" e:padder="SpaceRight" minOccurs="0" name="rsp_code" nillable="true" type="string"/>
+            <element e:kor="세부응답메시지" e:length="450" e:padder="SpaceRight" minOccurs="0" name="rsp_msg" nillable="true" type="string"/>
+            <element e:kor="조회타임스탬프" e:length="14" e:padder="ZeroLeft" minOccurs="0" name="search_timestamp" nillable="true" type="long"/>
+            <element e:kor="교통기능여부" e:length="5" e:padder="SpaceRight" minOccurs="0" name="is_trans_payable" nillable="true" type="string"/>
+            <element e:kor="현금카드기능여부" e:length="5" e:padder="SpaceRight" minOccurs="0" name="is_cash_card" nillable="true" type="string"/>
+            <element e:kor="결제은행코드" e:length="8" e:padder="SpaceRight" minOccurs="0" name="linked_bank_code" nillable="true" type="string"/>
+            <element e:kor="결제계좌번호" e:length="20" e:padder="SpaceRight" minOccurs="0" name="account_num" nillable="true" type="string"/>
+            <element e:kor="카드브랜드코드" e:length="3" e:padder="SpaceRight" minOccurs="0" name="card_brand" nillable="true" type="string"/>
+            <element e:kor="상품연회비" e:length="15" e:padder="ZeroLeft" minOccurs="0" name="annual_fee" nillable="true" type="long"/>
+            <element e:kor="발급일자" e:length="8" e:padder="SpaceRight" minOccurs="0" name="issue_date" nillable="true" type="string"/>
         </sequence>
     </complexType>
     <complexType name="rootType">

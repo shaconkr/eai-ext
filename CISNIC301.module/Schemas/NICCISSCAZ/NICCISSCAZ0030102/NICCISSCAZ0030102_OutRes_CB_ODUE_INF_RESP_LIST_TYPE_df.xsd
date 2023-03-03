@@ -1,0 +1,31 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:e="http://shacon.kr/xsd" xmlns:ns="http://schema.hcis.com/xsd/NICCISSCAZ0030102_OutRes_CB_ODUE_INF_RESP_LIST_TYPE" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://schema.hcis.com/xsd/NICCISSCAZ0030102_OutRes_CB_ODUE_INF_RESP_LIST_TYPE">
+    <element name="root" type="ns:CB_ODUE_INF_RESP_LIST_TYPE"/>
+    <complexType name="CB_ODUE_INF_RESP_LIST_TYPE">
+        <sequence>
+            <element e:kor="정보구분" e:length="2" e:padder="SpaceRight" minOccurs="0" name="infGb" nillable="true" type="string"/>
+            <element e:kor="발생기관명" e:length="30" e:padder="SpaceRight" minOccurs="0" name="ocrnIstnNm" nillable="true" type="string"/>
+            <element e:kor="발생지점명" e:length="30" e:padder="SpaceRight" minOccurs="0" name="ocrnBrnNm" nillable="true" type="string"/>
+            <element e:kor="발생기관업계코드" e:length="2" e:padder="SpaceRight" minOccurs="0" name="ocrnIstnIndrCd" nillable="true" type="string"/>
+            <element e:kor="발생업체코드" e:length="7" e:padder="SpaceRight" minOccurs="0" name="ocrnCustCd" nillable="true" type="string"/>
+            <element e:kor="발생기관점코드" e:length="9" e:padder="SpaceRight" minOccurs="0" name="ocrnIstnStoreCd" nillable="true" type="string"/>
+            <element e:kor="상품코드" e:length="3" e:padder="SpaceRight" minOccurs="0" name="itemCd" nillable="true" type="string"/>
+            <element e:kor="특수상품코드" e:length="2" e:padder="SpaceRight" minOccurs="0" name="spclItemCd" nillable="true" type="string"/>
+            <element e:kor="한도" e:length="9" e:padder="ZeroLeft" minOccurs="0" name="bnds" nillable="true" type="long"/>
+            <element e:kor="최초연체발생일" e:length="8" e:padder="SpaceRight" minOccurs="0" name="frstOdueOcrnDt" nillable="true" type="string"/>
+            <element e:kor="최초연체금액" e:length="9" e:padder="ZeroLeft" minOccurs="0" name="frstOdueAmt" nillable="true" type="long"/>
+            <element e:kor="연체발생일자" e:length="8" e:padder="SpaceRight" minOccurs="0" name="odueOcrnDt" nillable="true" type="string"/>
+            <element e:kor="연체발생등록일자" e:length="8" e:padder="SpaceRight" minOccurs="0" name="odueOcrnRegDt" nillable="true" type="string"/>
+            <element e:kor="연체금액" e:length="9" e:padder="ZeroLeft" minOccurs="0" name="odueAmt" nillable="true" type="long"/>
+            <element e:kor="잔액" e:length="9" e:padder="ZeroLeft" minOccurs="0" name="blnc" nillable="true" type="long"/>
+            <element e:kor="연체구분코드" e:length="2" e:padder="SpaceRight" minOccurs="0" name="odueGbcd" nillable="true" type="string"/>
+            <element e:kor="등록구분사유코드" e:length="2" e:padder="SpaceRight" minOccurs="0" name="regGbRsnCd" nillable="true" type="string"/>
+            <element e:kor="연체해제일" e:length="8" e:padder="SpaceRight" minOccurs="0" name="odueClerDt" nillable="true" type="string"/>
+            <element e:kor="연체해제등록일" e:length="8" e:padder="SpaceRight" minOccurs="0" name="odueClerRegDt" nillable="true" type="string"/>
+            <element e:kor="지점전화번호지역" e:length="4" e:padder="SpaceRight" minOccurs="0" name="brnTelnoArea" nillable="true" type="string"/>
+            <element e:kor="지점전화번호국번" e:length="4" e:padder="SpaceRight" minOccurs="0" name="brnTelnoDlng" nillable="true" type="string"/>
+            <element e:kor="지점전화번호번호" e:length="4" e:padder="SpaceRight" minOccurs="0" name="brnTelnoNo" nillable="true" type="string"/>
+            <element e:kor="정정청구사실조회중코드" e:length="1" e:padder="SpaceRight" minOccurs="0" name="crctReqActlyQryMCd" nillable="true" type="string"/>
+            <element e:kor="공백값" e:length="22" e:padder="SpaceRight" minOccurs="0" name="nullVal" nillable="true" type="string"/>
+        </sequence>
+    </complexType>
+</schema>

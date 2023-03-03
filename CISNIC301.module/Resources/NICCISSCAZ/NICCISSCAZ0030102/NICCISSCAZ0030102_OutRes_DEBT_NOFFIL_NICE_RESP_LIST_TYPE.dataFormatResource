@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jndi:namedResource xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:NICCISSCAZ0030102="http://schema.hcis.com/xsd/NICCISSCAZ0030102_OutRes_DEBT_NOFFIL_NICE_RESP_LIST_TYPE" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" name="NICCISSCAZ/NICCISSCAZ0030102.NICCISSCAZ0030102_OutRes_DEBT_NOFFIL_NICE_RESP_LIST_TYPE" type="dataformat:DataFormat">
+  <jndi:imports importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/NICCISSCAZ0030102_OutRes_DEBT_NOFFIL_NICE_RESP_LIST_TYPE_df.xsd" namespace="http://schema.hcis.com/xsd/NICCISSCAZ0030102_OutRes_DEBT_NOFFIL_NICE_RESP_LIST_TYPE"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="NICCISSCAZ0030102:main" lineLength="100" fieldOffsetsStr="infGb(0,2)&#xA;odueRsnCd(2,6)&#xA;ocrnIstnNm(6,36)&#xA;ocrnBrnNm(36,56)&#xA;ocrnIstnIndrCd(56,58)&#xA;ocrnIstnCd(58,65)&#xA;ocrnDt(65,73)&#xA;offrDt(73,81)&#xA;regAmt(81,90)&#xA;crctReqActlyQryMCd(90,91)&#xA;nullVal(91,100)">
+    <fieldOffsets kor="정보구분" type="string" name="infGb" start="0" end="2"/>
+    <fieldOffsets kor="연체사유코드" type="string" name="odueRsnCd" start="2" end="6"/>
+    <fieldOffsets kor="발생기관명" type="string" name="ocrnIstnNm" start="6" end="36"/>
+    <fieldOffsets kor="발생지점명" type="string" name="ocrnBrnNm" start="36" end="56"/>
+    <fieldOffsets kor="발생기관업계코드" type="string" name="ocrnIstnIndrCd" start="56" end="58"/>
+    <fieldOffsets kor="발생기관코드" type="string" name="ocrnIstnCd" start="58" end="65"/>
+    <fieldOffsets kor="발생일자" type="string" name="ocrnDt" start="65" end="73"/>
+    <fieldOffsets kor="제공일자" type="string" name="offrDt" start="73" end="81"/>
+    <fieldOffsets kor="등록금액" type="long" name="regAmt" start="81" end="90"/>
+    <fieldOffsets kor="정정청구사실조회중코드" type="string" name="crctReqActlyQryMCd" start="90" end="91"/>
+    <fieldOffsets kor="공백값" type="string" name="nullVal" start="91" end="100"/>
+  </jndi:configuration>
+</jndi:namedResource>

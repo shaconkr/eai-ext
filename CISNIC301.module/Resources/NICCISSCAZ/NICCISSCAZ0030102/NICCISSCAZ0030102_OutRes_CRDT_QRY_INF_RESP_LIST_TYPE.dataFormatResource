@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jndi:namedResource xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:NICCISSCAZ0030102="http://schema.hcis.com/xsd/NICCISSCAZ0030102_OutRes_CRDT_QRY_INF_RESP_LIST_TYPE" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" name="NICCISSCAZ/NICCISSCAZ0030102.NICCISSCAZ0030102_OutRes_CRDT_QRY_INF_RESP_LIST_TYPE" type="dataformat:DataFormat">
+  <jndi:imports importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/NICCISSCAZ0030102_OutRes_CRDT_QRY_INF_RESP_LIST_TYPE_df.xsd" namespace="http://schema.hcis.com/xsd/NICCISSCAZ0030102_OutRes_CRDT_QRY_INF_RESP_LIST_TYPE"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="NICCISSCAZ0030102:main" lineLength="80" fieldOffsetsStr="infGb(0,2)&#xA;qryDt(2,10)&#xA;qryIstnNm(10,40)&#xA;qryBrnNm(40,60)&#xA;ocrnIstnIndrCd(60,62)&#xA;qryCustCd(62,69)&#xA;qryRsnCd(69,71)&#xA;qryInfGb(71,72)&#xA;nullVal(72,80)">
+    <fieldOffsets kor="정보구분" type="string" name="infGb" start="0" end="2"/>
+    <fieldOffsets kor="조회일자" type="string" name="qryDt" start="2" end="10"/>
+    <fieldOffsets kor="조회기관명" type="string" name="qryIstnNm" start="10" end="40"/>
+    <fieldOffsets kor="조회지점명" type="string" name="qryBrnNm" start="40" end="60"/>
+    <fieldOffsets kor="발생기관업계코드" type="string" name="ocrnIstnIndrCd" start="60" end="62"/>
+    <fieldOffsets kor="조회업체코드" type="string" name="qryCustCd" start="62" end="69"/>
+    <fieldOffsets kor="조회사유코드" type="string" name="qryRsnCd" start="69" end="71"/>
+    <fieldOffsets kor="조회정보구분" type="string" name="qryInfGb" start="71" end="72"/>
+    <fieldOffsets kor="공백값" type="string" name="nullVal" start="72" end="80"/>
+  </jndi:configuration>
+</jndi:namedResource>

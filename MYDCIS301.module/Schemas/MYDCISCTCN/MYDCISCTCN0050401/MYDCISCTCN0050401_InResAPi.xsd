@@ -1,0 +1,17 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:e="http://shacon.kr/xsd" xmlns:ns="http://schema.hcis.com/xsd/MYDCISCTCN0050401_InResApi" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.hcis.com/xsd/MYDCISCTCN0050401_InResApi">
+    <complexType name="MYDCISCTCN0050401_InResApi">
+        <sequence>
+            <element e:kor="세부응답코드" e:length="5" e:padder="SpaceRight" minOccurs="0" name="rsp_code" nillable="true" type="string"/>
+            <element e:kor="세부응답메시지" e:length="450" e:padder="SpaceRight" minOccurs="0" name="rsp_msg" nillable="true" type="string"/>
+            <element e:kor="조회타임스탬프" e:length="14" e:padder="ZeroLeft" minOccurs="0" name="search_timestamp" nillable="true" type="long"/>
+            <element e:kor="교통기능여부" e:length="1" e:padder="SpaceRight" minOccurs="0" name="is_trans_payable" nillable="true" type="string"/>
+            <element e:kor="현금카드기능여부" e:length="1" e:padder="SpaceRight" minOccurs="0" name="is_cash_card" nillable="true" type="string"/>
+            <element e:kor="결제은행코드" e:length="8" e:padder="SpaceRight" minOccurs="0" name="linked_bank_code" nillable="true" type="string"/>
+            <element e:kor="결제계좌번호" e:length="20" e:padder="SpaceRight" minOccurs="0" name="account_num" nillable="true" type="string"/>
+            <element e:kor="카드브랜드코드" e:length="3" e:padder="SpaceRight" minOccurs="0" name="card_brand" nillable="true" type="string"/>
+            <element e:kor="상품연회비" e:length="15" e:padder="ZeroLeft" minOccurs="0" name="annual_fee" nillable="true" type="decimal"/>
+            <element e:kor="발급일자" e:length="8" e:padder="SpaceRight" minOccurs="0" name="issue_date" nillable="true" type="string"/>
+        </sequence>
+    </complexType>
+    <element name="root" type="ns:MYDCISCTCN0050401_InResApi"/>
+</schema>

@@ -1,15 +1,15 @@
 <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:e="http://shacon.kr/xsd" xmlns:ns="http://schema.hcis.com/xsd/MYDCISCTCN0050601_InReq" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.hcis.com/xsd/MYDCISCTCN0050601_InReq">
     <complexType name="MYDCISCTCN0050601_InReq">
         <sequence>
-            <element e:kor="CI값" e:length="88" e:padder="SpaceRight" minOccurs="0" name="ciVal" nillable="true" type="string"/>
-            <element e:kor="거래고유번호" e:length="25" e:padder="SpaceRight" minOccurs="0" name="trdInntNo" nillable="true" type="string"/>
-            <element e:kor="API구분코드" e:length="12" e:padder="SpaceRight" minOccurs="0" name="apiGbcd" nillable="true" type="string"/>
-            <element e:kor="기관코드" e:length="10" e:padder="SpaceRight" minOccurs="0" name="istnCd" nillable="true" type="string"/>
-            <element e:kor="가맹점정보전송여부" e:length="1" e:padder="SpaceRight" minOccurs="0" name="frcsInfSendYn" nillable="true" type="string"/>
-            <element e:kor="결제순번" e:length="30" e:padder="SpaceRight" minOccurs="0" name="stlmSeq" nillable="true" type="string"/>
-            <element e:kor="청구년월" e:length="6" e:padder="SpaceRight" minOccurs="0" name="reqYm" nillable="true" type="string"/>
-            <element e:kor="다음KEY" e:length="1000" e:padder="SpaceRight" minOccurs="0" name="nxtKey" nillable="true" type="string"/>
-            <element e:kor="최대조회건수" e:length="3" e:padder="SpaceRight" minOccurs="0" name="maxQryCnt" nillable="true" type="string"/>
+            <element e:kor="CI값" e:length="88" e:padder="SpaceRight" minOccurs="0" name="x-user-ci" nillable="true" type="string"/>
+            <element e:kor="거래고유번호" e:length="25" e:padder="SpaceRight" minOccurs="0" name="x-api-tran-id" nillable="true" type="string"/>
+            <element e:kor="API구분코드" e:length="12" e:padder="SpaceRight" minOccurs="0" name="x-api-type" nillable="true" type="string"/>
+            <element e:kor="기관코드" e:length="10" e:padder="SpaceRight" minOccurs="0" name="org_code" nillable="true" type="string"/>
+            <element e:kor="가맹점정보전송여부" e:length="5" e:padder="SpaceRight" minOccurs="0" name="is_merchant_info" nillable="true" type="string"/>
+            <element e:kor="결제순번" e:length="30" e:padder="SpaceRight" minOccurs="0" name="seqno" nillable="true" type="string"/>
+            <element e:kor="청구년월" e:length="6" e:padder="SpaceRight" minOccurs="0" name="charge_month" nillable="true" type="string"/>
+            <element e:kor="다음KEY" e:length="1000" e:padder="SpaceRight" minOccurs="0" name="next_page" nillable="true" type="string"/>
+            <element e:kor="최대조회건수" e:length="3" e:padder="ZeroLeft" minOccurs="0" name="limit" nillable="true" type="long"/>
         </sequence>
     </complexType>
     <element name="root" type="ns:MYDCISCTCN0050601_InReq"/>

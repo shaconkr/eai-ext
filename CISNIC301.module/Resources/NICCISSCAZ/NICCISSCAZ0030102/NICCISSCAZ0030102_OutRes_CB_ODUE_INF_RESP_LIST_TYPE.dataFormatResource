@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jndi:namedResource xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:NICCISSCAZ0030102="http://schema.hcis.com/xsd/NICCISSCAZ0030102_OutRes_CB_ODUE_INF_RESP_LIST_TYPE" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" name="NICCISSCAZ/NICCISSCAZ0030102.NICCISSCAZ0030102_OutRes_CB_ODUE_INF_RESP_LIST_TYPE" type="dataformat:DataFormat">
+  <jndi:imports importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/NICCISSCAZ0030102_OutRes_CB_ODUE_INF_RESP_LIST_TYPE_df.xsd" namespace="http://schema.hcis.com/xsd/NICCISSCAZ0030102_OutRes_CB_ODUE_INF_RESP_LIST_TYPE"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="NICCISSCAZ0030102:main" lineLength="200" fieldOffsetsStr="infGb(0,2)&#xA;ocrnIstnNm(2,32)&#xA;ocrnBrnNm(32,62)&#xA;ocrnIstnIndrCd(62,64)&#xA;ocrnCustCd(64,71)&#xA;ocrnIstnStoreCd(71,80)&#xA;itemCd(80,83)&#xA;spclItemCd(83,85)&#xA;bnds(85,94)&#xA;frstOdueOcrnDt(94,102)&#xA;frstOdueAmt(102,111)&#xA;odueOcrnDt(111,119)&#xA;odueOcrnRegDt(119,127)&#xA;odueAmt(127,136)&#xA;blnc(136,145)&#xA;odueGbcd(145,147)&#xA;regGbRsnCd(147,149)&#xA;odueClerDt(149,157)&#xA;odueClerRegDt(157,165)&#xA;brnTelnoArea(165,169)&#xA;brnTelnoDlng(169,173)&#xA;brnTelnoNo(173,177)&#xA;crctReqActlyQryMCd(177,178)&#xA;nullVal(178,200)">
+    <fieldOffsets kor="정보구분" type="string" name="infGb" start="0" end="2"/>
+    <fieldOffsets kor="발생기관명" type="string" name="ocrnIstnNm" start="2" end="32"/>
+    <fieldOffsets kor="발생지점명" type="string" name="ocrnBrnNm" start="32" end="62"/>
+    <fieldOffsets kor="발생기관업계코드" type="string" name="ocrnIstnIndrCd" start="62" end="64"/>
+    <fieldOffsets kor="발생업체코드" type="string" name="ocrnCustCd" start="64" end="71"/>
+    <fieldOffsets kor="발생기관점코드" type="string" name="ocrnIstnStoreCd" start="71" end="80"/>
+    <fieldOffsets kor="상품코드" type="string" name="itemCd" start="80" end="83"/>
+    <fieldOffsets kor="특수상품코드" type="string" name="spclItemCd" start="83" end="85"/>
+    <fieldOffsets kor="한도" type="long" name="bnds" start="85" end="94"/>
+    <fieldOffsets kor="최초연체발생일" type="string" name="frstOdueOcrnDt" start="94" end="102"/>
+    <fieldOffsets kor="최초연체금액" type="long" name="frstOdueAmt" start="102" end="111"/>
+    <fieldOffsets kor="연체발생일자" type="string" name="odueOcrnDt" start="111" end="119"/>
+    <fieldOffsets kor="연체발생등록일자" type="string" name="odueOcrnRegDt" start="119" end="127"/>
+    <fieldOffsets kor="연체금액" type="long" name="odueAmt" start="127" end="136"/>
+    <fieldOffsets kor="잔액" type="long" name="blnc" start="136" end="145"/>
+    <fieldOffsets kor="연체구분코드" type="string" name="odueGbcd" start="145" end="147"/>
+    <fieldOffsets kor="등록구분사유코드" type="string" name="regGbRsnCd" start="147" end="149"/>
+    <fieldOffsets kor="연체해제일" type="string" name="odueClerDt" start="149" end="157"/>
+    <fieldOffsets kor="연체해제등록일" type="string" name="odueClerRegDt" start="157" end="165"/>
+    <fieldOffsets kor="지점전화번호지역" type="string" name="brnTelnoArea" start="165" end="169"/>
+    <fieldOffsets kor="지점전화번호국번" type="string" name="brnTelnoDlng" start="169" end="173"/>
+    <fieldOffsets kor="지점전화번호번호" type="string" name="brnTelnoNo" start="173" end="177"/>
+    <fieldOffsets kor="정정청구사실조회중코드" type="string" name="crctReqActlyQryMCd" start="177" end="178"/>
+    <fieldOffsets kor="공백값" type="string" name="nullVal" start="178" end="200"/>
+  </jndi:configuration>
+</jndi:namedResource>

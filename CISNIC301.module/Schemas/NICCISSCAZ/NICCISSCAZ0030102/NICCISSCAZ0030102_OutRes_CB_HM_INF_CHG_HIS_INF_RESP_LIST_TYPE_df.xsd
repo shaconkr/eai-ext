@@ -1,0 +1,15 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:e="http://shacon.kr/xsd" xmlns:ns="http://schema.hcis.com/xsd/NICCISSCAZ0030102_OutRes_CB_HM_INF_CHG_HIS_INF_RESP_LIST_TYPE" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://schema.hcis.com/xsd/NICCISSCAZ0030102_OutRes_CB_HM_INF_CHG_HIS_INF_RESP_LIST_TYPE">
+    <element name="root" type="ns:CB_HM_INF_CHG_HIS_INF_RESP_LIST_TYPE"/>
+    <complexType name="CB_HM_INF_CHG_HIS_INF_RESP_LIST_TYPE">
+        <sequence>
+            <element e:kor="정보구분" e:length="2" e:padder="SpaceRight" minOccurs="0" name="infGb" nillable="true" type="string"/>
+            <element e:kor="등록일" e:length="8" e:padder="SpaceRight" minOccurs="0" name="regDt" nillable="true" type="string"/>
+            <element e:kor="자택우편번호" e:length="6" e:padder="SpaceRight" minOccurs="0" name="hmPostNo" nillable="true" type="string"/>
+            <element e:kor="자택주소1" e:length="50" e:padder="SpaceRight" minOccurs="0" name="hmAdr1" nillable="true" type="string"/>
+            <element e:kor="자택주소2" e:length="40" e:padder="SpaceRight" minOccurs="0" name="hmAdr2" nillable="true" type="string"/>
+            <element e:kor="자택전화번호" e:length="12" e:padder="SpaceRight" minOccurs="0" name="hmTelno" nillable="true" type="string"/>
+            <element e:kor="휴대폰번호" e:length="12" e:padder="SpaceRight" minOccurs="0" name="mphonNo" nillable="true" type="string"/>
+            <element e:kor="공백값" e:length="20" e:padder="SpaceRight" minOccurs="0" name="nullVal" nillable="true" type="string"/>
+        </sequence>
+    </complexType>
+</schema>

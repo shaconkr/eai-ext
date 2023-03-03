@@ -1,0 +1,9 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:e="http://shacon.kr/xsd" xmlns:ns="http://schema.hcis.com/xsd/CISNICSCAZ0030101_OutReq_SMRY_SRV_GB_INF_LIST_TYPE" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://schema.hcis.com/xsd/CISNICSCAZ0030101_OutReq_SMRY_SRV_GB_INF_LIST_TYPE">
+    <element name="root" type="ns:SMRY_SRV_GB_INF_LIST_TYPE"/>
+    <complexType name="SMRY_SRV_GB_INF_LIST_TYPE">
+        <sequence>
+            <element e:kor="요약서비스구분정보" e:length="2" e:padder="SpaceRight" minOccurs="0" name="smrySrvGbInf" nillable="true" type="string"/>
+            <element e:kor="요약항목코드" e:length="9" e:padder="SpaceRight" minOccurs="0" name="smryClasCd" nillable="true" type="string"/>
+        </sequence>
+    </complexType>
+</schema>

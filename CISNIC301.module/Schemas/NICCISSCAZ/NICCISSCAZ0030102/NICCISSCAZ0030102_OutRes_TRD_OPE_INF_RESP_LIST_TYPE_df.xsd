@@ -1,0 +1,18 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:e="http://shacon.kr/xsd" xmlns:ns="http://schema.hcis.com/xsd/NICCISSCAZ0030102_OutRes_TRD_OPE_INF_RESP_LIST_TYPE" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://schema.hcis.com/xsd/NICCISSCAZ0030102_OutRes_TRD_OPE_INF_RESP_LIST_TYPE">
+    <element name="root" type="ns:TRD_OPE_INF_RESP_LIST_TYPE"/>
+    <complexType name="TRD_OPE_INF_RESP_LIST_TYPE">
+        <sequence>
+            <element e:kor="정보구분" e:length="2" e:padder="SpaceRight" minOccurs="0" name="infGb" nillable="true" type="string"/>
+            <element e:kor="사유코드" e:length="4" e:padder="SpaceRight" minOccurs="0" name="rsnCd" nillable="true" type="string"/>
+            <element e:kor="발생기관명" e:length="30" e:padder="SpaceRight" minOccurs="0" name="ocrnIstnNm" nillable="true" type="string"/>
+            <element e:kor="발생지점명" e:length="20" e:padder="SpaceRight" minOccurs="0" name="ocrnBrnNm" nillable="true" type="string"/>
+            <element e:kor="발생기관업계코드" e:length="2" e:padder="SpaceRight" minOccurs="0" name="ocrnIstnIndrCd" nillable="true" type="string"/>
+            <element e:kor="발생업체코드" e:length="7" e:padder="SpaceRight" minOccurs="0" name="ocrnCustCd" nillable="true" type="string"/>
+            <element e:kor="개설일자" e:length="8" e:padder="SpaceRight" minOccurs="0" name="opeDt" nillable="true" type="string"/>
+            <element e:kor="만기일자" e:length="8" e:padder="SpaceRight" minOccurs="0" name="expirDt" nillable="true" type="string"/>
+            <element e:kor="개설금액" e:length="9" e:padder="ZeroLeft" minOccurs="0" name="opeAmt" nillable="true" type="long"/>
+            <element e:kor="사유구분관련자구분" e:length="1" e:padder="SpaceRight" minOccurs="0" name="rsnGbInvlvpGb" nillable="true" type="string"/>
+            <element e:kor="공백값" e:length="9" e:padder="SpaceRight" minOccurs="0" name="nullVal" nillable="true" type="string"/>
+        </sequence>
+    </complexType>
+</schema>

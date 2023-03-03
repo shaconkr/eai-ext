@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jndi:namedResource xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:NICCISSCAZ0030102="http://schema.hcis.com/xsd/NICCISSCAZ0030102_OutRes_Body" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" name="NICCISSCAZ/NICCISSCAZ0030102.NICCISSCAZ0030102_OutRes_Body" type="dataformat:DataFormat">
+  <jndi:imports importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/NICCISSCAZ0030102_OutRes_Body_df.xsd" namespace="http://schema.hcis.com/xsd/NICCISSCAZ0030102_OutRes_Body"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="NICCISSCAZ0030102:main" lineLength="205" fieldOffsetsStr="istnId(0,9)&#xA;istnTgrmMngNo(9,19)&#xA;istnTgrmSendTime(19,33)&#xA;niceTgrmMngNo(33,43)&#xA;niceTgrmSendTime(43,57)&#xA;prmrBmp(57,73)&#xA;nullVal(73,74)&#xA;psnCorpGbcd(74,75)&#xA;rrno(75,88)&#xA;infCnscGb(88,89)&#xA;reReqnCnt(89,91)&#xA;fnmNm(91,103)&#xA;certNo(103,115)&#xA;addInfGb(115,125)&#xA;prepFld1(125,125)&#xA;prepFld2(125,125)&#xA;prepFld3(125,125)&#xA;prepFld4(125,125)&#xA;prepFld5(125,125)&#xA;prepFld6(125,125)&#xA;prepFld7(125,125)&#xA;prepFld8(125,125)&#xA;prepFld9(125,125)&#xA;prepFld10(125,125)&#xA;debtNoffilKcrTotCnt(125,128)&#xA;debtNoffilKcrRespCnt(128,130)&#xA;debtNoffilNiceTotCnt(130,133)&#xA;debtNoffilNiceRespCnt(133,135)&#xA;trdOpeInfTotCnt(135,138)&#xA;trdOpeInfRespCnt(138,140)&#xA;crdtQryInfTotCnt(140,143)&#xA;crdtQryInfRespCnt(143,145)&#xA;cbOdueInfTotCnt(145,148)&#xA;cbOdueInfRespCnt(148,150)&#xA;cbHmInfChgHisInfTotCnt(150,153)&#xA;cbHmInfChgHisInfRespCnt(153,155)&#xA;cbOfcInfChgHisInfTotCnt(155,158)&#xA;cbOfcInfChgHisRespCnt(158,160)&#xA;smryInfTotCnt(160,163)&#xA;smryInfRespCnt(163,165)&#xA;debtNoffilKcrRespRowcount(165,170)&#xA;debtNoffilKcrRespList(170,170)&#xA;debtNoffilNiceRespRowcount(170,175)&#xA;debtNoffilNiceRespList(175,175)&#xA;trdOpeInfRespRowcount(175,180)&#xA;trdOpeInfRespList(180,180)&#xA;crdtQryInfRespRowcount(180,185)&#xA;crdtQryInfRespList(185,185)&#xA;cbOdueInfRespRowcount(185,190)&#xA;cbOdueInfRespList(190,190)&#xA;cbHmInfChgHisInfRespRowcount(190,195)&#xA;cbHmInfChgHisInfRespList(195,195)&#xA;cbOfcInfChgHisRespRowcount(195,200)&#xA;cbOfcInfChgHisRespList(200,200)&#xA;smryInfRespRowcount(200,205)&#xA;smryInfRespList(205,205)">
+    <fieldOffsets kor="기관ID" type="string" name="istnId" start="0" end="9"/>
+    <fieldOffsets kor="기관전문관리번호" type="long" name="istnTgrmMngNo" start="9" end="19"/>
+    <fieldOffsets kor="기관전문전송시간" type="long" name="istnTgrmSendTime" start="19" end="33"/>
+    <fieldOffsets kor="NICE전문관리번호" type="long" name="niceTgrmMngNo" start="33" end="43"/>
+    <fieldOffsets kor="NICE전문전송시간" type="long" name="niceTgrmSendTime" start="43" end="57"/>
+    <fieldOffsets kor="주요BITMAP" type="string" name="prmrBmp" start="57" end="73"/>
+    <fieldOffsets kor="공백값" type="string" name="nullVal" start="73" end="74"/>
+    <fieldOffsets kor="개인법인구분코드" type="long" name="psnCorpGbcd" start="74" end="75"/>
+    <fieldOffsets kor="주민등록번호" type="string" name="rrno" start="75" end="88"/>
+    <fieldOffsets kor="정보연속구분" type="string" name="infCnscGb" start="88" end="89"/>
+    <fieldOffsets kor="재요청횟수" type="long" name="reReqnCnt" start="89" end="91"/>
+    <fieldOffsets kor="성명" type="string" name="fnmNm" start="91" end="103"/>
+    <fieldOffsets kor="인증번호" type="string" name="certNo" start="103" end="115"/>
+    <fieldOffsets kor="부가정보구분" type="string" name="addInfGb" start="115" end="125"/>
+    <fieldOffsets kor="예비필드1" type="string" name="prepFld1" start="125" end="125"/>
+    <fieldOffsets kor="예비필드2" type="string" name="prepFld2" start="125" end="125"/>
+    <fieldOffsets kor="예비필드3" type="string" name="prepFld3" start="125" end="125"/>
+    <fieldOffsets kor="예비필드4" type="string" name="prepFld4" start="125" end="125"/>
+    <fieldOffsets kor="예비필드5" type="string" name="prepFld5" start="125" end="125"/>
+    <fieldOffsets kor="예비필드6" type="string" name="prepFld6" start="125" end="125"/>
+    <fieldOffsets kor="예비필드7" type="string" name="prepFld7" start="125" end="125"/>
+    <fieldOffsets kor="예비필드8" type="string" name="prepFld8" start="125" end="125"/>
+    <fieldOffsets kor="예비필드9" type="string" name="prepFld9" start="125" end="125"/>
+    <fieldOffsets kor="예비필드10" type="string" name="prepFld10" start="125" end="125"/>
+    <fieldOffsets kor="채무불이행신정원총건수" type="string" name="debtNoffilKcrTotCnt" start="125" end="128"/>
+    <fieldOffsets kor="채무불이행신정원응답건수" type="long" name="debtNoffilKcrRespCnt" start="128" end="130"/>
+    <fieldOffsets kor="채무불이행NICE총건수" type="string" name="debtNoffilNiceTotCnt" start="130" end="133"/>
+    <fieldOffsets kor="채무불이행NICE응답건수" type="long" name="debtNoffilNiceRespCnt" start="133" end="135"/>
+    <fieldOffsets kor="거래개설정보총건수" type="string" name="trdOpeInfTotCnt" start="135" end="138"/>
+    <fieldOffsets kor="거래개설정보응답건수" type="long" name="trdOpeInfRespCnt" start="138" end="140"/>
+    <fieldOffsets kor="신용조회정보총건수" type="string" name="crdtQryInfTotCnt" start="140" end="143"/>
+    <fieldOffsets kor="신용조회정보응답건수" type="long" name="crdtQryInfRespCnt" start="143" end="145"/>
+    <fieldOffsets kor="CB연체정보총건수" type="string" name="cbOdueInfTotCnt" start="145" end="148"/>
+    <fieldOffsets kor="CB연체정보응답건수" type="long" name="cbOdueInfRespCnt" start="148" end="150"/>
+    <fieldOffsets kor="CB자택정보변경이력정보총건수" type="string" name="cbHmInfChgHisInfTotCnt" start="150" end="153"/>
+    <fieldOffsets kor="CB자택정보변경이력정보응답건수" type="long" name="cbHmInfChgHisInfRespCnt" start="153" end="155"/>
+    <fieldOffsets kor="CB직장정보변경이력정보총건수" type="string" name="cbOfcInfChgHisInfTotCnt" start="155" end="158"/>
+    <fieldOffsets kor="CB직장정보변경이력응답건수" type="long" name="cbOfcInfChgHisRespCnt" start="158" end="160"/>
+    <fieldOffsets kor="요약정보총건수" type="string" name="smryInfTotCnt" start="160" end="163"/>
+    <fieldOffsets kor="요약정보응답건수" type="long" name="smryInfRespCnt" start="163" end="165"/>
+    <fieldOffsets kor="채무불이행신정원응답_배열건수" type="long" name="debtNoffilKcrRespRowcount" start="165" end="170"/>
+    <fieldOffsets kor="채무불이행신정원응답_배열" type="DEBT_NOFFIL_KCR_RESP_LIST_TYPE" name="debtNoffilKcrRespList" start="170" end="170"/>
+    <fieldOffsets kor="채무불이행NICE응답_배열건수" type="long" name="debtNoffilNiceRespRowcount" start="170" end="175"/>
+    <fieldOffsets kor="채무불이행NICE응답_배열" type="DEBT_NOFFIL_NICE_RESP_LIST_TYPE" name="debtNoffilNiceRespList" start="175" end="175"/>
+    <fieldOffsets kor="거래개설정보응답_배열건수" type="long" name="trdOpeInfRespRowcount" start="175" end="180"/>
+    <fieldOffsets kor="거래개설정보응답_배열" type="TRD_OPE_INF_RESP_LIST_TYPE" name="trdOpeInfRespList" start="180" end="180"/>
+    <fieldOffsets kor="신용조회정보응답_배열건수" type="long" name="crdtQryInfRespRowcount" start="180" end="185"/>
+    <fieldOffsets kor="신용조회정보응답_배열" type="CRDT_QRY_INF_RESP_LIST_TYPE" name="crdtQryInfRespList" start="185" end="185"/>
+    <fieldOffsets kor="CB연체정보응답_배열건수" type="long" name="cbOdueInfRespRowcount" start="185" end="190"/>
+    <fieldOffsets kor="CB연체정보응답_배열" type="CB_ODUE_INF_RESP_LIST_TYPE" name="cbOdueInfRespList" start="190" end="190"/>
+    <fieldOffsets kor="CB자택정보변경이력정보응답_배열건수" type="long" name="cbHmInfChgHisInfRespRowcount" start="190" end="195"/>
+    <fieldOffsets kor="CB자택정보변경이력정보응답_배열" type="CB_HM_INF_CHG_HIS_INF_RESP_LIST_TYPE" name="cbHmInfChgHisInfRespList" start="195" end="195"/>
+    <fieldOffsets kor="CB직장정보변경이력응답_배열건수" type="long" name="cbOfcInfChgHisRespRowcount" start="195" end="200"/>
+    <fieldOffsets kor="CB직장정보변경이력응답_배열" type="CB_OFC_INF_CHG_HIS_RESP_LIST_TYPE" name="cbOfcInfChgHisRespList" start="200" end="200"/>
+    <fieldOffsets kor="요약정보응답_배열건수" type="long" name="smryInfRespRowcount" start="200" end="205"/>
+    <fieldOffsets kor="요약정보응답_배열" type="SMRY_INF_RESP_LIST_TYPE" name="smryInfRespList" start="205" end="205"/>
+  </jndi:configuration>
+</jndi:namedResource>

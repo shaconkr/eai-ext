@@ -57,6 +57,19 @@ public class TossOnline extends EDIParserAndBuilder {
     }
 
 	/**
+	 * TOSS 로부터 Socket 수신한 전문을 EMS 에 Enqueue 하기 위한
+	 * Destination ( Q.TOS + 전문코드(4) + 업무구분(3) ) 
+	 * 
+	 * @param bytes
+	 * @return
+	 * @throws UnsupportedEncodingException
+	 */
+	public String getInboundDestination(byte[] bytes) throws UnsupportedEncodingException {
+		byte[] msgCd_trCd = readBytes(bytes, 58, 7);
+		return "Q.TOS." + new String(msgCd_trCd, TOSS_ENCODING);
+	}	
+	
+	/**
 	 * 비동기 응답전문을 위한 correlation ID
 	 * 
 	 * offset 58 length 21

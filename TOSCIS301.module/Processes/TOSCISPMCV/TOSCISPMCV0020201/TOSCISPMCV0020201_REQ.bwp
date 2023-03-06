@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpws:process exitOnStandardFault="no"
-    name="TOSCISPMCV.TOSCISPMCV0020101.TOSCISPMCV0020101_REQ"
+    name="TOSCISPMCV.TOSCISPMCV0020201.TOSCISPMCV0020201_REQ"
     suppressJoinFailure="yes"
-    targetNamespace="http://xmlns.example.com/20230221164624"
+    targetNamespace="http://xmlns.example.com/20230306134539"
     xmlns:bpws="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
     xmlns:info="http://www.tibco.com/bw/process/info"
     xmlns:ns="http://www.tibco.com/pe/EngineTypes"
@@ -76,6 +76,9 @@
     xmlns:ns7="www.tibco.com/plugin/java/JavaInvokeActivityOutput+fa8e4c1b-5f33-493d-85c4-4bbfcd00517c+JavaInvokeActivityOutput"
     xmlns:ns70="http://schema.hcis.com/xsd/TOSCISPMCV0020101_InReq"
     xmlns:ns71="http://schema.hcis.com/xsd/TOSCISPMCV0020101_OutReq"
+    xmlns:ns72="http://schema.hcis.com/xsd/TOSCISPMCV0020201_InReq"
+    xmlns:ns73="http://schema.hcis.com/xsd/TOSCISPMCV0020201_OutReq"
+    xmlns:ns74="http://schema.hcis.com/xsd/CISTOSPMCV0020202_InRes"
     xmlns:ns8="http://tns.tibco.com/bw/palette/internal/activityerror+fa8e4c1b-5f33-493d-85c4-4bbfcd00517c"
     xmlns:ns9="www.tibco.com/plugin/java/JavaInvokeActivityInput+5fb57cb9-1492-4d88-be6d-185b0073efa5+JavaInvokeActivityInput"
     xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912"
@@ -115,7 +118,6 @@
             <endingVariables>
                 <variable>OUTBOUND-input</variable>
                 <variable>putCISHeader</variable>
-                <variable>EimsInfo</variable>
             </endingVariables>
         </task>
         <task name="Response">
@@ -2408,7 +2410,8 @@
                                     x="429"
                                     xsi:type="notation:Bounds" y="55"/>
                                     </children>
-                                    <children description="가상계좌 수신"
+                                    <children
+                                    description="수취인명조회 수신"
                                     fillColor="13369343"
                                     fontName="맑은 고딕"
                                     lineColor="6737151"
@@ -3375,6 +3378,16 @@
             namespace="http://schema.hcis.com/xsd/JNICISCTIC0330101_OutReq" prefix="ns8"/>
         <tibex:namespaceItem
             namespace="http://schema.hcis.com/xsd/TOSCISPMCV0020101_InReq" prefix="ns9"/>
+        <tibex:namespaceItem
+            namespace="http://schema.hcis.com/xsd/TOSCISPMCV0020201_InReq" prefix="ns10"/>
+        <tibex:namespaceItem
+            namespace="http://schema.hcis.com/xsd/TOSCISPMCV0020101_OutReq" prefix="ns11"/>
+        <tibex:namespaceItem
+            namespace="http://schema.hcis.com/xsd/CISTOSPMCV0020202_InRes" prefix="ns12"/>
+        <tibex:namespaceItem
+            namespace="www.tibco.com/plugin/java/JavaInvokeActivityInput+c2d94a4f-5201-4215-b7e4-c4de84108dfc+JavaInvokeActivityInput" prefix="tns19"/>
+        <tibex:namespaceItem
+            namespace="http://tns.tibco.com/bw/json/1676951614079" prefix="tns20"/>
     </tibex:NamespaceRegistry>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema"
         location="../../../Schemas/TOSCISPMCV/TOSCISPMCV0020101/TOSCISPMCV0020101_OutReq.xsd" namespace="http://schema.hcis.com/xsd/TOSCISPMCV0020101_OutReq"/>
@@ -3383,6 +3396,11 @@
         location="../../../Schemas/TOSCISPMCV/TOSCISPMCV0020101/TOSCISPMCV0020101_InReq.xsd" namespace="http://schema.hcis.com/xsd/TOSCISPMCV0020101_InReq"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.cspi_library.org/Log"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.cspi_library.org/Library"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema"
+        location="../../../Schemas/TOSCISPMCV/TOSCISPMCV0020201/TOSCISPMCV0020201_InReq.xsd" namespace="http://schema.hcis.com/xsd/TOSCISPMCV0020201_InReq"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://schema.hcis.com/xsd/TOSCISPMCV0020201_OutReq"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema"
+        location="../../../Schemas/CISTOSPMCV/CISTOSPMCV0020202/CISTOSPMCV0020202_InRes.xsd" namespace="http://schema.hcis.com/xsd/CISTOSPMCV0020202_InRes"/>
     <bpws:variables>
         <bpws:variable element="ns:ProcessContext"
             name="_processContext" sca-bpel:internal="true"/>
@@ -3439,10 +3457,10 @@
             name="_error_EDILog" sca-bpel:internal="true"/>
         <bpws:variable element="ns34:ActivityInputClass"
             name="InReqXml-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns70:root" name="InReqXml" sca-bpel:internal="true"/>
+        <bpws:variable element="ns72:root" name="InReqXml" sca-bpel:internal="true"/>
         <bpws:variable element="ns13:ActivityErrorData"
             name="_error_InReqXml" sca-bpel:internal="true"/>
-        <bpws:variable element="ns70:root" name="InReqJson-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns72:root" name="InReqJson-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns37:ActivityOutputClass"
             name="InReqJson" sca-bpel:internal="true"/>
         <bpws:variable element="ns20:ActivityErrorData"
@@ -3469,10 +3487,10 @@
         </bpws:variable>
         <bpws:variable element="ns50:ActivityInputClass"
             name="OutReqXml-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns71:root" name="OutReqXml" sca-bpel:internal="true"/>
+        <bpws:variable element="ns73:root" name="OutReqXml" sca-bpel:internal="true"/>
         <bpws:variable element="ns13:ActivityErrorData"
             name="_error_OutReqXml" sca-bpel:internal="true"/>
-        <bpws:variable element="ns71:root" name="OutReqJson-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns73:root" name="OutReqJson-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns51:ActivityOutputClass"
             name="OutReqJson" sca-bpel:internal="true"/>
         <bpws:variable element="ns20:ActivityErrorData"
@@ -3489,7 +3507,7 @@
             name="EimsInfo" sca-bpel:internal="true"/>
         <bpws:variable element="ns13:ActivityErrorData"
             name="_error_EimsInfo" sca-bpel:internal="true"/>
-        <bpws:variable element="ns70:root" name="ReqJsonErr-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns74:root" name="ReqJsonErr-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns57:ActivityOutputClass"
             name="ReqJsonErr" sca-bpel:internal="true"/>
         <bpws:variable element="ns20:ActivityErrorData"
@@ -3566,7 +3584,7 @@
                                 </bpws:sources>
                                 <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:ns9=&quot;http://schema.hcis.com/xsd/TOSCISPMCV0020101_InReq&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;InReqXml&quot;/>&lt;xsl:template name=&quot;ReqJsonErr-input&quot; match=&quot;/&quot;>&lt;ns9:root>&lt;ns9:bizHeader>&lt;xsl:if test=&quot;$InReqXml/ns9:bizHeader/ns9:trCode&quot;>&lt;ns9:trCode>&lt;xsl:copy-of select=&quot;$InReqXml/ns9:bizHeader/ns9:trCode/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$InReqXml/ns9:bizHeader/ns9:trCode&quot;/>&lt;/ns9:trCode>&lt;/xsl:if>&lt;xsl:if test=&quot;$InReqXml/ns9:bizHeader/ns9:svcGb&quot;>&lt;ns9:svcGb>&lt;xsl:copy-of select=&quot;$InReqXml/ns9:bizHeader/ns9:svcGb/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$InReqXml/ns9:bizHeader/ns9:svcGb&quot;/>&lt;/ns9:svcGb>&lt;/xsl:if>&lt;xsl:if test=&quot;$InReqXml/ns9:bizHeader/ns9:sdFlag&quot;>&lt;ns9:sdFlag>&lt;xsl:copy-of select=&quot;$InReqXml/ns9:bizHeader/ns9:sdFlag/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$InReqXml/ns9:bizHeader/ns9:sdFlag&quot;/>&lt;/ns9:sdFlag>&lt;/xsl:if>&lt;xsl:if test=&quot;$InReqXml/ns9:bizHeader/ns9:sdId&quot;>&lt;ns9:sdId>&lt;xsl:copy-of select=&quot;$InReqXml/ns9:bizHeader/ns9:sdId/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$InReqXml/ns9:bizHeader/ns9:sdId&quot;/>&lt;/ns9:sdId>&lt;/xsl:if>&lt;xsl:if test=&quot;$InReqXml/ns9:bizHeader/ns9:rvId&quot;>&lt;ns9:rvId>&lt;xsl:copy-of select=&quot;$InReqXml/ns9:bizHeader/ns9:rvId/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$InReqXml/ns9:bizHeader/ns9:rvId&quot;/>&lt;/ns9:rvId>&lt;/xsl:if>&lt;xsl:if test=&quot;$InReqXml/ns9:bizHeader/ns9:msgId&quot;>&lt;ns9:msgId>&lt;xsl:copy-of select=&quot;$InReqXml/ns9:bizHeader/ns9:msgId/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$InReqXml/ns9:bizHeader/ns9:msgId&quot;/>&lt;/ns9:msgId>&lt;/xsl:if>&lt;xsl:if test=&quot;$InReqXml/ns9:bizHeader/ns9:cpnyCd&quot;>&lt;ns9:cpnyCd>&lt;xsl:copy-of select=&quot;$InReqXml/ns9:bizHeader/ns9:cpnyCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$InReqXml/ns9:bizHeader/ns9:cpnyCd&quot;/>&lt;/ns9:cpnyCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$InReqXml/ns9:bizHeader/ns9:bnkCd&quot;>&lt;ns9:bnkCd>&lt;xsl:copy-of select=&quot;$InReqXml/ns9:bizHeader/ns9:bnkCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$InReqXml/ns9:bizHeader/ns9:bnkCd&quot;/>&lt;/ns9:bnkCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$InReqXml/ns9:bizHeader/ns9:ediCd&quot;>&lt;ns9:ediCd>&lt;xsl:copy-of select=&quot;$InReqXml/ns9:bizHeader/ns9:ediCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$InReqXml/ns9:bizHeader/ns9:ediCd&quot;/>&lt;/ns9:ediCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$InReqXml/ns9:bizHeader/ns9:jobGb&quot;>&lt;ns9:jobGb>&lt;xsl:copy-of select=&quot;$InReqXml/ns9:bizHeader/ns9:jobGb/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$InReqXml/ns9:bizHeader/ns9:jobGb&quot;/>&lt;/ns9:jobGb>&lt;/xsl:if>&lt;xsl:if test=&quot;$InReqXml/ns9:bizHeader/ns9:ediNo&quot;>&lt;ns9:ediNo>&lt;xsl:copy-of select=&quot;$InReqXml/ns9:bizHeader/ns9:ediNo/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$InReqXml/ns9:bizHeader/ns9:ediNo&quot;/>&lt;/ns9:ediNo>&lt;/xsl:if>&lt;xsl:if test=&quot;$InReqXml/ns9:bizHeader/ns9:sdDate&quot;>&lt;ns9:sdDate>&lt;xsl:copy-of select=&quot;$InReqXml/ns9:bizHeader/ns9:sdDate/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$InReqXml/ns9:bizHeader/ns9:sdDate&quot;/>&lt;/ns9:sdDate>&lt;/xsl:if>&lt;xsl:if test=&quot;$InReqXml/ns9:bizHeader/ns9:sdTime&quot;>&lt;ns9:sdTime>&lt;xsl:copy-of select=&quot;$InReqXml/ns9:bizHeader/ns9:sdTime/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$InReqXml/ns9:bizHeader/ns9:sdTime&quot;/>&lt;/ns9:sdTime>&lt;/xsl:if>&lt;xsl:if test=&quot;$InReqXml/ns9:bizHeader/ns9:retCd&quot;>&lt;ns9:retCd>&lt;xsl:copy-of select=&quot;$InReqXml/ns9:bizHeader/ns9:retCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$InReqXml/ns9:bizHeader/ns9:retCd&quot;/>&lt;/ns9:retCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$InReqXml/ns9:bizHeader/ns9:spareArea&quot;>&lt;ns9:spareArea>&lt;xsl:copy-of select=&quot;$InReqXml/ns9:bizHeader/ns9:spareArea/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$InReqXml/ns9:bizHeader/ns9:spareArea&quot;/>&lt;/ns9:spareArea>&lt;/xsl:if>&lt;/ns9:bizHeader>&lt;xsl:copy-of select=&quot;$InReqXml/ns9:bizBody&quot;/>&lt;/ns9:root>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:ns10=&quot;http://schema.hcis.com/xsd/TOSCISPMCV0020201_InReq&quot; xmlns:ns12=&quot;http://schema.hcis.com/xsd/CISTOSPMCV0020202_InRes&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;InReqXml&quot;/>&#xa;    &lt;xsl:template name=&quot;ReqJsonErr-input&quot; match=&quot;/&quot;>&#xa;        &lt;ns12:root>&#xa;            &lt;ns12:bizHeader>&#xa;                &lt;xsl:if test=&quot;$InReqXml/ns10:bizHeader/ns10:trCode&quot;>&#xa;                    &lt;ns12:trCode>&#xa;                        &lt;xsl:copy-of select=&quot;$InReqXml/ns10:bizHeader/ns10:trCode/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$InReqXml/ns10:bizHeader/ns10:trCode&quot;/>&#xa;                    &lt;/ns12:trCode>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$InReqXml/ns10:bizHeader/ns10:svcGb&quot;>&#xa;                    &lt;ns12:svcGb>&#xa;                        &lt;xsl:copy-of select=&quot;$InReqXml/ns10:bizHeader/ns10:svcGb/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$InReqXml/ns10:bizHeader/ns10:svcGb&quot;/>&#xa;                    &lt;/ns12:svcGb>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$InReqXml/ns10:bizHeader/ns10:sdFlag&quot;>&#xa;                    &lt;ns12:sdFlag>&#xa;                        &lt;xsl:copy-of select=&quot;$InReqXml/ns10:bizHeader/ns10:sdFlag/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$InReqXml/ns10:bizHeader/ns10:sdFlag&quot;/>&#xa;                    &lt;/ns12:sdFlag>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$InReqXml/ns10:bizHeader/ns10:sdId&quot;>&#xa;                    &lt;ns12:sdId>&#xa;                        &lt;xsl:copy-of select=&quot;$InReqXml/ns10:bizHeader/ns10:sdId/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$InReqXml/ns10:bizHeader/ns10:sdId&quot;/>&#xa;                    &lt;/ns12:sdId>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$InReqXml/ns10:bizHeader/ns10:rvId&quot;>&#xa;                    &lt;ns12:rvId>&#xa;                        &lt;xsl:copy-of select=&quot;$InReqXml/ns10:bizHeader/ns10:rvId/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$InReqXml/ns10:bizHeader/ns10:rvId&quot;/>&#xa;                    &lt;/ns12:rvId>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$InReqXml/ns10:bizHeader/ns10:msgId&quot;>&#xa;                    &lt;ns12:msgId>&#xa;                        &lt;xsl:copy-of select=&quot;$InReqXml/ns10:bizHeader/ns10:msgId/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$InReqXml/ns10:bizHeader/ns10:msgId&quot;/>&#xa;                    &lt;/ns12:msgId>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$InReqXml/ns10:bizHeader/ns10:cpnyCd&quot;>&#xa;                    &lt;ns12:cpnyCd>&#xa;                        &lt;xsl:copy-of select=&quot;$InReqXml/ns10:bizHeader/ns10:cpnyCd/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$InReqXml/ns10:bizHeader/ns10:cpnyCd&quot;/>&#xa;                    &lt;/ns12:cpnyCd>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$InReqXml/ns10:bizHeader/ns10:bnkCd&quot;>&#xa;                    &lt;ns12:bnkCd>&#xa;                        &lt;xsl:copy-of select=&quot;$InReqXml/ns10:bizHeader/ns10:bnkCd/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$InReqXml/ns10:bizHeader/ns10:bnkCd&quot;/>&#xa;                    &lt;/ns12:bnkCd>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$InReqXml/ns10:bizHeader/ns10:ediCd&quot;>&#xa;                    &lt;ns12:ediCd>&#xa;                        &lt;xsl:copy-of select=&quot;$InReqXml/ns10:bizHeader/ns10:ediCd/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$InReqXml/ns10:bizHeader/ns10:ediCd&quot;/>&#xa;                    &lt;/ns12:ediCd>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$InReqXml/ns10:bizHeader/ns10:jobGb&quot;>&#xa;                    &lt;ns12:jobGb>&#xa;                        &lt;xsl:copy-of select=&quot;$InReqXml/ns10:bizHeader/ns10:jobGb/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$InReqXml/ns10:bizHeader/ns10:jobGb&quot;/>&#xa;                    &lt;/ns12:jobGb>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$InReqXml/ns10:bizHeader/ns10:ediNo&quot;>&#xa;                    &lt;ns12:ediNo>&#xa;                        &lt;xsl:copy-of select=&quot;$InReqXml/ns10:bizHeader/ns10:ediNo/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$InReqXml/ns10:bizHeader/ns10:ediNo&quot;/>&#xa;                    &lt;/ns12:ediNo>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$InReqXml/ns10:bizHeader/ns10:sdDate&quot;>&#xa;                    &lt;ns12:sdDate>&#xa;                        &lt;xsl:copy-of select=&quot;$InReqXml/ns10:bizHeader/ns10:sdDate/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$InReqXml/ns10:bizHeader/ns10:sdDate&quot;/>&#xa;                    &lt;/ns12:sdDate>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$InReqXml/ns10:bizHeader/ns10:sdTime&quot;>&#xa;                    &lt;ns12:sdTime>&#xa;                        &lt;xsl:copy-of select=&quot;$InReqXml/ns10:bizHeader/ns10:sdTime/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$InReqXml/ns10:bizHeader/ns10:sdTime&quot;/>&#xa;                    &lt;/ns12:sdTime>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$InReqXml/ns10:bizHeader/ns10:retCd&quot;>&#xa;                    &lt;ns12:retCd>&#xa;                        &lt;xsl:copy-of select=&quot;$InReqXml/ns10:bizHeader/ns10:retCd/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$InReqXml/ns10:bizHeader/ns10:retCd&quot;/>&#xa;                    &lt;/ns12:retCd>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$InReqXml/ns10:bizHeader/ns10:spareArea&quot;>&#xa;                    &lt;ns12:spareArea>&#xa;                        &lt;xsl:copy-of select=&quot;$InReqXml/ns10:bizHeader/ns10:spareArea/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$InReqXml/ns10:bizHeader/ns10:spareArea&quot;/>&#xa;                    &lt;/ns12:spareArea>&#xa;                &lt;/xsl:if>&#xa;            &lt;/ns12:bizHeader>&#xa;            &lt;ns12:bizBody>&#xa;                &lt;xsl:if test=&quot;$InReqXml/ns10:bizBody/ns10:istnCd&quot;>&#xa;                    &lt;ns12:istnCd>&#xa;                        &lt;xsl:copy-of select=&quot;$InReqXml/ns10:bizBody/ns10:istnCd/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$InReqXml/ns10:bizBody/ns10:istnCd&quot;/>&#xa;                    &lt;/ns12:istnCd>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$InReqXml/ns10:bizBody/ns10:iamtAcno&quot;>&#xa;                    &lt;ns12:iamtAcno>&#xa;                        &lt;xsl:copy-of select=&quot;$InReqXml/ns10:bizBody/ns10:iamtAcno/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$InReqXml/ns10:bizBody/ns10:iamtAcno&quot;/>&#xa;                    &lt;/ns12:iamtAcno>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$InReqXml/ns10:bizBody/ns10:iamtAcntNm&quot;>&#xa;                    &lt;ns12:iamtAcntNm>&#xa;                        &lt;xsl:copy-of select=&quot;$InReqXml/ns10:bizBody/ns10:iamtAcntNm/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$InReqXml/ns10:bizBody/ns10:iamtAcntNm&quot;/>&#xa;                    &lt;/ns12:iamtAcntNm>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$InReqXml/ns10:bizBody/ns10:trdAmt&quot;>&#xa;                    &lt;ns12:trdAmt>&#xa;                        &lt;xsl:copy-of select=&quot;$InReqXml/ns10:bizBody/ns10:trdAmt/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$InReqXml/ns10:bizBody/ns10:trdAmt&quot;/>&#xa;                    &lt;/ns12:trdAmt>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$InReqXml/ns10:bizBody/ns10:istnBrnCd&quot;>&#xa;                    &lt;ns12:istnBrnCd>&#xa;                        &lt;xsl:copy-of select=&quot;$InReqXml/ns10:bizBody/ns10:istnBrnCd/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$InReqXml/ns10:bizBody/ns10:istnBrnCd&quot;/>&#xa;                    &lt;/ns12:istnBrnCd>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$InReqXml/ns10:bizBody/ns10:tskGbcd&quot;>&#xa;                    &lt;ns12:tskGbcd>&#xa;                        &lt;xsl:copy-of select=&quot;$InReqXml/ns10:bizBody/ns10:tskGbcd/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$InReqXml/ns10:bizBody/ns10:tskGbcd&quot;/>&#xa;                    &lt;/ns12:tskGbcd>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$InReqXml/ns10:bizBody/ns10:cmisDdctGb&quot;>&#xa;                    &lt;ns12:cmisDdctGb>&#xa;                        &lt;xsl:copy-of select=&quot;$InReqXml/ns10:bizBody/ns10:cmisDdctGb/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$InReqXml/ns10:bizBody/ns10:cmisDdctGb&quot;/>&#xa;                    &lt;/ns12:cmisDdctGb>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$InReqXml/ns10:bizBody/ns10:trdKnd&quot;>&#xa;                    &lt;ns12:trdKnd>&#xa;                        &lt;xsl:copy-of select=&quot;$InReqXml/ns10:bizBody/ns10:trdKnd/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$InReqXml/ns10:bizBody/ns10:trdKnd&quot;/>&#xa;                    &lt;/ns12:trdKnd>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$InReqXml/ns10:bizBody/ns10:orgTrdNo&quot;>&#xa;                    &lt;ns12:orgTrdNo>&#xa;                        &lt;xsl:copy-of select=&quot;$InReqXml/ns10:bizBody/ns10:orgTrdNo/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$InReqXml/ns10:bizBody/ns10:orgTrdNo&quot;/>&#xa;                    &lt;/ns12:orgTrdNo>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$InReqXml/ns10:bizBody/ns10:spareArea1&quot;>&#xa;                    &lt;ns12:spareArea1>&#xa;                        &lt;xsl:copy-of select=&quot;$InReqXml/ns10:bizBody/ns10:spareArea1/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$InReqXml/ns10:bizBody/ns10:spareArea1&quot;/>&#xa;                    &lt;/ns12:spareArea1>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$InReqXml/ns10:bizBody/ns10:bnkEdiNo&quot;>&#xa;                    &lt;ns12:bnkEdiNo>&#xa;                        &lt;xsl:copy-of select=&quot;$InReqXml/ns10:bizBody/ns10:bnkEdiNo/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$InReqXml/ns10:bizBody/ns10:bnkEdiNo&quot;/>&#xa;                    &lt;/ns12:bnkEdiNo>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$InReqXml/ns10:bizBody/ns10:jatongApplYn&quot;>&#xa;                    &lt;ns12:jatongApplYn>&#xa;                        &lt;xsl:copy-of select=&quot;$InReqXml/ns10:bizBody/ns10:jatongApplYn/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$InReqXml/ns10:bizBody/ns10:jatongApplYn&quot;/>&#xa;                    &lt;/ns12:jatongApplYn>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$InReqXml/ns10:bizBody/ns10:commBnkCd&quot;>&#xa;                    &lt;ns12:commBnkCd>&#xa;                        &lt;xsl:copy-of select=&quot;$InReqXml/ns10:bizBody/ns10:commBnkCd/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$InReqXml/ns10:bizBody/ns10:commBnkCd&quot;/>&#xa;                    &lt;/ns12:commBnkCd>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$InReqXml/ns10:bizBody/ns10:spareArea2&quot;>&#xa;                    &lt;ns12:spareArea2>&#xa;                        &lt;xsl:copy-of select=&quot;$InReqXml/ns10:bizBody/ns10:spareArea2/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$InReqXml/ns10:bizBody/ns10:spareArea2&quot;/>&#xa;                    &lt;/ns12:spareArea2>&#xa;                &lt;/xsl:if>&#xa;            &lt;/ns12:bizBody>&#xa;        &lt;/ns12:root>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                 </tibex:inputBindings>
                                 <tibex:config>
                                     <bwext:BWActivity
@@ -3580,7 +3598,7 @@
                                     <value
                                     jsonOutputStyle="None"
                                     schemaType="Xsd" xsi:type="restjson:JsonRender">
-                                    <inputEditorElement href="platform:/resource/TOSCIS301.module/Schemas/TOSCISPMCV/TOSCISPMCV0020101/TOSCISPMCV0020101_InReq.xsd#//root;XSDElementDeclaration"/>
+                                    <inputEditorElement href="platform:/resource/TOSCIS301.module/Schemas/CISTOSPMCV/CISTOSPMCV0020202/CISTOSPMCV0020202_InRes.xsd#//root;XSDElementDeclaration"/>
                                     </value>
                                     </properties>
                                     </activityConfig>
@@ -3679,7 +3697,7 @@
                                 </bpws:sources>
                                 <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns18=&quot;www.tibco.com/plugin/java/JavaInvokeActivityInput+2ef8a053-acb2-48bf-ac47-167c2da20ac6+JavaInvokeActivityInput&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;to2ByteHangle_err&quot;/>&lt;xsl:template name=&quot;JsonToEdiBytesErr-input&quot; match=&quot;/&quot;>&lt;tns18:JavaInvokeActivityInput>&lt;MethodParameters>&lt;msgType>&lt;xsl:value-of select=&quot;&amp;quot;_InReq&amp;quot;&quot;/>&lt;/msgType>&lt;jsonString>&lt;xsl:value-of select=&quot;$to2ByteHangle_err/MethodReturnValue&quot;/>&lt;/jsonString>&lt;encoding>&lt;xsl:value-of select=&quot;&amp;quot;euc-kr&amp;quot;&quot;/>&lt;/encoding>&lt;xml>&lt;xsl:value-of select=&quot;&amp;quot;&amp;quot;&quot;/>&lt;/xml>&lt;/MethodParameters>&lt;/tns18:JavaInvokeActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns18=&quot;www.tibco.com/plugin/java/JavaInvokeActivityInput+2ef8a053-acb2-48bf-ac47-167c2da20ac6+JavaInvokeActivityInput&quot; xmlns:tns20=&quot;http://tns.tibco.com/bw/json/1676951614079&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;to2ByteHangle_err&quot;/>&lt;xsl:param name=&quot;EimsInfo&quot;/>&lt;xsl:template name=&quot;JsonToEdiBytesErr-input&quot; match=&quot;/&quot;>&lt;tns18:JavaInvokeActivityInput>&lt;MethodParameters>&lt;msgType>&lt;xsl:value-of select=&quot;concat($EimsInfo/tns20:response/tns20:ifId  ,&amp;quot;_InRes&amp;quot;)&quot;/>&lt;/msgType>&lt;jsonString>&lt;xsl:value-of select=&quot;$to2ByteHangle_err/MethodReturnValue&quot;/>&lt;/jsonString>&lt;encoding>&lt;xsl:value-of select=&quot;&amp;quot;euc-kr&amp;quot;&quot;/>&lt;/encoding>&lt;xml>&lt;xsl:value-of select=&quot;concat(&amp;quot;/Schemas/&amp;quot;,substring($EimsInfo/tns20:response/tns20:ifId, 0, 10),&amp;quot;/&amp;quot;,$EimsInfo/tns20:response/tns20:ifId,&amp;quot;/&amp;quot;,$EimsInfo/tns20:response/tns20:ifId,&amp;quot;.xml&amp;quot;)&quot;/>&lt;/xml>&lt;/MethodParameters>&lt;/tns18:JavaInvokeActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                 </tibex:inputBindings>
                                 <tibex:config>
                                     <bwext:BWActivity
@@ -3758,7 +3776,7 @@
                                     <type href="http://ns.tibco.com/bw/palette/jms#//JMSReceiverEventSource"/>
                                     <value
                                     connectionReference="jmsConnection"
-                                    destinationName="Q.TOS.0200300"
+                                    destinationName="Q.TOS.0300300"
                                     maxSessions="1"
                                     messageType="Bytes"
                                     messagingStyle="Queue"
@@ -3803,7 +3821,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding coercion=""
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:Library=&quot;http://www.cspi_library.org/Library&quot; xmlns:tns19=&quot;http://tns.tibco.com/bw/json/1676951614079&quot; xmlns:HCIS=&quot;http://shacon.kr/202301&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;EimsInfo&quot;/>&#xa;    &lt;xsl:template name=&quot;L_Get_InterfaceInfo-input&quot; match=&quot;/&quot;>&#xa;        &lt;Library:SetInterface>&#xa;            &lt;Library:InterfaceId>&#xa;                &lt;xsl:value-of select=&quot;$EimsInfo/tns19:request/tns19:ifId&quot;/>&#xa;            &lt;/Library:InterfaceId>&#xa;            &lt;Library:InterfaceSysId>&#xa;                &lt;xsl:value-of select=&quot;HCIS:getGUID()&quot;/>&#xa;            &lt;/Library:InterfaceSysId>&#xa;        &lt;/Library:SetInterface>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:Library=&quot;http://www.cspi_library.org/Library&quot; xmlns:tns20=&quot;http://tns.tibco.com/bw/json/1676951614079&quot; xmlns:HCIS=&quot;http://shacon.kr/202301&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;EimsInfo&quot;/>&#xa;    &lt;xsl:template name=&quot;L_Get_InterfaceInfo-input&quot; match=&quot;/&quot;>&#xa;        &lt;Library:SetInterface>&#xa;            &lt;Library:InterfaceId>&#xa;                &lt;xsl:value-of select=&quot;$EimsInfo/tns20:request/tns20:ifId&quot;/>&#xa;            &lt;/Library:InterfaceId>&#xa;            &lt;Library:InterfaceSysId>&#xa;                &lt;xsl:value-of select=&quot;HCIS:getGUID()&quot;/>&#xa;            &lt;/Library:InterfaceSysId>&#xa;        &lt;/Library:SetInterface>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:CallProcess moduleRef="CSPI_Library"
                         subProcessName="L_Get_InterfaceInfo" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
@@ -3870,7 +3888,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns19=&quot;www.tibco.com/plugin/java/JavaInvokeActivityInput+5fb57cb9-1492-4d88-be6d-185b0073efa5+JavaInvokeActivityInput&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;ediBytesToJson&quot;/>&#xa;    &lt;xsl:template name=&quot;JavaInvoke1-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns19:JavaInvokeActivityInput>&#xa;            &lt;MethodParameters>&#xa;                &lt;data>&#xa;                    &lt;xsl:value-of select=&quot;$ediBytesToJson/MethodReturnValue&quot;/>&#xa;                &lt;/data>&#xa;                &lt;encoding>&#xa;                    &lt;xsl:value-of select=&quot;&amp;quot;UTF-8&amp;quot;&quot;/>&#xa;                &lt;/encoding>&#xa;            &lt;/MethodParameters>&#xa;        &lt;/tns19:JavaInvokeActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns22=&quot;www.tibco.com/plugin/java/JavaInvokeActivityInput+5fb57cb9-1492-4d88-be6d-185b0073efa5+JavaInvokeActivityInput&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;ediBytesToJson&quot;/>&#xa;    &lt;xsl:template name=&quot;JavaInvoke1-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns22:JavaInvokeActivityInput>&#xa;            &lt;MethodParameters>&#xa;                &lt;data>&#xa;                    &lt;xsl:value-of select=&quot;$ediBytesToJson/MethodReturnValue&quot;/>&#xa;                &lt;/data>&#xa;                &lt;encoding>&#xa;                    &lt;xsl:value-of select=&quot;&amp;quot;UTF-8&amp;quot;&quot;/>&#xa;                &lt;/encoding>&#xa;            &lt;/MethodParameters>&#xa;        &lt;/tns22:JavaInvokeActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -3955,7 +3973,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns2=&quot;http://www.tibco.com/namespaces/tnt/plugins/jms+2d2d3f39-61f4-4ea3-ad1e-ec2d664a9226+input&quot; xmlns:tns19=&quot;http://tns.tibco.com/bw/json/1676951614079&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;putCISHeader&quot;/>&#xa;    &lt;xsl:param name=&quot;EimsInfo&quot;/>&#xa;    &lt;xsl:template name=&quot;OUTBOUND-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns2:ActivityInput>&#xa;            &lt;destination>&#xa;                &lt;xsl:value-of select=&quot;concat(&amp;quot;Q.&amp;quot;,$EimsInfo/tns19:response/tns19:ifId)&quot;/>&#xa;            &lt;/destination>&#xa;            &lt;Body>&#xa;                &lt;xsl:value-of select=&quot;$putCISHeader/MethodReturnValue&quot;/>&#xa;            &lt;/Body>&#xa;        &lt;/tns2:ActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns2=&quot;http://www.tibco.com/namespaces/tnt/plugins/jms+2d2d3f39-61f4-4ea3-ad1e-ec2d664a9226+input&quot; xmlns:tns20=&quot;http://tns.tibco.com/bw/json/1676951614079&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;putCISHeader&quot;/>&#xa;    &lt;xsl:param name=&quot;EimsInfo&quot;/>&#xa;    &lt;xsl:template name=&quot;OUTBOUND-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns2:ActivityInput>&#xa;            &lt;destination>&#xa;                &lt;xsl:value-of select=&quot;concat(&amp;quot;Q.&amp;quot;,$EimsInfo/tns20:response/tns20:ifId)&quot;/>&#xa;            &lt;/destination>&#xa;            &lt;Body>&#xa;                &lt;xsl:value-of select=&quot;$putCISHeader/MethodReturnValue&quot;/>&#xa;            &lt;/Body>&#xa;        &lt;/tns2:ActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -4091,7 +4109,7 @@
                                     <type href="http://ns.tibco.com/bw/palette/restjson#//JsonParser"/>
                                     <value jsonInputStyle="None"
                                     schemaType="Xsd" xsi:type="restjson:JsonParser">
-                                    <outputEditorElement href="platform:/resource/TOSCIS301.module/Schemas/TOSCISPMCV/TOSCISPMCV0020101/TOSCISPMCV0020101_InReq.xsd#//root;XSDElementDeclaration"/>
+                                    <outputEditorElement href="platform:/resource/TOSCIS301.module/Schemas/TOSCISPMCV/TOSCISPMCV0020201/TOSCISPMCV0020201_InReq.xsd#//root;XSDElementDeclaration"/>
                                     </value>
                                 </properties>
                             </activityConfig>
@@ -4111,7 +4129,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:ns9=&quot;http://schema.hcis.com/xsd/TOSCISPMCV0020101_InReq&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;InReqXml&quot;/>&#xa;    &lt;xsl:template name=&quot;InReqJson-input&quot; match=&quot;/&quot;>&#xa;        &lt;ns9:root>&#xa;            &lt;xsl:copy-of select=&quot;$InReqXml/ns9:bizHeader&quot;/>&#xa;            &lt;xsl:copy-of select=&quot;$InReqXml/ns9:bizBody&quot;/>&#xa;        &lt;/ns9:root>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:ns9=&quot;http://schema.hcis.com/xsd/TOSCISPMCV0020101_InReq&quot; xmlns:ns10=&quot;http://schema.hcis.com/xsd/TOSCISPMCV0020201_InReq&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;InReqXml&quot;/>&lt;xsl:template name=&quot;InReqJson-input&quot; match=&quot;/&quot;>&lt;ns10:root>&lt;xsl:copy-of select=&quot;$InReqXml/ns10:bizHeader&quot;/>&lt;xsl:copy-of select=&quot;$InReqXml/ns10:bizBody&quot;/>&lt;/ns10:root>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -4124,7 +4142,7 @@
                                     <type href="http://ns.tibco.com/bw/palette/restjson#//JsonRender"/>
                                     <value jsonOutputStyle="None"
                                     schemaType="Xsd" xsi:type="restjson:JsonRender">
-                                    <inputEditorElement href="platform:/resource/TOSCIS301.module/Schemas/TOSCISPMCV/TOSCISPMCV0020101/TOSCISPMCV0020101_InReq.xsd#//root;XSDElementDeclaration"/>
+                                    <inputEditorElement href="platform:/resource/TOSCIS301.module/Schemas/TOSCISPMCV/TOSCISPMCV0020201/TOSCISPMCV0020201_InReq.xsd#//root;XSDElementDeclaration"/>
                                     </value>
                                 </properties>
                             </activityConfig>
@@ -4190,7 +4208,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns19=&quot;www.tibco.com/plugin/java/JavaInvokeActivityInput+c2d94a4f-5201-4215-b7e4-c4de84108dfc+JavaInvokeActivityInput&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;to2ByteHangle&quot;/>&#xa;    &lt;xsl:template name=&quot;JsonToEdiBytes-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns19:JavaInvokeActivityInput>&#xa;            &lt;MethodParameters>&#xa;                &lt;msgType>&#xa;                    &lt;xsl:value-of select=&quot;&amp;quot;_InRes&amp;quot;&quot;/>&#xa;                &lt;/msgType>&#xa;                &lt;jsonString>&#xa;                    &lt;xsl:value-of select=&quot;$to2ByteHangle/MethodReturnValue&quot;/>&#xa;                &lt;/jsonString>&#xa;                &lt;encoding>&#xa;                    &lt;xsl:value-of select=&quot;&amp;quot;euc-kr&amp;quot;&quot;/>&#xa;                &lt;/encoding>&#xa;                &lt;xml>&#xa;                    &lt;xsl:value-of select=&quot;&amp;quot;&amp;quot;&quot;/>&#xa;                &lt;/xml>&#xa;            &lt;/MethodParameters>&#xa;        &lt;/tns19:JavaInvokeActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns19=&quot;www.tibco.com/plugin/java/JavaInvokeActivityInput+c2d94a4f-5201-4215-b7e4-c4de84108dfc+JavaInvokeActivityInput&quot; xmlns:tns20=&quot;http://tns.tibco.com/bw/json/1676951614079&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;to2ByteHangle&quot;/>&lt;xsl:param name=&quot;EimsInfo&quot;/>&lt;xsl:template name=&quot;JsonToEdiBytes-input&quot; match=&quot;/&quot;>&lt;tns19:JavaInvokeActivityInput>&lt;MethodParameters>&lt;msgType>&lt;xsl:value-of select=&quot;concat($EimsInfo/tns20:response/tns20:ifId  ,&amp;quot;_InRes&amp;quot;)&quot;/>&lt;/msgType>&lt;jsonString>&lt;xsl:value-of select=&quot;$to2ByteHangle/MethodReturnValue&quot;/>&lt;/jsonString>&lt;encoding>&lt;xsl:value-of select=&quot;&amp;quot;euc-kr&amp;quot;&quot;/>&lt;/encoding>&lt;xml>&lt;xsl:value-of select=&quot;concat(&amp;quot;/Schemas/&amp;quot;,substring($EimsInfo/tns20:response/tns20:ifId, 0, 10),&amp;quot;/&amp;quot;,$EimsInfo/tns20:response/tns20:ifId,&amp;quot;/&amp;quot;,$EimsInfo/tns20:response/tns20:ifId,&amp;quot;.xml&amp;quot;)&quot;/>&lt;/xml>&lt;/MethodParameters>&lt;/tns19:JavaInvokeActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -4249,7 +4267,7 @@
                                     <type href="http://ns.tibco.com/bw/palette/restjson#//JsonParser"/>
                                     <value jsonInputStyle="None"
                                     schemaType="Xsd" xsi:type="restjson:JsonParser">
-                                    <outputEditorElement href="platform:/resource/TOSCIS301.module/Schemas/TOSCISPMCV/TOSCISPMCV0020101/TOSCISPMCV0020101_OutReq.xsd#//root;XSDElementDeclaration"/>
+                                    <outputEditorElement href="platform:/resource/TOSCIS301.module/Schemas/TOSCISPMCV/TOSCISPMCV0020201/TOSCISPMCV0020201_OutReq.xsd#//root;XSDElementDeclaration"/>
                                     </value>
                                 </properties>
                             </activityConfig>
@@ -4270,7 +4288,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:ns10=&quot;http://schema.hcis.com/xsd/TOSCISPMCV0020101_OutReq&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;OutReqXml&quot;/>&#xa;    &lt;xsl:template name=&quot;OutReqJson-input&quot; match=&quot;/&quot;>&#xa;        &lt;ns10:root>&#xa;            &lt;xsl:copy-of select=&quot;$OutReqXml/ns10:header&quot;/>&#xa;            &lt;xsl:copy-of select=&quot;$OutReqXml/ns10:data&quot;/>&#xa;        &lt;/ns10:root>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:ns13=&quot;http://schema.hcis.com/xsd/TOSCISPMCV0020201_OutReq&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;OutReqXml&quot;/>&#xa;    &lt;xsl:template name=&quot;OutReqJson-input&quot; match=&quot;/&quot;>&#xa;        &lt;ns13:root>&#xa;            &lt;xsl:copy-of select=&quot;$OutReqXml/ns13:header&quot;/>&#xa;            &lt;xsl:copy-of select=&quot;$OutReqXml/ns13:data&quot;/>&#xa;        &lt;/ns13:root>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -4283,7 +4301,7 @@
                                     <type href="http://ns.tibco.com/bw/palette/restjson#//JsonRender"/>
                                     <value jsonOutputStyle="None"
                                     schemaType="Xsd" xsi:type="restjson:JsonRender">
-                                    <inputEditorElement href="platform:/resource/TOSCIS301.module/Schemas/TOSCISPMCV/TOSCISPMCV0020101/TOSCISPMCV0020101_OutReq.xsd#//root;XSDElementDeclaration"/>
+                                    <inputEditorElement href="platform:/resource/TOSCIS301.module/Schemas/TOSCISPMCV/TOSCISPMCV0020201/TOSCISPMCV0020201_OutReq.xsd#//root;XSDElementDeclaration"/>
                                     </value>
                                 </properties>
                             </activityConfig>
@@ -4304,7 +4322,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns19=&quot;www.tibco.com/plugin/java/JavaInvokeActivityInput+841786df-2489-4d7c-b8fa-7dd24092d522+JavaInvokeActivityInput&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:template name=&quot;JavaInvoke-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns19:JavaInvokeActivityInput/>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns22=&quot;www.tibco.com/plugin/java/JavaInvokeActivityInput+841786df-2489-4d7c-b8fa-7dd24092d522+JavaInvokeActivityInput&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:template name=&quot;JavaInvoke-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns22:JavaInvokeActivityInput/>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity

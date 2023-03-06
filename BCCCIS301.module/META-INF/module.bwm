@@ -26,4 +26,10 @@
   <sca:component xmi:id="_WLKToKHuEe2X_LG_j4sUXQ" name="ComponentAH20_RES" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_WLKToaHuEe2X_LG_j4sUXQ" processName="BCCCISCT.AH21.AH21_RES"/>
   </sca:component>
+  <sca:component xmi:id="_A6n0cLvoEe2TD9EBDhxIvA" name="ComponentBCCCISCTCN0010201_REQ" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_A6n0cbvoEe2TD9EBDhxIvA" processName="BCCCISCTCN.BCCCISCTCN0010101.BCCCISCTCN0010101_REQ"/>
+  </sca:component>
+  <sca:component xmi:id="_49hwILvpEe2TD9EBDhxIvA" name="ComponentCISBCCCTCN0010201_RES" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_49hwIbvpEe2TD9EBDhxIvA" processName="CISBCCCTCN.CISBCCCTCN0010101.CISBCCCTCN0010101_RES"/>
+  </sca:component>
 </sca:composite>

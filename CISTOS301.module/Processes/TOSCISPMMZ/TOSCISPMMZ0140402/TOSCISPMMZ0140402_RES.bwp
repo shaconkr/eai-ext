@@ -2,7 +2,7 @@
 <bpws:process exitOnStandardFault="no"
     name="TOSCISPMMZ.TOSCISPMMZ0140402.TOSCISPMMZ0140402_RES"
     suppressJoinFailure="yes"
-    targetNamespace="http://xmlns.example.com/20230202131018"
+    targetNamespace="http://xmlns.example.com/20230307135509"
     xmlns:bpws="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
     xmlns:info="http://www.tibco.com/bw/process/info"
     xmlns:ns="http://www.tibco.com/pe/EngineTypes"
@@ -50,7 +50,18 @@
     xmlns:ns46="http://www.tibco.com/namespaces/tnt/plugins/jms+7584f861-6a58-45c6-afa4-f7e6694c6d54+input"
     xmlns:ns47="activity.jsonParser.input+29483042-8b25-4b00-bc88-77f6d63b8b9a+ActivityInputType"
     xmlns:ns48="http://schema.hcis.com/xsd/CISTOSPMMZ0140401_OutReq"
+    xmlns:ns49="activity.jsonParser.input+345510a8-dc1d-4e21-b4e0-4c8b225e9d36+ActivityInputType"
     xmlns:ns5="http://www.cspi_library.org/Log"
+    xmlns:ns50="http://tns.tibco.com/bw/json/1676951614079"
+    xmlns:ns51="http://schema.hcis.com/xsd/TOSCISPMMZ0140102_OutRes"
+    xmlns:ns52="http://schema.hcis.com/xsd/TOSCISPMMZ0140102_InRes"
+    xmlns:ns53="http://schema.hcis.com/xsd/TOSCISPMMZ0140202_OutRes"
+    xmlns:ns54="http://schema.hcis.com/xsd/TOSCISPMMZ0140202_InRes"
+    xmlns:ns55="http://schema.hcis.com/xsd/CISTOSPMMZ0140201_OutReq"
+    xmlns:ns56="http://schema.hcis.com/xsd/TOSCISPMMZ0140302_OutRes"
+    xmlns:ns57="http://schema.hcis.com/xsd/TOSCISPMMZ0140302_InRes"
+    xmlns:ns58="http://schema.hcis.com/xsd/CISTOSPMMZ0140301_InReq"
+    xmlns:ns59="http://schema.hcis.com/xsd/CISTOSPMMZ0140101_OutReq"
     xmlns:ns6="http://www.tibco.com/namespaces/tnt/plugins/tcp"
     xmlns:ns7="http://tns.tibco.com/bw/palette/internal/activityerror+bw.tcp.tcpopenconnection"
     xmlns:ns8="http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpwritedata+286efb3f-1a2e-4f4b-8ee6-5c77e762d804+ActivityInput"
@@ -63,7 +74,6 @@
         <task name="L_Get_InterfaceInfo">
             <endingVariables>
                 <variable>L_Get_InterfaceInfo-input</variable>
-                <variable>getInterface</variable>
             </endingVariables>
         </task>
         <task name="L_Set_LogStart">
@@ -93,6 +103,7 @@
             <endingVariables>
                 <variable>ediBytesToJson-input</variable>
                 <variable>AsyncRespRecv</variable>
+                <variable>EIMS</variable>
             </endingVariables>
         </task>
         <task name="to3ByteHangle">
@@ -116,9 +127,9 @@
                 <variable>CorrelationID-input</variable>
             </endingVariables>
         </task>
-        <task name="getInterface">
+        <task name="getEIMSJson">
             <endingVariables>
-                <variable>getInterface-input</variable>
+                <variable>getEIMSJson-input</variable>
             </endingVariables>
         </task>
         <task name="JsonToEdiBytes">
@@ -148,6 +159,12 @@
         <task name="ReqCISHeader">
             <endingVariables>
                 <variable>ReqCISHeader-input</variable>
+            </endingVariables>
+        </task>
+        <task name="EIMS">
+            <endingVariables>
+                <variable>EIMS-input</variable>
+                <variable>getEIMSJson</variable>
             </endingVariables>
         </task>
         <task name="L_Set_LogError">
@@ -1887,6 +1904,17 @@
             </complexType>
             <element name="ActivityInputClass" type="tns:ActivityInputClassType"/>
         </schema>
+        <schema elementFormDefault="unqualified"
+            targetNamespace="activity.jsonParser.input+345510a8-dc1d-4e21-b4e0-4c8b225e9d36+ActivityInputType"
+            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="activity.jsonParser.input+345510a8-dc1d-4e21-b4e0-4c8b225e9d36+ActivityInputType">
+            <complexType name="ActivityInputClassType">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="1"
+                        name="jsonString" type="string"/>
+                </sequence>
+            </complexType>
+            <element name="ActivityInputClass" type="tns:ActivityInputClassType"/>
+        </schema>
     </tibex:Types>
     <tibex:ProcessInfo callable="false" createdBy="javal"
         createdOn="Thu Feb 02 13:10:18 KST 2023" description=""
@@ -1993,7 +2021,7 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.1"/>
-                                    <layoutConstraint x="164"
+                                    <layoutConstraint x="253"
                                     xsi:type="notation:Bounds" y="49"/>
                                     </children>
                                     <children type="4002">
@@ -2028,7 +2056,7 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.2"/>
-                                    <layoutConstraint x="275"
+                                    <layoutConstraint x="353"
                                     xsi:type="notation:Bounds" y="49"/>
                                     </children>
                                     <children type="4002">
@@ -2100,7 +2128,7 @@
                                     <element href="//0/@process/@activity/@activity/@activities.4"/>
                                     <layoutConstraint
                                     height="40" width="40"
-                                    x="708"
+                                    x="826"
                                     xsi:type="notation:Bounds" y="49"/>
                                     </children>
                                     <children type="4002 bw.tcp.write">
@@ -2137,11 +2165,11 @@
                                     <element href="//0/@process/@activity/@activity/@activities.5"/>
                                     <layoutConstraint
                                     height="40" width="40"
-                                    x="844"
+                                    x="932"
                                     xsi:type="notation:Bounds" y="49"/>
                                     </children>
                                     <children
-                                    description="계좌성명조회 응답"
+                                    description="계좌성명조회 응답전문 수신"
                                     fillColor="13369343"
                                     fontHeight="10"
                                     fontName="맑은 고딕"
@@ -2276,21 +2304,25 @@
                                     <children type="4017">
                                     <styles fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.9"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <children type="4017">
                                     <styles fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.9"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <children type="4017">
                                     <styles fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.9"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <children type="4017">
                                     <styles fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.9"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <styles fontName="맑은 고딕"
@@ -2309,21 +2341,25 @@
                                     <children type="4017">
                                     <styles fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.10"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <children type="4017">
                                     <styles fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.10"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <children type="4017">
                                     <styles fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.10"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <children type="4017">
                                     <styles fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.10"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <styles fontName="맑은 고딕"
@@ -2335,28 +2371,32 @@
                                     <element href="//0/@process/@activity/@activity/@activities.10"/>
                                     <layoutConstraint
                                     height="40" width="40"
-                                    x="587"
+                                    x="698"
                                     xsi:type="notation:Bounds" y="49"/>
                                     </children>
                                     <children type="4002 bw.java.javamethod">
                                     <children type="4017">
                                     <styles fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.11"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <children type="4017">
                                     <styles fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.11"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <children type="4017">
                                     <styles fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.11"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <children type="4017">
                                     <styles fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.11"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <styles fontName="맑은 고딕"
@@ -2375,21 +2415,25 @@
                                     <children type="4017">
                                     <styles fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.12"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <children type="4017">
                                     <styles fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.12"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <children type="4017">
                                     <styles fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.12"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <children type="4017">
                                     <styles fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.12"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <styles fontName="맑은 고딕"
@@ -2401,28 +2445,32 @@
                                     <element href="//0/@process/@activity/@activity/@activities.12"/>
                                     <layoutConstraint
                                     height="40" width="40"
-                                    x="466"
+                                    x="571"
                                     xsi:type="notation:Bounds" y="49"/>
                                     </children>
                                     <children type="4002 bw.java.javamethod">
                                     <children type="4017">
                                     <styles fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.13"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <children type="4017">
                                     <styles fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.13"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <children type="4017">
                                     <styles fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.13"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <children type="4017">
                                     <styles fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.13"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <styles fontName="맑은 고딕"
@@ -2441,21 +2489,25 @@
                                     <children type="4017">
                                     <styles fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.14"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <children type="4017">
                                     <styles fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.14"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <children type="4017">
                                     <styles fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.14"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <children type="4017">
                                     <styles fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.14"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <styles fontName="맑은 고딕"
@@ -2474,21 +2526,25 @@
                                     <children type="4017">
                                     <styles fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.15"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <children type="4017">
                                     <styles fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.15"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <children type="4017">
                                     <styles fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.15"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <children type="4017">
                                     <styles fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.15"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <styles fontName="맑은 고딕"
@@ -2507,21 +2563,25 @@
                                     <children type="4017">
                                     <styles fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.16"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <children type="4017">
                                     <styles fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.16"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <children type="4017">
                                     <styles fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.16"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <children type="4017">
                                     <styles fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.16"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <styles fontName="맑은 고딕"
@@ -2533,7 +2593,44 @@
                                     <element href="//0/@process/@activity/@activity/@activities.16"/>
                                     <layoutConstraint
                                     height="40" width="40"
-                                    x="364"
+                                    x="458"
+                                    xsi:type="notation:Bounds" y="49"/>
+                                    </children>
+                                    <children type="4002 bw.restjson.JsonParser">
+                                    <children type="4017">
+                                    <styles fontName="맑은 고딕"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.17"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles fontName="맑은 고딕"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.17"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles fontName="맑은 고딕"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.17"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles fontName="맑은 고딕"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.17"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <styles fontName="맑은 고딕"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.17"/>
+                                    <layoutConstraint
+                                    height="40" width="40"
+                                    x="154"
                                     xsi:type="notation:Bounds" y="49"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
@@ -2631,6 +2728,7 @@
                                     <styles
                                     fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@faultHandlers/@catchAll/@activity/@activity/@activities.1"/>
 
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
@@ -2638,6 +2736,7 @@
                                     <styles
                                     fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@faultHandlers/@catchAll/@activity/@activity/@activities.1"/>
 
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
@@ -2645,6 +2744,7 @@
                                     <styles
                                     fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@faultHandlers/@catchAll/@activity/@activity/@activities.1"/>
 
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
@@ -2652,6 +2752,7 @@
                                     <styles
                                     fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@faultHandlers/@catchAll/@activity/@activity/@activities.1"/>
 
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
@@ -2674,6 +2775,7 @@
                                     <styles
                                     fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@faultHandlers/@catchAll/@activity/@activity/@activities.2"/>
 
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
@@ -2681,6 +2783,7 @@
                                     <styles
                                     fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@faultHandlers/@catchAll/@activity/@activity/@activities.2"/>
 
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
@@ -2688,6 +2791,7 @@
                                     <styles
                                     fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@faultHandlers/@catchAll/@activity/@activity/@activities.2"/>
 
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
@@ -2695,6 +2799,7 @@
                                     <styles
                                     fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@faultHandlers/@catchAll/@activity/@activity/@activities.2"/>
 
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
@@ -2717,6 +2822,7 @@
                                     <styles
                                     fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@faultHandlers/@catchAll/@activity/@activity/@activities.3"/>
 
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
@@ -2724,6 +2830,7 @@
                                     <styles
                                     fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@faultHandlers/@catchAll/@activity/@activity/@activities.3"/>
 
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
@@ -2731,6 +2838,7 @@
                                     <styles
                                     fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@faultHandlers/@catchAll/@activity/@activity/@activities.3"/>
 
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
@@ -2738,6 +2846,7 @@
                                     <styles
                                     fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@faultHandlers/@catchAll/@activity/@activity/@activities.3"/>
 
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
@@ -2913,7 +3022,7 @@
             <styles fontName="맑은 고딕" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.7"/>
             <bendpoints
-                points="[25, 13, 672, -94]$[68, 13, 715, -94]$[68, 62, 715, -45]$[-718, 62, -71, -45]$[-718, 101, -71, -6]$[-671, 101, -24, -6]" xsi:type="notation:RelativeBendpoints"/>
+                points="[25, 13, 826, -94]$[57, 13, 858, -94]$[57, 62, 858, -45]$[-841, 62, -40, -45]$[-841, 101, -40, -6]$[-825, 101, -24, -6]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.11"
@@ -2928,7 +3037,7 @@
         </edges>
         <edges
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.12"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1" type="4006">
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.18" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
@@ -3036,6 +3145,17 @@
             <element href="//0/@process/@activity/@activity/@links/@children.15"/>
             <bendpoints points="[25, 0, -172, 0]$[173, 0, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
+        <edges
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.18"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="맑은 고딕" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.16"/>
+            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
     </notation:Diagram>
     <tibex:NamespaceRegistry enabled="true">
         <tibex:namespaceItem
@@ -3089,15 +3209,43 @@
             namespace="http://www.tibco.com/namespaces/tnt/plugins/jms+7584f861-6a58-45c6-afa4-f7e6694c6d54+input" prefix="tns14"/>
         <tibex:namespaceItem
             namespace="http://schema.hcis.com/xsd/TOSCISPMMZ0140402_OutRes" prefix="ns4"/>
+        <tibex:namespaceItem
+            namespace="activity.jsonParser.input+345510a8-dc1d-4e21-b4e0-4c8b225e9d36+ActivityInputType" prefix="tns15"/>
+        <tibex:namespaceItem
+            namespace="http://tns.tibco.com/bw/json/1676951614079" prefix="tns16"/>
+        <tibex:namespaceItem
+            namespace="http://schema.hcis.com/xsd/TOSCISPMMZ0140102_OutRes" prefix="ns6"/>
+        <tibex:namespaceItem
+            namespace="http://schema.hcis.com/xsd/TOSCISPMMZ0140102_InRes" prefix="ns5"/>
+        <tibex:namespaceItem
+            namespace="http://schema.hcis.com/xsd/TOSCISPMMZ0140202_InRes" prefix="ns8"/>
+        <tibex:namespaceItem
+            namespace="http://schema.hcis.com/xsd/CISTOSPMMZ0140201_OutReq" prefix="ns7"/>
+        <tibex:namespaceItem
+            namespace="http://schema.hcis.com/xsd/TOSCISPMMZ0140202_OutRes" prefix="ns9"/>
+        <tibex:namespaceItem
+            namespace="http://schema.hcis.com/xsd/TOSCISPMMZ0140302_InRes" prefix="ns10"/>
+        <tibex:namespaceItem
+            namespace="http://schema.hcis.com/xsd/TOSCISPMMZ0140302_OutRes" prefix="ns11"/>
+        <tibex:namespaceItem
+            namespace="http://schema.hcis.com/xsd/CISTOSPMMZ0140301_InReq" prefix="ns12"/>
     </tibex:NamespaceRegistry>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://schema.hcis.com/xsd/CISTOSPMMZ0140201_OutReq"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.cspi_library.org/Library"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://tns.tibco.com/bw/json/1676951614079"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.cspi_library.org/Log"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://schema.hcis.com/xsd/TOSCISPMMZ0140202_InRes"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://schema.hcis.com/xsd/TOSCISPMMZ0140202_OutRes"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema"
+        location="../../../../HcisCommon.smodule/Schemas/CISHeader.xsd" namespace="http://schema.hcis.com/json"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://schema.hcis.com/xsd/TOSCISPMMZ0140302_OutRes"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://schema.hcis.com/xsd/TOSCISPMMZ0140302_InRes"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://schema.hcis.com/xsd/CISTOSPMMZ0140301_InReq"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://schema.hcis.com/xsd/TOSCISPMMZ0140402_OutRes"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://schema.hcis.com/xsd/TOSCISPMMZ0140402_InRes"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema"
-        location="../../../../HcisCommon.smodule/Schemas/CISHeader.xsd" namespace="http://schema.hcis.com/json"/>
-    <bpws:import importType="http://www.w3.org/2001/XMLSchema"
         location="../../../Schemas/TOSCISPMMZ/TOSCISPMMZ0140402/CISTOSPMMZ0140401_OutReq.xsd" namespace="http://schema.hcis.com/xsd/CISTOSPMMZ0140401_OutReq"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://schema.hcis.com/xsd/CISTOSPMMZ0140101_OutReq"/>
     <bpws:variables>
         <bpws:variable element="ns:ProcessContext"
             name="_processContext" sca-bpel:internal="true"/>
@@ -3164,11 +3312,11 @@
         <bpws:variable element="ns26:ActivityErrorData"
             name="_error_CorrelationID" sca-bpel:internal="true"/>
         <bpws:variable element="ns27:JavaInvokeActivityInput"
-            name="getInterface-input" sca-bpel:internal="true"/>
+            name="getEIMSJson-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns28:JavaInvokeActivityOutput"
-            name="getInterface" sca-bpel:internal="true"/>
+            name="getEIMSJson" sca-bpel:internal="true"/>
         <bpws:variable element="ns29:ActivityErrorData"
-            name="_error_getInterface" sca-bpel:internal="true"/>
+            name="_error_getEIMSJson" sca-bpel:internal="true"/>
         <bpws:variable element="ns30:JavaInvokeActivityInput"
             name="JsonToEdiBytes-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns31:JavaInvokeActivityOutput"
@@ -3207,9 +3355,14 @@
             name="_error_ExceptionResponse" sca-bpel:internal="true"/>
         <bpws:variable element="ns47:ActivityInputClass"
             name="ReqOutXml-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns48:root" name="ReqOutXml" sca-bpel:internal="true"/>
+        <bpws:variable element="ns59:root" name="ReqOutXml" sca-bpel:internal="true"/>
         <bpws:variable element="ns38:ActivityErrorData"
             name="_error_ReqOutXml" sca-bpel:internal="true"/>
+        <bpws:variable element="ns49:ActivityInputClass"
+            name="EIMS-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns50:EIMSInterfaceElement" name="EIMS" sca-bpel:internal="true"/>
+        <bpws:variable element="ns38:ActivityErrorData"
+            name="_error_EIMS" sca-bpel:internal="true"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -3263,7 +3416,7 @@
                                 </bpws:sources>
                                 <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:ns1=&quot;http://schema.hcis.com/xsd/TOSCISPMMZ0140402_InRes&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:ns3=&quot;http://schema.hcis.com/xsd/CISTOSPMMZ0140401_OutReq&quot; xmlns:ns2=&quot;http://schema.hcis.com/json&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;ReqOutXml&quot;/>&lt;xsl:param name=&quot;ReqCISHeader&quot;/>&lt;xsl:param name=&quot;_error&quot;/>&lt;xsl:template name=&quot;ErrorResJson-input&quot; match=&quot;/&quot;>&lt;ns1:root>&lt;ns1:header>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:totTgrmLen&quot;>&lt;ns1:totTgrmLen>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:totTgrmLen/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:totTgrmLen&quot;/>&lt;/ns1:totTgrmLen>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:hdrLen&quot;>&lt;ns1:hdrLen>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:hdrLen/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:hdrLen&quot;/>&lt;/ns1:hdrLen>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:tgrmFrmCd&quot;>&lt;ns1:tgrmFrmCd>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:tgrmFrmCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:tgrmFrmCd&quot;/>&lt;/ns1:tgrmFrmCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:sysEnvGbcd&quot;>&lt;ns1:sysEnvGbcd>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:sysEnvGbcd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:sysEnvGbcd&quot;/>&lt;/ns1:sysEnvGbcd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:ipAdr&quot;>&lt;ns1:ipAdr>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:ipAdr/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:ipAdr&quot;/>&lt;/ns1:ipAdr>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:guid&quot;>&lt;ns1:guid>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:guid/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:guid&quot;/>&lt;/ns1:guid>&lt;/xsl:if>&lt;ns1:prgrNo>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:prgrNo +1&quot;/>&lt;/ns1:prgrNo>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:frstGuid&quot;>&lt;ns1:frstGuid>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:frstGuid/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:frstGuid&quot;/>&lt;/ns1:frstGuid>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:sendSysCd&quot;>&lt;ns1:sendSysCd>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:sendSysCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:sendSysCd&quot;/>&lt;/ns1:sendSysCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:frstSendSysCd&quot;>&lt;ns1:frstSendSysCd>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:frstSendSysCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:frstSendSysCd&quot;/>&lt;/ns1:frstSendSysCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:sysCommTrtyPrepCntn&quot;>&lt;ns1:sysCommTrtyPrepCntn>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:sysCommTrtyPrepCntn/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:sysCommTrtyPrepCntn&quot;/>&lt;/ns1:sysCommTrtyPrepCntn>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:eimsTgrmId&quot;>&lt;ns1:eimsTgrmId>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:eimsTgrmId/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:eimsTgrmId&quot;/>&lt;/ns1:eimsTgrmId>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:eimsTgrmVerNo&quot;>&lt;ns1:eimsTgrmVerNo>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:eimsTgrmVerNo/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:eimsTgrmVerNo&quot;/>&lt;/ns1:eimsTgrmVerNo>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:frwkTrdId&quot;>&lt;ns1:frwkTrdId>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:frwkTrdId/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:frwkTrdId&quot;/>&lt;/ns1:frwkTrdId>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:rcvSysCd&quot;>&lt;ns1:rcvSysCd>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:rcvSysCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:rcvSysCd&quot;/>&lt;/ns1:rcvSysCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:tieTgrmCd&quot;>&lt;ns1:tieTgrmCd>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:tieTgrmCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:tieTgrmCd&quot;/>&lt;/ns1:tieTgrmCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:tieSrvGrpCd&quot;>&lt;ns1:tieSrvGrpCd>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:tieSrvGrpCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:tieSrvGrpCd&quot;/>&lt;/ns1:tieSrvGrpCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:tieSrvNm&quot;>&lt;ns1:tieSrvNm>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:tieSrvNm/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:tieSrvNm&quot;/>&lt;/ns1:tieSrvNm>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:scrnNo&quot;>&lt;ns1:scrnNo>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:scrnNo/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:scrnNo&quot;/>&lt;/ns1:scrnNo>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:reqnRespGbcd&quot;>&lt;ns1:reqnRespGbcd>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:reqnRespGbcd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:reqnRespGbcd&quot;/>&lt;/ns1:reqnRespGbcd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:syncProcGbcd&quot;>&lt;ns1:syncProcGbcd>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:syncProcGbcd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:syncProcGbcd&quot;/>&lt;/ns1:syncProcGbcd>&lt;/xsl:if>&lt;ns1:trdRespCd>&lt;xsl:value-of select=&quot;&amp;quot;1&amp;quot;&quot;/>&lt;/ns1:trdRespCd>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:pageNo&quot;>&lt;ns1:pageNo>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:pageNo/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:pageNo&quot;/>&lt;/ns1:pageNo>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:pageRowCnt&quot;>&lt;ns1:pageRowCnt>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:pageRowCnt/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:pageRowCnt&quot;/>&lt;/ns1:pageRowCnt>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:totRowCnt&quot;>&lt;ns1:totRowCnt>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:totRowCnt/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:totRowCnt&quot;/>&lt;/ns1:totRowCnt>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:nxtPageYn&quot;>&lt;ns1:nxtPageYn>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:nxtPageYn/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:nxtPageYn&quot;/>&lt;/ns1:nxtPageYn>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:reqnDtm&quot;>&lt;ns1:reqnDtm>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:reqnDtm/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:reqnDtm&quot;/>&lt;/ns1:reqnDtm>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:respDtm&quot;>&lt;ns1:respDtm>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:respDtm/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:respDtm&quot;/>&lt;/ns1:respDtm>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:storeCd&quot;>&lt;ns1:storeCd>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:storeCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:storeCd&quot;/>&lt;/ns1:storeCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:userId&quot;>&lt;ns1:userId>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:userId/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:userId&quot;/>&lt;/ns1:userId>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:trdCommTrtyPrepCntn&quot;>&lt;ns1:trdCommTrtyPrepCntn>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:trdCommTrtyPrepCntn/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:trdCommTrtyPrepCntn&quot;/>&lt;/ns1:trdCommTrtyPrepCntn>&lt;/xsl:if>&lt;ns1:msgGrpNm>&lt;xsl:if test=&quot;$_error/MsgCode&quot;>&lt;ns1:msgCd>&lt;xsl:value-of select=&quot;$_error/MsgCode&quot;/>&lt;/ns1:msgCd>&lt;/xsl:if>&lt;ns1:msgCntn>&lt;xsl:value-of select=&quot;$_error/Msg&quot;/>&lt;/ns1:msgCntn>&lt;ns1:msgDtlCntn>&lt;xsl:value-of select=&quot;$_error/StackTrace&quot;/>&lt;/ns1:msgDtlCntn>&lt;/ns1:msgGrpNm>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:stdTgrmEndLettrVal&quot;>&lt;ns1:stdTgrmEndLettrVal>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:stdTgrmEndLettrVal/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:stdTgrmEndLettrVal&quot;/>&lt;/ns1:stdTgrmEndLettrVal>&lt;/xsl:if>&lt;/ns1:header>&lt;ns1:data>&lt;ns1:bizHeader>&lt;ns1:trCode>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns3:bizHeader/ns3:trCode/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns3:bizHeader/ns3:trCode&quot;/>&lt;/ns1:trCode>&lt;ns1:svcGb>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns3:bizHeader/ns3:svcGb/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns3:bizHeader/ns3:svcGb&quot;/>&lt;/ns1:svcGb>&lt;ns1:sdFlag>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns3:bizHeader/ns3:sdFlag/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns3:bizHeader/ns3:sdFlag&quot;/>&lt;/ns1:sdFlag>&lt;ns1:sdId>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns3:bizHeader/ns3:sdId/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns3:bizHeader/ns3:sdId&quot;/>&lt;/ns1:sdId>&lt;ns1:rvId>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns3:bizHeader/ns3:rvId/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns3:bizHeader/ns3:rvId&quot;/>&lt;/ns1:rvId>&lt;ns1:msgId>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns3:bizHeader/ns3:msgId/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns3:bizHeader/ns3:msgId&quot;/>&lt;/ns1:msgId>&lt;ns1:cpnyCd>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns3:bizHeader/ns3:cpnyCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns3:bizHeader/ns3:cpnyCd&quot;/>&lt;/ns1:cpnyCd>&lt;ns1:bnkCd>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns3:bizHeader/ns3:bnkCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns3:bizHeader/ns3:bnkCd&quot;/>&lt;/ns1:bnkCd>&lt;ns1:ediCd>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns3:bizHeader/ns3:ediCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns3:bizHeader/ns3:ediCd&quot;/>&lt;/ns1:ediCd>&lt;ns1:jobGb>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns3:bizHeader/ns3:jobGb/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns3:bizHeader/ns3:jobGb&quot;/>&lt;/ns1:jobGb>&lt;ns1:ediNo>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns3:bizHeader/ns3:ediNo/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns3:bizHeader/ns3:ediNo&quot;/>&lt;/ns1:ediNo>&lt;ns1:sdDate>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns3:bizHeader/ns3:sdDate/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns3:bizHeader/ns3:sdDate&quot;/>&lt;/ns1:sdDate>&lt;ns1:sdTime>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns3:bizHeader/ns3:sdTime/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns3:bizHeader/ns3:sdTime&quot;/>&lt;/ns1:sdTime>&lt;ns1:retCd>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns3:bizHeader/ns3:retCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns3:bizHeader/ns3:retCd&quot;/>&lt;/ns1:retCd>&lt;ns1:spareArea>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns3:bizHeader/ns3:spareArea/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns3:bizHeader/ns3:spareArea&quot;/>&lt;/ns1:spareArea>&lt;/ns1:bizHeader>&lt;ns1:bizBody>&lt;ns1:parAcno>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns3:bizBody/ns3:parAcno/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns3:bizBody/ns3:parAcno&quot;/>&lt;/ns1:parAcno>&lt;ns1:pwd>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns3:bizBody/ns3:pwd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns3:bizBody/ns3:pwd&quot;/>&lt;/ns1:pwd>&lt;ns1:encodingCd>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns3:bizBody/ns3:encodingCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns3:bizBody/ns3:encodingCd&quot;/>&lt;/ns1:encodingCd>&lt;ns1:noUse1>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns3:bizBody/ns3:noUse1/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns3:bizBody/ns3:noUse1&quot;/>&lt;/ns1:noUse1>&lt;ns1:trsfAmt>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns3:bizBody/ns3:trsfAmt/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns3:bizBody/ns3:trsfAmt&quot;/>&lt;/ns1:trsfAmt>&lt;ns1:noUse2>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns3:bizBody/ns3:noUse2/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns3:bizBody/ns3:noUse2&quot;/>&lt;/ns1:noUse2>&lt;ns1:noUse3>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns3:bizBody/ns3:noUse3/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns3:bizBody/ns3:noUse3&quot;/>&lt;/ns1:noUse3>&lt;ns1:qryAcntBnkCd>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns3:bizBody/ns3:qryAcntBnkCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns3:bizBody/ns3:qryAcntBnkCd&quot;/>&lt;/ns1:qryAcntBnkCd>&lt;ns1:qryAcno>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns3:bizBody/ns3:qryAcno/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns3:bizBody/ns3:qryAcno&quot;/>&lt;/ns1:qryAcno>&lt;ns1:cmis>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns3:bizBody/ns3:cmis/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns3:bizBody/ns3:cmis&quot;/>&lt;/ns1:cmis>&lt;ns1:noUse4>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns3:bizBody/ns3:noUse4/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns3:bizBody/ns3:noUse4&quot;/>&lt;/ns1:noUse4>&lt;ns1:qryAcntNm>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns3:bizBody/ns3:qryAcntNm/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns3:bizBody/ns3:qryAcntNm&quot;/>&lt;/ns1:qryAcntNm>&lt;ns1:noUse5>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns3:bizBody/ns3:noUse5/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns3:bizBody/ns3:noUse5&quot;/>&lt;/ns1:noUse5>&lt;ns1:juminBusnNo>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns3:bizBody/ns3:juminBusnNo/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns3:bizBody/ns3:juminBusnNo&quot;/>&lt;/ns1:juminBusnNo>&lt;ns1:spareArea1>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns3:bizBody/ns3:spareArea1/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns3:bizBody/ns3:spareArea1&quot;/>&lt;/ns1:spareArea1>&lt;ns1:bnkEdiNo>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns3:bizBody/ns3:bnkEdiNo/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns3:bizBody/ns3:bnkEdiNo&quot;/>&lt;/ns1:bnkEdiNo>&lt;ns1:jatongApplYn>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns3:bizBody/ns3:jatongApplYn/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns3:bizBody/ns3:jatongApplYn&quot;/>&lt;/ns1:jatongApplYn>&lt;ns1:commBnkCd>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns3:bizBody/ns3:commBnkCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns3:bizBody/ns3:commBnkCd&quot;/>&lt;/ns1:commBnkCd>&lt;ns1:indiBnkCd>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns3:bizBody/ns3:indiBnkCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns3:bizBody/ns3:indiBnkCd&quot;/>&lt;/ns1:indiBnkCd>&lt;ns1:spareArea2>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns3:bizBody/ns3:spareArea2/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns3:bizBody/ns3:spareArea2&quot;/>&lt;/ns1:spareArea2>&lt;/ns1:bizBody>&lt;/ns1:data>&lt;/ns1:root>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:ns2=&quot;http://schema.hcis.com/json&quot; xmlns:ns10=&quot;http://schema.hcis.com/xsd/TOSCISPMMZ0140302_InRes&quot; xmlns:ns12=&quot;http://schema.hcis.com/xsd/CISTOSPMMZ0140301_InReq&quot; xmlns:ns=&quot;http://schema.hcis.com/xsd/CISTOSPMMZ0140101_OutReq&quot; xmlns:ns1=&quot;http://schema.hcis.com/xsd/TOSCISPMMZ0140402_InRes&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;ReqOutXml&quot;/>&lt;xsl:param name=&quot;ReqCISHeader&quot;/>&lt;xsl:param name=&quot;_error&quot;/>&lt;xsl:template name=&quot;ErrorResJson-input&quot; match=&quot;/&quot;>&lt;ns1:root>&lt;ns1:header>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:totTgrmLen&quot;>&lt;ns1:totTgrmLen>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:totTgrmLen/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:totTgrmLen&quot;/>&lt;/ns1:totTgrmLen>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:hdrLen&quot;>&lt;ns1:hdrLen>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:hdrLen/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:hdrLen&quot;/>&lt;/ns1:hdrLen>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:tgrmFrmCd&quot;>&lt;ns1:tgrmFrmCd>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:tgrmFrmCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:tgrmFrmCd&quot;/>&lt;/ns1:tgrmFrmCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:sysEnvGbcd&quot;>&lt;ns1:sysEnvGbcd>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:sysEnvGbcd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:sysEnvGbcd&quot;/>&lt;/ns1:sysEnvGbcd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:ipAdr&quot;>&lt;ns1:ipAdr>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:ipAdr/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:ipAdr&quot;/>&lt;/ns1:ipAdr>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:guid&quot;>&lt;ns1:guid>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:guid/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:guid&quot;/>&lt;/ns1:guid>&lt;/xsl:if>&lt;ns1:prgrNo>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:prgrNo +1&quot;/>&lt;/ns1:prgrNo>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:frstGuid&quot;>&lt;ns1:frstGuid>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:frstGuid/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:frstGuid&quot;/>&lt;/ns1:frstGuid>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:sendSysCd&quot;>&lt;ns1:sendSysCd>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:sendSysCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:sendSysCd&quot;/>&lt;/ns1:sendSysCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:frstSendSysCd&quot;>&lt;ns1:frstSendSysCd>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:frstSendSysCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:frstSendSysCd&quot;/>&lt;/ns1:frstSendSysCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:sysCommTrtyPrepCntn&quot;>&lt;ns1:sysCommTrtyPrepCntn>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:sysCommTrtyPrepCntn/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:sysCommTrtyPrepCntn&quot;/>&lt;/ns1:sysCommTrtyPrepCntn>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:eimsTgrmId&quot;>&lt;ns1:eimsTgrmId>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:eimsTgrmId/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:eimsTgrmId&quot;/>&lt;/ns1:eimsTgrmId>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:eimsTgrmVerNo&quot;>&lt;ns1:eimsTgrmVerNo>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:eimsTgrmVerNo/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:eimsTgrmVerNo&quot;/>&lt;/ns1:eimsTgrmVerNo>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:frwkTrdId&quot;>&lt;ns1:frwkTrdId>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:frwkTrdId/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:frwkTrdId&quot;/>&lt;/ns1:frwkTrdId>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:rcvSysCd&quot;>&lt;ns1:rcvSysCd>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:rcvSysCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:rcvSysCd&quot;/>&lt;/ns1:rcvSysCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:tieTgrmCd&quot;>&lt;ns1:tieTgrmCd>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:tieTgrmCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:tieTgrmCd&quot;/>&lt;/ns1:tieTgrmCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:tieSrvGrpCd&quot;>&lt;ns1:tieSrvGrpCd>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:tieSrvGrpCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:tieSrvGrpCd&quot;/>&lt;/ns1:tieSrvGrpCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:tieSrvNm&quot;>&lt;ns1:tieSrvNm>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:tieSrvNm/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:tieSrvNm&quot;/>&lt;/ns1:tieSrvNm>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:scrnNo&quot;>&lt;ns1:scrnNo>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:scrnNo/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:scrnNo&quot;/>&lt;/ns1:scrnNo>&lt;/xsl:if>&lt;ns1:reqnRespGbcd>&lt;xsl:value-of select=&quot;&amp;quot;1&amp;quot;&quot;/>&lt;/ns1:reqnRespGbcd>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:syncProcGbcd&quot;>&lt;ns1:syncProcGbcd>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:syncProcGbcd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:syncProcGbcd&quot;/>&lt;/ns1:syncProcGbcd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:trdRespCd&quot;>&lt;ns1:trdRespCd>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:trdRespCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:trdRespCd&quot;/>&lt;/ns1:trdRespCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:pageNo&quot;>&lt;ns1:pageNo>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:pageNo/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:pageNo&quot;/>&lt;/ns1:pageNo>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:pageRowCnt&quot;>&lt;ns1:pageRowCnt>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:pageRowCnt/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:pageRowCnt&quot;/>&lt;/ns1:pageRowCnt>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:totRowCnt&quot;>&lt;ns1:totRowCnt>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:totRowCnt/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:totRowCnt&quot;/>&lt;/ns1:totRowCnt>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:nxtPageYn&quot;>&lt;ns1:nxtPageYn>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:nxtPageYn/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:nxtPageYn&quot;/>&lt;/ns1:nxtPageYn>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:reqnDtm&quot;>&lt;ns1:reqnDtm>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:reqnDtm/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:reqnDtm&quot;/>&lt;/ns1:reqnDtm>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:respDtm&quot;>&lt;ns1:respDtm>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:respDtm/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:respDtm&quot;/>&lt;/ns1:respDtm>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:storeCd&quot;>&lt;ns1:storeCd>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:storeCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:storeCd&quot;/>&lt;/ns1:storeCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:userId&quot;>&lt;ns1:userId>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:userId/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:userId&quot;/>&lt;/ns1:userId>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:trdCommTrtyPrepCntn&quot;>&lt;ns1:trdCommTrtyPrepCntn>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:trdCommTrtyPrepCntn/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:trdCommTrtyPrepCntn&quot;/>&lt;/ns1:trdCommTrtyPrepCntn>&lt;/xsl:if>&lt;ns1:msgGrpNm>&lt;xsl:if test=&quot;$_error/MsgCode&quot;>&lt;ns1:msgCd>&lt;xsl:value-of select=&quot;$_error/MsgCode&quot;/>&lt;/ns1:msgCd>&lt;/xsl:if>&lt;ns1:msgCntn>&lt;xsl:value-of select=&quot;$_error/Msg&quot;/>&lt;/ns1:msgCntn>&lt;ns1:msgDtlCntn>&lt;xsl:value-of select=&quot;$_error/StackTrace&quot;/>&lt;/ns1:msgDtlCntn>&lt;/ns1:msgGrpNm>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:stdTgrmEndLettrVal&quot;>&lt;ns1:stdTgrmEndLettrVal>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:stdTgrmEndLettrVal/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:stdTgrmEndLettrVal&quot;/>&lt;/ns1:stdTgrmEndLettrVal>&lt;/xsl:if>&lt;/ns1:header>&lt;ns1:data>&lt;ns1:bizHeader>&lt;xsl:if test=&quot;$ReqOutXml/ns:bizHeader/ns:trCode&quot;>&lt;ns1:trCode>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns:bizHeader/ns:trCode/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns:bizHeader/ns:trCode&quot;/>&lt;/ns1:trCode>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqOutXml/ns:bizHeader/ns:svcGb&quot;>&lt;ns1:svcGb>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns:bizHeader/ns:svcGb/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns:bizHeader/ns:svcGb&quot;/>&lt;/ns1:svcGb>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqOutXml/ns:bizHeader/ns:sdFlag&quot;>&lt;ns1:sdFlag>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns:bizHeader/ns:sdFlag/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns:bizHeader/ns:sdFlag&quot;/>&lt;/ns1:sdFlag>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqOutXml/ns:bizHeader/ns:sdId&quot;>&lt;ns1:sdId>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns:bizHeader/ns:sdId/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns:bizHeader/ns:sdId&quot;/>&lt;/ns1:sdId>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqOutXml/ns:bizHeader/ns:rvId&quot;>&lt;ns1:rvId>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns:bizHeader/ns:rvId/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns:bizHeader/ns:rvId&quot;/>&lt;/ns1:rvId>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqOutXml/ns:bizHeader/ns:msgId&quot;>&lt;ns1:msgId>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns:bizHeader/ns:msgId/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns:bizHeader/ns:msgId&quot;/>&lt;/ns1:msgId>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqOutXml/ns:bizHeader/ns:cpnyCd&quot;>&lt;ns1:cpnyCd>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns:bizHeader/ns:cpnyCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns:bizHeader/ns:cpnyCd&quot;/>&lt;/ns1:cpnyCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqOutXml/ns:bizHeader/ns:bnkCd&quot;>&lt;ns1:bnkCd>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns:bizHeader/ns:bnkCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns:bizHeader/ns:bnkCd&quot;/>&lt;/ns1:bnkCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqOutXml/ns:bizHeader/ns:ediCd&quot;>&lt;ns1:ediCd>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns:bizHeader/ns:ediCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns:bizHeader/ns:ediCd&quot;/>&lt;/ns1:ediCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqOutXml/ns:bizHeader/ns:jobGb&quot;>&lt;ns1:jobGb>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns:bizHeader/ns:jobGb/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns:bizHeader/ns:jobGb&quot;/>&lt;/ns1:jobGb>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqOutXml/ns:bizHeader/ns:ediNo&quot;>&lt;ns1:ediNo>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns:bizHeader/ns:ediNo/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns:bizHeader/ns:ediNo&quot;/>&lt;/ns1:ediNo>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqOutXml/ns:bizHeader/ns:sdDate&quot;>&lt;ns1:sdDate>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns:bizHeader/ns:sdDate/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns:bizHeader/ns:sdDate&quot;/>&lt;/ns1:sdDate>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqOutXml/ns:bizHeader/ns:sdTime&quot;>&lt;ns1:sdTime>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns:bizHeader/ns:sdTime/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns:bizHeader/ns:sdTime&quot;/>&lt;/ns1:sdTime>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqOutXml/ns:bizHeader/ns:retCd&quot;>&lt;ns1:retCd>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns:bizHeader/ns:retCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns:bizHeader/ns:retCd&quot;/>&lt;/ns1:retCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqOutXml/ns:bizHeader/ns:spareArea&quot;>&lt;ns1:spareArea>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns:bizHeader/ns:spareArea/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns:bizHeader/ns:spareArea&quot;/>&lt;/ns1:spareArea>&lt;/xsl:if>&lt;/ns1:bizHeader>&lt;ns1:bizBody>&lt;xsl:if test=&quot;$ReqOutXml/ns:bizBody/ns:parAcno&quot;>&lt;ns1:parAcno>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns:bizBody/ns:parAcno/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns:bizBody/ns:parAcno&quot;/>&lt;/ns1:parAcno>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqOutXml/ns:bizBody/ns:pwd&quot;>&lt;ns1:pwd>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns:bizBody/ns:pwd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns:bizBody/ns:pwd&quot;/>&lt;/ns1:pwd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqOutXml/ns:bizBody/ns:encodingCd&quot;>&lt;ns1:encodingCd>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns:bizBody/ns:encodingCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns:bizBody/ns:encodingCd&quot;/>&lt;/ns1:encodingCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqOutXml/ns:bizBody/ns:trsfAmt&quot;>&lt;ns1:trsfAmt>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns:bizBody/ns:trsfAmt/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns:bizBody/ns:trsfAmt&quot;/>&lt;/ns1:trsfAmt>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqOutXml/ns:bizBody/ns:cmis&quot;>&lt;ns1:cmis>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns:bizBody/ns:cmis/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns:bizBody/ns:cmis&quot;/>&lt;/ns1:cmis>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqOutXml/ns:bizBody/ns:juminBusnNo&quot;>&lt;ns1:juminBusnNo>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns:bizBody/ns:juminBusnNo/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns:bizBody/ns:juminBusnNo&quot;/>&lt;/ns1:juminBusnNo>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqOutXml/ns:bizBody/ns:spareArea1&quot;>&lt;ns1:spareArea1>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns:bizBody/ns:spareArea1/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns:bizBody/ns:spareArea1&quot;/>&lt;/ns1:spareArea1>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqOutXml/ns:bizBody/ns:bnkEdiNo&quot;>&lt;ns1:bnkEdiNo>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns:bizBody/ns:bnkEdiNo/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns:bizBody/ns:bnkEdiNo&quot;/>&lt;/ns1:bnkEdiNo>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqOutXml/ns:bizBody/ns:jatongApplYn&quot;>&lt;ns1:jatongApplYn>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns:bizBody/ns:jatongApplYn/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns:bizBody/ns:jatongApplYn&quot;/>&lt;/ns1:jatongApplYn>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqOutXml/ns:bizBody/ns:commBnkCd&quot;>&lt;ns1:commBnkCd>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns:bizBody/ns:commBnkCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns:bizBody/ns:commBnkCd&quot;/>&lt;/ns1:commBnkCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqOutXml/ns:bizBody/ns:indiBnkCd&quot;>&lt;ns1:indiBnkCd>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns:bizBody/ns:indiBnkCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns:bizBody/ns:indiBnkCd&quot;/>&lt;/ns1:indiBnkCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqOutXml/ns:bizBody/ns:spareArea2&quot;>&lt;ns1:spareArea2>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns:bizBody/ns:spareArea2/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns:bizBody/ns:spareArea2&quot;/>&lt;/ns1:spareArea2>&lt;/xsl:if>&lt;/ns1:bizBody>&lt;/ns1:data>&lt;/ns1:root>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                 </tibex:inputBindings>
                                 <tibex:config>
                                     <bwext:BWActivity
@@ -3343,7 +3496,7 @@
                                     <value
                                     jsonInputStyle="None"
                                     schemaType="Xsd" xsi:type="restjson:JsonParser">
-                                    <outputEditorElement href="platform:/resource/CISTOS301.module/Schemas/TOSCISPMMZ/TOSCISPMMZ0140402/CISTOSPMMZ0140401_OutReq.xsd#//root;XSDElementDeclaration"/>
+                                    <outputEditorElement href="platform:/resource/CISTOS301.module/Schemas/CISTOSPMMZ/CISTOSPMMZ0140101/CISTOSPMMZ0140101_OutReq.xsd#//root;XSDElementDeclaration"/>
                                     </value>
                                     </properties>
                                     </activityConfig>
@@ -3373,6 +3526,7 @@
                 <bpws:link name="L_Set_LogStartToReqCISHeader" tibex:linkType="SUCCESS"/>
                 <bpws:link name="ReqCISHeaderToJsonToEdiBytes" tibex:linkType="SUCCESS"/>
                 <bpws:link name="OutResXmlToInResJson" tibex:linkType="SUCCESS"/>
+                <bpws:link name="ParseJSONToL_Get_InterfaceInfo" tibex:linkType="SUCCESS"/>
             </bpws:links>
             <bpws:extensionActivity>
                 <tibex:receiveEvent createInstance="yes"
@@ -3394,7 +3548,7 @@
                                     <type href="http://ns.tibco.com/bw/palette/jms#//JMSReceiverEventSource"/>
                                     <value
                                     connectionReference="jmsConnection"
-                                    destinationName="Q.TOSCISPMMZ0140402"
+                                    destinationName="Q.TOSCISPMMZ0140302"
                                     maxSessions="1"
                                     messagingStyle="Queue"
                                     receiveTimeout="2" xsi:type="jms:JMSReceiverEventSource"/>
@@ -3412,14 +3566,14 @@
                     tibex:xpdlId="79b41e32-69d4-4163-bd6c-5ca7a7ceb746"
                     type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
-                        <bpws:target linkName="JavaInvokeToL_Get_InterfaceInfo"/>
+                        <bpws:target linkName="ParseJSONToL_Get_InterfaceInfo"/>
                     </bpws:targets>
                     <bpws:sources>
                         <bpws:source linkName="L_Get_InterfaceInfoToL_Set_LogStart"/>
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding coercion=""
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:Library=&quot;http://www.cspi_library.org/Library&quot; xmlns:HCIS=&quot;http://shacon.kr/202301&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;getInterface&quot;/>&lt;xsl:template name=&quot;L_Get_InterfaceInfo-input&quot; match=&quot;/&quot;>&lt;Library:SetInterface>&lt;Library:InterfaceId>&lt;xsl:value-of select=&quot;$getInterface/MethodReturnValue&quot;/>&lt;/Library:InterfaceId>&lt;Library:InterfaceSysId>&lt;xsl:value-of select=&quot;HCIS:getGUID()&quot;/>&lt;/Library:InterfaceSysId>&lt;/Library:SetInterface>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:Library=&quot;http://www.cspi_library.org/Library&quot; xmlns:tns16=&quot;http://tns.tibco.com/bw/json/1676951614079&quot; xmlns:HCIS=&quot;http://shacon.kr/202301&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;EIMS&quot;/>&#xa;    &lt;xsl:template name=&quot;L_Get_InterfaceInfo-input&quot; match=&quot;/&quot;>&#xa;        &lt;Library:SetInterface>&#xa;            &lt;Library:InterfaceId>&#xa;                &lt;xsl:value-of select=&quot;$EIMS/tns16:request/tns16:ifId&quot;/>&#xa;            &lt;/Library:InterfaceId>&#xa;            &lt;Library:InterfaceSysId>&#xa;                &lt;xsl:value-of select=&quot;HCIS:getGUID()&quot;/>&#xa;            &lt;/Library:InterfaceSysId>&#xa;        &lt;/Library:SetInterface>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:CallProcess moduleRef="CSPI_Library"
                         subProcessName="L_Get_InterfaceInfo" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
@@ -3537,7 +3691,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns4=&quot;www.tibco.com/plugin/java/JavaInvokeActivityInput+68f15958-1e4a-431e-b034-d063b77fcfa8+JavaInvokeActivityInput&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;AsyncRespRecv&quot;/>&#xa;    &lt;xsl:template name=&quot;ediBytesToJson-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns4:JavaInvokeActivityInput>&#xa;            &lt;MethodParameters>&#xa;                &lt;msgType>&#xa;                    &lt;xsl:value-of select=&quot;&amp;quot;_OutRes&amp;quot;&quot;/>&#xa;                &lt;/msgType>&#xa;                &lt;ediBytes>&#xa;                    &lt;xsl:value-of select=&quot;$AsyncRespRecv/Body&quot;/>&#xa;                &lt;/ediBytes>&#xa;                &lt;encoding>&#xa;                    &lt;xsl:value-of select=&quot;&amp;quot;euc-kr&amp;quot;&quot;/>&#xa;                &lt;/encoding>&#xa;                &lt;xml>&#xa;                    &lt;xsl:value-of select=&quot;&amp;quot;&amp;quot;&quot;/>&#xa;                &lt;/xml>&#xa;            &lt;/MethodParameters>&#xa;        &lt;/tns4:JavaInvokeActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns4=&quot;www.tibco.com/plugin/java/JavaInvokeActivityInput+68f15958-1e4a-431e-b034-d063b77fcfa8+JavaInvokeActivityInput&quot; xmlns:tns16=&quot;http://tns.tibco.com/bw/json/1676951614079&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;AsyncRespRecv&quot;/>&lt;xsl:param name=&quot;EIMS&quot;/>&lt;xsl:template name=&quot;ediBytesToJson-input&quot; match=&quot;/&quot;>&lt;tns4:JavaInvokeActivityInput>&lt;MethodParameters>&lt;msgType>&lt;xsl:value-of select=&quot;concat($EIMS/tns16:response/tns16:ifId,&amp;quot;_OutRes&amp;quot;)&quot;/>&lt;/msgType>&lt;ediBytes>&lt;xsl:value-of select=&quot;$AsyncRespRecv/Body&quot;/>&lt;/ediBytes>&lt;encoding>&lt;xsl:value-of select=&quot;&amp;quot;euc-kr&amp;quot;&quot;/>&lt;/encoding>&lt;xml>&lt;xsl:value-of select=&quot;concat(&amp;quot;/Schemas/&amp;quot;,substring($EIMS/tns16:response/tns16:ifId, 0, 10),&amp;quot;/&amp;quot;,$EIMS/tns16:response/tns16:ifId,&amp;quot;/&amp;quot;,$EIMS/tns16:response/tns16:ifId,&amp;quot;.xml&amp;quot;)&quot;/>&lt;/xml>&lt;/MethodParameters>&lt;/tns4:JavaInvokeActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -3584,7 +3738,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns15=&quot;www.tibco.com/plugin/java/JavaInvokeActivityInput+80f488d7-bcc3-4189-82d1-fe0fe8c25e0b+JavaInvokeActivityInput&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;ediBytesToJson&quot;/>&#xa;    &lt;xsl:template name=&quot;JavaInvoke1-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns15:JavaInvokeActivityInput>&#xa;            &lt;MethodParameters>&#xa;                &lt;data>&#xa;                    &lt;xsl:value-of select=&quot;$ediBytesToJson/MethodReturnValue&quot;/>&#xa;                &lt;/data>&#xa;                &lt;encoding>&#xa;                    &lt;xsl:value-of select=&quot;&amp;quot;UTF-8&amp;quot;&quot;/>&#xa;                &lt;/encoding>&#xa;            &lt;/MethodParameters>&#xa;        &lt;/tns15:JavaInvokeActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns17=&quot;www.tibco.com/plugin/java/JavaInvokeActivityInput+80f488d7-bcc3-4189-82d1-fe0fe8c25e0b+JavaInvokeActivityInput&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;ediBytesToJson&quot;/>&#xa;    &lt;xsl:template name=&quot;JavaInvoke1-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns17:JavaInvokeActivityInput>&#xa;            &lt;MethodParameters>&#xa;                &lt;data>&#xa;                    &lt;xsl:value-of select=&quot;$ediBytesToJson/MethodReturnValue&quot;/>&#xa;                &lt;/data>&#xa;                &lt;encoding>&#xa;                    &lt;xsl:value-of select=&quot;&amp;quot;UTF-8&amp;quot;&quot;/>&#xa;                &lt;/encoding>&#xa;            &lt;/MethodParameters>&#xa;        &lt;/tns17:JavaInvokeActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -3725,8 +3879,8 @@
             </bpws:extensionActivity>
             <bpws:extensionActivity>
                 <tibex:activityExtension
-                    inputVariable="getInterface-input"
-                    name="getInterface" outputVariable="getInterface"
+                    inputVariable="getEIMSJson-input" name="getEIMSJson"
+                    outputVariable="getEIMSJson"
                     tibex:xpdlId="af0d2ff0-7f70-4ee0-914b-29b26930374d" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
                         <bpws:target linkName="IN_RESToL_Get_InterfaceInfo"/>
@@ -3753,7 +3907,7 @@
                                     icon="HcisCommon.smodule\Resources\icons\outgoing-data-48.png"
                                     isNew="true"
                                     isNewActivity="true"
-                                    methodName="getInterfaceId"
+                                    methodName="getEimsJson"
                                     methodReturn="string" xsi:type="java:JavaMethod"/>
                                 </properties>
                             </activityConfig>
@@ -3775,7 +3929,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns9=&quot;www.tibco.com/plugin/java/JavaInvokeActivityInput+ddb0b202-7043-45a7-a03f-1382339ad13d+JavaInvokeActivityInput&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;OUTBOUND&quot;/>&lt;xsl:template name=&quot;JavaInvoke-input&quot; match=&quot;/&quot;>&lt;tns9:JavaInvokeActivityInput>&lt;MethodParameters>&lt;msgType>&lt;xsl:value-of select=&quot;&amp;quot;_OutReq&amp;quot;&quot;/>&lt;/msgType>&lt;jsonString>&lt;xsl:value-of select=&quot;$OUTBOUND/Body&quot;/>&lt;/jsonString>&lt;encoding>&lt;xsl:value-of select=&quot;&amp;quot;euc-kr&amp;quot;&quot;/>&lt;/encoding>&lt;xml>&lt;xsl:value-of select=&quot;&amp;quot;&amp;quot;&quot;/>&lt;/xml>&lt;/MethodParameters>&lt;/tns9:JavaInvokeActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns9=&quot;www.tibco.com/plugin/java/JavaInvokeActivityInput+ddb0b202-7043-45a7-a03f-1382339ad13d+JavaInvokeActivityInput&quot; xmlns:tns16=&quot;http://tns.tibco.com/bw/json/1676951614079&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;OUTBOUND&quot;/>&lt;xsl:param name=&quot;EIMS&quot;/>&lt;xsl:template name=&quot;JsonToEdiBytes-input&quot; match=&quot;/&quot;>&lt;tns9:JavaInvokeActivityInput>&lt;MethodParameters>&lt;msgType>&lt;xsl:value-of select=&quot;concat($EIMS/tns16:request/tns16:ifId,&amp;quot;_OutReq&amp;quot;)&quot;/>&lt;/msgType>&lt;jsonString>&lt;xsl:value-of select=&quot;$OUTBOUND/Body&quot;/>&lt;/jsonString>&lt;encoding>&lt;xsl:value-of select=&quot;&amp;quot;euc-kr&amp;quot;&quot;/>&lt;/encoding>&lt;xml>&lt;xsl:value-of select=&quot;concat(&amp;quot;/Schemas/&amp;quot;,substring($EIMS/tns16:request/tns16:ifId, 0, 10),&amp;quot;/&amp;quot;,$EIMS/tns16:request/tns16:ifId,&amp;quot;/&amp;quot;,$EIMS/tns16:request/tns16:ifId,&amp;quot;.xml&amp;quot;)&quot;/>&lt;/xml>&lt;/MethodParameters>&lt;/tns9:JavaInvokeActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -3896,7 +4050,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:ns2=&quot;http://schema.hcis.com/json&quot; xmlns:ns1=&quot;http://schema.hcis.com/xsd/TOSCISPMMZ0140402_InRes&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:ns4=&quot;http://schema.hcis.com/xsd/TOSCISPMMZ0140402_OutRes&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;ReqCISHeader&quot;/>&lt;xsl:param name=&quot;OutResXml&quot;/>&lt;xsl:template name=&quot;InResJson-input&quot; match=&quot;/&quot;>&lt;ns1:root>&lt;ns1:header>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:totTgrmLen&quot;>&lt;ns1:totTgrmLen>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:totTgrmLen/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:totTgrmLen&quot;/>&lt;/ns1:totTgrmLen>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:hdrLen&quot;>&lt;ns1:hdrLen>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:hdrLen/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:hdrLen&quot;/>&lt;/ns1:hdrLen>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:tgrmFrmCd&quot;>&lt;ns1:tgrmFrmCd>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:tgrmFrmCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:tgrmFrmCd&quot;/>&lt;/ns1:tgrmFrmCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:sysEnvGbcd&quot;>&lt;ns1:sysEnvGbcd>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:sysEnvGbcd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:sysEnvGbcd&quot;/>&lt;/ns1:sysEnvGbcd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:ipAdr&quot;>&lt;ns1:ipAdr>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:ipAdr/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:ipAdr&quot;/>&lt;/ns1:ipAdr>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:guid&quot;>&lt;ns1:guid>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:guid/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:guid&quot;/>&lt;/ns1:guid>&lt;/xsl:if>&lt;ns1:prgrNo>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:prgrNo +1&quot;/>&lt;/ns1:prgrNo>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:frstGuid&quot;>&lt;ns1:frstGuid>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:frstGuid/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:frstGuid&quot;/>&lt;/ns1:frstGuid>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:sendSysCd&quot;>&lt;ns1:sendSysCd>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:sendSysCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:sendSysCd&quot;/>&lt;/ns1:sendSysCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:frstSendSysCd&quot;>&lt;ns1:frstSendSysCd>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:frstSendSysCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:frstSendSysCd&quot;/>&lt;/ns1:frstSendSysCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:sysCommTrtyPrepCntn&quot;>&lt;ns1:sysCommTrtyPrepCntn>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:sysCommTrtyPrepCntn/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:sysCommTrtyPrepCntn&quot;/>&lt;/ns1:sysCommTrtyPrepCntn>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:eimsTgrmId&quot;>&lt;ns1:eimsTgrmId>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:eimsTgrmId/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:eimsTgrmId&quot;/>&lt;/ns1:eimsTgrmId>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:eimsTgrmVerNo&quot;>&lt;ns1:eimsTgrmVerNo>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:eimsTgrmVerNo/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:eimsTgrmVerNo&quot;/>&lt;/ns1:eimsTgrmVerNo>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:frwkTrdId&quot;>&lt;ns1:frwkTrdId>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:frwkTrdId/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:frwkTrdId&quot;/>&lt;/ns1:frwkTrdId>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:rcvSysCd&quot;>&lt;ns1:rcvSysCd>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:rcvSysCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:rcvSysCd&quot;/>&lt;/ns1:rcvSysCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:tieTgrmCd&quot;>&lt;ns1:tieTgrmCd>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:tieTgrmCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:tieTgrmCd&quot;/>&lt;/ns1:tieTgrmCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:tieSrvGrpCd&quot;>&lt;ns1:tieSrvGrpCd>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:tieSrvGrpCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:tieSrvGrpCd&quot;/>&lt;/ns1:tieSrvGrpCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:tieSrvNm&quot;>&lt;ns1:tieSrvNm>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:tieSrvNm/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:tieSrvNm&quot;/>&lt;/ns1:tieSrvNm>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:scrnNo&quot;>&lt;ns1:scrnNo>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:scrnNo/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:scrnNo&quot;/>&lt;/ns1:scrnNo>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:reqnRespGbcd&quot;>&lt;ns1:reqnRespGbcd>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:reqnRespGbcd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:reqnRespGbcd&quot;/>&lt;/ns1:reqnRespGbcd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:syncProcGbcd&quot;>&lt;ns1:syncProcGbcd>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:syncProcGbcd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:syncProcGbcd&quot;/>&lt;/ns1:syncProcGbcd>&lt;/xsl:if>&lt;ns1:trdRespCd>&lt;xsl:value-of select=&quot;0&quot;/>&lt;/ns1:trdRespCd>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:pageNo&quot;>&lt;ns1:pageNo>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:pageNo/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:pageNo&quot;/>&lt;/ns1:pageNo>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:pageRowCnt&quot;>&lt;ns1:pageRowCnt>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:pageRowCnt/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:pageRowCnt&quot;/>&lt;/ns1:pageRowCnt>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:totRowCnt&quot;>&lt;ns1:totRowCnt>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:totRowCnt/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:totRowCnt&quot;/>&lt;/ns1:totRowCnt>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:nxtPageYn&quot;>&lt;ns1:nxtPageYn>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:nxtPageYn/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:nxtPageYn&quot;/>&lt;/ns1:nxtPageYn>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:reqnDtm&quot;>&lt;ns1:reqnDtm>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:reqnDtm/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:reqnDtm&quot;/>&lt;/ns1:reqnDtm>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:respDtm&quot;>&lt;ns1:respDtm>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:respDtm/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:respDtm&quot;/>&lt;/ns1:respDtm>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:storeCd&quot;>&lt;ns1:storeCd>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:storeCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:storeCd&quot;/>&lt;/ns1:storeCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:userId&quot;>&lt;ns1:userId>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:userId/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:userId&quot;/>&lt;/ns1:userId>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:trdCommTrtyPrepCntn&quot;>&lt;ns1:trdCommTrtyPrepCntn>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:trdCommTrtyPrepCntn/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:trdCommTrtyPrepCntn&quot;/>&lt;/ns1:trdCommTrtyPrepCntn>&lt;/xsl:if>&lt;ns1:msgGrpNm>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:msgGrpNm/ns2:msgShwMthdGbcd&quot;>&lt;ns1:msgShwMthdGbcd>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:msgGrpNm/ns2:msgShwMthdGbcd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:msgGrpNm/ns2:msgShwMthdGbcd&quot;/>&lt;/ns1:msgShwMthdGbcd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:msgGrpNm/ns2:errOcrnTgrmClasNm&quot;>&lt;ns1:errOcrnTgrmClasNm>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:msgGrpNm/ns2:errOcrnTgrmClasNm/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:msgGrpNm/ns2:errOcrnTgrmClasNm&quot;/>&lt;/ns1:errOcrnTgrmClasNm>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:msgGrpNm/ns2:msgCd&quot;>&lt;ns1:msgCd>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:msgGrpNm/ns2:msgCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:msgGrpNm/ns2:msgCd&quot;/>&lt;/ns1:msgCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:msgGrpNm/ns2:msgCntn&quot;>&lt;ns1:msgCntn>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:msgGrpNm/ns2:msgCntn/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:msgGrpNm/ns2:msgCntn&quot;/>&lt;/ns1:msgCntn>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:msgGrpNm/ns2:msgDtlCntn&quot;>&lt;ns1:msgDtlCntn>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:msgGrpNm/ns2:msgDtlCntn/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:msgGrpNm/ns2:msgDtlCntn&quot;/>&lt;/ns1:msgDtlCntn>&lt;/xsl:if>&lt;/ns1:msgGrpNm>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:stdTgrmEndLettrVal&quot;>&lt;ns1:stdTgrmEndLettrVal>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:stdTgrmEndLettrVal/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:stdTgrmEndLettrVal&quot;/>&lt;/ns1:stdTgrmEndLettrVal>&lt;/xsl:if>&lt;/ns1:header>&lt;ns1:data>&lt;ns1:bizHeader>&lt;xsl:if test=&quot;$OutResXml/ns4:bizHeader/ns4:trCode&quot;>&lt;ns1:trCode>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizHeader/ns4:trCode/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizHeader/ns4:trCode&quot;/>&lt;/ns1:trCode>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizHeader/ns4:svcGb&quot;>&lt;ns1:svcGb>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizHeader/ns4:svcGb/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizHeader/ns4:svcGb&quot;/>&lt;/ns1:svcGb>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizHeader/ns4:sdFlag&quot;>&lt;ns1:sdFlag>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizHeader/ns4:sdFlag/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizHeader/ns4:sdFlag&quot;/>&lt;/ns1:sdFlag>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizHeader/ns4:sdId&quot;>&lt;ns1:sdId>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizHeader/ns4:sdId/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizHeader/ns4:sdId&quot;/>&lt;/ns1:sdId>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizHeader/ns4:rvId&quot;>&lt;ns1:rvId>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizHeader/ns4:rvId/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizHeader/ns4:rvId&quot;/>&lt;/ns1:rvId>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizHeader/ns4:msgId&quot;>&lt;ns1:msgId>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizHeader/ns4:msgId/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizHeader/ns4:msgId&quot;/>&lt;/ns1:msgId>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizHeader/ns4:cpnyCd&quot;>&lt;ns1:cpnyCd>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizHeader/ns4:cpnyCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizHeader/ns4:cpnyCd&quot;/>&lt;/ns1:cpnyCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizHeader/ns4:bnkCd&quot;>&lt;ns1:bnkCd>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizHeader/ns4:bnkCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizHeader/ns4:bnkCd&quot;/>&lt;/ns1:bnkCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizHeader/ns4:ediCd&quot;>&lt;ns1:ediCd>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizHeader/ns4:ediCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizHeader/ns4:ediCd&quot;/>&lt;/ns1:ediCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizHeader/ns4:jobGb&quot;>&lt;ns1:jobGb>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizHeader/ns4:jobGb/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizHeader/ns4:jobGb&quot;/>&lt;/ns1:jobGb>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizHeader/ns4:ediNo&quot;>&lt;ns1:ediNo>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizHeader/ns4:ediNo/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizHeader/ns4:ediNo&quot;/>&lt;/ns1:ediNo>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizHeader/ns4:sdDate&quot;>&lt;ns1:sdDate>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizHeader/ns4:sdDate/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizHeader/ns4:sdDate&quot;/>&lt;/ns1:sdDate>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizHeader/ns4:sdTime&quot;>&lt;ns1:sdTime>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizHeader/ns4:sdTime/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizHeader/ns4:sdTime&quot;/>&lt;/ns1:sdTime>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizHeader/ns4:retCd&quot;>&lt;ns1:retCd>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizHeader/ns4:retCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizHeader/ns4:retCd&quot;/>&lt;/ns1:retCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizHeader/ns4:spareArea&quot;>&lt;ns1:spareArea>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizHeader/ns4:spareArea/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizHeader/ns4:spareArea&quot;/>&lt;/ns1:spareArea>&lt;/xsl:if>&lt;/ns1:bizHeader>&lt;ns1:bizBody>&lt;xsl:if test=&quot;$OutResXml/ns4:bizBody/ns4:parAcno&quot;>&lt;ns1:parAcno>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizBody/ns4:parAcno/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizBody/ns4:parAcno&quot;/>&lt;/ns1:parAcno>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizBody/ns4:pwd&quot;>&lt;ns1:pwd>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizBody/ns4:pwd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizBody/ns4:pwd&quot;/>&lt;/ns1:pwd>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizBody/ns4:encodingCd&quot;>&lt;ns1:encodingCd>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizBody/ns4:encodingCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizBody/ns4:encodingCd&quot;/>&lt;/ns1:encodingCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizBody/ns4:noUse1&quot;>&lt;ns1:noUse1>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizBody/ns4:noUse1/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizBody/ns4:noUse1&quot;/>&lt;/ns1:noUse1>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizBody/ns4:trsfAmt&quot;>&lt;ns1:trsfAmt>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizBody/ns4:trsfAmt/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizBody/ns4:trsfAmt&quot;/>&lt;/ns1:trsfAmt>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizBody/ns4:noUse2&quot;>&lt;ns1:noUse2>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizBody/ns4:noUse2/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizBody/ns4:noUse2&quot;/>&lt;/ns1:noUse2>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizBody/ns4:noUse3&quot;>&lt;ns1:noUse3>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizBody/ns4:noUse3/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizBody/ns4:noUse3&quot;/>&lt;/ns1:noUse3>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizBody/ns4:qryAcntBnkCd&quot;>&lt;ns1:qryAcntBnkCd>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizBody/ns4:qryAcntBnkCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizBody/ns4:qryAcntBnkCd&quot;/>&lt;/ns1:qryAcntBnkCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizBody/ns4:qryAcno&quot;>&lt;ns1:qryAcno>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizBody/ns4:qryAcno/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizBody/ns4:qryAcno&quot;/>&lt;/ns1:qryAcno>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizBody/ns4:cmis&quot;>&lt;ns1:cmis>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizBody/ns4:cmis/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizBody/ns4:cmis&quot;/>&lt;/ns1:cmis>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizBody/ns4:noUse4&quot;>&lt;ns1:noUse4>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizBody/ns4:noUse4/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizBody/ns4:noUse4&quot;/>&lt;/ns1:noUse4>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizBody/ns4:qryAcntNm&quot;>&lt;ns1:qryAcntNm>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizBody/ns4:qryAcntNm/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizBody/ns4:qryAcntNm&quot;/>&lt;/ns1:qryAcntNm>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizBody/ns4:noUse5&quot;>&lt;ns1:noUse5>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizBody/ns4:noUse5/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizBody/ns4:noUse5&quot;/>&lt;/ns1:noUse5>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizBody/ns4:juminBusnNo&quot;>&lt;ns1:juminBusnNo>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizBody/ns4:juminBusnNo/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizBody/ns4:juminBusnNo&quot;/>&lt;/ns1:juminBusnNo>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizBody/ns4:spareArea1&quot;>&lt;ns1:spareArea1>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizBody/ns4:spareArea1/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizBody/ns4:spareArea1&quot;/>&lt;/ns1:spareArea1>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizBody/ns4:bnkEdiNo&quot;>&lt;ns1:bnkEdiNo>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizBody/ns4:bnkEdiNo/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizBody/ns4:bnkEdiNo&quot;/>&lt;/ns1:bnkEdiNo>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizBody/ns4:jatongApplYn&quot;>&lt;ns1:jatongApplYn>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizBody/ns4:jatongApplYn/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizBody/ns4:jatongApplYn&quot;/>&lt;/ns1:jatongApplYn>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizBody/ns4:commBnkCd&quot;>&lt;ns1:commBnkCd>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizBody/ns4:commBnkCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizBody/ns4:commBnkCd&quot;/>&lt;/ns1:commBnkCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizBody/ns4:indiBnkCd&quot;>&lt;ns1:indiBnkCd>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizBody/ns4:indiBnkCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizBody/ns4:indiBnkCd&quot;/>&lt;/ns1:indiBnkCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizBody/ns4:spareArea2&quot;>&lt;ns1:spareArea2>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizBody/ns4:spareArea2/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizBody/ns4:spareArea2&quot;/>&lt;/ns1:spareArea2>&lt;/xsl:if>&lt;/ns1:bizBody>&lt;/ns1:data>&lt;/ns1:root>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:ns2=&quot;http://schema.hcis.com/json&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:ns10=&quot;http://schema.hcis.com/xsd/TOSCISPMMZ0140302_InRes&quot; xmlns:ns11=&quot;http://schema.hcis.com/xsd/TOSCISPMMZ0140302_OutRes&quot; xmlns:ns4=&quot;http://schema.hcis.com/xsd/TOSCISPMMZ0140402_OutRes&quot; xmlns:ns1=&quot;http://schema.hcis.com/xsd/TOSCISPMMZ0140402_InRes&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;ReqCISHeader&quot;/>&lt;xsl:param name=&quot;OutResXml&quot;/>&lt;xsl:template name=&quot;InResJson-input&quot; match=&quot;/&quot;>&lt;ns1:root>&lt;ns1:header>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:totTgrmLen&quot;>&lt;ns1:totTgrmLen>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:totTgrmLen/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:totTgrmLen&quot;/>&lt;/ns1:totTgrmLen>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:hdrLen&quot;>&lt;ns1:hdrLen>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:hdrLen/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:hdrLen&quot;/>&lt;/ns1:hdrLen>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:tgrmFrmCd&quot;>&lt;ns1:tgrmFrmCd>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:tgrmFrmCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:tgrmFrmCd&quot;/>&lt;/ns1:tgrmFrmCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:sysEnvGbcd&quot;>&lt;ns1:sysEnvGbcd>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:sysEnvGbcd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:sysEnvGbcd&quot;/>&lt;/ns1:sysEnvGbcd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:ipAdr&quot;>&lt;ns1:ipAdr>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:ipAdr/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:ipAdr&quot;/>&lt;/ns1:ipAdr>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:guid&quot;>&lt;ns1:guid>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:guid/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:guid&quot;/>&lt;/ns1:guid>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:prgrNo&quot;>&lt;ns1:prgrNo>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:prgrNo/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:prgrNo&quot;/>&lt;/ns1:prgrNo>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:frstGuid&quot;>&lt;ns1:frstGuid>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:frstGuid/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:frstGuid&quot;/>&lt;/ns1:frstGuid>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:sendSysCd&quot;>&lt;ns1:sendSysCd>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:sendSysCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:sendSysCd&quot;/>&lt;/ns1:sendSysCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:frstSendSysCd&quot;>&lt;ns1:frstSendSysCd>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:frstSendSysCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:frstSendSysCd&quot;/>&lt;/ns1:frstSendSysCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:sysCommTrtyPrepCntn&quot;>&lt;ns1:sysCommTrtyPrepCntn>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:sysCommTrtyPrepCntn/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:sysCommTrtyPrepCntn&quot;/>&lt;/ns1:sysCommTrtyPrepCntn>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:eimsTgrmId&quot;>&lt;ns1:eimsTgrmId>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:eimsTgrmId/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:eimsTgrmId&quot;/>&lt;/ns1:eimsTgrmId>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:eimsTgrmVerNo&quot;>&lt;ns1:eimsTgrmVerNo>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:eimsTgrmVerNo/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:eimsTgrmVerNo&quot;/>&lt;/ns1:eimsTgrmVerNo>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:frwkTrdId&quot;>&lt;ns1:frwkTrdId>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:frwkTrdId/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:frwkTrdId&quot;/>&lt;/ns1:frwkTrdId>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:rcvSysCd&quot;>&lt;ns1:rcvSysCd>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:rcvSysCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:rcvSysCd&quot;/>&lt;/ns1:rcvSysCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:tieTgrmCd&quot;>&lt;ns1:tieTgrmCd>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:tieTgrmCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:tieTgrmCd&quot;/>&lt;/ns1:tieTgrmCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:tieSrvGrpCd&quot;>&lt;ns1:tieSrvGrpCd>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:tieSrvGrpCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:tieSrvGrpCd&quot;/>&lt;/ns1:tieSrvGrpCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:tieSrvNm&quot;>&lt;ns1:tieSrvNm>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:tieSrvNm/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:tieSrvNm&quot;/>&lt;/ns1:tieSrvNm>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:scrnNo&quot;>&lt;ns1:scrnNo>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:scrnNo/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:scrnNo&quot;/>&lt;/ns1:scrnNo>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:reqnRespGbcd&quot;>&lt;ns1:reqnRespGbcd>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:reqnRespGbcd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:reqnRespGbcd&quot;/>&lt;/ns1:reqnRespGbcd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:syncProcGbcd&quot;>&lt;ns1:syncProcGbcd>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:syncProcGbcd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:syncProcGbcd&quot;/>&lt;/ns1:syncProcGbcd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:trdRespCd&quot;>&lt;ns1:trdRespCd>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:trdRespCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:trdRespCd&quot;/>&lt;/ns1:trdRespCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:pageNo&quot;>&lt;ns1:pageNo>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:pageNo/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:pageNo&quot;/>&lt;/ns1:pageNo>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:pageRowCnt&quot;>&lt;ns1:pageRowCnt>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:pageRowCnt/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:pageRowCnt&quot;/>&lt;/ns1:pageRowCnt>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:totRowCnt&quot;>&lt;ns1:totRowCnt>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:totRowCnt/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:totRowCnt&quot;/>&lt;/ns1:totRowCnt>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:nxtPageYn&quot;>&lt;ns1:nxtPageYn>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:nxtPageYn/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:nxtPageYn&quot;/>&lt;/ns1:nxtPageYn>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:reqnDtm&quot;>&lt;ns1:reqnDtm>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:reqnDtm/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:reqnDtm&quot;/>&lt;/ns1:reqnDtm>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:respDtm&quot;>&lt;ns1:respDtm>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:respDtm/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:respDtm&quot;/>&lt;/ns1:respDtm>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:storeCd&quot;>&lt;ns1:storeCd>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:storeCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:storeCd&quot;/>&lt;/ns1:storeCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:userId&quot;>&lt;ns1:userId>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:userId/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:userId&quot;/>&lt;/ns1:userId>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:trdCommTrtyPrepCntn&quot;>&lt;ns1:trdCommTrtyPrepCntn>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:trdCommTrtyPrepCntn/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:trdCommTrtyPrepCntn&quot;/>&lt;/ns1:trdCommTrtyPrepCntn>&lt;/xsl:if>&lt;xsl:for-each select=&quot;$ReqCISHeader/ns2:msgGrpNm&quot;>&lt;ns1:msgGrpNm>&lt;xsl:if test=&quot;ns2:msgShwMthdGbcd&quot;>&lt;ns1:msgShwMthdGbcd>&lt;xsl:copy-of select=&quot;ns2:msgShwMthdGbcd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;ns2:msgShwMthdGbcd&quot;/>&lt;/ns1:msgShwMthdGbcd>&lt;/xsl:if>&lt;xsl:if test=&quot;ns2:errOcrnTgrmClasNm&quot;>&lt;ns1:errOcrnTgrmClasNm>&lt;xsl:copy-of select=&quot;ns2:errOcrnTgrmClasNm/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;ns2:errOcrnTgrmClasNm&quot;/>&lt;/ns1:errOcrnTgrmClasNm>&lt;/xsl:if>&lt;xsl:if test=&quot;ns2:msgCd&quot;>&lt;ns1:msgCd>&lt;xsl:copy-of select=&quot;ns2:msgCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;ns2:msgCd&quot;/>&lt;/ns1:msgCd>&lt;/xsl:if>&lt;xsl:if test=&quot;ns2:msgCntn&quot;>&lt;ns1:msgCntn>&lt;xsl:copy-of select=&quot;ns2:msgCntn/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;ns2:msgCntn&quot;/>&lt;/ns1:msgCntn>&lt;/xsl:if>&lt;xsl:if test=&quot;ns2:msgDtlCntn&quot;>&lt;ns1:msgDtlCntn>&lt;xsl:copy-of select=&quot;ns2:msgDtlCntn/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;ns2:msgDtlCntn&quot;/>&lt;/ns1:msgDtlCntn>&lt;/xsl:if>&lt;/ns1:msgGrpNm>&lt;/xsl:for-each>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:stdTgrmEndLettrVal&quot;>&lt;ns1:stdTgrmEndLettrVal>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:stdTgrmEndLettrVal/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:stdTgrmEndLettrVal&quot;/>&lt;/ns1:stdTgrmEndLettrVal>&lt;/xsl:if>&lt;/ns1:header>&lt;ns1:data>&lt;ns1:bizHeader>&lt;xsl:if test=&quot;$OutResXml/ns4:bizHeader/ns4:trCode&quot;>&lt;ns1:trCode>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizHeader/ns4:trCode/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizHeader/ns4:trCode&quot;/>&lt;/ns1:trCode>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizHeader/ns4:svcGb&quot;>&lt;ns1:svcGb>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizHeader/ns4:svcGb/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizHeader/ns4:svcGb&quot;/>&lt;/ns1:svcGb>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizHeader/ns4:sdFlag&quot;>&lt;ns1:sdFlag>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizHeader/ns4:sdFlag/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizHeader/ns4:sdFlag&quot;/>&lt;/ns1:sdFlag>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizHeader/ns4:sdId&quot;>&lt;ns1:sdId>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizHeader/ns4:sdId/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizHeader/ns4:sdId&quot;/>&lt;/ns1:sdId>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizHeader/ns4:rvId&quot;>&lt;ns1:rvId>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizHeader/ns4:rvId/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizHeader/ns4:rvId&quot;/>&lt;/ns1:rvId>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizHeader/ns4:msgId&quot;>&lt;ns1:msgId>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizHeader/ns4:msgId/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizHeader/ns4:msgId&quot;/>&lt;/ns1:msgId>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizHeader/ns4:cpnyCd&quot;>&lt;ns1:cpnyCd>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizHeader/ns4:cpnyCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizHeader/ns4:cpnyCd&quot;/>&lt;/ns1:cpnyCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizHeader/ns4:bnkCd&quot;>&lt;ns1:bnkCd>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizHeader/ns4:bnkCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizHeader/ns4:bnkCd&quot;/>&lt;/ns1:bnkCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizHeader/ns4:ediCd&quot;>&lt;ns1:ediCd>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizHeader/ns4:ediCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizHeader/ns4:ediCd&quot;/>&lt;/ns1:ediCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizHeader/ns4:jobGb&quot;>&lt;ns1:jobGb>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizHeader/ns4:jobGb/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizHeader/ns4:jobGb&quot;/>&lt;/ns1:jobGb>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizHeader/ns4:ediNo&quot;>&lt;ns1:ediNo>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizHeader/ns4:ediNo/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizHeader/ns4:ediNo&quot;/>&lt;/ns1:ediNo>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizHeader/ns4:sdDate&quot;>&lt;ns1:sdDate>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizHeader/ns4:sdDate/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizHeader/ns4:sdDate&quot;/>&lt;/ns1:sdDate>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizHeader/ns4:sdTime&quot;>&lt;ns1:sdTime>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizHeader/ns4:sdTime/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizHeader/ns4:sdTime&quot;/>&lt;/ns1:sdTime>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizHeader/ns4:retCd&quot;>&lt;ns1:retCd>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizHeader/ns4:retCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizHeader/ns4:retCd&quot;/>&lt;/ns1:retCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizHeader/ns4:spareArea&quot;>&lt;ns1:spareArea>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizHeader/ns4:spareArea/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizHeader/ns4:spareArea&quot;/>&lt;/ns1:spareArea>&lt;/xsl:if>&lt;/ns1:bizHeader>&lt;ns1:bizBody>&lt;xsl:if test=&quot;$OutResXml/ns4:bizBody/ns4:parAcno&quot;>&lt;ns1:parAcno>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizBody/ns4:parAcno/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizBody/ns4:parAcno&quot;/>&lt;/ns1:parAcno>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizBody/ns4:pwd&quot;>&lt;ns1:pwd>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizBody/ns4:pwd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizBody/ns4:pwd&quot;/>&lt;/ns1:pwd>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizBody/ns4:encodingCd&quot;>&lt;ns1:encodingCd>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizBody/ns4:encodingCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizBody/ns4:encodingCd&quot;/>&lt;/ns1:encodingCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizBody/ns4:noUse1&quot;>&lt;ns1:noUse1>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizBody/ns4:noUse1/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizBody/ns4:noUse1&quot;/>&lt;/ns1:noUse1>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizBody/ns4:trsfAmt&quot;>&lt;ns1:trsfAmt>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizBody/ns4:trsfAmt/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizBody/ns4:trsfAmt&quot;/>&lt;/ns1:trsfAmt>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizBody/ns4:noUse2&quot;>&lt;ns1:noUse2>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizBody/ns4:noUse2/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizBody/ns4:noUse2&quot;/>&lt;/ns1:noUse2>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizBody/ns4:noUse3&quot;>&lt;ns1:noUse3>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizBody/ns4:noUse3/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizBody/ns4:noUse3&quot;/>&lt;/ns1:noUse3>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizBody/ns4:qryAcntBnkCd&quot;>&lt;ns1:qryAcntBnkCd>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizBody/ns4:qryAcntBnkCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizBody/ns4:qryAcntBnkCd&quot;/>&lt;/ns1:qryAcntBnkCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizBody/ns4:qryAcno&quot;>&lt;ns1:qryAcno>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizBody/ns4:qryAcno/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizBody/ns4:qryAcno&quot;/>&lt;/ns1:qryAcno>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizBody/ns4:cmis&quot;>&lt;ns1:cmis>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizBody/ns4:cmis/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizBody/ns4:cmis&quot;/>&lt;/ns1:cmis>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizBody/ns4:noUse4&quot;>&lt;ns1:noUse4>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizBody/ns4:noUse4/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizBody/ns4:noUse4&quot;/>&lt;/ns1:noUse4>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizBody/ns4:qryAcntNm&quot;>&lt;ns1:qryAcntNm>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizBody/ns4:qryAcntNm/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizBody/ns4:qryAcntNm&quot;/>&lt;/ns1:qryAcntNm>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizBody/ns4:noUse5&quot;>&lt;ns1:noUse5>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizBody/ns4:noUse5/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizBody/ns4:noUse5&quot;/>&lt;/ns1:noUse5>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizBody/ns4:juminBusnNo&quot;>&lt;ns1:juminBusnNo>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizBody/ns4:juminBusnNo/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizBody/ns4:juminBusnNo&quot;/>&lt;/ns1:juminBusnNo>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizBody/ns4:spareArea1&quot;>&lt;ns1:spareArea1>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizBody/ns4:spareArea1/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizBody/ns4:spareArea1&quot;/>&lt;/ns1:spareArea1>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizBody/ns4:bnkEdiNo&quot;>&lt;ns1:bnkEdiNo>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizBody/ns4:bnkEdiNo/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizBody/ns4:bnkEdiNo&quot;/>&lt;/ns1:bnkEdiNo>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizBody/ns4:jatongApplYn&quot;>&lt;ns1:jatongApplYn>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizBody/ns4:jatongApplYn/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizBody/ns4:jatongApplYn&quot;/>&lt;/ns1:jatongApplYn>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizBody/ns4:commBnkCd&quot;>&lt;ns1:commBnkCd>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizBody/ns4:commBnkCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizBody/ns4:commBnkCd&quot;/>&lt;/ns1:commBnkCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizBody/ns4:indiBnkCd&quot;>&lt;ns1:indiBnkCd>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizBody/ns4:indiBnkCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizBody/ns4:indiBnkCd&quot;/>&lt;/ns1:indiBnkCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$OutResXml/ns4:bizBody/ns4:spareArea2&quot;>&lt;ns1:spareArea2>&lt;xsl:copy-of select=&quot;$OutResXml/ns4:bizBody/ns4:spareArea2/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$OutResXml/ns4:bizBody/ns4:spareArea2&quot;/>&lt;/ns1:spareArea2>&lt;/xsl:if>&lt;/ns1:bizBody>&lt;/ns1:data>&lt;/ns1:root>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -3944,6 +4098,39 @@
                                     <value jsonInputStyle="None"
                                     schemaType="Xsd" xsi:type="restjson:JsonParser">
                                     <outputEditorElement href="platform:/resource/HcisCommon.smodule/Schemas/CISHeader.xsd#//header;XSDElementDeclaration"/>
+                                    </value>
+                                </properties>
+                            </activityConfig>
+                        </bwext:BWActivity>
+                    </tibex:config>
+                </tibex:activityExtension>
+            </bpws:extensionActivity>
+            <bpws:extensionActivity>
+                <tibex:activityExtension inputVariable="EIMS-input"
+                    name="EIMS" outputVariable="EIMS"
+                    tibex:xpdlId="345510a8-dc1d-4e21-b4e0-4c8b225e9d36" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                    <bpws:targets>
+                        <bpws:target linkName="JavaInvokeToL_Get_InterfaceInfo"/>
+                    </bpws:targets>
+                    <bpws:sources>
+                        <bpws:source linkName="ParseJSONToL_Get_InterfaceInfo"/>
+                    </bpws:sources>
+                    <tibex:inputBindings>
+                        <tibex:inputBinding
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns15=&quot;activity.jsonParser.input+345510a8-dc1d-4e21-b4e0-4c8b225e9d36+ActivityInputType&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;getEIMSJson&quot;/>&lt;xsl:template name=&quot;EIMS-input&quot; match=&quot;/&quot;>&lt;tns15:ActivityInputClass>&lt;jsonString>&lt;xsl:value-of select=&quot;$getEIMSJson/MethodReturnValue&quot;/>&lt;/jsonString>&lt;/tns15:ActivityInputClass>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                    </tibex:inputBindings>
+                    <tibex:config>
+                        <bwext:BWActivity
+                            activityTypeID="bw.restjson.JsonParser"
+                            xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
+                            xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
+                            xmlns:restjson="http://ns.tibco.com/bw/palette/restjson" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <activityConfig>
+                                <properties name="config" xsi:type="activityconfig:EMFProperty">
+                                    <type href="http://ns.tibco.com/bw/palette/restjson#//JsonParser"/>
+                                    <value jsonInputStyle="None"
+                                    schemaType="Xsd" xsi:type="restjson:JsonParser">
+                                    <outputEditorElement href="platform:/resource/HcisCommon.smodule/Schemas/EIMSInterface.xsd#//EIMSInterfaceElement;XSDElementDeclaration"/>
                                     </value>
                                 </properties>
                             </activityConfig>

@@ -1964,7 +1964,8 @@
                                     <layoutConstraint x="1315"
                                     xsi:type="notation:Bounds" y="31"/>
                                     </children>
-                                    <children description="계좌성명조회"
+                                    <children
+                                    description="계좌성명조회 요청전문 송신"
                                     fillColor="13369343"
                                     fontHeight="10"
                                     fontName="맑은 고딕"

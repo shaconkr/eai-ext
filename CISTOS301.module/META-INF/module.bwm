@@ -24,10 +24,31 @@
   <sca:component xmi:id="_Z2DhcqgXEe20koM4YZoY1w" name="ComponentCISNICUPID0010501_REQ" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_Z2Dhc6gXEe20koM4YZoY1w" processName="CISTOSPMMZ.CISTOSPMMZ0140401.CISTOSPMMZ0140401_REQ"/>
   </sca:component>
-  <sca:component xmi:id="_6Gs29KgaEe20koM4YZoY1w" name="ComponentNICCISUPID0010501_RES" compositeext:version="1.0.0.qualifier">
-    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_6Gs29agaEe20koM4YZoY1w" processName="TOSCISPMMZ.TOSCISPMMZ0140402.TOSCISPMMZ0140402_RES"/>
-  </sca:component>
   <sca:component xmi:id="_Uc2AoLJVEe2VuYtbuNdpMw" name="ComponentCISTOSPMMZ0140401_REQ" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_Uc2AobJVEe2VuYtbuNdpMw" processName="CISTOSPMMZ.CISTOSPMMZ0140101.CISTOSPMMZ0140101_REQ"/>
+  </sca:component>
+  <sca:component xmi:id="_3UoXELyWEe2TD9EBDhxIvA" name="ComponentCISTOSPMMZ0140101_REQ" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_3UoXEbyWEe2TD9EBDhxIvA" processName="CISTOSPMMZ.CISTOSPMMZ0140201.CISTOSPMMZ0140201_REQ"/>
+  </sca:component>
+  <sca:component xmi:id="_-AWBILyWEe2TD9EBDhxIvA" name="ComponentCISTOSPMMZ0140201_REQ" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_-AWBIbyWEe2TD9EBDhxIvA" processName="CISTOSPMMZ.CISTOSPMMZ0140301.CISTOSPMMZ0140301_REQ"/>
+  </sca:component>
+  <sca:component xmi:id="_wJpgoLyiEe2445d8TaiIfQ" name="ComponentTOSCISPMMZ0140202_RES" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_wJpgobyiEe2445d8TaiIfQ" processName="TOSCISPMMZ.TOSCISPMMZ0140202.TOSCISPMMZ0140202_RES"/>
+  </sca:component>
+  <sca:component xmi:id="_zprR0LyiEe2445d8TaiIfQ" name="ComponentTOSCISPMMZ0140102_RES" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_zprR0byiEe2445d8TaiIfQ" processName="TOSCISPMMZ.TOSCISPMMZ0140102.TOSCISPMMZ0140102_RES"/>
+  </sca:component>
+  <sca:component xmi:id="_0K_PILyiEe2445d8TaiIfQ" name="ComponentCISTOSPMRZ0010301_REQ" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_0K_PIbyiEe2445d8TaiIfQ" processName="CISTOSPMRZ.CISTOSPMRZ0010301.CISTOSPMRZ0010301_REQ"/>
+  </sca:component>
+  <sca:component xmi:id="_KtjdILyjEe2445d8TaiIfQ" name="Component1TOSCISPMMZ0140202_RES" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_KtjdIbyjEe2445d8TaiIfQ" processName="TOSCISPMMZ.TOSCISPMMZ0140302.TOSCISPMMZ0140302_RES"/>
+  </sca:component>
+  <sca:component xmi:id="_QOMlwLykEe2445d8TaiIfQ" name="ComponentTOSCISPMMZ0140302_RES" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_QOMlwbykEe2445d8TaiIfQ" processName="TOSCISPMMZ.TOSCISPMMZ0140402.TOSCISPMMZ0140402_RES"/>
+  </sca:component>
+  <sca:component xmi:id="_42lUMLylEe2445d8TaiIfQ" name="ComponentTOSCISPMMZ0140402_RES" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_42lUMbylEe2445d8TaiIfQ" processName="TOSCISPMRZ.TOSCISPMRZ0010302.TOSCISPMRZ0010302_RES"/>
   </sca:component>
 </sca:composite>

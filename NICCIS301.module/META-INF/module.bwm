@@ -22,7 +22,7 @@
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_tSk1gadcEe2kRZld14Zk_A" processName="NICCISUPID.NICCISUP_DELQINF"/>
   </sca:component>
   <sca:component xmi:id="_oIYZ0KdiEe2kRZld14Zk_A" name="ComponentNICCISUP_SCALINF" compositeext:version="1.0.0.qualifier">
-    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_oIYZ0adiEe2kRZld14Zk_A" processName="NICCISUPID.NICCISSCAB0010301_SCALINF"/>
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_oIYZ0adiEe2kRZld14Zk_A" processName="NICCISUPID.NICCISSCAB0010301_CSALINF"/>
   </sca:component>
   <sca:component xmi:id="_cH5XkKdvEe2kRZld14Zk_A" name="ComponentNICCISUP_IEALINF" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_cH5XkadvEe2kRZld14Zk_A" processName="NICCISUPID.NICCISSCAB0010101_IEALINF"/>
@@ -35,5 +35,8 @@
   </sca:component>
   <sca:component xmi:id="_Ds5HoKd3Ee2kRZld14Zk_A" name="ComponentNICCISUP_KIUPDB" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_Ds5Hoad3Ee2kRZld14Zk_A" processName="NICCISSCAI.NICCISSCAI_KIUPDB20"/>
+  </sca:component>
+  <sca:component xmi:id="_oSi0wLySEe2TD9EBDhxIvA" name="ComponentNICCISSCAB0010501_CSALINF" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_oSi0wbySEe2TD9EBDhxIvA" processName="NICCISUPID.NICCISSCAB0010501_CSALINF"/>
   </sca:component>
 </sca:composite>

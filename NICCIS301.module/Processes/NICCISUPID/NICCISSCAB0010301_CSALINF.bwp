@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpws:process exitOnStandardFault="no"
-    name="NICCISUPID.NICCISSCAB0010301_SCALINF"
+    name="NICCISUPID.NICCISSCAB0010301_CSALINF"
     suppressJoinFailure="yes"
     targetNamespace="http://xmlns.example.com/20230208124232"
     xmlns:HCIS="http://shacon.kr/202301"
@@ -669,7 +669,7 @@
                                     xsi:type="notation:Bounds" y="35"/>
                                     </children>
                                     <children
-                                    description="NICE CB 스코어 수신  파일명 - 23NICE_SCALINF_O001.YYYYMMDD.Z"
+                                    description="NICE CB 요약정보 수신  파일명 - 23NICE_CSALINF_O00.YYYYMMDD.Z"
                                     fillColor="13369343"
                                     fontHeight="11"
                                     fontName="맑은 고딕"
@@ -1180,7 +1180,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="concat(&quot;23NICE_SCALINF_O001&quot;, HCIS:getToday())" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                            expression="concat(&quot;23NICE_CSALINF_O00&quot;, HCIS:getToday(),&quot;.Z&quot;)" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -1241,7 +1241,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="concat(&quot;25NICE_DELQINF_O001&quot;, HCIS:getToday())" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                            expression="concat(&quot;25NICE_CSALINF_O00&quot;, HCIS:getToday(),&quot;.Z&quot;)" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity

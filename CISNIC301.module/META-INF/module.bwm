@@ -33,4 +33,10 @@
   <sca:component xmi:id="_DQ0TQLM2Ee2tcMqM9p8Usg" name="ComponentCISNICUPIG0020401" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_DQ0TQbM2Ee2tcMqM9p8Usg" processName="CISNICUPID.CISNICUPIG0020401"/>
   </sca:component>
+  <sca:component xmi:id="_pAmDQLvyEe2TD9EBDhxIvA" name="Component1CISNICUPID0010501_REQ" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_pAmDQbvyEe2TD9EBDhxIvA" processName="CISNICSCAZ.CISNICSCAZ0030101.CISNICSCAZ0030101_REQ"/>
+  </sca:component>
+  <sca:component xmi:id="_ElI9YLvzEe2TD9EBDhxIvA" name="Component1NICCISUPID0010501_RES" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_ElI9YbvzEe2TD9EBDhxIvA" processName="NICCISSCAZ.NICCISSCAZ0030102.NICCISSCAZ0030102_RES"/>
+  </sca:component>
 </sca:composite>

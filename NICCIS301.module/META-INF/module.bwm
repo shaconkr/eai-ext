@@ -22,16 +22,16 @@
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_tSk1gadcEe2kRZld14Zk_A" processName="NICCISUPID.NICCISUP_DELQINF"/>
   </sca:component>
   <sca:component xmi:id="_oIYZ0KdiEe2kRZld14Zk_A" name="ComponentNICCISUP_SCALINF" compositeext:version="1.0.0.qualifier">
-    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_oIYZ0adiEe2kRZld14Zk_A" processName="NICCISUPID.NICCISUP_SCALINF"/>
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_oIYZ0adiEe2kRZld14Zk_A" processName="NICCISUPID.NICCISSCAB0010301_SCALINF"/>
   </sca:component>
   <sca:component xmi:id="_cH5XkKdvEe2kRZld14Zk_A" name="ComponentNICCISUP_IEALINF" compositeext:version="1.0.0.qualifier">
-    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_cH5XkadvEe2kRZld14Zk_A" processName="NICCISUPID.NICCISUP_IEALINF"/>
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_cH5XkadvEe2kRZld14Zk_A" processName="NICCISUPID.NICCISSCAB0010101_IEALINF"/>
   </sca:component>
   <sca:component xmi:id="_2rDT4Kd0Ee2kRZld14Zk_A" name="ComponentNICCISUP_SPALINF" compositeext:version="1.0.0.qualifier">
-    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_2rDT4ad0Ee2kRZld14Zk_A" processName="NICCISUPID.NICCISUP_SPALINF"/>
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_2rDT4ad0Ee2kRZld14Zk_A" processName="NICCISUPID.NICCISSCAB0010201_SPALINF"/>
   </sca:component>
   <sca:component xmi:id="_qxTCMKd1Ee2kRZld14Zk_A" name="ComponentNICCISUP_SCALIINF" compositeext:version="1.0.0.qualifier">
-    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_qxTCMad1Ee2kRZld14Zk_A" processName="NICCISUPID.NICCISUP_SCALIINF"/>
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_qxTCMad1Ee2kRZld14Zk_A" processName="NICCISUPID.NICCISSCAA0010101_SCALIINF"/>
   </sca:component>
   <sca:component xmi:id="_Ds5HoKd3Ee2kRZld14Zk_A" name="ComponentNICCISUP_KIUPDB" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_Ds5Hoad3Ee2kRZld14Zk_A" processName="NICCISSCAI.NICCISSCAI_KIUPDB20"/>

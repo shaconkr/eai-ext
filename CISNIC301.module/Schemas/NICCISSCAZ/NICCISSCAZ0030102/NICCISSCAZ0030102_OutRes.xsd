@@ -196,13 +196,13 @@
     </complexType>
     <complexType name="NICCISSCAZ0030102_OutRes">
         <sequence>
-            <element e:kor="BIZ공통부" name="bizHeader" type="ns:NICCISSCAZ0030102_OutRes_Header"/>
-            <element e:kor="BIZ데이터부" name="bizBody" type="ns:NICCISSCAZ0030102_OutRes_Body"/>
+            <element e:kor="BIZ공통부" name="bizHeader" minOccurs="0"  type="ns:NICCISSCAZ0030102_OutRes_Header"/>
+            <element e:kor="BIZ데이터부" name="bizBody" minOccurs="0"  type="ns:NICCISSCAZ0030102_OutRes_Body"/>
         </sequence>
     </complexType>
     <complexType name="rootType">
         <sequence>
-            <element e:kor="데이터부" name="data" type="ns:NICCISSCAZ0030102_OutRes"/>
+            <element e:kor="데이터부" name="data" minOccurs="0" type="ns:NICCISSCAZ0030102_OutRes"/>
         </sequence>
     </complexType>
     <element name="root" type="ns:NICCISSCAZ0030102_OutRes"/>

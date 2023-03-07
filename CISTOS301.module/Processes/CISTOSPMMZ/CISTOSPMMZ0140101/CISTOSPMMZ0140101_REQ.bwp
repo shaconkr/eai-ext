@@ -1967,7 +1967,8 @@
                                     <layoutConstraint x="1315"
                                     xsi:type="notation:Bounds" y="31"/>
                                     </children>
-                                    <children description="당행이체 요청"
+                                    <children
+                                    description="당행이체 요청전문 송신"
                                     fillColor="13369343"
                                     fontHeight="10"
                                     fontName="맑은 고딕"

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jndi:namedResource xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:NICCISSCAZ0040102="http://schema.hcis.com/xsd/NICCISSCAZ0040102_OutRes_REL_PTRN_RESP_LIST_TYPE" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" name="NICCISSCAZ/NICCISSCAZ0040102.NICCISSCAZ0040102_OutRes_REL_PTRN_RESP_LIST_TYPE" type="dataformat:DataFormat">
+  <jndi:imports importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/NICCISSCAZ0040102_OutRes_REL_PTRN_RESP_LIST_TYPE_df.xsd" namespace="http://schema.hcis.com/xsd/NICCISSCAZ0040102_OutRes_REL_PTRN_RESP_LIST_TYPE"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="NICCISSCAZ0040102:main" lineLength="80" fieldOffsetsStr="infGb(0,2)&#xA;rrno(2,15)&#xA;fnmNm(15,55)&#xA;relGbcd(55,57)&#xA;relRegDt(57,65)&#xA;badInfYn(65,66)&#xA;nullVal(66,80)">
+    <fieldOffsets kor="정보구분" type="string" name="infGb" start="0" end="2"/>
+    <fieldOffsets kor="주민등록번호" type="long" name="rrno" start="2" end="15"/>
+    <fieldOffsets kor="성명" type="string" name="fnmNm" start="15" end="55"/>
+    <fieldOffsets kor="관계구분코드" type="string" name="relGbcd" start="55" end="57"/>
+    <fieldOffsets kor="관계등록일자" type="long" name="relRegDt" start="57" end="65"/>
+    <fieldOffsets kor="불량정보여부" type="long" name="badInfYn" start="65" end="66"/>
+    <fieldOffsets kor="공백값" type="string" name="nullVal" start="66" end="80"/>
+  </jndi:configuration>
+</jndi:namedResource>

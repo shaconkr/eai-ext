@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beanio xmlns="http://www.beanio.org/2012/03" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.beanio.org/2012/03 http://www.beanio.org/2012/03/mapping.xsd">
+  <typeHandler type="java.util.Date" class="org.beanio.types.DateTypeHandler">
+    <property name="pattern" value="yyyyMMddhhmm"/>
+  </typeHandler>
+  <stream kor="" name="CISNICSCAZ0040101_OutReq" format="fixedlength">
+    <parser>
+      <property name="recordTerminator" value="\r\n"/>
+    </parser>
+    <record name="NIC_OutReq" class="java.util.LinkedHashMap">
+      <segment name="bizHeader" kor="BIZ공통부" minOccurs="1" maxOccurs="1" class="map">
+        <field kor="TR번호" name="trNo" minOccurs="0" maxOccurs="1" position="0" length="9"/>
+        <field kor="전문그룹코드" name="tgrmGrpCd" minOccurs="0" maxOccurs="1" position="9" length="9"/>
+        <field kor="거래종별코드" name="trdSubCCd" minOccurs="0" maxOccurs="1" position="18" length="4"/>
+        <field kor="거래구분코드" name="trdGbcd" minOccurs="0" maxOccurs="1" position="22" length="5"/>
+        <field kor="송신수신구분" name="tnrGb" minOccurs="0" maxOccurs="1" position="27" length="1"/>
+        <field kor="단말기구분코드" name="teGb" minOccurs="0" maxOccurs="1" position="28" length="3"/>
+        <field kor="응답코드" name="respCd" minOccurs="0" maxOccurs="1" position="31" length="4"/>
+        <field kor="기관ID" name="istnId" minOccurs="0" maxOccurs="1" position="35" length="9"/>
+        <field kor="기관전문관리번호" name="istnTgrmMngNo" minOccurs="0" maxOccurs="1" position="44" length="10" justify="right" padding="0"/>
+        <field kor="기관전문전송시간" name="istnTgrmSendTime" minOccurs="0" maxOccurs="1" position="54" length="14" justify="right" padding="0"/>
+        <field kor="NICE전문관리번호" name="niceTgrmMngNo" minOccurs="0" maxOccurs="1" position="68" length="10" justify="right" padding="0"/>
+        <field kor="NICE전문전송시간" name="niceTgrmSendTime" minOccurs="0" maxOccurs="1" position="78" length="14" justify="right" padding="0"/>
+        <field kor="주요BITMAP" name="prmrBmp" minOccurs="0" maxOccurs="1" position="92" length="16"/>
+        <field kor="조회동의사유코드" name="qryAgrRsnCd" minOccurs="0" maxOccurs="1" position="108" length="1"/>
+      </segment>
+      <segment name="bizBody" kor="BIZ데이터부" minOccurs="1" maxOccurs="1" class="map">
+        <field kor="개인법인구분코드" name="psnCorpGbcd" minOccurs="0" maxOccurs="1" position="109" length="1" justify="right" padding="0"/>
+        <field kor="주민등록번호" name="rrno" minOccurs="0" maxOccurs="1" position="110" length="13"/>
+        <field kor="조회사유코드" name="qryRsnCd" minOccurs="0" maxOccurs="1" position="123" length="2" justify="right" padding="0"/>
+        <field kor="조회자식별코드" name="iqpsIdntCd" minOccurs="0" maxOccurs="1" position="125" length="20"/>
+        <field kor="재요청횟수" name="reReqnCnt" minOccurs="0" maxOccurs="1" position="145" length="2" justify="right" padding="0"/>
+        <field kor="인증번호" name="certNo" minOccurs="0" maxOccurs="1" position="147" length="12"/>
+        <field kor="채무불이행정보수신건수" name="debtNoffilInfRcvCnt" minOccurs="0" maxOccurs="1" position="159" length="3" justify="right" padding="0"/>
+        <field kor="채무불이행정보요청건수" name="debtNoffilInfReqnCnt" minOccurs="0" maxOccurs="1" position="162" length="2" justify="right" padding="0"/>
+        <field kor="채무불이행정보수신건수1" name="debtNoffilInfRcvCnt1" minOccurs="0" maxOccurs="1" position="164" length="3" justify="right" padding="0"/>
+        <field kor="채무불이행정보요청건수1" name="debtNoffilInfReqnCnt1" minOccurs="0" maxOccurs="1" position="167" length="2" justify="right" padding="0"/>
+        <field kor="신용조회정보수신건수" name="crdtQryInfRcvCnt" minOccurs="0" maxOccurs="1" position="169" length="3" justify="right" padding="0"/>
+        <field kor="신용조회정보요청건수" name="crdtQryInfReqnCnt" minOccurs="0" maxOccurs="1" position="172" length="2" justify="right" padding="0"/>
+        <field kor="관계거래처정보수신건수" name="relPtrnInfRcvCnt" minOccurs="0" maxOccurs="1" position="174" length="3" justify="right" padding="0"/>
+        <field kor="관계거래처정보요청건수" name="relPtrnInfReqnCnt" minOccurs="0" maxOccurs="1" position="177" length="2" justify="right" padding="0"/>
+        <field kor="요약정보수신건수" name="smryInfRcvCnt" minOccurs="0" maxOccurs="1" position="179" length="3" justify="right" padding="0"/>
+        <field kor="요약정보요청건수" name="smryInfReqnCnt" minOccurs="0" maxOccurs="1" position="182" length="2" justify="right" padding="0"/>
+        <field kor="요약서비스구분정보_배열건수" name="smrySrvGbInfRowcount" minOccurs="0" maxOccurs="1" position="184" length="5" justify="right" padding="0"/>
+        <segment name="smrySrvGbInfList" kor="요약서비스구분정보_배열" occursRef="smrySrvGbInfRowcount" collection="list" class="map">
+          <field kor="요약서비스구분정보" name="smrySrvGbInf" minOccurs="0" maxOccurs="1" position="189" length="2"/>
+          <field kor="요약항목코드" name="smryClasCd" minOccurs="0" maxOccurs="1" position="191" length="9"/>
+        </segment>
+      </segment>
+    </record>
+  </stream>
+</beanio>

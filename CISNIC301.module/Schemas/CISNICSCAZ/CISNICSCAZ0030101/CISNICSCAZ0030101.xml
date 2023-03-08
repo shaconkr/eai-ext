@@ -17,15 +17,15 @@
         <field kor="송신수신구분" name="tnrGb" minOccurs="0" maxOccurs="1" position="27" length="1"/>
         <field kor="단말기구분코드" name="teGb" minOccurs="0" maxOccurs="1" position="28" length="3"/>
         <field kor="응답코드" name="respCd" minOccurs="0" maxOccurs="1" position="31" length="4"/>
-      </segment>
-      <segment name="bizBody" kor="BIZ데이터부" minOccurs="1" maxOccurs="1" class="map">
         <field kor="기관ID" name="istnId" minOccurs="0" maxOccurs="1" position="35" length="9"/>
         <field kor="기관전문관리번호" name="istnTgrmMngNo" minOccurs="0" maxOccurs="1" position="44" length="10" justify="right" padding="0"/>
         <field kor="기관전문전송시간" name="istnTgrmSendTime" minOccurs="0" maxOccurs="1" position="54" length="14" justify="right" padding="0"/>
         <field kor="NICE전문관리번호" name="niceTgrmMngNo" minOccurs="0" maxOccurs="1" position="68" length="10" justify="right" padding="0"/>
         <field kor="NICE전문전송시간" name="niceTgrmSendTime" minOccurs="0" maxOccurs="1" position="78" length="14" justify="right" padding="0"/>
         <field kor="주요BITMAP" name="prmrBmp" minOccurs="0" maxOccurs="1" position="92" length="16"/>
-        <field kor="조회동의사유" name="qryAgrRsn" minOccurs="0" maxOccurs="1" position="108" length="1"/>
+        <field kor="조회동의사유코드" name="qryAgrRsnCd" minOccurs="0" maxOccurs="1" position="108" length="1"/>
+      </segment>
+      <segment name="bizBody" kor="BIZ데이터부" minOccurs="1" maxOccurs="1" class="map">
         <field kor="개인법인구분코드" name="psnCorpGbcd" minOccurs="0" maxOccurs="1" position="109" length="1" justify="right" padding="0"/>
         <field kor="주민등록번호" name="rrno" minOccurs="0" maxOccurs="1" position="110" length="13"/>
         <field kor="조회사유코드" name="qryRsnCd" minOccurs="0" maxOccurs="1" position="123" length="2" justify="right" padding="0"/>
@@ -60,7 +60,7 @@
         <field kor="요약서비스수신건수" name="smrySrvRcvCnt" minOccurs="0" maxOccurs="1" position="204" length="3" justify="right" padding="0"/>
         <field kor="요약서비스요청건수" name="smrySrvReqnCnt" minOccurs="0" maxOccurs="1" position="207" length="2" justify="right" padding="0"/>
         <field kor="요약서비스구분정보_배열건수" name="smrySrvGbInfRowcount" minOccurs="0" maxOccurs="1" position="209" length="5" justify="right" padding="0"/>
-        <segment name="smrySrvGbInfList" kor="요약서비스구분정보_배열" minOccurs="0" maxOccurs="9223372036854775807" collection="list" class="map">
+        <segment name="smrySrvGbInfList" kor="요약서비스구분정보_배열" occursRef="smrySrvGbInfRowcount" collection="list" class="map">
           <field kor="요약서비스구분정보" name="smrySrvGbInf" minOccurs="0" maxOccurs="1" position="214" length="2"/>
           <field kor="요약항목코드" name="smryClasCd" minOccurs="0" maxOccurs="1" position="216" length="9"/>
         </segment>

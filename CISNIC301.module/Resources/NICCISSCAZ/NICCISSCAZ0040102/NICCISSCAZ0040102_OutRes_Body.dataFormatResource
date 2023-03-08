@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jndi:namedResource xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:NICCISSCAZ0040102="http://schema.hcis.com/xsd/NICCISSCAZ0040102_OutRes_Body" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" name="NICCISSCAZ/NICCISSCAZ0040102.NICCISSCAZ0040102_OutRes_Body" type="dataformat:DataFormat">
+  <jndi:imports importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/NICCISSCAZ0040102_OutRes_Body_df.xsd" namespace="http://schema.hcis.com/xsd/NICCISSCAZ0040102_OutRes_Body"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="NICCISSCAZ0040102:main" lineLength="141" fieldOffsetsStr="psnCorpGbcd(0,1)&#xA;rrno(1,14)&#xA;infCnscGb(14,15)&#xA;reReqnCnt(15,17)&#xA;certNo(17,29)&#xA;coNm(29,69)&#xA;reppNm(69,81)&#xA;debtNoffilInfTotCnt(81,84)&#xA;debtNoffilInfRespCnt(84,86)&#xA;debtNoffilInfTotCnt1(86,89)&#xA;debtNoffilInfRespCnt1(89,91)&#xA;trdOpeInfTotCnt(91,94)&#xA;trdOpeInfRespCnt(94,96)&#xA;crdtQryInfTotCnt(96,99)&#xA;crdtQryInfRespCnt(99,101)&#xA;relPtrnTotCnt(101,104)&#xA;relPtrnRespCnt(104,106)&#xA;smryInfTotCnt(106,109)&#xA;smryInfRespCnt(109,111)&#xA;debtNoffilInfRespRowcount(111,116)&#xA;debtNoffilInfRespList(116,116)&#xA;debtNoffilInfResp1Rowcount(116,121)&#xA;debtNoffilInfResp1List(121,121)&#xA;trdOpeInfRespRowcount(121,126)&#xA;trdOpeInfRespList(126,126)&#xA;crdtQryInfRespRowcount(126,131)&#xA;crdtQryInfRespList(131,131)&#xA;relPtrnRespRowcount(131,136)&#xA;relPtrnRespList(136,136)&#xA;smryInfRespRowcount(136,141)&#xA;smryInfRespList(141,141)">
+    <fieldOffsets kor="개인법인구분코드" type="long" name="psnCorpGbcd" start="0" end="1"/>
+    <fieldOffsets kor="주민등록번호" type="string" name="rrno" start="1" end="14"/>
+    <fieldOffsets kor="정보연속구분" type="string" name="infCnscGb" start="14" end="15"/>
+    <fieldOffsets kor="재요청횟수" type="long" name="reReqnCnt" start="15" end="17"/>
+    <fieldOffsets kor="인증번호" type="string" name="certNo" start="17" end="29"/>
+    <fieldOffsets kor="기업명" type="string" name="coNm" start="29" end="69"/>
+    <fieldOffsets kor="대표자명" type="string" name="reppNm" start="69" end="81"/>
+    <fieldOffsets kor="채무불이행정보총건수" type="string" name="debtNoffilInfTotCnt" start="81" end="84"/>
+    <fieldOffsets kor="채무불이행정보응답건수" type="long" name="debtNoffilInfRespCnt" start="84" end="86"/>
+    <fieldOffsets kor="채무불이행정보총건수1" type="string" name="debtNoffilInfTotCnt1" start="86" end="89"/>
+    <fieldOffsets kor="채무불이행정보응답건수1" type="long" name="debtNoffilInfRespCnt1" start="89" end="91"/>
+    <fieldOffsets kor="거래개설정보총건수" type="string" name="trdOpeInfTotCnt" start="91" end="94"/>
+    <fieldOffsets kor="거래개설정보응답건수" type="long" name="trdOpeInfRespCnt" start="94" end="96"/>
+    <fieldOffsets kor="신용조회정보총건수" type="string" name="crdtQryInfTotCnt" start="96" end="99"/>
+    <fieldOffsets kor="신용조회정보응답건수" type="long" name="crdtQryInfRespCnt" start="99" end="101"/>
+    <fieldOffsets kor="관계거래처총건수" type="string" name="relPtrnTotCnt" start="101" end="104"/>
+    <fieldOffsets kor="관계거래처응답건수" type="long" name="relPtrnRespCnt" start="104" end="106"/>
+    <fieldOffsets kor="요약정보총건수" type="string" name="smryInfTotCnt" start="106" end="109"/>
+    <fieldOffsets kor="요약정보응답건수" type="long" name="smryInfRespCnt" start="109" end="111"/>
+    <fieldOffsets kor="채무불이행정보응답_배열건수" type="long" name="debtNoffilInfRespRowcount" start="111" end="116"/>
+    <fieldOffsets kor="채무불이행정보응답_배열" type="DEBT_NOFFIL_INF_RESP_LIST_TYPE" name="debtNoffilInfRespList" start="116" end="116"/>
+    <fieldOffsets kor="채무불이행정보응답1_배열건수" type="long" name="debtNoffilInfResp1Rowcount" start="116" end="121"/>
+    <fieldOffsets kor="채무불이행정보응답1_배열" type="DEBT_NOFFIL_INF_RESP1_LIST_TYPE" name="debtNoffilInfResp1List" start="121" end="121"/>
+    <fieldOffsets kor="거래개설정보응답_배열건수" type="long" name="trdOpeInfRespRowcount" start="121" end="126"/>
+    <fieldOffsets kor="거래개설정보응답_배열" type="TRD_OPE_INF_RESP_LIST_TYPE" name="trdOpeInfRespList" start="126" end="126"/>
+    <fieldOffsets kor="신용조회정보응답_배열건수" type="long" name="crdtQryInfRespRowcount" start="126" end="131"/>
+    <fieldOffsets kor="신용조회정보응답_배열" type="CRDT_QRY_INF_RESP_LIST_TYPE" name="crdtQryInfRespList" start="131" end="131"/>
+    <fieldOffsets kor="관계거래처응답_배열건수" type="long" name="relPtrnRespRowcount" start="131" end="136"/>
+    <fieldOffsets kor="관계거래처응답_배열" type="REL_PTRN_RESP_LIST_TYPE" name="relPtrnRespList" start="136" end="136"/>
+    <fieldOffsets kor="요약정보응답_배열건수" type="long" name="smryInfRespRowcount" start="136" end="141"/>
+    <fieldOffsets kor="요약정보응답_배열" type="SMRY_INF_RESP_LIST_TYPE" name="smryInfRespList" start="141" end="141"/>
+  </jndi:configuration>
+</jndi:namedResource>

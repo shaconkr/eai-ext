@@ -1,0 +1,10 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:e="http://shacon.kr/xsd" xmlns:ns="http://schema.hcis.com/xsd/NICCISSCAZ0040102_OutRes_SMRY_INF_RESP_LIST_TYPE" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://schema.hcis.com/xsd/NICCISSCAZ0040102_OutRes_SMRY_INF_RESP_LIST_TYPE">
+    <element name="root" type="ns:SMRY_INF_RESP_LIST_TYPE"/>
+    <complexType name="SMRY_INF_RESP_LIST_TYPE">
+        <sequence>
+            <element e:kor="정보구분" e:length="2" e:padder="SpaceRight" minOccurs="0" name="infGb" nillable="true" type="string"/>
+            <element e:kor="요약정보코드" e:length="9" e:padder="SpaceRight" minOccurs="0" name="smryInfCd" nillable="true" type="string"/>
+            <element e:kor="요약정보값" e:length="9" e:padder="SpaceRight" minOccurs="0" name="smryInfVal" nillable="true" type="string"/>
+        </sequence>
+    </complexType>
+</schema>

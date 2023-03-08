@@ -8,17 +8,17 @@
             <element e:kor="송신수신구분" e:length="1" e:padder="SpaceRight" minOccurs="0" name="tnrGb" nillable="true" type="string"/>
             <element e:kor="단말기구분코드" e:length="3" e:padder="SpaceRight" minOccurs="0" name="teGb" nillable="true" type="string"/>
             <element e:kor="응답코드" e:length="4" e:padder="SpaceRight" minOccurs="0" name="respCd" nillable="true" type="string"/>
-        </sequence>
-    </complexType>
-    <complexType name="NICCISSCAZ0030102_OutRes_Body">
-        <sequence>
             <element e:kor="기관ID" e:length="9" e:padder="SpaceRight" minOccurs="0" name="istnId" nillable="true" type="string"/>
             <element e:kor="기관전문관리번호" e:length="10" e:padder="ZeroLeft" minOccurs="0" name="istnTgrmMngNo" nillable="true" type="long"/>
             <element e:kor="기관전문전송시간" e:length="14" e:padder="ZeroLeft" minOccurs="0" name="istnTgrmSendTime" nillable="true" type="long"/>
             <element e:kor="NICE전문관리번호" e:length="10" e:padder="ZeroLeft" minOccurs="0" name="niceTgrmMngNo" nillable="true" type="long"/>
             <element e:kor="NICE전문전송시간" e:length="14" e:padder="ZeroLeft" minOccurs="0" name="niceTgrmSendTime" nillable="true" type="long"/>
             <element e:kor="주요BITMAP" e:length="16" e:padder="SpaceRight" minOccurs="0" name="prmrBmp" nillable="true" type="string"/>
-            <element e:kor="공백값" e:length="1" e:padder="SpaceRight" minOccurs="0" name="nullVal" nillable="true" type="string"/>
+            <element e:kor="조회동의사유코드" e:length="1" e:padder="SpaceRight" minOccurs="0" name="qryAgrRsnCd" nillable="true" type="string"/>
+        </sequence>
+    </complexType>
+    <complexType name="NICCISSCAZ0030102_OutRes_Body">
+        <sequence>
             <element e:kor="개인법인구분코드" e:length="1" e:padder="ZeroLeft" minOccurs="0" name="psnCorpGbcd" nillable="true" type="long"/>
             <element e:kor="주민등록번호" e:length="13" e:padder="SpaceRight" minOccurs="0" name="rrno" nillable="true" type="string"/>
             <element e:kor="정보연속구분" e:length="1" e:padder="SpaceRight" minOccurs="0" name="infCnscGb" nillable="true" type="string"/>
@@ -53,21 +53,21 @@
             <element e:kor="요약정보총건수" e:length="3" e:padder="SpaceRight" minOccurs="0" name="smryInfTotCnt" nillable="true" type="string"/>
             <element e:kor="요약정보응답건수" e:length="2" e:padder="ZeroLeft" minOccurs="0" name="smryInfRespCnt" nillable="true" type="long"/>
             <element e:kor="채무불이행신정원응답_배열건수" e:length="5" e:padder="ZeroLeft" minOccurs="0" name="debtNoffilKcrRespRowcount" nillable="true" type="long"/>
-            <element e:kor="채무불이행신정원응답_배열" e:padder="ZeroLeft" maxOccurs="unbounded" minOccurs="0" name="debtNoffilKcrRespList" nillable="true" type="ns:DEBT_NOFFIL_KCR_RESP_LIST_TYPE"/>
+            <element e:kor="채무불이행신정원응답_배열" e:lengthField="debtNoffilKcrRespRowcount" e:padder="ZeroLeft" maxOccurs="unbounded" minOccurs="0" name="debtNoffilKcrRespList" nillable="true" type="ns:DEBT_NOFFIL_KCR_RESP_LIST_TYPE"/>
             <element e:kor="채무불이행NICE응답_배열건수" e:length="5" e:padder="ZeroLeft" minOccurs="0" name="debtNoffilNiceRespRowcount" nillable="true" type="long"/>
-            <element e:kor="채무불이행NICE응답_배열" e:padder="ZeroLeft" maxOccurs="unbounded" minOccurs="0" name="debtNoffilNiceRespList" nillable="true" type="ns:DEBT_NOFFIL_NICE_RESP_LIST_TYPE"/>
+            <element e:kor="채무불이행NICE응답_배열" e:lengthField="debtNoffilKcrRespRowcount" e:padder="ZeroLeft" maxOccurs="unbounded" minOccurs="0" name="debtNoffilNiceRespList" nillable="true" type="ns:DEBT_NOFFIL_NICE_RESP_LIST_TYPE"/>
             <element e:kor="거래개설정보응답_배열건수" e:length="5" e:padder="ZeroLeft" minOccurs="0" name="trdOpeInfRespRowcount" nillable="true" type="long"/>
-            <element e:kor="거래개설정보응답_배열" e:padder="ZeroLeft" maxOccurs="unbounded" minOccurs="0" name="trdOpeInfRespList" nillable="true" type="ns:TRD_OPE_INF_RESP_LIST_TYPE"/>
+            <element e:kor="거래개설정보응답_배열" e:lengthField="trdOpeInfRespRowcount" e:padder="ZeroLeft" maxOccurs="unbounded" minOccurs="0" name="trdOpeInfRespList" nillable="true" type="ns:TRD_OPE_INF_RESP_LIST_TYPE"/>
             <element e:kor="신용조회정보응답_배열건수" e:length="5" e:padder="ZeroLeft" minOccurs="0" name="crdtQryInfRespRowcount" nillable="true" type="long"/>
-            <element e:kor="신용조회정보응답_배열" e:padder="ZeroLeft" maxOccurs="unbounded" minOccurs="0" name="crdtQryInfRespList" nillable="true" type="ns:CRDT_QRY_INF_RESP_LIST_TYPE"/>
+            <element e:kor="신용조회정보응답_배열" e:lengthField="crdtQryInfRespRowcount" e:padder="ZeroLeft" maxOccurs="unbounded" minOccurs="0" name="crdtQryInfRespList" nillable="true" type="ns:CRDT_QRY_INF_RESP_LIST_TYPE"/>
             <element e:kor="CB연체정보응답_배열건수" e:length="5" e:padder="ZeroLeft" minOccurs="0" name="cbOdueInfRespRowcount" nillable="true" type="long"/>
-            <element e:kor="CB연체정보응답_배열" e:padder="ZeroLeft" maxOccurs="unbounded" minOccurs="0" name="cbOdueInfRespList" nillable="true" type="ns:CB_ODUE_INF_RESP_LIST_TYPE"/>
+            <element e:kor="CB연체정보응답_배열" e:lengthField="cbOdueInfRespRowcount" e:padder="ZeroLeft" maxOccurs="unbounded" minOccurs="0" name="cbOdueInfRespList" nillable="true" type="ns:CB_ODUE_INF_RESP_LIST_TYPE"/>
             <element e:kor="CB자택정보변경이력정보응답_배열건수" e:length="5" e:padder="ZeroLeft" minOccurs="0" name="cbHmInfChgHisInfRespRowcount" nillable="true" type="long"/>
-            <element e:kor="CB자택정보변경이력정보응답_배열" e:padder="ZeroLeft" maxOccurs="unbounded" minOccurs="0" name="cbHmInfChgHisInfRespList" nillable="true" type="ns:CB_HM_INF_CHG_HIS_INF_RESP_LIST_TYPE"/>
+            <element e:kor="CB자택정보변경이력정보응답_배열" e:lengthField="cbHmInfChgHisInfRespRowcount" e:padder="ZeroLeft" maxOccurs="unbounded" minOccurs="0" name="cbHmInfChgHisInfRespList" nillable="true" type="ns:CB_HM_INF_CHG_HIS_INF_RESP_LIST_TYPE"/>
             <element e:kor="CB직장정보변경이력응답_배열건수" e:length="5" e:padder="ZeroLeft" minOccurs="0" name="cbOfcInfChgHisRespRowcount" nillable="true" type="long"/>
-            <element e:kor="CB직장정보변경이력응답_배열" e:padder="ZeroLeft" maxOccurs="unbounded" minOccurs="0" name="cbOfcInfChgHisRespList" nillable="true" type="ns:CB_OFC_INF_CHG_HIS_RESP_LIST_TYPE"/>
+            <element e:kor="CB직장정보변경이력응답_배열" e:lengthField="cbOfcInfChgHisRespRowcount" e:padder="ZeroLeft" maxOccurs="unbounded" minOccurs="0" name="cbOfcInfChgHisRespList" nillable="true" type="ns:CB_OFC_INF_CHG_HIS_RESP_LIST_TYPE"/>
             <element e:kor="요약정보응답_배열건수" e:length="5" e:padder="ZeroLeft" minOccurs="0" name="smryInfRespRowcount" nillable="true" type="long"/>
-            <element e:kor="요약정보응답_배열" e:padder="ZeroLeft" maxOccurs="unbounded" minOccurs="0" name="smryInfRespList" nillable="true" type="ns:SMRY_INF_RESP_LIST_TYPE"/>
+            <element e:kor="요약정보응답_배열" e:lengthField="smryInfRespRowcount" e:padder="ZeroLeft" maxOccurs="unbounded" minOccurs="0" name="smryInfRespList" nillable="true" type="ns:SMRY_INF_RESP_LIST_TYPE"/>
         </sequence>
     </complexType>
     <complexType name="DEBT_NOFFIL_KCR_RESP_LIST_TYPE">
@@ -196,13 +196,13 @@
     </complexType>
     <complexType name="NICCISSCAZ0030102_OutRes">
         <sequence>
-            <element e:kor="BIZ공통부" name="bizHeader" minOccurs="0"  type="ns:NICCISSCAZ0030102_OutRes_Header"/>
-            <element e:kor="BIZ데이터부" name="bizBody" minOccurs="0"  type="ns:NICCISSCAZ0030102_OutRes_Body"/>
+            <element e:kor="BIZ공통부" name="bizHeader" type="ns:NICCISSCAZ0030102_OutRes_Header"/>
+            <element e:kor="BIZ데이터부" name="bizBody" type="ns:NICCISSCAZ0030102_OutRes_Body"/>
         </sequence>
     </complexType>
     <complexType name="rootType">
         <sequence>
-            <element e:kor="데이터부" name="data" minOccurs="0" type="ns:NICCISSCAZ0030102_OutRes"/>
+            <element e:kor="데이터부" name="data" type="ns:NICCISSCAZ0030102_OutRes"/>
         </sequence>
     </complexType>
     <element name="root" type="ns:NICCISSCAZ0030102_OutRes"/>

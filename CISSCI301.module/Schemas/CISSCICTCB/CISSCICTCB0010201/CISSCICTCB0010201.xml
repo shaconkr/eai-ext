@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beanio xmlns="http://www.beanio.org/2012/03" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.beanio.org/2012/03 http://www.beanio.org/2012/03/mapping.xsd">
+  <typeHandler type="java.util.Date" class="org.beanio.types.DateTypeHandler">
+    <property name="pattern" value="yyyyMMddhhmm"/>
+  </typeHandler>
+  <stream kor="" name="CISSCICTCB0010201_OutReq" format="fixedlength">
+    <parser>
+      <property name="recordTerminator" value="\r\n"/>
+    </parser>
+    <record name="SCI_OutReq" class="java.util.LinkedHashMap">
+      <segment name="bizHeader" kor="BIZ공통부" minOccurs="1" maxOccurs="1" class="map">
+        <field kor="전문길이" name="tgrmLen" minOccurs="0" maxOccurs="1" position="0" length="4"/>
+        <field kor="전문번호" name="tgrmNo" minOccurs="0" maxOccurs="1" position="4" length="8"/>
+        <field kor="전문ID" name="tgrmId" minOccurs="0" maxOccurs="1" position="12" length="12"/>
+        <field kor="전문종별코드" name="tgrmSubCCd" minOccurs="0" maxOccurs="1" position="24" length="4"/>
+        <field kor="업무구분코드" name="tskGbcd" minOccurs="0" maxOccurs="1" position="28" length="3"/>
+        <field kor="응답코드" name="respCd" minOccurs="0" maxOccurs="1" position="31" length="3"/>
+        <field kor="관리KEY" name="mngKey" minOccurs="0" maxOccurs="1" position="34" length="4"/>
+        <field kor="CI정보" name="ciInf" minOccurs="0" maxOccurs="1" position="38" length="1"/>
+        <field kor="일련번호" name="seqno" minOccurs="0" maxOccurs="1" position="39" length="20"/>
+      </segment>
+      <segment name="bizBody" kor="BIZ데이터부" minOccurs="1" maxOccurs="1" class="map">
+        <field kor="주민등록번호" name="rrno" minOccurs="0" maxOccurs="1" position="59" length="13"/>
+        <field kor="예비값" name="prepVal" minOccurs="0" maxOccurs="1" position="72" length="44"/>
+      </segment>
+    </record>
+  </stream>
+</beanio>

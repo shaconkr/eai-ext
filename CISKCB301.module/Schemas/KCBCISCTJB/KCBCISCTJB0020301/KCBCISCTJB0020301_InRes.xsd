@@ -81,9 +81,9 @@
             <element e:kor="부동산소유정보총건수" e:length="3" e:padder="ZeroLeft" minOccurs="0" name="rltyOwnInfTotCnt" nillable="true" type="long"/>
             <element e:kor="부동산소유정보총송신건수" e:length="3" e:padder="ZeroLeft" minOccurs="0" name="rltyOwnInfTotTrsCnt" nillable="true" type="long"/>
             <element e:kor="부동산소유정보응답건수" e:length="2" e:padder="ZeroLeft" minOccurs="0" name="rltyOwnInfRespCnt" nillable="true" type="long"/>
-            <element e:kor="신상정보_배열" e:padder="ZeroLeft" maxOccurs="unbounded" minOccurs="0" name="pinfInfRespList" nillable="true" type="ns:PINF_INF_RESP_LIST_TYPE"/>
-            <element e:kor="APS정보_배열" e:padder="ZeroLeft" maxOccurs="unbounded" minOccurs="0" name="apsInfList" nillable="true" type="ns:APS_INF_LIST_TYPE"/>
-            <element e:kor="부동산소유정보_배열" e:padder="ZeroLeft" maxOccurs="unbounded" minOccurs="0" name="rltyOwnInfList" nillable="true" type="ns:RLTY_OWN_INF_LIST_TYPE"/>
+            <element e:kor="신상정보_배열" e:lengthField="pinfInfRespCnt" e:padder="ZeroLeft" maxOccurs="unbounded" minOccurs="0" name="pinfInfRespList" nillable="true" type="ns:PINF_INF_RESP_LIST_TYPE"/>
+            <element e:kor="APS정보_배열" e:lengthField="apsRespCnt" e:padder="ZeroLeft" maxOccurs="unbounded" minOccurs="0" name="apsInfList" nillable="true" type="ns:APS_INF_LIST_TYPE"/>
+            <element e:kor="부동산소유정보_배열" e:lengthField="rltyOwnInfRespCnt" e:padder="ZeroLeft" maxOccurs="unbounded" minOccurs="0" name="rltyOwnInfList" nillable="true" type="ns:RLTY_OWN_INF_LIST_TYPE"/>
         </sequence>
     </complexType>
     <complexType name="PINF_INF_RESP_LIST_TYPE">

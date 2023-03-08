@@ -1,0 +1,42 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:e="http://shacon.kr/xsd" xmlns:ns="http://schema.hcis.com/xsd/TOSCISPMMZ0140502_OutRes" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.hcis.com/xsd/TOSCISPMMZ0140502_OutRes">
+    <complexType name="TOSCISPMMZ0140502_OutRes_Header">
+        <sequence>
+            <element e:kor="식별코드" e:length="12" e:padder="SpaceRight" minOccurs="0" name="trCode" nillable="true" type="string"/>
+            <element e:kor="서비스구분" e:length="3" e:padder="SpaceRight" minOccurs="0" name="svcGb" nillable="true" type="string"/>
+            <element e:kor="송신자FLAG" e:length="1" e:padder="SpaceRight" minOccurs="0" name="sdFlag" nillable="true" type="string"/>
+            <element e:kor="송신자ID" e:length="10" e:padder="SpaceRight" minOccurs="0" name="sdId" nillable="true" type="string"/>
+            <element e:kor="수신자ID" e:length="10" e:padder="SpaceRight" minOccurs="0" name="rvId" nillable="true" type="string"/>
+            <element e:kor="메시지ID" e:length="12" e:padder="SpaceRight" minOccurs="0" name="msgId" nillable="true" type="string"/>
+            <element e:kor="고객코드" e:length="8" e:padder="SpaceRight" minOccurs="0" name="cpnyCd" nillable="true" type="string"/>
+            <element e:kor="은행코드" e:length="2" e:padder="SpaceRight" minOccurs="0" name="bnkCd" nillable="true" type="string"/>
+            <element e:kor="전문코드" e:length="4" e:padder="SpaceRight" minOccurs="0" name="ediCd" nillable="true" type="string"/>
+            <element e:kor="업무구분" e:length="3" e:padder="SpaceRight" minOccurs="0" name="jobGb" nillable="true" type="string"/>
+            <element e:kor="전문번호" e:length="6" e:padder="SpaceRight" minOccurs="0" name="ediNo" nillable="true" type="string"/>
+            <element e:kor="전송일자" e:length="8" e:padder="SpaceRight" minOccurs="0" name="sdDate" nillable="true" type="string"/>
+            <element e:kor="전송시간" e:length="6" e:padder="SpaceRight" minOccurs="0" name="sdTime" nillable="true" type="string"/>
+            <element e:kor="응답코드" e:length="4" e:padder="SpaceRight" minOccurs="0" name="retCd" nillable="true" type="string"/>
+            <element e:kor="예비영역" e:length="31" e:padder="SpaceRight" minOccurs="0" name="spareArea" nillable="true" type="string"/>
+        </sequence>
+    </complexType>
+    <complexType name="TOSCISPMMZ0140502_OutRes_Body">
+        <sequence>
+            <element e:kor="예비영역1" e:length="174" e:padder="SpaceRight" minOccurs="0" name="spareArea1" nillable="true" type="string"/>
+            <element e:kor="은행전문번호" e:length="6" e:padder="SpaceRight" minOccurs="0" name="bnkEdiNo" nillable="true" type="string"/>
+            <element e:kor="자통법적용구분" e:length="1" e:padder="SpaceRight" minOccurs="0" name="jatongApplYn" nillable="true" type="string"/>
+            <element e:kor="공통부은행코드" e:length="3" e:padder="SpaceRight" minOccurs="0" name="commBnkCd" nillable="true" type="string"/>
+            <element e:kor="예비영역2" e:length="46" e:padder="SpaceRight" minOccurs="0" name="spareArea2" nillable="true" type="string"/>
+        </sequence>
+    </complexType>
+    <complexType name="TOSCISPMMZ0140502_OutRes">
+        <sequence>
+            <element e:kor="BIZ공통부" name="bizHeader" type="ns:TOSCISPMMZ0140502_OutRes_Header"/>
+            <element e:kor="BIZ데이터부" name="bizBody" type="ns:TOSCISPMMZ0140502_OutRes_Body"/>
+        </sequence>
+    </complexType>
+    <complexType name="rootType">
+        <sequence>
+            <element e:kor="데이터부" name="data" type="ns:TOSCISPMMZ0140502_OutRes"/>
+        </sequence>
+    </complexType>
+    <element name="root" type="ns:TOSCISPMMZ0140502_OutRes"/>
+</schema>

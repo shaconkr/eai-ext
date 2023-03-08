@@ -17,15 +17,15 @@
         <field kor="송신수신구분" name="tnrGb" minOccurs="0" maxOccurs="1" position="27" length="1"/>
         <field kor="단말기구분코드" name="teGb" minOccurs="0" maxOccurs="1" position="28" length="3"/>
         <field kor="응답코드" name="respCd" minOccurs="0" maxOccurs="1" position="31" length="4"/>
-      </segment>
-      <segment name="bizBody" kor="BIZ데이터부" minOccurs="1" maxOccurs="1" class="map">
         <field kor="기관ID" name="istnId" minOccurs="0" maxOccurs="1" position="35" length="9"/>
         <field kor="기관전문관리번호" name="istnTgrmMngNo" minOccurs="0" maxOccurs="1" position="44" length="10" justify="right" padding="0"/>
         <field kor="기관전문전송시간" name="istnTgrmSendTime" minOccurs="0" maxOccurs="1" position="54" length="14" justify="right" padding="0"/>
         <field kor="NICE전문관리번호" name="niceTgrmMngNo" minOccurs="0" maxOccurs="1" position="68" length="10" justify="right" padding="0"/>
         <field kor="NICE전문전송시간" name="niceTgrmSendTime" minOccurs="0" maxOccurs="1" position="78" length="14" justify="right" padding="0"/>
         <field kor="주요BITMAP" name="prmrBmp" minOccurs="0" maxOccurs="1" position="92" length="16"/>
-        <field kor="공백값" name="nullVal" minOccurs="0" maxOccurs="1" position="108" length="1"/>
+        <field kor="조회동의사유코드" name="qryAgrRsnCd" minOccurs="0" maxOccurs="1" position="108" length="1"/>
+      </segment>
+      <segment name="bizBody" kor="BIZ데이터부" minOccurs="1" maxOccurs="1" class="map">
         <field kor="개인법인구분코드" name="psnCorpGbcd" minOccurs="0" maxOccurs="1" position="109" length="1" justify="right" padding="0"/>
         <field kor="주민등록번호" name="rrno" minOccurs="0" maxOccurs="1" position="110" length="13"/>
         <field kor="정보연속구분" name="infCnscGb" minOccurs="0" maxOccurs="1" position="123" length="1"/>
@@ -60,7 +60,7 @@
         <field kor="요약정보총건수" name="smryInfTotCnt" minOccurs="0" maxOccurs="1" position="195" length="3"/>
         <field kor="요약정보응답건수" name="smryInfRespCnt" minOccurs="0" maxOccurs="1" position="198" length="2" justify="right" padding="0"/>
         <field kor="채무불이행신정원응답_배열건수" name="debtNoffilKcrRespRowcount" minOccurs="0" maxOccurs="1" position="200" length="5" justify="right" padding="0"/>
-        <segment name="debtNoffilKcrRespList" kor="채무불이행신정원응답_배열" minOccurs="0" maxOccurs="9223372036854775807" collection="list" class="map">
+        <segment name="debtNoffilKcrRespList" kor="채무불이행신정원응답_배열" occursRef="debtNoffilKcrRespRowcount" collection="list" class="map">
           <field kor="정보구분" name="infGb" minOccurs="0" maxOccurs="1" position="205" length="2"/>
           <field kor="사유구분관련자구분" name="rsnGbInvlvpGb" minOccurs="0" maxOccurs="1" position="207" length="1"/>
           <field kor="연체사유코드" name="odueRsnCd" minOccurs="0" maxOccurs="1" position="208" length="4"/>
@@ -80,7 +80,7 @@
           <field kor="공백값" name="nullVal" minOccurs="0" maxOccurs="1" position="319" length="6"/>
         </segment>
         <field kor="채무불이행NICE응답_배열건수" name="debtNoffilNiceRespRowcount" minOccurs="0" maxOccurs="1" position="325" length="5" justify="right" padding="0"/>
-        <segment name="debtNoffilNiceRespList" kor="채무불이행NICE응답_배열" minOccurs="0" maxOccurs="9223372036854775807" collection="list" class="map">
+        <segment name="debtNoffilNiceRespList" kor="채무불이행NICE응답_배열" occursRef="debtNoffilKcrRespRowcount" collection="list" class="map">
           <field kor="정보구분" name="infGb" minOccurs="0" maxOccurs="1" position="330" length="2"/>
           <field kor="연체사유코드" name="odueRsnCd" minOccurs="0" maxOccurs="1" position="332" length="4"/>
           <field kor="발생기관명" name="ocrnIstnNm" minOccurs="0" maxOccurs="1" position="336" length="30"/>
@@ -94,7 +94,7 @@
           <field kor="공백값" name="nullVal" minOccurs="0" maxOccurs="1" position="421" length="9"/>
         </segment>
         <field kor="거래개설정보응답_배열건수" name="trdOpeInfRespRowcount" minOccurs="0" maxOccurs="1" position="430" length="5" justify="right" padding="0"/>
-        <segment name="trdOpeInfRespList" kor="거래개설정보응답_배열" minOccurs="0" maxOccurs="9223372036854775807" collection="list" class="map">
+        <segment name="trdOpeInfRespList" kor="거래개설정보응답_배열" occursRef="trdOpeInfRespRowcount" collection="list" class="map">
           <field kor="정보구분" name="infGb" minOccurs="0" maxOccurs="1" position="435" length="2"/>
           <field kor="사유코드" name="rsnCd" minOccurs="0" maxOccurs="1" position="437" length="4"/>
           <field kor="발생기관명" name="ocrnIstnNm" minOccurs="0" maxOccurs="1" position="441" length="30"/>
@@ -108,7 +108,7 @@
           <field kor="공백값" name="nullVal" minOccurs="0" maxOccurs="1" position="526" length="9"/>
         </segment>
         <field kor="신용조회정보응답_배열건수" name="crdtQryInfRespRowcount" minOccurs="0" maxOccurs="1" position="535" length="5" justify="right" padding="0"/>
-        <segment name="crdtQryInfRespList" kor="신용조회정보응답_배열" minOccurs="0" maxOccurs="9223372036854775807" collection="list" class="map">
+        <segment name="crdtQryInfRespList" kor="신용조회정보응답_배열" occursRef="crdtQryInfRespRowcount" collection="list" class="map">
           <field kor="정보구분" name="infGb" minOccurs="0" maxOccurs="1" position="540" length="2"/>
           <field kor="조회일자" name="qryDt" minOccurs="0" maxOccurs="1" position="542" length="8"/>
           <field kor="조회기관명" name="qryIstnNm" minOccurs="0" maxOccurs="1" position="550" length="30"/>
@@ -120,7 +120,7 @@
           <field kor="공백값" name="nullVal" minOccurs="0" maxOccurs="1" position="612" length="8"/>
         </segment>
         <field kor="CB연체정보응답_배열건수" name="cbOdueInfRespRowcount" minOccurs="0" maxOccurs="1" position="620" length="5" justify="right" padding="0"/>
-        <segment name="cbOdueInfRespList" kor="CB연체정보응답_배열" minOccurs="0" maxOccurs="9223372036854775807" collection="list" class="map">
+        <segment name="cbOdueInfRespList" kor="CB연체정보응답_배열" occursRef="cbOdueInfRespRowcount" collection="list" class="map">
           <field kor="정보구분" name="infGb" minOccurs="0" maxOccurs="1" position="625" length="2"/>
           <field kor="발생기관명" name="ocrnIstnNm" minOccurs="0" maxOccurs="1" position="627" length="30"/>
           <field kor="발생지점명" name="ocrnBrnNm" minOccurs="0" maxOccurs="1" position="657" length="30"/>
@@ -147,7 +147,7 @@
           <field kor="공백값" name="nullVal" minOccurs="0" maxOccurs="1" position="803" length="22"/>
         </segment>
         <field kor="CB자택정보변경이력정보응답_배열건수" name="cbHmInfChgHisInfRespRowcount" minOccurs="0" maxOccurs="1" position="825" length="5" justify="right" padding="0"/>
-        <segment name="cbHmInfChgHisInfRespList" kor="CB자택정보변경이력정보응답_배열" minOccurs="0" maxOccurs="9223372036854775807" collection="list" class="map">
+        <segment name="cbHmInfChgHisInfRespList" kor="CB자택정보변경이력정보응답_배열" occursRef="cbHmInfChgHisInfRespRowcount" collection="list" class="map">
           <field kor="정보구분" name="infGb" minOccurs="0" maxOccurs="1" position="830" length="2"/>
           <field kor="등록일" name="regDt" minOccurs="0" maxOccurs="1" position="832" length="8"/>
           <field kor="자택우편번호" name="hmPostNo" minOccurs="0" maxOccurs="1" position="840" length="6"/>
@@ -158,7 +158,7 @@
           <field kor="공백값" name="nullVal" minOccurs="0" maxOccurs="1" position="960" length="20"/>
         </segment>
         <field kor="CB직장정보변경이력응답_배열건수" name="cbOfcInfChgHisRespRowcount" minOccurs="0" maxOccurs="1" position="980" length="5" justify="right" padding="0"/>
-        <segment name="cbOfcInfChgHisRespList" kor="CB직장정보변경이력응답_배열" minOccurs="0" maxOccurs="9223372036854775807" collection="list" class="map">
+        <segment name="cbOfcInfChgHisRespList" kor="CB직장정보변경이력응답_배열" occursRef="cbOfcInfChgHisRespRowcount" collection="list" class="map">
           <field kor="정보구분" name="infGb" minOccurs="0" maxOccurs="1" position="985" length="2"/>
           <field kor="등록일" name="regDt" minOccurs="0" maxOccurs="1" position="987" length="8"/>
           <field kor="직장명" name="ofcNm" minOccurs="0" maxOccurs="1" position="995" length="20"/>
@@ -170,7 +170,7 @@
           <field kor="공백값" name="nullVal" minOccurs="0" maxOccurs="1" position="1139" length="26"/>
         </segment>
         <field kor="요약정보응답_배열건수" name="smryInfRespRowcount" minOccurs="0" maxOccurs="1" position="1165" length="5" justify="right" padding="0"/>
-        <segment name="smryInfRespList" kor="요약정보응답_배열" minOccurs="0" maxOccurs="9223372036854775807" collection="list" class="map">
+        <segment name="smryInfRespList" kor="요약정보응답_배열" occursRef="smryInfRespRowcount" collection="list" class="map">
           <field kor="정보구분" name="infGb" minOccurs="0" maxOccurs="1" position="1170" length="2"/>
           <field kor="요약서비스코드" name="smrySrvCd" minOccurs="0" maxOccurs="1" position="1172" length="9"/>
           <field kor="요약서비스값" name="smrySrvVal" minOccurs="0" maxOccurs="1" position="1181" length="9"/>

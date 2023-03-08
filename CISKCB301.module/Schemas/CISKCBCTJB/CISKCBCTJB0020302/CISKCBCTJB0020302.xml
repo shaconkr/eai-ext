@@ -40,7 +40,7 @@
         <field kor="APS요청건수" name="apsReqnCnt" minOccurs="0" maxOccurs="1" position="257" length="3" justify="right" padding="0"/>
         <field kor="부동산소유정보총수신건수" name="rltyOwnInfTotRcvCnt" minOccurs="0" maxOccurs="1" position="260" length="3" justify="right" padding="0"/>
         <field kor="부동산소유정보요청건수" name="rltyOwnInfReqnCnt" minOccurs="0" maxOccurs="1" position="263" length="2" justify="right" padding="0"/>
-        <segment name="apsReqnList" kor="APS반복부_배열" minOccurs="0" maxOccurs="9223372036854775807" collection="list" class="map">
+        <segment name="apsReqnList" kor="APS반복부_배열" occursRef="apsReqnCnt" collection="list" class="map">
           <field kor="세그멘트ID" name="segId" minOccurs="0" maxOccurs="1" position="265" length="3"/>
           <field kor="프로파일코드" name="prfCd" minOccurs="0" maxOccurs="1" position="268" length="9"/>
         </segment>

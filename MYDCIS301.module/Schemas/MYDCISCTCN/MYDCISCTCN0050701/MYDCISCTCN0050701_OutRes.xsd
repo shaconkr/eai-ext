@@ -53,7 +53,7 @@
             <element e:kor="조회일시" e:length="14" e:padder="ZeroLeft" minOccurs="0" name="search_timestamp" nillable="true" type="long"/>
             <element e:kor="리볼빙여부" e:length="5" e:padder="SpaceRight" minOccurs="0" name="is_revolving" nillable="true" type="string"/>
             <element e:kor="결제_배열건수" e:length="3" e:padder="ZeroLeft" minOccurs="0" name="pay_cnt" nillable="true" type="long"/>
-            <element e:kor="결제_배열" e:padder="ZeroLeft" maxOccurs="unbounded" minOccurs="0" name="pay_list" nillable="true" type="ns:pay_list_TYPE"/>
+            <element e:kor="결제_배열" e:lengthField="payCnt" e:padder="ZeroLeft" maxOccurs="unbounded" minOccurs="0" name="pay_list" nillable="true" type="ns:pay_list_TYPE"/>
         </sequence>
     </complexType>
     <complexType name="pay_list_TYPE">

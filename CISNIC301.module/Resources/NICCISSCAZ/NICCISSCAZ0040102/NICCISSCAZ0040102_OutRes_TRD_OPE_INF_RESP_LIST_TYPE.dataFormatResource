@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jndi:namedResource xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:NICCISSCAZ0040102="http://schema.hcis.com/xsd/NICCISSCAZ0040102_OutRes_TRD_OPE_INF_RESP_LIST_TYPE" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" name="NICCISSCAZ/NICCISSCAZ0040102.NICCISSCAZ0040102_OutRes_TRD_OPE_INF_RESP_LIST_TYPE" type="dataformat:DataFormat">
+  <jndi:imports importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/NICCISSCAZ0040102_OutRes_TRD_OPE_INF_RESP_LIST_TYPE_df.xsd" namespace="http://schema.hcis.com/xsd/NICCISSCAZ0040102_OutRes_TRD_OPE_INF_RESP_LIST_TYPE"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="NICCISSCAZ0040102:main" lineLength="100" fieldOffsetsStr="infGb(0,2)&#xA;rsnCd(2,6)&#xA;opeCoNm(6,36)&#xA;opeBrnNm(36,56)&#xA;opeCustCd(56,65)&#xA;opeDt(65,73)&#xA;expirDt(73,81)&#xA;opeAmt(81,90)&#xA;nullVal(90,100)">
+    <fieldOffsets kor="정보구분" type="string" name="infGb" start="0" end="2"/>
+    <fieldOffsets kor="사유코드" type="string" name="rsnCd" start="2" end="6"/>
+    <fieldOffsets kor="개설회사명" type="string" name="opeCoNm" start="6" end="36"/>
+    <fieldOffsets kor="개설지점명" type="string" name="opeBrnNm" start="36" end="56"/>
+    <fieldOffsets kor="개설업체코드" type="string" name="opeCustCd" start="56" end="65"/>
+    <fieldOffsets kor="개설일자" type="string" name="opeDt" start="65" end="73"/>
+    <fieldOffsets kor="만기일자" type="string" name="expirDt" start="73" end="81"/>
+    <fieldOffsets kor="개설금액" type="long" name="opeAmt" start="81" end="90"/>
+    <fieldOffsets kor="공백값" type="string" name="nullVal" start="90" end="100"/>
+  </jndi:configuration>
+</jndi:namedResource>

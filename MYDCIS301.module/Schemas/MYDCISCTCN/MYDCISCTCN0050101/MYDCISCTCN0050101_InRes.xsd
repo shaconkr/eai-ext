@@ -1,0 +1,10 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:e="http://shacon.kr/xsd" xmlns:ns="http://schema.hcis.com/xsd/MYDCISCTCN0050101_InRes" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.hcis.com/xsd/MYDCISCTCN0050101_InRes">
+    <complexType name="MYDCISCTCN0050101_InRes">
+        <sequence>
+            <element e:kor="거래고유번호" e:length="25" e:padder="SpaceRight" minOccurs="0" name="x-api-tran-id" nillable="true" type="string"/>
+            <element e:kor="세부응답코드" e:length="5" e:padder="SpaceRight" minOccurs="0" name="rsp_code" nillable="true" type="string"/>
+            <element e:kor="세부응답메시지" e:length="450" e:padder="SpaceRight" minOccurs="0" name="rsp_msg" nillable="true" type="string"/>
+        </sequence>
+    </complexType>
+    <element name="root" type="ns:MYDCISCTCN0050101_InRes"/>
+</schema>

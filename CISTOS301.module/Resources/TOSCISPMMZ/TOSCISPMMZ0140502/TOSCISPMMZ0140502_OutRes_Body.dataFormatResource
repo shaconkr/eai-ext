@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jndi:namedResource xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TOSCISPMMZ0140502="http://schema.hcis.com/xsd/TOSCISPMMZ0140502_OutRes_Body" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" name="TOSCISPMMZ/TOSCISPMMZ0140502.TOSCISPMMZ0140502_OutRes_Body" type="dataformat:DataFormat">
+  <jndi:imports importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/TOSCISPMMZ0140502_OutRes_Body_df.xsd" namespace="http://schema.hcis.com/xsd/TOSCISPMMZ0140502_OutRes_Body"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="TOSCISPMMZ0140502:main" lineLength="230" fieldOffsetsStr="spareArea1(0,174)&#xA;bnkEdiNo(174,180)&#xA;jatongApplYn(180,181)&#xA;commBnkCd(181,184)&#xA;spareArea2(184,230)">
+    <fieldOffsets kor="예비영역1" type="string" name="spareArea1" start="0" end="174"/>
+    <fieldOffsets kor="은행전문번호" type="string" name="bnkEdiNo" start="174" end="180"/>
+    <fieldOffsets kor="자통법적용구분" type="string" name="jatongApplYn" start="180" end="181"/>
+    <fieldOffsets kor="공통부은행코드" type="string" name="commBnkCd" start="181" end="184"/>
+    <fieldOffsets kor="예비영역2" type="string" name="spareArea2" start="184" end="230"/>
+  </jndi:configuration>
+</jndi:namedResource>

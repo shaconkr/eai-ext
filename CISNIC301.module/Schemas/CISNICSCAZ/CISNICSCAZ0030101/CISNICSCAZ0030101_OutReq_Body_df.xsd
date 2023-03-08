@@ -2,13 +2,6 @@
     <element name="root" type="ns:CISNICSCAZ0030101_OutReq_Body"/>
     <complexType name="CISNICSCAZ0030101_OutReq_Body">
         <sequence>
-            <element e:kor="기관ID" e:length="9" e:padder="SpaceRight" minOccurs="0" name="istnId" nillable="true" type="string"/>
-            <element e:kor="기관전문관리번호" e:length="10" e:padder="ZeroLeft" minOccurs="0" name="istnTgrmMngNo" nillable="true" type="long"/>
-            <element e:kor="기관전문전송시간" e:length="14" e:padder="ZeroLeft" minOccurs="0" name="istnTgrmSendTime" nillable="true" type="long"/>
-            <element e:kor="NICE전문관리번호" e:length="10" e:padder="ZeroLeft" minOccurs="0" name="niceTgrmMngNo" nillable="true" type="long"/>
-            <element e:kor="NICE전문전송시간" e:length="14" e:padder="ZeroLeft" minOccurs="0" name="niceTgrmSendTime" nillable="true" type="long"/>
-            <element e:kor="주요BITMAP" e:length="16" e:padder="SpaceRight" minOccurs="0" name="prmrBmp" nillable="true" type="string"/>
-            <element e:kor="조회동의사유" e:length="1" e:padder="SpaceRight" minOccurs="0" name="qryAgrRsn" nillable="true" type="string"/>
             <element e:kor="개인법인구분코드" e:length="1" e:padder="ZeroLeft" minOccurs="0" name="psnCorpGbcd" nillable="true" type="long"/>
             <element e:kor="주민등록번호" e:length="13" e:padder="SpaceRight" minOccurs="0" name="rrno" nillable="true" type="string"/>
             <element e:kor="조회사유코드" e:length="2" e:padder="ZeroLeft" minOccurs="0" name="qryRsnCd" nillable="true" type="long"/>
@@ -43,7 +36,7 @@
             <element e:kor="요약서비스수신건수" e:length="3" e:padder="ZeroLeft" minOccurs="0" name="smrySrvRcvCnt" nillable="true" type="long"/>
             <element e:kor="요약서비스요청건수" e:length="2" e:padder="ZeroLeft" minOccurs="0" name="smrySrvReqnCnt" nillable="true" type="long"/>
             <element e:kor="요약서비스구분정보_배열건수" e:length="5" e:padder="ZeroLeft" minOccurs="0" name="smrySrvGbInfRowcount" nillable="true" type="long"/>
-            <element e:kor="요약서비스구분정보_배열" e:padder="ZeroLeft" maxOccurs="unbounded" minOccurs="0" name="smrySrvGbInfList" type="ns:SMRY_SRV_GB_INF_LIST_TYPE"/>
+            <element e:kor="요약서비스구분정보_배열" e:lengthField="smrySrvGbInfRowcount" e:padder="ZeroLeft" maxOccurs="unbounded" minOccurs="0" name="smrySrvGbInfList" type="ns:SMRY_SRV_GB_INF_LIST_TYPE"/>
         </sequence>
     </complexType>
     <complexType name="SMRY_SRV_GB_INF_LIST_TYPE">

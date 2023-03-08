@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jndi:namedResource xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CISNICSCAZ0040101="http://schema.hcis.com/xsd/CISNICSCAZ0040101_OutReq_Header" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" name="CISNICSCAZ/CISNICSCAZ0040101.CISNICSCAZ0040101_OutReq_Header" type="dataformat:DataFormat">
+  <jndi:imports importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/CISNICSCAZ0040101_OutReq_Header_df.xsd" namespace="http://schema.hcis.com/xsd/CISNICSCAZ0040101_OutReq_Header"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="CISNICSCAZ0040101:main" lineLength="109" fieldOffsetsStr="trNo(0,9)&#xA;tgrmGrpCd(9,18)&#xA;trdSubCCd(18,22)&#xA;trdGbcd(22,27)&#xA;tnrGb(27,28)&#xA;teGb(28,31)&#xA;respCd(31,35)&#xA;istnId(35,44)&#xA;istnTgrmMngNo(44,54)&#xA;istnTgrmSendTime(54,68)&#xA;niceTgrmMngNo(68,78)&#xA;niceTgrmSendTime(78,92)&#xA;prmrBmp(92,108)&#xA;qryAgrRsnCd(108,109)">
+    <fieldOffsets kor="TR번호" type="string" name="trNo" start="0" end="9"/>
+    <fieldOffsets kor="전문그룹코드" type="string" name="tgrmGrpCd" start="9" end="18"/>
+    <fieldOffsets kor="거래종별코드" type="string" name="trdSubCCd" start="18" end="22"/>
+    <fieldOffsets kor="거래구분코드" type="string" name="trdGbcd" start="22" end="27"/>
+    <fieldOffsets kor="송신수신구분" type="string" name="tnrGb" start="27" end="28"/>
+    <fieldOffsets kor="단말기구분코드" type="string" name="teGb" start="28" end="31"/>
+    <fieldOffsets kor="응답코드" type="string" name="respCd" start="31" end="35"/>
+    <fieldOffsets kor="기관ID" type="string" name="istnId" start="35" end="44"/>
+    <fieldOffsets kor="기관전문관리번호" type="long" name="istnTgrmMngNo" start="44" end="54"/>
+    <fieldOffsets kor="기관전문전송시간" type="long" name="istnTgrmSendTime" start="54" end="68"/>
+    <fieldOffsets kor="NICE전문관리번호" type="long" name="niceTgrmMngNo" start="68" end="78"/>
+    <fieldOffsets kor="NICE전문전송시간" type="long" name="niceTgrmSendTime" start="78" end="92"/>
+    <fieldOffsets kor="주요BITMAP" type="string" name="prmrBmp" start="92" end="108"/>
+    <fieldOffsets kor="조회동의사유코드" type="string" name="qryAgrRsnCd" start="108" end="109"/>
+  </jndi:configuration>
+</jndi:namedResource>

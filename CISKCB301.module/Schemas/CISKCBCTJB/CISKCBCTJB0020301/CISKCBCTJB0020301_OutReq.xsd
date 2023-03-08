@@ -33,7 +33,7 @@
             <element e:kor="APS요청건수" e:length="3" e:padder="ZeroLeft" minOccurs="0" name="apsReqnCnt" nillable="true" type="long"/>
             <element e:kor="부동산소유정보총수신건수" e:length="3" e:padder="ZeroLeft" minOccurs="0" name="rltyOwnInfTotRcvCnt" nillable="true" type="long"/>
             <element e:kor="부동산소유정보요청건수" e:length="2" e:padder="ZeroLeft" minOccurs="0" name="rltyOwnInfReqnCnt" nillable="true" type="long"/>
-            <element e:kor="APS반복부_배열" e:padder="ZeroLeft" maxOccurs="unbounded" minOccurs="0" name="apsReqnList" nillable="true" type="ns:APS_REQN_LIST_TYPE"/>
+            <element e:kor="APS반복부_배열" e:lengthField="apsReqnCnt" e:padder="ZeroLeft" maxOccurs="unbounded" minOccurs="0" name="apsReqnList" nillable="true" type="ns:APS_REQN_LIST_TYPE"/>
         </sequence>
     </complexType>
     <complexType name="APS_REQN_LIST_TYPE">

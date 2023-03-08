@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jndi:namedResource xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CISSCICTCB0010201="http://schema.hcis.com/xsd/CISSCICTCB0010201_OutReq_Body" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" name="CISSCICTCB/CISSCICTCB0010201.CISSCICTCB0010201_OutReq_Body" type="dataformat:DataFormat">
+  <jndi:imports importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/CISSCICTCB0010201_OutReq_Body_df.xsd" namespace="http://schema.hcis.com/xsd/CISSCICTCB0010201_OutReq_Body"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="CISSCICTCB0010201:main" lineLength="57" fieldOffsetsStr="rrno(0,13)&#xA;prepVal(13,57)">
+    <fieldOffsets kor="주민등록번호" type="string" name="rrno" start="0" end="13"/>
+    <fieldOffsets kor="예비값" type="string" name="prepVal" start="13" end="57"/>
+  </jndi:configuration>
+</jndi:namedResource>

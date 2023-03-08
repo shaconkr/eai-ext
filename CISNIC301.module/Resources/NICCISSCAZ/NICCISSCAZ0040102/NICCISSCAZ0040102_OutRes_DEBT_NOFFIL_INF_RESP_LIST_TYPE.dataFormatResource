@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jndi:namedResource xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:NICCISSCAZ0040102="http://schema.hcis.com/xsd/NICCISSCAZ0040102_OutRes_DEBT_NOFFIL_INF_RESP_LIST_TYPE" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" name="NICCISSCAZ/NICCISSCAZ0040102.NICCISSCAZ0040102_OutRes_DEBT_NOFFIL_INF_RESP_LIST_TYPE" type="dataformat:DataFormat">
+  <jndi:imports importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/NICCISSCAZ0040102_OutRes_DEBT_NOFFIL_INF_RESP_LIST_TYPE_df.xsd" namespace="http://schema.hcis.com/xsd/NICCISSCAZ0040102_OutRes_DEBT_NOFFIL_INF_RESP_LIST_TYPE"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="NICCISSCAZ0040102:main" lineLength="130" fieldOffsetsStr="infGb(0,2)&#xA;invlvpGb(2,3)&#xA;crdtBadRsn(3,7)&#xA;ocrnCoNm(7,37)&#xA;ocrnBrnNm(37,67)&#xA;ocrnCoCustCd(67,76)&#xA;ocrnDt(76,84)&#xA;ocrnRegDt(84,92)&#xA;regAmt(92,101)&#xA;odueAmt(101,110)&#xA;clerDt(110,118)&#xA;clerGbcd(118,120)&#xA;procStatCd(120,121)&#xA;spclRecoGb(121,122)&#xA;nullVal(122,130)">
+    <fieldOffsets kor="정보구분" type="string" name="infGb" start="0" end="2"/>
+    <fieldOffsets kor="관련자구분" type="long" name="invlvpGb" start="2" end="3"/>
+    <fieldOffsets kor="신용불량사유" type="long" name="crdtBadRsn" start="3" end="7"/>
+    <fieldOffsets kor="발생회사명" type="string" name="ocrnCoNm" start="7" end="37"/>
+    <fieldOffsets kor="발생지점명" type="string" name="ocrnBrnNm" start="37" end="67"/>
+    <fieldOffsets kor="발생회사업체코드" type="string" name="ocrnCoCustCd" start="67" end="76"/>
+    <fieldOffsets kor="발생일자" type="long" name="ocrnDt" start="76" end="84"/>
+    <fieldOffsets kor="발생등록일자" type="string" name="ocrnRegDt" start="84" end="92"/>
+    <fieldOffsets kor="등록금액" type="long" name="regAmt" start="92" end="101"/>
+    <fieldOffsets kor="연체금액" type="long" name="odueAmt" start="101" end="110"/>
+    <fieldOffsets kor="해제일자" type="long" name="clerDt" start="110" end="118"/>
+    <fieldOffsets kor="해제구분코드" type="string" name="clerGbcd" start="118" end="120"/>
+    <fieldOffsets kor="처리상태코드" type="string" name="procStatCd" start="120" end="121"/>
+    <fieldOffsets kor="특수기록구분" type="string" name="spclRecoGb" start="121" end="122"/>
+    <fieldOffsets kor="공백값" type="string" name="nullVal" start="122" end="130"/>
+  </jndi:configuration>
+</jndi:namedResource>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jndi:namedResource xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SCICISCTCB0010202="http://schema.hcis.com/xsd/SCICISCTCB0010202_OutRes_Body" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" name="SCICISCTCB/SCICISCTCB0010202.SCICISCTCB0010202_OutRes_Body" type="dataformat:DataFormat">
+  <jndi:imports importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/SCICISCTCB0010202_OutRes_Body_df.xsd" namespace="http://schema.hcis.com/xsd/SCICISCTCB0010202_OutRes_Body"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="SCICISCTCB0010202:main" lineLength="285" fieldOffsetsStr="crdMemDiVal(0,64)&#xA;ciVer(64,65)&#xA;custCiVal1(65,153)&#xA;custCiVal2(153,241)&#xA;prepVal(241,285)">
+    <fieldOffsets kor="카드회원DI값" type="string" name="crdMemDiVal" start="0" end="64"/>
+    <fieldOffsets kor="CI버전" type="string" name="ciVer" start="64" end="65"/>
+    <fieldOffsets kor="고객CI값1" type="string" name="custCiVal1" start="65" end="153"/>
+    <fieldOffsets kor="고객CI값2" type="string" name="custCiVal2" start="153" end="241"/>
+    <fieldOffsets kor="예비값" type="string" name="prepVal" start="241" end="285"/>
+  </jndi:configuration>
+</jndi:namedResource>

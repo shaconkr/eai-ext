@@ -52,7 +52,7 @@
             <element e:kor="응답메시지" e:length="450" e:padder="SpaceRight" minOccurs="0" name="rsp_msg" nillable="true" type="string"/>
             <element e:kor="다음KEY" e:length="1000" e:padder="SpaceRight" minOccurs="0" name="next_page" nillable="true" type="string"/>
             <element e:kor="승인_배열건수" e:length="3" e:padder="ZeroLeft" minOccurs="0" name="approved_cnt" nillable="true" type="long"/>
-            <element e:kor="승인_배열" e:padder="ZeroLeft" maxOccurs="unbounded" minOccurs="0" name="approved_list" nillable="true" type="ns:approved_list_TYPE"/>
+            <element e:kor="승인_배열" e:lengthField="approvedCnt" e:padder="ZeroLeft" maxOccurs="unbounded" minOccurs="0" name="approved_list" nillable="true" type="ns:approved_list_TYPE"/>
         </sequence>
     </complexType>
     <complexType name="approved_list_TYPE">

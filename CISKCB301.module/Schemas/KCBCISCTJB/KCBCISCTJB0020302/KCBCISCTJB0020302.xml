@@ -42,7 +42,7 @@
         <field kor="부동산소유정보총건수" name="rltyOwnInfTotCnt" minOccurs="0" maxOccurs="1" position="240" length="3" justify="right" padding="0"/>
         <field kor="부동산소유정보총송신건수" name="rltyOwnInfTotTrsCnt" minOccurs="0" maxOccurs="1" position="243" length="3" justify="right" padding="0"/>
         <field kor="부동산소유정보응답건수" name="rltyOwnInfRespCnt" minOccurs="0" maxOccurs="1" position="246" length="2" justify="right" padding="0"/>
-        <segment name="pinfInfRespList" kor="신상정보_배열" minOccurs="0" maxOccurs="9223372036854775807" collection="list" class="map">
+        <segment name="pinfInfRespList" kor="신상정보_배열" occursRef="pinfInfRespCnt" collection="list" class="map">
           <field kor="세그멘트ID" name="segId" minOccurs="0" maxOccurs="1" position="248" length="3"/>
           <field kor="자택주소등록일자" name="hmAdrRegDt" minOccurs="0" maxOccurs="1" position="251" length="8"/>
           <field kor="자택우편번호" name="hmPostNo" minOccurs="0" maxOccurs="1" position="259" length="6"/>
@@ -76,12 +76,12 @@
           <field kor="이메일주소" name="emailAdr" minOccurs="0" maxOccurs="1" position="1291" length="50"/>
           <field kor="예비값" name="prepVal" minOccurs="0" maxOccurs="1" position="1341" length="14"/>
         </segment>
-        <segment name="apsInfList" kor="APS정보_배열" minOccurs="0" maxOccurs="9223372036854775807" collection="list" class="map">
+        <segment name="apsInfList" kor="APS정보_배열" occursRef="apsRespCnt" collection="list" class="map">
           <field kor="세그멘트ID" name="segId" minOccurs="0" maxOccurs="1" position="1355" length="3"/>
           <field kor="프로파일코드" name="prfCd" minOccurs="0" maxOccurs="1" position="1358" length="9"/>
           <field kor="프로파일결과값" name="prfRstVal" minOccurs="0" maxOccurs="1" position="1367" length="9"/>
         </segment>
-        <segment name="rltyOwnInfList" kor="부동산소유정보_배열" minOccurs="0" maxOccurs="9223372036854775807" collection="list" class="map">
+        <segment name="rltyOwnInfList" kor="부동산소유정보_배열" occursRef="rltyOwnInfRespCnt" collection="list" class="map">
           <field kor="세그멘트ID" name="segId" minOccurs="0" maxOccurs="1" position="1376" length="3"/>
           <field kor="등기고유번호" name="rmailInntNo" minOccurs="0" maxOccurs="1" position="1379" length="14"/>
           <field kor="부동산고유번호" name="rltyInntNo" minOccurs="0" maxOccurs="1" position="1393" length="33"/>

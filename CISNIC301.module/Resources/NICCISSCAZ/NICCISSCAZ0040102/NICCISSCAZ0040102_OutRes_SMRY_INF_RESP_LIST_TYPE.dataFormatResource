@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jndi:namedResource xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:NICCISSCAZ0040102="http://schema.hcis.com/xsd/NICCISSCAZ0040102_OutRes_SMRY_INF_RESP_LIST_TYPE" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" name="NICCISSCAZ/NICCISSCAZ0040102.NICCISSCAZ0040102_OutRes_SMRY_INF_RESP_LIST_TYPE" type="dataformat:DataFormat">
+  <jndi:imports importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/NICCISSCAZ0040102_OutRes_SMRY_INF_RESP_LIST_TYPE_df.xsd" namespace="http://schema.hcis.com/xsd/NICCISSCAZ0040102_OutRes_SMRY_INF_RESP_LIST_TYPE"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="NICCISSCAZ0040102:main" lineLength="20" fieldOffsetsStr="infGb(0,2)&#xA;smryInfCd(2,11)&#xA;smryInfVal(11,20)">
+    <fieldOffsets kor="정보구분" type="string" name="infGb" start="0" end="2"/>
+    <fieldOffsets kor="요약정보코드" type="string" name="smryInfCd" start="2" end="11"/>
+    <fieldOffsets kor="요약정보값" type="string" name="smryInfVal" start="11" end="20"/>
+  </jndi:configuration>
+</jndi:namedResource>

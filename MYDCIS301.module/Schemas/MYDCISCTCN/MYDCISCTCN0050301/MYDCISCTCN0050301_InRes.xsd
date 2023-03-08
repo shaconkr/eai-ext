@@ -7,7 +7,7 @@
             <element e:kor="조회타임스탬프" e:length="14" e:padder="ZeroLeft" minOccurs="0" name="search_timestamp" nillable="true" type="long"/>
             <element e:kor="다음페이지기준개체" e:length="1000" e:padder="SpaceRight" minOccurs="0" name="next_page" nillable="true" type="string"/>
             <element e:kor="보유카드수" e:length="3" e:padder="ZeroLeft" minOccurs="0" name="card_cnt" nillable="true" type="long"/>
-            <element e:kor="보유카드목록" e:padder="ZeroLeft" maxOccurs="unbounded" minOccurs="0" name="card_list" nillable="true" type="ns:card_list_TYPE"/>
+            <element e:kor="보유카드목록" e:lengthField="cardCnt" e:padder="ZeroLeft" maxOccurs="unbounded" minOccurs="0" name="card_list" nillable="true" type="ns:card_list_TYPE"/>
         </sequence>
     </complexType>
     <complexType name="card_list_TYPE">

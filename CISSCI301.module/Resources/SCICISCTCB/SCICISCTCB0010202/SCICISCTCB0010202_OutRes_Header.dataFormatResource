@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jndi:namedResource xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SCICISCTCB0010202="http://schema.hcis.com/xsd/SCICISCTCB0010202_OutRes_Header" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" name="SCICISCTCB/SCICISCTCB0010202.SCICISCTCB0010202_OutRes_Header" type="dataformat:DataFormat">
+  <jndi:imports importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/SCICISCTCB0010202_OutRes_Header_df.xsd" namespace="http://schema.hcis.com/xsd/SCICISCTCB0010202_OutRes_Header"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="SCICISCTCB0010202:main" lineLength="59" fieldOffsetsStr="tgrmLen(0,4)&#xA;tgrmNo(4,12)&#xA;tgrmId(12,24)&#xA;tgrmSubCCd(24,28)&#xA;tskGbcd(28,31)&#xA;respCd(31,34)&#xA;mngKey(34,38)&#xA;ciInf(38,39)&#xA;seqno(39,59)">
+    <fieldOffsets kor="전문길이" type="string" name="tgrmLen" start="0" end="4"/>
+    <fieldOffsets kor="전문번호" type="string" name="tgrmNo" start="4" end="12"/>
+    <fieldOffsets kor="전문ID" type="string" name="tgrmId" start="12" end="24"/>
+    <fieldOffsets kor="전문종별코드" type="string" name="tgrmSubCCd" start="24" end="28"/>
+    <fieldOffsets kor="업무구분코드" type="string" name="tskGbcd" start="28" end="31"/>
+    <fieldOffsets kor="응답코드" type="string" name="respCd" start="31" end="34"/>
+    <fieldOffsets kor="관리KEY" type="string" name="mngKey" start="34" end="38"/>
+    <fieldOffsets kor="CI정보" type="string" name="ciInf" start="38" end="39"/>
+    <fieldOffsets kor="일련번호" type="string" name="seqno" start="39" end="59"/>
+  </jndi:configuration>
+</jndi:namedResource>

@@ -14,7 +14,8 @@ Import-Package: com.tibco.bw.palette.shared.java;version="6.2.1600",
  kr.shacon.format,
  org.beanio,
  org.beanio.internal.util,
- org.slf4j
+ org.slf4j,
+ io.netty.buffer
 TIBCO-BW-JobSharedVariables: META-INF/module.jsv
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 TIBCO-BW-ConfigProfile: META-INF/default.substvar

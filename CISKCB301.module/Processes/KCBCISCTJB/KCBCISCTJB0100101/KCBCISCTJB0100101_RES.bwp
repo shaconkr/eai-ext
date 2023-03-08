@@ -1561,6 +1561,13 @@
                 </choice>
             </complexType>
         </schema>
+        <schema elementFormDefault="qualified"
+            targetNamespace="http://www.tibco.com/tnt/utilitySchema"
+            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.tibco.com/tnt/utilitySchema">
+            <simpleType name="nativeJavaObjectKey">
+                <restriction base="string"/>
+            </simpleType>
+        </schema>
     </tibex:Types>
     <tibex:ProcessInfo callable="false" createdBy="javal"
         createdOn="Thu Feb 02 13:10:18 KST 2023" description=""
@@ -2242,27 +2249,6 @@
                                     x="977"
                                     xsi:type="notation:Bounds" y="49"/>
                                     </children>
-                                    <children bold="true"
-                                    description="응답전문 언마샬 수정해야함. 다중리스트 패턴으로 건수별로 segment  의 minOccurs 값을 동적으로 변경하여 언마샬해야함!"
-                                    fillColor="13369343"
-                                    fontColor="255"
-                                    fontHeight="10"
-                                    fontName="맑은 고딕"
-                                    lineColor="6737151"
-                                    lineWidth="1"
-                                    transparency="0" type="Note" xsi:type="notation:Shape">
-                                    <children type="DiagramName" xsi:type="notation:BasicDecorationNode">
-                                    <element xsi:nil="true"/>
-                                    </children>
-                                    <children type="Description" xsi:type="notation:BasicDecorationNode">
-                                    <element xsi:nil="true"/>
-                                    </children>
-                                    <styles xsi:type="notation:TextStyle"/>
-                                    <styles xsi:type="notation:LineTypeStyle"/>
-                                    <element xsi:nil="true"/>
-                                    <layoutConstraint x="10"
-                                    xsi:type="notation:Bounds" y="249"/>
-                                    </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
@@ -2774,15 +2760,6 @@
             <styles fontName="맑은 고딕" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.15"/>
             <bendpoints points="[25, 0, -108, 0]$[109, 0, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
-        </edges>
-        <edges lineColor="0" lineWidth="1"
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.18"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7"
-            type="NoteAttachment" xsi:type="notation:Connector">
-            <styles xsi:type="notation:ArrowStyle"/>
-            <styles xsi:type="notation:LineTypeStyle"/>
-            <element xsi:nil="true"/>
-            <bendpoints points="[0, 0, -394, -180]$[370, 169, -24, -11]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
     </notation:Diagram>
     <tibex:NamespaceRegistry enabled="true">

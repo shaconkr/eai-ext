@@ -65,7 +65,20 @@
     xmlns:ns6="http://www.tibco.com/namespaces/tnt/plugins/tcp"
     xmlns:ns60="http://schema.hcis.com/xsd/CISKCBCTJB0020302_InReq"
     xmlns:ns61="http://schema.hcis.com/xsd/CISKCBCTJB0020302_OutReq"
+    xmlns:ns62="activity.jsonParser.input+4f77a4e6-6d7e-471e-86c1-ed2f76b41be0+ActivityInputType"
+    xmlns:ns63="http://tns.tibco.com/bw/json/1676951614079"
+    xmlns:ns64="http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataInput+8fe93f75-34f6-4641-aeea-2b4e4f31a402+ActivityInput"
+    xmlns:ns65="http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataOutput+8fe93f75-34f6-4641-aeea-2b4e4f31a402+ActivityOutput"
+    xmlns:ns66="http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataInput+a9085db4-de6d-44fe-bbdb-a5e407f27992+ActivityInput"
+    xmlns:ns67="http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataOutput+a9085db4-de6d-44fe-bbdb-a5e407f27992+ActivityOutput"
+    xmlns:ns68="http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataInput+bcfc4d20-b069-4ab3-92a3-addafe197088+ActivityInput"
+    xmlns:ns69="http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataOutput+bcfc4d20-b069-4ab3-92a3-addafe197088+ActivityOutput"
     xmlns:ns7="http://tns.tibco.com/bw/palette/internal/activityerror+bw.tcp.tcpopenconnection"
+    xmlns:ns70="http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataInput+c93613dc-1a6c-4503-88e6-033857d7cef2+ActivityInput"
+    xmlns:ns71="http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataOutput+c93613dc-1a6c-4503-88e6-033857d7cef2+ActivityOutput"
+    xmlns:ns72="www.tibco.com/plugin/java/JavaInvokeActivityInput+81e31f9c-0788-4c13-bdf8-7cbf3c6d314f+JavaInvokeActivityInput"
+    xmlns:ns73="www.tibco.com/plugin/java/JavaInvokeActivityOutput+81e31f9c-0788-4c13-bdf8-7cbf3c6d314f+JavaInvokeActivityOutput"
+    xmlns:ns74="http://tns.tibco.com/bw/palette/internal/activityerror+81e31f9c-0788-4c13-bdf8-7cbf3c6d314f"
     xmlns:ns8="http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpwritedata+286efb3f-1a2e-4f4b-8ee6-5c77e762d804+ActivityInput"
     xmlns:ns9="http://tns.tibco.com/bw/palette/internal/activityerror+bw.tcp.write"
     xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912"
@@ -76,7 +89,6 @@
         <task name="L_Get_InterfaceInfo">
             <endingVariables>
                 <variable>L_Get_InterfaceInfo-input</variable>
-                <variable>getInterface</variable>
             </endingVariables>
         </task>
         <task name="L_Set_LogStart">
@@ -104,7 +116,8 @@
         <task name="ediBytesToJson">
             <endingVariables>
                 <variable>ediBytesToJson-input</variable>
-                <variable>ReadTCPData</variable>
+                <variable>EIMS</variable>
+                <variable>concatBytesBytes</variable>
             </endingVariables>
         </task>
         <task name="to3ByteHangle">
@@ -123,9 +136,9 @@
                 <variable>CorrelationID</variable>
             </endingVariables>
         </task>
-        <task name="getInterface">
+        <task name="getEIMSjson">
             <endingVariables>
-                <variable>getInterface-input</variable>
+                <variable>getEIMSjson-input</variable>
             </endingVariables>
         </task>
         <task name="JsonToEdiBytes">
@@ -133,10 +146,9 @@
                 <variable>JsonToEdiBytes-input</variable>
             </endingVariables>
         </task>
-        <task name="OutResEdiLog">
+        <task name="bodyMaster">
             <endingVariables>
-                <variable>OutResEdiLog-input</variable>
-                <variable>OutResEdiLog</variable>
+                <variable>bodyMaster-input</variable>
             </endingVariables>
         </task>
         <task name="OutResXml">
@@ -157,10 +169,47 @@
                 <variable>ReqCISHeader-input</variable>
             </endingVariables>
         </task>
-        <task name="ReadTCPData">
+        <task name="bizHeader">
             <endingVariables>
-                <variable>ReadTCPData-input</variable>
+                <variable>bizHeader-input</variable>
+            </endingVariables>
+        </task>
+        <task name="EIMS">
+            <endingVariables>
+                <variable>EIMS-input</variable>
+                <variable>getEIMSjson</variable>
+            </endingVariables>
+        </task>
+        <task name="bizBodyMaster">
+            <endingVariables>
+                <variable>bizBodyMaster-input</variable>
+            </endingVariables>
+        </task>
+        <task name="dsclsPrcList">
+            <endingVariables>
+                <variable>dsclsPrcList-input</variable>
+            </endingVariables>
+        </task>
+        <task name="siDList">
+            <endingVariables>
+                <variable>siDList-input</variable>
+            </endingVariables>
+        </task>
+        <task name="realTrdPrcList">
+            <endingVariables>
+                <variable>realTrdPrcList-input</variable>
                 <variable>KIC_Connecton</variable>
+                <variable>bodyMaster</variable>
+            </endingVariables>
+        </task>
+        <task name="concatBytesBytes">
+            <endingVariables>
+                <variable>concatBytesBytes-input</variable>
+                <variable>bizHeader</variable>
+                <variable>bizBodyMaster</variable>
+                <variable>dsclsPrcList</variable>
+                <variable>siDList</variable>
+                <variable>realTrdPrcList</variable>
             </endingVariables>
         </task>
         <task name="L_Set_LogError">
@@ -1162,9 +1211,11 @@
             <complexType name="MutTypeMethodParameters">
                 <sequence>
                     <element form="unqualified" maxOccurs="1"
-                        minOccurs="1" name="bytes" type="base64Binary"/>
+                        minOccurs="1" name="format" type="string"/>
                     <element form="unqualified" maxOccurs="1"
-                        minOccurs="1" name="xsdpath" type="string"/>
+                        minOccurs="1" name="data" type="base64Binary"/>
+                    <element form="unqualified" maxOccurs="1"
+                        minOccurs="1" name="encoding" type="string"/>
                 </sequence>
             </complexType>
             <element name="JavaInvokeActivityInput" type="tns:MutTypeMethodInputRoot"/>
@@ -1553,6 +1604,186 @@
                 </choice>
             </complexType>
         </schema>
+        <schema elementFormDefault="unqualified"
+            targetNamespace="activity.jsonParser.input+4f77a4e6-6d7e-471e-86c1-ed2f76b41be0+ActivityInputType"
+            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="activity.jsonParser.input+4f77a4e6-6d7e-471e-86c1-ed2f76b41be0+ActivityInputType">
+            <complexType name="ActivityInputClassType">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="1"
+                        name="jsonString" type="string"/>
+                </sequence>
+            </complexType>
+            <element name="ActivityInputClass" type="tns:ActivityInputClassType"/>
+        </schema>
+        <schema attributeFormDefault="unqualified"
+            elementFormDefault="qualified"
+            targetNamespace="http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataInput+8fe93f75-34f6-4641-aeea-2b4e4f31a402+ActivityInput"
+            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:Q1="http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataInput+8fe93f75-34f6-4641-aeea-2b4e4f31a402+ActivityInput">
+            <element name="ActivityInput" type="Q1:tcpDataSchemaType"/>
+            <complexType name="tcpDataSchemaType">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="1"
+                        name="connection" type="base64Binary"/>
+                    <element maxOccurs="1" minOccurs="0"
+                        name="bytesToRead" type="string"/>
+                    <element maxOccurs="1" minOccurs="0" name="timeout" type="int"/>
+                </sequence>
+            </complexType>
+        </schema>
+        <schema attributeFormDefault="unqualified"
+            elementFormDefault="qualified"
+            targetNamespace="http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataOutput+8fe93f75-34f6-4641-aeea-2b4e4f31a402+ActivityOutput"
+            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:Q1="http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataOutput+8fe93f75-34f6-4641-aeea-2b4e4f31a402+ActivityOutput">
+            <element name="ActivityOutput" type="Q1:tcpDataSchemaType"/>
+            <complexType name="tcpDataSchemaType">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="data" type="base64Binary"/>
+                    <element maxOccurs="1" minOccurs="1"
+                        name="endOfStreamReached" type="boolean"/>
+                </sequence>
+            </complexType>
+        </schema>
+        <schema attributeFormDefault="unqualified"
+            elementFormDefault="qualified"
+            targetNamespace="http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataInput+a9085db4-de6d-44fe-bbdb-a5e407f27992+ActivityInput"
+            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:Q1="http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataInput+a9085db4-de6d-44fe-bbdb-a5e407f27992+ActivityInput">
+            <element name="ActivityInput" type="Q1:tcpDataSchemaType"/>
+            <complexType name="tcpDataSchemaType">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="1"
+                        name="connection" type="base64Binary"/>
+                    <element maxOccurs="1" minOccurs="0"
+                        name="bytesToRead" type="string"/>
+                    <element maxOccurs="1" minOccurs="0" name="timeout" type="int"/>
+                </sequence>
+            </complexType>
+        </schema>
+        <schema attributeFormDefault="unqualified"
+            elementFormDefault="qualified"
+            targetNamespace="http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataOutput+a9085db4-de6d-44fe-bbdb-a5e407f27992+ActivityOutput"
+            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:Q1="http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataOutput+a9085db4-de6d-44fe-bbdb-a5e407f27992+ActivityOutput">
+            <element name="ActivityOutput" type="Q1:tcpDataSchemaType"/>
+            <complexType name="tcpDataSchemaType">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="data" type="base64Binary"/>
+                    <element maxOccurs="1" minOccurs="1"
+                        name="endOfStreamReached" type="boolean"/>
+                </sequence>
+            </complexType>
+        </schema>
+        <schema attributeFormDefault="unqualified"
+            elementFormDefault="qualified"
+            targetNamespace="http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataInput+bcfc4d20-b069-4ab3-92a3-addafe197088+ActivityInput"
+            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:Q1="http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataInput+bcfc4d20-b069-4ab3-92a3-addafe197088+ActivityInput">
+            <element name="ActivityInput" type="Q1:tcpDataSchemaType"/>
+            <complexType name="tcpDataSchemaType">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="1"
+                        name="connection" type="base64Binary"/>
+                    <element maxOccurs="1" minOccurs="0"
+                        name="bytesToRead" type="string"/>
+                    <element maxOccurs="1" minOccurs="0" name="timeout" type="int"/>
+                </sequence>
+            </complexType>
+        </schema>
+        <schema attributeFormDefault="unqualified"
+            elementFormDefault="qualified"
+            targetNamespace="http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataOutput+bcfc4d20-b069-4ab3-92a3-addafe197088+ActivityOutput"
+            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:Q1="http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataOutput+bcfc4d20-b069-4ab3-92a3-addafe197088+ActivityOutput">
+            <element name="ActivityOutput" type="Q1:tcpDataSchemaType"/>
+            <complexType name="tcpDataSchemaType">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="data" type="base64Binary"/>
+                    <element maxOccurs="1" minOccurs="1"
+                        name="endOfStreamReached" type="boolean"/>
+                </sequence>
+            </complexType>
+        </schema>
+        <schema attributeFormDefault="unqualified"
+            elementFormDefault="qualified"
+            targetNamespace="http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataInput+c93613dc-1a6c-4503-88e6-033857d7cef2+ActivityInput"
+            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:Q1="http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataInput+c93613dc-1a6c-4503-88e6-033857d7cef2+ActivityInput">
+            <element name="ActivityInput" type="Q1:tcpDataSchemaType"/>
+            <complexType name="tcpDataSchemaType">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="1"
+                        name="connection" type="base64Binary"/>
+                    <element maxOccurs="1" minOccurs="0"
+                        name="bytesToRead" type="string"/>
+                    <element maxOccurs="1" minOccurs="0" name="timeout" type="int"/>
+                </sequence>
+            </complexType>
+        </schema>
+        <schema attributeFormDefault="unqualified"
+            elementFormDefault="qualified"
+            targetNamespace="http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataOutput+c93613dc-1a6c-4503-88e6-033857d7cef2+ActivityOutput"
+            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:Q1="http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataOutput+c93613dc-1a6c-4503-88e6-033857d7cef2+ActivityOutput">
+            <element name="ActivityOutput" type="Q1:tcpDataSchemaType"/>
+            <complexType name="tcpDataSchemaType">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="data" type="base64Binary"/>
+                    <element maxOccurs="1" minOccurs="1"
+                        name="endOfStreamReached" type="boolean"/>
+                </sequence>
+            </complexType>
+        </schema>
+        <schema attributeFormDefault="unqualified"
+            elementFormDefault="qualified"
+            targetNamespace="www.tibco.com/plugin/java/JavaInvokeActivityInput+81e31f9c-0788-4c13-bdf8-7cbf3c6d314f+JavaInvokeActivityInput"
+            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="www.tibco.com/plugin/java/JavaInvokeActivityInput+81e31f9c-0788-4c13-bdf8-7cbf3c6d314f+JavaInvokeActivityInput">
+            <complexType name="MutTypeMethodParameters">
+                <sequence>
+                    <element form="unqualified" maxOccurs="1"
+                        minOccurs="1" name="bytes1" type="base64Binary"/>
+                    <element form="unqualified" maxOccurs="1"
+                        minOccurs="1" name="bytes2" type="base64Binary"/>
+                    <element form="unqualified" maxOccurs="1"
+                        minOccurs="1" name="bytes3" type="base64Binary"/>
+                    <element form="unqualified" maxOccurs="1"
+                        minOccurs="1" name="bytes4" type="base64Binary"/>
+                    <element form="unqualified" maxOccurs="1"
+                        minOccurs="1" name="bytes5" type="base64Binary"/>
+                </sequence>
+            </complexType>
+            <element name="JavaInvokeActivityInput" type="tns:MutTypeMethodInputRoot"/>
+            <complexType name="MutTypeMethodInputRoot">
+                <sequence>
+                    <element form="unqualified" maxOccurs="1"
+                        minOccurs="1" name="MethodParameters" type="tns:MutTypeMethodParameters"/>
+                </sequence>
+            </complexType>
+        </schema>
+        <schema attributeFormDefault="unqualified"
+            elementFormDefault="qualified"
+            targetNamespace="www.tibco.com/plugin/java/JavaInvokeActivityOutput+81e31f9c-0788-4c13-bdf8-7cbf3c6d314f+JavaInvokeActivityOutput"
+            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="www.tibco.com/plugin/java/JavaInvokeActivityOutput+81e31f9c-0788-4c13-bdf8-7cbf3c6d314f+JavaInvokeActivityOutput">
+            <element name="JavaInvokeActivityOutput" type="tns:MutTypeMethodOutputRoot"/>
+            <complexType name="MutTypeMethodOutputRoot">
+                <sequence>
+                    <element form="unqualified" maxOccurs="1"
+                        minOccurs="0" name="MethodReturnValue" type="base64Binary"/>
+                </sequence>
+            </complexType>
+        </schema>
+        <schema elementFormDefault="unqualified"
+            targetNamespace="http://tns.tibco.com/bw/palette/internal/activityerror+81e31f9c-0788-4c13-bdf8-7cbf3c6d314f"
+            xmlns="http://www.w3.org/2001/XMLSchema"
+            xmlns:Q1="http://www.example.org/JavaExceptions" xmlns:tns="http://tns.tibco.com/bw/palette/internal/activityerror+81e31f9c-0788-4c13-bdf8-7cbf3c6d314f">
+            <import namespace="http://www.example.org/JavaExceptions"/>
+            <element name="ActivityErrorData" type="tns:ActivityErrorDataType"/>
+            <complexType name="ActivityErrorDataType">
+                <choice>
+                    <element maxOccurs="1" minOccurs="0" ref="Q1:InvocationException"/>
+                </choice>
+            </complexType>
+        </schema>
+        <schema elementFormDefault="qualified"
+            targetNamespace="http://www.tibco.com/tnt/utilitySchema"
+            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.tibco.com/tnt/utilitySchema">
+            <simpleType name="nativeJavaObjectKey">
+                <restriction base="string"/>
+            </simpleType>
+        </schema>
     </tibex:Types>
     <tibex:ProcessInfo callable="false" createdBy="javal"
         createdOn="Thu Feb 02 13:10:18 KST 2023" description=""
@@ -1659,7 +1890,7 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.1"/>
-                                    <layoutConstraint x="164"
+                                    <layoutConstraint x="249"
                                     xsi:type="notation:Bounds" y="49"/>
                                     </children>
                                     <children type="4002">
@@ -1694,7 +1925,7 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.2"/>
-                                    <layoutConstraint x="275"
+                                    <layoutConstraint x="365"
                                     xsi:type="notation:Bounds" y="49"/>
                                     </children>
                                     <children type="4002">
@@ -1729,7 +1960,7 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.3"/>
-                                    <layoutConstraint x="1017"
+                                    <layoutConstraint x="1076"
                                     xsi:type="notation:Bounds" y="156"/>
                                     </children>
                                     <children type="4002 bw.tcp.tcpopenconnection">
@@ -1766,7 +1997,7 @@
                                     <element href="//0/@process/@activity/@activity/@activities.4"/>
                                     <layoutConstraint
                                     height="40" width="40"
-                                    x="708"
+                                    x="799"
                                     xsi:type="notation:Bounds" y="49"/>
                                     </children>
                                     <children type="4002 bw.tcp.write">
@@ -1803,7 +2034,7 @@
                                     <element href="//0/@process/@activity/@activity/@activities.5"/>
                                     <layoutConstraint
                                     height="40" width="40"
-                                    x="844"
+                                    x="890"
                                     xsi:type="notation:Bounds" y="49"/>
                                     </children>
                                     <children
@@ -1861,7 +2092,7 @@
                                     <element href="//0/@process/@activity/@activity/@activities.6"/>
                                     <layoutConstraint
                                     height="40" width="40"
-                                    x="178"
+                                    x="536"
                                     xsi:type="notation:Bounds" y="156"/>
                                     </children>
                                     <children type="4002 bw.java.javamethod">
@@ -1898,7 +2129,7 @@
                                     <element href="//0/@process/@activity/@activity/@activities.7"/>
                                     <layoutConstraint
                                     height="40" width="40"
-                                    x="405"
+                                    x="641"
                                     xsi:type="notation:Bounds" y="156"/>
                                     </children>
                                     <children type="4002 bw.jms.reply">
@@ -1935,7 +2166,7 @@
                                     <element href="//0/@process/@activity/@activity/@activities.8"/>
                                     <layoutConstraint
                                     height="40" width="40"
-                                    x="903"
+                                    x="971"
                                     xsi:type="notation:Bounds" y="156"/>
                                     </children>
                                     <children type="4002 bw.java.javamethod">
@@ -1972,7 +2203,7 @@
                                     <element href="//0/@process/@activity/@activity/@activities.9"/>
                                     <layoutConstraint
                                     height="40" width="40"
-                                    x="587"
+                                    x="693"
                                     xsi:type="notation:Bounds" y="49"/>
                                     </children>
                                     <children type="4002 bw.java.javamethod">
@@ -2046,7 +2277,7 @@
                                     <element href="//0/@process/@activity/@activity/@activities.11"/>
                                     <layoutConstraint
                                     height="40" width="40"
-                                    x="466"
+                                    x="593"
                                     xsi:type="notation:Bounds" y="49"/>
                                     </children>
                                     <children type="4002 bw.java.javamethod">
@@ -2083,7 +2314,7 @@
                                     <element href="//0/@process/@activity/@activity/@activities.12"/>
                                     <layoutConstraint
                                     height="40" width="40"
-                                    x="72"
+                                    x="23"
                                     xsi:type="notation:Bounds" y="156"/>
                                     </children>
                                     <children type="4002 bw.restjson.JsonParser">
@@ -2120,7 +2351,7 @@
                                     <element href="//0/@process/@activity/@activity/@activities.13"/>
                                     <layoutConstraint
                                     height="40" width="40"
-                                    x="545"
+                                    x="751"
                                     xsi:type="notation:Bounds" y="156"/>
                                     </children>
                                     <children type="4002 bw.restjson.JsonRender">
@@ -2157,7 +2388,7 @@
                                     <element href="//0/@process/@activity/@activity/@activities.14"/>
                                     <layoutConstraint
                                     height="40" width="40"
-                                    x="678"
+                                    x="863"
                                     xsi:type="notation:Bounds" y="156"/>
                                     </children>
                                     <children type="4002 bw.restjson.JsonParser">
@@ -2194,7 +2425,7 @@
                                     <element href="//0/@process/@activity/@activity/@activities.15"/>
                                     <layoutConstraint
                                     height="40" width="40"
-                                    x="364"
+                                    x="480"
                                     xsi:type="notation:Bounds" y="49"/>
                                     </children>
                                     <children type="4002 bw.tcp.read">
@@ -2231,29 +2462,206 @@
                                     <element href="//0/@process/@activity/@activity/@activities.16"/>
                                     <layoutConstraint
                                     height="40" width="40"
-                                    x="977"
+                                    x="1001"
                                     xsi:type="notation:Bounds" y="49"/>
                                     </children>
-                                    <children bold="true"
-                                    description="응답전문 언마샬 수정해야함. 다중리스트 패턴으로 건수별로 segment  의 minOccurs 값을 동적으로 변경하여 언마샬해야함!"
-                                    fillColor="13369343"
-                                    fontColor="255"
-                                    fontHeight="10"
-                                    fontName="맑은 고딕"
-                                    lineColor="6737151"
-                                    lineWidth="1"
-                                    transparency="0" type="Note" xsi:type="notation:Shape">
-                                    <children type="DiagramName" xsi:type="notation:BasicDecorationNode">
-                                    <element xsi:nil="true"/>
+                                    <children type="4002 bw.restjson.JsonParser">
+                                    <children type="4017">
+                                    <styles fontName="맑은 고딕"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
-                                    <children type="Description" xsi:type="notation:BasicDecorationNode">
-                                    <element xsi:nil="true"/>
+                                    <children type="4017">
+                                    <styles fontName="맑은 고딕"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
-                                    <styles xsi:type="notation:TextStyle"/>
-                                    <styles xsi:type="notation:LineTypeStyle"/>
-                                    <element xsi:nil="true"/>
-                                    <layoutConstraint x="10"
-                                    xsi:type="notation:Bounds" y="249"/>
+                                    <children type="4017">
+                                    <styles fontName="맑은 고딕"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles fontName="맑은 고딕"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <styles fontName="맑은 고딕"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.17"/>
+                                    <layoutConstraint
+                                    height="40" width="40"
+                                    x="141"
+                                    xsi:type="notation:Bounds" y="49"/>
+                                    </children>
+                                    <children type="4002 bw.tcp.read">
+                                    <children type="4017">
+                                    <styles fontName="맑은 고딕"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles fontName="맑은 고딕"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles fontName="맑은 고딕"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles fontName="맑은 고딕"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <styles fontName="맑은 고딕"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.18"/>
+                                    <layoutConstraint
+                                    height="40" width="40"
+                                    x="1095"
+                                    xsi:type="notation:Bounds" y="49"/>
+                                    </children>
+                                    <children type="4002 bw.tcp.read">
+                                    <children type="4017">
+                                    <styles fontName="맑은 고딕"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles fontName="맑은 고딕"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles fontName="맑은 고딕"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles fontName="맑은 고딕"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <styles fontName="맑은 고딕"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.19"/>
+                                    <layoutConstraint
+                                    height="40" width="40"
+                                    x="116"
+                                    xsi:type="notation:Bounds" y="156"/>
+                                    </children>
+                                    <children type="4002 bw.tcp.read">
+                                    <children type="4017">
+                                    <styles fontName="맑은 고딕"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles fontName="맑은 고딕"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles fontName="맑은 고딕"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles fontName="맑은 고딕"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <styles fontName="맑은 고딕"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.20"/>
+                                    <layoutConstraint
+                                    height="40" width="40"
+                                    x="216"
+                                    xsi:type="notation:Bounds" y="156"/>
+                                    </children>
+                                    <children type="4002 bw.tcp.read">
+                                    <children type="4017">
+                                    <styles fontName="맑은 고딕"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles fontName="맑은 고딕"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles fontName="맑은 고딕"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles fontName="맑은 고딕"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <styles fontName="맑은 고딕"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.21"/>
+                                    <layoutConstraint
+                                    height="40" width="40"
+                                    x="317"
+                                    xsi:type="notation:Bounds" y="156"/>
+                                    </children>
+                                    <children type="4002 bw.java.javamethod">
+                                    <children type="4017">
+                                    <styles fontName="맑은 고딕"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles fontName="맑은 고딕"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles fontName="맑은 고딕"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles fontName="맑은 고딕"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <styles fontName="맑은 고딕"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.22"/>
+                                    <layoutConstraint
+                                    height="40" width="40"
+                                    x="427"
+                                    xsi:type="notation:Bounds" y="156"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
@@ -2268,7 +2676,7 @@
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity"/>
                                     <layoutConstraint height="365"
-                                    width="1265" xsi:type="notation:Bounds"/>
+                                    width="1349" xsi:type="notation:Bounds"/>
                                 </children>
                                 <styles xsi:type="notation:SortingStyle"/>
                                 <styles xsi:type="notation:FilteringStyle"/>
@@ -2544,7 +2952,7 @@
             </children>
             <styles fontName="맑은 고딕" lineColor="0" xsi:type="notation:ShapeStyle"/>
             <element href="//0/@process"/>
-            <layoutConstraint height="558" width="1610" xsi:type="notation:Bounds"/>
+            <layoutConstraint height="558" width="1694" xsi:type="notation:Bounds"/>
         </children>
         <styles xsi:type="notation:DiagramStyle"/>
         <element href="//0"/>
@@ -2636,7 +3044,7 @@
         </edges>
         <edges
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.11"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1" type="4006">
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.18" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
@@ -2658,7 +3066,7 @@
         </edges>
         <edges
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.13"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7" type="4006">
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.20" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
@@ -2746,15 +3154,14 @@
         </edges>
         <edges
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.17"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.13" type="4006">
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.19" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="맑은 고딕" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.14"/>
-            <bendpoints
-                points="[25, 0, 775, -107]$[60, 0, 810, -107]$[60, 67, 810, -40]$[-847, 67, -97, -40]$[-847, 107, -97, 0]$[-774, 107, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
+            <bendpoints points="[25, 0, -110, 0]$[111, 0, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.5"
@@ -2767,14 +3174,72 @@
             <element href="//0/@process/@activity/@activity/@links/@children.15"/>
             <bendpoints points="[25, 0, -108, 0]$[109, 0, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
-        <edges lineColor="0" lineWidth="1"
+        <edges
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.18"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7"
-            type="NoteAttachment" xsi:type="notation:Connector">
-            <styles xsi:type="notation:ArrowStyle"/>
-            <styles xsi:type="notation:LineTypeStyle"/>
-            <element xsi:nil="true"/>
-            <bendpoints points="[0, 0, -394, -180]$[370, 169, -24, -11]" xsi:type="notation:RelativeBendpoints"/>
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="맑은 고딕" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.16"/>
+            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.19"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.13" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="맑은 고딕" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.17"/>
+            <bendpoints
+                points="[25, 0, 1097, -107]$[44, 0, 1116, -107]$[44, 56, 1116, -51]$[-1128, 56, -56, -51]$[-1128, 107, -56, 0]$[-1096, 107, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.20"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.21" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="맑은 고딕" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.18"/>
+            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.21"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.22" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="맑은 고딕" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.19"/>
+            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.22"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.23" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="맑은 고딕" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.20"/>
+            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.23"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="맑은 고딕" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.21"/>
+            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
     </notation:Diagram>
     <tibex:NamespaceRegistry enabled="true">
@@ -2849,6 +3314,30 @@
             namespace="http://schema.hcis.com/xsd/KCBCISCTJB0020302_OutRes" prefix="ns13"/>
         <tibex:namespaceItem
             namespace="http://schema.hcis.com/xsd/KCBCISCTJB0020302_InRes" prefix="ns12"/>
+        <tibex:namespaceItem
+            namespace="activity.jsonParser.input+4f77a4e6-6d7e-471e-86c1-ed2f76b41be0+ActivityInputType" prefix="tns16"/>
+        <tibex:namespaceItem
+            namespace="http://tns.tibco.com/bw/json/1676951614079" prefix="tns17"/>
+        <tibex:namespaceItem
+            namespace="http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataOutput+2eca78e7-dbdd-4a1a-be8f-015d584ad86e+ActivityOutput" prefix="Q3"/>
+        <tibex:namespaceItem
+            namespace="http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataInput+8fe93f75-34f6-4641-aeea-2b4e4f31a402+ActivityInput" prefix="tns18"/>
+        <tibex:namespaceItem
+            namespace="http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataInput+a9085db4-de6d-44fe-bbdb-a5e407f27992+ActivityInput" prefix="tns19"/>
+        <tibex:namespaceItem
+            namespace="http://www.w3.org/2001/XMLSchema" prefix="xsd"/>
+        <tibex:namespaceItem
+            namespace="http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataInput+bcfc4d20-b069-4ab3-92a3-addafe197088+ActivityInput" prefix="tns20"/>
+        <tibex:namespaceItem
+            namespace="http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataInput+c93613dc-1a6c-4503-88e6-033857d7cef2+ActivityInput" prefix="tns21"/>
+        <tibex:namespaceItem
+            namespace="www.tibco.com/plugin/java/JavaInvokeActivityInput+81e31f9c-0788-4c13-bdf8-7cbf3c6d314f+JavaInvokeActivityInput" prefix="tns22"/>
+        <tibex:namespaceItem
+            namespace="http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataOutput+a9085db4-de6d-44fe-bbdb-a5e407f27992+ActivityOutput" prefix="Q11"/>
+        <tibex:namespaceItem
+            namespace="http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataOutput+bcfc4d20-b069-4ab3-92a3-addafe197088+ActivityOutput" prefix="Q12"/>
+        <tibex:namespaceItem
+            namespace="http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataOutput+c93613dc-1a6c-4503-88e6-033857d7cef2+ActivityOutput" prefix="Q13"/>
     </tibex:NamespaceRegistry>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://schema.hcis.com/xsd/KCBCISCTJB0020302_InRes"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://schema.hcis.com/xsd/CISKCBCTJB0020302_InReq"/>
@@ -2859,6 +3348,7 @@
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.cspi_library.org/Log"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema"
         location="../../../../HcisCommon.smodule/Schemas/CISHeader.xsd" namespace="http://schema.hcis.com/json"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://tns.tibco.com/bw/json/1676951614079"/>
     <bpws:variables>
         <bpws:variable element="ns:ProcessContext"
             name="_processContext" sca-bpel:internal="true"/>
@@ -2919,11 +3409,11 @@
         <bpws:variable element="ns26:ActivityErrorData"
             name="_error_CorrelationID" sca-bpel:internal="true"/>
         <bpws:variable element="ns27:JavaInvokeActivityInput"
-            name="getInterface-input" sca-bpel:internal="true"/>
+            name="getEIMSjson-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns28:JavaInvokeActivityOutput"
-            name="getInterface" sca-bpel:internal="true"/>
+            name="getEIMSjson" sca-bpel:internal="true"/>
         <bpws:variable element="ns29:ActivityErrorData"
-            name="_error_getInterface" sca-bpel:internal="true"/>
+            name="_error_getEIMSjson" sca-bpel:internal="true"/>
         <bpws:variable element="ns30:JavaInvokeActivityInput"
             name="JsonToEdiBytes-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns31:JavaInvokeActivityOutput"
@@ -2931,11 +3421,11 @@
         <bpws:variable element="ns32:ActivityErrorData"
             name="_error_JsonToEdiBytes" sca-bpel:internal="true"/>
         <bpws:variable element="ns33:JavaInvokeActivityInput"
-            name="OutResEdiLog-input" sca-bpel:internal="true"/>
+            name="bodyMaster-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns34:JavaInvokeActivityOutput"
-            name="OutResEdiLog" sca-bpel:internal="true"/>
+            name="bodyMaster" sca-bpel:internal="true"/>
         <bpws:variable element="ns35:ActivityErrorData"
-            name="_error_OutResEdiLog" sca-bpel:internal="true"/>
+            name="_error_bodyMaster" sca-bpel:internal="true"/>
         <bpws:variable element="ns36:ActivityInputClass"
             name="OutResXml-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns58:root" name="OutResXml" sca-bpel:internal="true"/>
@@ -2966,10 +3456,42 @@
         <bpws:variable element="ns38:ActivityErrorData"
             name="_error_ReqOutXml" sca-bpel:internal="true"/>
         <bpws:variable element="ns49:ActivityInput"
-            name="ReadTCPData-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns50:ActivityOutput" name="ReadTCPData" sca-bpel:internal="true"/>
+            name="bizHeader-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns50:ActivityOutput" name="bizHeader" sca-bpel:internal="true"/>
         <bpws:variable element="ns12:ActivityErrorData"
-            name="_error_ReadTCPData" sca-bpel:internal="true"/>
+            name="_error_bizHeader" sca-bpel:internal="true"/>
+        <bpws:variable element="ns62:ActivityInputClass"
+            name="EIMS-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns63:EIMSInterfaceElement" name="EIMS" sca-bpel:internal="true"/>
+        <bpws:variable element="ns38:ActivityErrorData"
+            name="_error_EIMS" sca-bpel:internal="true"/>
+        <bpws:variable element="ns64:ActivityInput"
+            name="bizBodyMaster-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns65:ActivityOutput"
+            name="bizBodyMaster" sca-bpel:internal="true"/>
+        <bpws:variable element="ns12:ActivityErrorData"
+            name="_error_bizBodyMaster" sca-bpel:internal="true"/>
+        <bpws:variable element="ns66:ActivityInput"
+            name="dsclsPrcList-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns67:ActivityOutput" name="dsclsPrcList" sca-bpel:internal="true"/>
+        <bpws:variable element="ns12:ActivityErrorData"
+            name="_error_dsclsPrcList" sca-bpel:internal="true"/>
+        <bpws:variable element="ns68:ActivityInput" name="siDList-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns69:ActivityOutput" name="siDList" sca-bpel:internal="true"/>
+        <bpws:variable element="ns12:ActivityErrorData"
+            name="_error_siDList" sca-bpel:internal="true"/>
+        <bpws:variable element="ns70:ActivityInput"
+            name="realTrdPrcList-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns71:ActivityOutput"
+            name="realTrdPrcList" sca-bpel:internal="true"/>
+        <bpws:variable element="ns12:ActivityErrorData"
+            name="_error_realTrdPrcList" sca-bpel:internal="true"/>
+        <bpws:variable element="ns72:JavaInvokeActivityInput"
+            name="concatBytesBytes-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns73:JavaInvokeActivityOutput"
+            name="concatBytesBytes" sca-bpel:internal="true"/>
+        <bpws:variable element="ns74:ActivityErrorData"
+            name="_error_concatBytesBytes" sca-bpel:internal="true"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -3023,7 +3545,7 @@
                                 </bpws:sources>
                                 <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:ns8=&quot;http://schema.hcis.com/xsd/CISKCBCTJB0020301_OutReq&quot; xmlns:ns9=&quot;http://schema.hcis.com/xsd/CISKCBCTJB0020301_InReq&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:ns2=&quot;http://schema.hcis.com/json&quot; xmlns:ns=&quot;http://schema.hcis.com/xsd/CISKCBCTJB0020302_OutReq&quot; xmlns:ns1=&quot;http://schema.hcis.com/xsd/CISKCBCTJB0020302_InReq&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;ReqOutXml&quot;/>&lt;xsl:param name=&quot;ReqCISHeader&quot;/>&lt;xsl:param name=&quot;_error&quot;/>&lt;xsl:template name=&quot;ErrorResJson-input&quot; match=&quot;/&quot;>&lt;ns1:root>&lt;ns1:header>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:totTgrmLen&quot;>&lt;ns1:totTgrmLen>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:totTgrmLen/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:totTgrmLen&quot;/>&lt;/ns1:totTgrmLen>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:hdrLen&quot;>&lt;ns1:hdrLen>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:hdrLen/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:hdrLen&quot;/>&lt;/ns1:hdrLen>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:tgrmFrmCd&quot;>&lt;ns1:tgrmFrmCd>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:tgrmFrmCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:tgrmFrmCd&quot;/>&lt;/ns1:tgrmFrmCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:sysEnvGbcd&quot;>&lt;ns1:sysEnvGbcd>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:sysEnvGbcd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:sysEnvGbcd&quot;/>&lt;/ns1:sysEnvGbcd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:ipAdr&quot;>&lt;ns1:ipAdr>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:ipAdr/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:ipAdr&quot;/>&lt;/ns1:ipAdr>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:guid&quot;>&lt;ns1:guid>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:guid/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:guid&quot;/>&lt;/ns1:guid>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:prgrNo&quot;>&lt;ns1:prgrNo>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:prgrNo/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:prgrNo&quot;/>&lt;/ns1:prgrNo>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:frstGuid&quot;>&lt;ns1:frstGuid>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:frstGuid/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:frstGuid&quot;/>&lt;/ns1:frstGuid>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:sendSysCd&quot;>&lt;ns1:sendSysCd>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:sendSysCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:sendSysCd&quot;/>&lt;/ns1:sendSysCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:frstSendSysCd&quot;>&lt;ns1:frstSendSysCd>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:frstSendSysCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:frstSendSysCd&quot;/>&lt;/ns1:frstSendSysCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:sysCommTrtyPrepCntn&quot;>&lt;ns1:sysCommTrtyPrepCntn>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:sysCommTrtyPrepCntn/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:sysCommTrtyPrepCntn&quot;/>&lt;/ns1:sysCommTrtyPrepCntn>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:eimsTgrmId&quot;>&lt;ns1:eimsTgrmId>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:eimsTgrmId/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:eimsTgrmId&quot;/>&lt;/ns1:eimsTgrmId>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:eimsTgrmVerNo&quot;>&lt;ns1:eimsTgrmVerNo>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:eimsTgrmVerNo/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:eimsTgrmVerNo&quot;/>&lt;/ns1:eimsTgrmVerNo>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:frwkTrdId&quot;>&lt;ns1:frwkTrdId>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:frwkTrdId/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:frwkTrdId&quot;/>&lt;/ns1:frwkTrdId>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:rcvSysCd&quot;>&lt;ns1:rcvSysCd>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:rcvSysCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:rcvSysCd&quot;/>&lt;/ns1:rcvSysCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:tieTgrmCd&quot;>&lt;ns1:tieTgrmCd>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:tieTgrmCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:tieTgrmCd&quot;/>&lt;/ns1:tieTgrmCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:tieSrvGrpCd&quot;>&lt;ns1:tieSrvGrpCd>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:tieSrvGrpCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:tieSrvGrpCd&quot;/>&lt;/ns1:tieSrvGrpCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:tieSrvNm&quot;>&lt;ns1:tieSrvNm>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:tieSrvNm/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:tieSrvNm&quot;/>&lt;/ns1:tieSrvNm>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:scrnNo&quot;>&lt;ns1:scrnNo>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:scrnNo/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:scrnNo&quot;/>&lt;/ns1:scrnNo>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:reqnRespGbcd&quot;>&lt;ns1:reqnRespGbcd>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:reqnRespGbcd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:reqnRespGbcd&quot;/>&lt;/ns1:reqnRespGbcd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:syncProcGbcd&quot;>&lt;ns1:syncProcGbcd>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:syncProcGbcd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:syncProcGbcd&quot;/>&lt;/ns1:syncProcGbcd>&lt;/xsl:if>&lt;ns1:trdRespCd>&lt;xsl:value-of select=&quot;&amp;quot;1&amp;quot;&quot;/>&lt;/ns1:trdRespCd>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:pageNo&quot;>&lt;ns1:pageNo>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:pageNo/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:pageNo&quot;/>&lt;/ns1:pageNo>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:pageRowCnt&quot;>&lt;ns1:pageRowCnt>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:pageRowCnt/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:pageRowCnt&quot;/>&lt;/ns1:pageRowCnt>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:totRowCnt&quot;>&lt;ns1:totRowCnt>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:totRowCnt/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:totRowCnt&quot;/>&lt;/ns1:totRowCnt>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:nxtPageYn&quot;>&lt;ns1:nxtPageYn>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:nxtPageYn/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:nxtPageYn&quot;/>&lt;/ns1:nxtPageYn>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:reqnDtm&quot;>&lt;ns1:reqnDtm>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:reqnDtm/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:reqnDtm&quot;/>&lt;/ns1:reqnDtm>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:respDtm&quot;>&lt;ns1:respDtm>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:respDtm/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:respDtm&quot;/>&lt;/ns1:respDtm>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:storeCd&quot;>&lt;ns1:storeCd>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:storeCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:storeCd&quot;/>&lt;/ns1:storeCd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:userId&quot;>&lt;ns1:userId>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:userId/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:userId&quot;/>&lt;/ns1:userId>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:trdCommTrtyPrepCntn&quot;>&lt;ns1:trdCommTrtyPrepCntn>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:trdCommTrtyPrepCntn/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:trdCommTrtyPrepCntn&quot;/>&lt;/ns1:trdCommTrtyPrepCntn>&lt;/xsl:if>&lt;ns1:msgGrpNm>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:msgGrpNm/ns2:msgShwMthdGbcd&quot;>&lt;ns1:msgShwMthdGbcd>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:msgGrpNm/ns2:msgShwMthdGbcd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:msgGrpNm/ns2:msgShwMthdGbcd&quot;/>&lt;/ns1:msgShwMthdGbcd>&lt;/xsl:if>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:msgGrpNm/ns2:errOcrnTgrmClasNm&quot;>&lt;ns1:errOcrnTgrmClasNm>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:msgGrpNm/ns2:errOcrnTgrmClasNm/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:msgGrpNm/ns2:errOcrnTgrmClasNm&quot;/>&lt;/ns1:errOcrnTgrmClasNm>&lt;/xsl:if>&lt;xsl:if test=&quot;$_error/MsgCode&quot;>&lt;ns1:msgCd>&lt;xsl:value-of select=&quot;$_error/MsgCode&quot;/>&lt;/ns1:msgCd>&lt;/xsl:if>&lt;ns1:msgCntn>&lt;xsl:value-of select=&quot;$_error/Msg&quot;/>&lt;/ns1:msgCntn>&lt;ns1:msgDtlCntn>&lt;xsl:value-of select=&quot;$_error/StackTrace&quot;/>&lt;/ns1:msgDtlCntn>&lt;/ns1:msgGrpNm>&lt;xsl:if test=&quot;$ReqCISHeader/ns2:stdTgrmEndLettrVal&quot;>&lt;ns1:stdTgrmEndLettrVal>&lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:stdTgrmEndLettrVal/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:stdTgrmEndLettrVal&quot;/>&lt;/ns1:stdTgrmEndLettrVal>&lt;/xsl:if>&lt;/ns1:header>&lt;ns1:data>&lt;ns1:bizHeader>&lt;ns1:tgrmLen>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns:bizHeader/ns:tgrmLen/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns:bizHeader/ns:tgrmLen&quot;/>&lt;/ns1:tgrmLen>&lt;ns1:trdCd>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns:bizHeader/ns:trdCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns:bizHeader/ns:trdCd&quot;/>&lt;/ns1:trdCd>&lt;ns1:mmcoCd>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns:bizHeader/ns:mmcoCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns:bizHeader/ns:mmcoCd&quot;/>&lt;/ns1:mmcoCd>&lt;ns1:tgrmSubCCd>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns:bizHeader/ns:tgrmSubCCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns:bizHeader/ns:tgrmSubCCd&quot;/>&lt;/ns1:tgrmSubCCd>&lt;ns1:tskGbcd>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns:bizHeader/ns:tskGbcd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns:bizHeader/ns:tskGbcd&quot;/>&lt;/ns1:tskGbcd>&lt;ns1:tnrGb>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns:bizHeader/ns:tnrGb/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns:bizHeader/ns:tnrGb&quot;/>&lt;/ns1:tnrGb>&lt;ns1:respCd>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns:bizHeader/ns:respCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns:bizHeader/ns:respCd&quot;/>&lt;/ns1:respCd>&lt;ns1:kcbTgrmMngNo>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns:bizHeader/ns:kcbTgrmMngNo/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns:bizHeader/ns:kcbTgrmMngNo&quot;/>&lt;/ns1:kcbTgrmMngNo>&lt;ns1:kcbTgrmSendTime>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns:bizHeader/ns:kcbTgrmSendTime/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns:bizHeader/ns:kcbTgrmSendTime&quot;/>&lt;/ns1:kcbTgrmSendTime>&lt;ns1:mmcoTgrmMngNo>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns:bizHeader/ns:mmcoTgrmMngNo/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns:bizHeader/ns:mmcoTgrmMngNo&quot;/>&lt;/ns1:mmcoTgrmMngNo>&lt;ns1:mmcoTgrmSendTime>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns:bizHeader/ns:mmcoTgrmSendTime/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns:bizHeader/ns:mmcoTgrmSendTime&quot;/>&lt;/ns1:mmcoTgrmSendTime>&lt;ns1:sysInf>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns:bizHeader/ns:sysInf/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns:bizHeader/ns:sysInf&quot;/>&lt;/ns1:sysInf>&lt;ns1:qryAgrCd>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns:bizHeader/ns:qryAgrCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns:bizHeader/ns:qryAgrCd&quot;/>&lt;/ns1:qryAgrCd>&lt;ns1:prepVal>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns:bizHeader/ns:prepVal/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns:bizHeader/ns:prepVal&quot;/>&lt;/ns1:prepVal>&lt;/ns1:bizHeader>&lt;ns1:bizBody>&lt;ns1:certNo>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns:bizBody/ns:certNo/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns:bizBody/ns:certNo&quot;/>&lt;/ns1:certNo>&lt;ns1:reReqnCnt>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns:bizBody/ns:reReqnCnt/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns:bizBody/ns:reReqnCnt&quot;/>&lt;/ns1:reReqnCnt>&lt;ns1:idntNoGbcd>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns:bizBody/ns:idntNoGbcd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns:bizBody/ns:idntNoGbcd&quot;/>&lt;/ns1:idntNoGbcd>&lt;ns1:idntNo>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns:bizBody/ns:idntNo/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns:bizBody/ns:idntNo&quot;/>&lt;/ns1:idntNo>&lt;ns1:qryPurpseCd>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns:bizBody/ns:qryPurpseCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns:bizBody/ns:qryPurpseCd&quot;/>&lt;/ns1:qryPurpseCd>&lt;ns1:fnmNm>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns:bizBody/ns:fnmNm/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns:bizBody/ns:fnmNm&quot;/>&lt;/ns1:fnmNm>&lt;ns1:qryBrnNm>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns:bizBody/ns:qryBrnNm/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns:bizBody/ns:qryBrnNm&quot;/>&lt;/ns1:qryBrnNm>&lt;ns1:asgnrId>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns:bizBody/ns:asgnrId/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns:bizBody/ns:asgnrId&quot;/>&lt;/ns1:asgnrId>&lt;ns1:pinfInfTotRcvCnt>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns:bizBody/ns:pinfInfTotRcvCnt/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns:bizBody/ns:pinfInfTotRcvCnt&quot;/>&lt;/ns1:pinfInfTotRcvCnt>&lt;ns1:pinfInfReqnCnt>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns:bizBody/ns:pinfInfReqnCnt/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns:bizBody/ns:pinfInfReqnCnt&quot;/>&lt;/ns1:pinfInfReqnCnt>&lt;ns1:apsTotRcvCnt>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns:bizBody/ns:apsTotRcvCnt/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns:bizBody/ns:apsTotRcvCnt&quot;/>&lt;/ns1:apsTotRcvCnt>&lt;ns1:apsReqnCnt>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns:bizBody/ns:apsReqnCnt/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns:bizBody/ns:apsReqnCnt&quot;/>&lt;/ns1:apsReqnCnt>&lt;ns1:rltyOwnInfTotRcvCnt>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns:bizBody/ns:rltyOwnInfTotRcvCnt/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns:bizBody/ns:rltyOwnInfTotRcvCnt&quot;/>&lt;/ns1:rltyOwnInfTotRcvCnt>&lt;ns1:rltyOwnInfReqnCnt>&lt;xsl:copy-of select=&quot;$ReqOutXml/ns:bizBody/ns:rltyOwnInfReqnCnt/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ReqOutXml/ns:bizBody/ns:rltyOwnInfReqnCnt&quot;/>&lt;/ns1:rltyOwnInfReqnCnt>&lt;xsl:for-each select=&quot;$ReqOutXml/ns:bizBody/ns:apsReqnList&quot;>&lt;ns1:apsReqnList>&lt;ns1:segId>&lt;xsl:copy-of select=&quot;ns:segId/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;ns:segId&quot;/>&lt;/ns1:segId>&lt;ns1:prfCd>&lt;xsl:copy-of select=&quot;ns:prfCd/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;ns:prfCd&quot;/>&lt;/ns1:prfCd>&lt;/ns1:apsReqnList>&lt;/xsl:for-each>&lt;/ns1:bizBody>&lt;/ns1:data>&lt;/ns1:root>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:ns2=&quot;http://schema.hcis.com/json&quot; xmlns:ns14=&quot;http://schema.hcis.com/xsd/CISKCBCTJB0020302_OutReq&quot; xmlns:ns15=&quot;http://schema.hcis.com/xsd/CISKCBCTJB0020302_InReq&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;ReqOutXml&quot;/>&#xa;    &lt;xsl:param name=&quot;ReqCISHeader&quot;/>&#xa;    &lt;xsl:param name=&quot;_error&quot;/>&#xa;    &lt;xsl:template name=&quot;ErrorResJson-input&quot; match=&quot;/&quot;>&#xa;        &lt;ns15:root>&#xa;            &lt;ns15:header>&#xa;                &lt;xsl:if test=&quot;$ReqCISHeader/ns2:totTgrmLen&quot;>&#xa;                    &lt;ns15:totTgrmLen>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:totTgrmLen/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:totTgrmLen&quot;/>&#xa;                    &lt;/ns15:totTgrmLen>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$ReqCISHeader/ns2:hdrLen&quot;>&#xa;                    &lt;ns15:hdrLen>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:hdrLen/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:hdrLen&quot;/>&#xa;                    &lt;/ns15:hdrLen>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$ReqCISHeader/ns2:tgrmFrmCd&quot;>&#xa;                    &lt;ns15:tgrmFrmCd>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:tgrmFrmCd/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:tgrmFrmCd&quot;/>&#xa;                    &lt;/ns15:tgrmFrmCd>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$ReqCISHeader/ns2:sysEnvGbcd&quot;>&#xa;                    &lt;ns15:sysEnvGbcd>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:sysEnvGbcd/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:sysEnvGbcd&quot;/>&#xa;                    &lt;/ns15:sysEnvGbcd>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$ReqCISHeader/ns2:ipAdr&quot;>&#xa;                    &lt;ns15:ipAdr>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:ipAdr/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:ipAdr&quot;/>&#xa;                    &lt;/ns15:ipAdr>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$ReqCISHeader/ns2:guid&quot;>&#xa;                    &lt;ns15:guid>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:guid/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:guid&quot;/>&#xa;                    &lt;/ns15:guid>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$ReqCISHeader/ns2:prgrNo&quot;>&#xa;                    &lt;ns15:prgrNo>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:prgrNo/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:prgrNo&quot;/>&#xa;                    &lt;/ns15:prgrNo>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$ReqCISHeader/ns2:frstGuid&quot;>&#xa;                    &lt;ns15:frstGuid>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:frstGuid/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:frstGuid&quot;/>&#xa;                    &lt;/ns15:frstGuid>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$ReqCISHeader/ns2:sendSysCd&quot;>&#xa;                    &lt;ns15:sendSysCd>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:sendSysCd/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:sendSysCd&quot;/>&#xa;                    &lt;/ns15:sendSysCd>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$ReqCISHeader/ns2:frstSendSysCd&quot;>&#xa;                    &lt;ns15:frstSendSysCd>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:frstSendSysCd/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:frstSendSysCd&quot;/>&#xa;                    &lt;/ns15:frstSendSysCd>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$ReqCISHeader/ns2:sysCommTrtyPrepCntn&quot;>&#xa;                    &lt;ns15:sysCommTrtyPrepCntn>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:sysCommTrtyPrepCntn/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:sysCommTrtyPrepCntn&quot;/>&#xa;                    &lt;/ns15:sysCommTrtyPrepCntn>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$ReqCISHeader/ns2:eimsTgrmId&quot;>&#xa;                    &lt;ns15:eimsTgrmId>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:eimsTgrmId/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:eimsTgrmId&quot;/>&#xa;                    &lt;/ns15:eimsTgrmId>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$ReqCISHeader/ns2:eimsTgrmVerNo&quot;>&#xa;                    &lt;ns15:eimsTgrmVerNo>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:eimsTgrmVerNo/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:eimsTgrmVerNo&quot;/>&#xa;                    &lt;/ns15:eimsTgrmVerNo>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$ReqCISHeader/ns2:frwkTrdId&quot;>&#xa;                    &lt;ns15:frwkTrdId>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:frwkTrdId/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:frwkTrdId&quot;/>&#xa;                    &lt;/ns15:frwkTrdId>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$ReqCISHeader/ns2:rcvSysCd&quot;>&#xa;                    &lt;ns15:rcvSysCd>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:rcvSysCd/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:rcvSysCd&quot;/>&#xa;                    &lt;/ns15:rcvSysCd>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$ReqCISHeader/ns2:tieTgrmCd&quot;>&#xa;                    &lt;ns15:tieTgrmCd>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:tieTgrmCd/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:tieTgrmCd&quot;/>&#xa;                    &lt;/ns15:tieTgrmCd>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$ReqCISHeader/ns2:tieSrvGrpCd&quot;>&#xa;                    &lt;ns15:tieSrvGrpCd>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:tieSrvGrpCd/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:tieSrvGrpCd&quot;/>&#xa;                    &lt;/ns15:tieSrvGrpCd>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$ReqCISHeader/ns2:tieSrvNm&quot;>&#xa;                    &lt;ns15:tieSrvNm>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:tieSrvNm/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:tieSrvNm&quot;/>&#xa;                    &lt;/ns15:tieSrvNm>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$ReqCISHeader/ns2:scrnNo&quot;>&#xa;                    &lt;ns15:scrnNo>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:scrnNo/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:scrnNo&quot;/>&#xa;                    &lt;/ns15:scrnNo>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$ReqCISHeader/ns2:reqnRespGbcd&quot;>&#xa;                    &lt;ns15:reqnRespGbcd>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:reqnRespGbcd/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:reqnRespGbcd&quot;/>&#xa;                    &lt;/ns15:reqnRespGbcd>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$ReqCISHeader/ns2:syncProcGbcd&quot;>&#xa;                    &lt;ns15:syncProcGbcd>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:syncProcGbcd/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:syncProcGbcd&quot;/>&#xa;                    &lt;/ns15:syncProcGbcd>&#xa;                &lt;/xsl:if>&#xa;                &lt;ns15:trdRespCd>&#xa;                    &lt;xsl:value-of select=&quot;&amp;quot;1&amp;quot;&quot;/>&#xa;                &lt;/ns15:trdRespCd>&#xa;                &lt;xsl:if test=&quot;$ReqCISHeader/ns2:pageNo&quot;>&#xa;                    &lt;ns15:pageNo>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:pageNo/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:pageNo&quot;/>&#xa;                    &lt;/ns15:pageNo>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$ReqCISHeader/ns2:pageRowCnt&quot;>&#xa;                    &lt;ns15:pageRowCnt>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:pageRowCnt/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:pageRowCnt&quot;/>&#xa;                    &lt;/ns15:pageRowCnt>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$ReqCISHeader/ns2:totRowCnt&quot;>&#xa;                    &lt;ns15:totRowCnt>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:totRowCnt/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:totRowCnt&quot;/>&#xa;                    &lt;/ns15:totRowCnt>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$ReqCISHeader/ns2:nxtPageYn&quot;>&#xa;                    &lt;ns15:nxtPageYn>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:nxtPageYn/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:nxtPageYn&quot;/>&#xa;                    &lt;/ns15:nxtPageYn>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$ReqCISHeader/ns2:reqnDtm&quot;>&#xa;                    &lt;ns15:reqnDtm>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:reqnDtm/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:reqnDtm&quot;/>&#xa;                    &lt;/ns15:reqnDtm>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$ReqCISHeader/ns2:respDtm&quot;>&#xa;                    &lt;ns15:respDtm>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:respDtm/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:respDtm&quot;/>&#xa;                    &lt;/ns15:respDtm>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$ReqCISHeader/ns2:storeCd&quot;>&#xa;                    &lt;ns15:storeCd>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:storeCd/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:storeCd&quot;/>&#xa;                    &lt;/ns15:storeCd>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$ReqCISHeader/ns2:userId&quot;>&#xa;                    &lt;ns15:userId>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:userId/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:userId&quot;/>&#xa;                    &lt;/ns15:userId>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;$ReqCISHeader/ns2:trdCommTrtyPrepCntn&quot;>&#xa;                    &lt;ns15:trdCommTrtyPrepCntn>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:trdCommTrtyPrepCntn/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:trdCommTrtyPrepCntn&quot;/>&#xa;                    &lt;/ns15:trdCommTrtyPrepCntn>&#xa;                &lt;/xsl:if>&#xa;                &lt;ns15:msgGrpNm>&#xa;                    &lt;xsl:if test=&quot;$ReqCISHeader/ns2:msgGrpNm/ns2:msgShwMthdGbcd&quot;>&#xa;                        &lt;ns15:msgShwMthdGbcd>&#xa;                            &lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:msgGrpNm/ns2:msgShwMthdGbcd/@xsi:nil&quot;/>&#xa;                            &lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:msgGrpNm/ns2:msgShwMthdGbcd&quot;/>&#xa;                        &lt;/ns15:msgShwMthdGbcd>&#xa;                    &lt;/xsl:if>&#xa;                    &lt;xsl:if test=&quot;$ReqCISHeader/ns2:msgGrpNm/ns2:errOcrnTgrmClasNm&quot;>&#xa;                        &lt;ns15:errOcrnTgrmClasNm>&#xa;                            &lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:msgGrpNm/ns2:errOcrnTgrmClasNm/@xsi:nil&quot;/>&#xa;                            &lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:msgGrpNm/ns2:errOcrnTgrmClasNm&quot;/>&#xa;                        &lt;/ns15:errOcrnTgrmClasNm>&#xa;                    &lt;/xsl:if>&#xa;                    &lt;xsl:if test=&quot;$_error/MsgCode&quot;>&#xa;                        &lt;ns15:msgCd>&#xa;                            &lt;xsl:value-of select=&quot;$_error/MsgCode&quot;/>&#xa;                        &lt;/ns15:msgCd>&#xa;                    &lt;/xsl:if>&#xa;                    &lt;ns15:msgCntn>&#xa;                        &lt;xsl:value-of select=&quot;$_error/Msg&quot;/>&#xa;                    &lt;/ns15:msgCntn>&#xa;                    &lt;ns15:msgDtlCntn>&#xa;                        &lt;xsl:value-of select=&quot;$_error/StackTrace&quot;/>&#xa;                    &lt;/ns15:msgDtlCntn>&#xa;                &lt;/ns15:msgGrpNm>&#xa;                &lt;xsl:if test=&quot;$ReqCISHeader/ns2:stdTgrmEndLettrVal&quot;>&#xa;                    &lt;ns15:stdTgrmEndLettrVal>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqCISHeader/ns2:stdTgrmEndLettrVal/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqCISHeader/ns2:stdTgrmEndLettrVal&quot;/>&#xa;                    &lt;/ns15:stdTgrmEndLettrVal>&#xa;                &lt;/xsl:if>&#xa;            &lt;/ns15:header>&#xa;            &lt;ns15:data>&#xa;                &lt;ns15:bizHeader>&#xa;                    &lt;ns15:tgrmLen>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqOutXml/ns14:bizHeader/ns14:tgrmLen/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqOutXml/ns14:bizHeader/ns14:tgrmLen&quot;/>&#xa;                    &lt;/ns15:tgrmLen>&#xa;                    &lt;ns15:trdCd>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqOutXml/ns14:bizHeader/ns14:trdCd/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqOutXml/ns14:bizHeader/ns14:trdCd&quot;/>&#xa;                    &lt;/ns15:trdCd>&#xa;                    &lt;ns15:mmcoCd>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqOutXml/ns14:bizHeader/ns14:mmcoCd/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqOutXml/ns14:bizHeader/ns14:mmcoCd&quot;/>&#xa;                    &lt;/ns15:mmcoCd>&#xa;                    &lt;ns15:tgrmSubCCd>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqOutXml/ns14:bizHeader/ns14:tgrmSubCCd/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqOutXml/ns14:bizHeader/ns14:tgrmSubCCd&quot;/>&#xa;                    &lt;/ns15:tgrmSubCCd>&#xa;                    &lt;ns15:tskGbcd>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqOutXml/ns14:bizHeader/ns14:tskGbcd/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqOutXml/ns14:bizHeader/ns14:tskGbcd&quot;/>&#xa;                    &lt;/ns15:tskGbcd>&#xa;                    &lt;ns15:tnrGb>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqOutXml/ns14:bizHeader/ns14:tnrGb/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqOutXml/ns14:bizHeader/ns14:tnrGb&quot;/>&#xa;                    &lt;/ns15:tnrGb>&#xa;                    &lt;ns15:respCd>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqOutXml/ns14:bizHeader/ns14:respCd/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqOutXml/ns14:bizHeader/ns14:respCd&quot;/>&#xa;                    &lt;/ns15:respCd>&#xa;                    &lt;ns15:kcbTgrmMngNo>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqOutXml/ns14:bizHeader/ns14:kcbTgrmMngNo/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqOutXml/ns14:bizHeader/ns14:kcbTgrmMngNo&quot;/>&#xa;                    &lt;/ns15:kcbTgrmMngNo>&#xa;                    &lt;ns15:kcbTgrmSendTime>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqOutXml/ns14:bizHeader/ns14:kcbTgrmSendTime/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqOutXml/ns14:bizHeader/ns14:kcbTgrmSendTime&quot;/>&#xa;                    &lt;/ns15:kcbTgrmSendTime>&#xa;                    &lt;ns15:mmcoTgrmMngNo>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqOutXml/ns14:bizHeader/ns14:mmcoTgrmMngNo/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqOutXml/ns14:bizHeader/ns14:mmcoTgrmMngNo&quot;/>&#xa;                    &lt;/ns15:mmcoTgrmMngNo>&#xa;                    &lt;ns15:mmcoTgrmSendTime>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqOutXml/ns14:bizHeader/ns14:mmcoTgrmSendTime/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqOutXml/ns14:bizHeader/ns14:mmcoTgrmSendTime&quot;/>&#xa;                    &lt;/ns15:mmcoTgrmSendTime>&#xa;                    &lt;ns15:sysInf>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqOutXml/ns14:bizHeader/ns14:sysInf/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqOutXml/ns14:bizHeader/ns14:sysInf&quot;/>&#xa;                    &lt;/ns15:sysInf>&#xa;                    &lt;ns15:qryAgrCd>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqOutXml/ns14:bizHeader/ns14:qryAgrCd/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqOutXml/ns14:bizHeader/ns14:qryAgrCd&quot;/>&#xa;                    &lt;/ns15:qryAgrCd>&#xa;                    &lt;ns15:prepVal>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqOutXml/ns14:bizHeader/ns14:prepVal/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqOutXml/ns14:bizHeader/ns14:prepVal&quot;/>&#xa;                    &lt;/ns15:prepVal>&#xa;                &lt;/ns15:bizHeader>&#xa;                &lt;ns15:bizBody>&#xa;                    &lt;ns15:certNo>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqOutXml/ns14:bizBody/ns14:certNo/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqOutXml/ns14:bizBody/ns14:certNo&quot;/>&#xa;                    &lt;/ns15:certNo>&#xa;                    &lt;ns15:reReqnCnt>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqOutXml/ns14:bizBody/ns14:reReqnCnt/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqOutXml/ns14:bizBody/ns14:reReqnCnt&quot;/>&#xa;                    &lt;/ns15:reReqnCnt>&#xa;                    &lt;ns15:idntNoGbcd>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqOutXml/ns14:bizBody/ns14:idntNoGbcd/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqOutXml/ns14:bizBody/ns14:idntNoGbcd&quot;/>&#xa;                    &lt;/ns15:idntNoGbcd>&#xa;                    &lt;ns15:idntNo>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqOutXml/ns14:bizBody/ns14:idntNo/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqOutXml/ns14:bizBody/ns14:idntNo&quot;/>&#xa;                    &lt;/ns15:idntNo>&#xa;                    &lt;ns15:qryPurpseCd>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqOutXml/ns14:bizBody/ns14:qryPurpseCd/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqOutXml/ns14:bizBody/ns14:qryPurpseCd&quot;/>&#xa;                    &lt;/ns15:qryPurpseCd>&#xa;                    &lt;ns15:fnmNm>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqOutXml/ns14:bizBody/ns14:fnmNm/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqOutXml/ns14:bizBody/ns14:fnmNm&quot;/>&#xa;                    &lt;/ns15:fnmNm>&#xa;                    &lt;ns15:qryBrnNm>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqOutXml/ns14:bizBody/ns14:qryBrnNm/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqOutXml/ns14:bizBody/ns14:qryBrnNm&quot;/>&#xa;                    &lt;/ns15:qryBrnNm>&#xa;                    &lt;ns15:asgnrId>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqOutXml/ns14:bizBody/ns14:asgnrId/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqOutXml/ns14:bizBody/ns14:asgnrId&quot;/>&#xa;                    &lt;/ns15:asgnrId>&#xa;                    &lt;ns15:pinfInfTotRcvCnt>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqOutXml/ns14:bizBody/ns14:pinfInfTotRcvCnt/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqOutXml/ns14:bizBody/ns14:pinfInfTotRcvCnt&quot;/>&#xa;                    &lt;/ns15:pinfInfTotRcvCnt>&#xa;                    &lt;ns15:pinfInfReqnCnt>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqOutXml/ns14:bizBody/ns14:pinfInfReqnCnt/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqOutXml/ns14:bizBody/ns14:pinfInfReqnCnt&quot;/>&#xa;                    &lt;/ns15:pinfInfReqnCnt>&#xa;                    &lt;ns15:apsTotRcvCnt>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqOutXml/ns14:bizBody/ns14:apsTotRcvCnt/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqOutXml/ns14:bizBody/ns14:apsTotRcvCnt&quot;/>&#xa;                    &lt;/ns15:apsTotRcvCnt>&#xa;                    &lt;ns15:apsReqnCnt>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqOutXml/ns14:bizBody/ns14:apsReqnCnt/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqOutXml/ns14:bizBody/ns14:apsReqnCnt&quot;/>&#xa;                    &lt;/ns15:apsReqnCnt>&#xa;                    &lt;ns15:rltyOwnInfTotRcvCnt>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqOutXml/ns14:bizBody/ns14:rltyOwnInfTotRcvCnt/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqOutXml/ns14:bizBody/ns14:rltyOwnInfTotRcvCnt&quot;/>&#xa;                    &lt;/ns15:rltyOwnInfTotRcvCnt>&#xa;                    &lt;ns15:rltyOwnInfReqnCnt>&#xa;                        &lt;xsl:copy-of select=&quot;$ReqOutXml/ns14:bizBody/ns14:rltyOwnInfReqnCnt/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$ReqOutXml/ns14:bizBody/ns14:rltyOwnInfReqnCnt&quot;/>&#xa;                    &lt;/ns15:rltyOwnInfReqnCnt>&#xa;                    &lt;xsl:for-each select=&quot;$ReqOutXml/ns14:bizBody/ns14:apsReqnList&quot;>&#xa;                        &lt;ns15:apsReqnList>&#xa;                            &lt;ns15:segId>&#xa;                                &lt;xsl:copy-of select=&quot;ns14:segId/@xsi:nil&quot;/>&#xa;                                &lt;xsl:value-of select=&quot;ns14:segId&quot;/>&#xa;                            &lt;/ns15:segId>&#xa;                            &lt;ns15:prfCd>&#xa;                                &lt;xsl:copy-of select=&quot;ns14:prfCd/@xsi:nil&quot;/>&#xa;                                &lt;xsl:value-of select=&quot;ns14:prfCd&quot;/>&#xa;                            &lt;/ns15:prfCd>&#xa;                        &lt;/ns15:apsReqnList>&#xa;                    &lt;/xsl:for-each>&#xa;                &lt;/ns15:bizBody>&#xa;            &lt;/ns15:data>&#xa;        &lt;/ns15:root>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                 </tibex:inputBindings>
                                 <tibex:config>
                                     <bwext:BWActivity
@@ -3133,6 +3655,12 @@
                 <bpws:link name="OutResXmlToInResJson" tibex:linkType="SUCCESS"/>
                 <bpws:link name="ReadTCPDataToOutResEdiLog" tibex:linkType="SUCCESS"/>
                 <bpws:link name="SENDToReadTCPData" tibex:linkType="SUCCESS"/>
+                <bpws:link name="ParseJSONToL_Get_InterfaceInfo" tibex:linkType="SUCCESS"/>
+                <bpws:link name="ReadTCPDataToOutResEdiLog1" tibex:linkType="SUCCESS"/>
+                <bpws:link name="ReadTCPDataToediBytesToJson" tibex:linkType="SUCCESS"/>
+                <bpws:link name="ReadTCPData1ToediBytesToJson" tibex:linkType="SUCCESS"/>
+                <bpws:link name="ReadTCPData2ToediBytesToJson" tibex:linkType="SUCCESS"/>
+                <bpws:link name="JavaInvokeToediBytesToJson1" tibex:linkType="SUCCESS"/>
             </bpws:links>
             <bpws:extensionActivity>
                 <tibex:receiveEvent createInstance="yes"
@@ -3172,14 +3700,14 @@
                     tibex:xpdlId="79b41e32-69d4-4163-bd6c-5ca7a7ceb746"
                     type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
-                        <bpws:target linkName="JavaInvokeToL_Get_InterfaceInfo"/>
+                        <bpws:target linkName="ParseJSONToL_Get_InterfaceInfo"/>
                     </bpws:targets>
                     <bpws:sources>
                         <bpws:source linkName="L_Get_InterfaceInfoToL_Set_LogStart"/>
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding coercion=""
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:Library=&quot;http://www.cspi_library.org/Library&quot; xmlns:HCIS=&quot;http://shacon.kr/202301&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;getInterface&quot;/>&lt;xsl:template name=&quot;L_Get_InterfaceInfo-input&quot; match=&quot;/&quot;>&lt;Library:SetInterface>&lt;Library:InterfaceId>&lt;xsl:value-of select=&quot;$getInterface/MethodReturnValue&quot;/>&lt;/Library:InterfaceId>&lt;Library:InterfaceSysId>&lt;xsl:value-of select=&quot;HCIS:getGUID()&quot;/>&lt;/Library:InterfaceSysId>&lt;/Library:SetInterface>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:Library=&quot;http://www.cspi_library.org/Library&quot; xmlns:tns17=&quot;http://tns.tibco.com/bw/json/1676951614079&quot; xmlns:HCIS=&quot;http://shacon.kr/202301&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;EIMS&quot;/>&#xa;    &lt;xsl:template name=&quot;L_Get_InterfaceInfo-input&quot; match=&quot;/&quot;>&#xa;        &lt;Library:SetInterface>&#xa;            &lt;Library:InterfaceId>&#xa;                &lt;xsl:value-of select=&quot;$EIMS/tns17:request/tns17:ifId&quot;/>&#xa;            &lt;/Library:InterfaceId>&#xa;            &lt;Library:InterfaceSysId>&#xa;                &lt;xsl:value-of select=&quot;HCIS:getGUID()&quot;/>&#xa;            &lt;/Library:InterfaceSysId>&#xa;        &lt;/Library:SetInterface>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:CallProcess moduleRef="CSPI_Library"
                         subProcessName="L_Get_InterfaceInfo" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
@@ -3290,14 +3818,14 @@
                     outputVariable="ediBytesToJson"
                     tibex:xpdlId="68f15958-1e4a-431e-b034-d063b77fcfa8" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
-                        <bpws:target linkName="JavaInvokeToediBytesToJson"/>
+                        <bpws:target linkName="JavaInvokeToediBytesToJson1"/>
                     </bpws:targets>
                     <bpws:sources>
                         <bpws:source linkName="ediBytesToJsonToto3ByteHangle"/>
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns4=&quot;www.tibco.com/plugin/java/JavaInvokeActivityInput+68f15958-1e4a-431e-b034-d063b77fcfa8+JavaInvokeActivityInput&quot; xmlns:Q3=&quot;http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataOutput+2eca78e7-dbdd-4a1a-be8f-015d584ad86e+ActivityOutput&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;ReadTCPData&quot;/>&#xa;    &lt;xsl:template name=&quot;ediBytesToJson-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns4:JavaInvokeActivityInput>&#xa;            &lt;MethodParameters>&#xa;                &lt;msgType>&#xa;                    &lt;xsl:value-of select=&quot;&amp;quot;_OutRes&amp;quot;&quot;/>&#xa;                &lt;/msgType>&#xa;                &lt;ediBytes>&#xa;                    &lt;xsl:value-of select=&quot;$ReadTCPData/Q3:data&quot;/>&#xa;                &lt;/ediBytes>&#xa;                &lt;encoding>&#xa;                    &lt;xsl:value-of select=&quot;&amp;quot;euc-kr&amp;quot;&quot;/>&#xa;                &lt;/encoding>&#xa;                &lt;xml>&#xa;                    &lt;xsl:value-of select=&quot;&amp;quot;&amp;quot;&quot;/>&#xa;                &lt;/xml>&#xa;            &lt;/MethodParameters>&#xa;        &lt;/tns4:JavaInvokeActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns4=&quot;www.tibco.com/plugin/java/JavaInvokeActivityInput+68f15958-1e4a-431e-b034-d063b77fcfa8+JavaInvokeActivityInput&quot; xmlns:Q3=&quot;http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataOutput+2eca78e7-dbdd-4a1a-be8f-015d584ad86e+ActivityOutput&quot; xmlns:tns17=&quot;http://tns.tibco.com/bw/json/1676951614079&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;EIMS&quot;/>&lt;xsl:param name=&quot;concatBytesBytes&quot;/>&lt;xsl:template name=&quot;ediBytesToJson-input&quot; match=&quot;/&quot;>&lt;tns4:JavaInvokeActivityInput>&lt;MethodParameters>&lt;msgType>&lt;xsl:value-of select=&quot;concat($EIMS/tns17:response/tns17:ifId,&amp;quot;_OutRes&amp;quot;)&quot;/>&lt;/msgType>&lt;ediBytes>&lt;xsl:value-of select=&quot;$concatBytesBytes/MethodReturnValue&quot;/>&lt;/ediBytes>&lt;encoding>&lt;xsl:value-of select=&quot;&amp;quot;euc-kr&amp;quot;&quot;/>&lt;/encoding>&lt;xml>&lt;xsl:value-of select=&quot;concat(&amp;quot;/Schemas/&amp;quot;,substring($EIMS/tns17:response/tns17:ifId, 0, 10),&amp;quot;/&amp;quot;,$EIMS/tns17:response/tns17:ifId,&amp;quot;/&amp;quot;,$EIMS/tns17:response/tns17:ifId,&amp;quot;.xml&amp;quot;)&quot;/>&lt;/xml>&lt;/MethodParameters>&lt;/tns4:JavaInvokeActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -3344,7 +3872,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns16=&quot;www.tibco.com/plugin/java/JavaInvokeActivityInput+80f488d7-bcc3-4189-82d1-fe0fe8c25e0b+JavaInvokeActivityInput&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;ediBytesToJson&quot;/>&#xa;    &lt;xsl:template name=&quot;JavaInvoke1-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns16:JavaInvokeActivityInput>&#xa;            &lt;MethodParameters>&#xa;                &lt;data>&#xa;                    &lt;xsl:value-of select=&quot;$ediBytesToJson/MethodReturnValue&quot;/>&#xa;                &lt;/data>&#xa;                &lt;encoding>&#xa;                    &lt;xsl:value-of select=&quot;&amp;quot;UTF-8&amp;quot;&quot;/>&#xa;                &lt;/encoding>&#xa;            &lt;/MethodParameters>&#xa;        &lt;/tns16:JavaInvokeActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns23=&quot;www.tibco.com/plugin/java/JavaInvokeActivityInput+80f488d7-bcc3-4189-82d1-fe0fe8c25e0b+JavaInvokeActivityInput&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;ediBytesToJson&quot;/>&#xa;    &lt;xsl:template name=&quot;JavaInvoke1-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns23:JavaInvokeActivityInput>&#xa;            &lt;MethodParameters>&#xa;                &lt;data>&#xa;                    &lt;xsl:value-of select=&quot;$ediBytesToJson/MethodReturnValue&quot;/>&#xa;                &lt;/data>&#xa;                &lt;encoding>&#xa;                    &lt;xsl:value-of select=&quot;&amp;quot;UTF-8&amp;quot;&quot;/>&#xa;                &lt;/encoding>&#xa;            &lt;/MethodParameters>&#xa;        &lt;/tns23:JavaInvokeActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -3450,8 +3978,8 @@
             </bpws:extensionActivity>
             <bpws:extensionActivity>
                 <tibex:activityExtension
-                    inputVariable="getInterface-input"
-                    name="getInterface" outputVariable="getInterface"
+                    inputVariable="getEIMSjson-input" name="getEIMSjson"
+                    outputVariable="getEIMSjson"
                     tibex:xpdlId="af0d2ff0-7f70-4ee0-914b-29b26930374d" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
                         <bpws:target linkName="IN_RESToL_Get_InterfaceInfo"/>
@@ -3478,7 +4006,7 @@
                                     icon="HcisCommon.smodule\Resources\icons\outgoing-data-48.png"
                                     isNew="true"
                                     isNewActivity="true"
-                                    methodName="getInterfaceId"
+                                    methodName="getEimsJson"
                                     methodReturn="string" xsi:type="java:JavaMethod"/>
                                 </properties>
                             </activityConfig>
@@ -3500,7 +4028,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns9=&quot;www.tibco.com/plugin/java/JavaInvokeActivityInput+ddb0b202-7043-45a7-a03f-1382339ad13d+JavaInvokeActivityInput&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;OUTBOUND&quot;/>&lt;xsl:template name=&quot;JavaInvoke-input&quot; match=&quot;/&quot;>&lt;tns9:JavaInvokeActivityInput>&lt;MethodParameters>&lt;msgType>&lt;xsl:value-of select=&quot;&amp;quot;_OutReq&amp;quot;&quot;/>&lt;/msgType>&lt;jsonString>&lt;xsl:value-of select=&quot;$OUTBOUND/Body&quot;/>&lt;/jsonString>&lt;encoding>&lt;xsl:value-of select=&quot;&amp;quot;euc-kr&amp;quot;&quot;/>&lt;/encoding>&lt;xml>&lt;xsl:value-of select=&quot;&amp;quot;&amp;quot;&quot;/>&lt;/xml>&lt;/MethodParameters>&lt;/tns9:JavaInvokeActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns9=&quot;www.tibco.com/plugin/java/JavaInvokeActivityInput+ddb0b202-7043-45a7-a03f-1382339ad13d+JavaInvokeActivityInput&quot; xmlns:tns17=&quot;http://tns.tibco.com/bw/json/1676951614079&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;OUTBOUND&quot;/>&lt;xsl:param name=&quot;EIMS&quot;/>&lt;xsl:template name=&quot;JsonToEdiBytes-input&quot; match=&quot;/&quot;>&lt;tns9:JavaInvokeActivityInput>&lt;MethodParameters>&lt;msgType>&lt;xsl:value-of select=&quot;concat($EIMS/tns17:request/tns17:ifId,&amp;quot;_OutReq&amp;quot;)&quot;/>&lt;/msgType>&lt;jsonString>&lt;xsl:value-of select=&quot;$OUTBOUND/Body&quot;/>&lt;/jsonString>&lt;encoding>&lt;xsl:value-of select=&quot;&amp;quot;euc-kr&amp;quot;&quot;/>&lt;/encoding>&lt;xml>&lt;xsl:value-of select=&quot;concat(&amp;quot;/Schemas/&amp;quot;,substring($EIMS/tns17:request/tns17:ifId, 0, 10),&amp;quot;/&amp;quot;,$EIMS/tns17:request/tns17:ifId,&amp;quot;/&amp;quot;,$EIMS/tns17:request/tns17:ifId,&amp;quot;.xml&amp;quot;)&quot;/>&lt;/xml>&lt;/MethodParameters>&lt;/tns9:JavaInvokeActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -3536,18 +4064,18 @@
             </bpws:extensionActivity>
             <bpws:extensionActivity>
                 <tibex:activityExtension
-                    inputVariable="OutResEdiLog-input"
-                    name="OutResEdiLog" outputVariable="OutResEdiLog"
+                    inputVariable="bodyMaster-input" name="bodyMaster"
+                    outputVariable="bodyMaster"
                     tibex:xpdlId="4e637ea3-e3ce-4810-9de1-c23b8976aede" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
-                        <bpws:target linkName="ReadTCPDataToOutResEdiLog"/>
+                        <bpws:target linkName="ReadTCPDataToOutResEdiLog1"/>
                     </bpws:targets>
                     <bpws:sources>
                         <bpws:source linkName="JavaInvokeToediBytesToJson"/>
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns10=&quot;www.tibco.com/plugin/java/JavaInvokeActivityInput+4e637ea3-e3ce-4810-9de1-c23b8976aede+JavaInvokeActivityInput&quot; xmlns:Q3=&quot;http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataOutput+2eca78e7-dbdd-4a1a-be8f-015d584ad86e+ActivityOutput&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;ReadTCPData&quot;/>&#xa;    &lt;xsl:template name=&quot;OutResEdiLog-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns10:JavaInvokeActivityInput>&#xa;            &lt;MethodParameters>&#xa;                &lt;bytes>&#xa;                    &lt;xsl:value-of select=&quot;$ReadTCPData/Q3:data&quot;/>&#xa;                &lt;/bytes>&#xa;                &lt;xsdpath>&#xa;                    &lt;xsl:value-of select=&quot;&amp;quot;_OutRes&amp;quot;&quot;/>&#xa;                &lt;/xsdpath>&#xa;            &lt;/MethodParameters>&#xa;        &lt;/tns10:JavaInvokeActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns10=&quot;www.tibco.com/plugin/java/JavaInvokeActivityInput+4e637ea3-e3ce-4810-9de1-c23b8976aede+JavaInvokeActivityInput&quot; xmlns:Q4=&quot;http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataOutput+8fe93f75-34f6-4641-aeea-2b4e4f31a402+ActivityOutput&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;bizBodyMaster&quot;/>&#xa;    &lt;xsl:template name=&quot;OutResEdiLog-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns10:JavaInvokeActivityInput>&#xa;            &lt;MethodParameters>&#xa;                &lt;format>&#xa;                    &lt;xsl:value-of select=&quot;&amp;quot;certNo:12,infCnscYn:1,reReqnCnt:2,idntNoGbcd:1,idntNo:13,fnmNm:50,infEnChkBit:10,pinfInfTotCnt:3,pinfInfTotTrsCnt:3,pinfInfRespCnt:2,apsTotCnt:3,apsTotTrsCnt:3,apsRespCnt:3,rltyOwnInfTotCnt:3,rltyOwnInfTotTrsCnt:3,rltyOwnInfRespCnt:2&amp;quot;&quot;/>&#xa;                &lt;/format>&#xa;                &lt;data>&#xa;                    &lt;xsl:value-of select=&quot;$bizBodyMaster/Q4:data&quot;/>&#xa;                &lt;/data>&#xa;                &lt;encoding>&#xa;                    &lt;xsl:value-of select=&quot;&amp;quot;euc-kr&amp;quot;&quot;/>&#xa;                &lt;/encoding>&#xa;            &lt;/MethodParameters>&#xa;        &lt;/tns10:JavaInvokeActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -3559,16 +4087,19 @@
                                 <properties name="config" xsi:type="activityconfig:EMFProperty">
                                     <type href="http://ns.tibco.com/bw/palette/java#//JavaMethod"/>
                                     <value
-                                    className="com.hcis.eai.tos.CISTOSHelper"
+                                    className="com.hcis.eai.common.HCISHelper"
                                     constructDeclaredClass="true"
                                     isNew="true"
                                     isNewActivity="true"
-                                    methodName="logEDIBytes"
+                                    methodName="parseMini"
                                     methodReturn="string" xsi:type="java:JavaMethod">
+                                    <exceptionTypes>java.io.UnsupportedEncodingException</exceptionTypes>
                                     <methodParameter
-                                    paramName="bytes" paramType="byte[]"/>
+                                    paramName="format" paramType="string"/>
                                     <methodParameter
-                                    paramName="xsdpath" paramType="string"/>
+                                    paramName="data" paramType="byte[]"/>
+                                    <methodParameter
+                                    paramName="encoding" paramType="string"/>
                                     </value>
                                 </properties>
                             </activityConfig>
@@ -3677,9 +4208,8 @@
                 </tibex:activityExtension>
             </bpws:extensionActivity>
             <bpws:extensionActivity>
-                <tibex:activityExtension
-                    inputVariable="ReadTCPData-input" name="ReadTCPData"
-                    outputVariable="ReadTCPData"
+                <tibex:activityExtension inputVariable="bizHeader-input"
+                    name="bizHeader" outputVariable="bizHeader"
                     tibex:xpdlId="2eca78e7-dbdd-4a1a-be8f-015d584ad86e" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
                         <bpws:target linkName="SENDToReadTCPData"/>
@@ -3689,7 +4219,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns15=&quot;http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataInput+2eca78e7-dbdd-4a1a-be8f-015d584ad86e+ActivityInput&quot; xmlns:tns5=&quot;http://www.tibco.com/namespaces/tnt/plugins/tcp&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;KIC_Connecton&quot;/>&#xa;    &lt;xsl:template name=&quot;ReadTCPData-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns15:ActivityInput>&#xa;            &lt;tns15:connection>&#xa;                &lt;xsl:value-of select=&quot;$KIC_Connecton/tns5:connection&quot;/>&#xa;            &lt;/tns15:connection>&#xa;            &lt;tns15:bytesToRead>&#xa;                &lt;xsl:value-of select=&quot;279&quot;/>&#xa;            &lt;/tns15:bytesToRead>&#xa;        &lt;/tns15:ActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns15=&quot;http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataInput+2eca78e7-dbdd-4a1a-be8f-015d584ad86e+ActivityInput&quot; xmlns:tns5=&quot;http://www.tibco.com/namespaces/tnt/plugins/tcp&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;KIC_Connecton&quot;/>&lt;xsl:template name=&quot;ReadTCPData-input&quot; match=&quot;/&quot;>&lt;tns15:ActivityInput>&lt;tns15:connection>&lt;xsl:value-of select=&quot;$KIC_Connecton/tns5:connection&quot;/>&lt;/tns15:connection>&lt;tns15:bytesToRead>&lt;xsl:value-of select=&quot;134&quot;/>&lt;/tns15:bytesToRead>&lt;/tns15:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity activityTypeID="bw.tcp.read"
@@ -3699,9 +4229,216 @@
                             <activityConfig>
                                 <properties name="config" xsi:type="activityconfig:EMFProperty">
                                     <type href="http://ns.tibco.com/bw/palette/tcp#//ReadTCPData"/>
-                                    <value bytesToRead="279"
+                                    <value bytesToRead="134"
                                     separator="No Separator"
                                     type="Binary" xsi:type="tcpPalette:ReadTCPData"/>
+                                </properties>
+                            </activityConfig>
+                        </bwext:BWActivity>
+                    </tibex:config>
+                </tibex:activityExtension>
+            </bpws:extensionActivity>
+            <bpws:extensionActivity>
+                <tibex:activityExtension inputVariable="EIMS-input"
+                    name="EIMS" outputVariable="EIMS"
+                    tibex:xpdlId="4f77a4e6-6d7e-471e-86c1-ed2f76b41be0" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                    <bpws:targets>
+                        <bpws:target linkName="JavaInvokeToL_Get_InterfaceInfo"/>
+                    </bpws:targets>
+                    <bpws:sources>
+                        <bpws:source linkName="ParseJSONToL_Get_InterfaceInfo"/>
+                    </bpws:sources>
+                    <tibex:inputBindings>
+                        <tibex:inputBinding
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns16=&quot;activity.jsonParser.input+4f77a4e6-6d7e-471e-86c1-ed2f76b41be0+ActivityInputType&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;getEIMSjson&quot;/>&lt;xsl:template name=&quot;EIMS-input&quot; match=&quot;/&quot;>&lt;tns16:ActivityInputClass>&lt;jsonString>&lt;xsl:value-of select=&quot;$getEIMSjson/MethodReturnValue&quot;/>&lt;/jsonString>&lt;/tns16:ActivityInputClass>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                    </tibex:inputBindings>
+                    <tibex:config>
+                        <bwext:BWActivity
+                            activityTypeID="bw.restjson.JsonParser"
+                            xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
+                            xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
+                            xmlns:restjson="http://ns.tibco.com/bw/palette/restjson" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <activityConfig>
+                                <properties name="config" xsi:type="activityconfig:EMFProperty">
+                                    <type href="http://ns.tibco.com/bw/palette/restjson#//JsonParser"/>
+                                    <value jsonInputStyle="None"
+                                    schemaType="Xsd" xsi:type="restjson:JsonParser">
+                                    <outputEditorElement href="platform:/resource/HcisCommon.smodule/Schemas/EIMSInterface.xsd#//EIMSInterfaceElement;XSDElementDeclaration"/>
+                                    </value>
+                                </properties>
+                            </activityConfig>
+                        </bwext:BWActivity>
+                    </tibex:config>
+                </tibex:activityExtension>
+            </bpws:extensionActivity>
+            <bpws:extensionActivity>
+                <tibex:activityExtension
+                    inputVariable="bizBodyMaster-input"
+                    name="bizBodyMaster" outputVariable="bizBodyMaster"
+                    tibex:xpdlId="8fe93f75-34f6-4641-aeea-2b4e4f31a402" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                    <bpws:targets>
+                        <bpws:target linkName="ReadTCPDataToOutResEdiLog"/>
+                    </bpws:targets>
+                    <bpws:sources>
+                        <bpws:source linkName="ReadTCPDataToOutResEdiLog1"/>
+                    </bpws:sources>
+                    <tibex:inputBindings>
+                        <tibex:inputBinding
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns18=&quot;http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataInput+8fe93f75-34f6-4641-aeea-2b4e4f31a402+ActivityInput&quot; xmlns:tns5=&quot;http://www.tibco.com/namespaces/tnt/plugins/tcp&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;KIC_Connecton&quot;/>&lt;xsl:template name=&quot;bizBodyMaster-input&quot; match=&quot;/&quot;>&lt;tns18:ActivityInput>&lt;tns18:connection>&lt;xsl:value-of select=&quot;$KIC_Connecton/tns5:connection&quot;/>&lt;/tns18:connection>&lt;tns18:bytesToRead>&lt;xsl:value-of select=&quot;114&quot;/>&lt;/tns18:bytesToRead>&lt;/tns18:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                    </tibex:inputBindings>
+                    <tibex:config>
+                        <bwext:BWActivity activityTypeID="bw.tcp.read"
+                            xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
+                            xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
+                            xmlns:tcpPalette="http://ns.tibco.com/bw/palette/tcp" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <activityConfig>
+                                <properties name="config" xsi:type="activityconfig:EMFProperty">
+                                    <type href="http://ns.tibco.com/bw/palette/tcp#//ReadTCPData"/>
+                                    <value bytesToRead="114"
+                                    separator="No Separator"
+                                    type="Binary" xsi:type="tcpPalette:ReadTCPData"/>
+                                </properties>
+                            </activityConfig>
+                        </bwext:BWActivity>
+                    </tibex:config>
+                </tibex:activityExtension>
+            </bpws:extensionActivity>
+            <bpws:extensionActivity>
+                <tibex:activityExtension
+                    inputVariable="dsclsPrcList-input"
+                    name="dsclsPrcList" outputVariable="dsclsPrcList"
+                    tibex:xpdlId="a9085db4-de6d-44fe-bbdb-a5e407f27992" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                    <bpws:targets>
+                        <bpws:target linkName="JavaInvokeToediBytesToJson"/>
+                    </bpws:targets>
+                    <bpws:sources>
+                        <bpws:source linkName="ReadTCPDataToediBytesToJson"/>
+                    </bpws:sources>
+                    <tibex:inputBindings>
+                        <tibex:inputBinding
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns19=&quot;http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataInput+a9085db4-de6d-44fe-bbdb-a5e407f27992+ActivityInput&quot; xmlns:tns5=&quot;http://www.tibco.com/namespaces/tnt/plugins/tcp&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:HCIS=&quot;http://shacon.kr/202301&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;KIC_Connecton&quot;/>&lt;xsl:template name=&quot;dsclsPrcList-input&quot; match=&quot;/&quot;>&lt;tns19:ActivityInput>&lt;tns19:connection>&lt;xsl:value-of select=&quot;$KIC_Connecton/tns5:connection&quot;/>&lt;/tns19:connection>&lt;tns19:bytesToRead>&lt;xsl:value-of select=&quot;xsd:int(HCIS:getQueryStringValue($bodyMaster/MethodReturnValue, &amp;quot;dsclsPrcRespCnt&amp;quot;))&quot;/>&lt;/tns19:bytesToRead>&lt;/tns19:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                    </tibex:inputBindings>
+                    <tibex:config>
+                        <bwext:BWActivity activityTypeID="bw.tcp.read"
+                            xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
+                            xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
+                            xmlns:tcpPalette="http://ns.tibco.com/bw/palette/tcp" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <activityConfig>
+                                <properties name="config" xsi:type="activityconfig:EMFProperty">
+                                    <type href="http://ns.tibco.com/bw/palette/tcp#//ReadTCPData"/>
+                                    <value separator="No Separator"
+                                    type="Binary" xsi:type="tcpPalette:ReadTCPData"/>
+                                </properties>
+                            </activityConfig>
+                        </bwext:BWActivity>
+                    </tibex:config>
+                </tibex:activityExtension>
+            </bpws:extensionActivity>
+            <bpws:extensionActivity>
+                <tibex:activityExtension inputVariable="siDList-input"
+                    name="siDList" outputVariable="siDList"
+                    tibex:xpdlId="bcfc4d20-b069-4ab3-92a3-addafe197088" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                    <bpws:targets>
+                        <bpws:target linkName="ReadTCPDataToediBytesToJson"/>
+                    </bpws:targets>
+                    <bpws:sources>
+                        <bpws:source linkName="ReadTCPData1ToediBytesToJson"/>
+                    </bpws:sources>
+                    <tibex:inputBindings>
+                        <tibex:inputBinding
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns20=&quot;http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataInput+bcfc4d20-b069-4ab3-92a3-addafe197088+ActivityInput&quot; xmlns:tns5=&quot;http://www.tibco.com/namespaces/tnt/plugins/tcp&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:HCIS=&quot;http://shacon.kr/202301&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;KIC_Connecton&quot;/>&lt;xsl:param name=&quot;bodyMaster&quot;/>&lt;xsl:template name=&quot;siDList-input&quot; match=&quot;/&quot;>&lt;tns20:ActivityInput>&lt;tns20:connection>&lt;xsl:value-of select=&quot;$KIC_Connecton/tns5:connection&quot;/>&lt;/tns20:connection>&lt;tns20:bytesToRead>&lt;xsl:value-of select=&quot;xsd:int(HCIS:getQueryStringValue($bodyMaster/MethodReturnValue, &amp;quot;siDRespCnt&amp;quot;))&quot;/>&lt;/tns20:bytesToRead>&lt;/tns20:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                    </tibex:inputBindings>
+                    <tibex:config>
+                        <bwext:BWActivity activityTypeID="bw.tcp.read"
+                            xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
+                            xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
+                            xmlns:tcpPalette="http://ns.tibco.com/bw/palette/tcp" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <activityConfig>
+                                <properties name="config" xsi:type="activityconfig:EMFProperty">
+                                    <type href="http://ns.tibco.com/bw/palette/tcp#//ReadTCPData"/>
+                                    <value separator="No Separator"
+                                    type="Binary" xsi:type="tcpPalette:ReadTCPData"/>
+                                </properties>
+                            </activityConfig>
+                        </bwext:BWActivity>
+                    </tibex:config>
+                </tibex:activityExtension>
+            </bpws:extensionActivity>
+            <bpws:extensionActivity>
+                <tibex:activityExtension
+                    inputVariable="realTrdPrcList-input"
+                    name="realTrdPrcList"
+                    outputVariable="realTrdPrcList"
+                    tibex:xpdlId="c93613dc-1a6c-4503-88e6-033857d7cef2" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                    <bpws:targets>
+                        <bpws:target linkName="ReadTCPData1ToediBytesToJson"/>
+                    </bpws:targets>
+                    <bpws:sources>
+                        <bpws:source linkName="ReadTCPData2ToediBytesToJson"/>
+                    </bpws:sources>
+                    <tibex:inputBindings>
+                        <tibex:inputBinding
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns21=&quot;http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataInput+c93613dc-1a6c-4503-88e6-033857d7cef2+ActivityInput&quot; xmlns:tns5=&quot;http://www.tibco.com/namespaces/tnt/plugins/tcp&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:HCIS=&quot;http://shacon.kr/202301&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;KIC_Connecton&quot;/>&lt;xsl:param name=&quot;bodyMaster&quot;/>&lt;xsl:template name=&quot;realTrdPrcList-input&quot; match=&quot;/&quot;>&lt;tns21:ActivityInput>&lt;tns21:connection>&lt;xsl:value-of select=&quot;$KIC_Connecton/tns5:connection&quot;/>&lt;/tns21:connection>&lt;tns21:bytesToRead>&lt;xsl:value-of select=&quot;xsd:int(HCIS:getQueryStringValue($bodyMaster/MethodReturnValue, &amp;quot;realTrdPrcRespCnt&amp;quot;))&quot;/>&lt;/tns21:bytesToRead>&lt;/tns21:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                    </tibex:inputBindings>
+                    <tibex:config>
+                        <bwext:BWActivity activityTypeID="bw.tcp.read"
+                            xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
+                            xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
+                            xmlns:tcpPalette="http://ns.tibco.com/bw/palette/tcp" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <activityConfig>
+                                <properties name="config" xsi:type="activityconfig:EMFProperty">
+                                    <type href="http://ns.tibco.com/bw/palette/tcp#//ReadTCPData"/>
+                                    <value separator="No Separator"
+                                    type="Binary" xsi:type="tcpPalette:ReadTCPData"/>
+                                </properties>
+                            </activityConfig>
+                        </bwext:BWActivity>
+                    </tibex:config>
+                </tibex:activityExtension>
+            </bpws:extensionActivity>
+            <bpws:extensionActivity>
+                <tibex:activityExtension
+                    inputVariable="concatBytesBytes-input"
+                    name="concatBytesBytes"
+                    outputVariable="concatBytesBytes"
+                    tibex:xpdlId="81e31f9c-0788-4c13-bdf8-7cbf3c6d314f" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                    <bpws:targets>
+                        <bpws:target linkName="ReadTCPData2ToediBytesToJson"/>
+                    </bpws:targets>
+                    <bpws:sources>
+                        <bpws:source linkName="JavaInvokeToediBytesToJson1"/>
+                    </bpws:sources>
+                    <tibex:inputBindings>
+                        <tibex:inputBinding
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns22=&quot;www.tibco.com/plugin/java/JavaInvokeActivityInput+81e31f9c-0788-4c13-bdf8-7cbf3c6d314f+JavaInvokeActivityInput&quot; xmlns:Q3=&quot;http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataOutput+2eca78e7-dbdd-4a1a-be8f-015d584ad86e+ActivityOutput&quot; xmlns:Q1=&quot;http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataOutput+8fe93f75-34f6-4641-aeea-2b4e4f31a402+ActivityOutput&quot; xmlns:Q11=&quot;http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataOutput+a9085db4-de6d-44fe-bbdb-a5e407f27992+ActivityOutput&quot; xmlns:Q12=&quot;http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataOutput+bcfc4d20-b069-4ab3-92a3-addafe197088+ActivityOutput&quot; xmlns:Q13=&quot;http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataOutput+c93613dc-1a6c-4503-88e6-033857d7cef2+ActivityOutput&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;bizHeader&quot;/>&lt;xsl:param name=&quot;bizBodyMaster&quot;/>&lt;xsl:param name=&quot;dsclsPrcList&quot;/>&lt;xsl:param name=&quot;siDList&quot;/>&lt;xsl:param name=&quot;realTrdPrcList&quot;/>&lt;xsl:template name=&quot;concatBytesBytes-input&quot; match=&quot;/&quot;>&lt;tns22:JavaInvokeActivityInput>&lt;MethodParameters>&lt;bytes1>&lt;xsl:value-of select=&quot;$bizHeader/Q3:data&quot;/>&lt;/bytes1>&lt;bytes2>&lt;xsl:value-of select=&quot;$bizBodyMaster/Q1:data&quot;/>&lt;/bytes2>&lt;bytes3>&lt;xsl:value-of select=&quot;$dsclsPrcList/Q11:data&quot;/>&lt;/bytes3>&lt;bytes4>&lt;xsl:value-of select=&quot;$siDList/Q12:data&quot;/>&lt;/bytes4>&lt;bytes5>&lt;xsl:value-of select=&quot;$realTrdPrcList/Q13:data&quot;/>&lt;/bytes5>&lt;/MethodParameters>&lt;/tns22:JavaInvokeActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                    </tibex:inputBindings>
+                    <tibex:config>
+                        <bwext:BWActivity
+                            activityTypeID="bw.java.javamethod"
+                            xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
+                            xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
+                            xmlns:java="http://ns.tibco.com/bw/palette/java" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <activityConfig>
+                                <properties name="config" xsi:type="activityconfig:EMFProperty">
+                                    <type href="http://ns.tibco.com/bw/palette/java#//JavaMethod"/>
+                                    <value
+                                    className="com.hcis.eai.kcb.CISKCBHelper"
+                                    constructDeclaredClass="true"
+                                    isNew="true"
+                                    isNewActivity="true"
+                                    methodName="concatBytes5Bytes"
+                                    methodReturn="byte[]" xsi:type="java:JavaMethod">
+                                    <methodParameter
+                                    paramName="bytes1" paramType="byte[]"/>
+                                    <methodParameter
+                                    paramName="bytes2" paramType="byte[]"/>
+                                    <methodParameter
+                                    paramName="bytes3" paramType="byte[]"/>
+                                    <methodParameter
+                                    paramName="bytes4" paramType="byte[]"/>
+                                    <methodParameter
+                                    paramName="bytes5" paramType="byte[]"/>
+                                    </value>
                                 </properties>
                             </activityConfig>
                         </bwext:BWActivity>

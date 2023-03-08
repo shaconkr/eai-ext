@@ -9,7 +9,7 @@
       <property name="recordTerminator" value="\r\n"/>
     </parser>
     <record name="KCB_OutRes" class="java.util.LinkedHashMap">
-      <segment name="bizHeader" kor="BIZ공통부" occursRef="0" class="map">
+      <segment name="bizHeader" kor="BIZ공통부" minOccurs="1" maxOccurs="1" class="map">
         <field kor="전문길이" name="tgrmLen" minOccurs="0" maxOccurs="1" position="0" length="4"/>
         <field kor="거래코드" name="trdCd" minOccurs="0" maxOccurs="1" position="4" length="9"/>
         <field kor="회원사코드" name="mmcoCd" minOccurs="0" maxOccurs="1" position="13" length="8"/>
@@ -25,7 +25,7 @@
         <field kor="조회동의코드" name="qryAgrCd" minOccurs="0" maxOccurs="1" position="91" length="1"/>
         <field kor="예비값" name="prepVal" minOccurs="0" maxOccurs="1" position="92" length="42"/>
       </segment>
-      <segment name="bizBody" kor="BIZ데이터부" occursRef="0" class="map">
+      <segment name="bizBody" kor="BIZ데이터부" minOccurs="1" maxOccurs="1" class="map">
         <field kor="인증번호" name="certNo" minOccurs="0" maxOccurs="1" position="134" length="12"/>
         <field kor="정보연속여부" name="infCnscYn" minOccurs="0" maxOccurs="1" position="146" length="1"/>
         <field kor="재요청횟수" name="reReqnCnt" minOccurs="0" maxOccurs="1" position="147" length="2"/>
@@ -40,14 +40,14 @@
         <field kor="실거래가격총건수" name="realTrdPrcTotCnt" minOccurs="0" maxOccurs="1" position="201" length="3" justify="right" padding="0"/>
         <field kor="실거래가격총송신건수" name="realTrdPrcTotTrsCnt" minOccurs="0" maxOccurs="1" position="204" length="3" justify="right" padding="0"/>
         <field kor="실거래가격응답건수" name="realTrdPrcRespCnt" minOccurs="0" maxOccurs="1" position="207" length="3" justify="right" padding="0"/>
-        <segment name="dsclsPrcList" kor="공시가격_배열" occursRef="dsclsPrcRespCnt" collection="list" class="map">
+        <segment name="dsclsPrcList" kor="공시가격_배열" minOccurs="0" maxOccurs="9223372036854775807" collection="list" class="map">
           <field kor="세그멘트ID" name="segId" minOccurs="0" maxOccurs="1" position="210" length="3"/>
           <field kor="기준년월" name="bsicYm" minOccurs="0" maxOccurs="1" position="213" length="6"/>
           <field kor="공시가격구분코드" name="dsclsPrcGbcd" minOccurs="0" maxOccurs="1" position="219" length="1"/>
           <field kor="공시가격" name="dsclsPrc" minOccurs="0" maxOccurs="1" position="220" length="15" justify="right" padding="0"/>
           <field kor="예비값" name="prepVal" minOccurs="0" maxOccurs="1" position="235" length="75"/>
         </segment>
-        <segment name="siDList" kor="시세_배열" occursRef="siDRespCnt" collection="list" class="map">
+        <segment name="siDList" kor="시세_배열" minOccurs="0" maxOccurs="9223372036854775807" collection="list" class="map">
           <field kor="세그멘트ID" name="segId" minOccurs="0" maxOccurs="1" position="310" length="3"/>
           <field kor="기준일자" name="bsicDt" minOccurs="0" maxOccurs="1" position="313" length="8"/>
           <field kor="거래하한가격" name="trdLwlmPrc" minOccurs="0" maxOccurs="1" position="321" length="15" justify="right" padding="0"/>
@@ -58,7 +58,7 @@
           <field kor="보증금액상한가격" name="grnteAmtHgltPrc" minOccurs="0" maxOccurs="1" position="396" length="15" justify="right" padding="0"/>
           <field kor="예비값" name="prepVal" minOccurs="0" maxOccurs="1" position="411" length="34"/>
         </segment>
-        <segment name="realTrdPrcList" kor="실거래가격_배열" occursRef="realTrdPrcRespCnt" collection="list" class="map">
+        <segment name="realTrdPrcList" kor="실거래가격_배열" minOccurs="0" maxOccurs="9223372036854775807" collection="list" class="map">
           <field kor="세그멘트ID" name="segId" minOccurs="0" maxOccurs="1" position="445" length="3"/>
           <field kor="거래년월" name="trdYm" minOccurs="0" maxOccurs="1" position="448" length="6"/>
           <field kor="전용면적" name="exclSarea" minOccurs="0" maxOccurs="1" position="454" length="30" justify="right" padding="0"/>

@@ -33,9 +33,9 @@
             <element e:kor="실거래가격총건수" e:length="3" e:padder="ZeroLeft" minOccurs="0" name="realTrdPrcTotCnt" nillable="true" type="long"/>
             <element e:kor="실거래가격총송신건수" e:length="3" e:padder="ZeroLeft" minOccurs="0" name="realTrdPrcTotTrsCnt" nillable="true" type="long"/>
             <element e:kor="실거래가격응답건수" e:length="3" e:padder="ZeroLeft" minOccurs="0" name="realTrdPrcRespCnt" nillable="true" type="long"/>
-            <element e:kor="공시가격_배열" e:padder="ZeroLeft" maxOccurs="unbounded" minOccurs="0" name="dsclsPrcList" nillable="true" type="ns:DSCLS_PRC_LIST_TYPE"/>
-            <element e:kor="시세_배열" e:padder="ZeroLeft" maxOccurs="unbounded" minOccurs="0" name="siDList" nillable="true" type="ns:SI_D_LIST_TYPE"/>
-            <element e:kor="실거래가격_배열" e:padder="ZeroLeft" maxOccurs="unbounded" minOccurs="0" name="realTrdPrcList" nillable="true" type="ns:REAL_TRD_PRC_LIST_TYPE"/>
+            <element e:kor="공시가격_배열" e:lengthField="dsclsPrcRespCnt" e:padder="ZeroLeft" maxOccurs="unbounded" minOccurs="0" name="dsclsPrcList" nillable="true" type="ns:DSCLS_PRC_LIST_TYPE"/>
+            <element e:kor="시세_배열" e:lengthField="siDRespCnt" e:padder="ZeroLeft" maxOccurs="unbounded" minOccurs="0" name="siDList" nillable="true" type="ns:SI_D_LIST_TYPE"/>
+            <element e:kor="실거래가격_배열" e:lengthField="realTrdPrcRespCnt" e:padder="ZeroLeft" maxOccurs="unbounded" minOccurs="0" name="realTrdPrcList" nillable="true" type="ns:REAL_TRD_PRC_LIST_TYPE"/>
         </sequence>
     </complexType>
     <complexType name="DSCLS_PRC_LIST_TYPE">

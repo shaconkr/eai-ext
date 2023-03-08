@@ -3,7 +3,8 @@ Bundle-ManifestVersion: 2
 Bundle-Name: CISTOS301 Module
 Bundle-SymbolicName: CISTOS301.module
 Bundle-Version: 1.0.0.qualifier
-Bundle-ClassPath: .,.annoxfiles/
+Bundle-ClassPath: .,
+ .annoxfiles/
 Bundle-Vendor: TIBCO Software Inc.
 Export-Package: com.hcis.eai.tos
 Require-Bundle: HcisExternal.smodule;bundle-version="1.0.0",
@@ -13,13 +14,14 @@ Import-Package: com.tibco.bw.palette.shared.java;version="6.2.1600",
  kr.shacon.format,
  org.beanio,
  org.beanio.internal.util,
- org.slf4j 
-TIBCO-BW-Version: 6.9.0 V26 2022-11-02
+ org.slf4j
+TIBCO-BW-ApplicationModule: META-INF/module.bwm
 TIBCO-BW-JobSharedVariables: META-INF/module.jsv
-Bundle-RequiredExecutionEnvironment: JavaSE-11
 TIBCO-BW-ConfigProfile: META-INF/default.substvar
 TIBCO-BW-ModuleSharedVariables: META-INF/module.msv
 TIBCO-BW-Edition: bwe
+Automatic-Module-Name: CISTOS301.module
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Require-Capability: com.tibco.bw.model; filter:="(name=bwext)",
  com.tibco.bw.module; filter:="(&(name=HcisExternal.smodule)(version=1.0.0))",
  com.tibco.bw.module; filter:="(&(name=CSPI_Library)(version=2.0.0))",
@@ -31,5 +33,4 @@ Require-Capability: com.tibco.bw.model; filter:="(name=bwext)",
  com.tibco.bw.palette; filter:="(name=bw.java)",
  com.tibco.bw.palette; filter:="(name=bw.jms)",
  com.tibco.bw.sharedresource.model; filter:="(name=bw.dataformat)"
-TIBCO-BW-ApplicationModule: META-INF/module.bwm
-Automatic-Module-Name: CISTOS301.module
+TIBCO-BW-Version: 6.9.0 V26 2022-11-02

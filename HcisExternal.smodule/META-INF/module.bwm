@@ -106,6 +106,7 @@
   <sca:property xmi:id="_yRAFoLQFEe2Yzb0bY4iB3A" name="/ENDPOINT/SPC_FTP/PASSWORD" type="property:password" scaext:simpleValue="#!ilGFRmVDaJR0+rO0XnSPTw==" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_4bLI4LQFEe2Yzb0bY4iB3A" name="/ENDPOINT/SPC_FTP/PWD_PLAIN" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_9sKhYLQFEe2Yzb0bY4iB3A" name="/ENDPOINT/SPC_FTP/SAM_CT_SPC_SND_PATH" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_5LKiYL18Ee2TyIe70qYo_w" name="/ENDPOINT/SPC_FTP/SAM_CT_SPC_RCV_PATH" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_QhqPQLi9Ee2isfgwnQkJLQ" name="/ENDPOINT/MYD_SFTP/HOSTNAME" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_ficG0Li9Ee2isfgwnQkJLQ" name="/ENDPOINT/MYD_SFTP/PORT" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_Wf69cLi9Ee2isfgwnQkJLQ" name="/ENDPOINT/MYD_SFTP/USERNAME" type="XMLSchema:string" publicAccess="true" scalable="true"/>

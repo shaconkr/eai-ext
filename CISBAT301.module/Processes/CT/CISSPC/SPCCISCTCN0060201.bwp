@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpws:process exitOnStandardFault="no"
-    name="CT.CISSPC.CISSPCCTCN0060101" suppressJoinFailure="yes"
-    targetNamespace="http://xmlns.example.com/20230224144606"
+    name="CT.CISSPC.SPCCISCTCN0060201" suppressJoinFailure="yes"
+    targetNamespace="http://xmlns.example.com/20230308154328"
     xmlns:HCIS="http://shacon.kr/202301"
     xmlns:bpws="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
     xmlns:bw="http://www.tibco.com/bw/xpath/bw-custom-functions"
@@ -13,6 +13,8 @@
     xmlns:ns11="http://tns.tibco.com/bw/activity/put/input+7920ca7c-dbe6-4a70-9b27-5dc84a2a4c64+FTPPutInputDataFile"
     xmlns:ns12="http://tns.tibco.com/bw/activity/output+7920ca7c-dbe6-4a70-9b27-5dc84a2a4c64+FTPPutOutputFile"
     xmlns:ns13="http://tns.tibco.com/bw/palette/internal/activityerror+bw.ftp.put"
+    xmlns:ns14="http://tns.tibco.com/bw/activity/get/input+300d4330-8a1c-4cb3-a08a-08b6c6190a44+FTPGetInputDataFile"
+    xmlns:ns15="http://tns.tibco.com/bw/activity/get/output+300d4330-8a1c-4cb3-a08a-08b6c6190a44+FTPGetOutputFile"
     xmlns:ns2="http://tns.tibco.com/bw/activity/get/output+9321c7cf-aedd-447a-aab2-1b278889f788+SFTPGetOutputFile"
     xmlns:ns3="http://tns.tibco.com/bw/palette/internal/activityerror+bw.sftp.get"
     xmlns:ns4="http://www.cspi_library.org/Library"
@@ -46,10 +48,10 @@
                 <variable>L_Set_LogEnd-input</variable>
             </endingVariables>
         </task>
-        <task name="FTPPut">
+        <task name="FTPGet">
             <endingVariables>
-                <variable>FTPPut-input</variable>
-                <variable>FTPPut</variable>
+                <variable>FTPGet-input</variable>
+                <variable>FTPGet</variable>
             </endingVariables>
         </task>
         <task name="L_Set_LogError">
@@ -286,10 +288,10 @@
         </schema>
         <schema attributeFormDefault="unqualified"
             elementFormDefault="qualified"
-            targetNamespace="http://tns.tibco.com/bw/activity/put/input+7920ca7c-dbe6-4a70-9b27-5dc84a2a4c64+FTPPutInputDataFile"
-            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:Q1="http://tns.tibco.com/bw/activity/put/input+7920ca7c-dbe6-4a70-9b27-5dc84a2a4c64+FTPPutInputDataFile">
-            <element name="FTPPutInputDataFile" type="Q1:FTPPutInputType"/>
-            <complexType name="FTPPutInputType">
+            targetNamespace="http://tns.tibco.com/bw/activity/get/input+300d4330-8a1c-4cb3-a08a-08b6c6190a44+FTPGetInputDataFile"
+            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:Q1="http://tns.tibco.com/bw/activity/get/input+300d4330-8a1c-4cb3-a08a-08b6c6190a44+FTPGetInputDataFile">
+            <element name="FTPGetInputDataFile" type="Q1:FTPInputType"/>
+            <complexType name="FTPInputType">
                 <sequence>
                     <element form="unqualified" maxOccurs="1"
                         minOccurs="1" name="RemoteFileName" type="string"/>
@@ -310,8 +312,8 @@
         </schema>
         <schema attributeFormDefault="unqualified"
             elementFormDefault="qualified"
-            targetNamespace="http://tns.tibco.com/bw/activity/output+7920ca7c-dbe6-4a70-9b27-5dc84a2a4c64+FTPPutOutputFile"
-            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:Q1="http://tns.tibco.com/bw/activity/output+7920ca7c-dbe6-4a70-9b27-5dc84a2a4c64+FTPPutOutputFile">
+            targetNamespace="http://tns.tibco.com/bw/activity/get/output+300d4330-8a1c-4cb3-a08a-08b6c6190a44+FTPGetOutputFile"
+            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:Q1="http://tns.tibco.com/bw/activity/get/output+300d4330-8a1c-4cb3-a08a-08b6c6190a44+FTPGetOutputFile">
             <complexType name="FTPTransferFile">
                 <sequence>
                     <element form="unqualified" maxOccurs="1"
@@ -320,8 +322,8 @@
                         minOccurs="0" name="NumOfBytes" type="int"/>
                 </sequence>
             </complexType>
-            <element name="FTPPutOutputFile" type="Q1:FTPPutOutputClassLocal50"/>
-            <complexType name="FTPPutOutputClassLocal50">
+            <element name="FTPGetOutputFile" type="Q1:FTPGetOutputClassLocal50"/>
+            <complexType name="FTPGetOutputClassLocal50">
                 <sequence>
                     <element form="unqualified" maxOccurs="unbounded"
                         minOccurs="0" name="FileTransferred" type="Q1:FTPTransferFile"/>
@@ -329,14 +331,14 @@
             </complexType>
         </schema>
         <schema elementFormDefault="unqualified"
-            targetNamespace="http://tns.tibco.com/bw/palette/internal/activityerror+bw.ftp.put"
+            targetNamespace="http://tns.tibco.com/bw/palette/internal/activityerror+bw.ftp.get"
             xmlns="http://www.w3.org/2001/XMLSchema"
-            xmlns:Q1="http://tns.tibco.com/bw/palette/ftp/exception" xmlns:tns="http://tns.tibco.com/bw/palette/internal/activityerror+bw.ftp.put">
+            xmlns:Q1="http://tns.tibco.com/bw/palette/ftp/exception" xmlns:tns="http://tns.tibco.com/bw/palette/internal/activityerror+bw.ftp.get">
             <import namespace="http://tns.tibco.com/bw/palette/ftp/exception"/>
             <element name="ActivityErrorData" type="tns:ActivityErrorDataType"/>
             <complexType name="ActivityErrorDataType">
                 <choice>
-                    <element maxOccurs="1" minOccurs="0" ref="Q1:PutFilesException"/>
+                    <element maxOccurs="1" minOccurs="0" ref="Q1:GetFilesException"/>
                     <element maxOccurs="1" minOccurs="0" ref="Q1:ConnectionErrorException"/>
                     <element maxOccurs="1" minOccurs="0" ref="Q1:CommandExecutionException"/>
                     <element maxOccurs="1" minOccurs="0" ref="Q1:ConnectionTimeoutException"/>
@@ -667,11 +669,11 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.7"/>
-                                    <layoutConstraint x="753"
+                                    <layoutConstraint x="743"
                                     xsi:type="notation:Bounds" y="35"/>
                                     </children>
                                     <children
-                                    description="제휴사(해피포인트) 회원 신슈/변경 정보 송신   BHDD_FW_YYYYMMDD_001_R2310X0.dat"
+                                    description="제휴사(해피포인트) 회원 신규/변경 정보 응답수신   BHDD_FW_YYYYMMDD_001_R2310X0.dat"
                                     fillColor="13369343"
                                     fontHeight="10"
                                     fontName="맑은 고딕"
@@ -690,29 +692,25 @@
                                     <layoutConstraint x="55"
                                     xsi:type="notation:Bounds" y="175"/>
                                     </children>
-                                    <children type="4002 bw.ftp.put">
+                                    <children type="4002 bw.ftp.get">
                                     <children type="4017">
                                     <styles fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.8"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <children type="4017">
                                     <styles fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.8"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <children type="4017">
                                     <styles fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.8"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <children type="4017">
                                     <styles fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.8"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <styles fontName="맑은 고딕"
@@ -724,7 +722,7 @@
                                     <element href="//0/@process/@activity/@activity/@activities.8"/>
                                     <layoutConstraint
                                     height="40" width="40"
-                                    x="643"
+                                    x="648"
                                     xsi:type="notation:Bounds" y="35"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
@@ -740,7 +738,7 @@
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity"/>
                                     <layoutConstraint height="313"
-                                    width="917" xsi:type="notation:Bounds"/>
+                                    width="914" xsi:type="notation:Bounds"/>
                                 </children>
                                 <styles xsi:type="notation:SortingStyle"/>
                                 <styles xsi:type="notation:FilteringStyle"/>
@@ -750,7 +748,7 @@
                             <styles xsi:type="bwnotation:BackgroundStyle"/>
                             <styles xsi:type="bwnotation:ResizingStyle"/>
                             <element href="//0/@process/@activity"/>
-                            <layoutConstraint height="313" width="920" xsi:type="notation:Bounds"/>
+                            <layoutConstraint height="313" width="917" xsi:type="notation:Bounds"/>
                         </children>
                         <children type="4022">
                             <children type="3022">
@@ -862,7 +860,7 @@
                     <styles xsi:type="bwnotation:BackgroundStyle"/>
                     <styles xsi:type="bwnotation:ResizingStyle"/>
                     <element href="//0/@process/@activity"/>
-                    <layoutConstraint height="455" width="920" x="1"
+                    <layoutConstraint height="455" width="917" x="1"
                         xsi:type="notation:Bounds" y="1"/>
                 </children>
                 <styles xsi:type="notation:SortingStyle"/>
@@ -871,7 +869,7 @@
             </children>
             <styles fontName="맑은 고딕" lineColor="0" xsi:type="notation:ShapeStyle"/>
             <element href="//0/@process"/>
-            <layoutConstraint height="507" width="1262" xsi:type="notation:Bounds"/>
+            <layoutConstraint height="507" width="1259" xsi:type="notation:Bounds"/>
         </children>
         <styles xsi:type="notation:DiagramStyle"/>
         <element href="//0"/>
@@ -970,7 +968,7 @@
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="맑은 고딕" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.7"/>
-            <bendpoints points="[25, -24, -82, 83]$[83, -82, -24, 25]" xsi:type="notation:RelativeBendpoints"/>
+            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
     </notation:Diagram>
     <tibex:NamespaceRegistry enabled="true">
@@ -985,7 +983,7 @@
         <tibex:namespaceItem
             namespace="http://tns.tibco.com/bw/activity/put/input+7920ca7c-dbe6-4a70-9b27-5dc84a2a4c64+FTPPutInputDataFile" prefix="tns2"/>
         <tibex:namespaceItem
-            namespace="http://tns.tibco.com/bw/activity/get/input+f6ff887a-3620-4d6c-b01c-1b10139dfe2c+FTPGetInputDataFile" prefix="tns3"/>
+            namespace="http://tns.tibco.com/bw/activity/get/input+300d4330-8a1c-4cb3-a08a-08b6c6190a44+FTPGetInputDataFile" prefix="tns3"/>
     </tibex:NamespaceRegistry>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.cspi_library.org/Library"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.cspi_library.org/Log"/>
@@ -1023,11 +1021,11 @@
                 <bpws:literal>ext.spc.SPC_FTP</bpws:literal>
             </bpws:from>
         </bpws:variable>
-        <bpws:variable element="ns11:FTPPutInputDataFile"
-            name="FTPPut-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns12:FTPPutOutputFile" name="FTPPut" sca-bpel:internal="true"/>
-        <bpws:variable element="ns13:ActivityErrorData"
-            name="_error_FTPPut" sca-bpel:internal="true"/>
+        <bpws:variable element="ns14:FTPGetInputDataFile"
+            name="FTPGet-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns15:FTPGetOutputFile" name="FTPGet" sca-bpel:internal="true"/>
+        <bpws:variable element="ns10:ActivityErrorData"
+            name="_error_FTPGet" sca-bpel:internal="true"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -1072,7 +1070,7 @@
                 <bpws:link name="Assign1ToSFTPGet" tibex:linkType="SUCCESS"/>
                 <bpws:link name="Assign2ToAssign3" tibex:linkType="SUCCESS"/>
                 <bpws:link name="localFileNameToFTPPut" tibex:linkType="SUCCESS"/>
-                <bpws:link name="FTPPutToL_Set_LogEnd" tibex:linkType="SUCCESS"/>
+                <bpws:link name="FTPGetToL_Set_LogEnd" tibex:linkType="SUCCESS"/>
             </bpws:links>
             <bpws:extensionActivity>
                 <tibex:receiveEvent createInstance="yes"
@@ -1217,7 +1215,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="bw:getModuleProperty(&quot;ENDPOINT.HCN_FTP.SAM_CT_SPC_SND_PATH&quot;)" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                            expression="bw:getModuleProperty(&quot;ENDPOINT.HCN_FTP.SAM_CT_SPC_RCV_PATH&quot;)" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -1272,7 +1270,7 @@
                     tibex:xpdlId="32dcecc9-c2f5-4b47-a817-a74983192d67"
                     type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
-                        <bpws:target linkName="FTPPutToL_Set_LogEnd"/>
+                        <bpws:target linkName="FTPGetToL_Set_LogEnd"/>
                     </bpws:targets>
                     <tibex:inputBindings>
                         <tibex:inputBinding coercion=""
@@ -1283,31 +1281,30 @@
                 </tibex:extActivity>
             </bpws:extensionActivity>
             <bpws:extensionActivity>
-                <tibex:activityExtension inputVariable="FTPPut-input"
-                    name="FTPPut" outputVariable="FTPPut"
-                    tibex:xpdlId="7920ca7c-dbe6-4a70-9b27-5dc84a2a4c64" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                <tibex:activityExtension inputVariable="FTPGet-input"
+                    name="FTPGet" outputVariable="FTPGet"
+                    tibex:xpdlId="300d4330-8a1c-4cb3-a08a-08b6c6190a44" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
                         <bpws:target linkName="localFileNameToFTPPut"/>
                     </bpws:targets>
                     <bpws:sources>
-                        <bpws:source linkName="FTPPutToL_Set_LogEnd"/>
+                        <bpws:source linkName="FTPGetToL_Set_LogEnd"/>
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns2=&quot;http://tns.tibco.com/bw/activity/put/input+7920ca7c-dbe6-4a70-9b27-5dc84a2a4c64+FTPPutInputDataFile&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;remoteFileName&quot;/>&lt;xsl:param name=&quot;remotePath&quot;/>&lt;xsl:param name=&quot;localPath&quot;/>&lt;xsl:param name=&quot;localFileName&quot;/>&lt;xsl:template name=&quot;FTPPut-input&quot; match=&quot;/&quot;>&lt;tns2:FTPPutInputDataFile>&lt;RemoteFileName>&lt;xsl:value-of select=&quot;concat($remotePath, $remoteFileName)&quot;/>&lt;/RemoteFileName>&lt;LocalFileName>&lt;xsl:value-of select=&quot;concat($localPath, $localFileName)&quot;/>&lt;/LocalFileName>&lt;/tns2:FTPPutInputDataFile>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://tns.tibco.com/bw/activity/get/input+300d4330-8a1c-4cb3-a08a-08b6c6190a44+FTPGetInputDataFile&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;remotePath&quot;/>&lt;xsl:param name=&quot;remoteFileName&quot;/>&lt;xsl:param name=&quot;localPath&quot;/>&lt;xsl:param name=&quot;localFileName&quot;/>&lt;xsl:template name=&quot;FTPGet-input&quot; match=&quot;/&quot;>&lt;tns3:FTPGetInputDataFile>&lt;RemoteFileName>&lt;xsl:value-of select=&quot;concat($remotePath, $remoteFileName)&quot;/>&lt;/RemoteFileName>&lt;LocalFileName>&lt;xsl:value-of select=&quot;concat($localPath, $localFileName)&quot;/>&lt;/LocalFileName>&lt;/tns3:FTPGetInputDataFile>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
-                        <bwext:BWActivity activityTypeID="bw.ftp.put"
+                        <bwext:BWActivity activityTypeID="bw.ftp.get"
                             xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
                             xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
                             xmlns:ftpPalette="http://ns.tibco.com/bw/palette/ftp" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
                             <activityConfig>
                                 <properties name="config" xsi:type="activityconfig:EMFProperty">
-                                    <type href="http://ns.tibco.com/bw/palette/ftp#//FTPPut"/>
+                                    <type href="http://ns.tibco.com/bw/palette/ftp#//FTPGet"/>
                                     <value
                                     ftpConnection="FTPConnectionProperty"
-                                    overwriteExistingFile="true"
-                                    timeout="120000" xsi:type="ftpPalette:FTPPut"/>
+                                    overwriteExistingFile="true" xsi:type="ftpPalette:FTPGet"/>
                                 </properties>
                             </activityConfig>
                         </bwext:BWActivity>

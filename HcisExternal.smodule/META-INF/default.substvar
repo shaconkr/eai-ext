@@ -956,6 +956,15 @@
 			<useLookupValue>false</useLookupValue>
 		</globalVariable>
 		<globalVariable>
+			<name>/ENDPOINT/SPC_FTP/SAM_CT_SPC_RCV_PATH</name>
+			<value>/hcisnas/sam/spc/rcv</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
 			<name>/ENDPOINT/MYD_SFTP/HOSTNAME</name>
 			<value>10.103.237.130</value>
 			<deploymentSettable>false</deploymentSettable>

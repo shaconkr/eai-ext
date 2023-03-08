@@ -3,63 +3,63 @@
   <packaging:description></packaging:description>
   <packaging:properties>
     <packaging:property>
-      <packaging:name>//SPCCIS301.module//BW.DEPLOYMENTUNIT.TYPE</packaging:name>
+      <packaging:name>//CISKFT301.module//BW.DEPLOYMENTUNIT.TYPE</packaging:name>
       <packaging:type>xsd:string</packaging:type>
       <packaging:visibility>private</packaging:visibility>
       <packaging:scalable>true</packaging:scalable>
       <packaging:overrideValue>false</packaging:overrideValue>
     </packaging:property>
     <packaging:property>
-      <packaging:name>//SPCCIS301.module//BW.APPNODE.NAME</packaging:name>
+      <packaging:name>//CISKFT301.module//BW.APPNODE.NAME</packaging:name>
       <packaging:type>xsd:string</packaging:type>
       <packaging:visibility>private</packaging:visibility>
       <packaging:scalable>true</packaging:scalable>
       <packaging:overrideValue>false</packaging:overrideValue>
     </packaging:property>
     <packaging:property>
-      <packaging:name>//SPCCIS301.module//BW.DEPLOYMENTUNIT.NAME</packaging:name>
+      <packaging:name>//CISKFT301.module//BW.DEPLOYMENTUNIT.NAME</packaging:name>
       <packaging:type>xsd:string</packaging:type>
       <packaging:visibility>private</packaging:visibility>
       <packaging:scalable>true</packaging:scalable>
       <packaging:overrideValue>false</packaging:overrideValue>
     </packaging:property>
     <packaging:property>
-      <packaging:name>//SPCCIS301.module//BW.HOST.NAME</packaging:name>
+      <packaging:name>//CISKFT301.module//BW.HOST.NAME</packaging:name>
       <packaging:type>xsd:string</packaging:type>
       <packaging:visibility>private</packaging:visibility>
       <packaging:scalable>true</packaging:scalable>
       <packaging:overrideValue>false</packaging:overrideValue>
     </packaging:property>
     <packaging:property>
-      <packaging:name>//SPCCIS301.module//BW.DOMAIN.NAME</packaging:name>
+      <packaging:name>//CISKFT301.module//BW.DOMAIN.NAME</packaging:name>
       <packaging:type>xsd:string</packaging:type>
       <packaging:visibility>private</packaging:visibility>
       <packaging:scalable>true</packaging:scalable>
       <packaging:overrideValue>false</packaging:overrideValue>
     </packaging:property>
     <packaging:property>
-      <packaging:name>//SPCCIS301.module//BW.DEPLOYMENTUNIT.VERSION</packaging:name>
+      <packaging:name>//CISKFT301.module//BW.DEPLOYMENTUNIT.VERSION</packaging:name>
       <packaging:type>xsd:string</packaging:type>
       <packaging:visibility>private</packaging:visibility>
       <packaging:scalable>true</packaging:scalable>
       <packaging:overrideValue>false</packaging:overrideValue>
     </packaging:property>
     <packaging:property>
-      <packaging:name>//SPCCIS301.module//BW.APPSPACE.NAME</packaging:name>
+      <packaging:name>//CISKFT301.module//BW.APPSPACE.NAME</packaging:name>
       <packaging:type>xsd:string</packaging:type>
       <packaging:visibility>private</packaging:visibility>
       <packaging:scalable>true</packaging:scalable>
       <packaging:overrideValue>false</packaging:overrideValue>
     </packaging:property>
     <packaging:property>
-      <packaging:name>//SPCCIS301.module//BW.MODULE.VERSION</packaging:name>
+      <packaging:name>//CISKFT301.module//BW.MODULE.VERSION</packaging:name>
       <packaging:type>xsd:string</packaging:type>
       <packaging:visibility>private</packaging:visibility>
       <packaging:scalable>true</packaging:scalable>
       <packaging:overrideValue>false</packaging:overrideValue>
     </packaging:property>
     <packaging:property>
-      <packaging:name>//SPCCIS301.module//BW.MODULE.NAME</packaging:name>
+      <packaging:name>//CISKFT301.module//BW.MODULE.NAME</packaging:name>
       <packaging:type>xsd:string</packaging:type>
       <packaging:visibility>private</packaging:visibility>
       <packaging:scalable>true</packaging:scalable>
@@ -249,6 +249,13 @@
     </packaging:property>
     <packaging:property>
       <packaging:name>//HcisExternal.smodule///ENDPOINT/OSE/OSE_HOST</packaging:name>
+      <packaging:type>xsd:string</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//HcisExternal.smodule///ENDPOINT/SPC_FTP/SAM_CT_SPC_RCV_PATH</packaging:name>
       <packaging:type>xsd:string</packaging:type>
       <packaging:visibility>public</packaging:visibility>
       <packaging:scalable>true</packaging:scalable>
@@ -1157,18 +1164,11 @@
       <packaging:scalable>true</packaging:scalable>
       <packaging:overrideValue>false</packaging:overrideValue>
     </packaging:property>
-    <packaging:property>
-      <packaging:name>//HcisExternal.smodule///ENDPOINT/SPC_FTP/SAM_CT_SPC_RCV_PATH</packaging:name>
-      <packaging:type>xsd:string</packaging:type>
-      <packaging:visibility>public</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
   </packaging:properties>
   <packaging:modules>
     <packaging:module>
-      <packaging:symbolicName>SPCCIS301.module</packaging:symbolicName>
-      <packaging:technologyType>osgi-bundle,bw-appmodule</packaging:technologyType>
+      <packaging:symbolicName>CISKFT301.module</packaging:symbolicName>
+      <packaging:technologyType>bw-appmodule</packaging:technologyType>
       <packaging:technologyVersion>1.0.0.qualifier</packaging:technologyVersion>
     </packaging:module>
     <packaging:module>

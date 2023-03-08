@@ -15,12 +15,7 @@ import io.netty.buffer.Unpooled;
 public class CISKCBHelper<N> extends HCISHelper<N> {
 	
     private static final Logger log = LoggerFactory.getLogger(CISKCBHelper.class);
-	protected Object bytes3 = null;
-	protected Object bytes4 = null;
-	protected Object bytes5 = null;
-	protected Object bytes = null;
-	protected Object bytes1 = null;
-	protected Object bytes2 = null;
+
 	@Override
     public InputStream getBeanXmlInputStream(String xmlpath) {
     	log.debug("load xml {}", xmlpath);

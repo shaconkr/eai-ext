@@ -64,7 +64,7 @@
           <field kor="공백값" name="nullVal" minOccurs="0" maxOccurs="1" position="347" length="8"/>
         </segment>
         <field kor="채무불이행정보응답1_배열건수" name="debtNoffilInfResp1Rowcount" minOccurs="0" maxOccurs="1" position="355" length="5" justify="right" padding="0"/>
-        <segment name="debtNoffilInfResp1List" kor="채무불이행정보응답1_배열" occursRef="debtNoffilInfRespRowcount" collection="list" class="map">
+        <segment name="debtNoffilInfResp1List" kor="채무불이행정보응답1_배열" occursRef="debtNoffilInfResp1Rowcount" collection="list" class="map">
           <field kor="정보구분" name="infGb" minOccurs="0" maxOccurs="1" position="360" length="2"/>
           <field kor="연체사유코드" name="odueRsnCd" minOccurs="0" maxOccurs="1" position="362" length="4"/>
           <field kor="발생회사명" name="ocrnCoNm" minOccurs="0" maxOccurs="1" position="366" length="30"/>

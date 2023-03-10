@@ -36,16 +36,18 @@
         <field kor="채무불이행정보요청건수" name="debtNoffilInfReqnCnt" minOccurs="0" maxOccurs="1" position="162" length="2" justify="right" padding="0"/>
         <field kor="채무불이행정보수신건수1" name="debtNoffilInfRcvCnt1" minOccurs="0" maxOccurs="1" position="164" length="3" justify="right" padding="0"/>
         <field kor="채무불이행정보요청건수1" name="debtNoffilInfReqnCnt1" minOccurs="0" maxOccurs="1" position="167" length="2" justify="right" padding="0"/>
-        <field kor="신용조회정보수신건수" name="crdtQryInfRcvCnt" minOccurs="0" maxOccurs="1" position="169" length="3" justify="right" padding="0"/>
-        <field kor="신용조회정보요청건수" name="crdtQryInfReqnCnt" minOccurs="0" maxOccurs="1" position="172" length="2" justify="right" padding="0"/>
-        <field kor="관계거래처정보수신건수" name="relPtrnInfRcvCnt" minOccurs="0" maxOccurs="1" position="174" length="3" justify="right" padding="0"/>
-        <field kor="관계거래처정보요청건수" name="relPtrnInfReqnCnt" minOccurs="0" maxOccurs="1" position="177" length="2" justify="right" padding="0"/>
-        <field kor="요약정보수신건수" name="smryInfRcvCnt" minOccurs="0" maxOccurs="1" position="179" length="3" justify="right" padding="0"/>
-        <field kor="요약정보요청건수" name="smryInfReqnCnt" minOccurs="0" maxOccurs="1" position="182" length="2" justify="right" padding="0"/>
-        <field kor="요약서비스구분정보_배열건수" name="smrySrvGbInfRowcount" minOccurs="0" maxOccurs="1" position="184" length="5" justify="right" padding="0"/>
+        <field kor="거래개설정보수신건수" name="trdOpeInfRcvCnt" minOccurs="0" maxOccurs="1" position="169" length="3" justify="right" padding="0"/>
+        <field kor="거래개설정보요청건수" name="trdOpeInfReqnCnt" minOccurs="0" maxOccurs="1" position="172" length="2" justify="right" padding="0"/>
+        <field kor="신용조회정보수신건수" name="crdtQryInfRcvCnt" minOccurs="0" maxOccurs="1" position="174" length="3" justify="right" padding="0"/>
+        <field kor="신용조회정보요청건수" name="crdtQryInfReqnCnt" minOccurs="0" maxOccurs="1" position="177" length="2" justify="right" padding="0"/>
+        <field kor="관계거래처정보수신건수" name="relPtrnInfRcvCnt" minOccurs="0" maxOccurs="1" position="179" length="3" justify="right" padding="0"/>
+        <field kor="관계거래처정보요청건수" name="relPtrnInfReqnCnt" minOccurs="0" maxOccurs="1" position="182" length="2" justify="right" padding="0"/>
+        <field kor="요약정보수신건수" name="smryInfRcvCnt" minOccurs="0" maxOccurs="1" position="184" length="3" justify="right" padding="0"/>
+        <field kor="요약정보요청건수" name="smryInfReqnCnt" minOccurs="0" maxOccurs="1" position="187" length="2" justify="right" padding="0"/>
+        <field kor="요약서비스구분정보_배열건수" name="smrySrvGbInfRowcount" minOccurs="0" maxOccurs="1" position="189" length="5" justify="right" padding="0"/>
         <segment name="smrySrvGbInfList" kor="요약서비스구분정보_배열" occursRef="smrySrvGbInfRowcount" collection="list" class="map">
-          <field kor="요약서비스구분정보" name="smrySrvGbInf" minOccurs="0" maxOccurs="1" position="189" length="2"/>
-          <field kor="요약항목코드" name="smryClasCd" minOccurs="0" maxOccurs="1" position="191" length="9"/>
+          <field kor="요약서비스구분정보" name="smrySrvGbInf" minOccurs="0" maxOccurs="1" position="194" length="2"/>
+          <field kor="요약항목코드" name="smryClasCd" minOccurs="0" maxOccurs="1" position="196" length="9"/>
         </segment>
       </segment>
     </record>

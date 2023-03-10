@@ -2,7 +2,7 @@
 
 <jndi:namedResource xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CISNICSCAZ0040101="http://schema.hcis.com/xsd/CISNICSCAZ0040101_OutReq_Body" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" name="CISNICSCAZ/CISNICSCAZ0040101.CISNICSCAZ0040101_OutReq_Body" type="dataformat:DataFormat">
   <jndi:imports importType="http://www.w3.org/2001/XMLSchema" location="../../Schemas/CISNICSCAZ0040101_OutReq_Body_df.xsd" namespace="http://schema.hcis.com/xsd/CISNICSCAZ0040101_OutReq_Body"/>
-  <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="CISNICSCAZ0040101:main" lineLength="80" fieldOffsetsStr="psnCorpGbcd(0,1)&#xA;rrno(1,14)&#xA;qryRsnCd(14,16)&#xA;iqpsIdntCd(16,36)&#xA;reReqnCnt(36,38)&#xA;certNo(38,50)&#xA;debtNoffilInfRcvCnt(50,53)&#xA;debtNoffilInfReqnCnt(53,55)&#xA;debtNoffilInfRcvCnt1(55,58)&#xA;debtNoffilInfReqnCnt1(58,60)&#xA;crdtQryInfRcvCnt(60,63)&#xA;crdtQryInfReqnCnt(63,65)&#xA;relPtrnInfRcvCnt(65,68)&#xA;relPtrnInfReqnCnt(68,70)&#xA;smryInfRcvCnt(70,73)&#xA;smryInfReqnCnt(73,75)&#xA;smrySrvGbInfRowcount(75,80)&#xA;smrySrvGbInfList(80,80)">
+  <jndi:configuration xsi:type="dataformat:DataFormat" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="CISNICSCAZ0040101:main" lineLength="85" fieldOffsetsStr="psnCorpGbcd(0,1)&#xA;rrno(1,14)&#xA;qryRsnCd(14,16)&#xA;iqpsIdntCd(16,36)&#xA;reReqnCnt(36,38)&#xA;certNo(38,50)&#xA;debtNoffilInfRcvCnt(50,53)&#xA;debtNoffilInfReqnCnt(53,55)&#xA;debtNoffilInfRcvCnt1(55,58)&#xA;debtNoffilInfReqnCnt1(58,60)&#xA;trdOpeInfRcvCnt(60,63)&#xA;trdOpeInfReqnCnt(63,65)&#xA;crdtQryInfRcvCnt(65,68)&#xA;crdtQryInfReqnCnt(68,70)&#xA;relPtrnInfRcvCnt(70,73)&#xA;relPtrnInfReqnCnt(73,75)&#xA;smryInfRcvCnt(75,78)&#xA;smryInfReqnCnt(78,80)&#xA;smrySrvGbInfRowcount(80,85)&#xA;smrySrvGbInfList(85,85)">
     <fieldOffsets kor="개인법인구분코드" type="long" name="psnCorpGbcd" start="0" end="1"/>
     <fieldOffsets kor="주민등록번호" type="string" name="rrno" start="1" end="14"/>
     <fieldOffsets kor="조회사유코드" type="long" name="qryRsnCd" start="14" end="16"/>
@@ -13,13 +13,15 @@
     <fieldOffsets kor="채무불이행정보요청건수" type="long" name="debtNoffilInfReqnCnt" start="53" end="55"/>
     <fieldOffsets kor="채무불이행정보수신건수1" type="long" name="debtNoffilInfRcvCnt1" start="55" end="58"/>
     <fieldOffsets kor="채무불이행정보요청건수1" type="long" name="debtNoffilInfReqnCnt1" start="58" end="60"/>
-    <fieldOffsets kor="신용조회정보수신건수" type="long" name="crdtQryInfRcvCnt" start="60" end="63"/>
-    <fieldOffsets kor="신용조회정보요청건수" type="long" name="crdtQryInfReqnCnt" start="63" end="65"/>
-    <fieldOffsets kor="관계거래처정보수신건수" type="long" name="relPtrnInfRcvCnt" start="65" end="68"/>
-    <fieldOffsets kor="관계거래처정보요청건수" type="long" name="relPtrnInfReqnCnt" start="68" end="70"/>
-    <fieldOffsets kor="요약정보수신건수" type="long" name="smryInfRcvCnt" start="70" end="73"/>
-    <fieldOffsets kor="요약정보요청건수" type="long" name="smryInfReqnCnt" start="73" end="75"/>
-    <fieldOffsets kor="요약서비스구분정보_배열건수" type="long" name="smrySrvGbInfRowcount" start="75" end="80"/>
-    <fieldOffsets kor="요약서비스구분정보_배열" type="SMRY_SRV_GB_INF_LIST_TYPE" name="smrySrvGbInfList" start="80" end="80"/>
+    <fieldOffsets kor="거래개설정보수신건수" type="long" name="trdOpeInfRcvCnt" start="60" end="63"/>
+    <fieldOffsets kor="거래개설정보요청건수" type="long" name="trdOpeInfReqnCnt" start="63" end="65"/>
+    <fieldOffsets kor="신용조회정보수신건수" type="long" name="crdtQryInfRcvCnt" start="65" end="68"/>
+    <fieldOffsets kor="신용조회정보요청건수" type="long" name="crdtQryInfReqnCnt" start="68" end="70"/>
+    <fieldOffsets kor="관계거래처정보수신건수" type="long" name="relPtrnInfRcvCnt" start="70" end="73"/>
+    <fieldOffsets kor="관계거래처정보요청건수" type="long" name="relPtrnInfReqnCnt" start="73" end="75"/>
+    <fieldOffsets kor="요약정보수신건수" type="long" name="smryInfRcvCnt" start="75" end="78"/>
+    <fieldOffsets kor="요약정보요청건수" type="long" name="smryInfReqnCnt" start="78" end="80"/>
+    <fieldOffsets kor="요약서비스구분정보_배열건수" type="long" name="smrySrvGbInfRowcount" start="80" end="85"/>
+    <fieldOffsets kor="요약서비스구분정보_배열" type="SMRY_SRV_GB_INF_LIST_TYPE" name="smrySrvGbInfList" start="85" end="85"/>
   </jndi:configuration>
 </jndi:namedResource>

@@ -34,4 +34,7 @@
   <sca:component xmi:id="__G7xorvZEe2TD9EBDhxIvA" name="ComponentCISTOSPMCV0020102_RES" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="__G7xo7vZEe2TD9EBDhxIvA" processName="CISTOSPMCV.CISTOSPMCV0020202.CISTOSPMCV0020202_RES"/>
   </sca:component>
+  <sca:component xmi:id="_nhYHcL8MEe2rC4BK4fzqNQ" name="ComponentTossFileRecever" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_nhYHcb8MEe2rC4BK4fzqNQ" processName="TOSCISPM.TossFileRecever"/>
+  </sca:component>
 </sca:composite>

@@ -46,6 +46,7 @@
     xmlns:ns130="activity.jsonParser.input+cbd7d1d5-8b61-437b-9080-8cea08420256+ActivityInputType"
     xmlns:ns131="http://schema.hcis.com/xsd/CISTOSPMMZ0140401"
     xmlns:ns132="http://tns.tibco.com/bw/palette/internal/activityerror+bw.restjson.JsonParser"
+    xmlns:ns133="http://schema.hcis.com/xsd/TOSSFILEEVENT"
     xmlns:ns14="http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataOutput+885dbe83-9455-42f5-8eab-4b637ffa4023+ActivityOutput"
     xmlns:ns15="http://tns.tibco.com/bw/palette/internal/activityerror+bw.tcp.read"
     xmlns:ns16="http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataInput+6563ad73-4c5c-4cbc-afa9-cfeff648486c+ActivityInput"
@@ -160,15 +161,15 @@
                 <variable>TCPOpenConnection-input</variable>
             </endingVariables>
         </task>
-        <task name="B_300">
+        <task name="B_003">
             <endingVariables>
-                <variable>B_300-input</variable>
+                <variable>B_003-input</variable>
             </endingVariables>
         </task>
-        <task name="W_300">
+        <task name="W_003">
             <endingVariables>
-                <variable>W_300-input</variable>
-                <variable>B_300</variable>
+                <variable>W_003-input</variable>
+                <variable>B_003</variable>
             </endingVariables>
         </task>
         <task name="flow1">
@@ -282,7 +283,7 @@
         <task name="B_007">
             <endingVariables>
                 <variable>B_007-input</variable>
-                <variable>ReceveBatchEvent</variable>
+                <variable>TossFileStartEvent</variable>
             </endingVariables>
         </task>
         <task name="W_007">
@@ -332,9 +333,9 @@
                 <variable>P_COMMON2</variable>
             </endingVariables>
         </task>
-        <task name="ReceveBatchEvent">
+        <task name="TossFileStartEvent">
             <endingVariables>
-                <variable>ReceveBatchEvent-input</variable>
+                <variable>TossFileStartEvent-input</variable>
                 <variable>JMSReceiveMessage</variable>
             </endingVariables>
         </task>
@@ -1303,6 +1304,10 @@
             <complexType name="MutTypeMethodParameters">
                 <sequence>
                     <element form="unqualified" maxOccurs="1"
+                        minOccurs="1" name="userId" type="string"/>
+                    <element form="unqualified" maxOccurs="1"
+                        minOccurs="1" name="passwd" type="string"/>
+                    <element form="unqualified" maxOccurs="1"
                         minOccurs="1" name="jobType" type="string"/>
                     <element form="unqualified" maxOccurs="1"
                         minOccurs="1" name="startDay" type="string"/>
@@ -1716,6 +1721,10 @@
             xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="www.tibco.com/plugin/java/JavaInvokeActivityInput+031b0466-d904-493a-95fc-cf699daa39be+JavaInvokeActivityInput">
             <complexType name="MutTypeMethodParameters">
                 <sequence>
+                    <element form="unqualified" maxOccurs="1"
+                        minOccurs="1" name="userId" type="string"/>
+                    <element form="unqualified" maxOccurs="1"
+                        minOccurs="1" name="passwd" type="string"/>
                     <element form="unqualified" maxOccurs="1"
                         minOccurs="1" name="jobType" type="string"/>
                     <element form="unqualified" maxOccurs="1"
@@ -2200,8 +2209,8 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.1"/>
-                                    <layoutConstraint x="-130"
-                                    xsi:type="notation:Bounds" y="267"/>
+                                    <layoutConstraint x="-68"
+                                    xsi:type="notation:Bounds" y="275"/>
                                     </children>
                                     <children type="4002">
                                     <children type="4017">
@@ -2231,8 +2240,8 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.2"/>
-                                    <layoutConstraint x="-47"
-                                    xsi:type="notation:Bounds" y="421"/>
+                                    <layoutConstraint x="-68"
+                                    xsi:type="notation:Bounds" y="384"/>
                                     </children>
                                     <children type="4002 bw.tcp.tcpopenconnection">
                                     <children type="4017">
@@ -2268,8 +2277,8 @@
                                     <element href="//0/@process/@activity/@activity/@activities.3"/>
                                     <layoutConstraint
                                     height="40" width="40"
-                                    x="29"
-                                    xsi:type="notation:Bounds" y="627"/>
+                                    x="93"
+                                    xsi:type="notation:Bounds" y="407"/>
                                     </children>
                                     <children type="4002 bw.java.javamethod">
                                     <children type="4017">
@@ -2305,8 +2314,8 @@
                                     <element href="//0/@process/@activity/@activity/@activities.4"/>
                                     <layoutConstraint
                                     height="89" width="40"
-                                    x="29"
-                                    xsi:type="notation:Bounds" y="745"/>
+                                    x="93"
+                                    xsi:type="notation:Bounds" y="541"/>
                                     </children>
                                     <children type="4002 bw.tcp.write">
                                     <children type="4017">
@@ -2342,8 +2351,8 @@
                                     <element href="//0/@process/@activity/@activity/@activities.5"/>
                                     <layoutConstraint
                                     height="40" width="40"
-                                    x="134"
-                                    xsi:type="notation:Bounds" y="752"/>
+                                    x="85"
+                                    xsi:type="notation:Bounds" y="701"/>
                                     </children>
                                     <children type="4018">
                                     <children type="3018">
@@ -4991,10 +5000,10 @@
                                     <element href="//0/@process/@activity/@activity/@activities.16"/>
                                     <layoutConstraint
                                     height="40" width="40"
-                                    x="134"
-                                    xsi:type="notation:Bounds" y="548"/>
+                                    x="101"
+                                    xsi:type="notation:Bounds" y="243"/>
                                     </children>
-                                    <children type="4002 bw.generalactivities.bwassign">
+                                    <children type="4002 bw.restjson.JsonParser">
                                     <children type="4017">
                                     <styles fontName="맑은 고딕"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
@@ -5024,74 +5033,8 @@
                                     <element href="//0/@process/@activity/@activity/@activities.17"/>
                                     <layoutConstraint
                                     height="40" width="40"
-                                    x="69"
-                                    xsi:type="notation:Bounds" y="291"/>
-                                    </children>
-                                    <children type="4002 bw.generalactivities.bwassign">
-                                    <children type="4017">
-                                    <styles fontName="맑은 고딕"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles fontName="맑은 고딕"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles fontName="맑은 고딕"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles fontName="맑은 고딕"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <styles fontName="맑은 고딕"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <styles
-                                    backgroundColor="16777215"
-                                    gradientEndColor="50431"
-                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.18"/>
-                                    <layoutConstraint
-                                    height="40" width="40"
-                                    x="134"
-                                    xsi:type="notation:Bounds" y="400"/>
-                                    </children>
-                                    <children type="4002 bw.restjson.JsonParser">
-                                    <children type="4017">
-                                    <styles fontName="맑은 고딕"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles fontName="맑은 고딕"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles fontName="맑은 고딕"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles fontName="맑은 고딕"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <styles fontName="맑은 고딕"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <styles
-                                    backgroundColor="16777215"
-                                    gradientEndColor="50431"
-                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.19"/>
-                                    <layoutConstraint
-                                    height="40" width="40"
-                                    x="8"
-                                    xsi:type="notation:Bounds" y="151"/>
+                                    x="-40"
+                                    xsi:type="notation:Bounds" y="135"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
@@ -5202,7 +5145,7 @@
         <element href="//0"/>
         <edges
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.19" type="4006">
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.17" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
@@ -5238,7 +5181,7 @@
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.4"
             target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.5" type="4006">
             <children type="6002">
-                <layoutConstraint x="4" xsi:type="notation:Location" y="92"/>
+                <layoutConstraint x="-36" xsi:type="notation:Location" y="-132"/>
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="맑은 고딕" xsi:type="notation:FontStyle"/>
@@ -5779,19 +5722,18 @@
             <bendpoints points="[25, 6, -133, -35]$[134, 35, -24, -6]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.17"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.18" type="4006">
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.16"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="맑은 고딕" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.14"/>
-            <bendpoints
-                points="[25, 11, -39, -131]$[66, 11, 2, -131]$[66, 118, 2, -24]" xsi:type="notation:RelativeBendpoints"/>
+            <bendpoints points="[-19, 25, 59, -78]$[-59, 79, 19, -24]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.18"
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2"
             target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.16" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
@@ -5800,40 +5742,17 @@
             <styles fontName="맑은 고딕" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.15"/>
             <bendpoints
-                points="[0, 25, -24, -127]$[0, 94, -24, -58]$[24, 94, 0, -58]$[24, 128, 0, -24]" xsi:type="notation:RelativeBendpoints"/>
-        </edges>
-        <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.16"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3" type="4006">
-            <children type="6002">
-                <layoutConstraint xsi:type="notation:Location" y="40"/>
-            </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="맑은 고딕" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@links/@children.16"/>
-            <bendpoints points="[-19, 25, 59, -78]$[-59, 79, 19, -24]" xsi:type="notation:RelativeBendpoints"/>
-        </edges>
-        <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.17" type="4006">
-            <children type="6002">
-                <layoutConstraint xsi:type="notation:Location" y="40"/>
-            </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="맑은 고딕" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@links/@children.17"/>
-            <bendpoints
                 points="[10, -24, -131, 324]$[131, -323, -10, 25]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.19"
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.17"
             target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="맑은 고딕" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@links/@children.18"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.16"/>
             <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
     </notation:Diagram>
@@ -5939,6 +5858,8 @@
             namespace="www.tibco.com/plugin/java/JavaInvokeActivityInput+43d7981f-86d9-441e-9cdf-ce783580421d+JavaInvokeActivityInput" prefix="tns38"/>
         <tibex:namespaceItem
             namespace="http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataOutput+8b6abe43-1d61-4bfe-a5e6-85eef0571836+ActivityOutput" prefix="Q6"/>
+        <tibex:namespaceItem
+            namespace="http://schema.hcis.com/xsd/TOSSFILEEVENT" prefix="ns1"/>
     </tibex:NamespaceRegistry>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.cspi_library.org/Library"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.cspi_library.org/Log"/>
@@ -5947,6 +5868,7 @@
         location="../../../HcisExternal.smodule/Schemas/NotifyConfigurationSchema.xsd" namespace="http://ns.tibco.com/bw/sharedresource/notifyconfiguration/01fbc230-cc5c-43b6-a016-433dc4099811"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema"
         location="../../../HcisCommon.smodule/Schemas/BatchEventData.xsd.xsd" namespace="http://schema.hcis.com/xsd/CISTOSPMMZ0140401"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://schema.hcis.com/xsd/TOSSFILEEVENT"/>
     <bpws:variables>
         <bpws:variable element="ns:ProcessContext"
             name="_processContext" sca-bpel:internal="true"/>
@@ -6027,8 +5949,6 @@
         </bpws:variable>
         <bpws:variable element="ns76:ActivityOutput"
             name="JMSReceiveMessage" sca-bpel:internal="true"/>
-        <bpws:variable name="startDate" type="xsd:string"/>
-        <bpws:variable name="endDate" type="xsd:string"/>
         <bpws:variable element="ns1:SetLog" name="L_Set_LogStart-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns2:ActivityInput"
             name="TCPOpenConnection-input" sca-bpel:internal="true"/>
@@ -6039,14 +5959,14 @@
         <bpws:variable name="startDate1" type="xsd:string"/>
         <bpws:variable name="endDate1" type="xsd:string"/>
         <bpws:variable element="ns80:JavaInvokeActivityInput"
-            name="B_300-input" sca-bpel:internal="true"/>
+            name="B_003-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns81:JavaInvokeActivityOutput"
-            name="B_300" sca-bpel:internal="true"/>
+            name="B_003" sca-bpel:internal="true"/>
         <bpws:variable element="ns82:ActivityErrorData"
-            name="_error_B_300" sca-bpel:internal="true"/>
-        <bpws:variable element="ns83:ActivityInput" name="W_300-input" sca-bpel:internal="true"/>
+            name="_error_B_003" sca-bpel:internal="true"/>
+        <bpws:variable element="ns83:ActivityInput" name="W_003-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns11:ActivityErrorData"
-            name="_error_W_300" sca-bpel:internal="true"/>
+            name="_error_W_003" sca-bpel:internal="true"/>
         <bpws:variable element="ns84:JavaInvokeActivityInput"
             name="P_COMMON-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns85:JavaInvokeActivityOutput"
@@ -6168,10 +6088,10 @@
         <bpws:variable element="ns130:ActivityInputClass" name="ㄲ-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns131:root" name="ㄲ" sca-bpel:internal="true"/>
         <bpws:variable element="ns132:ActivityErrorData"
-            name="_error_ReceveBatchEvent" sca-bpel:internal="true"/>
+            name="_error_TossFileStartEvent" sca-bpel:internal="true"/>
         <bpws:variable element="ns130:ActivityInputClass"
-            name="ReceveBatchEvent-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns131:root" name="ReceveBatchEvent" sca-bpel:internal="true"/>
+            name="TossFileStartEvent-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns133:root" name="TossFileStartEvent" sca-bpel:internal="true"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -6208,10 +6128,8 @@
                 <bpws:link name="TCPCloseConnectionToL_Set_LogEnd" tibex:linkType="SUCCESS"/>
                 <bpws:link name="P_070ToLog" tibex:linkType="SUCCESS"/>
                 <bpws:link name="LogToTCPCloseConnection" tibex:linkType="SUCCESS"/>
-                <bpws:link name="AssignToTCPOpenConnection1" tibex:linkType="SUCCESS"/>
-                <bpws:link name="endDateTosavePath" tibex:linkType="SUCCESS"/>
                 <bpws:link name="savePathToTCPOpenConnection" tibex:linkType="SUCCESS"/>
-                <bpws:link name="L_Set_LogStartTostartDate" tibex:linkType="SUCCESS"/>
+                <bpws:link name="L_Set_LogStartTosavePath" tibex:linkType="SUCCESS"/>
                 <bpws:link name="ParseJSONToL_Get_InterfaceInfo" tibex:linkType="SUCCESS"/>
             </bpws:links>
             <bpws:extensionActivity>
@@ -6259,7 +6177,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding coercion=""
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:Library=&quot;http://www.cspi_library.org/Library&quot; xmlns:HCIS1=&quot;http://shacon.kr/202301&quot; version=&quot;2.0&quot;>&lt;xsl:template name=&quot;L_Get_InterfaceInfo-input&quot; match=&quot;/&quot;>&lt;Library:SetInterface>&lt;Library:InterfaceId>&lt;xsl:value-of select=&quot;&amp;quot;TOS_FILE_SEND&amp;quot;&quot;/>&lt;/Library:InterfaceId>&lt;Library:InterfaceSysId>&lt;xsl:value-of select=&quot;HCIS:getGUID()&quot;/>&lt;/Library:InterfaceSysId>&lt;/Library:SetInterface>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:Library=&quot;http://www.cspi_library.org/Library&quot; xmlns:HCIS1=&quot;http://shacon.kr/202301&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:template name=&quot;L_Get_InterfaceInfo-input&quot; match=&quot;/&quot;>&#xa;        &lt;Library:SetInterface>&#xa;            &lt;Library:InterfaceId>&#xa;                &lt;xsl:value-of select=&quot;&amp;quot;TOS_FILE_SEND&amp;quot;&quot;/>&#xa;            &lt;/Library:InterfaceId>&#xa;            &lt;Library:InterfaceSysId>&#xa;                &lt;xsl:value-of select=&quot;HCIS:getGUID()&quot;/>&#xa;            &lt;/Library:InterfaceSysId>&#xa;        &lt;/Library:SetInterface>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:CallProcess moduleRef="CSPI_Library"
                         subProcessName="L_Get_InterfaceInfo" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
@@ -6274,7 +6192,7 @@
                         <bpws:target linkName="L_Get_InterfaceInfoToL_Set_LogStart"/>
                     </bpws:targets>
                     <bpws:sources>
-                        <bpws:source linkName="L_Set_LogStartTostartDate"/>
+                        <bpws:source linkName="L_Set_LogStartTosavePath"/>
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding coercion=""
@@ -6318,8 +6236,8 @@
                 </tibex:activityExtension>
             </bpws:extensionActivity>
             <bpws:extensionActivity>
-                <tibex:activityExtension inputVariable="B_300-input"
-                    name="B_300" outputVariable="B_300"
+                <tibex:activityExtension inputVariable="B_003-input"
+                    name="B_003" outputVariable="B_003"
                     tibex:xpdlId="b6ec3a2d-773f-4e43-b4b2-36d97c102aeb" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
                         <bpws:target linkName="TCPOpenConnectionToB_0600_001"/>
@@ -6329,7 +6247,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns30=&quot;www.tibco.com/plugin/java/JavaInvokeActivityInput+b6ec3a2d-773f-4e43-b4b2-36d97c102aeb+JavaInvokeActivityInput&quot; xmlns:ns=&quot;http://schema.hcis.com/xsd/CISTOSPMMZ0140401&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;startDate&quot;/>&lt;xsl:param name=&quot;endDate&quot;/>&lt;xsl:param name=&quot;ReceveBatchEvent&quot;/>&lt;xsl:template name=&quot;B_300-input&quot; match=&quot;/&quot;>&lt;tns30:JavaInvokeActivityInput>&lt;MethodParameters>&lt;jobType>&lt;xsl:value-of select=&quot;&amp;quot;RD&amp;quot;&quot;/>&lt;/jobType>&lt;startDay>&lt;xsl:value-of select=&quot;$startDate&quot;/>&lt;/startDay>&lt;endDay>&lt;xsl:value-of select=&quot;$endDate&quot;/>&lt;/endDay>&lt;fileName>&lt;xsl:value-of select=&quot;$ReceveBatchEvent/ns:data/ns:fileNm&quot;/>&lt;/fileName>&lt;/MethodParameters>&lt;/tns30:JavaInvokeActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns30=&quot;www.tibco.com/plugin/java/JavaInvokeActivityInput+b6ec3a2d-773f-4e43-b4b2-36d97c102aeb+JavaInvokeActivityInput&quot; xmlns:ns=&quot;http://schema.hcis.com/xsd/CISTOSPMMZ0140401&quot; xmlns:ns1=&quot;http://schema.hcis.com/xsd/TOSSFILEEVENT&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;TossFileStartEvent&quot;/>&lt;xsl:template name=&quot;B_003-input&quot; match=&quot;/&quot;>&lt;tns30:JavaInvokeActivityInput>&lt;MethodParameters>&lt;userId>&lt;xsl:value-of select=&quot;$TossFileStartEvent/ns1:userId&quot;/>&lt;/userId>&lt;passwd>&lt;xsl:value-of select=&quot;$TossFileStartEvent/ns1:passwd&quot;/>&lt;/passwd>&lt;jobType>&lt;xsl:value-of select=&quot;&amp;quot;RD&amp;quot;&quot;/>&lt;/jobType>&lt;startDay>&lt;xsl:value-of select=&quot;$TossFileStartEvent/ns1:startTime&quot;/>&lt;/startDay>&lt;endDay>&lt;xsl:value-of select=&quot;$TossFileStartEvent/ns1:endTime&quot;/>&lt;/endDay>&lt;fileName>&lt;xsl:value-of select=&quot;$TossFileStartEvent/ns1:fileName&quot;/>&lt;/fileName>&lt;/MethodParameters>&lt;/tns30:JavaInvokeActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -6349,6 +6267,10 @@
                                     methodName="build003"
                                     methodReturn="byte[]" xsi:type="java:JavaMethod">
                                     <methodParameter
+                                    paramName="userId" paramType="string"/>
+                                    <methodParameter
+                                    paramName="passwd" paramType="string"/>
+                                    <methodParameter
                                     paramName="jobType" paramType="string"/>
                                     <methodParameter
                                     paramName="startDay" paramType="string"/>
@@ -6364,8 +6286,8 @@
                 </tibex:activityExtension>
             </bpws:extensionActivity>
             <bpws:extensionActivity>
-                <tibex:activityExtension inputVariable="W_300-input"
-                    name="W_300"
+                <tibex:activityExtension inputVariable="W_003-input"
+                    name="W_003"
                     tibex:xpdlId="0ca637d4-8f79-47c5-b205-3603a31bfd51" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
                         <bpws:target linkName="B_X1-"/>
@@ -6375,7 +6297,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns39=&quot;http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpwritedata+0ca637d4-8f79-47c5-b205-3603a31bfd51+ActivityInput&quot; xmlns:tns1=&quot;http://www.tibco.com/namespaces/tnt/plugins/tcp&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;TCPOpenConnection&quot;/>&#xa;    &lt;xsl:param name=&quot;B_300&quot;/>&#xa;    &lt;xsl:template name=&quot;W_300-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns39:ActivityInput>&#xa;            &lt;tns39:connection>&#xa;                &lt;xsl:value-of select=&quot;$TCPOpenConnection/tns1:connection&quot;/>&#xa;            &lt;/tns39:connection>&#xa;            &lt;tns39:data>&#xa;                &lt;xsl:value-of select=&quot;$B_300/MethodReturnValue&quot;/>&#xa;            &lt;/tns39:data>&#xa;        &lt;/tns39:ActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns39=&quot;http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpwritedata+0ca637d4-8f79-47c5-b205-3603a31bfd51+ActivityInput&quot; xmlns:tns1=&quot;http://www.tibco.com/namespaces/tnt/plugins/tcp&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;TCPOpenConnection&quot;/>&#xa;    &lt;xsl:param name=&quot;B_003&quot;/>&#xa;    &lt;xsl:template name=&quot;W_300-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns39:ActivityInput>&#xa;            &lt;tns39:connection>&#xa;                &lt;xsl:value-of select=&quot;$TCPOpenConnection/tns1:connection&quot;/>&#xa;            &lt;/tns39:connection>&#xa;            &lt;tns39:data>&#xa;                &lt;xsl:value-of select=&quot;$B_003/MethodReturnValue&quot;/>&#xa;            &lt;/tns39:data>&#xa;        &lt;/tns39:ActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity activityTypeID="bw.tcp.write"
@@ -7254,7 +7176,7 @@
                                     </bpws:sources>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns31=&quot;www.tibco.com/plugin/java/JavaInvokeActivityInput+79fe432a-7dd2-478a-9f06-8d04dc0aa359+JavaInvokeActivityInput&quot; xmlns:ns=&quot;http://schema.hcis.com/xsd/CISTOSPMMZ0140401&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;ReceveBatchEvent&quot;/>&lt;xsl:template name=&quot;B_100-input&quot; match=&quot;/&quot;>&lt;tns31:JavaInvokeActivityInput>&lt;MethodParameters>&lt;filename>&lt;xsl:value-of select=&quot;$ReceveBatchEvent/ns:data/ns:fileNm&quot;/>&lt;/filename>&lt;filesize>&lt;xsl:value-of select=&quot;concat($ReceveBatchEvent/ns:data/ns:filePath,$ReceveBatchEvent/ns:data/ns:fileNm)&quot;/>&lt;/filesize>&lt;lastYn>&lt;xsl:value-of select=&quot;&amp;quot;END&amp;quot;&quot;/>&lt;/lastYn>&lt;/MethodParameters>&lt;/tns31:JavaInvokeActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns31=&quot;www.tibco.com/plugin/java/JavaInvokeActivityInput+79fe432a-7dd2-478a-9f06-8d04dc0aa359+JavaInvokeActivityInput&quot; xmlns:ns=&quot;http://schema.hcis.com/xsd/CISTOSPMMZ0140401&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;fileName&quot;/>&lt;xsl:param name=&quot;fileSize&quot;/>&lt;xsl:template name=&quot;B_100-input&quot; match=&quot;/&quot;>&lt;tns31:JavaInvokeActivityInput>&lt;MethodParameters>&lt;filename>&lt;xsl:value-of select=&quot;$fileName&quot;/>&lt;/filename>&lt;filesize>&lt;xsl:value-of select=&quot;$fileSize&quot;/>&lt;/filesize>&lt;lastYn>&lt;xsl:value-of select=&quot;&amp;quot;END&amp;quot;&quot;/>&lt;/lastYn>&lt;/MethodParameters>&lt;/tns31:JavaInvokeActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:config>
                                     <bwext:BWActivity
@@ -7483,7 +7405,7 @@
                                     </bpws:sources>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns38=&quot;www.tibco.com/plugin/java/JavaInvokeActivityInput+43d7981f-86d9-441e-9cdf-ce783580421d+JavaInvokeActivityInput&quot; xmlns:Q6=&quot;http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataOutput+8b6abe43-1d61-4bfe-a5e6-85eef0571836+ActivityOutput&quot; xmlns:Q1=&quot;http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataOutput+32e9e16c-782b-4ec4-9d9b-3736e9097f83+ActivityOutput&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;R_130&quot;/>&lt;xsl:template name=&quot;P_130-input&quot; match=&quot;/&quot;>&lt;tns38:JavaInvokeActivityInput>&lt;MethodParameters>&lt;bytes>&lt;xsl:value-of select=&quot;$R_130/Q1:data&quot;/>&lt;/bytes>&lt;msgCode>&lt;xsl:value-of select=&quot;&amp;quot;130&amp;quot;&quot;/>&lt;/msgCode>&lt;/MethodParameters>&lt;/tns38:JavaInvokeActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns38=&quot;www.tibco.com/plugin/java/JavaInvokeActivityInput+43d7981f-86d9-441e-9cdf-ce783580421d+JavaInvokeActivityInput&quot; xmlns:Q7=&quot;http://www.tibco.com/namespaces/tnt/plugins/tcp/tcpreaddataOutput+32e9e16c-782b-4ec4-9d9b-3736e9097f83+ActivityOutput&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;R_130&quot;/>&#xa;    &lt;xsl:template name=&quot;P_130-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns38:JavaInvokeActivityInput>&#xa;            &lt;MethodParameters>&#xa;                &lt;bytes>&#xa;                    &lt;xsl:value-of select=&quot;$R_130/Q7:data&quot;/>&#xa;                &lt;/bytes>&#xa;                &lt;msgCode>&#xa;                    &lt;xsl:value-of select=&quot;&amp;quot;130&amp;quot;&quot;/>&#xa;                &lt;/msgCode>&#xa;            &lt;/MethodParameters>&#xa;        &lt;/tns38:JavaInvokeActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:config>
                                     <bwext:BWActivity
@@ -7638,7 +7560,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns32=&quot;www.tibco.com/plugin/java/JavaInvokeActivityInput+031b0466-d904-493a-95fc-cf699daa39be+JavaInvokeActivityInput&quot; xmlns:ns=&quot;http://schema.hcis.com/xsd/CISTOSPMMZ0140401&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;startDate&quot;/>&lt;xsl:param name=&quot;endDate&quot;/>&lt;xsl:param name=&quot;ReceveBatchEvent&quot;/>&lt;xsl:template name=&quot;B_007-input&quot; match=&quot;/&quot;>&lt;tns32:JavaInvokeActivityInput>&lt;MethodParameters>&lt;jobType>&lt;xsl:value-of select=&quot;&amp;quot;RD&amp;quot;&quot;/>&lt;/jobType>&lt;startDay>&lt;xsl:value-of select=&quot;$startDate&quot;/>&lt;/startDay>&lt;endDay>&lt;xsl:value-of select=&quot;$endDate&quot;/>&lt;/endDay>&lt;fileName>&lt;xsl:value-of select=&quot;$ReceveBatchEvent/ns:data/ns:fileNm&quot;/>&lt;/fileName>&lt;/MethodParameters>&lt;/tns32:JavaInvokeActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns32=&quot;www.tibco.com/plugin/java/JavaInvokeActivityInput+031b0466-d904-493a-95fc-cf699daa39be+JavaInvokeActivityInput&quot; xmlns:ns=&quot;http://schema.hcis.com/xsd/CISTOSPMMZ0140401&quot; xmlns:ns1=&quot;http://schema.hcis.com/xsd/TOSSFILEEVENT&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;TossFileStartEvent&quot;/>&lt;xsl:template name=&quot;B_007-input&quot; match=&quot;/&quot;>&lt;tns32:JavaInvokeActivityInput>&lt;MethodParameters>&lt;userId>&lt;xsl:value-of select=&quot;$TossFileStartEvent/ns1:userId&quot;/>&lt;/userId>&lt;passwd>&lt;xsl:value-of select=&quot;$TossFileStartEvent/ns1:passwd&quot;/>&lt;/passwd>&lt;jobType>&lt;xsl:value-of select=&quot;&amp;quot;RD&amp;quot;&quot;/>&lt;/jobType>&lt;startDay>&lt;xsl:value-of select=&quot;$TossFileStartEvent/ns1:startTime&quot;/>&lt;/startDay>&lt;endDay>&lt;xsl:value-of select=&quot;$TossFileStartEvent/ns1:endTime&quot;/>&lt;/endDay>&lt;fileName>&lt;xsl:value-of select=&quot;$TossFileStartEvent/ns1:fileName&quot;/>&lt;/fileName>&lt;/MethodParameters>&lt;/tns32:JavaInvokeActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -7651,12 +7573,16 @@
                                     <type href="http://ns.tibco.com/bw/palette/java#//JavaMethod"/>
                                     <value
                                     className="com.hcis.eai.ext.tos.TossFileTransfer"
+                                    constructDeclaredClass="true"
                                     icon="HcisCommon.smodule\Resources\icons\edit-node-48.png"
                                     isNew="true"
                                     isNewActivity="true"
-                                    javaGlobalInstance="TOSFileTransHelper"
                                     methodName="build007"
                                     methodReturn="byte[]" xsi:type="java:JavaMethod">
+                                    <methodParameter
+                                    paramName="userId" paramType="string"/>
+                                    <methodParameter
+                                    paramName="passwd" paramType="string"/>
                                     <methodParameter
                                     paramName="jobType" paramType="string"/>
                                     <methodParameter
@@ -7931,14 +7857,14 @@
                     name="savePath" outputVariable="readPath"
                     tibex:xpdlId="b0ddb7b2-d0d1-4c40-8ac1-0c901eda3d2f" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
-                        <bpws:target linkName="endDateTosavePath"/>
+                        <bpws:target linkName="L_Set_LogStartTosavePath"/>
                     </bpws:targets>
                     <bpws:sources>
                         <bpws:source linkName="savePathToTCPOpenConnection"/>
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="concat(bw:getModuleProperty(&quot;PM_TOSS_RCV_PATH&quot;), &quot;rv_&quot;,$startDate, $endDate )" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                            expression="concat(bw:getModuleProperty(&quot;PM_TOSS_RCV_PATH&quot;), &quot;rv_&quot;,$TossFileStartEvent/ns133:startTime, $TossFileStartEvent/ns133:endTime )" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -7957,70 +7883,10 @@
                 </tibex:activityExtension>
             </bpws:extensionActivity>
             <bpws:extensionActivity>
-                <tibex:activityExtension inputVariable="startDate"
-                    name="startDate" outputVariable="startDate"
-                    tibex:xpdlId="f13e7873-c5e9-4c8e-855c-57006ca76cb9" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
-                    <bpws:targets>
-                        <bpws:target linkName="L_Set_LogStartTostartDate"/>
-                    </bpws:targets>
-                    <bpws:sources>
-                        <bpws:source linkName="AssignToTCPOpenConnection1"/>
-                    </bpws:sources>
-                    <tibex:inputBindings>
-                        <tibex:inputBinding
-                            expression="HCIS:getCurrentDateFormat(&quot;yyyyMMdd&quot;)" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
-                    </tibex:inputBindings>
-                    <tibex:config>
-                        <bwext:BWActivity
-                            activityTypeID="bw.generalactivities.bwassign"
-                            xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
-                            xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
-                            xmlns:generalactivities="http://ns.tibco.com/bw/palette/generalactivities" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                            <activityConfig>
-                                <properties name="config" xsi:type="activityconfig:EMFProperty">
-                                    <type href="http://ns.tibco.com/bw/palette/generalactivities#//BWAssign"/>
-                                    <value processVariable="startDate" xsi:type="generalactivities:BWAssign"/>
-                                </properties>
-                            </activityConfig>
-                        </bwext:BWActivity>
-                    </tibex:config>
-                </tibex:activityExtension>
-            </bpws:extensionActivity>
-            <bpws:extensionActivity>
-                <tibex:activityExtension inputVariable="endDate"
-                    name="endDate" outputVariable="endDate"
-                    tibex:xpdlId="2fb4bbc0-23c6-49ae-9aed-731c33cd2b92" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
-                    <bpws:targets>
-                        <bpws:target linkName="AssignToTCPOpenConnection1"/>
-                    </bpws:targets>
-                    <bpws:sources>
-                        <bpws:source linkName="endDateTosavePath"/>
-                    </bpws:sources>
-                    <tibex:inputBindings>
-                        <tibex:inputBinding
-                            expression="HCIS:getCurrentDateFormat(&quot;yyyyMMdd&quot;)" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
-                    </tibex:inputBindings>
-                    <tibex:config>
-                        <bwext:BWActivity
-                            activityTypeID="bw.generalactivities.bwassign"
-                            xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
-                            xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
-                            xmlns:generalactivities="http://ns.tibco.com/bw/palette/generalactivities" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                            <activityConfig>
-                                <properties name="config" xsi:type="activityconfig:EMFProperty">
-                                    <type href="http://ns.tibco.com/bw/palette/generalactivities#//BWAssign"/>
-                                    <value processVariable="endDate" xsi:type="generalactivities:BWAssign"/>
-                                </properties>
-                            </activityConfig>
-                        </bwext:BWActivity>
-                    </tibex:config>
-                </tibex:activityExtension>
-            </bpws:extensionActivity>
-            <bpws:extensionActivity>
                 <tibex:activityExtension
-                    inputVariable="ReceveBatchEvent-input"
-                    name="ReceveBatchEvent"
-                    outputVariable="ReceveBatchEvent"
+                    inputVariable="TossFileStartEvent-input"
+                    name="TossFileStartEvent"
+                    outputVariable="TossFileStartEvent"
                     tibex:xpdlId="cbd7d1d5-8b61-437b-9080-8cea08420256" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
                         <bpws:target linkName="JMSReceiveMessageToL_Get_InterfaceInfo"/>
@@ -8044,7 +7910,7 @@
                                     <value
                                     jsonInputStyle="Json with Root"
                                     schemaType="Xsd" xsi:type="restjson:JsonParser">
-                                    <outputEditorElement href="platform:/resource/HcisCommon.smodule/Schemas/BatchEventData.xsd.xsd#//root;XSDElementDeclaration"/>
+                                    <outputEditorElement href="platform:/resource/HcisExternal.smodule/Schemas/ext/tos/TossFileEvent.xsd#//root;XSDElementDeclaration"/>
                                     </value>
                                 </properties>
                             </activityConfig>

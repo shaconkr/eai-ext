@@ -87,7 +87,7 @@
             <element e:kor="채무불이행정보응답_배열건수" e:length="5" e:padder="ZeroLeft" minOccurs="0" name="debtNoffilInfRespRowcount" nillable="true" type="long"/>
             <element e:kor="채무불이행정보응답_배열" e:lengthField="debtNoffilInfRespRowcount" e:padder="ZeroLeft" maxOccurs="unbounded" minOccurs="0" name="debtNoffilInfRespList" nillable="true" type="ns:DEBT_NOFFIL_INF_RESP_LIST_TYPE"/>
             <element e:kor="채무불이행정보응답1_배열건수" e:length="5" e:padder="ZeroLeft" minOccurs="0" name="debtNoffilInfResp1Rowcount" nillable="true" type="long"/>
-            <element e:kor="채무불이행정보응답1_배열" e:lengthField="debtNoffilInfRespRowcount" e:padder="ZeroLeft" maxOccurs="unbounded" minOccurs="0" name="debtNoffilInfResp1List" nillable="true" type="ns:DEBT_NOFFIL_INF_RESP1_LIST_TYPE"/>
+            <element e:kor="채무불이행정보응답1_배열" e:lengthField="debtNoffilInfResp1Rowcount" e:padder="ZeroLeft" maxOccurs="unbounded" minOccurs="0" name="debtNoffilInfResp1List" nillable="true" type="ns:DEBT_NOFFIL_INF_RESP1_LIST_TYPE"/>
             <element e:kor="거래개설정보응답_배열건수" e:length="5" e:padder="ZeroLeft" minOccurs="0" name="trdOpeInfRespRowcount" nillable="true" type="long"/>
             <element e:kor="거래개설정보응답_배열" e:lengthField="trdOpeInfRespRowcount" e:padder="ZeroLeft" maxOccurs="unbounded" minOccurs="0" name="trdOpeInfRespList" nillable="true" type="ns:TRD_OPE_INF_RESP_LIST_TYPE"/>
             <element e:kor="신용조회정보응답_배열건수" e:length="5" e:padder="ZeroLeft" minOccurs="0" name="crdtQryInfRespRowcount" nillable="true" type="long"/>

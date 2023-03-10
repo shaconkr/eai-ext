@@ -29,6 +29,8 @@
             <element e:kor="채무불이행정보요청건수" e:length="2" e:padder="ZeroLeft" minOccurs="0" name="debtNoffilInfReqnCnt" nillable="true" type="long"/>
             <element e:kor="채무불이행정보수신건수1" e:length="3" e:padder="ZeroLeft" minOccurs="0" name="debtNoffilInfRcvCnt1" nillable="true" type="long"/>
             <element e:kor="채무불이행정보요청건수1" e:length="2" e:padder="ZeroLeft" minOccurs="0" name="debtNoffilInfReqnCnt1" nillable="true" type="long"/>
+            <element e:kor="거래개설정보수신건수" e:length="3" e:padder="ZeroLeft" minOccurs="0" name="trdOpeInfRcvCnt" nillable="true" type="long"/>
+            <element e:kor="거래개설정보요청건수" e:length="2" e:padder="ZeroLeft" minOccurs="0" name="trdOpeInfReqnCnt" nillable="true" type="long"/>
             <element e:kor="신용조회정보수신건수" e:length="3" e:padder="ZeroLeft" minOccurs="0" name="crdtQryInfRcvCnt" nillable="true" type="long"/>
             <element e:kor="신용조회정보요청건수" e:length="2" e:padder="ZeroLeft" minOccurs="0" name="crdtQryInfReqnCnt" nillable="true" type="long"/>
             <element e:kor="관계거래처정보수신건수" e:length="3" e:padder="ZeroLeft" minOccurs="0" name="relPtrnInfRcvCnt" nillable="true" type="long"/>

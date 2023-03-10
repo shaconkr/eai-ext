@@ -57,4 +57,7 @@
   <sca:component xmi:id="_FZy_QL15Ee2TyIe70qYo_w" name="Component1TOSCISPMMZ0140402_RES" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_FZy_Qb15Ee2TyIe70qYo_w" processName="TOSCISPMMZ.TOSCISPMMZ0140502.TOSCISPMMZ0140502_RES"/>
   </sca:component>
+  <sca:component xmi:id="_s7YSAL8MEe2rC4BK4fzqNQ" name="ComponentTossFileSender" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_s7YSAb8MEe2rC4BK4fzqNQ" processName="CISTOSPM.TossFileSender"/>
+  </sca:component>
 </sca:composite>

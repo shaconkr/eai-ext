@@ -2,10 +2,8 @@ package com.hcis.eai.ext.tos;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 import com.google.common.base.Joiner;
 import com.google.common.collect.ImmutableMap;
@@ -31,31 +29,6 @@ public class TossFileTransfer extends EDIParserAndBuilder {
         BANK.putAll(loadJson("/Resources/ext/tos/TOSBank.json"));
     }
 
-    enum ERRCD {
-        E000("정상"),
-        E001("시스템 장애"),
-        E002("USER ID 오류"),
-        E003("PASSWORD ID 오류"),
-        E004("JOB TYPE 오류"),
-        E005("조건에 맞는 자료 없음"),
-        E006("전문 종류 오류"),
-        E007("전송 Bytes 오류"),
-        E008("전송 형식 오류"),
-        E009("PASSWORD Change 오류"),
-        E099("기타 오류");
-
-        private final String stringValue;
-
-        ERRCD(final String s) {
-            stringValue = s;
-        }
-
-        public String toString() {
-            return stringValue;
-        }
-    }
-
-
     private Map<String,Object> putCommon(String ediNo){
         Map<String,Object> msg = ImmutableMap.<String,Object>builder()
                 .put("trdCd"	, spaces(9))      // TR코드
@@ -69,17 +42,19 @@ public class TossFileTransfer extends EDIParserAndBuilder {
 
     /**
      * 로그인 요구
+     * @param userId
+     * @param passwd     * 
      * @param jobType
      * @param startDay
      * @param endDay
      * @param fileName
      * @return
      */
-    public byte[] build003(String jobType, String startDay, String endDay, String fileName) {
+    public byte[] build003(String userId, String passwd, String jobType, String startDay, String endDay, String fileName) {
         Map<String, Object> msg = Maps.newHashMap(ImmutableMap.<String,Object>builder()
         						.putAll(putCommon("003"))		// 공통부
-        						.put("userId", "HELP518")		// magiclink id
-        						.put("passwd", "1111")
+        						.put("userId", userId)		
+        						.put("passwd", passwd)
         						.put("jobType", jobType)		// SD 자료송신, RD 자료수신
         						.build());                
         if (jobType.equals("RD")) {
@@ -112,17 +87,19 @@ public class TossFileTransfer extends EDIParserAndBuilder {
     
     /**
      * 로그아웃 요구
+     * @param userId
+     * @param passwd
      * @param jobType
      * @param startDay
      * @param endDay
      * @param fileName
      * @return
      */
-    public byte[] build007(String jobType, String startDay, String endDay, String fileName) {
+    public byte[] build007(String userId, String passwd, String jobType, String startDay, String endDay, String fileName) {
         Map<String, Object> msg = Maps.newHashMap(ImmutableMap.<String,Object>builder()
 				.putAll(putCommon("003"))		// 공통부
-				.put("userId", "HELP518")		// magiclink id
-				.put("passwd", "1111")
+				.put("userId", userId)		//  reaitime   "BKDR518"  , batch  "BK00152"
+				.put("passwd", passwd)			//  realtime   "5416    " , batch  "1111"
 				.put("jobType", jobType)		// SD 자료송신, RD 자료수신
 				.build());                
 		if (jobType.equals("RD")) {		// 송신

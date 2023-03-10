@@ -1,0 +1,13 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:e="http://shacon.kr/xsd" xmlns:ns="http://schema.hcis.com/xsd/TOSSFILEEVENT" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.hcis.com/xsd/TOSSFILEEVENT">
+    <complexType name="TossFileEvent">
+        <sequence>
+            <element e:kor="펌뱅킹ID" name="userId" type="string"/>
+            <element e:kor="펌뱅킹암호" name="passwd" type="string"/>
+            <element e:kor="송수신구분" name="jobType" type="string"/>
+            <element e:kor="파일명" name="fileName" type="string"/>
+            <element e:kor="시작시간" name="startTime" type="string"/>
+            <element e:kor="종료시간" name="endTime" type="string"/>
+        </sequence>
+    </complexType>
+    <element name="root" type="ns:TossFileEvent"/>
+</schema>

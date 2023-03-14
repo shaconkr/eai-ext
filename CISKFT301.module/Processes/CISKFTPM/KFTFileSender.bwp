@@ -2152,6 +2152,13 @@
                 </choice>
             </complexType>
         </schema>
+        <schema elementFormDefault="qualified"
+            targetNamespace="http://www.tibco.com/tnt/utilitySchema"
+            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.tibco.com/tnt/utilitySchema">
+            <simpleType name="nativeJavaObjectKey">
+                <restriction base="string"/>
+            </simpleType>
+        </schema>
         <wsdl:definitions
             targetNamespace="http://xmlns.example.com/20230111125022"
             xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
@@ -6230,8 +6237,7 @@
                     </tibex:config>
                 </tibex:activityExtension>
             </bpws:extensionActivity>
-            <bpws:scope name="While" tibex:group="while"
-                tibex:indexToGlobal="false" tibex:xpdlId="096af973-6fc2-48f8-bdde-f0157eab599d">
+            <bpws:scope name="While" tibex:group="while" tibex:xpdlId="096af973-6fc2-48f8-bdde-f0157eab599d">
                 <bpws:targets>
                     <bpws:target linkName="W_0600_001ToWhile"/>
                 </bpws:targets>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpws:process exitOnStandardFault="no" name="CISKFTPMBF.EI13"
+<bpws:process exitOnStandardFault="no" name="KFTCISPMBP.EB14"
     suppressJoinFailure="yes"
-    targetNamespace="http://xmlns.example.com/20230314163246"
+    targetNamespace="http://xmlns.example.com/20230314173533"
     xmlns:bpws="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
     xmlns:info="http://www.tibco.com/bw/process/info"
     xmlns:ns="http://www.tibco.com/pe/EngineTypes"
@@ -882,7 +882,7 @@
                                     xsi:type="notation:Bounds" y="99"/>
                                     </children>
                                     <children
-                                    description="이용기관접수_금결원자동이체출금동의증빙자료(EI13) 송신"
+                                    description="이용기관접수_금결원자동이체신청결과(EB14) 수신"
                                     fillColor="13369343"
                                     fontName="맑은 고딕"
                                     lineColor="6737151"
@@ -897,8 +897,8 @@
                                     <styles xsi:type="notation:TextStyle"/>
                                     <styles xsi:type="notation:LineTypeStyle"/>
                                     <element xsi:nil="true"/>
-                                    <layoutConstraint x="59"
-                                    xsi:type="notation:Bounds" y="232"/>
+                                    <layoutConstraint x="159"
+                                    xsi:type="notation:Bounds" y="231"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
@@ -942,7 +942,7 @@
             </children>
             <styles fontName="맑은 고딕" lineColor="0" xsi:type="notation:ShapeStyle"/>
             <element href="//0/@process"/>
-            <layoutConstraint height="460" width="860" xsi:type="notation:Bounds"/>
+            <layoutConstraint height="460" width="918" xsi:type="notation:Bounds"/>
         </children>
         <styles xsi:type="notation:DiagramStyle"/>
         <element href="//0"/>
@@ -1066,7 +1066,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:ns=&quot;http://schema.hcis.com/xsd/KFTFILEEVENT&quot; xmlns:HCIS=&quot;http://shacon.kr/202301&quot; version=&quot;2.0&quot;>&lt;xsl:template name=&quot;RenderJSON-input&quot; match=&quot;/&quot;>&lt;ns:root>&lt;ns:InterfaceId>&lt;xsl:value-of select=&quot;&amp;quot;CISKFTPMBF0030101&amp;quot;&quot;/>&lt;/ns:InterfaceId>&lt;ns:filePath>&lt;xsl:value-of select=&quot;&amp;quot;/hcisnas/app/sam/pm/kftc/&amp;quot;&quot;/>&lt;/ns:filePath>&lt;ns:fileName>&lt;xsl:value-of select=&quot;concat(&amp;quot;EC21&amp;quot;,HCIS:getCurrentDateFormat(&amp;quot;MMdd&amp;quot;),&amp;quot;_real_&amp;quot;,HCIS:getToday(),&amp;quot;_&amp;quot;,HCIS:getToday())&quot;/>&lt;/ns:fileName>&lt;ns:startTime>&lt;xsl:value-of select=&quot;HCIS:getToday()&quot;/>&lt;/ns:startTime>&lt;ns:endTime>&lt;xsl:value-of select=&quot;HCIS:getToday()&quot;/>&lt;/ns:endTime>&lt;/ns:root>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:ns=&quot;http://schema.hcis.com/xsd/KFTFILEEVENT&quot; xmlns:HCIS=&quot;http://shacon.kr/202301&quot; version=&quot;2.0&quot;>&lt;xsl:template name=&quot;RenderJSON-input&quot; match=&quot;/&quot;>&lt;ns:root>&lt;ns:InterfaceId>&lt;xsl:value-of select=&quot;&amp;quot;CISKFTPMBF0030101&amp;quot;&quot;/>&lt;/ns:InterfaceId>&lt;ns:filePath>&lt;xsl:value-of select=&quot;concat(&amp;quot;/hcisnas/app/sam/pm/kftc/rv_&amp;quot;,HCIS:getToday(),&amp;quot;_&amp;quot;,HCIS:getToday())&quot;/>&lt;/ns:filePath>&lt;ns:fileName>&lt;xsl:value-of select=&quot;&amp;quot;EB14&amp;quot;&quot;/>&lt;/ns:fileName>&lt;ns:startTime>&lt;xsl:value-of select=&quot;HCIS:getToday()&quot;/>&lt;/ns:startTime>&lt;ns:endTime>&lt;xsl:value-of select=&quot;HCIS:getToday()&quot;/>&lt;/ns:endTime>&lt;/ns:root>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -1098,7 +1098,7 @@
                     </bpws:targets>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/namespaces/tnt/plugins/jms+55c35e1e-e639-4de0-b16d-b7a83336e2d2+input&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;RenderJSON&quot;/>&lt;xsl:template name=&quot;JMSSendMessage-input&quot; match=&quot;/&quot;>&lt;tns:ActivityInput>&lt;destination>&lt;xsl:value-of select=&quot;&amp;quot;Q.KFT.SEND&amp;quot;&quot;/>&lt;/destination>&lt;Body>&lt;xsl:value-of select=&quot;$RenderJSON/jsonString&quot;/>&lt;/Body>&lt;/tns:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/namespaces/tnt/plugins/jms+55c35e1e-e639-4de0-b16d-b7a83336e2d2+input&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;RenderJSON&quot;/>&lt;xsl:template name=&quot;JMSSendMessage-input&quot; match=&quot;/&quot;>&lt;tns:ActivityInput>&lt;destination>&lt;xsl:value-of select=&quot;&amp;quot;Q.KFT.RECV&amp;quot;&quot;/>&lt;/destination>&lt;Body>&lt;xsl:value-of select=&quot;$RenderJSON/jsonString&quot;/>&lt;/Body>&lt;/tns:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity activityTypeID="bw.jms.send"

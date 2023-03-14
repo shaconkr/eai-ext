@@ -16,4 +16,16 @@
   <sca:component xmi:id="_8DT1IJJDEe2bH572H7AwlA" name="ComponentJOBPASS_NOTI" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_8DT1IZJDEe2bH572H7AwlA" processName="KFTCISPM.JOBPASS_NOTI"/>
   </sca:component>
+  <sca:component xmi:id="_15VrcMJBEe2eLa47u6Y6cg" name="ComponentEI16" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_15VrccJBEe2eLa47u6Y6cg" processName="KFTCISPMBP.KFTCISPMBP0010101.KFTCISPMBP0010101"/>
+  </sca:component>
+  <sca:component xmi:id="_-MZ4YMJCEe2eLa47u6Y6cg" name="ComponentKFTCISPMBP0020101" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_-MZ4YcJCEe2eLa47u6Y6cg" processName="KFTCISPMBP.KFTCISPMBP0020101.KFTCISPMBP0020101"/>
+  </sca:component>
+  <sca:component xmi:id="_MglIoMJDEe2eLa47u6Y6cg" name="ComponentKFTCISPMBP0010101" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_MglIocJDEe2eLa47u6Y6cg" processName="KFTCISPMBP.EB14"/>
+  </sca:component>
+  <sca:component xmi:id="_WxCr0MJDEe2eLa47u6Y6cg" name="ComponentEI15" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_WxCr0cJDEe2eLa47u6Y6cg" processName="KFTCISPMBP.EI15"/>
+  </sca:component>
 </sca:composite>

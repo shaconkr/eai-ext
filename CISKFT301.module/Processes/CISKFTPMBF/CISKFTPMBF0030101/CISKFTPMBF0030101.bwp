@@ -1050,7 +1050,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:ns=&quot;http://schema.hcis.com/xsd/KFTFILEEVENT&quot; xmlns:HCIS=&quot;http://shacon.kr/202301&quot; version=&quot;2.0&quot;>&lt;xsl:template name=&quot;RenderJSON-input&quot; match=&quot;/&quot;>&lt;ns:root>&lt;ns:InterfaceId>&lt;xsl:value-of select=&quot;&amp;quot;CISKFTPMBF0030101&amp;quot;&quot;/>&lt;/ns:InterfaceId>&lt;ns:filePath>&lt;xsl:value-of select=&quot;&amp;quot;/hcisnas/app/sam/pm/kftc/&amp;quot;&quot;/>&lt;/ns:filePath>&lt;ns:fileName>&lt;xsl:value-of select=&quot;concat(&amp;quot;EC21&amp;quot;,HCIS:getCurrentDateFormat(&amp;quot;MMdd&amp;quot;),&amp;quot;_real_&amp;quot;,HCIS:getToday(),&amp;quot;_&amp;quot;,HCIS:getToday())&quot;/>&lt;/ns:fileName>&lt;ns:fileSize>&lt;xsl:value-of select=&quot;&amp;quot;&amp;quot;&quot;/>&lt;/ns:fileSize>&lt;ns:startTime>&lt;xsl:value-of select=&quot;HCIS:getToday()&quot;/>&lt;/ns:startTime>&lt;ns:endTime>&lt;xsl:value-of select=&quot;HCIS:getToday()&quot;/>&lt;/ns:endTime>&lt;/ns:root>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:ns=&quot;http://schema.hcis.com/xsd/KFTFILEEVENT&quot; xmlns:HCIS=&quot;http://shacon.kr/202301&quot; version=&quot;2.0&quot;>&lt;xsl:template name=&quot;RenderJSON-input&quot; match=&quot;/&quot;>&lt;ns:root>&lt;ns:InterfaceId>&lt;xsl:value-of select=&quot;&amp;quot;CISKFTPMBF0030101&amp;quot;&quot;/>&lt;/ns:InterfaceId>&lt;ns:filePath>&lt;xsl:value-of select=&quot;&amp;quot;/hcisnas/app/sam/pm/kftc/&amp;quot;&quot;/>&lt;/ns:filePath>&lt;ns:fileName>&lt;xsl:value-of select=&quot;concat(&amp;quot;EC21&amp;quot;,HCIS:getCurrentDateFormat(&amp;quot;MMdd&amp;quot;),&amp;quot;_real_&amp;quot;,HCIS:getToday(),&amp;quot;_&amp;quot;,HCIS:getToday())&quot;/>&lt;/ns:fileName>&lt;ns:startTime>&lt;xsl:value-of select=&quot;HCIS:getToday()&quot;/>&lt;/ns:startTime>&lt;ns:endTime>&lt;xsl:value-of select=&quot;HCIS:getToday()&quot;/>&lt;/ns:endTime>&lt;/ns:root>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -1063,7 +1063,7 @@
                                     <type href="http://ns.tibco.com/bw/palette/restjson#//JsonRender"/>
                                     <value jsonOutputStyle="None"
                                     schemaType="Xsd" xsi:type="restjson:JsonRender">
-                                    <inputEditorElement href="platform:/resource/HcisExternal.smodule/Schemas/ext/kft/KFTFileSendEvent.xsd#//root;XSDElementDeclaration"/>
+                                    <inputEditorElement href="platform:/resource/HcisExternal.smodule/Schemas/ext/kft/KFTFileEvent.xsd#//root;XSDElementDeclaration"/>
                                     </value>
                                 </properties>
                             </activityConfig>

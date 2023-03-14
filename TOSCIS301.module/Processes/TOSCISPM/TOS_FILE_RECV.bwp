@@ -1582,6 +1582,8 @@
     <bpws:import importType="http://www.w3.org/2001/XMLSchema"
         location="../../../HcisExternal.smodule/Schemas/NotifyConfigurationSchema.xsd" namespace="http://ns.tibco.com/bw/sharedresource/notifyconfiguration/01fbc230-cc5c-43b6-a016-433dc4099811"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://schema.hcis.com/xsd/TOSSFILEEVENT"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema"
+        location="../../../HcisExternal.smodule/Schemas/ext/tos/TossFileEvent.xsd" namespace="http://schema.hcis.com/xsd/TOSSFILEEVENT"/>
     <bpws:variables>
         <bpws:variable element="ns:ProcessContext"
             name="_processContext" sca-bpel:internal="true"/>
@@ -1729,9 +1731,7 @@
                     </tibex:config>
                 </tibex:activityExtension>
             </bpws:extensionActivity>
-            <bpws:scope name="Iterate" tibex:group="iterate"
-                tibex:indexOriginalName="index"
-                tibex:indexToGlobal="false" tibex:xpdlId="e335c2ed-f5c8-4908-a47c-9dc50a355592">
+            <bpws:scope name="Iterate" tibex:group="iterate" tibex:xpdlId="e335c2ed-f5c8-4908-a47c-9dc50a355592">
                 <bpws:targets>
                     <bpws:target linkName="EDIListToIterate"/>
                 </bpws:targets>

@@ -5869,6 +5869,8 @@
     <bpws:import importType="http://www.w3.org/2001/XMLSchema"
         location="../../../HcisCommon.smodule/Schemas/BatchEventData.xsd.xsd" namespace="http://schema.hcis.com/xsd/CISTOSPMMZ0140401"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://schema.hcis.com/xsd/TOSSFILEEVENT"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema"
+        location="../../../HcisExternal.smodule/Schemas/ext/tos/TossFileEvent.xsd" namespace="http://schema.hcis.com/xsd/TOSSFILEEVENT"/>
     <bpws:variables>
         <bpws:variable element="ns:ProcessContext"
             name="_processContext" sca-bpel:internal="true"/>

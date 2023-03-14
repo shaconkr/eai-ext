@@ -5869,6 +5869,8 @@
     <bpws:import importType="http://www.w3.org/2001/XMLSchema"
         location="../../../HcisCommon.smodule/Schemas/BatchEventData.xsd.xsd" namespace="http://schema.hcis.com/xsd/CISTOSPMMZ0140401"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://schema.hcis.com/xsd/TOSSFILEEVENT"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema"
+        location="../../../HcisExternal.smodule/Schemas/ext/tos/TossFileEvent.xsd" namespace="http://schema.hcis.com/xsd/TOSSFILEEVENT"/>
     <bpws:variables>
         <bpws:variable element="ns:ProcessContext"
             name="_processContext" sca-bpel:internal="true"/>
@@ -6315,7 +6317,8 @@
                     </tibex:config>
                 </tibex:activityExtension>
             </bpws:extensionActivity>
-            <bpws:scope name="While" tibex:group="while" tibex:xpdlId="07027b07-e4ac-4942-a1d3-76b96a888233">
+            <bpws:scope name="While" tibex:group="while"
+                tibex:indexToGlobal="false" tibex:xpdlId="07027b07-e4ac-4942-a1d3-76b96a888233">
                 <bpws:targets>
                     <bpws:target linkName="W_300ToWhile"/>
                 </bpws:targets>
@@ -6761,7 +6764,8 @@
                                 </tibex:activityExtension>
                             </bpws:extensionActivity>
                             <bpws:scope name="ForEach"
-                                tibex:group="foreach" tibex:xpdlId="6fa88859-f4b4-4bc5-b177-7cedd28b9b40">
+                                tibex:group="foreach"
+                                tibex:indexToGlobal="false" tibex:xpdlId="6fa88859-f4b4-4bc5-b177-7cedd28b9b40">
                                 <bpws:targets>
                                     <bpws:target linkName="Empty2ToForEach1"/>
                                 </bpws:targets>
@@ -7025,9 +7029,9 @@
 
                                     <value
                                     className="com.hcis.eai.ext.tos.TossFileTransfer"
+                                    constructDeclaredClass="true"
                                     isNew="true"
                                     isNewActivity="true"
-                                    javaGlobalInstance="TOSFileTransHelper"
                                     methodName="readBytes"
                                     methodReturn="byte[]" xsi:type="java:JavaMethod">
 

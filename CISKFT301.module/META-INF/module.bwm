@@ -21,4 +21,25 @@
   <sca:component xmi:id="_D1D1Er2EEe2TyIe70qYo_w" name="ComponentKFTCISPMCR0010102_RES" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_D1D1E72EEe2TyIe70qYo_w" processName="KFTCISPMCR.KFTCISPMCR0010202.KFTCISPMCR0010202_RES"/>
   </sca:component>
+  <sca:component xmi:id="_L5Tp8MFWEe2hmaJwhdairQ" name="ComponentKFTFileReceve" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_L5Tp8cFWEe2hmaJwhdairQ" processName="CISKFTPM.KFTFileSender"/>
+  </sca:component>
+  <sca:component xmi:id="_Vlrs8MI4Ee2eLa47u6Y6cg" name="ComponentCISKFTPMBF0030101" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_Vlrs8cI4Ee2eLa47u6Y6cg" processName="CISKFTPMBF.CISKFTPMBF0030101.CISKFTPMBF0030101"/>
+  </sca:component>
+  <sca:component xmi:id="_JOQAwMI5Ee2eLa47u6Y6cg" name="Component1CISKFTPMBF0030101" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_JOQAwcI5Ee2eLa47u6Y6cg" processName="CISKFTPMBF.CISKFTPMBF0030401.CISKFTPMBF0030401"/>
+  </sca:component>
+  <sca:component xmi:id="_GAgc8MI6Ee2eLa47u6Y6cg" name="ComponentCISKFTPMBF0030401" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_GAgc8cI6Ee2eLa47u6Y6cg" processName="CISKFTPMBF.EB12"/>
+  </sca:component>
+  <sca:component xmi:id="_ZDGkIcI6Ee2eLa47u6Y6cg" name="ComponentEB13" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_ZDGkIsI6Ee2eLa47u6Y6cg" processName="CISKFTPMBF.EB13"/>
+  </sca:component>
+  <sca:component xmi:id="_bOKGccI6Ee2eLa47u6Y6cg" name="ComponentEI13" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_bOKGcsI6Ee2eLa47u6Y6cg" processName="CISKFTPMBF.EI13"/>
+  </sca:component>
+  <sca:component xmi:id="_gJeUccI7Ee2eLa47u6Y6cg" name="ComponentEI16" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_gJeUcsI7Ee2eLa47u6Y6cg" processName="CISKFTPMBF.EI16"/>
+  </sca:component>
 </sca:composite>

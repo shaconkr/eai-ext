@@ -49,6 +49,7 @@ DynamicImport-Package: *
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Provide-Capability: com.tibco.bw.module; name="HcisExternal.smodule"; version:Version="1.0.0",
  com.tibco.bw.schemas; ns="http://ns.tibco.com/bw/sharedresource/notifyconfiguration/01fbc230-cc5c-43b6-a016-433dc4099811",
+ com.tibco.bw.schemas; ns="http://schema.hcis.com/xsd/KFTFILEEVENT",
  com.tibco.bw.schemas; ns="http://schema.hcis.com/xsd/TOSSFILEEVENT",
  com.tibco.bw.schemas; ns="http://tns.tibco.com/bw/json/1673317890834",
  com.tibco.bw.resources; name="ext.cis",

@@ -1,0 +1,13 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:e="http://shacon.kr/xsd" xmlns:ns="http://schema.hcis.com/xsd/KFTFILEEVENT" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.hcis.com/xsd/KFTFILEEVENT">
+    <complexType name="KftFileEvent">
+        <sequence>
+            <element e:kor="언터페이스ID" name="InterfaceId" type="string"/>            
+            <element e:kor="파일경로" name="filePath" type="string"/>
+            <element e:kor="파일명" name="fileName" type="string"/>
+            <element e:kor="파일사이즈" name="fileSize" type="string"/>
+            <element e:kor="시작시간" name="startTime" type="string"/>
+            <element e:kor="종료시간" name="endTime" type="string"/>
+        </sequence>
+    </complexType>
+    <element name="root" type="ns:KftFileEvent"/>
+</schema>

@@ -109,7 +109,7 @@
             <field kor="BLOCK번호" name="blockNo" position="32" length="4" type="string"/>
             <field kor="SEQ번호" name="seqNo" position="36" length="3" type="string"/>
             <field kor="실DATA바이트수" name="realDataByte" position="39" length="4" type="string"/>
-            <!-- field kor="파일내역" name="fileSpec" position="43" length="4057" type="string" trim="true"/-->
+            <field kor="파일내역" name="fileSpec" position="43" length="4057" type="string" trim="true"/>
         </record>
     </stream>
 

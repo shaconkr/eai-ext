@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpws:process exitOnStandardFault="no"
-    name="CISTOSPMBC.CISTOSPMBC0020101" suppressJoinFailure="yes"
-    targetNamespace="http://xmlns.example.com/20230314163024"
+    name="TOSCISPMBO.TOSCISPMBO0060101" suppressJoinFailure="yes"
+    targetNamespace="http://xmlns.example.com/20230315132957"
     xmlns:bpws="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
     xmlns:info="http://www.tibco.com/bw/process/info"
     xmlns:ns="http://www.tibco.com/pe/EngineTypes"
@@ -883,7 +883,7 @@
                                     xsi:type="notation:Bounds" y="93"/>
                                     </children>
                                     <children
-                                    description="기업은행 출금의뢰 (IB100)  송신"
+                                    description="제일은행 출금결과 (KF700)  수신"
                                     fillColor="13369343"
                                     fontName="맑은 고딕"
                                     lineColor="6737151"
@@ -1072,7 +1072,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:ns1=&quot;http://schema.hcis.com/xsd/TOSSFILEEVENT&quot; xmlns:bw=&quot;http://www.tibco.com/bw/xpath/bw-custom-functions&quot; xmlns:HCIS=&quot;http://shacon.kr/202301&quot; version=&quot;2.0&quot;>&lt;xsl:template name=&quot;RenderJSON-input&quot; match=&quot;/&quot;>&lt;ns1:root>&lt;ns1:ifId>&lt;xsl:value-of select=&quot;&amp;quot;CISTOSPMBC0020101&amp;quot;&quot;/>&lt;/ns1:ifId>&lt;ns1:userId>&lt;xsl:value-of select=&quot;bw:getModuleProperty(&amp;quot;SECURITY.TOS.BATCH.DC_USER_ID&amp;quot;)&quot;/>&lt;/ns1:userId>&lt;ns1:passwd>&lt;xsl:value-of select=&quot;bw:getModuleProperty(&amp;quot;SECURITY.TOS.BATCH.DC_PWD&amp;quot;)&quot;/>&lt;/ns1:passwd>&lt;ns1:jobType>&lt;xsl:value-of select=&quot;&amp;quot;SD&amp;quot;&quot;/>&lt;/ns1:jobType>&lt;ns1:fileName>&lt;xsl:value-of select=&quot;&amp;quot;IB100&amp;quot;&quot;/>&lt;/ns1:fileName>&lt;ns1:startTime>&lt;xsl:value-of select=&quot;HCIS:getToday()&quot;/>&lt;/ns1:startTime>&lt;ns1:endTime>&lt;xsl:value-of select=&quot;HCIS:getToday()&quot;/>&lt;/ns1:endTime>&lt;/ns1:root>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:ns1=&quot;http://schema.hcis.com/xsd/TOSSFILEEVENT&quot; xmlns:bw=&quot;http://www.tibco.com/bw/xpath/bw-custom-functions&quot; xmlns:HCIS=&quot;http://shacon.kr/202301&quot; version=&quot;2.0&quot;>&lt;xsl:template name=&quot;RenderJSON-input&quot; match=&quot;/&quot;>&lt;ns1:root>&lt;ns1:ifId>&lt;xsl:value-of select=&quot;&amp;quot;TOSCISPMBO0060101&amp;quot;&quot;/>&lt;/ns1:ifId>&lt;ns1:userId>&lt;xsl:value-of select=&quot;bw:getModuleProperty(&amp;quot;SECURITY.TOS.BATCH.DC_USER_ID&amp;quot;)&quot;/>&lt;/ns1:userId>&lt;ns1:passwd>&lt;xsl:value-of select=&quot;bw:getModuleProperty(&amp;quot;SECURITY.TOS.BATCH.DC_PWD&amp;quot;)&quot;/>&lt;/ns1:passwd>&lt;ns1:jobType>&lt;xsl:value-of select=&quot;&amp;quot;RD&amp;quot;&quot;/>&lt;/ns1:jobType>&lt;ns1:fileName>&lt;xsl:value-of select=&quot;&amp;quot;KF700&amp;quot;&quot;/>&lt;/ns1:fileName>&lt;ns1:startTime>&lt;xsl:value-of select=&quot;HCIS:getToday()&quot;/>&lt;/ns1:startTime>&lt;ns1:endTime>&lt;xsl:value-of select=&quot;HCIS:getToday()&quot;/>&lt;/ns1:endTime>&lt;/ns1:root>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity

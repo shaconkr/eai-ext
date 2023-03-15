@@ -34,4 +34,37 @@
   <sca:component xmi:id="_nhYHcL8MEe2rC4BK4fzqNQ" name="ComponentTossFileRecever" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_nhYHcb8MEe2rC4BK4fzqNQ" processName="TOSCISPM.TossFileRecever"/>
   </sca:component>
+  <sca:component xmi:id="_lBGekMLnEe2nFslTZKjtGA" name="ComponentCISTOSPMBC0020101" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_lBHssMLnEe2nFslTZKjtGA" processName="TOSCISPMBO.TOSCISPMBO0010101"/>
+  </sca:component>
+  <sca:component xmi:id="_twVDEcLoEe2nFslTZKjtGA" name="ComponentTOSCISPMBO0020101" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_twVDEsLoEe2nFslTZKjtGA" processName="TOSCISPMBO.TOSCISPMBO0020101"/>
+  </sca:component>
+  <sca:component xmi:id="_ej3qgcLpEe2nFslTZKjtGA" name="ComponentTOSCISPMBO0030101" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_ej3qgsLpEe2nFslTZKjtGA" processName="TOSCISPMBO.TOSCISPMBO0030101"/>
+  </sca:component>
+  <sca:component xmi:id="_seiOkMLpEe2nFslTZKjtGA" name="ComponentTOSCISPMBO0040101" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_seiOkcLpEe2nFslTZKjtGA" processName="TOSCISPMBO.TOSCISPMBO0040101"/>
+  </sca:component>
+  <sca:component xmi:id="_3rAuFsLpEe2nFslTZKjtGA" name="ComponentTOSCISPMBO0050101" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_3rAuF8LpEe2nFslTZKjtGA" processName="TOSCISPMBO.TOSCISPMBO0050101"/>
+  </sca:component>
+  <sca:component xmi:id="_DyrqgcLqEe2nFslTZKjtGA" name="ComponentTOSCISPMBO0060101" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_DyrqgsLqEe2nFslTZKjtGA" processName="TOSCISPMBO.TOSCISPMBO0060101"/>
+  </sca:component>
+  <sca:component xmi:id="_bzVnIcLqEe2nFslTZKjtGA" name="ComponentTOSCISPMBO0070101" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_bzVnIsLqEe2nFslTZKjtGA" processName="TOSCISPMBO.TOSCISPMBO0070101"/>
+  </sca:component>
+  <sca:component xmi:id="_s_M2McLqEe2nFslTZKjtGA" name="ComponentTOSCISPMBO0080101" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_s_M2MsLqEe2nFslTZKjtGA" processName="TOSCISPMBO.TOSCISPMBO0080101"/>
+  </sca:component>
+  <sca:component xmi:id="_7ZIJIcLqEe2nFslTZKjtGA" name="ComponentTOSCISPMBO0090101" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_7ZIJIsLqEe2nFslTZKjtGA" processName="TOSCISPMBO.TOSCISPMBO0090101"/>
+  </sca:component>
+  <sca:component xmi:id="_QBBaMcLrEe2nFslTZKjtGA" name="ComponentTOSCISPMBO0100101" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_QBBaMsLrEe2nFslTZKjtGA" processName="TOSCISPMBO.TOSCISPMBO0100101"/>
+  </sca:component>
+  <sca:component xmi:id="_cfpeEcLrEe2nFslTZKjtGA" name="ComponentTOSCISPMBO0110101" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_cfpeEsLrEe2nFslTZKjtGA" processName="TOSCISPMBO.TOSCISPMBO0110101"/>
+  </sca:component>
 </sca:composite>

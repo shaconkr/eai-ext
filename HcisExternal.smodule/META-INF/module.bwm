@@ -116,8 +116,10 @@
   <sca:property xmi:id="_tiZ30LvBEe2TD9EBDhxIvA" name="/ENDPOINT/OSE/OSE_HOST" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_SOMqULvCEe2TD9EBDhxIvA" name="/ENDPOINT/OSE/OSE_PORT" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_NKN9oLvDEe2TD9EBDhxIvA" name="/ENDPOINT/OSE/OSE_COMPANY_ID" type="XMLSchema:string" publicAccess="true" scalable="true"/>
-  <sca:property xmi:id="_K4GXIJxgEe2Xs_MkOHaDkA" name="/SECURITY/TOS/TOS__USER_ID" type="XMLSchema:string" publicAccess="true" scalable="true"/>
-  <sca:property xmi:id="_Rpd9QJxgEe2Xs_MkOHaDkA" name="/SECURITY/TOS/TOS_PWD" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_ik-UAMLfEe2nFslTZKjtGA" name="/SECURITY/TOS/BATCH/DC_USER_ID" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_snfh0MLfEe2nFslTZKjtGA" name="/SECURITY/TOS/BATCH/DC_PWD" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_jBTDoMLfEe2nFslTZKjtGA" name="/SECURITY/TOS/REALTIME/DC_USER_ID" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_v9yvQMLfEe2nFslTZKjtGA" name="/SECURITY/TOS/REALTIME/DC_PWD" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_y6EEEJ04Ee2J2YQCWHlc5A" name="/common/stage" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:component xmi:id="_AR3LUI2FEe2TR-Ao8dSg5A" name="ComponentHCIS_CT_INBOUND" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_AR3LUY2FEe2TR-Ao8dSg5A" processName="hcisexternal.smodule.HCIS_CT_INBOUND"/>

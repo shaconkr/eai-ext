@@ -9,9 +9,6 @@
   <sca:property xmi:id="_ekLwgJVrEe2iOLcBMBCoJw" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_ekPa4JVrEe2iOLcBMBCoJw" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_ekR3IJVrEe2iOLcBMBCoJw" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
-  <sca:component xmi:id="_mNGDkJYkEe2rJ7i8AUx5cg" name="ComponentTOS_FILE_RECV" compositeext:version="1.0.0.qualifier">
-    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_mNGDkZYkEe2rJ7i8AUx5cg" processName="CISTOSPM.TOS_FILE_SEND"/>
-  </sca:component>
   <sca:component xmi:id="_duZpgJ02Ee2J2YQCWHlc5A" name="ComponentTOS_ONL_START" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_duZpgZ02Ee2J2YQCWHlc5A" processName="CISTOSPM.TOS_ONL1_START"/>
   </sca:component>
@@ -59,5 +56,38 @@
   </sca:component>
   <sca:component xmi:id="_s7YSAL8MEe2rC4BK4fzqNQ" name="ComponentTossFileSender" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_s7YSAb8MEe2rC4BK4fzqNQ" processName="CISTOSPM.TossFileSender"/>
+  </sca:component>
+  <sca:component xmi:id="_uBJZMMLbEe2nFslTZKjtGA" name="ComponentEB12" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_uBJZMcLbEe2nFslTZKjtGA" processName="CISTOSPMBC.CISTOSPMBC0020101"/>
+  </sca:component>
+  <sca:component xmi:id="_jTmNMMLiEe2nFslTZKjtGA" name="ComponentCISTOSPMBC0030101" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_jTmNMcLiEe2nFslTZKjtGA" processName="CISTOSPMBC.CISTOSPMBC0030101"/>
+  </sca:component>
+  <sca:component xmi:id="_AKhVMcLjEe2nFslTZKjtGA" name="ComponentCISTOSPMBC0040101" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_AKhVMsLjEe2nFslTZKjtGA" processName="CISTOSPMBC.CISTOSPMBC0040101"/>
+  </sca:component>
+  <sca:component xmi:id="_wSda4MLjEe2nFslTZKjtGA" name="ComponentCISTOSPMBC0050101" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_wSda4cLjEe2nFslTZKjtGA" processName="CISTOSPMBC.CISTOSPMBC0050101"/>
+  </sca:component>
+  <sca:component xmi:id="_C6ee4cLkEe2nFslTZKjtGA" name="ComponentCISTOSPMBC0060101" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_C6ee4sLkEe2nFslTZKjtGA" processName="CISTOSPMBC.CISTOSPMBC0060101"/>
+  </sca:component>
+  <sca:component xmi:id="_btjW8cLkEe2nFslTZKjtGA" name="ComponentCISTOSPMBC0070101" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_btjW8sLkEe2nFslTZKjtGA" processName="CISTOSPMBC.CISTOSPMBC0070101"/>
+  </sca:component>
+  <sca:component xmi:id="_q2V7AMLkEe2nFslTZKjtGA" name="ComponentCISTOSPMBC0080101" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_q2V7AcLkEe2nFslTZKjtGA" processName="CISTOSPMBC.CISTOSPMBC0080101"/>
+  </sca:component>
+  <sca:component xmi:id="_9_n5AcLkEe2nFslTZKjtGA" name="ComponentCISTOSPMBC0090101" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_9_n5AsLkEe2nFslTZKjtGA" processName="CISTOSPMBC.CISTOSPMBC0090101"/>
+  </sca:component>
+  <sca:component xmi:id="_Xzp3wcLlEe2nFslTZKjtGA" name="ComponentCISTOSPMBC0100101" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_Xzp3wsLlEe2nFslTZKjtGA" processName="CISTOSPMBC.CISTOSPMBC0100101"/>
+  </sca:component>
+  <sca:component xmi:id="_nlk4YcLlEe2nFslTZKjtGA" name="ComponentCISTOSPMBC0110101" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_nlk4YsLlEe2nFslTZKjtGA" processName="CISTOSPMBC.CISTOSPMBC0110101"/>
+  </sca:component>
+  <sca:component xmi:id="_1lwOkcLlEe2nFslTZKjtGA" name="ComponentCISTOSPMBC0120101" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_1lwOksLlEe2nFslTZKjtGA" processName="CISTOSPMBC.CISTOSPMBC0120101"/>
   </sca:component>
 </sca:composite>

@@ -1046,7 +1046,7 @@
 			<useLookupValue>false</useLookupValue>
 		</globalVariable>
 		<globalVariable>
-			<name>/SECURITY/TOS/TOS__USER_ID</name>
+			<name>/SECURITY/TOS/BATCH/DC_USER_ID</name>
 			<value>HELP518</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
@@ -1055,8 +1055,26 @@
 			<useLookupValue>false</useLookupValue>
 		</globalVariable>
 		<globalVariable>
-			<name>/SECURITY/TOS/TOS_PWD</name>
+			<name>/SECURITY/TOS/BATCH/DC_PWD</name>
 			<value>1111</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>/SECURITY/TOS/REALTIME/DC_USER_ID</name>
+			<value>BKDR518</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>/SECURITY/TOS/REALTIME/DC_PWD</name>
+			<value>5416</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
